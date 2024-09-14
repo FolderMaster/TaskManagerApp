@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="View.Views.MainView"
+             x:DataType="vm:MainViewModel"
+			 Name="mainView">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<Grid RowDefinitions="*, Auto">
+		<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
+				   IsPaneOpen="{Binding #mainView.IsPaneOpen}">
+			<SplitView.Pane>
+				<StackPanel>
+					<Button Click="Button_Click"
+						HorizontalAlignment="Stretch"
+						HorizontalContentAlignment="Left">
+						<PathIcon Data="{StaticResource MenuIcon}"
+								  Width="30" Height="30"/>
+					</Button>
+					<ListBox ItemsSource="{Binding Pages}"
+							 SelectedItem="{Binding SelectedPage}"
+							 ItemTemplate="{StaticResource MenuItemTemplate}"/>
+				</StackPanel>
+			</SplitView.Pane>
+			<TransitioningContentControl MaxWidth="1024" Margin="10"
+										 Content="{Binding SelectedPage}"
+										 ContentTemplate="{StaticResource PageTemplates}">
+				<TransitioningContentControl.PageTransition>
+					<CompositePageTransition>
+						<CrossFade Duration="0:00:00.500" />
+						<PageSlide Orientation="Horizontal" Duration="0:00:00.700" />
+					</CompositePageTransition>
+				</TransitioningContentControl.PageTransition>
+			</TransitioningContentControl>
+		</SplitView>
+		<Grid Grid.Row="1" Height="{Binding #mainView.InputPaneHeight, Mode=OneWay}"
+			  IsVisible="{Binding #mainView.IsInputPaneVisible, Mode=OneWay}"/>
+	</Grid>
+</UserControl>

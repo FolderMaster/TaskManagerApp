@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
+             x:Class="View.Views.Pages.TaskEditorView"
+			 x:DataType="vm:TaskEditorViewModel">
+	<Design.DataContext>
+		<vm:TaskEditorViewModel />
+	</Design.DataContext>
+	<Grid ColumnDefinitions="*, Auto, *">
+		<Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
+			<WrapPanel Grid.Row="0">
+				<Button Content="&lt;&#45;" Command="{Binding GoToPreviousCommand}"/>
+			</WrapPanel>
+			<TreeView Grid.Row="1"
+					  ItemsSource="{Binding TaskListView}"
+					  SelectionMode="Multiple, Toggle"
+					  SelectedItems="{Binding SelectedTasks}"
+					  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
+			<WrapPanel Grid.Row="2">
+				<Button Content="Remove" Command="{Binding RemoveCommand}"/>
+				<Button Content="Add task element" Command="{Binding AddTaskElementCommand}"/>
+				<Button Content="Add task composite" Command="{Binding AddTaskCompositeCommand}"/>
+				<Button Content="Edit" Command="{Binding EditCommand}"/>
+				<Button Content="Go" Command="{Binding GoCommand}"/>
+				<Button Content="Move" Command="{Binding MoveCommand}"/>
+			</WrapPanel>
+		</Grid>
+		<GridSplitter Grid.Column="1"
+					  Background="{DynamicResource SystemAccentColor}"/>
+		<Grid Grid.Column="2" RowDefinitions="*, Auto">
+			<ScrollViewer Grid.Row="0">
+				<ContentControl Content="{Binding EditedTask}"
+								ContentTemplate="{StaticResource TaskTemplate}"/>
+			</ScrollViewer>
+			<WrapPanel Grid.Row="1">
+				<Button Content="OK"/>
+				<Button Content="Cancel"/>
+			</WrapPanel>
+		</Grid>
+	</Grid>
+</UserControl>

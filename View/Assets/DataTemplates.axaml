@@ -1,0 +1,97 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:m="clr-namespace:Model;assembly=Model"
+					xmlns:vm="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
+					xmlns:v="clr-namespace:View.DataTemplates"
+					xmlns:e="clr-namespace:View.Extensions">
+	<Design.PreviewWith>
+		<Border Padding="20">
+		</Border>
+	</Design.PreviewWith>
+	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
+		<ContentControl Content="{Binding Metadata}"/>
+	</DataTemplate>
+	<v:PageDataTemplate x:Key="PageTemplates"/>
+	<v:TaskDataTemplate x:Key="TaskTreeTemplate">
+		<v:TaskDataTemplate.ElementDataTemplate>
+			<TreeDataTemplate x:DataType="m:ITask">
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<ContentControl Content="{Binding Metadata}"/>
+					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
+					<TextBlock Text="{Binding Deadline}"/>
+					<TextBlock Text="{Binding Priority}"/>
+					<TextBlock Text="{Binding Difficult}"/>
+					<TextBlock Text="{Binding Status}"/>
+				</StackPanel>
+			</TreeDataTemplate>
+		</v:TaskDataTemplate.ElementDataTemplate>
+		<v:TaskDataTemplate.CompositeDataTemplate>
+			<TreeDataTemplate x:DataType="m:ITaskComposite" ItemsSource="{Binding .}">
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<ContentControl Content="{Binding Metadata}"/>
+					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
+					<TextBlock Text="{Binding Deadline}"/>
+					<TextBlock Text="{Binding Priority}"/>
+					<TextBlock Text="{Binding Difficult}"/>
+					<TextBlock Text="{Binding Status}"/>
+				</StackPanel>
+			</TreeDataTemplate>
+		</v:TaskDataTemplate.CompositeDataTemplate>
+	</v:TaskDataTemplate>
+	<v:TaskDataTemplate x:Key="TaskTemplate">
+		<v:TaskDataTemplate.ElementDataTemplate>
+			<DataTemplate x:DataType="m:ITaskElement">
+				<StackPanel>
+					<Label Content="Difficult:"/>
+					<TextBox Text="{Binding Difficult}"/>
+					<Label Content="Priority:"/>
+					<TextBox Text="{Binding Priority}"/>
+					<Label Content="Progress:"/>
+					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1"/>
+					<Label Content="TotalReal:"/>
+					<TextBox Text="{Binding TotalReal}"/>
+					<Label Content="ExecutedReal:"/>
+					<TextBox Text="{Binding ExecutedReal}"/>
+					<Label Content="PlannedTime:"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}"/>
+					<Label Content="SpentTime:"/>
+					<TimePicker SelectedTime="{Binding SpentTime}"/>
+					<Label Content="Status:"/>
+					<ComboBox ItemsSource="{e:Enums m:TaskStatus}"
+							  SelectedItem="{Binding Status}"/>
+					<Label Content="Deadline:"/>
+					<DatePicker SelectedDate="{Binding Deadline,
+								Converter={StaticResource DateTimeToDateOffsetConverter}}"/>
+					<TimePicker SelectedTime="{Binding Deadline,
+								Converter={StaticResource DateTimeToTimeSpanConverter},
+								ConverterParameter={Binding Deadline}}"/>
+				</StackPanel>
+			</DataTemplate>
+		</v:TaskDataTemplate.ElementDataTemplate>
+		<v:TaskDataTemplate.CompositeDataTemplate>
+			<DataTemplate x:DataType="m:ITaskComposite">
+				<StackPanel>
+					<Label Content="Difficult:"/>
+					<TextBox Text="{Binding Difficult}" IsReadOnly="True"/>
+					<Label Content="Priority:"/>
+					<TextBox Text="{Binding Priority}"/>
+					<Label Content="Progress:"/>
+					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1" IsEnabled="False"/>
+					<Label Content="PlannedTime:"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}" IsEnabled="False"/>
+					<Label Content="SpentTime:"/>
+					<TimePicker SelectedTime="{Binding SpentTime}" IsEnabled="False"/>
+					<Label Content="Status:"/>
+					<ComboBox ItemsSource="{e:Enums m:TaskStatus}"
+							  SelectedItem="{Binding Status}" IsEnabled="False"/>
+					<Label Content="Deadline:"/>
+					<DatePicker IsEnabled="False" SelectedDate="{Binding Deadline,
+								Converter={StaticResource DateTimeToDateOffsetConverter}}"/>
+					<TimePicker IsEnabled="False" SelectedTime="{Binding Deadline,
+								Converter={StaticResource DateTimeToTimeSpanConverter},
+								ConverterParameter={Binding Deadline}}"/>
+				</StackPanel>
+			</DataTemplate>
+		</v:TaskDataTemplate.CompositeDataTemplate>
+	</v:TaskDataTemplate>
+</ResourceDictionary>

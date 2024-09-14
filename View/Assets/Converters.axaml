@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:c="clr-namespace:View.Converters">
+	<c:DateTimeToDateOffsetConverter x:Key="DateTimeToDateOffsetConverter"/>
+	<c:DateTimeToTimeSpanConverter x:Key="DateTimeToTimeSpanConverter"/>
+	<c:StringToEnumsConverter x:Key="StringToEnumsConverter"/>
+	<c:EnumToEnumsConverter x:Key="EnumToEnumsConverter"/>
+</ResourceDictionary>
