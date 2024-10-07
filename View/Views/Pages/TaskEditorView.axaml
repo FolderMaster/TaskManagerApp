@@ -9,8 +9,8 @@
 	<Design.DataContext>
 		<vm:TaskEditorViewModel />
 	</Design.DataContext>
-	<Grid ColumnDefinitions="*, Auto, *">
-		<Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
+	<Grid>
+		<Grid RowDefinitions="Auto, *, Auto">
 			<WrapPanel Grid.Row="0">
 				<Button Content="&lt;&#45;" Command="{Binding GoToPreviousCommand}"/>
 			</WrapPanel>
@@ -28,17 +28,7 @@
 				<Button Content="Move" Command="{Binding MoveCommand}"/>
 			</WrapPanel>
 		</Grid>
-		<GridSplitter Grid.Column="1"
-					  Background="{DynamicResource SystemAccentColor}"/>
-		<Grid Grid.Column="2" RowDefinitions="*, Auto">
-			<ScrollViewer Grid.Row="0">
-				<ContentControl Content="{Binding EditedTask}"
-								ContentTemplate="{StaticResource TaskTemplate}"/>
-			</ScrollViewer>
-			<WrapPanel Grid.Row="1">
-				<Button Content="OK"/>
-				<Button Content="Cancel"/>
-			</WrapPanel>
-		</Grid>
+		<ContentControl Content="{Binding Modal}" IsVisible="{Binding Modal.IsInvoked}"
+						ContentTemplate="{StaticResource PageTemplates}"/>
 	</Grid>
 </UserControl>

@@ -5,7 +5,8 @@ using System.Runtime.CompilerServices;
 
 namespace Model
 {
-    public class TaskComposite : ITaskComposite, INotifyCollectionChanged, INotifyPropertyChanged
+    public class TaskComposite : ITaskComposite, INotifyCollectionChanged,
+        INotifyPropertyChanged
     {
         private static readonly IEnumerable<string> _changedPropertyNames = [nameof(Difficult),
             nameof(Status), nameof(Deadline), nameof(Progress),
@@ -92,6 +93,8 @@ namespace Model
                 OnAddedItem(task, false);
             }
         }
+
+        public TaskComposite() : this("Task composite") { }
 
         public bool Contains(ITask item) => _subtasks.Contains(item);
 

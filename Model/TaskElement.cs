@@ -5,9 +5,6 @@ namespace Model
 {
     public class TaskElement : ITaskElement, INotifyPropertyChanged
     {
-        public static readonly IEnumerable<TaskStatus> TaskStatuses =
-            (IEnumerable<TaskStatus>)Enum.GetValues(typeof(TaskStatus));
-
         private ITaskCollection? _parentTask;
 
         private int _difficult;
@@ -163,6 +160,8 @@ namespace Model
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public TaskElement(object metadata) => Metadata = metadata;
+
+        public TaskElement() : this("Task element") { }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

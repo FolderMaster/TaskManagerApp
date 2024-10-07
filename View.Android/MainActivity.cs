@@ -8,7 +8,7 @@ using Avalonia.ReactiveUI;
 namespace View.Android;
 
 [Activity(
-    Label = "View.Android",
+    Label = "TaskManager",
     Theme = "@style/MyTheme.NoActionBar",
     Icon = "@drawable/icon",
     MainLauncher = true,

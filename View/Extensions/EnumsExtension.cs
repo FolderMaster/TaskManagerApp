@@ -1,8 +1,5 @@
-﻿using Avalonia.Data;
-using Avalonia.Markup.Xaml;
-using Avalonia.Markup.Xaml.MarkupExtensions;
+﻿using Avalonia.Markup.Xaml;
 using System;
-using System.Collections.Generic;
 
 namespace View.Extensions
 {
@@ -10,17 +7,16 @@ namespace View.Extensions
     {
         private readonly Type _type;
 
-        public EnumsExtension(Type type) => _type = type;
-
-        public override object ProvideValue(IServiceProvider serviceProvider)
+        public EnumsExtension(Type type)
         {
-            var binding = new CompiledBindingExtension()
+            if (type == null || !type.IsEnum)
             {
-                Mode = BindingMode.OneTime,
-                DataType = typeof(IEnumerable<>).MakeGenericType(_type),
-                Source = Enum.GetValues(_type)
-            };
-            return binding;
+                throw new ArgumentException(nameof(type));
+            }
+            _type = type;
         }
+
+        public override object ProvideValue(IServiceProvider serviceProvider) =>
+            _type.GetEnumValues();
     }
 }

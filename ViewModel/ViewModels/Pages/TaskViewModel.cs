@@ -1,8 +1,4 @@
-﻿using System.Collections;
-
-using Model;
-
-namespace ViewModel.ViewModels.Pages;
+﻿namespace ViewModel.ViewModels.Pages;
 
 public class TaskViewModel : PageViewModel
 {

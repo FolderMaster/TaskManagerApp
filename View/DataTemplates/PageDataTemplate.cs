@@ -2,7 +2,7 @@
 using Avalonia.Controls.Templates;
 using System;
 
-using ViewModel.ViewModels.Pages;
+using ViewModel.ViewModels;
 
 namespace View.DataTemplates
 {
@@ -25,6 +25,6 @@ namespace View.DataTemplates
             return null;
         }
 
-        public bool Match(object? data) => data is PageViewModel;
+        public bool Match(object? data) => data is ViewModelBase;
     }
 }

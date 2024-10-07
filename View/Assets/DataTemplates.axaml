@@ -5,7 +5,21 @@
 					xmlns:v="clr-namespace:View.DataTemplates"
 					xmlns:e="clr-namespace:View.Extensions">
 	<Design.PreviewWith>
-		<Border Padding="20">
+		<Border Padding="10">
+			<StackPanel>
+				<StackPanel.Resources>
+					<m:TaskElement x:Key="Element"/>
+					<m:TaskComposite x:Key="Composite"/>
+				</StackPanel.Resources>
+				<ContentControl ContentTemplate="{StaticResource TaskTreeTemplate}"
+								Content="{StaticResource Composite}"/>
+				<ContentControl ContentTemplate="{StaticResource TaskTemplate}"
+								Content="{StaticResource Composite}"/>
+				<ContentControl ContentTemplate="{StaticResource TaskTreeTemplate}"
+								Content="{StaticResource Element}"/>
+				<ContentControl ContentTemplate="{StaticResource TaskTemplate}"
+								Content="{StaticResource Element}"/>
+			</StackPanel>
 		</Border>
 	</Design.PreviewWith>
 	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
@@ -14,7 +28,7 @@
 	<v:PageDataTemplate x:Key="PageTemplates"/>
 	<v:TaskDataTemplate x:Key="TaskTreeTemplate">
 		<v:TaskDataTemplate.ElementDataTemplate>
-			<TreeDataTemplate x:DataType="m:ITask">
+			<TreeDataTemplate x:DataType="m:ITaskElement">
 				<StackPanel Orientation="Horizontal" Spacing="5">
 					<ContentControl Content="{Binding Metadata}"/>
 					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
@@ -57,7 +71,7 @@
 					<Label Content="SpentTime:"/>
 					<TimePicker SelectedTime="{Binding SpentTime}"/>
 					<Label Content="Status:"/>
-					<ComboBox ItemsSource="{e:Enums m:TaskStatus}"
+					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
 					<Label Content="Deadline:"/>
 					<DatePicker SelectedDate="{Binding Deadline,
@@ -82,7 +96,7 @@
 					<Label Content="SpentTime:"/>
 					<TimePicker SelectedTime="{Binding SpentTime}" IsEnabled="False"/>
 					<Label Content="Status:"/>
-					<ComboBox ItemsSource="{e:Enums m:TaskStatus}"
+					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>
 					<Label Content="Deadline:"/>
 					<DatePicker IsEnabled="False" SelectedDate="{Binding Deadline,

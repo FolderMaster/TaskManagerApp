@@ -1,34 +1,25 @@
-﻿using ViewModel.ViewModels.Pages;
+﻿using System.Reactive.Linq;
+using ReactiveUI;
+using ReactiveUI.SourceGenerators;
+
+using ViewModel.ViewModels.Pages;
 
 namespace ViewModel.ViewModels;
 
-public class MainViewModel : ViewModelBase
+public partial class MainViewModel : ViewModelBase
 {
+    [Reactive]
     private IEnumerable<PageViewModel> _pages;
 
+    [Reactive]
     private PageViewModel? _selectedPage;
-
-    public IEnumerable<PageViewModel> Pages
-    {
-        get => _pages;
-        set
-        {
-            if (UpdateProperty(ref _pages, value))
-            {
-                SelectedPage = Pages.FirstOrDefault();
-            }
-        }
-    }
-
-    public PageViewModel? SelectedPage
-    {
-        get => _selectedPage;
-        set => UpdateProperty(ref _selectedPage, value);
-    }
 
     public MainViewModel(IEnumerable<PageViewModel> pages)
     {
         Pages = pages;
+
+        this.WhenAnyValue(x => x.Pages).Subscribe
+            (p => SelectedPage = p != null ? p.FirstOrDefault() : null);
     }
 
     public MainViewModel() : this([new TaskEditorViewModel(), new TaskViewModel()]) { }
