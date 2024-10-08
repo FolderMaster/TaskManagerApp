@@ -38,6 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Modals\RemoveView.axaml.cs">
+      <DependentUpon>RemoveView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Pages\TaskEditorView.axaml.cs">
       <DependentUpon>TaskEditorView.axaml</DependentUpon>
     </Compile>

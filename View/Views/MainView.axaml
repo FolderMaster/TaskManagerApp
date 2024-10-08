@@ -10,34 +10,40 @@
 	<Design.DataContext>
 		<vm:MainViewModel />
 	</Design.DataContext>
-	<Grid RowDefinitions="*, Auto">
-		<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
-				   IsPaneOpen="{Binding #mainView.IsPaneOpen}">
-			<SplitView.Pane>
-				<StackPanel>
-					<Button Click="Button_Click"
-						HorizontalAlignment="Stretch"
-						HorizontalContentAlignment="Left">
-						<PathIcon Data="{StaticResource MenuIcon}"
-								  Width="30" Height="30"/>
-					</Button>
-					<ListBox ItemsSource="{Binding Pages}"
-							 SelectedItem="{Binding SelectedPage}"
-							 ItemTemplate="{StaticResource MenuItemTemplate}"/>
-				</StackPanel>
-			</SplitView.Pane>
-			<TransitioningContentControl MaxWidth="1024" Margin="10"
-										 Content="{Binding SelectedPage}"
-										 ContentTemplate="{StaticResource PageTemplates}">
-				<TransitioningContentControl.PageTransition>
-					<CompositePageTransition>
-						<CrossFade Duration="0:00:00.500" />
-						<PageSlide Orientation="Horizontal" Duration="0:00:00.700" />
-					</CompositePageTransition>
-				</TransitioningContentControl.PageTransition>
-			</TransitioningContentControl>
-		</SplitView>
-		<Grid Grid.Row="1" Height="{Binding #mainView.InputPaneHeight, Mode=OneWay}"
-			  IsVisible="{Binding #mainView.IsInputPaneVisible, Mode=OneWay}"/>
+	<Grid>
+		<Grid RowDefinitions="*, Auto">
+			<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
+					   IsPaneOpen="{Binding #mainView.IsPaneOpen}">
+				<SplitView.Pane>
+					<StackPanel>
+						<Button Click="Button_Click"
+							HorizontalAlignment="Stretch"
+							HorizontalContentAlignment="Left">
+							<PathIcon Data="{StaticResource MenuIcon}"
+									  Width="30" Height="30"/>
+						</Button>
+						<ListBox ItemsSource="{Binding Pages}"
+								 SelectedItem="{Binding SelectedPage}"
+								 ItemTemplate="{StaticResource MenuItemTemplate}"/>
+					</StackPanel>
+				</SplitView.Pane>
+				<TransitioningContentControl MaxWidth="1024" Margin="10"
+											 Content="{Binding SelectedPage}"
+											 ContentTemplate="{StaticResource PageTemplates}">
+					<TransitioningContentControl.PageTransition>
+						<CompositePageTransition>
+							<CrossFade Duration="0:00:00.500" />
+							<PageSlide Orientation="Horizontal" Duration="0:00:00.700" />
+						</CompositePageTransition>
+					</TransitioningContentControl.PageTransition>
+				</TransitioningContentControl>
+			</SplitView>
+			<Grid Grid.Row="1" Height="{Binding #mainView.InputPaneHeight, Mode=OneWay}"
+				  IsVisible="{Binding #mainView.IsInputPaneVisible, Mode=OneWay}"/>
+		</Grid>
+		<Grid Background="{DynamicResource SystemAltMediumColor}"
+			  IsVisible="{Binding !!SelectedPage.Modals.Count}"/>
+		<ItemsControl ItemsSource="{Binding SelectedPage.Dialogs}"
+					  ItemTemplate="{StaticResource DialogTemplate}"/>
 	</Grid>
 </UserControl>

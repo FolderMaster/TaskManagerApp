@@ -1,9 +1,11 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:m="clr-namespace:Model;assembly=Model"
-					xmlns:vm="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
+					xmlns:vmp="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
+					xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
 					xmlns:v="clr-namespace:View.DataTemplates"
-					xmlns:e="clr-namespace:View.Extensions">
+					xmlns:e="clr-namespace:View.Extensions"
+					xmlns:vmt="clr-namespace:ViewModel.Technicals;assembly=ViewModel">
 	<Design.PreviewWith>
 		<Border Padding="10">
 			<StackPanel>
@@ -22,15 +24,38 @@
 			</StackPanel>
 		</Border>
 	</Design.PreviewWith>
-	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
+	<DataTemplate x:Key="TaskMetadataTreeTemplate" x:DataType="vmt:Metadata">
+		<Label Content="{Binding Name}"/>
+	</DataTemplate>
+	<DataTemplate x:Key="TaskMetadataTemplate" x:DataType="vmt:Metadata">
+		<StackPanel>
+			<Label Content="Name:"/>
+			<TextBox Text="{Binding Name}"/>
+			<Label Content="Description:"/>
+			<TextBox Text="{Binding Description}" TextWrapping="Wrap"
+					 AcceptsReturn="True" AcceptsTab="True"/>
+		</StackPanel>
+	</DataTemplate>
+	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vmp:PageViewModel">
 		<ContentControl Content="{Binding Metadata}"/>
 	</DataTemplate>
 	<v:PageDataTemplate x:Key="PageTemplates"/>
+	<DataTemplate x:Key="DialogTemplate" x:DataType="vm:DialogViewModel">
+		<Border Background="{DynamicResource SystemAltMediumColor}"
+				BorderBrush="{DynamicResource SystemBaseMediumHighColor}"
+				MaxWidth="1024" Margin="10" Padding="10"
+				BorderThickness="2" CornerRadius="5"
+				HorizontalAlignment="Center" VerticalAlignment="Center">
+			<ContentControl Content="{Binding .}"
+							ContentTemplate="{StaticResource PageTemplates}"/>
+		</Border>
+	</DataTemplate>
 	<v:TaskDataTemplate x:Key="TaskTreeTemplate">
 		<v:TaskDataTemplate.ElementDataTemplate>
 			<TreeDataTemplate x:DataType="m:ITaskElement">
 				<StackPanel Orientation="Horizontal" Spacing="5">
-					<ContentControl Content="{Binding Metadata}"/>
+					<ContentControl Content="{Binding Metadata}"
+									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
 					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
 					<TextBlock Text="{Binding Deadline}"/>
 					<TextBlock Text="{Binding Priority}"/>
@@ -42,7 +67,8 @@
 		<v:TaskDataTemplate.CompositeDataTemplate>
 			<TreeDataTemplate x:DataType="m:ITaskComposite" ItemsSource="{Binding .}">
 				<StackPanel Orientation="Horizontal" Spacing="5">
-					<ContentControl Content="{Binding Metadata}"/>
+					<ContentControl Content="{Binding Metadata}"
+									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
 					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
 					<TextBlock Text="{Binding Deadline}"/>
 					<TextBlock Text="{Binding Priority}"/>
@@ -56,6 +82,8 @@
 		<v:TaskDataTemplate.ElementDataTemplate>
 			<DataTemplate x:DataType="m:ITaskElement">
 				<StackPanel>
+					<ContentControl Content="{Binding Metadata}"
+									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
 					<Label Content="Difficult:"/>
 					<TextBox Text="{Binding Difficult}"/>
 					<Label Content="Priority:"/>
@@ -85,6 +113,8 @@
 		<v:TaskDataTemplate.CompositeDataTemplate>
 			<DataTemplate x:DataType="m:ITaskComposite">
 				<StackPanel>
+					<ContentControl Content="{Binding Metadata}"
+									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
 					<Label Content="Difficult:"/>
 					<TextBox Text="{Binding Difficult}" IsReadOnly="True"/>
 					<Label Content="Priority:"/>

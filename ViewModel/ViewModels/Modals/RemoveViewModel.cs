@@ -1,13 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ReactiveUI.SourceGenerators;
+
+using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public class RemoveViewModel : ModalViewModel
+    public partial class RemoveViewModel : DialogViewModel
     {
+        [Reactive]
+        private IList<ITask> _items;
 
+        [Reactive]
+        private IList<ITask> _mainList;
+
+        [ReactiveCommand]
+        private void Ok()
+        {
+            foreach (var item in Items)
+            {
+                if (item.ParentTask == null)
+                {
+                    _mainList.Remove(item);
+                }
+                else
+                {
+                    item.ParentTask.Remove(item);
+                }
+            }
+            _taskSource?.SetResult(null);
+        }
+
+        [ReactiveCommand]
+        private void Cancel() =>
+            _taskSource?.SetResult(null);
     }
 }

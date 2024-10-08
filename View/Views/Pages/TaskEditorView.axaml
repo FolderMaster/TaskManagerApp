@@ -9,6 +9,9 @@
 	<Design.DataContext>
 		<vm:TaskEditorViewModel />
 	</Design.DataContext>
+	<UserControl.KeyBindings>
+		<KeyBinding Gesture="Delete" Command="{Binding RemoveCommand}"/>
+	</UserControl.KeyBindings>
 	<Grid>
 		<Grid RowDefinitions="Auto, *, Auto">
 			<WrapPanel Grid.Row="0">
@@ -28,7 +31,5 @@
 				<Button Content="Move" Command="{Binding MoveCommand}"/>
 			</WrapPanel>
 		</Grid>
-		<ContentControl Content="{Binding Modal}" IsVisible="{Binding Modal.IsInvoked}"
-						ContentTemplate="{StaticResource PageTemplates}"/>
 	</Grid>
 </UserControl>

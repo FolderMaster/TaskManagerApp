@@ -5,6 +5,7 @@ using ReactiveUI.SourceGenerators;
 
 using Model;
 using ViewModel.ViewModels.Modals;
+using ViewModel.Technicals;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -22,6 +23,20 @@ namespace ViewModel.ViewModels.Pages
 
         private readonly IObservable<bool> _canExecuteGo;
 
+        private AddViewModel _addDialog = new();
+
+        private RemoveViewModel _removeDialog = new();
+
+        private MoveViewModel _moveDialog = new();
+
+        private EditViewModel _editDialog = new();
+
+        private MetadataFactory _metadataFactory = new();
+
+        private TaskCompositeFactory _taskCompositeFactory;
+
+        private TaskElementFactory _taskElementFactory;
+
         private IList<ITask> _mainTaskList;
 
         [Reactive]
@@ -30,13 +45,13 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        [Reactive]
-        public AddViewModel _modal = new AddViewModel();
-
         public TaskEditorViewModel(object metadata, IList<ITask> mainTaskList) : base(metadata)
         {
             _mainTaskList = mainTaskList;
             TaskListView = _mainTaskList;
+
+            _taskElementFactory = new(_metadataFactory);
+            _taskCompositeFactory = new(_metadataFactory);
 
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.TaskListView).
                 Select(i => TaskListView is ITask);
@@ -44,13 +59,13 @@ namespace ViewModel.ViewModels.Pages
             _canExecuteAdd = this.WhenAnyValue(x => x.SelectedTasks.Count).
                 Select(i => i == 0 || (i == 1 && SelectedTasks.First() is ITaskComposite));
             _canExecuteEdit = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 1);
-            _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).
-                Select(i => i == 1 || (i == 2 && SelectedTasks.Last() is ITaskComposite));
+            _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
             _canExecuteGo = this.WhenAnyValue(x => x.SelectedTasks.Count).
                 Select(i => i == 1 && SelectedTasks.First() is ITaskComposite);
         }
 
-        public TaskEditorViewModel() : this("Task tree", new ObservableCollection<ITask>()) { }
+        public TaskEditorViewModel() : this("Task tree", new ObservableCollection<ITask>())
+        { }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()
@@ -60,69 +75,50 @@ namespace ViewModel.ViewModels.Pages
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
-        private void Remove()
+        private async Task Remove()
         {
-            foreach (var task in SelectedTasks.ToList())
-            {
-                if (task.ParentTask == null)
-                {
-                    _mainTaskList.Remove(task);
-                }
-                else
-                {
-                    task.ParentTask.Remove(task);
-                }
-            }
+            var items = SelectedTasks.ToList();
+            _removeDialog.Items = items;
+            _removeDialog.MainList = _mainTaskList;
+            SelectedTasks.Clear();
+            var result = await AddModal(_removeDialog);
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private void AddTaskElement() => AddTask(new TaskElement("Task element"));
+        private async Task AddTaskElement() => await AddTask(_taskElementFactory.Create());
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private void AddTaskComposite() => AddTask(new TaskComposite("Task composite"));
+        private async Task AddTaskComposite() => await AddTask(_taskCompositeFactory.Create());
 
-        private void AddTask(ITask task)
+        private async Task AddTask(ITask task)
         {
+            var list = TaskListView;
             if (SelectedTasks.Count == 1)
             {
-                var composite = (ITaskComposite)SelectedTasks.First();
-                composite.Add(task);
+                list = (ITaskComposite)SelectedTasks.First();
+                SelectedTasks.Clear();
             }
-            else
-            {
-                TaskListView.Add(task);
-            }
+            _addDialog.List = list;
+            _addDialog.Item = task;
+            var result = await AddModal(_addDialog);
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]
         private async Task Edit()
         {
-            Modal.Value = SelectedTasks.First();
-            var result = await Modal.Invoke();
+            _editDialog.Item = SelectedTasks.First();
             SelectedTasks.Clear();
+            var result = await AddModal(_editDialog);
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteMove))]
-        private void Move()
+        private async Task Move()
         {
-            var task = SelectedTasks.First();
-            if (task.ParentTask != null)
-            {
-                task.ParentTask.Remove(task);
-            }
-            else
-            {
-                _mainTaskList.Remove(task);
-            }
-            if (SelectedTasks.Count == 0)
-            {
-                TaskListView.Add(task);
-            }
-            else
-            {
-                var composite = (ITaskComposite)SelectedTasks.Last();
-                composite.Add(task);
-            }
+            _moveDialog.Items = SelectedTasks.ToList();
+            _moveDialog.List = TaskListView;
+            _moveDialog.MainList = _mainTaskList;
+            SelectedTasks.Clear();
+            var result = await AddModal(_moveDialog);
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]

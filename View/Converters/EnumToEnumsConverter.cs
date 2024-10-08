@@ -1,8 +1,9 @@
 ﻿using Avalonia.Data.Converters;
-using Model;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+
+using Model;
 
 namespace View.Converters
 {

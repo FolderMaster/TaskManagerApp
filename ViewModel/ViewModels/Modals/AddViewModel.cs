@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ReactiveUI.SourceGenerators;
+﻿using ReactiveUI.SourceGenerators;
 
 using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class AddViewModel : ModalViewModel
+    public partial class AddViewModel : DialogViewModel
     {
-        public ITask Value { get; set; }
+        [Reactive]
+        private ITask _item;
 
-        public AddViewModel()
-        {
-
-        }
+        [Reactive]
+        private IList<ITask> _list;
 
         [ReactiveCommand]
-        private void Ok() =>
-            _taskSource?.SetResult(Value);
+        private void Ok()
+        {
+            List.Add(Item);
+            _taskSource?.SetResult(null);
+        }
 
         [ReactiveCommand]
         private void Cancel() =>

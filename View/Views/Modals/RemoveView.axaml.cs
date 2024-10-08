@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace View.Views.Modals;
 
-public partial class AddView : UserControl
+public partial class RemoveView : UserControl
 {
-    public AddView()
+    public RemoveView()
     {
         InitializeComponent();
     }
