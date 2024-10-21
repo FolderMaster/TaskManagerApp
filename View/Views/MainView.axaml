@@ -4,12 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 d:DataContext=""
              x:Class="View.Views.MainView"
              x:DataType="vm:MainViewModel"
 			 Name="mainView">
-	<Design.DataContext>
-		<vm:MainViewModel />
-	</Design.DataContext>
 	<Grid>
 		<Grid RowDefinitions="*, Auto">
 			<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
@@ -25,6 +23,7 @@
 						<ListBox ItemsSource="{Binding Pages}"
 								 SelectedItem="{Binding SelectedPage}"
 								 ItemTemplate="{StaticResource MenuItemTemplate}"/>
+						<Button Content="Notify" Command="{Binding NotifyCommand}"/>
 					</StackPanel>
 				</SplitView.Pane>
 				<TransitioningContentControl MaxWidth="1024" Margin="10"

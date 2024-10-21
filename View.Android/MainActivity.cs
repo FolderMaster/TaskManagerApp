@@ -1,9 +1,11 @@
 ﻿using Android.App;
 using Android.Content.PM;
-
+using Autofac;
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
+
+using ViewModel;
 
 namespace View.Android;
 
@@ -20,5 +22,25 @@ public class MainActivity : AvaloniaMainActivity<App>
         return base.CustomizeAppBuilder(builder)
             .WithInterFont()
             .UseReactiveUI();
+    }
+
+    protected override AppBuilder CreateAppBuilder()
+    {
+        return AppBuilder.Configure(CreateApp).UseAndroid();
+    }
+
+    private static App CreateApp()
+    {
+        var result = new App()
+        {
+            RegisterServicesAction = RegisterServices
+        };
+        return result;
+    }
+
+    private static void RegisterServices(ContainerBuilder containerBuilder)
+    {
+        containerBuilder.RegisterType<AndroidNotificationManager>().
+            As<INotificationManager>();
     }
 }
