@@ -26,16 +26,11 @@ class Program
 
     private static App CreateApp()
     {
-        var result = new App()
-        {
-            RegisterServicesAction = RegisterServices
-        };
+        var result = new App();
+        result.ContainerBuilderCreated += App_ContainerBuilderCreated;
         return result;
     }
 
-    private static void RegisterServices(ContainerBuilder containerBuilder)
-    {
-        containerBuilder.RegisterType<DesktopNotificationManager>().
-            As<INotificationManager>();
-    }
+    private static void App_ContainerBuilderCreated(object? sender, ContainerBuilder e) =>
+        e.RegisterType<DesktopNotificationManager>().As<INotificationManager>();
 }

@@ -9,7 +9,7 @@ using ViewModel.Technicals;
 
 namespace ViewModel.ViewModels.Pages
 {
-    public partial class TaskEditorViewModel : PageViewModel
+    public partial class EditorViewModel : PageViewModel
     {
         private readonly IObservable<bool> _canExecuteGoToPrevious;
 
@@ -45,7 +45,7 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        public TaskEditorViewModel(object metadata, IList<ITask> mainTaskList) : base(metadata)
+        public EditorViewModel(object metadata, IList<ITask> mainTaskList) : base(metadata)
         {
             _mainTaskList = mainTaskList;
             TaskListView = _mainTaskList;
@@ -63,9 +63,6 @@ namespace ViewModel.ViewModels.Pages
             _canExecuteGo = this.WhenAnyValue(x => x.SelectedTasks.Count).
                 Select(i => i == 1 && SelectedTasks.First() is ITaskComposite);
         }
-
-        public TaskEditorViewModel() : this("Task tree", new ObservableCollection<ITask>())
-        { }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()

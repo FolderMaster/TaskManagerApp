@@ -1,0 +1,11 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
+			 xmlns:e="clr-namespace:View.Extensions"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Design.DataContext="{e:Design {x:Type vm:StatisticViewModel}}"
+             x:Class="View.Views.Pages.StatisticView"
+			 x:DataType="vm:StatisticViewModel">
+</UserControl>

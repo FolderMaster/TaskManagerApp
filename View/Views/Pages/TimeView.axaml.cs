@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace View.Views.Pages;
 
-public partial class TaskEditorView : UserControl
+public partial class TimeView : UserControl
 {
-    public TaskEditorView()
+    public TimeView()
     {
         InitializeComponent();
     }

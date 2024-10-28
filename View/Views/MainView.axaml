@@ -3,8 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
+			 xmlns:e="clr-namespace:View.Extensions"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 d:DataContext=""
+			 Design.DataContext="{e:Design {x:Type vm:MainViewModel}}"
              x:Class="View.Views.MainView"
              x:DataType="vm:MainViewModel"
 			 Name="mainView">

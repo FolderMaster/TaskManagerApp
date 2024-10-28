@@ -7,9 +7,7 @@
         Deferred,
         OnHold,
         InProgress,
-        Testing,
         Planned,
-        Completed,
         Closed
     }
 }

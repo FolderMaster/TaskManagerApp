@@ -42,8 +42,11 @@
     <Compile Update="Views\Modals\RemoveView.axaml.cs">
       <DependentUpon>RemoveView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Pages\TaskEditorView.axaml.cs">
-      <DependentUpon>TaskEditorView.axaml</DependentUpon>
+    <Compile Update="Views\Pages\EditorView.axaml.cs">
+      <DependentUpon>EditorView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pages\TimeView.axaml.cs">
+      <DependentUpon>TimeView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

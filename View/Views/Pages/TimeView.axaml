@@ -3,11 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
-             x:Class="View.Views.Pages.TaskView"
-			 x:DataType="vm:TaskViewModel">
-	<Design.DataContext>
-		<vm:TaskViewModel />
-	</Design.DataContext>
-	
+			 xmlns:e="clr-namespace:View.Extensions"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Design.DataContext="{e:Design {x:Type vm:TimeViewModel}}"
+             x:Class="View.Views.Pages.TimeView"
+			 x:DataType="vm:TimeViewModel">
 </UserControl>

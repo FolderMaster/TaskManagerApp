@@ -1,7 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:m="clr-namespace:Model;assembly=Model"
-					xmlns:vmp="clr-namespace:ViewModel.ViewModels.Pages;assembly=ViewModel"
 					xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
 					xmlns:v="clr-namespace:View.DataTemplates"
 					xmlns:e="clr-namespace:View.Extensions"
@@ -36,7 +35,7 @@
 					 AcceptsReturn="True" AcceptsTab="True"/>
 		</StackPanel>
 	</DataTemplate>
-	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vmp:PageViewModel">
+	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
 		<ContentControl Content="{Binding Metadata}"/>
 	</DataTemplate>
 	<v:PageDataTemplate x:Key="PageTemplates"/>
