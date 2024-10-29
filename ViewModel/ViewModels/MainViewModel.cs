@@ -20,8 +20,7 @@ public partial class MainViewModel : ViewModelBase
         _notificationManager = notificationManager;
         Pages = pages;
 
-        this.WhenAnyValue(x => x.Pages).Subscribe
-            (p => SelectedPage = p != null ? p.FirstOrDefault() : null);
+        this.WhenAnyValue(x => x.Pages).Subscribe(s => SelectedPage = s?.FirstOrDefault());
     }
 
     [ReactiveCommand]

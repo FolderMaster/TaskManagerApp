@@ -27,8 +27,7 @@
 						<Button Content="Notify" Command="{Binding NotifyCommand}"/>
 					</StackPanel>
 				</SplitView.Pane>
-				<TransitioningContentControl MaxWidth="1024" Margin="10"
-											 Content="{Binding SelectedPage}"
+				<TransitioningContentControl Content="{Binding SelectedPage}"
 											 ContentTemplate="{StaticResource PageTemplates}">
 					<TransitioningContentControl.PageTransition>
 						<CompositePageTransition>

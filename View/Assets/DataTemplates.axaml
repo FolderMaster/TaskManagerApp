@@ -33,12 +33,21 @@
 			<Label Content="Description:"/>
 			<TextBox Text="{Binding Description}" TextWrapping="Wrap"
 					 AcceptsReturn="True" AcceptsTab="True"/>
+			<Label Content="Category:"/>
+			<TextBox Text="{Binding Category}"/>
+			<Label Content="Tags:"/>
+			<TextBox Text="{Binding Tags, Converter={StaticResource TagsToStringConverter}}"
+					 TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
 		</StackPanel>
 	</DataTemplate>
 	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
 		<ContentControl Content="{Binding Metadata}"/>
 	</DataTemplate>
-	<v:PageDataTemplate x:Key="PageTemplates"/>
+	<v:PageDataTemplate x:Key="PageTemplates">
+		<Grid MaxWidth="1024" Margin="10">
+			<ContentControl Content="{Binding .}"/>
+		</Grid>
+	</v:PageDataTemplate>
 	<DataTemplate x:Key="DialogTemplate" x:DataType="vm:DialogViewModel">
 		<Border Background="{DynamicResource SystemAltMediumColor}"
 				BorderBrush="{DynamicResource SystemBaseMediumHighColor}"
@@ -101,11 +110,7 @@
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
 					<Label Content="Deadline:"/>
-					<DatePicker SelectedDate="{Binding Deadline,
-								Converter={StaticResource DateTimeToDateOffsetConverter}}"/>
-					<TimePicker SelectedTime="{Binding Deadline,
-								Converter={StaticResource DateTimeToTimeSpanConverter},
-								ConverterParameter={Binding Deadline}}"/>
+					<TextBox Text="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.ElementDataTemplate>
@@ -117,7 +122,7 @@
 					<Label Content="Difficult:"/>
 					<TextBox Text="{Binding Difficult}" IsReadOnly="True"/>
 					<Label Content="Priority:"/>
-					<TextBox Text="{Binding Priority}"/>
+					<TextBox Text="{Binding Priority}" IsEnabled="False"/>
 					<Label Content="Progress:"/>
 					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1" IsEnabled="False"/>
 					<Label Content="PlannedTime:"/>
@@ -128,11 +133,7 @@
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>
 					<Label Content="Deadline:"/>
-					<DatePicker IsEnabled="False" SelectedDate="{Binding Deadline,
-								Converter={StaticResource DateTimeToDateOffsetConverter}}"/>
-					<TimePicker IsEnabled="False" SelectedTime="{Binding Deadline,
-								Converter={StaticResource DateTimeToTimeSpanConverter},
-								ConverterParameter={Binding Deadline}}"/>
+					<TextBox IsEnabled="False" Text="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.CompositeDataTemplate>
