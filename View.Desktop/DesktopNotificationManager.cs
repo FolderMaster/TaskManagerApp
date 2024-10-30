@@ -1,6 +1,5 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
-
-using ViewModel;
+using ViewModel.Technicals;
 
 namespace View.Desktop
 {

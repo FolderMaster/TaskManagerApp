@@ -58,7 +58,7 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTasksCountStatistics()
         {
-            var tasks = GetAllTasks(_mainTaskList);
+            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
@@ -76,7 +76,7 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateExpiredTasksStatistics()
         {
-            var tasks = GetAllTasks(_mainTaskList);
+            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
             var where = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
                 TaskHelper.HasTaskExpired(t, SelectedTime));
 
@@ -94,7 +94,7 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTimeTasksStatistic()
         {
-            var tasks = GetAllTasks(_mainTaskList);
+            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             var plannedTime = new TimeSpan(uncompletedTasks.Sum(t => t.PlannedTime.Ticks)).Hours;
@@ -105,32 +105,6 @@ namespace ViewModel.ViewModels.Pages
                 new StatisticElement(plannedTime, "PlannedTime"),
                 new StatisticElement(spentTime, "SpentTime")
             ];
-        }
-
-        private IEnumerable<ITaskElement> GetAllElements(IEnumerable<ITask> taskList)
-        {
-            return GetAllTasks(taskList).OfType<ITaskElement>();
-        }
-
-        private IEnumerable<ITaskComposite> GetAllComposites(IEnumerable<ITask> taskList)
-        {
-            return GetAllTasks(taskList).OfType<ITaskComposite>();
-        }
-
-        private IEnumerable<ITask> GetAllTasks(IEnumerable<ITask> taskList)
-        {
-            foreach (var task in taskList)
-            {
-                yield return task;
-
-                if (task is IEnumerable<ITask> sublist)
-                {
-                    foreach (var subtask in GetAllTasks(sublist))
-                    {
-                        yield return subtask;
-                    }
-                }
-            }
         }
     }
 }

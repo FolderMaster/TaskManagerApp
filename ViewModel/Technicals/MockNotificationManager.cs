@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace ViewModel
+namespace ViewModel.Technicals
 {
     public class MockNotificationManager : INotificationManager
     {

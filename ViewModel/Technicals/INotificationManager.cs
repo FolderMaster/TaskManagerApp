@@ -1,4 +1,4 @@
-﻿namespace ViewModel
+﻿namespace ViewModel.Technicals
 {
     public interface INotificationManager
     {

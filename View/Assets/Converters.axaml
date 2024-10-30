@@ -3,8 +3,6 @@
 					xmlns:c="clr-namespace:View.Converters">
 	<c:DateTimeToDateOffsetConverter x:Key="DateTimeToDateOffsetConverter"/>
 	<c:DateTimeToTimeSpanConverter x:Key="DateTimeToTimeSpanConverter"/>
-	<c:StringToEnumsConverter x:Key="StringToEnumsConverter"/>
-	<c:EnumToEnumsConverter x:Key="EnumToEnumsConverter"/>
 	<c:TagsToStringConverter x:Key="TagsToStringConverter"/>
 	<c:StatisticElementsToPieSeriesConverter x:Key="StatisticElementsToPieSeriesConverter"/>
 	<c:StatisticElementsToColumnSeriesConverter x:Key="StatisticElementsToColumnSeriesConverter"/>

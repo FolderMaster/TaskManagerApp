@@ -4,8 +4,7 @@ using Autofac;
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
-
-using ViewModel;
+using ViewModel.Technicals;
 
 namespace View.Android;
 

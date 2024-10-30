@@ -29,5 +29,31 @@
             var dateTime = waningTime != null ? DateTime.Now + waningTime : DateTime.Now;
             return task.Deadline < dateTime;
         }
+
+        public static IEnumerable<ITaskElement> GetTaskElements(IEnumerable<ITask> taskList)
+        {
+            return GetTasks(taskList).OfType<ITaskElement>();
+        }
+
+        public static IEnumerable<ITaskComposite> GetTaskComposites(IEnumerable<ITask> taskList)
+        {
+            return GetTasks(taskList).OfType<ITaskComposite>();
+        }
+
+        public static IEnumerable<ITask> GetTasks(IEnumerable<ITask> taskList)
+        {
+            foreach (var task in taskList)
+            {
+                yield return task;
+
+                if (task is IEnumerable<ITask> sublist)
+                {
+                    foreach (var subtask in GetTasks(sublist))
+                    {
+                        yield return subtask;
+                    }
+                }
+            }
+        }
     }
 }

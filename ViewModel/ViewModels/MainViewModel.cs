@@ -2,6 +2,8 @@
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
+using ViewModel.Technicals;
+
 namespace ViewModel.ViewModels;
 
 public partial class MainViewModel : ViewModelBase

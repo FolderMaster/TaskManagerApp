@@ -40,6 +40,36 @@
 					 TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
 		</StackPanel>
 	</DataTemplate>
+	<DataTemplate x:Key="ToDoListElementTemplate" x:DataType="vmt:ToDoListElement">
+		<Border Classes.IsExpired="{Binding IsExpired}"
+				Classes.IsLagging="{Binding IsLagging}">
+			<Border.Styles>
+				<Style>
+					<Style Selector="Border.IsLagging">
+						<Style.Setters>
+							<Setter Property="BorderBrush" Value="Yellow"/>
+							<Setter Property="BorderThickness" Value="3"/>
+							<Setter Property="CornerRadius" Value="5"/>
+						</Style.Setters>
+					</Style>
+					<Style Selector="Border.IsExpired">
+						<Style.Setters>
+							<Setter Property="BorderBrush" Value="Red"/>
+						</Style.Setters>
+					</Style>
+				</Style>
+			</Border.Styles>
+			<StackPanel Orientation="Horizontal" Spacing="5">
+				<ContentControl Content="{Binding TaskElement.Metadata}"
+								ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
+				<ProgressBar Value="{Binding TaskElement.Progress}" Maximum="1" Width="100"/>
+				<TextBlock Text="{Binding TaskElement.Deadline}"/>
+				<TextBlock Text="{Binding TaskElement.Priority}"/>
+				<TextBlock Text="{Binding TaskElement.Difficult}"/>
+				<TextBlock Text="{Binding TaskElement.Status}"/>
+			</StackPanel>
+		</Border>
+	</DataTemplate>
 	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
 		<ContentControl Content="{Binding Metadata}"/>
 	</DataTemplate>
@@ -120,7 +150,7 @@
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
 					<Label Content="Difficult:"/>
-					<TextBox Text="{Binding Difficult}" IsReadOnly="True"/>
+					<TextBox Text="{Binding Difficult}" IsEnabled="False"/>
 					<Label Content="Priority:"/>
 					<TextBox Text="{Binding Priority}" IsEnabled="False"/>
 					<Label Content="Progress:"/>

@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using Model;
 using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels;
-using ViewModel;
+using ViewModel.Technicals;
 
 namespace View
 {
@@ -27,6 +27,9 @@ namespace View
             result.Register((c) => new StatisticViewModel("Statistic",
                 c.Resolve<IList<ITask>>())).As<StatisticViewModel>().
                 As<PageViewModel>().SingleInstance();
+            result.Register((c) => new ToDoListViewModel("ToDoList",
+                c.Resolve<IList<ITask>>())).As<ToDoListViewModel>().
+                As<PageViewModel>().SingleInstance();
             result.RegisterType<MainViewModel>().SingleInstance();
             return result.Build();
         }
@@ -42,6 +45,9 @@ namespace View
                 c.Resolve<IList<ITask>>())).As<PageViewModel>().SingleInstance();
             result.Register((c) => new StatisticViewModel("Statistic",
                 c.Resolve<IList<ITask>>())).As<PageViewModel>().SingleInstance();
+            result.Register((c) => new ToDoListViewModel("ToDoList",
+                c.Resolve<IList<ITask>>())).As<ToDoListViewModel>().
+                As<PageViewModel>().SingleInstance();
             result.RegisterType<MainViewModel>().SingleInstance();
             return result;
         }
