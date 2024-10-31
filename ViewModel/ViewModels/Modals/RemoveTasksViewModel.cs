@@ -4,13 +4,13 @@ using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class RemoveViewModel : DialogViewModel
+    public partial class RemoveTasksViewModel : DialogViewModel
     {
         [Reactive]
-        private IList<ITask> _items;
+        private IList<ITask> _mainList;
 
         [Reactive]
-        private IList<ITask> _mainList;
+        private IList<ITask> _items;
 
         [ReactiveCommand]
         private void Ok()

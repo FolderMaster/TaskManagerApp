@@ -16,12 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.1.4" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.1.4" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.4" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.1.4" />
+    <PackageReference Include="Avalonia" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.0" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.0" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.4" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.0" />
+    <PackageReference Include="CalendarControl.Avalonia" Version="11.1.4" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-rc4.5" />
     <PackageReference Include="Splat.Autofac" Version="15.2.22" />
   </ItemGroup>
@@ -40,8 +41,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Modals\RemoveView.axaml.cs">
-      <DependentUpon>RemoveView.axaml</DependentUpon>
+    <Compile Update="Views\Modals\AddTaskView.axaml.cs">
+      <DependentUpon>AddTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\EditTaskView.axaml.cs">
+      <DependentUpon>EditTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\MoveTasksView.axaml.cs">
+      <DependentUpon>MoveTasksView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\RemoveTasksView.axaml.cs">
+      <DependentUpon>RemoveTasksView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pages\EditorView.axaml.cs">
       <DependentUpon>EditorView.axaml</DependentUpon>

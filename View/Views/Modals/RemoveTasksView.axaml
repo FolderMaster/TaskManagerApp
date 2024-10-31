@@ -4,20 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:vm="clr-namespace:ViewModel.ViewModels.Modals;assembly=ViewModel"
-             x:Class="View.Views.Modals.MoveView"
-			 x:DataType="vm:MoveViewModel">
-	<Design.DataContext>
-		<vm:MoveViewModel />
+             x:Class="View.Views.Modals.RemoveTasksView"
+			 x:DataType="vm:RemoveTasksViewModel">
+    <Design.DataContext>
+		<vm:RemoveTasksViewModel />
 	</Design.DataContext>
-	<Grid RowDefinitions="Auto, *, Auto">
-		<WrapPanel Grid.Row="0">
-			<Button Content="&lt;&#45;" Command="{Binding GoToPreviousCommand}"/>
-			<Button Content="Go" Command="{Binding GoCommand}"/>
-		</WrapPanel>
-		<TreeView Grid.Row="1" SelectionMode="Single, Toggle"
-				  ItemsSource="{Binding List}" SelectedItem="{Binding SelectedTask}"
-				  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
-		<WrapPanel Grid.Row="2">
+	<Grid RowDefinitions="*, Auto">
+		<ItemsControl ItemsSource="{Binding Items}"
+					  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
+		<WrapPanel Grid.Row="1">
 			<Button Content="OK" Command="{Binding OkCommand}"/>
 			<Button Content="Cancel" Command="{Binding CancelCommand}"/>
 		</WrapPanel>

@@ -1,9 +1,8 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using Model;
 
 namespace ViewModel.Technicals
 {
-    public class Metadata : INotifyPropertyChanged
+    public class Metadata : ObservableObject
     {
         private string _name;
 
@@ -34,20 +33,9 @@ namespace ViewModel.Technicals
         public IEnumerable<object> Tags
         {
             get => _tags;
-            set => OnPropertyChanged(ref _tags, value);
+            set => OnPropertyChanged(ref _tags, value.Distinct());
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void OnPropertyChanged<T>(ref T field, T newValue,
-            [CallerMemberName] string propertyName = "")
-        {
-            if ((field != null && !field.Equals(newValue)) ||
-                (newValue != null && !newValue.Equals(field)))
-            {
-                field = newValue;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        public override string ToString() => $"{Name}";
     }
 }

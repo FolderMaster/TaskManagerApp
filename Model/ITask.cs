@@ -6,7 +6,7 @@
 
         public int Difficult { get; }
 
-        public int Priority { get; set; }
+        public int Priority { get; }
 
         public TaskStatus Status { get; }
 

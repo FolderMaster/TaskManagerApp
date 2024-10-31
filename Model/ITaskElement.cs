@@ -14,6 +14,8 @@
 
         public new double Progress { get; set; }
 
+        public TimeIntervalCollection TimeIntervals { get; }
+
         public new TimeSpan PlannedTime { get; set; }
 
         public new TimeSpan SpentTime { get; set; }

@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="clr-namespace:ViewModel.ViewModels.Modals;assembly=ViewModel"
+             x:Class="View.Views.Modals.AddTimeIntervalView"
+			 x:DataType="vm:AddTimeIntervalViewModel">
+	<Design.DataContext>
+		<vm:AddTimeIntervalViewModel />
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto, *, Auto">
+		<StackPanel Grid.Row="0">
+			<Label Content="Start:"/>
+			<CalendarDatePicker SelectedDate="{Binding Start}"/>
+			<Label Content="End:"/>
+			<CalendarDatePicker SelectedDate="{Binding End}"/>
+		</StackPanel>
+		<TreeView Grid.Row="1" SelectionMode="Single, Toggle"
+				  ItemsSource="{Binding MainList}" SelectedItem="{Binding SelectedTaskElement}"
+				  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
+		<WrapPanel Grid.Row="2">
+			<Button Content="OK" Command="{Binding OkCommand}"/>
+			<Button Content="Cancel" Command="{Binding CancelCommand}"/>
+		</WrapPanel>
+	</Grid>
+</UserControl>

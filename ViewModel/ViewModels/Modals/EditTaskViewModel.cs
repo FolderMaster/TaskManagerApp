@@ -4,7 +4,7 @@ using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class EditViewModel : DialogViewModel
+    public partial class EditTaskViewModel : DialogViewModel
     {
         [Reactive]
         private ITask _item;

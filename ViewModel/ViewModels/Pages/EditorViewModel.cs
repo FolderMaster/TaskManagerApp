@@ -23,13 +23,13 @@ namespace ViewModel.ViewModels.Pages
 
         private readonly IObservable<bool> _canExecuteGo;
 
-        private AddViewModel _addDialog = new();
+        private AddTaskViewModel _addDialog = new();
 
-        private RemoveViewModel _removeDialog = new();
+        private RemoveTasksViewModel _removeDialog = new();
 
-        private MoveViewModel _moveDialog = new();
+        private MoveTasksViewModel _moveDialog = new();
 
-        private EditViewModel _editDialog = new();
+        private EditTaskViewModel _editDialog = new();
 
         private MetadataFactory _metadataFactory = new();
 

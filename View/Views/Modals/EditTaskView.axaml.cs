@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace View.Views.Modals;
 
-public partial class EditView : UserControl
+public partial class EditTaskView : UserControl
 {
-    public EditView()
+    public EditTaskView()
     {
         InitializeComponent();
     }

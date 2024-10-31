@@ -1,22 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace Model
 {
-    public class TaskComposite : ITaskComposite, INotifyCollectionChanged,
-        INotifyPropertyChanged
+    public class TaskComposite : ObservableCollection, ITaskComposite
     {
         private static readonly IEnumerable<string> _changedPropertyNames = [nameof(Difficult),
-            nameof(Status), nameof(Deadline), nameof(Progress),
+            nameof(Priority), nameof(Status), nameof(Deadline), nameof(Progress),
             nameof(PlannedTime), nameof(SpentTime)];
 
-        private List<ITask> _subtasks;
+        private readonly List<ITask> _subtasks;
 
         private ITaskCollection? _parentTask;
-
-        private int _priority;
 
         public ITask this[int index]
         {
@@ -45,18 +41,7 @@ namespace Model
 
         public int Difficult => CalculateDifficult();
 
-        public int Priority
-        {
-            get => _priority;
-            set
-            {
-                if (Priority != value)
-                {
-                    _priority = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        public int Priority => CalculatePriority();
 
         public DateTime? Deadline => CalculateDeadline();
 
@@ -80,10 +65,6 @@ namespace Model
 
         public object SyncRoot => null;
 
-        public event NotifyCollectionChangedEventHandler? CollectionChanged;
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
         public TaskComposite(object metadata, IEnumerable<ITask>? subtasks = null)
         {
             Metadata = metadata;
@@ -93,8 +74,6 @@ namespace Model
                 OnAddedItem(task, false);
             }
         }
-
-        public TaskComposite() : this("Task composite") { }
 
         public bool Contains(ITask item) => _subtasks.Contains(item);
 
@@ -207,31 +186,19 @@ namespace Model
 
         protected int CalculateDifficult() => _subtasks.Max(x => x.Difficult);
 
+        protected int CalculatePriority() => _subtasks.Max(y => y.Priority);
+
         protected DateTime? CalculateDeadline() => _subtasks.Max(x => x.Deadline);
 
         protected TaskStatus CalculateStatus() => _subtasks.Min(x => x.Status);
 
         protected double CalculateProgress() => _subtasks.Sum(x => x.Progress) / _subtasks.Count;
 
-        protected TimeSpan CalculatePlannedTime()
-        {
-            var result = TimeSpan.Zero;
-            foreach (var task in _subtasks)
-            {
-                result += task.PlannedTime;
-            }
-            return result;
-        }
+        protected TimeSpan CalculatePlannedTime() =>
+            _subtasks.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.PlannedTime);
 
-        protected TimeSpan CalculateSpentTime()
-        {
-            var result = TimeSpan.Zero;
-            foreach (var task in _subtasks)
-            {
-                result += task.SpentTime;
-            }
-            return result;
-        }
+        protected TimeSpan CalculateSpentTime() =>
+            _subtasks.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.SpentTime);
 
         protected void OnAddedItem(ITask task, bool arePropertiesUpdate = true)
         {
@@ -261,29 +228,6 @@ namespace Model
                 OnPropertyChanged(propertyName);
             }
         }
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-        private void OnCollectionChanged(NotifyCollectionChangedAction action,
-            object? oldItem, object? newItem, int index) =>
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs
-                (action, newItem, oldItem, index));
-
-        private void OnCollectionChanged(NotifyCollectionChangedAction action,
-            object? item, int index) =>
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs(action, item, index));
-
-        private void OnCollectionChanged(NotifyCollectionChangedAction action,
-            object? item, int index, int oldIndex) =>
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs
-                (action, item, index, oldIndex));
-
-        private void OnCollectionChanged(NotifyCollectionChangedAction action) =>
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs(action));
-
-        private void OnCollectionChanged(NotifyCollectionChangedEventArgs args) =>
-            CollectionChanged?.Invoke(this, args);
 
         private void Notify_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {

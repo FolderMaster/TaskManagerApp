@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace View.Views.Modals;
 
-public partial class AddView : UserControl
+public partial class AddTimeIntervalView : UserControl
 {
-    public AddView()
+    public AddTimeIntervalView()
     {
         InitializeComponent();
     }

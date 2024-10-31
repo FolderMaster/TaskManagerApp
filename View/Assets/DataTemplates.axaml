@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:si="clr-namespace:SatialInterfaces.Controls.Calendar;assembly=CalendarControl"
 					xmlns:m="clr-namespace:Model;assembly=Model"
 					xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
 					xmlns:v="clr-namespace:View.DataTemplates"
@@ -140,7 +141,7 @@
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
 					<Label Content="Deadline:"/>
-					<TextBox Text="{Binding Deadline}"/>
+					<CalendarDatePicker SelectedDate="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.ElementDataTemplate>
@@ -163,9 +164,16 @@
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>
 					<Label Content="Deadline:"/>
-					<TextBox IsEnabled="False" Text="{Binding Deadline}"/>
+					<CalendarDatePicker IsEnabled="False" SelectedDate="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.CompositeDataTemplate>
 	</v:TaskDataTemplate>
+	<DataTemplate x:Key="CalendarIntervalTemplate" x:DataType="vmt:CalendarInterval">
+		<Grid>
+			<si:AppointmentControl Begin="{Binding TimeInterval.Start}"
+								   End="{Binding TimeInterval.End}"
+								   Text="{Binding TaskElement.Metadata}"/>
+		</Grid>
+	</DataTemplate>
 </ResourceDictionary>

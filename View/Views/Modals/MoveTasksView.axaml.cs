@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace View.Views.Modals;
 
-public partial class MoveView : UserControl
+public partial class MoveTasksView : UserControl
 {
-    public MoveView()
+    public MoveTasksView()
     {
         InitializeComponent();
     }

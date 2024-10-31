@@ -6,9 +6,10 @@ using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class MoveViewModel : DialogViewModel
+    public partial class MoveTasksViewModel : DialogViewModel
     {
         private readonly IObservable<bool> _canExecuteGoToPrevious;
+
         private readonly IObservable<bool> _canExecuteGo;
 
         [Reactive]
@@ -23,7 +24,7 @@ namespace ViewModel.ViewModels.Modals
         [Reactive]
         private ITask? _selectedTask;
 
-        public MoveViewModel()
+        public MoveTasksViewModel()
         {
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.List).
                 Select(i => List is ITask);

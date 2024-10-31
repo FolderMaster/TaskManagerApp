@@ -1,9 +1,6 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-
-namespace Model
+﻿namespace Model
 {
-    public class TaskElement : ITaskElement, INotifyPropertyChanged
+    public class TaskElement : ObservableObject, ITaskElement
     {
         private ITaskCollection? _parentTask;
 
@@ -28,142 +25,67 @@ namespace Model
         public ITaskCollection? ParentTask
         {
             get => _parentTask;
-            set
-            {
-                if (ParentTask != value)
-                {
-                    _parentTask = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _parentTask, value);
         }
 
         public int Difficult
         {
             get => _difficult;
-            set
-            {
-                if (Difficult != value)
-                {
-                    _difficult = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _difficult, value);
         }
 
         public int Priority
         {
             get => _priority;
-            set
-            {
-                if (Priority != value)
-                {
-                    _priority = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _priority, value);
         }
 
         public DateTime? Deadline
         {
             get => _deadline;
-            set
-            {
-                if (Deadline != value)
-                {
-                    _deadline = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _deadline, value);
         }
 
         public TaskStatus Status
         {
             get => _status;
-            set
-            {
-                if (Status != value)
-                {
-                    _status = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _status, value);
         }
 
         public double Progress
         {
             get => _progress;
-            set
-            {
-                if (Progress != value)
-                {
-                    _progress = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _progress, value);
         }
 
         public TimeSpan PlannedTime
         {
             get => _plannedTime;
-            set
-            {
-                if (PlannedTime != value)
-                {
-                    _plannedTime = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _plannedTime, value);
         }
 
         public TimeSpan SpentTime
         {
             get => _spentTime;
-            set
-            {
-                if (SpentTime != value)
-                {
-                    _spentTime = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _spentTime, value);
         }
 
         public double TotalReal
         {
             get => _totalReal;
-            set
-            {
-                if (TotalReal != value)
-                {
-                    _totalReal = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _totalReal, value);
         }
 
         public double ExecutedReal
         {
             get => _executedReal;
-            set
-            {
-                if (ExecutedReal != value)
-                {
-                    _executedReal = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => OnPropertyChanged(ref _executedReal, value);
         }
 
         public object Metadata { get; private set; }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public TimeIntervalCollection TimeIntervals { get; private set; } = new();
 
         public TaskElement(object metadata) => Metadata = metadata;
-
-        public TaskElement() : this("Task element") { }
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
