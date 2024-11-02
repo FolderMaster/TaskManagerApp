@@ -8,20 +8,26 @@ namespace ViewModel.ViewModels.Pages
 {
     public partial class ToDoListViewModel : PageViewModel
     {
-        private IList<ITask> _mainTaskList;
+        private readonly Session _session;
 
         [Reactive]
         private IEnumerable<ToDoListElement>? _toDoList;
 
-        public ToDoListViewModel(object metadata, IList<ITask> mainTaskList) : base(metadata)
+        public ToDoListViewModel(object metadata, Session session) : base(metadata)
         {
-            _mainTaskList = mainTaskList;
+            _session = session;
+
+            this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => Update());
         }
 
         [ReactiveCommand]
         public void Update()
         {
-            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
+            if (_session.Tasks == null)
+            {
+                return;
+            }
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
             ToDoList = uncompletedTasks.OrderBy(t => t.Difficult).
                 OrderBy(t => t.Priority).OrderBy(t => t.PlannedTime - t.SpentTime).Select

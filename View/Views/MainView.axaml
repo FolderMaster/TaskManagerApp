@@ -25,6 +25,8 @@
 								 SelectedItem="{Binding SelectedPage}"
 								 ItemTemplate="{StaticResource MenuItemTemplate}"/>
 						<Button Content="Notify" Command="{Binding NotifyCommand}"/>
+						<Button Content="Save" Command="{Binding SaveCommand}"/>
+						<Button Content="Load" Command="{Binding LoadCommand}"/>
 					</StackPanel>
 				</SplitView.Pane>
 				<TransitioningContentControl Content="{Binding SelectedPage}"

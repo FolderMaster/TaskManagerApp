@@ -9,13 +9,13 @@
         public DateTime Start
         {
             get => _start;
-            set => OnPropertyChanged(ref _start, value, () => OnPropertyChanged(nameof(Duration)));
+            set => UpdateProperty(ref _start, value, () => OnPropertyChanged(nameof(Duration)));
         }
 
         public DateTime End
         {
             get => _end;
-            set => OnPropertyChanged(ref _end, value, () => OnPropertyChanged(nameof(Duration)));
+            set => UpdateProperty(ref _end, value, () => OnPropertyChanged(nameof(Duration)));
         }
 
         public TimeSpan Duration => End - Start;

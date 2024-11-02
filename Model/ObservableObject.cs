@@ -12,7 +12,7 @@ namespace Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected void OnPropertyChanged<T>(ref T field, T newValue, Action? action = null,
+        protected void UpdateProperty<T>(ref T field, T newValue, Action? action = null,
             [CallerMemberName] string propertyName = "")
         {
             if ((field != null && !field.Equals(newValue)) ||

@@ -25,61 +25,61 @@
         public ITaskCollection? ParentTask
         {
             get => _parentTask;
-            set => OnPropertyChanged(ref _parentTask, value);
+            set => UpdateProperty(ref _parentTask, value);
         }
 
         public int Difficult
         {
             get => _difficult;
-            set => OnPropertyChanged(ref _difficult, value);
+            set => UpdateProperty(ref _difficult, value);
         }
 
         public int Priority
         {
             get => _priority;
-            set => OnPropertyChanged(ref _priority, value);
+            set => UpdateProperty(ref _priority, value);
         }
 
         public DateTime? Deadline
         {
             get => _deadline;
-            set => OnPropertyChanged(ref _deadline, value);
+            set => UpdateProperty(ref _deadline, value);
         }
 
         public TaskStatus Status
         {
             get => _status;
-            set => OnPropertyChanged(ref _status, value);
+            set => UpdateProperty(ref _status, value);
         }
 
         public double Progress
         {
             get => _progress;
-            set => OnPropertyChanged(ref _progress, value);
+            set => UpdateProperty(ref _progress, value);
         }
 
         public TimeSpan PlannedTime
         {
             get => _plannedTime;
-            set => OnPropertyChanged(ref _plannedTime, value);
+            set => UpdateProperty(ref _plannedTime, value);
         }
 
         public TimeSpan SpentTime
         {
             get => _spentTime;
-            set => OnPropertyChanged(ref _spentTime, value);
+            set => UpdateProperty(ref _spentTime, value);
         }
 
         public double TotalReal
         {
             get => _totalReal;
-            set => OnPropertyChanged(ref _totalReal, value);
+            set => UpdateProperty(ref _totalReal, value);
         }
 
         public double ExecutedReal
         {
             get => _executedReal;
-            set => OnPropertyChanged(ref _executedReal, value);
+            set => UpdateProperty(ref _executedReal, value);
         }
 
         public object Metadata { get; private set; }

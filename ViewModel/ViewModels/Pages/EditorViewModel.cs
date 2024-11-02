@@ -37,7 +37,7 @@ namespace ViewModel.ViewModels.Pages
 
         private TaskElementFactory _taskElementFactory;
 
-        private IList<ITask> _mainTaskList;
+        private readonly Session _session;
 
         [Reactive]
         private IList<ITask> _taskListView;
@@ -45,13 +45,15 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        public EditorViewModel(object metadata, IList<ITask> mainTaskList) : base(metadata)
+        public EditorViewModel(object metadata, Session session) : base(metadata)
         {
-            _mainTaskList = mainTaskList;
-            TaskListView = _mainTaskList;
+            _session = session;
+            TaskListView = session.Tasks;
 
             _taskElementFactory = new(_metadataFactory);
             _taskCompositeFactory = new(_metadataFactory);
+
+            this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => TaskListView = t);
 
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.TaskListView).
                 Select(i => TaskListView is ITask);
@@ -68,7 +70,7 @@ namespace ViewModel.ViewModels.Pages
         private void GoToPrevious()
         {
             var composite = (ITask)TaskListView;
-            TaskListView = composite.ParentTask ?? _mainTaskList;
+            TaskListView = composite.ParentTask ?? _session.Tasks;
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
@@ -76,7 +78,7 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             _removeDialog.Items = items;
-            _removeDialog.MainList = _mainTaskList;
+            _removeDialog.MainList = _session.Tasks;
             SelectedTasks.Clear();
             var result = await AddModal(_removeDialog);
         }
@@ -113,7 +115,7 @@ namespace ViewModel.ViewModels.Pages
         {
             _moveDialog.Items = SelectedTasks.ToList();
             _moveDialog.List = TaskListView;
-            _moveDialog.MainList = _mainTaskList;
+            _moveDialog.MainList = _session.Tasks;
             SelectedTasks.Clear();
             var result = await AddModal(_moveDialog);
         }

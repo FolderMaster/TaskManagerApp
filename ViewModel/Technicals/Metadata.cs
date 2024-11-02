@@ -15,25 +15,25 @@ namespace ViewModel.Technicals
         public string Name
         {
             get => _name;
-            set => OnPropertyChanged(ref _name, value);
+            set => UpdateProperty(ref _name, value);
         }
 
         public string Description
         {
             get => _description;
-            set => OnPropertyChanged(ref _description, value);
+            set => UpdateProperty(ref _description, value);
         }
 
         public object Category
         {
             get => _category;
-            set => OnPropertyChanged(ref _category, value);
+            set => UpdateProperty(ref _category, value);
         }
 
         public IEnumerable<object> Tags
         {
             get => _tags;
-            set => OnPropertyChanged(ref _tags, value.Distinct());
+            set => UpdateProperty(ref _tags, value.Distinct().ToList());
         }
 
         public override string ToString() => $"{Name}";

@@ -8,7 +8,7 @@ namespace ViewModel.ViewModels.Pages
 {
     public partial class StatisticViewModel : PageViewModel
     {
-        private IList<ITask> _mainTaskList;
+        private readonly Session _session;
 
         [Reactive]
         private IEnumerable<TimeSpan> _times =
@@ -40,10 +40,11 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IEnumerable<StatisticElement> _tasksTimeStatistic;
 
-        public StatisticViewModel(object metadata, IList<ITask> mainTaskList) : base(metadata)
+        public StatisticViewModel(object metadata, Session session) : base(metadata)
         {
-            _mainTaskList = mainTaskList;
+            _session = session;
 
+            this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => Update());
             this.WhenAnyValue(x => x.Times).Subscribe(s => SelectedTime = s?.FirstOrDefault());
             this.WhenAnyValue(x => x.SelectedTime).Subscribe(t => UpdateExpiredTasksStatistics());
         }
@@ -58,7 +59,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTasksCountStatistics()
         {
-            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
+            if (_session.Tasks == null)
+            {
+                return;
+            }
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
@@ -76,7 +81,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateExpiredTasksStatistics()
         {
-            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
+            if (_session.Tasks == null)
+            {
+                return;
+            }
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var where = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
                 TaskHelper.HasTaskExpired(t, SelectedTime));
 
@@ -94,7 +103,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTimeTasksStatistic()
         {
-            var tasks = TaskHelper.GetTaskElements(_mainTaskList);
+            if (_session.Tasks == null)
+            {
+                return;
+            }
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             var plannedTime = new TimeSpan(uncompletedTasks.Sum(t => t.PlannedTime.Ticks)).Hours;
