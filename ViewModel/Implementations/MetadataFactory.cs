@@ -1,4 +1,7 @@
-﻿namespace ViewModel.Technicals
+﻿using ViewModel.Interfaces;
+using ViewModel.Technicals;
+
+namespace ViewModel.Implementations
 {
     public class MetadataFactory : IFactory<object>
     {

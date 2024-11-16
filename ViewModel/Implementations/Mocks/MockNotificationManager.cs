@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
+using ViewModel.Interfaces;
 
-namespace ViewModel.Technicals
+namespace ViewModel.Implementations.Mocks
 {
     public class MockNotificationManager : INotificationManager
     {

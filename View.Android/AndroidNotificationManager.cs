@@ -1,8 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-
-using ViewModel.Technicals;
+using ViewModel.Interfaces;
 
 namespace View.Android
 {

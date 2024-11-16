@@ -6,62 +6,26 @@ using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class MoveTasksViewModel : DialogViewModel
+    public partial class MoveTasksViewModel : TasksViewModel<ItemsTasksViewModelArgs, IList<ITask>?>
     {
-        private readonly IObservable<bool> _canExecuteGoToPrevious;
-
-        private readonly IObservable<bool> _canExecuteGo;
-
-        [Reactive]
-        private IList<ITask> _items;
-
         [Reactive]
         private IList<ITask> _list;
 
-        [Reactive]
-        private IList<ITask> _mainList;
-
-        [Reactive]
-        private ITask? _selectedTask;
-
         public MoveTasksViewModel()
         {
-            _canExecuteGoToPrevious = this.WhenAnyValue(x => x.List).
-                Select(i => List is ITask);
             _canExecuteGo = this.WhenAnyValue(x => x.SelectedTask).
                 Select(i => SelectedTask is ITaskComposite composite && CheckAccessibleToGo(Items, composite));
         }
 
-        [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
-        private void GoToPrevious()
+        protected override void GetArgs(ItemsTasksViewModelArgs args)
         {
-            var composite = (ITask)List;
-            List = composite.ParentTask ?? MainList;
-        }
-
-        [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]
-        private void Go()
-        {
-            var composite = (ITaskComposite)SelectedTask;
-            SelectedTask = null;
-            List = composite;
+            base.GetArgs(args);
+            Items = args.Items;
         }
 
         [ReactiveCommand]
         private void Ok()
         {
-            foreach (var item in Items)
-            {
-                if (item.ParentTask != null)
-                {
-                    item.ParentTask.Remove(item);
-                }
-                else
-                {
-                    MainList.Remove(item);
-                }
-                List.Add(item);
-            }
             _taskSource?.SetResult(null);
         }
 

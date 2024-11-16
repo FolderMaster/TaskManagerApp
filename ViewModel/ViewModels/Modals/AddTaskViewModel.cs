@@ -4,23 +4,17 @@ using Model;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class AddTaskViewModel : DialogViewModel
+    public partial class AddTaskViewModel : DialogViewModel<ITask, bool>
     {
         [Reactive]
         private ITask _item;
 
-        [Reactive]
-        private IList<ITask> _list;
+        protected override void GetArgs(ITask args) => Item = args;
 
         [ReactiveCommand]
-        private void Ok()
-        {
-            List.Add(Item);
-            _taskSource?.SetResult(null);
-        }
+        private void Ok() => _taskSource?.SetResult(true);
 
         [ReactiveCommand]
-        private void Cancel() =>
-            _taskSource?.SetResult(null);
+        private void Cancel() => _taskSource?.SetResult(false);
     }
 }

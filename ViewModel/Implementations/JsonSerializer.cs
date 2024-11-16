@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
+using ViewModel.Interfaces;
 
-namespace ViewModel.Technicals
+namespace ViewModel.Implementations
 {
     public class JsonSerializer : ISerializer
     {
-        private static readonly JsonSerializerSettings _jsonSerializerSettings =
-            new JsonSerializerSettings()
-            {
-                ObjectCreationHandling = ObjectCreationHandling.Replace,
-                TypeNameHandling = TypeNameHandling.All,
-                Formatting = Formatting.Indented
-            };
+        private static readonly JsonSerializerSettings _jsonSerializerSettings = new()
+        {
+            ObjectCreationHandling = ObjectCreationHandling.Replace,
+            TypeNameHandling = TypeNameHandling.All,
+            Formatting = Formatting.Indented
+        };
 
         public T? Deserialize<T>(byte[] data)
         {

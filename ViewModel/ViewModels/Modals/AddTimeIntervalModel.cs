@@ -3,16 +3,12 @@ using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
 using Model;
-using ViewModel.Technicals;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class AddTimeIntervalViewModel : DialogViewModel
+    public partial class AddTimeIntervalViewModel : TasksViewModel<TasksViewModelArgs, TimeIntervalViewModelResult>
     {
         private readonly IObservable<bool> _canExecuteOk;
-
-        [Reactive]
-        private IList<ITask> _mainList;
 
         [Reactive]
         private ITaskElement? _selectedTaskElement;
@@ -29,12 +25,8 @@ namespace ViewModel.ViewModels.Modals
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteOk))]
-        private void Ok()
-        {
-            var timeInterval = new TimeInterval(Start, End);
-            SelectedTaskElement.TimeIntervals.Add(timeInterval);
-            _taskSource?.SetResult(new CalendarInterval(timeInterval, SelectedTaskElement));
-        }
+        private void Ok() => _taskSource?.SetResult
+            (new TimeIntervalViewModelResult(SelectedTaskElement, new TimeInterval(Start, End)));
 
         [ReactiveCommand]
         private void Cancel() =>

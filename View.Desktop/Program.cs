@@ -2,7 +2,7 @@
 using Autofac;
 using Avalonia;
 using Avalonia.ReactiveUI;
-using ViewModel.Technicals;
+using ViewModel.Interfaces;
 
 namespace View.Desktop;
 

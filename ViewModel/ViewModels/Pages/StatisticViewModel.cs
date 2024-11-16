@@ -3,12 +3,13 @@ using ReactiveUI;
 
 using ViewModel.Technicals;
 using Model;
+using ViewModel.AppState;
 
 namespace ViewModel.ViewModels.Pages
 {
     public partial class StatisticViewModel : PageViewModel
     {
-        private readonly Session _session;
+        private readonly AppStateManager _appStateManager;
 
         [Reactive]
         private IEnumerable<TimeSpan> _times =
@@ -40,13 +41,14 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IEnumerable<StatisticElement> _tasksTimeStatistic;
 
-        public StatisticViewModel(object metadata, Session session) : base(metadata)
+        public StatisticViewModel(object metadata, AppStateManager appStateManager) : base(metadata)
         {
-            _session = session;
+            _appStateManager = appStateManager;
 
-            this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => Update());
             this.WhenAnyValue(x => x.Times).Subscribe(s => SelectedTime = s?.FirstOrDefault());
             this.WhenAnyValue(x => x.SelectedTime).Subscribe(t => UpdateExpiredTasksStatistics());
+
+            _appStateManager.ItemSessionChanged += AppStateManager_ItemSessionChanged;
         }
 
         [ReactiveCommand]
@@ -59,11 +61,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTasksCountStatistics()
         {
-            if (_session.Tasks == null)
+            if (_appStateManager.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
@@ -81,11 +83,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateExpiredTasksStatistics()
         {
-            if (_session.Tasks == null)
+            if (_appStateManager.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
             var where = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
                 TaskHelper.HasTaskExpired(t, SelectedTime));
 
@@ -103,11 +105,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTimeTasksStatistic()
         {
-            if (_session.Tasks == null)
+            if (_appStateManager.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             var plannedTime = new TimeSpan(uncompletedTasks.Sum(t => t.PlannedTime.Ticks)).Hours;
@@ -119,5 +121,8 @@ namespace ViewModel.ViewModels.Pages
                 new StatisticElement(spentTime, "SpentTime")
             ];
         }
+
+        private void AppStateManager_ItemSessionChanged(object? sender, object e) =>
+            UpdateCommand.Execute();
     }
 }

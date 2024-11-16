@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Model
 {
-    public class ObservableObject : INotifyPropertyChanged
+    public class TrackableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

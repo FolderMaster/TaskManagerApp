@@ -1,4 +1,4 @@
 ﻿namespace Model
 {
-    public interface ITaskComposite : ITaskCollection, ITask { }
+    public interface ITaskComposite : IFullCollection<ITask>, ITask { }
 }

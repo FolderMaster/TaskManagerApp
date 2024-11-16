@@ -26,8 +26,9 @@
 				<Button Content="Add task element" Command="{Binding AddTaskElementCommand}"/>
 				<Button Content="Add task composite" Command="{Binding AddTaskCompositeCommand}"/>
 				<Button Content="Edit" Command="{Binding EditCommand}"/>
-				<Button Content="Go" Command="{Binding GoCommand}"/>
+				<Button Content="Copy" Command="{Binding CopyCommand}"/>
 				<Button Content="Move" Command="{Binding MoveCommand}"/>
+				<Button Content="Go" Command="{Binding GoCommand}"/>
 			</WrapPanel>
 		</Grid>
 	</Grid>

@@ -1,4 +1,4 @@
-﻿namespace ViewModel.Technicals
+﻿namespace ViewModel.Interfaces
 {
     public interface ISerializer
     {

@@ -1,4 +1,6 @@
-﻿namespace ViewModel.Technicals
+﻿using ViewModel.Interfaces;
+
+namespace ViewModel.Implementations
 {
     public class FileService : IFileService
     {

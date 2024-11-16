@@ -5,7 +5,7 @@ using ReactiveUI.SourceGenerators;
 
 using Model;
 using ViewModel.ViewModels.Modals;
-using ViewModel.Technicals;
+using ViewModel.AppState;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -13,31 +13,19 @@ namespace ViewModel.ViewModels.Pages
     {
         private readonly IObservable<bool> _canExecuteGoToPrevious;
 
+        private readonly IObservable<bool> _canExecuteGo;
+
         private readonly IObservable<bool> _canExecuteRemove;
 
         private readonly IObservable<bool> _canExecuteAdd;
 
         private readonly IObservable<bool> _canExecuteEdit;
 
+        private readonly IObservable<bool> _canExecuteCopy;
+
         private readonly IObservable<bool> _canExecuteMove;
 
-        private readonly IObservable<bool> _canExecuteGo;
-
-        private AddTaskViewModel _addDialog = new();
-
-        private RemoveTasksViewModel _removeDialog = new();
-
-        private MoveTasksViewModel _moveDialog = new();
-
-        private EditTaskViewModel _editDialog = new();
-
-        private MetadataFactory _metadataFactory = new();
-
-        private TaskCompositeFactory _taskCompositeFactory;
-
-        private TaskElementFactory _taskElementFactory;
-
-        private readonly Session _session;
+        private readonly AppStateManager _appStateManager;
 
         [Reactive]
         private IList<ITask> _taskListView;
@@ -45,49 +33,71 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        public EditorViewModel(object metadata, Session session) : base(metadata)
+        public EditorViewModel(object metadata, AppStateManager appStateManager) : base(metadata)
         {
-            _session = session;
-            TaskListView = session.Tasks;
+            _appStateManager = appStateManager;
+            TaskListView = _appStateManager.Session.Tasks;
 
-            _taskElementFactory = new(_metadataFactory);
-            _taskCompositeFactory = new(_metadataFactory);
-
-            this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => TaskListView = t);
+            this.WhenAnyValue(x => x._appStateManager.Session.Tasks).Subscribe
+                (t => TaskListView = t);
 
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.TaskListView).
                 Select(i => TaskListView is ITask);
+            _canExecuteGo = this.WhenAnyValue(x => x.SelectedTasks.Count).
+                Select(i => i == 1 && SelectedTasks.First() is ITaskComposite);
             _canExecuteRemove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
             _canExecuteAdd = this.WhenAnyValue(x => x.SelectedTasks.Count).
                 Select(i => i == 0 || (i == 1 && SelectedTasks.First() is ITaskComposite));
             _canExecuteEdit = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 1);
+            _canExecuteCopy = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
             _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
-            _canExecuteGo = this.WhenAnyValue(x => x.SelectedTasks.Count).
-                Select(i => i == 1 && SelectedTasks.First() is ITaskComposite);
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()
         {
             var composite = (ITask)TaskListView;
-            TaskListView = composite.ParentTask ?? _session.Tasks;
+            TaskListView = composite.ParentTask ?? _appStateManager.Session.Tasks;
+        }
+
+        [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]
+        private void Go()
+        {
+            var composite = (ITaskComposite)SelectedTasks.First();
+            SelectedTasks.Clear();
+            TaskListView = composite;
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
         private async Task Remove()
         {
             var items = SelectedTasks.ToList();
-            _removeDialog.Items = items;
-            _removeDialog.MainList = _session.Tasks;
             SelectedTasks.Clear();
-            var result = await AddModal(_removeDialog);
+            var result = await AddModal(_appStateManager.Services.RemoveTasksDialog, items);
+            if (result)
+            {
+                foreach (var item in items)
+                {
+                    if (item.ParentTask == null)
+                    {
+                        _appStateManager.Session.Tasks.Remove(item);
+                    }
+                    else
+                    {
+                        item.ParentTask.Remove(item);
+                    }
+                }
+                _appStateManager.UpdateSessionItems();
+            }
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private async Task AddTaskElement() => await AddTask(_taskElementFactory.Create());
+        private async Task AddTaskElement() => await AddTask
+            (_appStateManager.Services.TaskElementFactory.Create());
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private async Task AddTaskComposite() => await AddTask(_taskCompositeFactory.Create());
+        private async Task AddTaskComposite() => await AddTask
+            (_appStateManager.Services.TaskElementFactory.Create());
 
         private async Task AddTask(ITask task)
         {
@@ -97,35 +107,74 @@ namespace ViewModel.ViewModels.Pages
                 list = (ITaskComposite)SelectedTasks.First();
                 SelectedTasks.Clear();
             }
-            _addDialog.List = list;
-            _addDialog.Item = task;
-            var result = await AddModal(_addDialog);
+            var result = await AddModal(_appStateManager.Services.AddTaskDialog, task);
+            if (result)
+            {
+                list.Add(task);
+                _appStateManager.UpdateSessionItems();
+            }
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]
         private async Task Edit()
         {
-            _editDialog.Item = SelectedTasks.First();
+            var item = SelectedTasks.First();
             SelectedTasks.Clear();
-            var result = await AddModal(_editDialog);
+            var result = await AddModal(_appStateManager.Services.EditTaskDialog, item);
+            if (result)
+            {
+                _appStateManager.UpdateSessionItems();
+            }
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteMove))]
         private async Task Move()
         {
-            _moveDialog.Items = SelectedTasks.ToList();
-            _moveDialog.List = TaskListView;
-            _moveDialog.MainList = _session.Tasks;
+            var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var result = await AddModal(_moveDialog);
+            var list = await AddModal(_appStateManager.Services.MoveTasksDialog,
+                new ItemsTasksViewModelArgs(items, TaskListView, _appStateManager.Session.Tasks));
+            if (list != null)
+            {
+                foreach (var item in items)
+                {
+                    if (item.ParentTask != null)
+                    {
+                        item.ParentTask.Remove(item);
+                    }
+                    else
+                    {
+                        _appStateManager.Session.Tasks.Remove(item);
+                    }
+                    list.Add(item);
+                }
+                _appStateManager.UpdateSessionItems();
+            }
         }
 
-        [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]
-        private void Go()
+        [ReactiveCommand(CanExecute = nameof(_canExecuteCopy))]
+        private async Task Copy()
         {
-            var composite = (ITaskComposite)SelectedTasks.First();
+            var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            TaskListView = composite;
+            var list = await AddModal(_appStateManager.Services.CopyTasksDialog,
+                new ItemsTasksViewModelArgs(items, TaskListView, _appStateManager.Session.Tasks));
+            if (list != null)
+            {
+                var copyList = new List<ITask>();
+                foreach (var task in items)
+                {
+                    if (task is ICloneable cloneable)
+                    {
+                        copyList.Add((ITask)cloneable.Clone());
+                    }
+                }
+                foreach (var task in copyList)
+                {
+                    list.Add(task);
+                }
+                _appStateManager.UpdateSessionItems();
+            }
         }
     }
 }

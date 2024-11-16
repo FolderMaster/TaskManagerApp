@@ -1,32 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Specialized;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Model
 {
-    public class TaskComposite : ObservableCollection, ITaskComposite
+    public class TaskComposite : TrackableCollection<ITask>, ITaskComposite, ICloneable
     {
         private static readonly IEnumerable<string> _changedPropertyNames = [nameof(Difficult),
             nameof(Priority), nameof(Status), nameof(Deadline), nameof(Progress),
             nameof(PlannedTime), nameof(SpentTime)];
 
-        private readonly List<ITask> _subtasks;
+        private IFullCollection<ITask>? _parentTask;
 
-        private ITaskCollection? _parentTask;
+        private object _metadata;
 
-        public ITask this[int index]
-        {
-            get => _subtasks[index];
-            set => Replace(index, value);
-        }
-
-        object? IList.this[int index]
-        {
-            get => _subtasks[index];
-            set => Replace(index, (ITask)value);
-        }
-
-        public ITaskCollection? ParentTask
+        public IFullCollection<ITask>? ParentTask
         {
             get => _parentTask;
             set
@@ -39,168 +25,31 @@ namespace Model
             }
         }
 
-        public int Difficult => CalculateDifficult();
+        public int Difficult => _items.Max(x => x.Difficult);
 
-        public int Priority => CalculatePriority();
+        public int Priority => _items.Max(y => y.Priority);
 
-        public DateTime? Deadline => CalculateDeadline();
+        public DateTime? Deadline => _items.Max(x => x.Deadline);
 
-        public TaskStatus Status => CalculateStatus();
+        public TaskStatus Status => _items.Min(x => x.Status);
 
-        public double Progress => CalculateProgress();
+        public double Progress => _items.Sum(x => x.Progress) / _items.Count;
 
-        public TimeSpan PlannedTime => CalculatePlannedTime();
+        public TimeSpan PlannedTime =>
+            _items.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.PlannedTime);
 
-        public TimeSpan SpentTime => CalculateSpentTime();
+        public TimeSpan SpentTime =>
+            _items.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.SpentTime);
 
-        public object Metadata { get; private set; }
-
-        public int Count => _subtasks.Count;
-
-        public bool IsReadOnly => false;
-
-        public bool IsFixedSize => false;
-
-        public bool IsSynchronized => false;
-
-        public object SyncRoot => null;
-
-        public TaskComposite(object metadata, IEnumerable<ITask>? subtasks = null)
+        public object Metadata
         {
-            Metadata = metadata;
-            _subtasks = subtasks == null ? new() : subtasks.ToList();
-            foreach (var task in _subtasks)
-            {
-                OnAddedItem(task, false);
-            }
+            get => _metadata;
+            set => UpdateProperty(ref _metadata, value);
         }
 
-        public bool Contains(ITask item) => _subtasks.Contains(item);
+        public TaskComposite(IEnumerable<ITask>? subtasks = null) : base(subtasks) { }
 
-        public bool Contains(object? value) => Contains((ITask)value);
-
-        public int IndexOf(ITask item) => _subtasks.IndexOf(item);
-
-        public int IndexOf(object? value) => _subtasks.IndexOf((ITask)value);
-
-        public void CopyTo(ITask[] array, int arrayIndex) => _subtasks.CopyTo(array, arrayIndex);
-
-        public void CopyTo(Array array, int index)
-        {
-            foreach (var item in _subtasks)
-            {
-                array.SetValue(item, index++);
-            }
-        }
-
-        public void Add(ITask item) => AddItem(item);
-
-        public int Add(object? value) => AddItem((ITask)value);
-
-        public void Insert(int index, ITask item) => InsertItem(index, item);
-
-        public void Insert(int index, object? value) => InsertItem(index, (ITask)value);
-
-        public bool Remove(ITask item) => RemoveItem(item);
-
-        public void Remove(object? value) => RemoveItem((ITask)value);
-
-        public void RemoveAt(int index)
-        {
-            var item = _subtasks[index];
-            _subtasks.RemoveAt(index);
-            OnRemovedItem(item);
-            OnPropertyChanged(nameof(Count));
-            OnPropertyChanged("Item[]");
-            OnCollectionChanged(NotifyCollectionChangedAction.Remove, item, index);
-        }
-
-        public void Replace(int index, ITask item)
-        {
-            var oldItem = _subtasks[index];
-            _subtasks[index] = item;
-            OnRemovedItem(oldItem);
-            OnAddedItem(item);
-            OnPropertyChanged("Item[]");
-            OnCollectionChanged(NotifyCollectionChangedAction.Replace, oldItem, item, index);
-        }
-
-        public void Move(int oldIndex, int newIndex)
-        {
-            var item = _subtasks[oldIndex];
-            _subtasks.RemoveAt(oldIndex);
-            _subtasks.Insert(newIndex, item);
-            OnPropertyChanged("Item[]");
-            OnCollectionChanged(NotifyCollectionChangedAction.Move, item, newIndex, oldIndex);
-        }
-
-        public void Clear()
-        {
-            foreach (var task in _subtasks)
-            {
-                OnRemovedItem(task);
-            }
-            _subtasks.Clear();
-            OnPropertyChanged(nameof(Count));
-            OnPropertyChanged("Item[]");
-            OnCollectionChanged(NotifyCollectionChangedAction.Reset);
-        }
-
-        public IEnumerator<ITask> GetEnumerator() => _subtasks.GetEnumerator();
-
-        IEnumerator IEnumerable.GetEnumerator() => _subtasks.GetEnumerator();
-
-        protected int AddItem(ITask item)
-        {
-            _subtasks.Add(item);
-            var index = _subtasks.IndexOf(item);
-            OnAddedItem(item);
-            OnPropertyChanged(nameof(Count));
-            OnPropertyChanged("Item[]");
-            OnCollectionChanged(NotifyCollectionChangedAction.Add, item, index);
-            return index;
-        }
-
-        protected void InsertItem(int index, ITask item)
-        {
-            _subtasks.Insert(index, item);
-            OnAddedItem(item);
-            OnPropertyChanged(nameof(Count));
-            OnPropertyChanged("Item[]");
-            OnCollectionChanged(NotifyCollectionChangedAction.Add, item, index);
-        }
-
-        protected bool RemoveItem(ITask item)
-        {
-            var index = _subtasks.IndexOf(item);
-            var isRemoved = _subtasks.Remove(item);
-            if (isRemoved)
-            {
-                OnRemovedItem(item);
-                OnPropertyChanged(nameof(Count));
-                OnPropertyChanged("Item[]");
-                OnCollectionChanged(NotifyCollectionChangedAction.Remove, item, index);
-            }
-            return isRemoved;
-        }
-
-        protected int CalculateDifficult() => _subtasks.Max(x => x.Difficult);
-
-        protected int CalculatePriority() => _subtasks.Max(y => y.Priority);
-
-        protected DateTime? CalculateDeadline() => _subtasks.Max(x => x.Deadline);
-
-        protected TaskStatus CalculateStatus() => _subtasks.Min(x => x.Status);
-
-        protected double CalculateProgress() => _subtasks.Sum(x => x.Progress) / _subtasks.Count;
-
-        protected TimeSpan CalculatePlannedTime() =>
-            _subtasks.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.PlannedTime);
-
-        protected TimeSpan CalculateSpentTime() =>
-            _subtasks.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.SpentTime);
-
-        protected void OnAddedItem(ITask task, bool arePropertiesUpdate = true)
+        protected override void OnAddedItem(ITask task, bool arePropertiesUpdate = true)
         {
             task.ParentTask = this;
             if (task is INotifyPropertyChanged notify)
@@ -216,7 +65,7 @@ namespace Model
             }
         }
 
-        protected void OnRemovedItem(ITask task)
+        protected override void OnRemovedItem(ITask task)
         {
             task.ParentTask = null;
             if (task is INotifyPropertyChanged notify)
@@ -235,6 +84,24 @@ namespace Model
             {
                 OnPropertyChanged(e.PropertyName);
             }
+        }
+
+        public object Clone()
+        {
+            var copyList = new List<ITask>();
+            foreach (var task in this)
+            {
+                if (task is ICloneable taskCloneable)
+                {
+                    copyList.Add((ITask)taskCloneable.Clone());
+                }
+            }
+            var result = new TaskComposite(copyList);
+            if (Metadata is ICloneable metadataCloneable)
+            {
+                result.Metadata = metadataCloneable.Clone();
+            }
+            return result;
         }
     }
 }

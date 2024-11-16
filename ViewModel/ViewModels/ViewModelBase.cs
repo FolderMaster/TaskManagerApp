@@ -5,26 +5,26 @@ namespace ViewModel.ViewModels;
 
 public partial class ViewModelBase : ReactiveObject
 {
-    private ObservableCollection<DialogViewModel> _dialogs = new();
+    private ObservableCollection<ViewModelBase> _dialogs = new();
 
-    private ObservableCollection<DialogViewModel> _modals = new();
+    private ObservableCollection<ViewModelBase> _modals = new();
 
-    public ObservableCollection<DialogViewModel> Dialogs => _dialogs;
+    public ObservableCollection<ViewModelBase> Dialogs => _dialogs;
 
-    public ObservableCollection<DialogViewModel> Modals => _modals;
+    public ObservableCollection<ViewModelBase> Modals => _modals;
 
-    public async Task<object?> AddDialog(DialogViewModel dialog)
+    public async Task<R> AddDialog<A, R>(DialogViewModel<A, R> dialog, A args)
     {
         _dialogs.Add(dialog);
-        var result = await dialog.Invoke(this);
+        var result = await dialog.Invoke(this, args);
         _dialogs.Remove(dialog);
         return result;
     }
 
-    public async Task<object?> AddModal(DialogViewModel modal)
+    public async Task<R> AddModal<A, R>(DialogViewModel<A, R> modal, A args)
     {
         _modals.Add(modal);
-        var result = await AddDialog(modal);
+        var result = await AddDialog(modal, args);
         _modals.Remove(modal);
         return result;
     }

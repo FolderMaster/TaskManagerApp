@@ -1,8 +1,8 @@
 ﻿namespace Model
 {
-    public class TaskElement : ObservableObject, ITaskElement
+    public class TaskElement : TrackableObject, ITaskElement, ICloneable
     {
-        private ITaskCollection? _parentTask;
+        private IFullCollection<ITask>? _parentTask;
 
         private int _difficult;
 
@@ -22,7 +22,9 @@
 
         private double _executedReal;
 
-        public ITaskCollection? ParentTask
+        private object _metadata;
+
+        public IFullCollection<ITask>? ParentTask
         {
             get => _parentTask;
             set => UpdateProperty(ref _parentTask, value);
@@ -82,10 +84,33 @@
             set => UpdateProperty(ref _executedReal, value);
         }
 
-        public object Metadata { get; private set; }
+        public object Metadata
+        {
+            get => _metadata;
+            set => UpdateProperty(ref _metadata, value);
+        }
 
         public TimeIntervalCollection TimeIntervals { get; private set; } = new();
 
-        public TaskElement(object metadata) => Metadata = metadata;
+        public object Clone()
+        {
+            var result = new TaskElement()
+            {
+                Difficult = Difficult,
+                Priority = Priority,
+                Deadline = Deadline,
+                Status = Status,
+                Progress = Progress,
+                PlannedTime = PlannedTime,
+                SpentTime = SpentTime,
+                TotalReal = TotalReal,
+                ExecutedReal = ExecutedReal,
+            };
+            if (Metadata is ICloneable cloneable)
+            {
+                result.Metadata = cloneable.Clone();
+            }
+            return result;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Model
 {
-    public class TimeInterval : ObservableObject, ITimeInterval
+    public class TimeInterval : TrackableObject, ITimeInterval
     {
         private DateTime _start;
 

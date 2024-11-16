@@ -1,14 +1,16 @@
 ﻿namespace ViewModel.ViewModels
 {
-    public partial class DialogViewModel : ViewModelBase
+    public abstract class DialogViewModel<A, R> : ViewModelBase
     {
-        protected TaskCompletionSource<object?>? _taskSource;
+        protected TaskCompletionSource<R>? _taskSource;
 
         private ViewModelBase? _parent;
 
         public ViewModelBase? Parent => _parent;
 
-        public async Task<object?> Invoke(ViewModelBase parent)
+        protected abstract void GetArgs(A args);
+
+        public async Task<R> Invoke(ViewModelBase parent, A args)
         {
             if (Parent != null)
             {
@@ -16,6 +18,7 @@
             }
             _taskSource = new();
             _parent = parent;
+            GetArgs(args);
             var result = await _taskSource.Task;
             _parent = null;
             return result;

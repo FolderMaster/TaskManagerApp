@@ -4,6 +4,8 @@
     {
         public new int Difficult { get; set; }
 
+        public new int Priority { get; set; }
+
         public new TaskStatus Status { get; set; }
 
         public new DateTime? Deadline { get; set; }

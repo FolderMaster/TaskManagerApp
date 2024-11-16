@@ -2,7 +2,7 @@
 
 namespace ViewModel.Technicals
 {
-    public class Metadata : ObservableObject
+    public class Metadata : TrackableObject, ICloneable
     {
         private string _name;
 
@@ -35,6 +35,13 @@ namespace ViewModel.Technicals
             get => _tags;
             set => UpdateProperty(ref _tags, value.Distinct().ToList());
         }
+
+        public object Clone() => new Metadata()
+        {
+            Name = Name,
+            Description = Description,
+            Tags = Tags.ToList()
+        };
 
         public override string ToString() => $"{Name}";
     }

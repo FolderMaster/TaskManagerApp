@@ -2,9 +2,9 @@
 
 using Model;
 
-namespace ViewModel.Technicals
+namespace ViewModel.AppState
 {
-    public class Session : ObservableObject
+    public class Session : TrackableObject
     {
         private IList<ITask>? _tasks = new ObservableCollection<ITask>();
 

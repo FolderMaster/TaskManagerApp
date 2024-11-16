@@ -30,15 +30,11 @@
             return task.Deadline < dateTime;
         }
 
-        public static IEnumerable<ITaskElement> GetTaskElements(IEnumerable<ITask> taskList)
-        {
-            return GetTasks(taskList).OfType<ITaskElement>();
-        }
+        public static IEnumerable<ITaskElement> GetTaskElements(IEnumerable<ITask> taskList) =>
+            GetTasks(taskList).OfType<ITaskElement>();
 
-        public static IEnumerable<ITaskComposite> GetTaskComposites(IEnumerable<ITask> taskList)
-        {
-            return GetTasks(taskList).OfType<ITaskComposite>();
-        }
+        public static IEnumerable<IFullCollection<ITask>> GetTaskComposites
+            (IEnumerable<ITask> taskList) => GetTasks(taskList).OfType<IFullCollection<ITask>>();
 
         public static IEnumerable<ITask> GetTasks(IEnumerable<ITask> taskList)
         {

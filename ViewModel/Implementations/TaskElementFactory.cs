@@ -1,8 +1,9 @@
 ﻿using Model;
+using ViewModel.Interfaces;
 
-namespace ViewModel.Technicals
+namespace ViewModel.Implementations
 {
-    public class TaskElementFactory : IFactory<TaskElement>
+    public class TaskElementFactory : IFactory<ITaskElement>
     {
         private IFactory<object> _metadataFactory;
 
@@ -12,6 +13,9 @@ namespace ViewModel.Technicals
             _metadataFactory = metadataFactory;
         }
 
-        public TaskElement Create() => new TaskElement(_metadataFactory.Create());
+        public ITaskElement Create() => new TaskElement()
+        {
+            Metadata = _metadataFactory.Create()
+        };
     }
 }

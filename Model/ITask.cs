@@ -2,7 +2,7 @@
 {
     public interface ITask
     {
-        public ITaskCollection? ParentTask { get; set; }
+        public IFullCollection<ITask>? ParentTask { get; set; }
 
         public int Difficult { get; }
 
@@ -12,7 +12,7 @@
 
         public DateTime? Deadline { get; }
 
-        public object Metadata { get; }
+        public object Metadata { get; set; }
 
         public double Progress { get; }
 
