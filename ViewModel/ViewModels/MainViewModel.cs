@@ -2,7 +2,8 @@
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
-using Model;
+using Model.Interfaces;
+
 using ViewModel.AppState;
 
 namespace ViewModel.ViewModels;

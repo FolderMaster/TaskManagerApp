@@ -1,9 +1,12 @@
 ﻿using ReactiveUI.SourceGenerators;
 using ReactiveUI;
 
+using Model.Tasks.Times;
+using Model.Technicals;
+using Model;
+
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
-using Model;
 using ViewModel.AppState;
 
 namespace ViewModel.ViewModels.Pages;
@@ -19,10 +22,14 @@ public partial class TimeViewModel : PageViewModel
     [Reactive]
     private CalendarInterval? _selectedCalendarInterval;
 
-    public TimeViewModel(object metadata, AppStateManager appStateManager) : base(metadata)
+    [Reactive]
+    private DateTime _currentWeek = DateTime.Now;
+
+    public TimeViewModel(AppStateManager appStateManager)
     {
         _appStateManager = appStateManager;
 
+        Metadata = _appStateManager.Services.ResourceService.GetResource("TimePageMetadata");
         _appStateManager.ItemSessionChanged += AppStateManager_ItemSessionChanged;
     }
 
@@ -39,10 +46,19 @@ public partial class TimeViewModel : PageViewModel
         {
             foreach(var timeInterval in task.TimeIntervals)
             {
-                CalendarIntervals.Add(new CalendarInterval((TimeInterval)timeInterval, task));
+                CalendarIntervals.Add(new CalendarInterval((TimeIntervalElement)timeInterval, task));
             }
         }
     }
+
+    [ReactiveCommand]
+    private void GoToNext() => CurrentWeek = CurrentWeek.AddDays(7);
+
+    [ReactiveCommand]
+    private void GoToNow() => CurrentWeek = DateTime.Now;
+
+    [ReactiveCommand]
+    private void GoToPrevious() => CurrentWeek = CurrentWeek.AddDays(-7);
 
     [ReactiveCommand]
     private async Task Add()

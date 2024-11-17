@@ -1,15 +1,18 @@
 ﻿using System.ComponentModel;
 
-namespace Model
+using Model.Interfaces;
+using Model.Technicals;
+
+namespace Model.Tasks.Times
 {
-    public class TimeIntervalCollection : TrackableCollection<ITimeInterval>, ITimeInterval
+    public class TimeIntervalList : TrackableCollection<ITimeIntervalElement>, ITimeIntervalList
     {
         public TimeSpan Duration => _items.Aggregate(TimeSpan.Zero, (s, i) => s + i.Duration);
 
-        public TimeIntervalCollection(IEnumerable<ITimeInterval>? timeIntervals = null) :
+        public TimeIntervalList(IEnumerable<ITimeIntervalElement>? timeIntervals = null) :
             base(timeIntervals) { }
 
-        protected override void OnAddedItem(ITimeInterval timeInterval,
+        protected override void OnAddedItem(ITimeIntervalElement timeInterval,
             bool arePropertiesUpdate = true)
         {
             if (timeInterval is INotifyPropertyChanged notify)
@@ -22,7 +25,7 @@ namespace Model
             }
         }
 
-        protected override void OnRemovedItem(ITimeInterval timeInterval)
+        protected override void OnRemovedItem(ITimeIntervalElement timeInterval)
         {
             if (timeInterval is INotifyPropertyChanged notify)
             {

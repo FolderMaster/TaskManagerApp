@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
 
-namespace Model
+using Model.Interfaces;
+
+namespace Model.Technicals
 {
     public class TrackableCollection<T> : TrackableObject,
         IFullCollection<T>, INotifyCollectionChanged

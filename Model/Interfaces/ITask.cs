@@ -1,8 +1,10 @@
-﻿namespace Model
+﻿namespace Model.Interfaces
 {
     public interface ITask
     {
         public IFullCollection<ITask>? ParentTask { get; set; }
+
+        public object? Metadata { get; set; }
 
         public int Difficult { get; }
 
@@ -12,12 +14,8 @@
 
         public DateTime? Deadline { get; }
 
-        public object Metadata { get; set; }
+        public IReadonlyRangeValue<double> Progress { get; }
 
-        public double Progress { get; }
-
-        public TimeSpan PlannedTime { get; }
-
-        public TimeSpan SpentTime { get; }
+        public IReadonlyRangeValue<TimeSpan> Time { get; }
     }
 }

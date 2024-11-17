@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Model
+namespace Model.Interfaces
 {
     public interface IFullCollection<T> : IList<T>, IList
     {

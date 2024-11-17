@@ -9,32 +9,29 @@
 			 Design.DataContext="{e:Design {x:Type vm:StatisticViewModel}}"
              x:Class="View.Views.Pages.StatisticView"
 			 x:DataType="vm:StatisticViewModel">
-	<Grid RowDefinitions="Auto, *">
-		<Button Grid.Row="0" Content="Update statistics" Command="{Binding UpdateCommand}"/>
-		<TabControl Grid.Row="1">
-			<TabItem Header="Count">
-				<UniformGrid Rows="2" Columns="2">
-					<lc:PieChart Grid.Row="0" Grid.Column="0" Series="{Binding UncompletedTasksCountByCategoryStatistic,
+	<TabControl>
+		<TabItem Header="Count">
+			<UniformGrid Rows="2" Columns="2">
+				<lc:PieChart Grid.Row="0" Grid.Column="0" Series="{Binding UncompletedTasksCountByCategoryStatistic,
 								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
-					<lc:PieChart Grid.Row="0" Grid.Column="1" Series="{Binding UncompletedTasksCountByPriorityStatistic,
+				<lc:PieChart Grid.Row="0" Grid.Column="1" Series="{Binding UncompletedTasksCountByPriorityStatistic,
 								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
-					<lc:PieChart Grid.Row="1" Grid.Column="0" Series="{Binding UncompletedTasksCountByDifficultStatistic,
+				<lc:PieChart Grid.Row="1" Grid.Column="0" Series="{Binding UncompletedTasksCountByDifficultStatistic,
 								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
-					<lc:CartesianChart Grid.Row="1" Grid.Column="1" Series="{Binding UncompletedTasksCountByTagsStatistic,
+				<lc:CartesianChart Grid.Row="1" Grid.Column="1" Series="{Binding UncompletedTasksCountByTagsStatistic,
 									   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
-				</UniformGrid>
-			</TabItem>
-			<TabItem Header="Expired tasks">
-				<Grid RowDefinitions="Auto, *">
-					<ComboBox Grid.Row="0" ItemsSource="{Binding Times}" SelectedItem="{Binding SelectedTime}"/>
-					<lc:CartesianChart Grid.Row="1" Series="{Binding ExpiredTasksStatistic,
+			</UniformGrid>
+		</TabItem>
+		<TabItem Header="Expired tasks">
+			<Grid RowDefinitions="Auto, *">
+				<ComboBox Grid.Row="0" ItemsSource="{Binding Times}" SelectedItem="{Binding SelectedTime}"/>
+				<lc:CartesianChart Grid.Row="1" Series="{Binding ExpiredTasksStatistic,
 									   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
-				</Grid>
-			</TabItem>
-			<TabItem Header="Time">
-				<lc:CartesianChart Series="{Binding TasksTimeStatistic,
+			</Grid>
+		</TabItem>
+		<TabItem Header="Time">
+			<lc:CartesianChart Series="{Binding TasksTimeStatistic,
 								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
-			</TabItem>
-		</TabControl>
-	</Grid>
+		</TabItem>
+	</TabControl>
 </UserControl>

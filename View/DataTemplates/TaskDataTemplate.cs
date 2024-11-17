@@ -1,8 +1,7 @@
 ﻿using Avalonia.Controls.Templates;
 using Avalonia.Controls;
 using Avalonia.Data;
-
-using Model;
+using Model.Interfaces;
 
 namespace View.DataTemplates
 {

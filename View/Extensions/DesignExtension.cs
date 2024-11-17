@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Avalonia.Markup.Xaml;
 using System;
-
+using View.Technilcals;
 using ViewModel.ViewModels;
 
 namespace View.Extensions

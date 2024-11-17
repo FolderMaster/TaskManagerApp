@@ -2,7 +2,7 @@
 {
     public enum TaskStatus
     {
-        Cancelled, 
+        Cancelled,
         Blocked,
         Deferred,
         OnHold,

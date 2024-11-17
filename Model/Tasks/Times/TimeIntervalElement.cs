@@ -1,6 +1,9 @@
-﻿namespace Model
+﻿using Model.Interfaces;
+using Model.Technicals;
+
+namespace Model.Tasks.Times
 {
-    public class TimeInterval : TrackableObject, ITimeInterval
+    public class TimeIntervalElement : TrackableObject, ITimeIntervalElement
     {
         private DateTime _start;
 
@@ -20,7 +23,7 @@
 
         public TimeSpan Duration => End - Start;
 
-        public TimeInterval(DateTime? start = null, DateTime? end = null)
+        public TimeIntervalElement(DateTime? start = null, DateTime? end = null)
         {
             Start = start ?? DateTime.Now;
             End = end ?? DateTime.Now;

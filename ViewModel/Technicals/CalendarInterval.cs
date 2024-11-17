@@ -1,14 +1,14 @@
-﻿using Model;
+﻿using Model.Interfaces;
 
 namespace ViewModel.Technicals
 {
     public class CalendarInterval
     {
-        public TimeInterval TimeInterval { get; private set; }
+        public ITimeIntervalElement TimeInterval { get; private set; }
 
         public ITaskElement TaskElement { get; private set; }
 
-        public CalendarInterval(TimeInterval timeInterval, ITaskElement taskElement)
+        public CalendarInterval(ITimeIntervalElement timeInterval, ITaskElement taskElement)
         {
             TimeInterval = timeInterval;
             TaskElement = taskElement;

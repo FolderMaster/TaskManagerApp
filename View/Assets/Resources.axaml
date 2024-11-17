@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:vt="clr-namespace:View.Technilcals">
+	<vt:PageMetadata x:Key="EditorPageMetadata">
+		<vt:PageMetadata.Title>Editor</vt:PageMetadata.Title>
+		<vt:PageMetadata.Icon>
+			<StaticResource ResourceKey="EditorPageIcon"/>
+		</vt:PageMetadata.Icon>
+	</vt:PageMetadata>
+	<vt:PageMetadata x:Key="StatisticPageMetadata">
+		<vt:PageMetadata.Title>Statistic</vt:PageMetadata.Title>
+		<vt:PageMetadata.Icon>
+			<StaticResource ResourceKey="StatisticPageIcon"/>
+		</vt:PageMetadata.Icon>
+	</vt:PageMetadata>
+	<vt:PageMetadata x:Key="TimePageMetadata">
+		<vt:PageMetadata.Title>Time</vt:PageMetadata.Title>
+		<vt:PageMetadata.Icon>
+			<StaticResource ResourceKey="TimePageIcon"/>
+		</vt:PageMetadata.Icon>
+	</vt:PageMetadata>
+	<vt:PageMetadata x:Key="ToDoListPageMetadata">
+		<vt:PageMetadata.Title>ToDoList</vt:PageMetadata.Title>
+		<vt:PageMetadata.Icon>
+			<StaticResource ResourceKey="ToDoListPageIcon"/>
+		</vt:PageMetadata.Icon>
+	</vt:PageMetadata>
+</ResourceDictionary>

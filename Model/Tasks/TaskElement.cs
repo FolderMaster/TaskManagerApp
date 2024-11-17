@@ -1,8 +1,15 @@
-﻿namespace Model
+﻿using Model.Interfaces;
+using Model.Tasks.Ranges;
+using Model.Tasks.Times;
+using Model.Technicals;
+
+namespace Model.Tasks
 {
     public class TaskElement : TrackableObject, ITaskElement, ICloneable
     {
         private IFullCollection<ITask>? _parentTask;
+
+        private object? _metadata;
 
         private int _difficult;
 
@@ -12,22 +19,25 @@
 
         private TaskStatus _status = TaskStatus.Planned;
 
-        private double _progress;
+        private readonly MaxRangeValue<TimeSpan> _time =
+            new(TimeSpan.Zero, TimeSpan.Zero, TimeSpan.Zero);
 
-        private TimeSpan _plannedTime;
+        private readonly RangeValue<double> _progress = new(0, 0, 100);
 
-        private TimeSpan _spentTime;
+        private readonly MaxRangeValue<double> _real = new(0, 0, 0);
 
-        private double _totalReal;
-
-        private double _executedReal;
-
-        private object _metadata;
+        private readonly TimeIntervalList _timeIntervals = new();
 
         public IFullCollection<ITask>? ParentTask
         {
             get => _parentTask;
             set => UpdateProperty(ref _parentTask, value);
+        }
+
+        public object? Metadata
+        {
+            get => _metadata;
+            set => UpdateProperty(ref _metadata, value);
         }
 
         public int Difficult
@@ -54,43 +64,17 @@
             set => UpdateProperty(ref _status, value);
         }
 
-        public double Progress
-        {
-            get => _progress;
-            set => UpdateProperty(ref _progress, value);
-        }
+        public IRangeValue<double> Progress => _progress;
 
-        public TimeSpan PlannedTime
-        {
-            get => _plannedTime;
-            set => UpdateProperty(ref _plannedTime, value);
-        }
+        public IMaxRangeValue<TimeSpan> Time => _time;
 
-        public TimeSpan SpentTime
-        {
-            get => _spentTime;
-            set => UpdateProperty(ref _spentTime, value);
-        }
+        public IMaxRangeValue<double> Real => _real;
 
-        public double TotalReal
-        {
-            get => _totalReal;
-            set => UpdateProperty(ref _totalReal, value);
-        }
+        public ITimeIntervalList TimeIntervals => _timeIntervals;
 
-        public double ExecutedReal
-        {
-            get => _executedReal;
-            set => UpdateProperty(ref _executedReal, value);
-        }
+        IReadonlyRangeValue<double> ITask.Progress => _progress;
 
-        public object Metadata
-        {
-            get => _metadata;
-            set => UpdateProperty(ref _metadata, value);
-        }
-
-        public TimeIntervalCollection TimeIntervals { get; private set; } = new();
+        IReadonlyRangeValue<TimeSpan> ITask.Time => _time;
 
         public object Clone()
         {
@@ -99,13 +83,13 @@
                 Difficult = Difficult,
                 Priority = Priority,
                 Deadline = Deadline,
-                Status = Status,
-                Progress = Progress,
-                PlannedTime = PlannedTime,
-                SpentTime = SpentTime,
-                TotalReal = TotalReal,
-                ExecutedReal = ExecutedReal,
+                Status = Status
             };
+            result.Progress.Value = Progress.Value;
+            result.Time.Value = Time.Value;
+            result.Time.Max = Time.Max;
+            result.Real.Value = Real.Value;
+            result.Real.Max = Real.Max;
             if (Metadata is ICloneable cloneable)
             {
                 result.Metadata = cloneable.Clone();

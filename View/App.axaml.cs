@@ -4,8 +4,10 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using System;
 
-using View.Views;
 using ViewModel.ViewModels;
+
+using View.Views;
+using View.Technilcals;
 
 namespace View;
 
@@ -25,14 +27,14 @@ public partial class App : Application
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow
+            desktop.MainWindow = new MainWindow()
             {
                 DataContext = mainViewModel
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            singleViewPlatform.MainView = new MainView
+            singleViewPlatform.MainView = new MainView()
             {
                 DataContext = mainViewModel
             };

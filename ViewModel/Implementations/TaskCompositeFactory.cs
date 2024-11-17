@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using Model.Interfaces;
+using Model.Tasks;
+
 using ViewModel.Interfaces;
 
 namespace ViewModel.Implementations

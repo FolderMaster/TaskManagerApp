@@ -2,7 +2,7 @@
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
-using Model;
+using Model.Interfaces;
 
 namespace ViewModel.ViewModels.Modals
 {

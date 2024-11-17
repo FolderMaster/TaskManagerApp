@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Model.Interfaces
 {
     public interface ITimeInterval
     {

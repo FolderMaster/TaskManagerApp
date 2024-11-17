@@ -1,7 +1,6 @@
 ﻿using ViewModel.Interfaces;
-
-using Model;
 using ViewModel.Technicals;
+using Model.Interfaces;
 
 namespace ViewModel.Implementations.Editors
 {

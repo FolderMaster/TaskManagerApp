@@ -2,7 +2,8 @@
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
-using Model;
+using Model.Interfaces;
+using Model.Tasks.Times;
 
 namespace ViewModel.ViewModels.Modals
 {
@@ -26,7 +27,7 @@ namespace ViewModel.ViewModels.Modals
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteOk))]
         private void Ok() => _taskSource?.SetResult
-            (new TimeIntervalViewModelResult(SelectedTaskElement, new TimeInterval(Start, End)));
+            (new TimeIntervalViewModelResult(SelectedTaskElement, new TimeIntervalElement(Start, End)));
 
         [ReactiveCommand]
         private void Cancel() =>

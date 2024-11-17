@@ -13,15 +13,18 @@
   <ItemGroup>
     <AvaloniaXaml Remove="Assets\Converters.axaml" />
     <AvaloniaXaml Remove="Assets\DataTemplates.axaml" />
+    <AvaloniaXaml Remove="Assets\Images.axaml" />
+    <AvaloniaXaml Remove="Assets\Resources.axaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.0" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.0" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.0" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.0" />
+    <PackageReference Include="Avalonia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.1" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.2.0" />
     <PackageReference Include="CalendarControl.Avalonia" Version="11.2.0" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-rc4.5" />
     <PackageReference Include="Splat.Autofac" Version="15.2.22" />
@@ -36,6 +39,12 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
     <AvaloniaResource Update="Assets\DataTemplates.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Update="Assets\Images.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Update="Assets\Resources.axaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
   </ItemGroup>

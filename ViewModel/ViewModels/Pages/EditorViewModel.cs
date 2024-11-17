@@ -3,7 +3,8 @@ using System.Reactive.Linq;
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
-using Model;
+using Model.Interfaces;
+
 using ViewModel.ViewModels.Modals;
 using ViewModel.AppState;
 
@@ -33,7 +34,7 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        public EditorViewModel(object metadata, AppStateManager appStateManager) : base(metadata)
+        public EditorViewModel(AppStateManager appStateManager)
         {
             _appStateManager = appStateManager;
             TaskListView = _appStateManager.Session.Tasks;
@@ -51,6 +52,8 @@ namespace ViewModel.ViewModels.Pages
             _canExecuteEdit = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 1);
             _canExecuteCopy = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
             _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
+
+            Metadata = _appStateManager.Services.ResourceService.GetResource("EditorPageMetadata");
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
@@ -97,7 +100,7 @@ namespace ViewModel.ViewModels.Pages
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
         private async Task AddTaskComposite() => await AddTask
-            (_appStateManager.Services.TaskElementFactory.Create());
+            (_appStateManager.Services.TaskCompositeFactory.Create());
 
         private async Task AddTask(ITask task)
         {

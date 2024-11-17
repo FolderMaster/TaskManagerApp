@@ -6,7 +6,9 @@
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source="Assets/Converters.axaml"/>
+				<ResourceInclude Source="Assets/Images.axaml"/>
 				<ResourceInclude Source="Assets/DataTemplates.axaml"/>
+				<ResourceInclude Source="Assets/Resources.axaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>

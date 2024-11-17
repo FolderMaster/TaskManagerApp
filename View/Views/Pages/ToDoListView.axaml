@@ -10,7 +10,6 @@
 			 x:DataType="vm:ToDoListViewModel">
 	<Grid RowDefinitions="Auto, *">
 		<WrapPanel Grid.Row="0">
-			<Button Grid.Row="0" Content="Update to-do list" Command="{Binding UpdateCommand}"/>
 		</WrapPanel>
 		<ListBox Grid.Row="1" ItemsSource="{Binding ToDoList}"
 				 ItemTemplate="{StaticResource ToDoListElementTemplate}"/>

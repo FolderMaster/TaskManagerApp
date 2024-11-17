@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
-
-using Model;
+using Model.Interfaces;
+using Model.Technicals;
 
 namespace ViewModel.AppState
 {

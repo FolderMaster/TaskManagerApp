@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Model
+namespace Model.Technicals
 {
     public class TrackableObject : INotifyPropertyChanged
     {
@@ -15,8 +15,8 @@ namespace Model
         protected void UpdateProperty<T>(ref T field, T newValue, Action? action = null,
             [CallerMemberName] string propertyName = "")
         {
-            if ((field != null && !field.Equals(newValue)) ||
-                (newValue != null && !newValue.Equals(field)))
+            if (field != null && !field.Equals(newValue) ||
+                newValue != null && !newValue.Equals(field))
             {
                 field = newValue;
                 action?.Invoke();

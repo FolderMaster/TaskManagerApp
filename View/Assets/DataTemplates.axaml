@@ -1,17 +1,20 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:si="clr-namespace:SatialInterfaces.Controls.Calendar;assembly=CalendarControl"
+					xmlns:mi="clr-namespace:Model.Interfaces;assembly=Model"
 					xmlns:m="clr-namespace:Model;assembly=Model"
+					xmlns:mt="clr-namespace:Model.Tasks;assembly=Model"
 					xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
 					xmlns:v="clr-namespace:View.DataTemplates"
 					xmlns:e="clr-namespace:View.Extensions"
-					xmlns:vmt="clr-namespace:ViewModel.Technicals;assembly=ViewModel">
+					xmlns:vmt="clr-namespace:ViewModel.Technicals;assembly=ViewModel"
+					xmlns:vt="clr-namespace:View.Technilcals">
 	<Design.PreviewWith>
 		<Border Padding="10">
 			<StackPanel>
 				<StackPanel.Resources>
-					<m:TaskElement x:Key="Element"/>
-					<m:TaskComposite x:Key="Composite"/>
+					<mt:TaskElement x:Key="Element"/>
+					<mt:TaskComposite x:Key="Composite"/>
 				</StackPanel.Resources>
 				<ContentControl ContentTemplate="{StaticResource TaskTreeTemplate}"
 								Content="{StaticResource Composite}"/>
@@ -24,6 +27,12 @@
 			</StackPanel>
 		</Border>
 	</Design.PreviewWith>
+	<DataTemplate x:Key="PageMetadataTemplate" x:DataType="vt:PageMetadata">
+		<StackPanel Orientation="Horizontal">
+			<PathIcon Data="{Binding Icon}" Width="20" Height="20" Margin="5"/>
+			<Label Content="{Binding Title}" VerticalAlignment="Center"/>
+		</StackPanel>
+	</DataTemplate>
 	<DataTemplate x:Key="TaskMetadataTreeTemplate" x:DataType="vmt:Metadata">
 		<Label Content="{Binding Name}"/>
 	</DataTemplate>
@@ -71,8 +80,9 @@
 			</StackPanel>
 		</Border>
 	</DataTemplate>
-	<DataTemplate x:Key="MenuItemTemplate" x:DataType="vm:PageViewModel">
-		<ContentControl Content="{Binding Metadata}"/>
+	<DataTemplate x:Key="PageTemplate" x:DataType="vm:PageViewModel">
+		<ContentControl Content="{Binding Metadata}"
+						ContentTemplate="{StaticResource PageMetadataTemplate}"/>
 	</DataTemplate>
 	<v:PageDataTemplate x:Key="PageTemplates">
 		<Grid MaxWidth="1024" Margin="10">
@@ -91,11 +101,12 @@
 	</DataTemplate>
 	<v:TaskDataTemplate x:Key="TaskTreeTemplate">
 		<v:TaskDataTemplate.ElementDataTemplate>
-			<TreeDataTemplate x:DataType="m:ITaskElement">
+			<TreeDataTemplate x:DataType="mi:ITaskElement">
 				<StackPanel Orientation="Horizontal" Spacing="5">
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
-					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
+					<ProgressBar Value="{Binding Progress.Value}"
+								 Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
 					<TextBlock Text="{Binding Deadline}"/>
 					<TextBlock Text="{Binding Priority}"/>
 					<TextBlock Text="{Binding Difficult}"/>
@@ -104,11 +115,12 @@
 			</TreeDataTemplate>
 		</v:TaskDataTemplate.ElementDataTemplate>
 		<v:TaskDataTemplate.CompositeDataTemplate>
-			<TreeDataTemplate x:DataType="m:ITaskComposite" ItemsSource="{Binding .}">
+			<TreeDataTemplate x:DataType="mi:ITaskComposite" ItemsSource="{Binding .}">
 				<StackPanel Orientation="Horizontal" Spacing="5">
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
-					<ProgressBar Value="{Binding Progress}" Maximum="1" Width="100"/>
+					<ProgressBar Value="{Binding Progress.Value}"
+								 Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
 					<TextBlock Text="{Binding Deadline}"/>
 					<TextBlock Text="{Binding Priority}"/>
 					<TextBlock Text="{Binding Difficult}"/>
@@ -119,7 +131,7 @@
 	</v:TaskDataTemplate>
 	<v:TaskDataTemplate x:Key="TaskTemplate">
 		<v:TaskDataTemplate.ElementDataTemplate>
-			<DataTemplate x:DataType="m:ITaskElement">
+			<DataTemplate x:DataType="mi:ITaskElement">
 				<StackPanel>
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
@@ -128,15 +140,16 @@
 					<Label Content="Priority:"/>
 					<TextBox Text="{Binding Priority}"/>
 					<Label Content="Progress:"/>
-					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1"/>
+					<Slider Value="{Binding Progress.Value}"
+							Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
 					<Label Content="TotalReal:"/>
-					<TextBox Text="{Binding TotalReal}"/>
+					<TextBox Text="{Binding Real.Max}"/>
 					<Label Content="ExecutedReal:"/>
-					<TextBox Text="{Binding ExecutedReal}"/>
+					<TextBox Text="{Binding Real.Value}"/>
 					<Label Content="PlannedTime:"/>
-					<TimePicker SelectedTime="{Binding PlannedTime}"/>
+					<TimePicker SelectedTime="{Binding Time.Max}"/>
 					<Label Content="SpentTime:"/>
-					<TimePicker SelectedTime="{Binding SpentTime}"/>
+					<TimePicker SelectedTime="{Binding Time.Value}"/>
 					<Label Content="Status:"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
@@ -146,7 +159,7 @@
 			</DataTemplate>
 		</v:TaskDataTemplate.ElementDataTemplate>
 		<v:TaskDataTemplate.CompositeDataTemplate>
-			<DataTemplate x:DataType="m:ITaskComposite">
+			<DataTemplate x:DataType="mi:ITaskComposite">
 				<StackPanel>
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
@@ -155,11 +168,12 @@
 					<Label Content="Priority:"/>
 					<TextBox Text="{Binding Priority}" IsEnabled="False"/>
 					<Label Content="Progress:"/>
-					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1" IsEnabled="False"/>
+					<Slider IsEnabled="False" Value="{Binding Progress.Value}"
+							Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
 					<Label Content="PlannedTime:"/>
-					<TimePicker SelectedTime="{Binding PlannedTime}" IsEnabled="False"/>
+					<TimePicker SelectedTime="{Binding Time.Max}" IsEnabled="False"/>
 					<Label Content="SpentTime:"/>
-					<TimePicker SelectedTime="{Binding SpentTime}" IsEnabled="False"/>
+					<TimePicker SelectedTime="{Binding Time.Value}" IsEnabled="False"/>
 					<Label Content="Status:"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>

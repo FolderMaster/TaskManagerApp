@@ -1,4 +1,6 @@
-﻿namespace Model
+﻿using Model.Interfaces;
+
+namespace Model
 {
     public static class TaskHelper
     {

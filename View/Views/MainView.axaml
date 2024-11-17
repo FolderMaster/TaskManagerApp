@@ -1,6 +1,9 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+             xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+			 xmlns:ic="using:Avalonia.Xaml.Interactions.Custom"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
 			 xmlns:e="clr-namespace:View.Extensions"
@@ -9,6 +12,14 @@
              x:Class="View.Views.MainView"
              x:DataType="vm:MainViewModel"
 			 Name="mainView">
+	<Interaction.Behaviors>
+		<EventTriggerBehavior EventName="Loaded">
+			<InvokeCommandAction Command="{Binding LoadCommand}" />
+		</EventTriggerBehavior>
+		<EventTriggerBehavior EventName="DetachedFromLogicalTree">
+			<InvokeCommandAction Command="{Binding SaveCommand}" />
+		</EventTriggerBehavior>
+	</Interaction.Behaviors>
 	<Grid>
 		<Grid RowDefinitions="*, Auto">
 			<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
@@ -16,17 +27,21 @@
 				<SplitView.Pane>
 					<StackPanel>
 						<Button Click="Button_Click"
-							HorizontalAlignment="Stretch"
-							HorizontalContentAlignment="Left">
-							<PathIcon Data="{StaticResource MenuIcon}"
-									  Width="30" Height="30"/>
+								HorizontalAlignment="Stretch"
+								HorizontalContentAlignment="Left">
+							<PathIcon Data="{StaticResource MenuPageIcon}"
+									  Width="20" Height="20" Margin="5"/>
 						</Button>
 						<ListBox ItemsSource="{Binding Pages}"
 								 SelectedItem="{Binding SelectedPage}"
-								 ItemTemplate="{StaticResource MenuItemTemplate}"/>
+								 ItemTemplate="{StaticResource PageTemplate}">
+							<ListBox.Styles>
+								<Style Selector="ListBoxItem">
+									<Setter Property="Margin" Value="0"/>
+								</Style>
+							</ListBox.Styles>
+						</ListBox>
 						<Button Content="Notify" Command="{Binding NotifyCommand}"/>
-						<Button Content="Save" Command="{Binding SaveCommand}"/>
-						<Button Content="Load" Command="{Binding LoadCommand}"/>
 					</StackPanel>
 				</SplitView.Pane>
 				<TransitioningContentControl Content="{Binding SelectedPage}"
