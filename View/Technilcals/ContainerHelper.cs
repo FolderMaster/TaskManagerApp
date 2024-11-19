@@ -1,5 +1,9 @@
 ﻿using Autofac;
+using Avalonia.ReactiveUI;
 using System.Collections.Generic;
+using Splat;
+using Splat.Autofac;
+using ReactiveUI;
 
 using Model.Interfaces;
 
@@ -9,9 +13,14 @@ using ViewModel.Interfaces;
 using ViewModel.ViewModels.Modals;
 using ViewModel.Implementations;
 using ViewModel.Implementations.Mocks;
-using ViewModel.AppState;
+using ViewModel.AppStates;
+using ViewModel.Implementations.Factories;
 
 using View.Implementations;
+using View.Views;
+using View.Views.Pages;
+using View.Views.Modals;
+
 
 namespace View.Technilcals
 {
@@ -19,82 +28,93 @@ namespace View.Technilcals
     {
         public static IContainer GetMockContainer()
         {
-            var result = new ContainerBuilder();
+            var (builder, resolver) = GetContainerElements();
 
-            result.RegisterType<FileService>().As<IFileService>().SingleInstance();
-            result.RegisterType<JsonSerializer>().As<ISerializer>().SingleInstance();
-            result.RegisterType<MockNotificationManager>().As<INotificationManager>().
-                SingleInstance();
-            result.RegisterType<AvaloniaResourceService>().As<IResourceService>().SingleInstance();
-
-            result.RegisterType<MetadataFactory>().As<IFactory<object>>().SingleInstance();
-            result.RegisterType<TaskElementFactory>().As<IFactory<ITaskElement>>().
-                SingleInstance();
-            result.RegisterType<TaskCompositeFactory>().As<IFactory<ITaskComposite>>().
+            builder.RegisterType<MockNotificationManager>().As<INotificationManager>().
                 SingleInstance();
 
-            result.RegisterType<AddTimeIntervalViewModel>().
-                As<DialogViewModel<TasksViewModelArgs, TimeIntervalViewModelResult>>().
-                SingleInstance();
-            result.RegisterType<AddTaskViewModel>().As<DialogViewModel<ITask, bool>>().
-                SingleInstance();
-            result.RegisterType<RemoveTasksViewModel>().
-                As<DialogViewModel<IList<ITask>, bool>>().SingleInstance();
-            result.RegisterType<MoveTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?>>().SingleInstance();
-            result.RegisterType<EditTaskViewModel>().
-                As<DialogViewModel<object, bool>>().SingleInstance();
-            result.RegisterType<CopyTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?>>().SingleInstance();
-
-            result.RegisterType<Session>().SingleInstance();
-            result.RegisterType<ServicesCollection>().SingleInstance();
-            result.RegisterType<AppStateManager>().As<AppStateManager>().SingleInstance();
-
-            result.RegisterType<EditorViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<TimeViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<StatisticViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<ToDoListViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<MainViewModel>().SingleInstance();
-            return result.Build();
+            return CreateContainer(builder, resolver, false);
         }
 
-        public static ContainerBuilder GetContainerBuilder()
+        public static (ContainerBuilder, AutofacDependencyResolver) GetContainerElements()
         {
-            var result = new ContainerBuilder();
-            result.RegisterType<FileService>().As<IFileService>().SingleInstance();
-            result.RegisterType<JsonSerializer>().As<ISerializer>().SingleInstance();
-            result.RegisterType<AvaloniaResourceService>().As<IResourceService>().SingleInstance();
+            var builder = new ContainerBuilder();
 
-            result.RegisterType<MetadataFactory>().As<IFactory<object>>().SingleInstance();
-            result.RegisterType<TaskElementFactory>().As<IFactory<ITaskElement>>().
+            builder.RegisterType<FileService>().As<IFileService>().SingleInstance();
+            builder.RegisterType<JsonSerializer>().As<ISerializer>().SingleInstance();
+            builder.RegisterType<AvaloniaResourceService>().As<IResourceService>().SingleInstance();
+            builder.RegisterType<AvaloniaThemeManager>().As<IThemeManager>().SingleInstance();
+
+            builder.RegisterType<MetadataFactory>().As<IFactory<object>>().SingleInstance();
+            builder.RegisterType<TaskElementFactory>().As<IFactory<ITaskElement>>().
                 SingleInstance();
-            result.RegisterType<TaskCompositeFactory>().As<IFactory<ITaskComposite>>().
+            builder.RegisterType<TaskCompositeFactory>().As<IFactory<ITaskComposite>>().
+                SingleInstance();
+            builder.RegisterType<TimeIntervalElementFactory>().As<IFactory<ITimeIntervalElement>>().
                 SingleInstance();
 
-            result.RegisterType<AddTimeIntervalViewModel>().
-                As<DialogViewModel<TasksViewModelArgs, TimeIntervalViewModelResult>>().
+            builder.RegisterType<AddTimeIntervalViewModel>().
+                As<DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
                 SingleInstance();
-            result.RegisterType<AddTaskViewModel>().As<DialogViewModel<ITask, bool>>().
+            builder.RegisterType<AddTaskViewModel>().As<DialogViewModel<ITask, bool>>().
                 SingleInstance();
-            result.RegisterType<RemoveTasksViewModel>().
+            builder.RegisterType<RemoveTasksViewModel>().
                 As<DialogViewModel<IList<ITask>, bool>>().SingleInstance();
-            result.RegisterType<MoveTasksViewModel>().
+            builder.RegisterType<MoveTasksViewModel>().
                 As<DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?>>().SingleInstance();
-            result.RegisterType<EditTaskViewModel>().
+            builder.RegisterType<EditTaskViewModel>().
                 As<DialogViewModel<object, bool>>().SingleInstance();
-            result.RegisterType<CopyTasksViewModel>().
+            builder.RegisterType<CopyTasksViewModel>().
                 As<DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?>>().SingleInstance();
 
-            result.RegisterType<Session>().SingleInstance();
-            result.RegisterType<ServicesCollection>().SingleInstance();
-            result.RegisterType<AppStateManager>().As<AppStateManager>().SingleInstance();
+            builder.RegisterType<Session>().SingleInstance();
+            builder.RegisterType<Settings>().SingleInstance();
+            builder.RegisterType<ServicesCollection>().SingleInstance();
+            builder.RegisterType<AppState>().As<AppState>().SingleInstance();
 
-            result.RegisterType<EditorViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<TimeViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<StatisticViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<ToDoListViewModel>().As<PageViewModel>().SingleInstance();
-            result.RegisterType<MainViewModel>().SingleInstance();
+            builder.RegisterType<EditorViewModel>().As<PageViewModel>().SingleInstance();
+            builder.RegisterType<TimeViewModel>().As<PageViewModel>().SingleInstance();
+            builder.RegisterType<StatisticViewModel>().As<PageViewModel>().SingleInstance();
+            builder.RegisterType<ToDoListViewModel>().As<PageViewModel>().SingleInstance();
+            builder.RegisterType<SettingsViewModel>().As<PageViewModel>().SingleInstance();
+            builder.RegisterType<MainViewModel>().SingleInstance();
+
+            builder.RegisterType<MainView>().SingleInstance();
+            builder.RegisterType<MainWindow>().SingleInstance();
+
+            builder.RegisterType<EditorView>().As<IViewFor<EditorViewModel>>();
+            builder.RegisterType<TimeView>().As<IViewFor<TimeViewModel>>();
+            builder.RegisterType<StatisticView>().As<IViewFor<StatisticViewModel>>();
+            builder.RegisterType<ToDoListView>().As<IViewFor<ToDoListViewModel>>();
+
+            builder.RegisterType<AddTaskView>().As<IViewFor<AddTaskViewModel>>();
+            builder.RegisterType<AddTimeIntervalView>().As<IViewFor<AddTimeIntervalViewModel>>();
+            builder.RegisterType<CopyTasksView>().As<IViewFor<CopyTasksViewModel>>();
+            builder.RegisterType<EditTaskView>().As<IViewFor<EditTaskViewModel>>();
+            builder.RegisterType<MoveTasksView>().As<IViewFor<MoveTasksViewModel>>();
+            builder.RegisterType<RemoveTasksView>().As<IViewFor<RemoveTasksViewModel>>();
+            builder.RegisterType<SettingsView>().As<IViewFor<SettingsViewModel>>();
+
+            var resolver = builder.UseAutofacDependencyResolver();
+            builder.RegisterInstance(resolver);
+            resolver.InitializeReactiveUI();
+
+            return (builder, resolver);
+        }
+
+        public static IContainer CreateContainer(ContainerBuilder builder,
+            AutofacDependencyResolver resolver, bool isSetUpLocator)
+        {
+            if (isSetUpLocator)
+            {
+                RxApp.MainThreadScheduler = AvaloniaScheduler.Instance;
+                Locator.CurrentMutable.RegisterConstant(new AvaloniaActivationForViewFetcher(),
+                    typeof(IActivationForViewFetcher));
+                Locator.CurrentMutable.RegisterConstant(new AutoDataTemplateBindingHook(),
+                    typeof(IPropertyBindingHook));
+            }
+            var result = builder.Build();
+            resolver.SetLifetimeScope(result);
             return result;
         }
     }

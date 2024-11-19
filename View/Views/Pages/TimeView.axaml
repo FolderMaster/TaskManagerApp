@@ -11,7 +11,14 @@
 			 x:DataType="vm:TimeViewModel">
 	<Grid RowDefinitions="*, Auto">
 		<Grid Grid.Row="0" RowDefinitions="Auto, *">
-			<TextBlock Grid.Row="0" Text="{Binding CurrentWeek.Month}"/>
+			<TextBlock Grid.Row="0">
+				<TextBlock.Text>
+					<MultiBinding StringFormat="{}{0}/{1}">
+						<Binding Path="CurrentWeek.Month" />
+						<Binding Path="CurrentWeek.Year" />
+					</MultiBinding>
+				</TextBlock.Text>
+			</TextBlock>
 			<si:CalendarControl Grid.Row="1" AutoScrollToSelectedItem="True" AllowDelete="True"
 							CurrentWeek="{Binding CurrentWeek}" Items="{Binding CalendarIntervals}"
 							SelectedItem="{Binding SelectedCalendarInterval}"

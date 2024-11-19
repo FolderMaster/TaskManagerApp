@@ -4,9 +4,9 @@ using ViewModel.ViewModels.Pages;
 
 namespace View.Views.Pages;
 
-public partial class StatisticView : ReactiveUserControl<StatisticViewModel>
+public partial class SettingsView : ReactiveUserControl<SettingsViewModel>
 {
-    public StatisticView()
+    public SettingsView()
     {
         InitializeComponent();
     }

@@ -25,4 +25,10 @@
 			<StaticResource ResourceKey="ToDoListPageIcon"/>
 		</vt:PageMetadata.Icon>
 	</vt:PageMetadata>
+	<vt:PageMetadata x:Key="SettingsPageMetadata">
+		<vt:PageMetadata.Title>Settings</vt:PageMetadata.Title>
+		<vt:PageMetadata.Icon>
+			<StaticResource ResourceKey="SettingsPageIcon"/>
+		</vt:PageMetadata.Icon>
+	</vt:PageMetadata>
 </ResourceDictionary>

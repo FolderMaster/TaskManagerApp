@@ -1,18 +1,18 @@
 ﻿using Model.Interfaces;
-using Model.Tasks.Times;
 
 namespace ViewModel.ViewModels.Modals
 {
     public class TimeIntervalViewModelResult
     {
-        public TimeIntervalElement TimeInterval { get; private set; }
+        public ITimeIntervalElement TimeIntervalElement { get; private set; }
 
         public ITaskElement TaskElement { get; private set; }
 
-        public TimeIntervalViewModelResult(ITaskElement taskElement, TimeIntervalElement timeInterval)
+        public TimeIntervalViewModelResult(ITaskElement taskElement,
+            ITimeIntervalElement timeIntervalElement)
         {
             TaskElement = taskElement;
-            TimeInterval = timeInterval;
+            TimeIntervalElement = timeIntervalElement;
         }
     }
 }

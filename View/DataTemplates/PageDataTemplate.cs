@@ -2,7 +2,8 @@
 using Avalonia.Controls.Templates;
 using Avalonia.Markup.Xaml.Templates;
 using Avalonia.Metadata;
-using System;
+using ReactiveUI;
+using Splat;
 
 using ViewModel.ViewModels;
 
@@ -20,14 +21,8 @@ namespace View.DataTemplates
 
         public Control? Build(object? data, Control? existing)
         {
-            var name = data.GetType().FullName!.
-                Replace(nameof(ViewModel), nameof(View));
-            var type = Type.GetType(name);
-            if (type == null)
-            {
-                return null;
-            }
-            var control = (Control?)Activator.CreateInstance(type);
+            var type = typeof(IViewFor<>).MakeGenericType(data.GetType());
+            var control = (Control?)Locator.Current.GetService(type);
             var result = existing ?? TemplateContent.Load(Content)?.Result;
             if (result != null)
             {

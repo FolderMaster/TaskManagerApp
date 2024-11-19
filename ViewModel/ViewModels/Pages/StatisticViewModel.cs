@@ -4,13 +4,13 @@ using ReactiveUI;
 using Model;
 
 using ViewModel.Technicals;
-using ViewModel.AppState;
+using ViewModel.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {
     public partial class StatisticViewModel : PageViewModel
     {
-        private readonly AppStateManager _appStateManager;
+        private readonly AppState _appState;
 
         [Reactive]
         private IEnumerable<TimeSpan> _times =
@@ -42,16 +42,15 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IEnumerable<StatisticElement> _tasksTimeStatistic;
 
-        public StatisticViewModel(AppStateManager appStateManager)
+        public StatisticViewModel(AppState appState)
         {
-            _appStateManager = appStateManager;
+            _appState = appState;
 
             this.WhenAnyValue(x => x.Times).Subscribe(s => SelectedTime = s?.FirstOrDefault());
             this.WhenAnyValue(x => x.SelectedTime).Subscribe(t => UpdateExpiredTasksStatistics());
 
-            Metadata =
-                _appStateManager.Services.ResourceService.GetResource("StatisticPageMetadata");
-            _appStateManager.ItemSessionChanged += AppStateManager_ItemSessionChanged;
+            Metadata = _appState.Services.ResourceService.GetResource("StatisticPageMetadata");
+            _appState.ItemSessionChanged += AppStateManager_ItemSessionChanged;
         }
 
         [ReactiveCommand]
@@ -64,11 +63,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTasksCountStatistics()
         {
-            if (_appStateManager.Session.Tasks == null)
+            if (_appState.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
@@ -86,17 +85,19 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateExpiredTasksStatistics()
         {
-            if (_appStateManager.Session.Tasks == null)
+            if (_appState.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
             var where = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
                 TaskHelper.HasTaskExpired(t, SelectedTime));
 
             var count = where.Count();
-            var plannedTime = new TimeSpan(tasks.Sum(t => t.Time.Max.Ticks)).Hours;
-            var spentTime = new TimeSpan(tasks.Sum(t => t.Time.Value.Ticks)).Hours;
+            var plannedTime = tasks.Aggregate(TimeSpan.Zero,
+                (sum, interval) => sum + interval.PlannedTime).Hours;
+            var spentTime = tasks.Aggregate(TimeSpan.Zero,
+                (sum, interval) => sum + interval.SpentTime).Hours;
 
             ExpiredTasksStatistic =
             [
@@ -108,15 +109,17 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTimeTasksStatistic()
         {
-            if (_appStateManager.Session.Tasks == null)
+            if (_appState.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
-            var plannedTime = new TimeSpan(uncompletedTasks.Sum(t => t.Time.Max.Ticks)).Hours;
-            var spentTime = new TimeSpan(uncompletedTasks.Sum(t => t.Time.Value.Ticks)).Hours;
+            var plannedTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
+                (sum, interval) => sum + interval.PlannedTime).Hours;
+            var spentTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
+                (sum, interval) => sum + interval.SpentTime).Hours;
 
             TasksTimeStatistic =
             [

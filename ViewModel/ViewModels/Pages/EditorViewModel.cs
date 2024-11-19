@@ -6,7 +6,7 @@ using ReactiveUI.SourceGenerators;
 using Model.Interfaces;
 
 using ViewModel.ViewModels.Modals;
-using ViewModel.AppState;
+using ViewModel.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -26,7 +26,9 @@ namespace ViewModel.ViewModels.Pages
 
         private readonly IObservable<bool> _canExecuteMove;
 
-        private readonly AppStateManager _appStateManager;
+        private readonly IObservable<bool> _canExecuteSwap;
+
+        private readonly AppState _appState;
 
         [Reactive]
         private IList<ITask> _taskListView;
@@ -34,12 +36,12 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        public EditorViewModel(AppStateManager appStateManager)
+        public EditorViewModel(AppState appState)
         {
-            _appStateManager = appStateManager;
-            TaskListView = _appStateManager.Session.Tasks;
+            _appState = appState;
+            TaskListView = _appState.Session.Tasks;
 
-            this.WhenAnyValue(x => x._appStateManager.Session.Tasks).Subscribe
+            this.WhenAnyValue(x => x._appState.Session.Tasks).Subscribe
                 (t => TaskListView = t);
 
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.TaskListView).
@@ -52,15 +54,17 @@ namespace ViewModel.ViewModels.Pages
             _canExecuteEdit = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 1);
             _canExecuteCopy = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
             _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
+            _canExecuteSwap = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 2 &&
+                SelectedTasks.First().ParentTask == SelectedTasks.Last().ParentTask);
 
-            Metadata = _appStateManager.Services.ResourceService.GetResource("EditorPageMetadata");
+            Metadata = _appState.Services.ResourceService.GetResource("EditorPageMetadata");
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()
         {
             var composite = (ITask)TaskListView;
-            TaskListView = composite.ParentTask ?? _appStateManager.Session.Tasks;
+            TaskListView = composite.ParentTask ?? _appState.Session.Tasks;
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]
@@ -76,31 +80,31 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var result = await AddModal(_appStateManager.Services.RemoveTasksDialog, items);
+            var result = await AddModal(_appState.Services.RemoveTasksDialog, items);
             if (result)
             {
                 foreach (var item in items)
                 {
                     if (item.ParentTask == null)
                     {
-                        _appStateManager.Session.Tasks.Remove(item);
+                        _appState.Session.Tasks.Remove(item);
                     }
                     else
                     {
                         item.ParentTask.Remove(item);
                     }
                 }
-                _appStateManager.UpdateSessionItems();
+                _appState.UpdateSessionItems();
             }
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
         private async Task AddTaskElement() => await AddTask
-            (_appStateManager.Services.TaskElementFactory.Create());
+            (_appState.Services.TaskElementFactory.Create());
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
         private async Task AddTaskComposite() => await AddTask
-            (_appStateManager.Services.TaskCompositeFactory.Create());
+            (_appState.Services.TaskCompositeFactory.Create());
 
         private async Task AddTask(ITask task)
         {
@@ -110,11 +114,11 @@ namespace ViewModel.ViewModels.Pages
                 list = (ITaskComposite)SelectedTasks.First();
                 SelectedTasks.Clear();
             }
-            var result = await AddModal(_appStateManager.Services.AddTaskDialog, task);
+            var result = await AddModal(_appState.Services.AddTaskDialog, task);
             if (result)
             {
                 list.Add(task);
-                _appStateManager.UpdateSessionItems();
+                _appState.UpdateSessionItems();
             }
         }
 
@@ -123,10 +127,10 @@ namespace ViewModel.ViewModels.Pages
         {
             var item = SelectedTasks.First();
             SelectedTasks.Clear();
-            var result = await AddModal(_appStateManager.Services.EditTaskDialog, item);
+            var result = await AddModal(_appState.Services.EditTaskDialog, item);
             if (result)
             {
-                _appStateManager.UpdateSessionItems();
+                _appState.UpdateSessionItems();
             }
         }
 
@@ -135,8 +139,8 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var list = await AddModal(_appStateManager.Services.MoveTasksDialog,
-                new ItemsTasksViewModelArgs(items, TaskListView, _appStateManager.Session.Tasks));
+            var list = await AddModal(_appState.Services.MoveTasksDialog,
+                new ItemsTasksViewModelArgs(items, TaskListView, _appState.Session.Tasks));
             if (list != null)
             {
                 foreach (var item in items)
@@ -147,11 +151,11 @@ namespace ViewModel.ViewModels.Pages
                     }
                     else
                     {
-                        _appStateManager.Session.Tasks.Remove(item);
+                        _appState.Session.Tasks.Remove(item);
                     }
                     list.Add(item);
                 }
-                _appStateManager.UpdateSessionItems();
+                _appState.UpdateSessionItems();
             }
         }
 
@@ -160,8 +164,8 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var list = await AddModal(_appStateManager.Services.CopyTasksDialog,
-                new ItemsTasksViewModelArgs(items, TaskListView, _appStateManager.Session.Tasks));
+            var list = await AddModal(_appState.Services.CopyTasksDialog,
+                new ItemsTasksViewModelArgs(items, TaskListView, _appState.Session.Tasks));
             if (list != null)
             {
                 var copyList = new List<ITask>();
@@ -176,8 +180,26 @@ namespace ViewModel.ViewModels.Pages
                 {
                     list.Add(task);
                 }
-                _appStateManager.UpdateSessionItems();
+                _appState.UpdateSessionItems();
             }
+        }
+
+        [ReactiveCommand(CanExecute = nameof(_canExecuteSwap))]
+        private void Swap()
+        {
+            var items = SelectedTasks.ToList();
+            SelectedTasks.Clear();
+
+            var item1 = items.First();
+            var item2 = items.Last();
+
+            var list = item1.ParentTask ?? _appState.Session.Tasks;
+
+            var index1 = list.IndexOf(item1);
+            var index2 = list.IndexOf(item2);
+
+            list[index1] = item2;
+            list[index2] = item1;
         }
     }
 }

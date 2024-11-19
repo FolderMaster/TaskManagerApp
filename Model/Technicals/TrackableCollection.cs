@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
 
-using Model.Interfaces;
-
 namespace Model.Technicals
 {
     public class TrackableCollection<T> : TrackableObject,
-        IFullCollection<T>, INotifyCollectionChanged
+        IList<T>, IList, INotifyCollectionChanged
     {
         protected readonly List<T> _items = new();
 

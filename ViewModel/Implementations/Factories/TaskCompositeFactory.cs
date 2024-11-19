@@ -3,19 +3,19 @@ using Model.Tasks;
 
 using ViewModel.Interfaces;
 
-namespace ViewModel.Implementations
+namespace ViewModel.Implementations.Factories
 {
-    public class TaskElementFactory : IFactory<ITaskElement>
+    public class TaskCompositeFactory : IFactory<ITaskComposite>
     {
         private IFactory<object> _metadataFactory;
 
-        public TaskElementFactory(IFactory<object> metadataFactory)
+        public TaskCompositeFactory(IFactory<object> metadataFactory)
         {
             ArgumentNullException.ThrowIfNull(metadataFactory, nameof(metadataFactory));
             _metadataFactory = metadataFactory;
         }
 
-        public ITaskElement Create() => new TaskElement()
+        public ITaskComposite Create() => new TaskComposite()
         {
             Metadata = _metadataFactory.Create()
         };

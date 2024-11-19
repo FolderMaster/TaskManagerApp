@@ -2,10 +2,14 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Platform;
 using Avalonia.Interactivity;
+using Avalonia.ReactiveUI;
+using Splat;
+
+using ViewModel.ViewModels;
 
 namespace View.Views;
 
-public partial class MainView : UserControl
+public partial class MainView : ReactiveUserControl<MainViewModel>
 {
     public static readonly StyledProperty<bool> IsPaneOpenProperty =
         AvaloniaProperty.Register<MainView, bool>(nameof(IsPaneOpen), defaultValue: false);
@@ -37,6 +41,8 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
+
+        DataContext = Locator.Current.GetService(typeof(MainViewModel));
     }
 
     protected override void OnLoaded(RoutedEventArgs e)

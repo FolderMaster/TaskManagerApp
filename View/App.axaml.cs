@@ -4,8 +4,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using System;
 
-using ViewModel.ViewModels;
-
 using View.Views;
 using View.Technilcals;
 
@@ -22,31 +20,24 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        var container = ContainerBuilder().Build();
-        var mainViewModel = container.Resolve<MainViewModel>();
+        var container = BuildContainer();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow()
-            {
-                DataContext = mainViewModel
-            };
+            desktop.MainWindow = container.Resolve<MainWindow>();
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            singleViewPlatform.MainView = new MainView()
-            {
-                DataContext = mainViewModel
-            };
+            singleViewPlatform.MainView = container.Resolve<MainView>();
         }
 
         base.OnFrameworkInitializationCompleted();
     }
 
-    public ContainerBuilder ContainerBuilder()
+    private IContainer BuildContainer()
     {
-        var result = ContainerHelper.GetContainerBuilder();
-        ContainerBuilderCreated?.Invoke(this, result);
-        return result;
+        var (builder, resolver) = ContainerHelper.GetContainerElements();
+        ContainerBuilderCreated?.Invoke(this, builder);
+        return ContainerHelper.CreateContainer(builder, resolver,  true);
     }
 }

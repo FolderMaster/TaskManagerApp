@@ -4,7 +4,7 @@ using ViewModel.Interfaces;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels;
 
-namespace ViewModel.AppState
+namespace ViewModel.AppStates
 {
     public class ServicesCollection
     {
@@ -20,7 +20,9 @@ namespace ViewModel.AppState
 
         public IFactory<ITaskElement> TaskElementFactory { get; private set; }
 
-        public DialogViewModel<TasksViewModelArgs, TimeIntervalViewModelResult>
+        public IFactory<ITimeIntervalElement> TimeIntervalElementFactory { get; private set; }
+
+        public DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
             AddTimeIntervalDialog { get; private set; }
 
         public DialogViewModel<ITask, bool> AddTaskDialog { get; private set; }
@@ -37,13 +39,14 @@ namespace ViewModel.AppState
 
         public ServicesCollection(INotificationManager notificationManager,
             IFileService fileService, ISerializer serializer, IResourceService resourceService,
-            DialogViewModel<TasksViewModelArgs, TimeIntervalViewModelResult> addTimeIntervalDialog,
+            DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult> addTimeIntervalDialog,
             DialogViewModel<ITask, bool> addTaskDialog,
             DialogViewModel<IList<ITask>, bool> removeTasksDialog,
             DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?> moveTasksDialog,
             DialogViewModel<object, bool> editTaskDialog,
             DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?> copyTasksDialog,
-            IFactory<ITaskComposite> taskCompositeFactory, IFactory<ITaskElement> taskElementFactory)
+            IFactory<ITaskComposite> taskCompositeFactory, IFactory<ITaskElement> taskElementFactory,
+            IFactory<ITimeIntervalElement> timeIntervalElementFactory)
         {
             NotificationManager = notificationManager;
             FileService = fileService;
@@ -51,6 +54,7 @@ namespace ViewModel.AppState
             ResourceService = resourceService;
             TaskCompositeFactory = taskCompositeFactory;
             TaskElementFactory = taskElementFactory;
+            TimeIntervalElementFactory = timeIntervalElementFactory;
             AddTimeIntervalDialog = addTimeIntervalDialog;
             AddTaskDialog = addTaskDialog;
             RemoveTasksDialog = removeTasksDialog;

@@ -50,6 +50,16 @@
 					 TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
 		</StackPanel>
 	</DataTemplate>
+	<DataTemplate x:Key="TimeIntervalElementTemplate" x:DataType="mi:ITimeIntervalElement">
+		<StackPanel>
+			<Label Content="Start:"/>
+			<CalendarDatePicker SelectedDate="{Binding Start}"/>
+			<Label Content="End:"/>
+			<CalendarDatePicker SelectedDate="{Binding End}"/>
+			<Label Content="Duration:"/>
+			<TextBox Text="{Binding Duration}" IsEnabled="False"/>
+		</StackPanel>
+	</DataTemplate>
 	<DataTemplate x:Key="ToDoListElementTemplate" x:DataType="vmt:ToDoListElement">
 		<Border Classes.IsExpired="{Binding IsExpired}"
 				Classes.IsLagging="{Binding IsLagging}">
@@ -105,8 +115,7 @@
 				<StackPanel Orientation="Horizontal" Spacing="5">
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
-					<ProgressBar Value="{Binding Progress.Value}"
-								 Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
+					<ProgressBar Value="{Binding Progress}" Minimum="0" Maximum="1"/>
 					<TextBlock Text="{Binding Deadline}"/>
 					<TextBlock Text="{Binding Priority}"/>
 					<TextBlock Text="{Binding Difficult}"/>
@@ -119,8 +128,7 @@
 				<StackPanel Orientation="Horizontal" Spacing="5">
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
-					<ProgressBar Value="{Binding Progress.Value}"
-								 Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
+					<ProgressBar Value="{Binding Progress}" Minimum="0" Maximum="1"/>
 					<TextBlock Text="{Binding Deadline}"/>
 					<TextBlock Text="{Binding Priority}"/>
 					<TextBlock Text="{Binding Difficult}"/>
@@ -140,16 +148,15 @@
 					<Label Content="Priority:"/>
 					<TextBox Text="{Binding Priority}"/>
 					<Label Content="Progress:"/>
-					<Slider Value="{Binding Progress.Value}"
-							Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
+					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1"/>
 					<Label Content="TotalReal:"/>
-					<TextBox Text="{Binding Real.Max}"/>
+					<TextBox Text="{Binding PlannedReal}"/>
 					<Label Content="ExecutedReal:"/>
-					<TextBox Text="{Binding Real.Value}"/>
+					<TextBox Text="{Binding ExecutedReal}"/>
 					<Label Content="PlannedTime:"/>
-					<TimePicker SelectedTime="{Binding Time.Max}"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}"/>
 					<Label Content="SpentTime:"/>
-					<TimePicker SelectedTime="{Binding Time.Value}"/>
+					<TimePicker SelectedTime="{Binding SpentTime}"/>
 					<Label Content="Status:"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
@@ -168,12 +175,11 @@
 					<Label Content="Priority:"/>
 					<TextBox Text="{Binding Priority}" IsEnabled="False"/>
 					<Label Content="Progress:"/>
-					<Slider IsEnabled="False" Value="{Binding Progress.Value}"
-							Minimum="{Binding Progress.Min}" Maximum="{Binding Progress.Max}"/>
+					<Slider IsEnabled="False" Value="{Binding Progress}" Minimum="0" Maximum="1"/>
 					<Label Content="PlannedTime:"/>
-					<TimePicker SelectedTime="{Binding Time.Max}" IsEnabled="False"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}" IsEnabled="False"/>
 					<Label Content="SpentTime:"/>
-					<TimePicker SelectedTime="{Binding Time.Value}" IsEnabled="False"/>
+					<TimePicker SelectedTime="{Binding SpentTime}" IsEnabled="False"/>
 					<Label Content="Status:"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>

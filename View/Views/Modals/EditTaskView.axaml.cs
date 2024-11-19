@@ -1,8 +1,10 @@
-using Avalonia.Controls;
+using Avalonia.ReactiveUI;
+
+using ViewModel.ViewModels.Modals;
 
 namespace View.Views.Modals;
 
-public partial class EditTaskView : UserControl
+public partial class EditTaskView : ReactiveUserControl<EditTaskViewModel>
 {
     public EditTaskView()
     {

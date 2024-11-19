@@ -4,7 +4,7 @@ using ReactiveUI.SourceGenerators;
 
 using Model.Interfaces;
 
-using ViewModel.AppState;
+using ViewModel.AppStates;
 
 namespace ViewModel.ViewModels;
 
@@ -14,7 +14,7 @@ public partial class MainViewModel : ViewModelBase
 
     private readonly string _fullFilePath;
 
-    private readonly AppStateManager _appStateManager;
+    private readonly AppState _appState;
 
     [Reactive]
     private IEnumerable<PageViewModel> _pages;
@@ -22,12 +22,12 @@ public partial class MainViewModel : ViewModelBase
     [Reactive]
     private PageViewModel? _selectedPage;
 
-    public MainViewModel(IEnumerable<PageViewModel> pages, AppStateManager appStateManager)
+    public MainViewModel(IEnumerable<PageViewModel> pages, AppState appState)
     {
-        _appStateManager = appStateManager;
+        _appState = appState;
 
-        _fullFilePath = _appStateManager.Services.FileService.CombinePath
-            (_appStateManager.Services.FileService.PersonalDirectoryPath, _partFilePath);
+        _fullFilePath = _appState.Services.FileService.CombinePath
+            (_appState.Services.FileService.PersonalDirectoryPath, _partFilePath);
 
         Pages = pages;
 
@@ -37,30 +37,30 @@ public partial class MainViewModel : ViewModelBase
     [ReactiveCommand]
     private void Notify()
     {
-        _appStateManager.Services.NotificationManager.SendNotification("Content", "Title");
+        _appState.Services.NotificationManager.SendNotification("Content", "Title");
     }
 
     [ReactiveCommand]
     private void Save()
     {
-        var data = _appStateManager.Services.Serializer.Serialize(_appStateManager.Session.Tasks);
-        var directoryPath = _appStateManager.Services.FileService.GetDirectoryPath(_fullFilePath);
-        if (!_appStateManager.Services.FileService.IsPathExists(directoryPath))
+        var data = _appState.Services.Serializer.Serialize(_appState.Session.Tasks);
+        var directoryPath = _appState.Services.FileService.GetDirectoryPath(_fullFilePath);
+        if (!_appState.Services.FileService.IsPathExists(directoryPath))
         {
-            _appStateManager.Services.FileService.CreateDirectory(directoryPath);
+            _appState.Services.FileService.CreateDirectory(directoryPath);
         }
-        _appStateManager.Services.FileService.Save(_fullFilePath, data);
+        _appState.Services.FileService.Save(_fullFilePath, data);
     }
 
     [ReactiveCommand]
     private void Load()
     {
-        if (!_appStateManager.Services.FileService.IsPathExists(_fullFilePath))
+        if (!_appState.Services.FileService.IsPathExists(_fullFilePath))
         {
             return;
         }
-        var data = _appStateManager.Services.FileService.Load(_fullFilePath);
-        _appStateManager.Session.Tasks = _appStateManager.Services.Serializer.
+        var data = _appState.Services.FileService.Load(_fullFilePath);
+        _appState.Session.Tasks = _appState.Services.Serializer.
             Deserialize<IList<ITask>>(data);
     }
 }

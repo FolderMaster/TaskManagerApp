@@ -2,7 +2,7 @@
 using Model.Interfaces;
 using Model.Technicals;
 
-namespace ViewModel.AppState
+namespace ViewModel.AppStates
 {
     public class Session : TrackableObject
     {

@@ -28,6 +28,7 @@
 				<Button Content="Edit" Command="{Binding EditCommand}"/>
 				<Button Content="Copy" Command="{Binding CopyCommand}"/>
 				<Button Content="Move" Command="{Binding MoveCommand}"/>
+				<Button Content="Swap" Command="{Binding SwapCommand}"/>
 				<Button Content="Go" Command="{Binding GoCommand}"/>
 			</WrapPanel>
 		</Grid>

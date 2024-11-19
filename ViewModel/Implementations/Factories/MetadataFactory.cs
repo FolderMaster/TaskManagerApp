@@ -1,7 +1,7 @@
 ﻿using ViewModel.Interfaces;
 using ViewModel.Technicals;
 
-namespace ViewModel.Implementations
+namespace ViewModel.Implementations.Factories
 {
     public class MetadataFactory : IFactory<object>
     {

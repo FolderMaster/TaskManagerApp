@@ -1,8 +1,10 @@
-using Avalonia.Controls;
+using Avalonia.ReactiveUI;
+
+using ViewModel.ViewModels.Pages;
 
 namespace View.Views.Pages;
 
-public partial class ToDoListView : UserControl
+public partial class ToDoListView : ReactiveUserControl<ToDoListViewModel>
 {
     public ToDoListView()
     {

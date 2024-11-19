@@ -2,7 +2,7 @@
 {
     public interface ITask
     {
-        public IFullCollection<ITask>? ParentTask { get; set; }
+        public IList<ITask>? ParentTask { get; set; }
 
         public object? Metadata { get; set; }
 
@@ -14,8 +14,10 @@
 
         public DateTime? Deadline { get; }
 
-        public IReadonlyRangeValue<double> Progress { get; }
+        public double Progress { get; }
 
-        public IReadonlyRangeValue<TimeSpan> Time { get; }
+        public TimeSpan PlannedTime { get; }
+
+        public TimeSpan SpentTime { get; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Model.Interfaces
+﻿using System.Collections;
+
+namespace Model.Interfaces
 {
-    public interface ITaskComposite : IFullCollection<ITask>, ITask { }
+    public interface ITaskComposite : IList<ITask>, IList, ITask { }
 }

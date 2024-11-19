@@ -1,19 +1,18 @@
 ﻿using ReactiveUI.SourceGenerators;
 using ReactiveUI;
 
-using Model.Tasks.Times;
 using Model.Technicals;
 using Model;
 
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
-using ViewModel.AppState;
+using ViewModel.AppStates;
 
 namespace ViewModel.ViewModels.Pages;
 
 public partial class TimeViewModel : PageViewModel
 {
-    private readonly AppStateManager _appStateManager;
+    private readonly AppState _appState;
 
     [Reactive]
     private IList<CalendarInterval> _calendarIntervals =
@@ -25,28 +24,28 @@ public partial class TimeViewModel : PageViewModel
     [Reactive]
     private DateTime _currentWeek = DateTime.Now;
 
-    public TimeViewModel(AppStateManager appStateManager)
+    public TimeViewModel(AppState appState)
     {
-        _appStateManager = appStateManager;
+        _appState = appState;
 
-        Metadata = _appStateManager.Services.ResourceService.GetResource("TimePageMetadata");
-        _appStateManager.ItemSessionChanged += AppStateManager_ItemSessionChanged;
+        Metadata = _appState.Services.ResourceService.GetResource("TimePageMetadata");
+        _appState.ItemSessionChanged += AppStateManager_ItemSessionChanged;
     }
 
     [ReactiveCommand]
     private void Update()
     {
-        if (_appStateManager.Session.Tasks == null)
+        if (_appState.Session.Tasks == null)
         {
             return;
         }
         CalendarIntervals.Clear();
-        var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
+        var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
         foreach (var task in tasks)
         {
             foreach(var timeInterval in task.TimeIntervals)
             {
-                CalendarIntervals.Add(new CalendarInterval((TimeIntervalElement)timeInterval, task));
+                CalendarIntervals.Add(new CalendarInterval(timeInterval, task));
             }
         }
     }
@@ -63,16 +62,16 @@ public partial class TimeViewModel : PageViewModel
     [ReactiveCommand]
     private async Task Add()
     {
-        var result = await AddModal(_appStateManager.Services.AddTimeIntervalDialog,
-            new TasksViewModelArgs(_appStateManager.Session.Tasks,
-            _appStateManager.Session.Tasks));
+        var timeIntervalElement = _appState.Services.TimeIntervalElementFactory.Create();
+        var result = await AddModal(_appState.Services.AddTimeIntervalDialog,
+            new TimeIntervalViewModelArgs(_appState.Session.Tasks,
+            _appState.Session.Tasks, timeIntervalElement));
         if (result != null)
         {
-            result.TaskElement.TimeIntervals.Add(result.TimeInterval);
-            CalendarIntervals.Add(new CalendarInterval(result.TimeInterval, result.TaskElement));
-            _appStateManager.UpdateSessionItems();
+            result.TaskElement.TimeIntervals.Add(result.TimeIntervalElement);
+            CalendarIntervals.Add(new CalendarInterval(result.TimeIntervalElement, result.TaskElement));
+            _appState.UpdateSessionItems();
         }
-        
     }
 
     private void AppStateManager_ItemSessionChanged(object? sender, object e) =>

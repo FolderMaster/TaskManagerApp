@@ -1,33 +1,24 @@
 ﻿using System.ComponentModel;
 
 using Model.Interfaces;
-using Model.Tasks.Ranges;
 using Model.Technicals;
 
 namespace Model.Tasks
 {
     public class TaskComposite : TrackableCollection<ITask>, ITaskComposite, ICloneable
     {
-        private static readonly IEnumerable<string> _changedPropertyNames =
-            [ nameof(Difficult), nameof(Priority), nameof(Status), nameof(Deadline) ];
+        private static readonly IEnumerable<string> _changedPropertyNames = [ nameof(Difficult),
+            nameof(Priority), nameof(Status), nameof(Deadline), nameof(Progress),
+            nameof(PlannedTime), nameof(SpentTime) ];
 
-        private IFullCollection<ITask>? _parentTask;
+        private IList<ITask>? _parentTask;
 
         private object? _metadata;
 
-        private readonly ProgressCompositeRangeValue _progress = new();
-
-        public IFullCollection<ITask>? ParentTask
+        public IList<ITask>? ParentTask
         {
             get => _parentTask;
-            set
-            {
-                if (ParentTask != value)
-                {
-                    _parentTask = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => UpdateProperty(ref _parentTask, value);
         }
 
         public object? Metadata
@@ -40,13 +31,15 @@ namespace Model.Tasks
 
         public int Priority => _items.Count > 0 ? _items.Max(y => y.Priority) : 0;
 
-        public DateTime? Deadline => _items.Count > 0 ? _items.Max(x => x.Deadline) : null;
-
         public TaskStatus Status => _items.Count > 0 ? _items.Min(x => x.Status) : TaskStatus.Planned;
 
-        public IReadonlyRangeValue<double> Progress => _progress;
+        public DateTime? Deadline => _items.Count > 0 ? _items.Max(x => x.Deadline) : null;
 
-        public IReadonlyRangeValue<TimeSpan> Time { get; private set; }
+        public double Progress => _items.Count > 0 ? _items.Sum(i => i.Progress) / _items.Count : 0;
+
+        public TimeSpan PlannedTime => _items.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.PlannedTime);
+
+        public TimeSpan SpentTime => _items.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.SpentTime);
 
         public TaskComposite(IEnumerable<ITask>? subtasks = null) : base(subtasks) { }
 
@@ -73,7 +66,6 @@ namespace Model.Tasks
         protected override void OnAddedItem(ITask task, bool arePropertiesUpdate = true)
         {
             task.ParentTask = this;
-            _progress.Add(task.Progress);
             if (task is INotifyPropertyChanged notify)
             {
                 notify.PropertyChanged += Notify_PropertyChanged;
@@ -90,7 +82,6 @@ namespace Model.Tasks
         protected override void OnRemovedItem(ITask task)
         {
             task.ParentTask = null;
-            _progress.Remove(task.Progress);
             if (task is INotifyPropertyChanged notify)
             {
                 notify.PropertyChanged -= Notify_PropertyChanged;

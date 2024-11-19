@@ -18,10 +18,8 @@
 				  ItemsSource="{Binding List}" SelectedItem="{Binding SelectedTaskElement}"
 				  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
 		<StackPanel Grid.Row="2">
-			<Label Content="Start:"/>
-			<CalendarDatePicker SelectedDate="{Binding Start}"/>
-			<Label Content="End:"/>
-			<CalendarDatePicker SelectedDate="{Binding End}"/>
+			<ContentControl Content="{Binding TimeIntervalElement}"
+							ContentTemplate="{StaticResource TimeIntervalElementTemplate}"/>
 		</StackPanel>
 		<WrapPanel Grid.Row="3">
 			<Button Content="OK" Command="{Binding OkCommand}"/>

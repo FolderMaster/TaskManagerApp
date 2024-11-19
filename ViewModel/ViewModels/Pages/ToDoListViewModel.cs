@@ -4,38 +4,37 @@ using ReactiveUI;
 using Model;
 
 using ViewModel.Technicals;
-using ViewModel.AppState;
+using ViewModel.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {
     public partial class ToDoListViewModel : PageViewModel
     {
-        private readonly AppStateManager _appStateManager;
+        private readonly AppState _appState;
 
         [Reactive]
         private IEnumerable<ToDoListElement>? _toDoList;
 
-        public ToDoListViewModel(AppStateManager appStateManager)
+        public ToDoListViewModel(AppState appStateManager)
         {
-            _appStateManager = appStateManager;
+            _appState = appStateManager;
 
-            Metadata =
-                _appStateManager.Services.ResourceService.GetResource("ToDoListPageMetadata");
-            _appStateManager.ItemSessionChanged += AppStateManager_ItemSessionChanged;
+            Metadata = _appState.Services.ResourceService.GetResource("ToDoListPageMetadata");
+            _appState.ItemSessionChanged += AppStateManager_ItemSessionChanged;
         }
 
         [ReactiveCommand]
         public void Update()
         {
-            if (_appStateManager.Session.Tasks == null)
+            if (_appState.Session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appStateManager.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
             ToDoList = uncompletedTasks.OrderBy(t => t.Difficult).
-                OrderBy(t => t.Priority).OrderBy(t => t.Time.Max - t.Time.Value).Select
-                (t => new ToDoListElement(t, t.Deadline + (t.Time.Max - t.Time.Value) <
+                OrderBy(t => t.Priority).OrderBy(t => t.PlannedTime - t.SpentTime).Select
+                (t => new ToDoListElement(t, t.Deadline + (t.PlannedTime - t.SpentTime) <
                 DateTime.Now, t.Deadline < DateTime.Now));
         }
 

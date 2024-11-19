@@ -1,8 +1,10 @@
-using Avalonia.Controls;
+using Avalonia.ReactiveUI;
+
+using ViewModel.ViewModels.Pages;
 
 namespace View.Views.Pages;
 
-public partial class TimeView : UserControl
+public partial class TimeView : ReactiveUserControl<TimeViewModel>
 {
     public TimeView()
     {
