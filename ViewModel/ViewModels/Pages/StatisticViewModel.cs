@@ -3,6 +3,9 @@ using ReactiveUI;
 
 using Model;
 
+using MachineLearning;
+using MachineLearning.LearningModels;
+
 using ViewModel.Technicals;
 using ViewModel.AppStates;
 
@@ -11,6 +14,8 @@ namespace ViewModel.ViewModels.Pages
     public partial class StatisticViewModel : PageViewModel
     {
         private readonly AppState _appState;
+
+        private readonly KMeanLearningModel _learningModel = new();
 
         [Reactive]
         private IEnumerable<TimeSpan> _times =
@@ -42,6 +47,9 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IEnumerable<StatisticElement> _tasksTimeStatistic;
 
+        [Reactive]
+        private IEnumerable<GroupPoint> _clustersElements;
+
         public StatisticViewModel(AppState appState)
         {
             _appState = appState;
@@ -61,6 +69,22 @@ namespace ViewModel.ViewModels.Pages
             UpdateTimeTasksStatistic();
         }
 
+        [ReactiveCommand]
+        private async Task Predict()
+        {
+            if (_appState.Session.Tasks == null)
+            {
+                return;
+            }
+            _learningModel.NumbersOfClusters = 3;
+            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
+            var inputs = tasks.Select(t => new double[] {t.Difficult, t.Priority, (int)t.Status});
+            await _learningModel.Train(inputs);
+            var clusters = _learningModel.Predict(inputs);
+            ClustersElements = tasks.Zip(clusters).Select(g => new GroupPoint(g.First.Priority,
+                g.First.Difficult, g.First.Metadata.ToString(), g.Second));
+        }
+
         private void UpdateTasksCountStatistics()
         {
             if (_appState.Session.Tasks == null)
@@ -74,8 +98,8 @@ namespace ViewModel.ViewModels.Pages
                 GroupBy(t => ((Metadata)t.Metadata).Category).
                 Select(g => new StatisticElement(g.Count(), $"{g.Key}"));
             UncompletedTasksCountByTagsStatistic = uncompletedTasks.
-                SelectMany(t => ((Metadata)t.Metadata).Tags, (task, tag) => new { Task = task, Tag = tag }).
-                GroupBy(e => e.Tag).
+                SelectMany(t => ((Metadata)t.Metadata).Tags, (task, tag) =>
+                new { Task = task, Tag = tag }).GroupBy(e => e.Tag).
                 Select(g => new StatisticElement(g.Count(), $"{g.Key}"));
             UncompletedTasksCountByPriorityStatistic = uncompletedTasks.GroupBy(t => t.Priority).
                 Select(g => new StatisticElement(g.Count(), $"Priority {g.Key}"));
@@ -128,7 +152,6 @@ namespace ViewModel.ViewModels.Pages
             ];
         }
 
-        private void AppStateManager_ItemSessionChanged(object? sender, object e) =>
-            UpdateCommand.Execute();
+        private void AppStateManager_ItemSessionChanged(object? sender, object e) => Update();
     }
 }

@@ -38,25 +38,25 @@
 	</DataTemplate>
 	<DataTemplate x:Key="TaskMetadataTemplate" x:DataType="vmt:Metadata">
 		<StackPanel>
-			<Label Content="Name:"/>
+			<Label Content="{DynamicResource NameLabelContent}"/>
 			<TextBox Text="{Binding Name}"/>
-			<Label Content="Description:"/>
+			<Label Content="{DynamicResource DescriptionLabelContent}"/>
 			<TextBox Text="{Binding Description}" TextWrapping="Wrap"
 					 AcceptsReturn="True" AcceptsTab="True"/>
-			<Label Content="Category:"/>
+			<Label Content="{DynamicResource CategoryLabelContent}"/>
 			<TextBox Text="{Binding Category}"/>
-			<Label Content="Tags:"/>
+			<Label Content="{DynamicResource TagsLabelContent}"/>
 			<TextBox Text="{Binding Tags, Converter={StaticResource TagsToStringConverter}}"
 					 TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
 		</StackPanel>
 	</DataTemplate>
 	<DataTemplate x:Key="TimeIntervalElementTemplate" x:DataType="mi:ITimeIntervalElement">
 		<StackPanel>
-			<Label Content="Start:"/>
+			<Label Content="{DynamicResource StartLabelContent}"/>
 			<CalendarDatePicker SelectedDate="{Binding Start}"/>
-			<Label Content="End:"/>
+			<Label Content="{DynamicResource EndLabelContent}"/>
 			<CalendarDatePicker SelectedDate="{Binding End}"/>
-			<Label Content="Duration:"/>
+			<Label Content="{DynamicResource DurationLabelContent}"/>
 			<TextBox Text="{Binding Duration}" IsEnabled="False"/>
 		</StackPanel>
 	</DataTemplate>
@@ -143,24 +143,24 @@
 				<StackPanel>
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
-					<Label Content="Difficult:"/>
+					<Label Content="{DynamicResource DifficultLabelContent}"/>
 					<TextBox Text="{Binding Difficult}"/>
-					<Label Content="Priority:"/>
+					<Label Content="{DynamicResource PriorityLabelContent}"/>
 					<TextBox Text="{Binding Priority}"/>
-					<Label Content="Progress:"/>
+					<Label Content="{DynamicResource ProgressLabelContent}"/>
 					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1"/>
-					<Label Content="TotalReal:"/>
+					<Label Content="{DynamicResource TotalRealLabelContent}"/>
 					<TextBox Text="{Binding PlannedReal}"/>
-					<Label Content="ExecutedReal:"/>
+					<Label Content="{DynamicResource ExecutedRealLabelContent}"/>
 					<TextBox Text="{Binding ExecutedReal}"/>
-					<Label Content="PlannedTime:"/>
+					<Label Content="{DynamicResource PlannedTimeLabelContent}"/>
 					<TimePicker SelectedTime="{Binding PlannedTime}"/>
-					<Label Content="SpentTime:"/>
+					<Label Content="{DynamicResource SpentTimeLabelContent}"/>
 					<TimePicker SelectedTime="{Binding SpentTime}"/>
-					<Label Content="Status:"/>
+					<Label Content="{DynamicResource StatusLabelContent}"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
-					<Label Content="Deadline:"/>
+					<Label Content="{DynamicResource DeadlineLabelContent}"/>
 					<CalendarDatePicker SelectedDate="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>
@@ -170,20 +170,20 @@
 				<StackPanel>
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
-					<Label Content="Difficult:"/>
+					<Label Content="{DynamicResource DifficultLabelContent}"/>
 					<TextBox Text="{Binding Difficult}" IsEnabled="False"/>
-					<Label Content="Priority:"/>
+					<Label Content="{DynamicResource PriorityLabelContent}"/>
 					<TextBox Text="{Binding Priority}" IsEnabled="False"/>
-					<Label Content="Progress:"/>
+					<Label Content="{DynamicResource ProgressLabelContent}"/>
 					<Slider IsEnabled="False" Value="{Binding Progress}" Minimum="0" Maximum="1"/>
-					<Label Content="PlannedTime:"/>
+					<Label Content="{DynamicResource PlannedTimeLabelContent}"/>
 					<TimePicker SelectedTime="{Binding PlannedTime}" IsEnabled="False"/>
-					<Label Content="SpentTime:"/>
+					<Label Content="{DynamicResource SpentTimeLabelContent}"/>
 					<TimePicker SelectedTime="{Binding SpentTime}" IsEnabled="False"/>
-					<Label Content="Status:"/>
+					<Label Content="{DynamicResource StatusLabelContent}"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>
-					<Label Content="Deadline:"/>
+					<Label Content="{DynamicResource DeadlineLabelContent}"/>
 					<CalendarDatePicker IsEnabled="False" SelectedDate="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>

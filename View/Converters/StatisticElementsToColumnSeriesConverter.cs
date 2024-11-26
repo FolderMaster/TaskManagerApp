@@ -21,7 +21,7 @@ namespace View.Converters
             {
                 Name = e.Name,
                 Values = [e.Value]
-            }).ToArray().Cast<ISeries>();
+            }).Cast<ISeries>().ToArray();
         }
 
         public object ConvertBack(object? value, Type targetType, object? parameter,

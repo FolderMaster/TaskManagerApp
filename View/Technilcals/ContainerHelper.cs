@@ -21,7 +21,6 @@ using View.Views;
 using View.Views.Pages;
 using View.Views.Modals;
 
-
 namespace View.Technilcals
 {
     public static class ContainerHelper
@@ -33,7 +32,7 @@ namespace View.Technilcals
             builder.RegisterType<MockNotificationManager>().As<INotificationManager>().
                 SingleInstance();
 
-            return CreateContainer(builder, resolver, false);
+            return CreateContainer(builder, resolver, true);
         }
 
         public static (ContainerBuilder, AutofacDependencyResolver) GetContainerElements()
@@ -42,16 +41,19 @@ namespace View.Technilcals
 
             builder.RegisterType<FileService>().As<IFileService>().SingleInstance();
             builder.RegisterType<JsonSerializer>().As<ISerializer>().SingleInstance();
-            builder.RegisterType<AvaloniaResourceService>().As<IResourceService>().SingleInstance();
+            builder.RegisterType<AvaloniaResourceService>().
+                As<IResourceService>().SingleInstance();
             builder.RegisterType<AvaloniaThemeManager>().As<IThemeManager>().SingleInstance();
+            builder.RegisterType<AvaloniaLocalizationManager>().
+                As<ILocalizationManager>().SingleInstance();
 
             builder.RegisterType<MetadataFactory>().As<IFactory<object>>().SingleInstance();
             builder.RegisterType<TaskElementFactory>().As<IFactory<ITaskElement>>().
                 SingleInstance();
             builder.RegisterType<TaskCompositeFactory>().As<IFactory<ITaskComposite>>().
                 SingleInstance();
-            builder.RegisterType<TimeIntervalElementFactory>().As<IFactory<ITimeIntervalElement>>().
-                SingleInstance();
+            builder.RegisterType<TimeIntervalElementFactory>().
+                As<IFactory<ITimeIntervalElement>>().SingleInstance();
 
             builder.RegisterType<AddTimeIntervalViewModel>().
                 As<DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
@@ -72,11 +74,16 @@ namespace View.Technilcals
             builder.RegisterType<ServicesCollection>().SingleInstance();
             builder.RegisterType<AppState>().As<AppState>().SingleInstance();
 
-            builder.RegisterType<EditorViewModel>().As<PageViewModel>().SingleInstance();
-            builder.RegisterType<TimeViewModel>().As<PageViewModel>().SingleInstance();
-            builder.RegisterType<StatisticViewModel>().As<PageViewModel>().SingleInstance();
-            builder.RegisterType<ToDoListViewModel>().As<PageViewModel>().SingleInstance();
-            builder.RegisterType<SettingsViewModel>().As<PageViewModel>().SingleInstance();
+            builder.RegisterType<EditorViewModel>().As<EditorViewModel>().
+                As<PageViewModel>().SingleInstance();
+            builder.RegisterType<TimeViewModel>().As<TimeViewModel>().
+                As<PageViewModel>().SingleInstance();
+            builder.RegisterType<StatisticViewModel>().As<StatisticViewModel>().
+                As<PageViewModel>().SingleInstance();
+            builder.RegisterType<ToDoListViewModel>().As<ToDoListViewModel>().
+                As<PageViewModel>().SingleInstance();
+            builder.RegisterType<SettingsViewModel>().As<SettingsViewModel>().
+                As<PageViewModel>().SingleInstance();
             builder.RegisterType<MainViewModel>().SingleInstance();
 
             builder.RegisterType<MainView>().SingleInstance();

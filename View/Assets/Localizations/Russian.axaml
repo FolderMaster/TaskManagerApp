@@ -1,0 +1,49 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="MainWindowTitle">Task manager</sys:String>
+
+	<sys:String x:Key="OkButtonContent">OK</sys:String>
+	<sys:String x:Key="CancelButtonContent">Отмена</sys:String>
+
+	<sys:String x:Key="RemoveButtonContent">Удалить</sys:String>
+	<sys:String x:Key="AddTaskElementButtonContent">Добавить элемент задачи</sys:String>
+	<sys:String x:Key="AddTaskCompositeButtonContent">Добавить коллекцию задачи</sys:String>
+	<sys:String x:Key="EditButtonContent">Изменить</sys:String>
+	<sys:String x:Key="CopyButtonContent">Копировать</sys:String>
+	<sys:String x:Key="MoveButtonContent">Переместить</sys:String>
+	<sys:String x:Key="SwapButtonContent">Сменить</sys:String>
+	<sys:String x:Key="GoButtonContent">Перейти</sys:String>
+	<sys:String x:Key="GoToPreviousButtonContent">&lt;&#45;</sys:String>
+
+	<sys:String x:Key="PreviousButtonContent">Предыдущий</sys:String>
+	<sys:String x:Key="NowButtonContent">Сейчас</sys:String>
+	<sys:String x:Key="NextButtonContent">Следующий</sys:String>
+	<sys:String x:Key="AddTimeIntervalElementButtonContent">Добавить элемент временного интервала</sys:String>
+
+	<sys:String x:Key="ThemeLabelContent">Тема</sys:String>
+	<sys:String x:Key="LocalizationLabelContent">Язык</sys:String>
+
+	<sys:String x:Key="CountTabItemHeader">Количество</sys:String>
+	<sys:String x:Key="ExpiredTasksTabItemHeader">Просроченные задачи</sys:String>
+	<sys:String x:Key="TimeTabItemHeader">Время</sys:String>
+
+	<sys:String x:Key="NameLabelContent">Название</sys:String>
+	<sys:String x:Key="DescriptionLabelContent">Описание</sys:String>
+	<sys:String x:Key="CategoryLabelContent">Категория</sys:String>
+	<sys:String x:Key="TagsLabelContent">Теги</sys:String>
+
+	<sys:String x:Key="StartLabelContent">Начало</sys:String>
+	<sys:String x:Key="EndLabelContent">Конец</sys:String>
+	<sys:String x:Key="DurationLabelContent">Продолжительность</sys:String>
+
+	<sys:String x:Key="DifficultLabelContent">Сложность</sys:String>
+	<sys:String x:Key="PriorityLabelContent">Приоритет</sys:String>
+	<sys:String x:Key="ProgressLabelContent">Прогресс</sys:String>
+	<sys:String x:Key="TotalRealLabelContent">Суммарное реальное</sys:String>
+	<sys:String x:Key="ExecutedRealLabelContent">Выполенное реальное</sys:String>
+	<sys:String x:Key="PlannedTimeLabelContent">Запланнированное время</sys:String>
+	<sys:String x:Key="SpentTimeLabelContent">Затраченное время</sys:String>
+	<sys:String x:Key="StatusLabelContent">Статус</sys:String>
+	<sys:String x:Key="DeadlineLabelContent">Срок</sys:String>
+</ResourceDictionary>

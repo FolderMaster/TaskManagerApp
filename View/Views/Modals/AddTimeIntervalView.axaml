@@ -11,8 +11,10 @@
 	</Design.DataContext>
 	<Grid RowDefinitions="Auto, *, Auto, Auto">
 		<WrapPanel Grid.Row="0">
-			<Button Content="&lt;&#45;" Command="{Binding GoToPreviousCommand}"/>
-			<Button Content="Go" Command="{Binding GoCommand}"/>
+			<Button Content="{DynamicResource GoToPreviousButtonContent}"
+					Command="{Binding GoToPreviousCommand}"/>
+			<Button Content="{DynamicResource GoButtonContent}"
+					Command="{Binding GoCommand}"/>
 		</WrapPanel>
 		<TreeView Grid.Row="1" SelectionMode="Single, Toggle"
 				  ItemsSource="{Binding List}" SelectedItem="{Binding SelectedTaskElement}"
@@ -22,8 +24,10 @@
 							ContentTemplate="{StaticResource TimeIntervalElementTemplate}"/>
 		</StackPanel>
 		<WrapPanel Grid.Row="3">
-			<Button Content="OK" Command="{Binding OkCommand}"/>
-			<Button Content="Cancel" Command="{Binding CancelCommand}"/>
+			<Button Content="{DynamicResource OkButtonContent}"
+					Command="{Binding OkCommand}"/>
+			<Button Content="{DynamicResource CancelButtonContent}"
+					Command="{Binding CancelCommand}"/>
 		</WrapPanel>
 	</Grid>
 </UserControl>

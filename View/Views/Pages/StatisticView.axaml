@@ -10,28 +10,38 @@
              x:Class="View.Views.Pages.StatisticView"
 			 x:DataType="vm:StatisticViewModel">
 	<TabControl>
-		<TabItem Header="Count">
+		<TabItem Header="{DynamicResource CountTabItemHeader}">
 			<UniformGrid Rows="2" Columns="2">
 				<lc:PieChart Grid.Row="0" Grid.Column="0" Series="{Binding UncompletedTasksCountByCategoryStatistic,
-								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
+							 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
 				<lc:PieChart Grid.Row="0" Grid.Column="1" Series="{Binding UncompletedTasksCountByPriorityStatistic,
-								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
+							 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
 				<lc:PieChart Grid.Row="1" Grid.Column="0" Series="{Binding UncompletedTasksCountByDifficultStatistic,
-								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
+							 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
 				<lc:CartesianChart Grid.Row="1" Grid.Column="1" Series="{Binding UncompletedTasksCountByTagsStatistic,
-									   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
+								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
 			</UniformGrid>
 		</TabItem>
-		<TabItem Header="Expired tasks">
+		<TabItem Header="{DynamicResource ExpiredTasksTabItemHeader}">
 			<Grid RowDefinitions="Auto, *">
 				<ComboBox Grid.Row="0" ItemsSource="{Binding Times}" SelectedItem="{Binding SelectedTime}"/>
 				<lc:CartesianChart Grid.Row="1" Series="{Binding ExpiredTasksStatistic,
 									   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
 			</Grid>
 		</TabItem>
-		<TabItem Header="Time">
+		<TabItem Header="{DynamicResource TimeTabItemHeader}">
 			<lc:CartesianChart Series="{Binding TasksTimeStatistic,
 								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
+		</TabItem>
+		<TabItem Header="Clusters">
+			<Grid RowDefinitions="Auto, *">
+				<WrapPanel Grid.Row="0">
+					<Button Content="Predict" Command="{Binding PredictCommand}"/>
+				</WrapPanel>
+				<lc:CartesianChart Grid.Row="1" Series="{Binding ClustersElements,
+								   Converter={StaticResource GroupPointsToScatterSeriesConverter}}"/>
+			</Grid>
+			
 		</TabItem>
 	</TabControl>
 </UserControl>

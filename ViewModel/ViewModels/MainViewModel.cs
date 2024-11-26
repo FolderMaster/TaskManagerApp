@@ -35,21 +35,22 @@ public partial class MainViewModel : ViewModelBase
     }
 
     [ReactiveCommand]
-    private void Notify()
-    {
-        _appState.Services.NotificationManager.SendNotification("Content", "Title");
-    }
-
-    [ReactiveCommand]
     private void Save()
     {
-        var data = _appState.Services.Serializer.Serialize(_appState.Session.Tasks);
         var directoryPath = _appState.Services.FileService.GetDirectoryPath(_fullFilePath);
         if (!_appState.Services.FileService.IsPathExists(directoryPath))
         {
             _appState.Services.FileService.CreateDirectory(directoryPath);
         }
-        _appState.Services.FileService.Save(_fullFilePath, data);
+        try
+        {
+            var data = _appState.Services.Serializer.Serialize(_appState.Session.Tasks);
+            _appState.Services.FileService.Save(_fullFilePath, data);
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 
     [ReactiveCommand]
@@ -59,8 +60,16 @@ public partial class MainViewModel : ViewModelBase
         {
             return;
         }
-        var data = _appState.Services.FileService.Load(_fullFilePath);
-        _appState.Session.Tasks = _appState.Services.Serializer.
-            Deserialize<IList<ITask>>(data);
+        try
+        {
+            var data = _appState.Services.FileService.Load(_fullFilePath);
+            _appState.Session.Tasks = _appState.Services.Serializer.
+                Deserialize<IList<ITask>>(data);
+            _appState.UpdateSessionItems();
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 }

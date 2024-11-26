@@ -6,4 +6,5 @@
 	<c:TagsToStringConverter x:Key="TagsToStringConverter"/>
 	<c:StatisticElementsToPieSeriesConverter x:Key="StatisticElementsToPieSeriesConverter"/>
 	<c:StatisticElementsToColumnSeriesConverter x:Key="StatisticElementsToColumnSeriesConverter"/>
+	<c:GroupPointsToScatterSeriesConverter x:Key="GroupPointsToScatterSeriesConverter"/>
 </ResourceDictionary>

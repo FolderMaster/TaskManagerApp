@@ -2,6 +2,7 @@
 using Autofac;
 using Avalonia;
 using Avalonia.ReactiveUI;
+
 using ViewModel.Interfaces;
 
 namespace View.Desktop;
@@ -30,6 +31,8 @@ class Program
         return result;
     }
 
-    private static void App_ContainerBuilderCreated(object? sender, ContainerBuilder e) =>
+    private static void App_ContainerBuilderCreated(object? sender, ContainerBuilder e)
+    {
         e.RegisterType<DesktopNotificationManager>().As<INotificationManager>();
+    }
 }

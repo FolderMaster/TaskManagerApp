@@ -23,7 +23,6 @@ namespace View.Implementations
 
         public AvaloniaThemeManager()
         {
-            var application = Application.Current;
             UpdateThemes();
             ActualTheme = Application.Current.ActualThemeVariant;
         }
@@ -35,9 +34,7 @@ namespace View.Implementations
             Themes = themes;
         }
 
-        private void SetTheme()
-        {
+        private void SetTheme() =>
             Application.Current.RequestedThemeVariant = (ThemeVariant)ActualTheme;
-        }
     }
 }

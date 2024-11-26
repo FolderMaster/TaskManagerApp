@@ -1,4 +1,5 @@
 ﻿using ReactiveUI.SourceGenerators;
+using System.Globalization;
 
 using ViewModel.AppStates;
 
@@ -14,6 +15,15 @@ namespace ViewModel.ViewModels.Pages
         {
             get => _appState.Settings.ThemeManager.ActualTheme;
             set => _appState.Settings.ThemeManager.ActualTheme = value;
+        }
+
+        public IEnumerable<CultureInfo> Localizations =>
+            _appState.Settings.LocalizationManager.Localizations;
+
+        public CultureInfo SelectedLocalization
+        {
+            get => _appState.Settings.LocalizationManager.ActualLocalization;
+            set => _appState.Settings.LocalizationManager.ActualLocalization = value;
         }
 
         public SettingsViewModel(AppState appState)

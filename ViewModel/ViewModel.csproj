@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MachineLearning\MachineLearning.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 

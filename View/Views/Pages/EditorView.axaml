@@ -14,7 +14,8 @@
 	<Grid>
 		<Grid RowDefinitions="Auto, *, Auto">
 			<WrapPanel Grid.Row="0">
-				<Button Content="&lt;&#45;" Command="{Binding GoToPreviousCommand}"/>
+				<Button Content="{DynamicResource GoToPreviousButtonContent}"
+						Command="{Binding GoToPreviousCommand}"/>
 			</WrapPanel>
 			<TreeView Grid.Row="1"
 					  ItemsSource="{Binding TaskListView}"
@@ -22,14 +23,22 @@
 					  SelectedItems="{Binding SelectedTasks}"
 					  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
 			<WrapPanel Grid.Row="2">
-				<Button Content="Remove" Command="{Binding RemoveCommand}"/>
-				<Button Content="Add task element" Command="{Binding AddTaskElementCommand}"/>
-				<Button Content="Add task composite" Command="{Binding AddTaskCompositeCommand}"/>
-				<Button Content="Edit" Command="{Binding EditCommand}"/>
-				<Button Content="Copy" Command="{Binding CopyCommand}"/>
-				<Button Content="Move" Command="{Binding MoveCommand}"/>
-				<Button Content="Swap" Command="{Binding SwapCommand}"/>
-				<Button Content="Go" Command="{Binding GoCommand}"/>
+				<Button Content="{DynamicResource RemoveButtonContent}"
+						Command="{Binding RemoveCommand}"/>
+				<Button Content="{DynamicResource AddTaskElementButtonContent}"
+						Command="{Binding AddTaskElementCommand}"/>
+				<Button Content="{DynamicResource AddTaskCompositeButtonContent}"
+						Command="{Binding AddTaskCompositeCommand}"/>
+				<Button Content="{DynamicResource EditButtonContent}"
+						Command="{Binding EditCommand}"/>
+				<Button Content="{DynamicResource CopyButtonContent}"
+						Command="{Binding CopyCommand}"/>
+				<Button Content="{DynamicResource MoveButtonContent}"
+						Command="{Binding MoveCommand}"/>
+				<Button Content="{DynamicResource SwapButtonContent}"
+						Command="{Binding SwapCommand}"/>
+				<Button Content="{DynamicResource GoButtonContent}"
+						Command="{Binding GoCommand}"/>
 			</WrapPanel>
 		</Grid>
 	</Grid>

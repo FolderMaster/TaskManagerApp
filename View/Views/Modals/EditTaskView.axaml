@@ -12,8 +12,10 @@
 	<Grid RowDefinitions="*, Auto">
 		<ContentControl Content="{Binding Item}" ContentTemplate="{StaticResource TaskTemplate}"/>
 		<WrapPanel Grid.Row="1">
-			<Button Content="OK" Command="{Binding OkCommand}"/>
-			<Button Content="Cancel" Command="{Binding CancelCommand}"/>
+			<Button Content="{DynamicResource OkButtonContent}"
+					Command="{Binding OkCommand}"/>
+			<Button Content="{DynamicResource CancelButtonContent}"
+					Command="{Binding CancelCommand}"/>
 		</WrapPanel>
 	</Grid>
 </UserControl>

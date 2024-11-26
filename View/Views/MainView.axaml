@@ -16,7 +16,7 @@
 		<EventTriggerBehavior EventName="Loaded">
 			<InvokeCommandAction Command="{Binding LoadCommand}" />
 		</EventTriggerBehavior>
-		<EventTriggerBehavior EventName="DetachedFromLogicalTree">
+		<EventTriggerBehavior EventName="DetachedFromVisualTree">
 			<InvokeCommandAction Command="{Binding SaveCommand}" />
 		</EventTriggerBehavior>
 	</Interaction.Behaviors>
@@ -41,7 +41,6 @@
 								</Style>
 							</ListBox.Styles>
 						</ListBox>
-						<Button Content="Notify" Command="{Binding NotifyCommand}"/>
 					</StackPanel>
 				</SplitView.Pane>
 				<TransitioningContentControl Content="{Binding SelectedPage}"

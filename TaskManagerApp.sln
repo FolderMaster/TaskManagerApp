@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{920AD96A-CC79-4AD2-8861-797C82E511A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearning", "MachineLearning\MachineLearning.csproj", "{924540AB-0454-4242-97BC-ACC398828B13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{920AD96A-CC79-4AD2-8861-797C82E511A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{920AD96A-CC79-4AD2-8861-797C82E511A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{920AD96A-CC79-4AD2-8861-797C82E511A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924540AB-0454-4242-97BC-ACC398828B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924540AB-0454-4242-97BC-ACC398828B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924540AB-0454-4242-97BC-ACC398828B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924540AB-0454-4242-97BC-ACC398828B13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,10 +25,10 @@
 							ItemTemplate="{StaticResource CalendarIntervalTemplate}"/>
 		</Grid>
 		<WrapPanel Grid.Row="1">
-			<Button Content="Add" Command="{Binding AddCommand}"/>
-			<Button Content="Previous" Command="{Binding GoToPreviousCommand}"/>
-			<Button Content="Now" Command="{Binding GoToNowCommand}"/>
-			<Button Content="Next" Command="{Binding GoToNextCommand}"/>
+			<Button Content="{DynamicResource AddTimeIntervalElementButtonContent}" Command="{Binding AddCommand}"/>
+			<Button Content="{DynamicResource PreviousButtonContent}" Command="{Binding GoToPreviousCommand}"/>
+			<Button Content="{DynamicResource NowButtonContent}" Command="{Binding GoToNowCommand}"/>
+			<Button Content="{DynamicResource NextButtonContent}" Command="{Binding GoToNextCommand}"/>
 		</WrapPanel>
 	</Grid>
 </UserControl>

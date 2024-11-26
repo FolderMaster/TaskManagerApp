@@ -1,0 +1,48 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="MainWindowTitle">Task manager</sys:String>
+
+	<sys:String x:Key="OkButtonContent">OK</sys:String>
+	<sys:String x:Key="CancelButtonContent">Cancel</sys:String>
+
+	<sys:String x:Key="RemoveButtonContent">Remove</sys:String>
+	<sys:String x:Key="AddTaskElementButtonContent">Add task element</sys:String>
+	<sys:String x:Key="AddTaskCompositeButtonContent">Add task composite</sys:String>
+	<sys:String x:Key="EditButtonContent">Edit</sys:String>
+	<sys:String x:Key="CopyButtonContent">Copy</sys:String>
+	<sys:String x:Key="MoveButtonContent">Move</sys:String>
+	<sys:String x:Key="SwapButtonContent">Swap</sys:String>
+	<sys:String x:Key="GoButtonContent">Go</sys:String>
+	<sys:String x:Key="GoToPreviousButtonContent">&lt;&#45;</sys:String>
+
+	<sys:String x:Key="PreviousButtonContent">Previous</sys:String>
+	<sys:String x:Key="NowButtonContent">Now</sys:String>
+	<sys:String x:Key="NextButtonContent">Next</sys:String>
+	<sys:String x:Key="AddTimeIntervalElementButtonContent">Add time interval element</sys:String>
+
+	<sys:String x:Key="ThemeLabelContent">Theme</sys:String>
+	<sys:String x:Key="LocalizationLabelContent">Language</sys:String>
+
+	<sys:String x:Key="CountTabItemHeader">Count</sys:String>
+	<sys:String x:Key="ExpiredTasksTabItemHeader">Expired tasks</sys:String>
+	<sys:String x:Key="TimeTabItemHeader">Time</sys:String>
+
+	<sys:String x:Key="NameLabelContent">Name</sys:String>
+	<sys:String x:Key="DescriptionLabelContent">Description</sys:String>
+	<sys:String x:Key="CategoryLabelContent">Category</sys:String>
+	<sys:String x:Key="TagsLabelContent">Tags</sys:String>
+	
+	<sys:String x:Key="StartLabelContent">Start</sys:String>
+	<sys:String x:Key="EndLabelContent">End</sys:String>
+	<sys:String x:Key="DurationLabelContent">Duration</sys:String>
+
+	<sys:String x:Key="DifficultLabelContent">Difficult</sys:String>
+	<sys:String x:Key="PriorityLabelContent">Priority</sys:String>
+	<sys:String x:Key="ProgressLabelContent">Progress</sys:String>
+	<sys:String x:Key="TotalRealLabelContent">Total real</sys:String>
+	<sys:String x:Key="PlannedTimeLabelContent">Planned time</sys:String>
+	<sys:String x:Key="SpentTimeLabelContent">Spent time</sys:String>
+	<sys:String x:Key="StatusLabelContent">Status</sys:String>
+	<sys:String x:Key="DeadlineLabelContent">Deadline</sys:String>
+</ResourceDictionary>
