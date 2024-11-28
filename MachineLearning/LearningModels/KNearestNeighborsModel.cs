@@ -13,7 +13,7 @@ namespace MachineLearning.LearningModels
         public Task Train(IEnumerable<IEnumerable<double>> values, IEnumerable<int> targets)
         {
             _kNearestNeighbors = new KNearestNeighbors(NumbersOfNeighbors);
-            _kNearestNeighbors.Learn(values.Select(v => v.ToArray()).ToArray(), targets.ToArray());
+            _kNearestNeighbors.Learn(values.To2dArray(), targets.ToArray());
             return Task.CompletedTask;
         }
 

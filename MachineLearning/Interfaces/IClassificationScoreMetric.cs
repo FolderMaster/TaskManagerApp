@@ -2,5 +2,5 @@
 
 namespace MachineLearning.Interfaces
 {
-    public interface IClassificationModel : ISupervisedLearningModel<double, int> { }
+    public interface IClassificationScoreMetric : ISupervisedScoreMetric<int> { }
 }

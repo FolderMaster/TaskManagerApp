@@ -4,7 +4,7 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.ScoreMetrics
 {
-    public class RSquaredScoreMetric : IRegressionModelScoreMetric
+    public class RSquaredScoreMetric : IRegressionScoreMetric
     {
         public double CalculateScore(IEnumerable<double> expected, IEnumerable<double> predicted)
         {

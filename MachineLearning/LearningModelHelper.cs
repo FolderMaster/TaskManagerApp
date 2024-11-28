@@ -1,4 +1,4 @@
-﻿using MachineLearning.Interfaces;
+﻿using MachineLearning.Interfaces.Generals;
 
 namespace MachineLearning
 {

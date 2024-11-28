@@ -1,4 +1,4 @@
-﻿namespace MachineLearning.Interfaces
+﻿namespace MachineLearning.Interfaces.Generals
 {
     public interface IDistanceMetric<T>
     {

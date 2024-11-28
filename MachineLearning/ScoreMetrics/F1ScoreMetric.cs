@@ -4,7 +4,7 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.ScoreMetrics
 {
-    public class F1ScoreMetric : IClassificationModelScoreMetric
+    public class F1ScoreMetric : IClassificationScoreMetric
     {
         public double CalculateScore(IEnumerable<int> expected, IEnumerable<int> predicted)
         {

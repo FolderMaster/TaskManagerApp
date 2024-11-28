@@ -2,12 +2,13 @@
 
 namespace MachineLearning.ScoreMetrics
 {
-    public class SmapeScoreMetric : IRegressionModelScoreMetric
+    public class SmapeScoreMetric : IRegressionScoreMetric
     {
         public double CalculateScore(IEnumerable<double> expected, IEnumerable<double> predicted)
         {
             var result = 0d;
             var count = expected.Count();
+
             for (var n = 0; n < count; ++n)
             {
                 var a = expected.ElementAt(n);

@@ -3,7 +3,7 @@ using MachineLearning.DistanceMetrics;
 
 namespace MachineLearning.ScoreMetrics
 {
-    public class SilhouetteScoreMetric : IClusteringModelScoreMetric
+    public class SilhouetteScoreMetric : IClusteringScoreMetric
     {
         public IPointDistanceMetric PointDistanceMetric { get; set; } =
             new EuclideanDistanceMetric();
@@ -37,9 +37,8 @@ namespace MachineLearning.ScoreMetrics
         {
             var clusterPoints = clustersPointDictionary[currentCluster].
                 Where(p => p != currentPoint);
-            var count = clusterPoints.Count();
 
-            if (count == 0)
+            if (clusterPoints.Count() == 0)
             {
                 return 0;
             }

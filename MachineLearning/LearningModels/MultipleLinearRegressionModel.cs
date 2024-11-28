@@ -12,7 +12,7 @@ namespace MachineLearning.LearningModels
         {
             var ordinaryLeastSquares = new OrdinaryLeastSquares();
             _multipleLinearRegression = ordinaryLeastSquares.Learn
-                (values.Select(v => v.ToArray()).ToArray(), targets.ToArray());
+                (values.To2dArray(), targets.ToArray());
             return Task.CompletedTask;
         }
 

@@ -13,7 +13,7 @@ namespace MachineLearning.LearningModels
         public Task Train(IEnumerable<IEnumerable<double>> values)
         {
             var kmeans = new KMeans(NumbersOfClusters);
-            _clusters = kmeans.Learn(values.Select(v => v.ToArray()).ToArray());
+            _clusters = kmeans.Learn(values.To2dArray());
             return Task.CompletedTask;
         }
 
