@@ -1,6 +1,4 @@
-﻿using Accord.Statistics.Analysis;
-
-using MachineLearning.Interfaces;
+﻿using MachineLearning.Interfaces;
 
 namespace MachineLearning.ScoreMetrics
 {
@@ -8,8 +6,9 @@ namespace MachineLearning.ScoreMetrics
     {
         public double CalculateScore(IEnumerable<int> expected, IEnumerable<int> predicted)
         {
-            var matrix = new ConfusionMatrix(predicted.ToArray(), expected.ToArray());
-            return matrix.Accuracy;
+            var count = expected.Count();
+            var trueCount = predicted.Zip(expected).Where(p => p.First == p.Second).Count();
+            return trueCount / (double)count;
         }
     }
 }

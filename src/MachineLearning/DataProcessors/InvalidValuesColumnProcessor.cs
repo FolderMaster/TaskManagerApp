@@ -9,8 +9,8 @@ namespace MachineLearning.DataProcessors
         public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double?>> data)
         {
             var array = data.To2dArray();
-            var rowCount = array.GetLength(0);
-            var columnCount = array.GetLength(1);
+            var rowCount = array.Length;
+            var columnCount = array.First().Length;
 
             for (var n = 0; n < columnCount; ++n)
             {
@@ -28,7 +28,7 @@ namespace MachineLearning.DataProcessors
                     }
                 }
             }
-            return array.Cast<IEnumerable<double>>();
+            return array.Select(a => a.Select(v => (double)v));
         }
 
         private bool IsInvalidValue(double? value) => value == null || double.IsNaN((double)value);

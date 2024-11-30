@@ -12,7 +12,7 @@ namespace MachineLearning.DataProcessors
         public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data)
         {
             var array = data.To2dArray();
-            var columnCount = array.GetLength(1);
+            var columnCount = array.First().Length;
 
             var correlationArray = array.Correlation();
             var correlationDictionary = new List<(int, int)>();
@@ -22,7 +22,7 @@ namespace MachineLearning.DataProcessors
                 for (var i = n + 1; i < columnCount; ++i) 
                 {
                     var value = correlationArray[i][n];
-                    if (value < _threshold)
+                    if (value >= _threshold)
                     {
                         correlationDictionary.Add((i, n));
                         correlationDictionary.Add((n, i));
