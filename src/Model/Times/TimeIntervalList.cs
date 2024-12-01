@@ -6,15 +6,29 @@ using Model.Interfaces;
 
 namespace Model.Times
 {
+    /// <summary>
+    /// Класс списка временных интервалов.
+    /// Наследует <see cref="TrackableCollection{ITimeIntervalElement}"/>.
+    /// Реализует <see cref="ITimeIntervalList"/>.
+    /// </summary>
     public class TimeIntervalList : TrackableCollection<ITimeIntervalElement>, ITimeIntervalList
     {
+        /// <inheritdoc/>
         public TimeSpan Duration => _items.Aggregate(TimeSpan.Zero, (s, i) => s + i.Duration);
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="TimeIntervalList"/>.
+        /// </summary>
+        /// <param name="timeIntervals">Временные интервалы.</param>
         public TimeIntervalList(IEnumerable<ITimeIntervalElement>? timeIntervals = null) :
             base(timeIntervals) { }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="TimeIntervalList"/> по умолчанию.
+        /// </summary>
         public TimeIntervalList() : this(null) { }
 
+        /// <inheritdoc/>
         protected override void OnAddedItem(ITimeIntervalElement timeInterval,
             bool arePropertiesUpdate = true)
         {
@@ -28,6 +42,7 @@ namespace Model.Times
             }
         }
 
+        /// <inheritdoc/>
         protected override void OnRemovedItem(ITimeIntervalElement timeInterval)
         {
             if (timeInterval is INotifyPropertyChanged notify)

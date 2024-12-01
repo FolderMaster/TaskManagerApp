@@ -2,8 +2,19 @@
 
 namespace Model
 {
+    /// <summary>
+    /// Вспомогательный статичный класс для работы с задачами.
+    /// </summary>
     public static class TaskHelper
     {
+        /// <summary>
+        /// Проверяет, завершена ли задача.
+        /// </summary>
+        /// <param name="task">Задача.</param>
+        /// <returns>Возвращает <c>true</c>, если задача завершена, иначе <c>false</c>.</returns>
+        /// <exception cref="NotImplementedException">
+        /// Выбрасывает, если статус задачи не поддерживается.
+        /// </exception>
         public static bool IsTaskCompleted(ITask task)
         {
             switch (task.Status)
@@ -22,6 +33,12 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Проверяет, истек ли срок выполнения задачи.
+        /// </summary>
+        /// <param name="task">Задача.</param>
+        /// <param name="waningTime">Дополнительное время.</param>
+        /// <returns>Возвращает <c>true</c>, если срок задачи истёк, иначе <c>false</c>.</returns>
         public static bool HasTaskExpired(ITask task, TimeSpan? waningTime = null)
         {
             if (task.Deadline == null)
@@ -32,12 +49,27 @@ namespace Model
             return task.Deadline < dateTime;
         }
 
+        /// <summary>
+        /// Возвращает элементарные задачи из списка.
+        /// </summary>
+        /// <param name="taskList">Список задач.</param>
+        /// <returns>Возвращает коллекцию элементарных задач.</returns>
         public static IEnumerable<ITaskElement> GetTaskElements(IEnumerable<ITask> taskList) =>
             GetTasks(taskList).OfType<ITaskElement>();
 
+        /// <summary>
+        /// Возвращает составные задачи из списка.
+        /// </summary>
+        /// <param name="taskList">Список задач.</param>
+        /// <returns>Возвращает коллекцию составных задач.</returns>
         public static IEnumerable<ITaskComposite> GetTaskComposites
             (IEnumerable<ITask> taskList) => GetTasks(taskList).OfType<ITaskComposite>();
 
+        /// <summary>
+        /// Возвращает задачи из списка.
+        /// </summary>
+        /// <param name="taskList">Список задач.</param>
+        /// <returns>Возвращает коллекцию задач.</returns>
         public static IEnumerable<ITask> GetTasks(IEnumerable<ITask> taskList)
         {
             foreach (var task in taskList)
