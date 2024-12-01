@@ -4,10 +4,10 @@ namespace MachineLearning.ScoreMetrics
 {
     public class AccuracyScoreMetric : IClassificationScoreMetric
     {
-        public double CalculateScore(IEnumerable<int> expected, IEnumerable<int> predicted)
+        public double CalculateScore(IEnumerable<int> actual, IEnumerable<int> predicted)
         {
-            var count = expected.Count();
-            var trueCount = predicted.Zip(expected).Where(p => p.First == p.Second).Count();
+            var count = actual.Count();
+            var trueCount = predicted.Zip(actual).Where(p => p.First == p.Second).Count();
             return trueCount / (double)count;
         }
     }

@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel;
 
-using Model.Interfaces;
-using Model.Technicals;
+using TrackableFeatures;
 
-namespace Model.Tasks.Times
+using Model.Interfaces;
+
+namespace Model.Times
 {
     public class TimeIntervalList : TrackableCollection<ITimeIntervalElement>, ITimeIntervalList
     {
@@ -11,6 +12,8 @@ namespace Model.Tasks.Times
 
         public TimeIntervalList(IEnumerable<ITimeIntervalElement>? timeIntervals = null) :
             base(timeIntervals) { }
+
+        public TimeIntervalList() : this(null) { }
 
         protected override void OnAddedItem(ITimeIntervalElement timeInterval,
             bool arePropertiesUpdate = true)

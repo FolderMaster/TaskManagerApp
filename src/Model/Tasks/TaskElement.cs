@@ -1,6 +1,7 @@
-﻿using Model.Interfaces;
-using Model.Tasks.Times;
-using Model.Technicals;
+﻿using TrackableFeatures;
+
+using Model.Interfaces;
+using Model.Times;
 
 namespace Model.Tasks
 {

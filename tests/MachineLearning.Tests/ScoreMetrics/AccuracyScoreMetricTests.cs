@@ -2,8 +2,8 @@
 
 namespace MachineLearning.Tests.ScoreMetrics
 {
-    [TestFixture(Description = "Тестирование класса.", Category = "Unit",
-        TestOf = typeof(AccuracyScoreMetric))]
+    [TestFixture(Category = "Unit", TestOf = typeof(AccuracyScoreMetric),
+        Description = $"Тестирование класса {nameof(AccuracyScoreMetric)}.")]
     public class AccuracyScoreMetricTests
     {
         private AccuracyScoreMetric _scoreMetric;
@@ -14,12 +14,12 @@ namespace MachineLearning.Tests.ScoreMetrics
             _scoreMetric = new();
         }
 
-        [Test(Description = "Тестирование CalculateDistance.")]
-        public void CalculateDistance_ReturnCorrectValue()
+        [Test(Description = $"Тестирование метода {nameof(AccuracyScoreMetric.CalculateScore)}.")]
+        public void CalculateScore_ReturnCorrectValue()
         {
-            var actual = new int[] { 1, 0, 1, 1, 0 };
-            var predicted = new int[] { 1, 0, 1, 0, 0 };
-            var expected = 0.8;
+            var actual = new int[] { 2, 0, 1, 1, 0 };
+            var predicted = new int[] { 1, 2, 1, 0, 0 };
+            var expected = 0.4;
 
             var result = _scoreMetric.CalculateScore(actual, predicted);
 

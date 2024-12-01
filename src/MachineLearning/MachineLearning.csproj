@@ -10,4 +10,8 @@
     <PackageReference Include="Accord.MachineLearning" Version="3.8.2-alpha" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TrackableFeatures\TrackableFeatures.csproj" />
+  </ItemGroup>
+
 </Project>

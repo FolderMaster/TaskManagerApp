@@ -2,8 +2,8 @@
 
 namespace MachineLearning.Tests.DistanceMetrics
 {
-    [TestFixture(Description = "Тестирование класса.", Category = "Unit",
-        TestOf = typeof(EuclideanDistanceMetric))]
+    [TestFixture(Category = "Unit", TestOf = typeof(EuclideanDistanceMetric),
+        Description = $"Тестирование класса {nameof(EuclideanDistanceMetric)}.")]
     public class EuclideanDistanceMetricTests
     {
         private EuclideanDistanceMetric _distanceMetric;
@@ -14,7 +14,8 @@ namespace MachineLearning.Tests.DistanceMetrics
             _distanceMetric = new();
         }
 
-        [Test(Description = "Тестирование CalculateDistance.")]
+        [Test(Description = "Тестирование метода " +
+            $"{nameof(EuclideanDistanceMetric.CalculateDistance)}.")]
         public void CalculateDistance_ReturnCorrectValue()
         {
             var point1 = new double[] { 1, -1 };
@@ -26,7 +27,8 @@ namespace MachineLearning.Tests.DistanceMetrics
             Assert.That(result, Is.EqualTo(expected), "Неправильно расчитана дистанция!");
         }
 
-        [Test(Description = "Тестирование CalculateDistance при одинаковых точках.")]
+        [Test(Description = "Тестирование метода " +
+            $"{nameof(EuclideanDistanceMetric.CalculateDistance)} при одинаковых точках.")]
         public void CalculateDistance_SamePoints_Return0()
         {
             var point1 = new double[] { -10, 0, 10 };

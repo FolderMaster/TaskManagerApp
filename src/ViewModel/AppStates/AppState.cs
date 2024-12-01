@@ -1,4 +1,4 @@
-﻿using Model.Technicals;
+﻿using TrackableFeatures;
 
 namespace ViewModel.AppStates
 {

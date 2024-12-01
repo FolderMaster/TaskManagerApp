@@ -2,8 +2,8 @@
 
 namespace MachineLearning.Tests.DataProcessors
 {
-    [TestFixture(Description = "Тестирование класса.", Category = "Unit",
-        TestOf = typeof(LowVariationColumnProcessor))]
+    [TestFixture(Category = "Unit", TestOf = typeof(LowVariationColumnProcessor),
+        Description = $"Тестирование класса {nameof(LowVariationColumnProcessor)}.")]
     public class LowVariationColumnProcessorTests
     {
         private LowVariationColumnProcessor _dataProcessor;
@@ -14,7 +14,7 @@ namespace MachineLearning.Tests.DataProcessors
             _dataProcessor = new();
         }
 
-        [Test(Description = "Тестирование Process.")]
+        [Test(Description = $"Тестирование метода {nameof(LowVariationColumnProcessor.Process)}.")]
         public void Process_ReturnCorrectData()
         {
             var data = new double[][] {

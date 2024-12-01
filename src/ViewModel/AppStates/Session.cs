@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+
+using TrackableFeatures;
+
 using Model.Interfaces;
-using Model.Technicals;
 
 namespace ViewModel.AppStates
 {

@@ -2,8 +2,8 @@
 
 namespace MachineLearning.Tests.DataProcessors
 {
-    [TestFixture(Description = "Тестирование класса.", Category = "Unit",
-        TestOf = typeof(DuplicatesRowProcessor))]
+    [TestFixture(Category = "Unit", TestOf = typeof(DuplicatesRowProcessor),
+        Description = $"Тестирование класса {nameof(DuplicatesRowProcessor)}.")]
     public class DuplicatesRowProcessorTests
     {
         private DuplicatesRowProcessor _dataProcessor;
@@ -14,7 +14,7 @@ namespace MachineLearning.Tests.DataProcessors
             _dataProcessor = new();
         }
 
-        [Test(Description = "Тестирование Process.")]
+        [Test(Description = $"Тестирование метода {nameof(DuplicatesRowProcessor.Process)}.")]
         public void Process_ReturnCorrectData()
         {
             var data = new double[][] {

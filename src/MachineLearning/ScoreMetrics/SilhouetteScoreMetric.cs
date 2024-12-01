@@ -8,17 +8,18 @@ namespace MachineLearning.ScoreMetrics
         public IPointDistanceMetric PointDistanceMetric { get; set; } =
             new EuclideanDistanceMetric();
 
-        public double GetScore(IEnumerable<int> predicted, IEnumerable<IEnumerable<double>> data)
+        public double CalculateScore(IEnumerable<int> actual,
+            IEnumerable<IEnumerable<double>> data)
         {
-            var count = predicted.Count();
+            var count = actual.Count();
             var clustersPointDictionary = data.Select((p, i) =>
-                new { Point = p, Cluster = predicted.ElementAt(i) }).GroupBy(x => x.Cluster).
+                new { Point = p, Cluster = actual.ElementAt(i) }).GroupBy(x => x.Cluster).
                 ToDictionary(g => g.Key, g => g.Select(x => x.Point));
             var totalSilhouetteScore = 0d;
 
             for (var n = 0; n < count; ++n)
             {
-                var cluster = predicted.ElementAt(n);
+                var cluster = actual.ElementAt(n);
                 var point = data.ElementAt(n);
                 var a = CalculateAverageIntraClusterDistance
                     (clustersPointDictionary, point, cluster);

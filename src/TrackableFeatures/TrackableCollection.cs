@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
 
-namespace Model.Technicals
+namespace TrackableFeatures
 {
     public class TrackableCollection<T> : TrackableObject,
         IList<T>, IList, INotifyCollectionChanged

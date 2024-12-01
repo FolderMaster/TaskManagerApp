@@ -2,8 +2,8 @@ using MachineLearning.Scalers;
 
 namespace MachineLearning.Tests.Scalers
 {
-    [TestFixture(Description = "Тестирование класса.", Category = "Unit",
-        TestOf = typeof(MinMaxScaler))]
+    [TestFixture(Category = "Unit", TestOf = typeof(MinMaxScaler),
+        Description = $"Тестирование класса {nameof(MinMaxScaler)}.")]
     public class MinMaxScalerTests
     {
         private MinMaxScaler _scaler;
@@ -14,7 +14,7 @@ namespace MachineLearning.Tests.Scalers
             _scaler = new();
         }
 
-        [Test(Description = "Тестирование FitTransform.")]
+        [Test(Description = $"Тестирование метода {nameof(MinMaxScaler.FitTransform)}.")]
         public void FitTransform_ReturnCorrectArray()
         {
             var array = new double[] { -10, 0, 10};
@@ -25,7 +25,7 @@ namespace MachineLearning.Tests.Scalers
             Assert.That(result, Is.EqualTo(expected), "Неправильная нормализация данных!");
         }
 
-        [Test(Description = "Тестирование Transform.")]
+        [Test(Description = $"Тестирование метода {nameof(MinMaxScaler.Transform)}.")]
         public void Transform_ReturnCorrectValue()
         {
             var array = new double[] { -10, 0, 10 };
@@ -38,7 +38,8 @@ namespace MachineLearning.Tests.Scalers
             Assert.That(result, Is.EqualTo(expected), "Неправильная нормализация значения!");
         }
 
-        [Test(Description = "Тестирование Transform при значении больше максимума.")]
+        [Test(Description = $"Тестирование метода {nameof(MinMaxScaler.Transform)} " +
+            $"при значении больше максимума.")]
         public void Transform_MoreThanMax_Return1()
         {
             var array = new double[] { -10, 0, 10 };
@@ -52,7 +53,8 @@ namespace MachineLearning.Tests.Scalers
                 "При значении больше максимума должно возвращаться 1!");
         }
 
-        [Test(Description = "Тестирование Transform при значении меньше минимума.")]
+        [Test(Description = $"Тестирование метода {nameof(MinMaxScaler.Transform)} " +
+            $"при значении меньше минимума.")]
         public void Transform_LessThanMin_Return0()
         {
             var array = new double[] { -10, 0, 10 };

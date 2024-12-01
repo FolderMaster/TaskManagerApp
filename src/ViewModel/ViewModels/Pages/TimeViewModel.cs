@@ -1,7 +1,8 @@
 ﻿using ReactiveUI.SourceGenerators;
 using ReactiveUI;
 
-using Model.Technicals;
+using TrackableFeatures;
+
 using Model;
 
 using ViewModel.Technicals;

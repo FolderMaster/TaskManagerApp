@@ -1,7 +1,8 @@
-﻿using Model.Interfaces;
-using Model.Technicals;
+﻿using TrackableFeatures;
 
-namespace Model.Tasks.Times
+using Model.Interfaces;
+
+namespace Model.Times
 {
     public class TimeIntervalElement : TrackableObject, ITimeIntervalElement
     {
@@ -28,5 +29,7 @@ namespace Model.Tasks.Times
             Start = start ?? DateTime.Now;
             End = end ?? DateTime.Now;
         }
+
+        public TimeIntervalElement() : this(null, null) { }
     }
 }

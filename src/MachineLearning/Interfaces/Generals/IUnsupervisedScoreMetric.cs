@@ -2,6 +2,6 @@
 {
     public interface IUnsupervisedScoreMetric<T, D> : IScoreMetric<T>
     {
-        public double GetScore(IEnumerable<T> predicted, IEnumerable<IEnumerable<D>> data);
+        public double CalculateScore(IEnumerable<T> actual, IEnumerable<IEnumerable<D>> data);
     }
 }

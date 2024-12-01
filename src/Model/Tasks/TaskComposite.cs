@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 
+using TrackableFeatures;
+
 using Model.Interfaces;
-using Model.Technicals;
 
 namespace Model.Tasks
 {

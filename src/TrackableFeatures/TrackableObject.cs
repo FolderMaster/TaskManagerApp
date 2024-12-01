@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Model.Technicals
+namespace TrackableFeatures
 {
     public class TrackableObject : INotifyPropertyChanged
     {
