@@ -1,5 +1,5 @@
 ﻿using Model.Interfaces;
-using Model.Tasks.Times;
+using Model.Times;
 
 using ViewModel.Interfaces;
 

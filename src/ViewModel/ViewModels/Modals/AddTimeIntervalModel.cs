@@ -1,4 +1,5 @@
 ﻿using System.Reactive.Linq;
+using System.ComponentModel;
 using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
@@ -19,7 +20,18 @@ namespace ViewModel.ViewModels.Modals
 
         public AddTimeIntervalViewModel()
         {
-            _canExecuteOk = this.WhenAnyValue(x => x.SelectedTaskElement).Select(s => s != null);
+            var hasErrors = this.WhenAnyValue(x => x.TimeIntervalElement).Select(i =>
+            {
+                if (i is INotifyDataErrorInfo notify)
+                {
+                    return Observable.FromEventPattern<DataErrorsChangedEventArgs>
+                        (h => notify.ErrorsChanged += h, h => notify.ErrorsChanged -= h).
+                        Select(_ => notify.HasErrors);
+                }
+                return Observable.Return(false);
+            }).Switch().DistinctUntilChanged();
+            _canExecuteOk = this.WhenAnyValue(x => x.SelectedTaskElement).Select(t => t != null).
+                CombineLatest(hasErrors, (t, e) => t && !e).DistinctUntilChanged();
         }
 
         protected override void GetArgs(TimeIntervalViewModelArgs args)
