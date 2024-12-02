@@ -4,8 +4,13 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.ScoreMetrics
 {
+    /// <summary>
+    /// Класс метрики оценки скорректированного индекса Рэнда для модели обучения классификации.
+    /// Реализует <see cref="IClassificationScoreMetric"/>.
+    /// </summary>
     public class AdjustedRandIndexScoreMetric : IClassificationScoreMetric
     {
+        /// <inheritdoc />
         public double CalculateScore(IEnumerable<int> actual, IEnumerable<int> predicted)
         {
             var count = actual.Count();
@@ -57,6 +62,15 @@ namespace MachineLearning.ScoreMetrics
             return dividend / divisor;
         }
 
+        /// <summary>
+        /// Вычисляет количество комбинаций, в которых можно выбрать <paramref name="k"/>
+        /// элементов из <paramref name="n"/> элементов без учета порядка.
+        /// </summary>
+        /// <param name="n">Общее количество элементов.</param>
+        /// <param name="k">Количество элементов в комбинации.</param>
+        /// <returns>Возвращает количество комбинаций или <c>0</c>, если <paramref name="n"/>
+        /// меньше <paramref name="k"/>, <c>1</c>, если <paramref name="n"/> равен
+        /// <paramref name="k"/> или <paramref name="k"/> равен <c>0</c>.</returns>
         private int CalculateCombinationsCount(int n, int k)
         {
             if (n < k)
@@ -70,6 +84,11 @@ namespace MachineLearning.ScoreMetrics
             return CalculateFactorial(n) / (CalculateFactorial(k) * CalculateFactorial(n - k));
         }
 
+        /// <summary>
+        /// Вычисляет факториал числа <paramref name="n"/>.
+        /// </summary>
+        /// <param name="n">Число, для которого вычисляется факториал.</param>
+        /// <returns>Возвращает факториал числа <paramref name="n"/>.</returns>
         private int CalculateFactorial(int n)
         {
             var result = 1;

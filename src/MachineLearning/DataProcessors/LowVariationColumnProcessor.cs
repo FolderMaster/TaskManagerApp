@@ -5,17 +5,28 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.DataProcessors
 {
-    public class LowVariationColumnProcessor : IPointDataProcessor<double, double>
+    /// <summary>
+    /// Класс обработчика столбцов для устранения низкой вариативности.
+    /// Реализует <see cref="IPointDataProcessor{double}"/>.
+    /// </summary>
+    public class LowVariationColumnProcessor : IPointDataProcessor<double>
     {
+        /// <summary>
+        /// Порог.
+        /// </summary>
         private static readonly double _threshold = 0.5;
 
-        private static readonly double _lowVariationRatio = 0.8;
+        /// <summary>
+        /// Соотношение количества строк с низкой вариативностью.
+        /// </summary>
+        private static readonly double _lowVariationRowCountRatio = 0.8;
 
+        /// <inheritdoc />
         public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data)
         {
             var array = data.To2dArray();
             var columnCount = array.First().Length;
-            var lowVariationRowCount = _lowVariationRatio * array.Length;
+            var lowVariationRowCount = _lowVariationRowCountRatio * array.Length;
 
             var zScores = array.ZScores();
             var removingColumns = new List<int>();

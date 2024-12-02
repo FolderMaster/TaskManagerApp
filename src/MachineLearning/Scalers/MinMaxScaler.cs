@@ -2,12 +2,22 @@
 
 namespace MachineLearning.Scalers
 {
+    /// <summary>
+    /// Класс масштабрирования данных с помощью минимума и максимума.
+    /// </summary>
     public class MinMaxScaler : IScaler
     {
+        /// <summary>
+        /// Возвращает минимальное значение.
+        /// </summary>
         public double Min { get; private set; }
 
+        /// <summary>
+        /// Возвращает максимальное значение.
+        /// </summary>
         public double Max { get; private set; }
 
+        /// <inheritdoc />
         public IEnumerable<double> FitTransform(IEnumerable<double> data)
         {
             var array = data.ToArray();
@@ -22,6 +32,7 @@ namespace MachineLearning.Scalers
             return result;
         }
 
+        /// <inheritdoc />
         public double Transform(double value)
         {
             if (value <= Min)

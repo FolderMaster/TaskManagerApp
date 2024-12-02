@@ -4,8 +4,13 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.ScoreMetrics
 {
+    /// <summary>
+    /// Класс метрики F1 оценки для модели обучения классификации.
+    /// Реализует <see cref="IClassificationScoreMetric"/>.
+    /// </summary>
     public class F1ScoreMetric : IClassificationScoreMetric
     {
+        /// <inheritdoc />
         public double CalculateScore(IEnumerable<int> actual, IEnumerable<int> predicted)
         {
             var count = actual.Count();

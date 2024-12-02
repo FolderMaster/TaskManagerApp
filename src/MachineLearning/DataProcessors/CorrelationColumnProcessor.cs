@@ -5,10 +5,18 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.DataProcessors
 {
-    public class CorrelationColumnProcessor : IPointDataProcessor<double, double>
+    /// <summary>
+    /// Класс обработчика столбцов для устранения корреляции.
+    /// Реализует <see cref="IPointDataProcessor{double}"/>.
+    /// </summary>
+    public class CorrelationColumnProcessor : IPointDataProcessor<double>
     {
+        /// <summary>
+        /// Порог.
+        /// </summary>
         private static readonly double _threshold = 0.9;
 
+        /// <inheritdoc />
         public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data)
         {
             var array = data.To2dArray();

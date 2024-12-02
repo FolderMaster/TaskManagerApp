@@ -1,23 +1,83 @@
 ﻿using Accord.MachineLearning;
 
+using TrackableFeatures;
+
 using MachineLearning.Interfaces;
+using MachineLearning.DistanceMetrics;
 
 namespace MachineLearning.LearningModels
 {
-    public class KNearestNeighborsModel : IClassificationModel
+    /// <summary>
+    /// Класс модель обучения классификации с алгоритмом K-ближащих соседей.
+    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="IClassificationModel"/>.
+    /// </summary>
+    public class KNearestNeighborsModel : TrackableObject, IClassificationModel
     {
+        /// <summary>
+        /// Адаптер метрики расстояний.
+        /// </summary>
+        private readonly MetricAdapter _metricAdapter = new();
+
+        /// <summary>
+        /// Данные для алгоритма K-ближайших соседей.
+        /// </summary>
         private KNearestNeighbors? _kNearestNeighbors;
 
-        public int NumbersOfNeighbors { get; set; } = 1;
+        /// <summary>
+        /// Количество соседей.
+        /// </summary>
+        private int _numbersOfNeighbors = 1;
 
-        public Task Train(IEnumerable<IEnumerable<double>> values, IEnumerable<int> targets)
+        /// <summary>
+        /// Метрика расстояний.
+        /// </summary>
+        private IPointDistanceMetric _distanceMetric = new EuclideanDistanceMetric();
+
+        /// <summary>
+        /// Возвращает и задаёт количество соседей.
+        /// </summary>
+        public int NumbersOfNeighbors
         {
-            _kNearestNeighbors = new KNearestNeighbors(NumbersOfNeighbors);
-            _kNearestNeighbors.Learn(values.To2dArray(), targets.ToArray());
+            get => _numbersOfNeighbors;
+            set => UpdateProperty(ref _numbersOfNeighbors, value, OnPropertyChanged);
+        }
+
+        /// <summary>
+        /// Возвращает и задаёт метрику расстояний.
+        /// </summary>
+        public IPointDistanceMetric DistanceMetric
+        {
+            get => _distanceMetric;
+            set => UpdateProperty(ref _distanceMetric, value, OnPropertyChanged);
+        }
+
+        /// <inheritdoc />
+        public Task Train(IEnumerable<IEnumerable<double>> data, IEnumerable<int> targets)
+        {
+            _metricAdapter.DistanceMetric = DistanceMetric;
+            _kNearestNeighbors = new KNearestNeighbors(NumbersOfNeighbors, _metricAdapter);
+            _kNearestNeighbors.Learn(data.To2dArray(), targets.ToArray());
             return Task.CompletedTask;
         }
 
-        public int Predict(IEnumerable<double> values) =>
-            _kNearestNeighbors.Decide(values.ToArray());
+        /// <inheritdoc />
+        public int Predict(IEnumerable<double> data) =>
+            _kNearestNeighbors.Decide(data.ToArray());
+
+        /// <summary>
+        /// Вызывается при изменении свойства.
+        /// </summary>
+        private void OnPropertyChanged()
+        {
+            ClearErrors(nameof(NumbersOfNeighbors));
+            if (NumbersOfNeighbors <= 0)
+            {
+                AddError($"{nameof(NumbersOfNeighbors)} должно быть больше 0!");
+            }
+            if (DistanceMetric == null)
+            {
+                AddError($"{nameof(DistanceMetric)} должно быть назначено!");
+            }
+        }
     }
 }

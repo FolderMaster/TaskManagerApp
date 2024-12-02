@@ -26,14 +26,14 @@ namespace Model.Times
         public DateTime Start
         {
             get => _start;
-            set => UpdateProperty(ref _start, value, () => UpdateDateTimeProperty(nameof(Start)));
+            set => UpdateProperty(ref _start, value, () => OnPropertyChanged(nameof(Start)));
         }
 
         /// <inheritdoc/>
         public DateTime End
         {
             get => _end;
-            set => UpdateProperty(ref _end, value, () => UpdateDateTimeProperty(nameof(End)));
+            set => UpdateProperty(ref _end, value, () => OnPropertyChanged(nameof(End)));
         }
 
         /// <inheritdoc/>
@@ -56,13 +56,11 @@ namespace Model.Times
         public TimeIntervalElement() : this(null, null) { }
 
         /// <summary>
-        /// Вызывает событие <see cref="PropertyChanged"/> и обносляет ошибки для свойств
-        /// <see cref="Start"/> или <see cref="End"/>.
+        /// Вызывается при изменении свойства.
         /// </summary>
         /// <param name="propertyName">Название свойства.</param>
-        private void UpdateDateTimeProperty([CallerMemberName] string propertyName = "")
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            OnPropertyChanged(propertyName);
             ClearAllErrors();
             if (Start > End)
             {
@@ -75,7 +73,7 @@ namespace Model.Times
                     AddError($"{nameof(End)} находится до {nameof(Start)}", nameof(End));
                 }
             }
-            OnPropertyChanged(nameof(Duration));
+            base.OnPropertyChanged(nameof(Duration));
         }
     }
 }

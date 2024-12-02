@@ -3,11 +3,19 @@ using MachineLearning.DistanceMetrics;
 
 namespace MachineLearning.ScoreMetrics
 {
+    /// <summary>
+    /// Класс метрики оценки Силуэта для модели обучения кластеризации.
+    /// Реализует <see cref="IClusteringScoreMetric"/>.
+    /// </summary>
     public class SilhouetteScoreMetric : IClusteringScoreMetric
     {
+        /// <summary>
+        /// Возвращает и задаёт метрику дистанцию.
+        /// </summary>
         public IPointDistanceMetric PointDistanceMetric { get; set; } =
             new EuclideanDistanceMetric();
 
+        /// <inheritdoc />
         public double CalculateScore(IEnumerable<int> actual,
             IEnumerable<IEnumerable<double>> data)
         {
@@ -32,6 +40,13 @@ namespace MachineLearning.ScoreMetrics
             return totalSilhouetteScore / count;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="clustersPointDictionary"></param>
+        /// <param name="currentPoint"></param>
+        /// <param name="currentCluster"></param>
+        /// <returns></returns>
         private double CalculateAverageIntraClusterDistance
             (Dictionary<int, IEnumerable<IEnumerable<double>>> clustersPointDictionary,
             IEnumerable<double> currentPoint, int currentCluster)
@@ -47,6 +62,13 @@ namespace MachineLearning.ScoreMetrics
                 CalculateDistance(currentPoint, p));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="clustersPointDictionary"></param>
+        /// <param name="currentPoint"></param>
+        /// <param name="currentCluster"></param>
+        /// <returns></returns>
         private double AverageNearestClusterDistance
             (Dictionary<int, IEnumerable<IEnumerable<double>>> clustersPointDictionary,
             IEnumerable<double> currentPoint, int currentCluster)

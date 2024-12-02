@@ -2,6 +2,9 @@
 
 namespace MachineLearning.Interfaces
 {
-    public interface IPointDataProcessor<T, R> :
-        IDataProcessor<IEnumerable<T>, IEnumerable<R>> { }
+    /// <summary>
+    /// Интерфейс обработчика данных в точечные данные.
+    /// </summary>
+    /// <typeparam name="T">Тип входных данных.</typeparam>
+    public interface IPointDataProcessor<T> : IDataProcessor<T, double> { }
 }

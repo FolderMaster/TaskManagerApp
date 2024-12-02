@@ -4,8 +4,13 @@ using MachineLearning.Interfaces;
 
 namespace MachineLearning.DataProcessors
 {
-    public class InvalidValuesColumnProcessor : IPointDataProcessor<double?, double>
+    /// <summary>
+    /// Класс обработчика столбцов для устранения некорректных значений.
+    /// Реализует <see cref="IPointDataProcessor{double?}"/>.
+    /// </summary>
+    public class InvalidValuesColumnProcessor : IPointDataProcessor<double?>
     {
+        /// <inheritdoc />
         public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double?>> data)
         {
             var array = data.To2dArray();
@@ -31,8 +36,20 @@ namespace MachineLearning.DataProcessors
             return array.Select(a => a.Select(v => (double)v));
         }
 
+        /// <summary>
+        /// Проверяет, является ли значение не корректным.
+        /// </summary>
+        /// <param name="value">Значение.</param>
+        /// <returns>
+        /// Возвращает <c>true</c>, если значение не корректно, иначе <c>false</c>.
+        /// </returns>
         private bool IsInvalidValue(double? value) => value == null || double.IsNaN((double)value);
 
+        /// <summary>
+        /// Рассчитывает значение для замещения на основе столбца.
+        /// </summary>
+        /// <param name="column">Столбец.</param>
+        /// <returns>Возвращает значение для замещения.</returns>
         private double CalculateReplacementValue(IEnumerable<double> column) => column.Average();
     }
 }

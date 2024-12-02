@@ -2,8 +2,13 @@
 
 namespace MachineLearning.ScoreMetrics
 {
+    /// <summary>
+    /// Класс метрики оценки SMAPE для модели обучения регрессии.
+    /// Реализует <see cref="IRegressionScoreMetric"/>.
+    /// </summary>
     public class SmapeScoreMetric : IRegressionScoreMetric
     {
+        /// <inheritdoc />
         public double CalculateScore(IEnumerable<double> actual, IEnumerable<double> predicted)
         {
             var result = 0d;
