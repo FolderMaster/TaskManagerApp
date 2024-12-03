@@ -20,6 +20,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="TaskManager.db3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TaskManager.db3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.2" />
     <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.2.2" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.2" />

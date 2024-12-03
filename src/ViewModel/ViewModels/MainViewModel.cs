@@ -5,6 +5,10 @@ using ReactiveUI.SourceGenerators;
 using Model.Interfaces;
 
 using ViewModel.AppStates;
+using ViewModel.Db;
+using AutoMapper;
+using ViewModel.Db.Entities;
+using ViewModel.Db.Dto;
 
 namespace ViewModel.ViewModels;
 
@@ -32,6 +36,20 @@ public partial class MainViewModel : ViewModelBase
         Pages = pages;
 
         this.WhenAnyValue(x => x.Pages).Subscribe(s => SelectedPage = s?.FirstOrDefault());
+        var config = new MapperConfiguration(cfg =>
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+
+        /**var db = new SqliteDbContext();
+        db.Database.EnsureCreated();
+        var tasks = db.Tasks.ToList();
+        var elements = db.TaskElements.ToList();
+        var composites = db.TaskComposites.ToList();
+        var metadata = db.Metadata.ToList();
+        var tags = db.Tags.ToList();
+        var timeIntervals = db.TimeIntervals.ToList();
+        db.SaveChanges();**/
     }
 
     [ReactiveCommand]
