@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Tests", "tests\Model.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackableFeatures", "src\TrackableFeatures\TrackableFeatures.csproj", "{F3D41097-A652-41D1-B249-911D7BDCE446}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackableFeatures.Tests", "tests\TrackableFeatures.Tests\TrackableFeatures.Tests.csproj", "{2464B447-347D-43AF-9E44-283271928AF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{F3D41097-A652-41D1-B249-911D7BDCE446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D41097-A652-41D1-B249-911D7BDCE446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D41097-A652-41D1-B249-911D7BDCE446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2464B447-347D-43AF-9E44-283271928AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2464B447-347D-43AF-9E44-283271928AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2464B447-347D-43AF-9E44-283271928AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2464B447-347D-43AF-9E44-283271928AF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{97A58A87-0248-48D6-901D-9607E9A0617F} = {8C929736-0292-416F-9E3D-BACCEACEC54B}
 		{E2E99598-4D3B-4DC9-B8EC-CF159F53D10F} = {8C929736-0292-416F-9E3D-BACCEACEC54B}
 		{F3D41097-A652-41D1-B249-911D7BDCE446} = {E722A83F-9412-4759-8057-07BE3E56569E}
+		{2464B447-347D-43AF-9E44-283271928AF2} = {8C929736-0292-416F-9E3D-BACCEACEC54B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6F48335-2363-480B-8074-5FEEBEF6BA34}

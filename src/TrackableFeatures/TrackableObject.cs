@@ -71,7 +71,6 @@ namespace TrackableFeatures
             {
                 var isUpdateHasError = !_errors.Any();
                 _errors[propertyName] = new List<object>() { error };
-                OnErrorsChanged(propertyName);
                 if (isUpdateHasError)
                 {
                     OnPropertyChanged(nameof(HasErrors));
@@ -80,8 +79,8 @@ namespace TrackableFeatures
             else
             {
                 _errors[propertyName].Add(error);
-                OnErrorsChanged(propertyName);
             }
+            OnErrorsChanged(propertyName);
         }
 
         /// <summary>

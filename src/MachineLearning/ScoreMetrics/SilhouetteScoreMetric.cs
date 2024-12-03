@@ -41,12 +41,13 @@ namespace MachineLearning.ScoreMetrics
         }
 
         /// <summary>
-        /// 
+        /// Вычисляет среднее расстояние между точкой и всеми другими точками в том же кластере.
         /// </summary>
-        /// <param name="clustersPointDictionary"></param>
-        /// <param name="currentPoint"></param>
-        /// <param name="currentCluster"></param>
-        /// <returns></returns>
+        /// <param name="clustersPointDictionary">Словарь точек кластеров.</param>
+        /// <param name="currentPoint">Текущая точка.</param>
+        /// <param name="currentCluster">Текущий кластер.</param>
+        /// <returns>Возвращает среднее расстояние между точкой и всеми другими точками в том же
+        /// кластере.</returns>
         private double CalculateAverageIntraClusterDistance
             (Dictionary<int, IEnumerable<IEnumerable<double>>> clustersPointDictionary,
             IEnumerable<double> currentPoint, int currentCluster)
@@ -63,12 +64,13 @@ namespace MachineLearning.ScoreMetrics
         }
 
         /// <summary>
-        /// 
+        /// Вычисляет среднее расстояние между точкой и точками из ближайшего другого кластера.
         /// </summary>
-        /// <param name="clustersPointDictionary"></param>
-        /// <param name="currentPoint"></param>
-        /// <param name="currentCluster"></param>
-        /// <returns></returns>
+        /// <param name="clustersPointDictionary">Словарь точек кластеров.</param>
+        /// <param name="currentPoint">Текущая точка.</param>
+        /// <param name="currentCluster">Текущий кластер.</param>
+        /// <returns>Возвращает минимальное среднее расстояние между точкой и точками из другого
+        /// кластера.</returns>
         private double AverageNearestClusterDistance
             (Dictionary<int, IEnumerable<IEnumerable<double>>> clustersPointDictionary,
             IEnumerable<double> currentPoint, int currentCluster)
