@@ -29,24 +29,31 @@ namespace ViewModel.AppStates
 
         public DialogViewModel<IList<ITask>, bool> RemoveTasksDialog { get; private set; }
 
-        public DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?> MoveTasksDialog
+        public DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> MoveTasksDialog
             { get; private set; }
 
         public DialogViewModel<object, bool> EditTaskDialog { get; private set; }
 
-        public DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?> CopyTasksDialog
+        public DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> CopyTasksDialog
             { get; private set; }
+
+        public DialogViewModel<ITimeIntervalElement, bool> EditTimeIntervalDialog
+            { get; private set; }
+
+        //public IEnumerable<PageViewModel> Pages { get; private set; }
 
         public ServicesCollection(INotificationManager notificationManager,
             IFileService fileService, ISerializer serializer, IResourceService resourceService,
-            DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult> addTimeIntervalDialog,
+            DialogViewModel<TimeIntervalViewModelArgs,
+            TimeIntervalViewModelResult> addTimeIntervalDialog,
             DialogViewModel<ITask, bool> addTaskDialog,
             DialogViewModel<IList<ITask>, bool> removeTasksDialog,
-            DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?> moveTasksDialog,
+            DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> moveTasksDialog,
             DialogViewModel<object, bool> editTaskDialog,
-            DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?> copyTasksDialog,
+            DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> copyTasksDialog,
+            DialogViewModel<ITimeIntervalElement, bool> editTimeIntervalDialog,
             IFactory<ITaskComposite> taskCompositeFactory, IFactory<ITaskElement> taskElementFactory,
-            IFactory<ITimeIntervalElement> timeIntervalElementFactory)
+            IFactory<ITimeIntervalElement> timeIntervalElementFactory/**, IEnumerable<PageViewModel> pages**/)
         {
             NotificationManager = notificationManager;
             FileService = fileService;
@@ -61,6 +68,8 @@ namespace ViewModel.AppStates
             CopyTasksDialog = copyTasksDialog;
             EditTaskDialog = editTaskDialog;
             MoveTasksDialog = moveTasksDialog;
+            EditTimeIntervalDialog = editTimeIntervalDialog;
+            //Pages = pages;
         }
     }
 }

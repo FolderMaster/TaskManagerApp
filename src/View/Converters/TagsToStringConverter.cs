@@ -13,7 +13,7 @@ namespace View.Converters
         public object Convert(object? value, Type targetType, object? parameter,
             CultureInfo culture)
         {
-            var tags = (IEnumerable<object>?)value;
+            var tags = (IEnumerable<string>?)value;
             return tags != null ? string.Join(" ", tags) : "";
         }
 
@@ -22,7 +22,7 @@ namespace View.Converters
         {
             var text = (string?)value;
             return text != null ? _tagsRegex.Matches(text.ToString()).
-                Select(m => m.Value) : Enumerable.Empty<object>();
+                Select(m => m.Value) : Enumerable.Empty<string>();
         }
     }
 }

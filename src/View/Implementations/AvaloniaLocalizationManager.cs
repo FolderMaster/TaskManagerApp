@@ -44,6 +44,7 @@ namespace View.Implementations
 
         private void SetLocalization()
         {
+            CultureInfo.CurrentCulture = ActualLocalization;
             var app = Application.Current;
             var newDictionary = (ResourceDictionary)
                 AvaloniaXamlLoader.Load(_localizations[ActualLocalization]);

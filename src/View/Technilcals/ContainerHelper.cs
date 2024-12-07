@@ -7,19 +7,23 @@ using ReactiveUI;
 
 using Model.Interfaces;
 
-using ViewModel.ViewModels.Pages;
-using ViewModel.ViewModels;
 using ViewModel.Interfaces;
+using ViewModel.ViewModels;
+using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels.Modals;
+using ViewModel.AppStates;
 using ViewModel.Implementations;
 using ViewModel.Implementations.Mocks;
-using ViewModel.AppStates;
 using ViewModel.Implementations.Factories;
+using ViewModel.Implementations.Sessions;
+using ViewModel.Implementations.Sessions.Database.Mappers;
+using ViewModel.Implementations.Sessions.Database.Entities;
+using ViewModel.Implementations.Sessions.Database.DbContexts;
 
-using View.Implementations;
 using View.Views;
 using View.Views.Pages;
 using View.Views.Modals;
+using View.Implementations;
 
 namespace View.Technilcals
 {
@@ -54,22 +58,35 @@ namespace View.Technilcals
                 SingleInstance();
             builder.RegisterType<TimeIntervalElementFactory>().
                 As<IFactory<ITimeIntervalElement>>().SingleInstance();
+            builder.RegisterType<DbContextFactory>().As<IFactory<BaseDbContext>>().SingleInstance();
 
             builder.RegisterType<AddTimeIntervalViewModel>().
                 As<DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
                 SingleInstance();
+            builder.RegisterType<EditTimeIntervalViewModel>().
+                As<DialogViewModel<ITimeIntervalElement, bool>>().SingleInstance();
             builder.RegisterType<AddTaskViewModel>().As<DialogViewModel<ITask, bool>>().
                 SingleInstance();
             builder.RegisterType<RemoveTasksViewModel>().
                 As<DialogViewModel<IList<ITask>, bool>>().SingleInstance();
             builder.RegisterType<MoveTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?>>().SingleInstance();
+                As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().SingleInstance();
             builder.RegisterType<EditTaskViewModel>().
                 As<DialogViewModel<object, bool>>().SingleInstance();
             builder.RegisterType<CopyTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IList<ITask>?>>().SingleInstance();
+                As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().SingleInstance();
 
-            builder.RegisterType<Session>().SingleInstance();
+            builder.RegisterType<TimeIntervalMapper>().
+                As<IMapper<TimeIntervalEntity, ITimeIntervalElement>>().SingleInstance();
+            builder.RegisterType<MetadataMapper>().
+                As<IMapper<MetadataEntity, object>>().SingleInstance();
+            builder.RegisterType<TaskElementMapper>().
+                As<IMapper<TaskElementEntity, ITaskElement>>().SingleInstance();
+            builder.RegisterType<TaskCompositeMapper>().
+                As<IMapper<TaskCompositeEntity, ITaskComposite>>().SingleInstance();
+            builder.RegisterType<TaskMapper>().As<IMapper<TaskEntity, ITask>>().SingleInstance();
+
+            builder.RegisterType<DbSession>().As<ISession>().SingleInstance();
             builder.RegisterType<Settings>().SingleInstance();
             builder.RegisterType<ServicesCollection>().SingleInstance();
             builder.RegisterType<AppState>().As<AppState>().SingleInstance();
@@ -98,6 +115,7 @@ namespace View.Technilcals
             builder.RegisterType<AddTimeIntervalView>().As<IViewFor<AddTimeIntervalViewModel>>();
             builder.RegisterType<CopyTasksView>().As<IViewFor<CopyTasksViewModel>>();
             builder.RegisterType<EditTaskView>().As<IViewFor<EditTaskViewModel>>();
+            builder.RegisterType<EditTimeIntervalView>().As<IViewFor<EditTimeIntervalViewModel>>();
             builder.RegisterType<MoveTasksView>().As<IViewFor<MoveTasksViewModel>>();
             builder.RegisterType<RemoveTasksView>().As<IViewFor<RemoveTasksViewModel>>();
             builder.RegisterType<SettingsView>().As<IViewFor<SettingsViewModel>>();

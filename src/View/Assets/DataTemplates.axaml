@@ -34,12 +34,12 @@
 		</StackPanel>
 	</DataTemplate>
 	<DataTemplate x:Key="TaskMetadataTreeTemplate" x:DataType="vmt:Metadata">
-		<Label Content="{Binding Name}"/>
+		<Label Content="{Binding Title}"/>
 	</DataTemplate>
 	<DataTemplate x:Key="TaskMetadataTemplate" x:DataType="vmt:Metadata">
 		<StackPanel>
 			<Label Content="{DynamicResource NameLabelContent}"/>
-			<TextBox Text="{Binding Name}"/>
+			<TextBox Text="{Binding Title}"/>
 			<Label Content="{DynamicResource DescriptionLabelContent}"/>
 			<TextBox Text="{Binding Description}" TextWrapping="Wrap"
 					 AcceptsReturn="True" AcceptsTab="True"/>

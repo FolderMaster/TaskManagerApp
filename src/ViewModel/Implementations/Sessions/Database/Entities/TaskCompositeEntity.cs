@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ViewModel.Db.Dto
+namespace ViewModel.Implementations.Sessions.Database.Entities
 {
     [Table("TaskComposites")]
     [PrimaryKey(nameof(Id))]
-    public class TaskCompositeDto
+    public class TaskCompositeEntity
     {
         public int Id { get; set; }
 
         [ForeignKey(nameof(Id))]
-        public virtual TaskDto Task { get; set; }
+        public virtual TaskEntity Task { get; set; }
 
-        public virtual ICollection<TaskDto> Subtasks { get; set; }
+        public virtual ICollection<TaskEntity> Subtasks { get; set; }
     }
 }

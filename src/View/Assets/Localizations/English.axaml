@@ -19,7 +19,9 @@
 	<sys:String x:Key="PreviousButtonContent">Previous</sys:String>
 	<sys:String x:Key="NowButtonContent">Now</sys:String>
 	<sys:String x:Key="NextButtonContent">Next</sys:String>
-	<sys:String x:Key="AddTimeIntervalElementButtonContent">Add time interval element</sys:String>
+	<sys:String x:Key="AddTimeIntervalButtonContent">Add time interval</sys:String>
+	<sys:String x:Key="RemoveTimeIntervalButtonContent">Remove time interval</sys:String>
+	<sys:String x:Key="EditTimeIntervalButtonContent">Edit time interval</sys:String>
 
 	<sys:String x:Key="ThemeLabelContent">Theme</sys:String>
 	<sys:String x:Key="LocalizationLabelContent">Language</sys:String>

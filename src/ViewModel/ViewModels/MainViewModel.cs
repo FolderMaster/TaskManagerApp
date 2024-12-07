@@ -1,22 +1,17 @@
-﻿using System.Reactive.Linq;
-using ReactiveUI;
+﻿using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 
-using Model.Interfaces;
+using System.Reactive.Linq;
 
 using ViewModel.AppStates;
-using ViewModel.Db;
-using AutoMapper;
-using ViewModel.Db.Entities;
-using ViewModel.Db.Dto;
 
 namespace ViewModel.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    private static readonly string _partFilePath = "TaskManager/session.json";
+    //private static readonly string _partFilePath = "TaskManager/session.json";
 
-    private readonly string _fullFilePath;
+    //private readonly string _fullFilePath;
 
     private readonly AppState _appState;
 
@@ -30,32 +25,19 @@ public partial class MainViewModel : ViewModelBase
     {
         _appState = appState;
 
-        _fullFilePath = _appState.Services.FileService.CombinePath
-            (_appState.Services.FileService.PersonalDirectoryPath, _partFilePath);
+        /**_fullFilePath = _appState.Services.FileService.CombinePath
+            (_appState.Services.FileService.PersonalDirectoryPath, _partFilePath);**/
 
         Pages = pages;
 
         this.WhenAnyValue(x => x.Pages).Subscribe(s => SelectedPage = s?.FirstOrDefault());
-        var config = new MapperConfiguration(cfg =>
-        {
-            cfg.AddProfile<MappingProfile>();
-        });
-
-        /**var db = new SqliteDbContext();
-        db.Database.EnsureCreated();
-        var tasks = db.Tasks.ToList();
-        var elements = db.TaskElements.ToList();
-        var composites = db.TaskComposites.ToList();
-        var metadata = db.Metadata.ToList();
-        var tags = db.Tags.ToList();
-        var timeIntervals = db.TimeIntervals.ToList();
-        db.SaveChanges();**/
     }
 
     [ReactiveCommand]
-    private void Save()
+    private async Task Save()
     {
-        var directoryPath = _appState.Services.FileService.GetDirectoryPath(_fullFilePath);
+        await _appState.Session.Save();
+        /**var directoryPath = _appState.Services.FileService.GetDirectoryPath(_fullFilePath);
         if (!_appState.Services.FileService.IsPathExists(directoryPath))
         {
             _appState.Services.FileService.CreateDirectory(directoryPath);
@@ -68,13 +50,14 @@ public partial class MainViewModel : ViewModelBase
         catch (Exception ex)
         {
 
-        }
+        }**/
     }
 
     [ReactiveCommand]
-    private void Load()
+    private async Task Load()
     {
-        if (!_appState.Services.FileService.IsPathExists(_fullFilePath))
+        await _appState.Session.Load();
+        /**if (!_appState.Services.FileService.IsPathExists(_fullFilePath))
         {
             return;
         }
@@ -88,6 +71,6 @@ public partial class MainViewModel : ViewModelBase
         catch (Exception ex)
         {
 
-        }
+        }**/
     }
 }

@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ViewModel.Db.Dto
+namespace ViewModel.Implementations.Sessions.Database.Entities
 {
     [Table("TimeIntervals")]
     [PrimaryKey(nameof(Id))]
-    public class TimeIntervalDto
+    public class TimeIntervalEntity
     {
         public int Id { get; set; }
 
@@ -16,6 +16,6 @@ namespace ViewModel.Db.Dto
         public int TaskElementId { get; set; }
 
         [ForeignKey(nameof(TaskElementId))]
-        public virtual TaskElementDto TaskElement { get; set; }
+        public virtual TaskElementEntity TaskElement { get; set; }
     }
 }

@@ -13,13 +13,13 @@ namespace ViewModel.ViewModels.Modals
 
         protected IObservable<bool> _canExecuteGo;
 
-        protected IList<ITask> _mainList;
+        protected IEnumerable<ITask> _mainList;
 
         [Reactive]
         private IList<ITask> _items;
 
         [Reactive]
-        private IList<ITask> _list;
+        private IEnumerable<ITask> _list;
 
         [Reactive]
         private ITask? _selectedTask;
@@ -27,7 +27,7 @@ namespace ViewModel.ViewModels.Modals
         public TasksViewModel()
         {
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.List).
-                Select(i => List is ITask);
+                Select(i => List is ITaskComposite);
             _canExecuteGo = this.WhenAnyValue(x => x.SelectedTask).
                 Select(i => SelectedTask is ITaskComposite composite);
         }
@@ -41,7 +41,7 @@ namespace ViewModel.ViewModels.Modals
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()
         {
-            var composite = (ITask)List;
+            var composite = (ITaskComposite)List;
             List = composite.ParentTask ?? _mainList;
         }
 

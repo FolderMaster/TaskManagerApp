@@ -31,7 +31,7 @@ namespace ViewModel.ViewModels.Pages
         private readonly AppState _appState;
 
         [Reactive]
-        private IList<ITask> _taskListView;
+        private IEnumerable<ITask> _taskListView;
 
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
@@ -83,18 +83,7 @@ namespace ViewModel.ViewModels.Pages
             var result = await AddModal(_appState.Services.RemoveTasksDialog, items);
             if (result)
             {
-                foreach (var item in items)
-                {
-                    if (item.ParentTask == null)
-                    {
-                        _appState.Session.Tasks.Remove(item);
-                    }
-                    else
-                    {
-                        item.ParentTask.Remove(item);
-                    }
-                }
-                _appState.UpdateSessionItems();
+                _appState.Session.RemoveTasks(items);
             }
         }
 
@@ -108,17 +97,16 @@ namespace ViewModel.ViewModels.Pages
 
         private async Task AddTask(ITask task)
         {
-            var list = TaskListView;
+            var taskComposite = TaskListView as ITaskComposite;
             if (SelectedTasks.Count == 1)
             {
-                list = (ITaskComposite)SelectedTasks.First();
+                taskComposite = (ITaskComposite)SelectedTasks.First();
                 SelectedTasks.Clear();
             }
             var result = await AddModal(_appState.Services.AddTaskDialog, task);
             if (result)
             {
-                list.Add(task);
-                _appState.UpdateSessionItems();
+                _appState.Session.AddTasks([task], taskComposite);
             }
         }
 
@@ -130,7 +118,7 @@ namespace ViewModel.ViewModels.Pages
             var result = await AddModal(_appState.Services.EditTaskDialog, item);
             if (result)
             {
-                _appState.UpdateSessionItems();
+                _appState.Session.EditTask(item);
             }
         }
 
@@ -143,19 +131,7 @@ namespace ViewModel.ViewModels.Pages
                 new ItemsTasksViewModelArgs(items, TaskListView, _appState.Session.Tasks));
             if (list != null)
             {
-                foreach (var item in items)
-                {
-                    if (item.ParentTask != null)
-                    {
-                        item.ParentTask.Remove(item);
-                    }
-                    else
-                    {
-                        _appState.Session.Tasks.Remove(item);
-                    }
-                    list.Add(item);
-                }
-                _appState.UpdateSessionItems();
+                _appState.Session.MoveTasks(items, (ITaskComposite?)list);
             }
         }
 
@@ -176,11 +152,7 @@ namespace ViewModel.ViewModels.Pages
                         copyList.Add((ITask)cloneable.Clone());
                     }
                 }
-                foreach (var task in copyList)
-                {
-                    list.Add(task);
-                }
-                _appState.UpdateSessionItems();
+                _appState.Session.AddTasks(copyList, (ITaskComposite?)list);
             }
         }
 
@@ -193,7 +165,7 @@ namespace ViewModel.ViewModels.Pages
             var item1 = items.First();
             var item2 = items.Last();
 
-            var list = item1.ParentTask ?? _appState.Session.Tasks;
+            var list = item1.ParentTask ?? _appState.Session.Tasks as IList<ITask>;
 
             var index1 = list.IndexOf(item1);
             var index2 = list.IndexOf(item2);

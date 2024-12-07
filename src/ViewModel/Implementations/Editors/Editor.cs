@@ -22,13 +22,13 @@ namespace ViewModel.Implementations.Editors
                 new TaskElementEditorPrototype() : new TaskEditorPrototype();
             prototype.Metadata = new Metadata()
             {
-                Name = null,
+                Title = null,
                 Tags = null
             };
-            if (editables.All(t => ((Metadata)t.Metadata).Name ==
-                ((Metadata)editables.First().Metadata).Name))
+            if (editables.All(t => ((Metadata)t.Metadata).Title ==
+                ((Metadata)editables.First().Metadata).Title))
             {
-                ((Metadata)prototype.Metadata).Name = ((Metadata)editables.First().Metadata).Name;
+                ((Metadata)prototype.Metadata).Title = ((Metadata)editables.First().Metadata).Title;
             }
             if (editables.All(t => ((Metadata)t.Metadata).Tags.OrderBy(a => a).
                 SequenceEqual(((Metadata)editables.First().Metadata).Tags.OrderBy(a => a))))

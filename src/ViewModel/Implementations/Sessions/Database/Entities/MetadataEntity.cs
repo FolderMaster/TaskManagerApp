@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ViewModel.Db.Dto
+namespace ViewModel.Implementations.Sessions.Database.Entities
 {
     [Table("Metadata")]
     [PrimaryKey(nameof(TaskId))]
-    public class MetadataDto
+    public class MetadataEntity
     {
         public int TaskId { get; set; }
 
@@ -16,8 +16,8 @@ namespace ViewModel.Db.Dto
         public string? Category { get; set; }
 
         [ForeignKey(nameof(TaskId))]
-        public virtual TaskDto Task { get; set; }
+        public virtual TaskEntity Task { get; set; }
 
-        public virtual ICollection<TagDto> Tags { get; set; }
+        public virtual ICollection<TagEntity> Tags { get; set; }
     }
 }

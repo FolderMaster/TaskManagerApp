@@ -1,6 +1,6 @@
 ﻿using Model.Interfaces;
-using Model.Tasks;
 
+using ViewModel.Implementations.Sessions.Database.Domains;
 using ViewModel.Interfaces;
 
 namespace ViewModel.Implementations.Factories
@@ -15,9 +15,18 @@ namespace ViewModel.Implementations.Factories
             _metadataFactory = metadataFactory;
         }
 
-        public ITaskComposite Create() => new TaskComposite()
+        public ITaskComposite Create()
         {
-            Metadata = _metadataFactory.Create()
-        };
+            var result = new TaskCompositeDomain()
+            {
+                Metadata = _metadataFactory.Create(),
+                Entity = new()
+                {
+                    Task = new()
+                }
+            };
+            result.Entity.Task.TaskComposite = result.Entity;
+            return result;
+        } 
     }
 }

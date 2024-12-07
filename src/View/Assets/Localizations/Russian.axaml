@@ -19,7 +19,9 @@
 	<sys:String x:Key="PreviousButtonContent">Предыдущий</sys:String>
 	<sys:String x:Key="NowButtonContent">Сейчас</sys:String>
 	<sys:String x:Key="NextButtonContent">Следующий</sys:String>
-	<sys:String x:Key="AddTimeIntervalElementButtonContent">Добавить элемент временного интервала</sys:String>
+	<sys:String x:Key="AddTimeIntervalButtonContent">Добавить временной интервал</sys:String>
+	<sys:String x:Key="RemoveTimeIntervalButtonContent">Удалить временной интервал</sys:String>
+	<sys:String x:Key="EditTimeIntervalButtonContent">Изменить временной интервал</sys:String>
 
 	<sys:String x:Key="ThemeLabelContent">Тема</sys:String>
 	<sys:String x:Key="LocalizationLabelContent">Язык</sys:String>

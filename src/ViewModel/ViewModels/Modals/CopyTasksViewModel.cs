@@ -5,10 +5,10 @@ using Model.Interfaces;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class CopyTasksViewModel : TasksViewModel<ItemsTasksViewModelArgs, IList<ITask>?>
+    public partial class CopyTasksViewModel : TasksViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>
     {
         [Reactive]
-        private IList<ITask> _items;
+        private IEnumerable<ITask> _items;
 
         protected override void GetArgs(ItemsTasksViewModelArgs args)
         {

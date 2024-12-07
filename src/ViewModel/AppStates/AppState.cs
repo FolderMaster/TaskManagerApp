@@ -1,20 +1,16 @@
 ﻿using TrackableFeatures;
 
+using ViewModel.Interfaces;
+
 namespace ViewModel.AppStates
 {
     public class AppState : TrackableObject
     {
-        private Session _session;
+        private ISession _session;
 
         private Settings _settings;
 
-        public event EventHandler<object>? ItemSessionChanged;
-
-        public Session Session
-        {
-            get => _session;
-            set => UpdateProperty(ref _session, value, UpdateSessionItems);
-        }
+        public ISession Session => _session;
 
         public Settings Settings
         {
@@ -24,13 +20,11 @@ namespace ViewModel.AppStates
 
         public ServicesCollection Services { get; private set; }
 
-        public AppState(Session session, Settings settings, ServicesCollection services)
+        public AppState(ISession session, Settings settings, ServicesCollection services)
         {
             _session = session;
             Settings = settings;
             Services = services;
         }
-
-        public void UpdateSessionItems() => ItemSessionChanged?.Invoke(this, new());
     }
 }

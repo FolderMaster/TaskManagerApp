@@ -26,12 +26,12 @@ namespace ViewModel.ViewModels.Modals
                 {
                     return Observable.FromEventPattern<DataErrorsChangedEventArgs>
                         (h => notify.ErrorsChanged += h, h => notify.ErrorsChanged -= h).
-                        Select(_ => notify.HasErrors);
+                        Select(_ => notify.HasErrors).StartWith(notify.HasErrors);
                 }
                 return Observable.Return(false);
-            }).Switch().DistinctUntilChanged();
+            }).Switch();
             _canExecuteOk = this.WhenAnyValue(x => x.SelectedTaskElement).Select(t => t != null).
-                CombineLatest(hasErrors, (t, e) => t && !e).DistinctUntilChanged();
+                CombineLatest(hasErrors, (t, e) => t && !e);
         }
 
         protected override void GetArgs(TimeIntervalViewModelArgs args)

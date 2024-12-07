@@ -11,24 +11,36 @@
 			 x:DataType="vm:TimeViewModel">
 	<Grid RowDefinitions="*, Auto">
 		<Grid Grid.Row="0" RowDefinitions="Auto, *">
-			<TextBlock Grid.Row="0">
-				<TextBlock.Text>
-					<MultiBinding StringFormat="{}{0}/{1}">
-						<Binding Path="CurrentWeek.Month" />
-						<Binding Path="CurrentWeek.Year" />
-					</MultiBinding>
-				</TextBlock.Text>
-			</TextBlock>
-			<si:CalendarControl Grid.Row="1" AutoScrollToSelectedItem="True" AllowDelete="True"
-							CurrentWeek="{Binding CurrentWeek}" Items="{Binding CalendarIntervals}"
-							SelectedItem="{Binding SelectedCalendarInterval}"
-							ItemTemplate="{StaticResource CalendarIntervalTemplate}"/>
+			<Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto">
+				<TextBlock Grid.Column="0" FontSize="24">
+					<TextBlock.Text>
+						<MultiBinding StringFormat="{}{0}/{1}">
+							<Binding Path="CurrentWeek.Month" />
+							<Binding Path="CurrentWeek.Year" />
+						</MultiBinding>
+					</TextBlock.Text>
+				</TextBlock>
+				<WrapPanel Grid.Column="2">
+					<Button Content="{DynamicResource PreviousButtonContent}"
+							Command="{Binding GoToPreviousCommand}"/>
+					<Button Content="{DynamicResource NowButtonContent}"
+							Command="{Binding GoToNowCommand}"/>
+					<Button Content="{DynamicResource NextButtonContent}"
+							Command="{Binding GoToNextCommand}"/>
+				</WrapPanel>
+			</Grid>
+			<si:CalendarControl Grid.Row="1" AutoScrollToSelectedItem="True"
+								CurrentWeek="{Binding CurrentWeek}" Items="{Binding CalendarIntervals}"
+								ItemTemplate="{StaticResource CalendarIntervalTemplate}"
+								SelectionChanged="CalendarControl_SelectionChanged"/>
 		</Grid>
 		<WrapPanel Grid.Row="1">
-			<Button Content="{DynamicResource AddTimeIntervalElementButtonContent}" Command="{Binding AddCommand}"/>
-			<Button Content="{DynamicResource PreviousButtonContent}" Command="{Binding GoToPreviousCommand}"/>
-			<Button Content="{DynamicResource NowButtonContent}" Command="{Binding GoToNowCommand}"/>
-			<Button Content="{DynamicResource NextButtonContent}" Command="{Binding GoToNextCommand}"/>
+			<Button Content="{DynamicResource AddTimeIntervalButtonContent}"
+					Command="{Binding AddCommand}"/>
+			<Button Content="{DynamicResource RemoveTimeIntervalButtonContent}"
+					Command="{Binding RemoveCommand}"/>
+			<Button Content="{DynamicResource EditTimeIntervalButtonContent}"
+					Command="{Binding EditCommand}"/>
 		</WrapPanel>
 	</Grid>
 </UserControl>

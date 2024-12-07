@@ -6,10 +6,10 @@ using Model.Interfaces;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class MoveTasksViewModel : TasksViewModel<ItemsTasksViewModelArgs, IList<ITask>?>
+    public partial class MoveTasksViewModel : TasksViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>
     {
         [Reactive]
-        private IList<ITask> _list;
+        private IEnumerable<ITask> _list;
 
         public MoveTasksViewModel()
         {

@@ -7,6 +7,6 @@ namespace ViewModel.Implementations.Factories
     {
         public MetadataFactory() { }
 
-        public object Create() => new Metadata() { Name = "Task" };
+        public object Create() => new Metadata() { Title = "Task" };
     }
 }

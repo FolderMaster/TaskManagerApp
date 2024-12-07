@@ -1,6 +1,6 @@
 ﻿using Model.Interfaces;
-using Model.Times;
 
+using ViewModel.Implementations.Sessions.Database.Domains;
 using ViewModel.Interfaces;
 
 namespace ViewModel.Implementations.Factories
@@ -8,6 +8,9 @@ namespace ViewModel.Implementations.Factories
     public class TimeIntervalElementFactory : IFactory<ITimeIntervalElement>
     {
         public ITimeIntervalElement Create() =>
-            new TimeIntervalElement(DateTime.Now, DateTime.Now);
+            new TimeIntervalElementDomain(DateTime.Now, DateTime.Now)
+            {
+                Entity = new()
+            };
     }
 }

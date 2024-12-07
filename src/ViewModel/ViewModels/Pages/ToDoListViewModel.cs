@@ -5,6 +5,7 @@ using Model;
 
 using ViewModel.Technicals;
 using ViewModel.AppStates;
+using ViewModel.Interfaces.Events;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -20,8 +21,10 @@ namespace ViewModel.ViewModels.Pages
             _appState = appStateManager;
 
             Metadata = _appState.Services.ResourceService.GetResource("ToDoListPageMetadata");
-            _appState.ItemSessionChanged += AppStateManager_ItemSessionChanged;
+            _appState.Session.ItemsUpdated += Session_ItemsUpdated;
         }
+
+        
 
         [ReactiveCommand]
         public void Update()
@@ -38,7 +41,6 @@ namespace ViewModel.ViewModels.Pages
                 DateTime.Now, t.Deadline < DateTime.Now));
         }
 
-        private void AppStateManager_ItemSessionChanged(object? sender, object e) =>
-            UpdateCommand.Execute();
+        private void Session_ItemsUpdated(object? sender, ItemsUpdatedEventArgs e) => Update();
     }
 }

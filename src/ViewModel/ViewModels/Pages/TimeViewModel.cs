@@ -1,23 +1,28 @@
 ﻿using ReactiveUI.SourceGenerators;
 using ReactiveUI;
-
-using TrackableFeatures;
+using System.Reactive.Linq;
+using System.Collections.ObjectModel;
 
 using Model;
 
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
 using ViewModel.AppStates;
+using ViewModel.Interfaces.Events;
 
 namespace ViewModel.ViewModels.Pages;
 
 public partial class TimeViewModel : PageViewModel
 {
+    private readonly IObservable<bool> _canExecuteRemove;
+
+    private readonly IObservable<bool> _canExecuteEdit;
+
     private readonly AppState _appState;
 
     [Reactive]
     private IList<CalendarInterval> _calendarIntervals =
-        new TrackableCollection<CalendarInterval>();
+        new ObservableCollection<CalendarInterval>();
 
     [Reactive]
     private CalendarInterval? _selectedCalendarInterval;
@@ -29,8 +34,13 @@ public partial class TimeViewModel : PageViewModel
     {
         _appState = appState;
 
+        _canExecuteRemove = this.WhenAnyValue(c => c.SelectedCalendarInterval).
+            Select(c => c != null);
+        _canExecuteEdit = this.WhenAnyValue(c => c.SelectedCalendarInterval).
+            Select(c => c != null);
+
         Metadata = _appState.Services.ResourceService.GetResource("TimePageMetadata");
-        _appState.ItemSessionChanged += AppStateManager_ItemSessionChanged;
+        _appState.Session.ItemsUpdated += Session_ItemsUpdated;
     }
 
     [ReactiveCommand]
@@ -69,12 +79,27 @@ public partial class TimeViewModel : PageViewModel
             _appState.Session.Tasks, timeIntervalElement));
         if (result != null)
         {
-            result.TaskElement.TimeIntervals.Add(result.TimeIntervalElement);
-            CalendarIntervals.Add(new CalendarInterval(result.TimeIntervalElement, result.TaskElement));
-            _appState.UpdateSessionItems();
+            _appState.Session.AddTimeInterval(result.TimeIntervalElement, result.TaskElement);
         }
     }
 
-    private void AppStateManager_ItemSessionChanged(object? sender, object e) =>
-        UpdateCommand.Execute();
+    [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
+    private void Remove()
+    {
+        _appState.Session.RemoveTimeInterval(SelectedCalendarInterval.TimeInterval,
+            SelectedCalendarInterval.TaskElement);
+    }
+
+    [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]
+    private async Task Edit()
+    {
+        var result = await AddModal(_appState.Services.EditTimeIntervalDialog,
+            SelectedCalendarInterval.TimeInterval);
+        if (result)
+        {
+            _appState.Session.EditTimeInterval(SelectedCalendarInterval.TimeInterval);
+        }
+    }
+
+    private void Session_ItemsUpdated(object? sender, ItemsUpdatedEventArgs e) => Update();
 }

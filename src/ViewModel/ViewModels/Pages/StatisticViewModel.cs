@@ -8,6 +8,7 @@ using MachineLearning.LearningModels;
 
 using ViewModel.Technicals;
 using ViewModel.AppStates;
+using ViewModel.Interfaces.Events;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -58,7 +59,7 @@ namespace ViewModel.ViewModels.Pages
             this.WhenAnyValue(x => x.SelectedTime).Subscribe(t => UpdateExpiredTasksStatistics());
 
             Metadata = _appState.Services.ResourceService.GetResource("StatisticPageMetadata");
-            _appState.ItemSessionChanged += AppStateManager_ItemSessionChanged;
+            _appState.Session.ItemsUpdated += Session_ItemsUpdated;
         }
 
         [ReactiveCommand]
@@ -152,6 +153,6 @@ namespace ViewModel.ViewModels.Pages
             ];
         }
 
-        private void AppStateManager_ItemSessionChanged(object? sender, object e) => Update();
+        private void Session_ItemsUpdated(object? sender, ItemsUpdatedEventArgs e) => Update();
     }
 }

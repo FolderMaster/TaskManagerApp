@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 using TaskStatus = Model.TaskStatus;
 
-namespace ViewModel.Db.Dto
+namespace ViewModel.Implementations.Sessions.Database.Entities
 {
     [Table("TaskElements")]
     [PrimaryKey(nameof(Id))]
-    public class TaskElementDto
+    public class TaskElementEntity
     {
         public int Id { get; set; }
 
@@ -30,8 +30,8 @@ namespace ViewModel.Db.Dto
         public double ExecutedReal { get; set; }
 
         [ForeignKey(nameof(Id))]
-        public virtual TaskDto Task { get; set; }
+        public virtual TaskEntity Task { get; set; }
 
-        public virtual ICollection<TimeIntervalDto> TimeIntervals { get; set; }
+        public virtual ICollection<TimeIntervalEntity> TimeIntervals { get; set; }
     }
 }

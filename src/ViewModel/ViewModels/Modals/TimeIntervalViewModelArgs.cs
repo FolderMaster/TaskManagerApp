@@ -6,7 +6,7 @@ namespace ViewModel.ViewModels.Modals
     {
         public ITimeIntervalElement TimeIntervalElement { get; private set; }
 
-        public TimeIntervalViewModelArgs(IList<ITask> list, IList<ITask> mainList,
+        public TimeIntervalViewModelArgs(IEnumerable<ITask> list, IEnumerable<ITask> mainList,
             ITimeIntervalElement timeIntervalElement) : base(list, mainList)
         {
             TimeIntervalElement = timeIntervalElement;

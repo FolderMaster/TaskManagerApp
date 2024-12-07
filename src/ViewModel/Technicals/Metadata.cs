@@ -4,33 +4,33 @@ namespace ViewModel.Technicals
 {
     public class Metadata : TrackableObject, ICloneable
     {
-        private string _name;
+        private string _title;
 
-        private string _description;
+        private string? _description;
 
-        private object _category;
+        private string? _category;
 
-        private IEnumerable<object> _tags;
+        private IEnumerable<string> _tags;
 
-        public string Name
+        public string Title
         {
-            get => _name;
-            set => UpdateProperty(ref _name, value);
+            get => _title;
+            set => UpdateProperty(ref _title, value);
         }
 
-        public string Description
+        public string? Description
         {
             get => _description;
             set => UpdateProperty(ref _description, value);
         }
 
-        public object Category
+        public string? Category
         {
             get => _category;
             set => UpdateProperty(ref _category, value);
         }
 
-        public IEnumerable<object> Tags
+        public IEnumerable<string> Tags
         {
             get => _tags;
             set => UpdateProperty(ref _tags, value.Distinct().ToList());
@@ -38,11 +38,11 @@ namespace ViewModel.Technicals
 
         public object Clone() => new Metadata()
         {
-            Name = Name,
+            Title = Title,
             Description = Description,
             Tags = Tags.ToList()
         };
 
-        public override string ToString() => $"{Name}";
+        public override string ToString() => $"{Title}";
     }
 }
