@@ -8,7 +8,8 @@
 					xmlns:v="clr-namespace:View.DataTemplates"
 					xmlns:e="clr-namespace:View.Extensions"
 					xmlns:vmt="clr-namespace:ViewModel.Technicals;assembly=ViewModel"
-					xmlns:vt="clr-namespace:View.Technilcals">
+					xmlns:vt="clr-namespace:View.Technilcals"
+					xmlns:c="clr-namespace:View.Controls">
 	<Design.PreviewWith>
 		<Border Padding="10">
 			<StackPanel>
@@ -53,9 +54,9 @@
 	<DataTemplate x:Key="TimeIntervalElementTemplate" x:DataType="mi:ITimeIntervalElement">
 		<StackPanel>
 			<Label Content="{DynamicResource StartLabelContent}"/>
-			<CalendarDatePicker SelectedDate="{Binding Start}"/>
+			<c:DateTimePicker DateTime="{Binding Start}"/>
 			<Label Content="{DynamicResource EndLabelContent}"/>
-			<CalendarDatePicker SelectedDate="{Binding End}"/>
+			<c:DateTimePicker DateTime="{Binding End}"/>
 			<Label Content="{DynamicResource DurationLabelContent}"/>
 			<TextBox Text="{Binding Duration}" IsEnabled="False"/>
 		</StackPanel>
@@ -154,14 +155,14 @@
 					<Label Content="{DynamicResource ExecutedRealLabelContent}"/>
 					<TextBox Text="{Binding ExecutedReal}"/>
 					<Label Content="{DynamicResource PlannedTimeLabelContent}"/>
-					<TimePicker SelectedTime="{Binding PlannedTime}"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}" UseSeconds="True"/>
 					<Label Content="{DynamicResource SpentTimeLabelContent}"/>
-					<TimePicker SelectedTime="{Binding SpentTime}"/>
+					<TimePicker SelectedTime="{Binding SpentTime}" UseSeconds="True"/>
 					<Label Content="{DynamicResource StatusLabelContent}"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}"/>
 					<Label Content="{DynamicResource DeadlineLabelContent}"/>
-					<CalendarDatePicker SelectedDate="{Binding Deadline}"/>
+					<c:DateTimePicker DateTime="{Binding Deadline}"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.ElementDataTemplate>
@@ -177,14 +178,16 @@
 					<Label Content="{DynamicResource ProgressLabelContent}"/>
 					<Slider IsEnabled="False" Value="{Binding Progress}" Minimum="0" Maximum="1"/>
 					<Label Content="{DynamicResource PlannedTimeLabelContent}"/>
-					<TimePicker SelectedTime="{Binding PlannedTime}" IsEnabled="False"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}"
+								IsEnabled="False" UseSeconds="True"/>
 					<Label Content="{DynamicResource SpentTimeLabelContent}"/>
-					<TimePicker SelectedTime="{Binding SpentTime}" IsEnabled="False"/>
+					<TimePicker SelectedTime="{Binding SpentTime}"
+								IsEnabled="False" UseSeconds="True"/>
 					<Label Content="{DynamicResource StatusLabelContent}"/>
 					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
 							  SelectedItem="{Binding Status}" IsEnabled="False"/>
 					<Label Content="{DynamicResource DeadlineLabelContent}"/>
-					<CalendarDatePicker IsEnabled="False" SelectedDate="{Binding Deadline}"/>
+					<c:DateTimePicker DateTime="{Binding Deadline}" IsEnabled="False"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.CompositeDataTemplate>

@@ -1,7 +1,6 @@
 ﻿using ReactiveUI.SourceGenerators;
 using System.Globalization;
-
-using ViewModel.AppStates;
+using ViewModel.Implementations.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {

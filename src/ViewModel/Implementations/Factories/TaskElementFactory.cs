@@ -1,6 +1,6 @@
 ﻿using Model.Interfaces;
 
-using ViewModel.Implementations.Sessions.Database.Domains;
+using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
 using ViewModel.Interfaces;
 
 namespace ViewModel.Implementations.Factories

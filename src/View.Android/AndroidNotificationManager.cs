@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.AppStates;
 
 namespace View.Android
 {

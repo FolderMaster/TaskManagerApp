@@ -9,32 +9,25 @@
 			 Design.DataContext="{e:Design {x:Type vm:TimeViewModel}}"
              x:Class="View.Views.Pages.TimeView"
 			 x:DataType="vm:TimeViewModel">
-	<Grid RowDefinitions="*, Auto">
-		<Grid Grid.Row="0" RowDefinitions="Auto, *">
-			<Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto">
-				<TextBlock Grid.Column="0" FontSize="24">
-					<TextBlock.Text>
-						<MultiBinding StringFormat="{}{0}/{1}">
-							<Binding Path="CurrentWeek.Month" />
-							<Binding Path="CurrentWeek.Year" />
-						</MultiBinding>
-					</TextBlock.Text>
-				</TextBlock>
-				<WrapPanel Grid.Column="2">
-					<Button Content="{DynamicResource PreviousButtonContent}"
-							Command="{Binding GoToPreviousCommand}"/>
-					<Button Content="{DynamicResource NowButtonContent}"
-							Command="{Binding GoToNowCommand}"/>
-					<Button Content="{DynamicResource NextButtonContent}"
-							Command="{Binding GoToNextCommand}"/>
-				</WrapPanel>
-			</Grid>
-			<si:CalendarControl Grid.Row="1" AutoScrollToSelectedItem="True"
-								CurrentWeek="{Binding CurrentWeek}" Items="{Binding CalendarIntervals}"
-								ItemTemplate="{StaticResource CalendarIntervalTemplate}"
-								SelectionChanged="CalendarControl_SelectionChanged"/>
+	<Grid Grid.Row="0" RowDefinitions="Auto, *, Auto">
+		<Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto">
+			<TextBlock Grid.Column="0" FontSize="24" Text="{Binding CurrentWeek,
+						   Converter={StaticResource DateTimeToStringConverter},
+						   ConverterParameter='yyyy, MMMM'}"/>
+			<WrapPanel Grid.Column="2">
+				<Button Content="{DynamicResource PreviousButtonContent}"
+						Command="{Binding GoToPreviousCommand}"/>
+				<Button Content="{DynamicResource NowButtonContent}"
+						Command="{Binding GoToNowCommand}"/>
+				<Button Content="{DynamicResource NextButtonContent}"
+						Command="{Binding GoToNextCommand}"/>
+			</WrapPanel>
 		</Grid>
-		<WrapPanel Grid.Row="1">
+		<si:CalendarControl Grid.Row="1" AutoScrollToSelectedItem="True"
+							CurrentWeek="{Binding CurrentWeek}" Items="{Binding CalendarIntervals}"
+							ItemTemplate="{StaticResource CalendarIntervalTemplate}"
+							SelectionChanged="CalendarControl_SelectionChanged"/>
+		<WrapPanel Grid.Row="2">
 			<Button Content="{DynamicResource AddTimeIntervalButtonContent}"
 					Command="{Binding AddCommand}"/>
 			<Button Content="{DynamicResource RemoveTimeIntervalButtonContent}"

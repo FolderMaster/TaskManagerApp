@@ -1,6 +1,5 @@
 ﻿using System;
-
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.AppStates;
 
 namespace View.Desktop
 {

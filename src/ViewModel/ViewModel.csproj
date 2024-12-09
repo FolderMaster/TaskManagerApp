@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Implementations\Sessions\Database\Entities\TagEntity.cs" />
+    <None Include="Implementations\AppStates\Sessions\Database\Entities\TagEntity.cs" />
   </ItemGroup>
 
   <ItemGroup>

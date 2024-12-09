@@ -8,7 +8,7 @@ using System.Linq;
 
 using TrackableFeatures;
 
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.AppStates.Settings;
 
 namespace View.Implementations
 {

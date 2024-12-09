@@ -4,11 +4,14 @@ using System.Reactive.Linq;
 using System.Collections.ObjectModel;
 
 using Model;
+using Model.Interfaces;
 
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
-using ViewModel.AppStates;
-using ViewModel.Interfaces.Events;
+using ViewModel.Interfaces.AppStates.Events;
+using ViewModel.Implementations.AppStates;
+using Accord;
+using DynamicData;
 
 namespace ViewModel.ViewModels.Pages;
 
@@ -19,6 +22,8 @@ public partial class TimeViewModel : PageViewModel
     private readonly IObservable<bool> _canExecuteEdit;
 
     private readonly AppState _appState;
+
+    private Dictionary<DateTime, IEnumerable<ITaskElement>> _tasksSchedulerDictionary;
 
     [Reactive]
     private IList<CalendarInterval> _calendarIntervals =
@@ -41,6 +46,7 @@ public partial class TimeViewModel : PageViewModel
 
         Metadata = _appState.Services.ResourceService.GetResource("TimePageMetadata");
         _appState.Session.ItemsUpdated += Session_ItemsUpdated;
+        _appState.Services.TimeScheduler.TimepointReached += TimeScheduler_TimepointReached;
     }
 
     [ReactiveCommand]
@@ -59,6 +65,12 @@ public partial class TimeViewModel : PageViewModel
                 CalendarIntervals.Add(new CalendarInterval(timeInterval, task));
             }
         }
+        _tasksSchedulerDictionary = tasks.SelectMany(t => t.TimeIntervals).GroupBy(i => i.Start).
+            Where(g => g.Key > DateTime.Now).ToDictionary(g => g.Key,
+            g => tasks.Where(task => task.TimeIntervals.Any(i => i.Start == g.Key)));
+        _appState.Services.TimeScheduler.Timepoints.Clear();
+        _appState.Services.TimeScheduler.Timepoints.AddRange
+            (_tasksSchedulerDictionary.Keys);
     }
 
     [ReactiveCommand]
@@ -102,4 +114,19 @@ public partial class TimeViewModel : PageViewModel
     }
 
     private void Session_ItemsUpdated(object? sender, ItemsUpdatedEventArgs e) => Update();
+
+    private void TimeScheduler_TimepointReached(object? sender, DateTime e)
+    {
+        var titleResource = _appState.Services.ResourceService.
+            GetResource("TimeSchedulerNotificationTitle");
+        var contentResource = _appState.Services.ResourceService.
+            GetResource("TimeSchedulerNotificationContent");
+        
+        var content = $"{contentResource}\n";
+        foreach (var task in _tasksSchedulerDictionary[e])
+        {
+            content += $"- {task.Metadata}\n";
+        }
+        _appState.Services.NotificationManager.SendNotification(content, $"{titleResource}");
+    }
 }

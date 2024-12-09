@@ -6,7 +6,7 @@ using ReactiveUI.SourceGenerators;
 using Model.Interfaces;
 
 using ViewModel.ViewModels.Modals;
-using ViewModel.AppStates;
+using ViewModel.Implementations.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {

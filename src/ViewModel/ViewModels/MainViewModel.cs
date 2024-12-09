@@ -1,9 +1,8 @@
 ﻿using ReactiveUI;
 using ReactiveUI.SourceGenerators;
-
 using System.Reactive.Linq;
 
-using ViewModel.AppStates;
+using ViewModel.Implementations.AppStates;
 
 namespace ViewModel.ViewModels;
 

@@ -1,17 +1,33 @@
 ﻿using Avalonia;
+using Avalonia.Styling;
+using System;
 
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.AppStates;
 
 namespace View.Implementations
 {
     public class AvaloniaResourceService : IResourceService
     {
+        private readonly Application _application;
+
+        private ThemeVariant _themeVariant;
+
+        public AvaloniaResourceService()
+        {
+            _application = Application.Current;
+            _themeVariant = _application.ActualThemeVariant;
+            _application.ActualThemeVariantChanged += Application_ActualThemeVariantChanged;
+        }
+
         public object? GetResource(object key)
         {
-            var application = Application.Current;
-            application.Resources.TryGetResource(key,
-                application.ActualThemeVariant, out var result);
+            _application.Resources.TryGetResource(key, _themeVariant, out var result);
             return result;
+        }
+
+        private void Application_ActualThemeVariantChanged(object? sender, EventArgs e)
+        {
+            _themeVariant = _application.ActualThemeVariant;
         }
     }
 }

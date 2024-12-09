@@ -1,4 +1,4 @@
-﻿using ViewModel.Interfaces;
+﻿using ViewModel.Interfaces.AppStates;
 
 namespace ViewModel.Implementations
 {

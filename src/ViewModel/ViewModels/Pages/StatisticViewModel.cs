@@ -7,8 +7,8 @@ using MachineLearning;
 using MachineLearning.LearningModels;
 
 using ViewModel.Technicals;
-using ViewModel.AppStates;
-using ViewModel.Interfaces.Events;
+using ViewModel.Interfaces.AppStates.Events;
+using ViewModel.Implementations.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {

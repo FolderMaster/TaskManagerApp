@@ -48,4 +48,7 @@
 	<sys:String x:Key="SpentTimeLabelContent">Затраченное время</sys:String>
 	<sys:String x:Key="StatusLabelContent">Статус</sys:String>
 	<sys:String x:Key="DeadlineLabelContent">Срок</sys:String>
+	
+	<sys:String x:Key="TimeSchedulerNotificationTitle">Время!</sys:String>
+	<sys:String x:Key="TimeSchedulerNotificationContent">Время наступило для:</sys:String>
 </ResourceDictionary>

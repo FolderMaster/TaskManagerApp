@@ -11,19 +11,22 @@ using ViewModel.Interfaces;
 using ViewModel.ViewModels;
 using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels.Modals;
-using ViewModel.AppStates;
 using ViewModel.Implementations;
 using ViewModel.Implementations.Mocks;
 using ViewModel.Implementations.Factories;
-using ViewModel.Implementations.Sessions;
-using ViewModel.Implementations.Sessions.Database.Mappers;
-using ViewModel.Implementations.Sessions.Database.Entities;
-using ViewModel.Implementations.Sessions.Database.DbContexts;
 
 using View.Views;
 using View.Views.Pages;
 using View.Views.Modals;
 using View.Implementations;
+using ViewModel.Interfaces.AppStates.Sessions;
+using ViewModel.Interfaces.AppStates;
+using ViewModel.Interfaces.AppStates.Settings;
+using ViewModel.Implementations.AppStates;
+using ViewModel.Implementations.AppStates.Sessions;
+using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
+using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
+using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
 
 namespace View.Technilcals
 {
@@ -50,6 +53,7 @@ namespace View.Technilcals
             builder.RegisterType<AvaloniaThemeManager>().As<IThemeManager>().SingleInstance();
             builder.RegisterType<AvaloniaLocalizationManager>().
                 As<ILocalizationManager>().SingleInstance();
+            builder.RegisterType<TimeScheduler>().As<ITimeScheduler>().SingleInstance();
 
             builder.RegisterType<MetadataFactory>().As<IFactory<object>>().SingleInstance();
             builder.RegisterType<TaskElementFactory>().As<IFactory<ITaskElement>>().

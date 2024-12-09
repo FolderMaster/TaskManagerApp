@@ -4,8 +4,8 @@ using ReactiveUI;
 using Model;
 
 using ViewModel.Technicals;
-using ViewModel.AppStates;
-using ViewModel.Interfaces.Events;
+using ViewModel.Interfaces.AppStates.Events;
+using ViewModel.Implementations.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {
