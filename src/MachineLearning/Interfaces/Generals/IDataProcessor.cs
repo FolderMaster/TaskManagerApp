@@ -10,8 +10,8 @@
         /// <summary>
         /// Преобразует данные.
         /// </summary>
-        /// <param name="data">Коллекция данных.</param>
-        /// <returns>Возвращает коллекцию преобразованных данных.</returns>
-        public IEnumerable<IEnumerable<R>> Process(IEnumerable<IEnumerable<T>> data);
+        /// <param name="data">Данные.</param>
+        /// <returns>Возвращает преобразованные данных.</returns>
+        public IEnumerable<R> Process(IEnumerable<T> data);
     }
 }

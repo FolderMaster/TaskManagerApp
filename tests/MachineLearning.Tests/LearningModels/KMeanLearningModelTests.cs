@@ -37,7 +37,7 @@ namespace MachineLearning.Tests.LearningModels
             var actualClusters = new int[] { 1, 0 };
             var expected = 1;
 
-            _learningModel.NumbersOfClusters = numbersOfClusters;
+            _learningModel.NumberOfClusters = numbersOfClusters;
             _learningModel.Train(trainData);
             var predictedClusters = _learningModel.Predict(testData);
             var result = _scoreMetric.CalculateScore(actualClusters, predictedClusters);

@@ -77,7 +77,7 @@ namespace ViewModel.ViewModels.Pages
             {
                 return;
             }
-            _learningModel.NumbersOfClusters = 3;
+            _learningModel.NumberOfClusters = 3;
             var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
             var inputs = tasks.Select(t => new double[] {t.Difficult, t.Priority, (int)t.Status});
             await _learningModel.Train(inputs);

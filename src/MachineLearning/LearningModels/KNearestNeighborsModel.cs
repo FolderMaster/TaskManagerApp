@@ -26,7 +26,7 @@ namespace MachineLearning.LearningModels
         /// <summary>
         /// Количество соседей.
         /// </summary>
-        private int _numbersOfNeighbors = 1;
+        private int _numberOfNeighbors = 1;
 
         /// <summary>
         /// Метрика расстояний.
@@ -36,10 +36,10 @@ namespace MachineLearning.LearningModels
         /// <summary>
         /// Возвращает и задаёт количество соседей.
         /// </summary>
-        public int NumbersOfNeighbors
+        public int NumberOfNeighbors
         {
-            get => _numbersOfNeighbors;
-            set => UpdateProperty(ref _numbersOfNeighbors, value, OnPropertyChanged);
+            get => _numberOfNeighbors;
+            set => UpdateProperty(ref _numberOfNeighbors, value, OnPropertyChanged);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace MachineLearning.LearningModels
         public Task Train(IEnumerable<IEnumerable<double>> data, IEnumerable<int> targets)
         {
             _metricAdapter.DistanceMetric = DistanceMetric;
-            _kNearestNeighbors = new KNearestNeighbors(NumbersOfNeighbors, _metricAdapter);
+            _kNearestNeighbors = new KNearestNeighbors(NumberOfNeighbors, _metricAdapter);
             _kNearestNeighbors.Learn(data.To2dArray(), targets.ToArray());
             return Task.CompletedTask;
         }
@@ -69,10 +69,10 @@ namespace MachineLearning.LearningModels
         /// </summary>
         private void OnPropertyChanged()
         {
-            ClearErrors(nameof(NumbersOfNeighbors));
-            if (NumbersOfNeighbors <= 0)
+            ClearAllErrors();
+            if (NumberOfNeighbors <= 0)
             {
-                AddError($"{nameof(NumbersOfNeighbors)} должно быть больше 0!");
+                AddError($"{nameof(NumberOfNeighbors)} должно быть больше 0!");
             }
             if (DistanceMetric == null)
             {

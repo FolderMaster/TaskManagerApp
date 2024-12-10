@@ -3,6 +3,13 @@
     /// <summary>
     /// Интерфейс метрики оценки.
     /// </summary>
-    /// <typeparam name="T">Тип данных для оценки.</typeparam>
-    public interface IScoreMetric<T> { }
+    public interface IScoreMetric
+    {
+        /// <summary>
+        /// Определяет категорию оценки.
+        /// </summary>
+        /// <param name="score">Оценка.</param>
+        /// <returns>Возвращает категорию оценки.</returns>
+        public ScoreMetricCategory GetScoreCategory(double score);
+    }
 }

@@ -33,7 +33,7 @@ namespace MachineLearning.Tests.LearningModels
             };
             var expected = new double[] { 1, 0 };
 
-            _learningModel.NumbersOfNeighbors = numbersOfNeighbors;
+            _learningModel.NumberOfNeighbors = numbersOfNeighbors;
             _learningModel.Train(trainData, trainClass);
             var result = _learningModel.Predict(testData);
 

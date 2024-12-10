@@ -40,6 +40,16 @@ namespace MachineLearning.ScoreMetrics
             return totalSilhouetteScore / count;
         }
 
+        /// <inheritdoc />
+        public ScoreMetricCategory GetScoreCategory(double score) => score switch
+        {
+            >= 0.75 => ScoreMetricCategory.Excellent,
+            < 0.75 and >= 0.6 => ScoreMetricCategory.Good,
+            < 0.6 and >= 0.4 => ScoreMetricCategory.Satisfactory,
+            < 0.4 and >= 0.25 => ScoreMetricCategory.Bad,
+            _ => ScoreMetricCategory.Horrible
+        };
+
         /// <summary>
         /// Вычисляет среднее расстояние между точкой и всеми другими точками в том же кластере.
         /// </summary>

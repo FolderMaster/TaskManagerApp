@@ -43,13 +43,15 @@ namespace MachineLearning.DataProcessors
         /// <returns>
         /// Возвращает <c>true</c>, если значение не корректно, иначе <c>false</c>.
         /// </returns>
-        private bool IsInvalidValue(double? value) => value == null || double.IsNaN((double)value);
+        protected virtual bool IsInvalidValue(double? value) =>
+            value == null || double.IsNaN((double)value);
 
         /// <summary>
         /// Рассчитывает значение для замещения на основе столбца.
         /// </summary>
         /// <param name="column">Столбец.</param>
         /// <returns>Возвращает значение для замещения.</returns>
-        private double CalculateReplacementValue(IEnumerable<double> column) => column.Average();
+        protected virtual double CalculateReplacementValue(IEnumerable<double> column) =>
+            column.Average();
     }
 }

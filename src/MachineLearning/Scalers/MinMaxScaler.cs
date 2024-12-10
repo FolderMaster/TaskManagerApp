@@ -4,6 +4,7 @@ namespace MachineLearning.Scalers
 {
     /// <summary>
     /// Класс масштабрирования данных с помощью минимума и максимума.
+    /// Реализует <see cref="IScaler"/>.
     /// </summary>
     public class MinMaxScaler : IScaler
     {

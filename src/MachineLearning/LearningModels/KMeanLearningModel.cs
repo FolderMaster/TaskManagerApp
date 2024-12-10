@@ -26,7 +26,7 @@ namespace MachineLearning.LearningModels
         /// <summary>
         /// Количество кластеров.
         /// </summary>
-        private int _numbersOfClusters = 2;
+        private int _numberOfClusters = 2;
 
         /// <summary>
         /// Метрика расстояний.
@@ -36,10 +36,10 @@ namespace MachineLearning.LearningModels
         /// <summary>
         /// Возвращает и задаёт количество кластеров.
         /// </summary>
-        public int NumbersOfClusters
+        public int NumberOfClusters
         {
-            get => _numbersOfClusters;
-            set => UpdateProperty(ref _numbersOfClusters, value, OnPropertyChanged);
+            get => _numberOfClusters;
+            set => UpdateProperty(ref _numberOfClusters, value, OnPropertyChanged);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace MachineLearning.LearningModels
         public Task Train(IEnumerable<IEnumerable<double>> data)
         {
             _metricAdapter.DistanceMetric = DistanceMetric;
-            var kmeans = new KMeans(NumbersOfClusters, _metricAdapter);
+            var kmeans = new KMeans(NumberOfClusters, _metricAdapter);
             _clusters = kmeans.Learn(data.To2dArray());
             return Task.CompletedTask;
         }
@@ -68,10 +68,10 @@ namespace MachineLearning.LearningModels
         /// </summary>
         private void OnPropertyChanged()
         {
-            ClearErrors(nameof(NumbersOfClusters));
-            if (NumbersOfClusters <= 1)
+            ClearAllErrors();
+            if (NumberOfClusters <= 1)
             {
-                AddError($"{nameof(NumbersOfClusters)} должно быть больше 1!");
+                AddError($"{nameof(NumberOfClusters)} должно быть больше 1!");
             }
             if (DistanceMetric == null)
             {

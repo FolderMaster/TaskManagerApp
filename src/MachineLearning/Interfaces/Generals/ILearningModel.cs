@@ -10,8 +10,8 @@
         /// <summary>
         /// Предсказывает значение на основе данных.
         /// </summary>
-        /// <param name="data">Коллекция данных.</param>
+        /// <param name="data">Данные.</param>
         /// <returns>Возвращает предсказанное значение.</returns>
-        public R Predict(IEnumerable<T> data);
+        public R Predict(T data);
     }
 }

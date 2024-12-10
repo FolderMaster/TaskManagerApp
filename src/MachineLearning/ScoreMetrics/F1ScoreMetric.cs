@@ -40,5 +40,15 @@ namespace MachineLearning.ScoreMetrics
             }
             return values.Average();
         }
+
+        /// <inheritdoc />
+        public ScoreMetricCategory GetScoreCategory(double score) => score switch
+        {
+            >= 0.9 => ScoreMetricCategory.Excellent,
+            < 0.9 and >= 0.8 => ScoreMetricCategory.Good,
+            < 0.8 and >= 0.6 => ScoreMetricCategory.Satisfactory,
+            < 0.6 and >= 0.4 => ScoreMetricCategory.Bad,
+            _ => ScoreMetricCategory.Horrible
+        };
     }
 }

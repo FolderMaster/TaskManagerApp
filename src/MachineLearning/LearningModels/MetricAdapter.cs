@@ -5,8 +5,8 @@ using MachineLearning.Interfaces;
 namespace MachineLearning.LearningModels
 {
     /// <summary>
-    /// Адаптер для использования метрики расстояния с интерфейсом <see cref="IMetric{double[]}"/>.
-    /// Реализует <see cref="IMetric{double[]}"/>.
+    /// Адаптер для использования метрики расстояния <see cref="IPointDistanceMetric"/>
+    /// с интерфейсом <see cref="IMetric{double[]}"/>. Реализует <see cref="IMetric{double[]}"/>.
     /// </summary>
     public class MetricAdapter : IMetric<double[]>
     {

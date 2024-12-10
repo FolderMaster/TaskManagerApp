@@ -3,7 +3,7 @@
 namespace MachineLearning.DistanceMetrics
 {
     /// <summary>
-    /// Класс метрики Евклидового расстояния.
+    /// Класс метрики Евклидового расстояния. Реализует <see cref="IPointDistanceMetric"/>.
     /// </summary>
     public class EuclideanDistanceMetric : IPointDistanceMetric
     {

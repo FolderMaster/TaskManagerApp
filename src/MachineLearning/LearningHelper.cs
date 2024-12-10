@@ -17,7 +17,7 @@ namespace MachineLearning
         /// <param name="data">Данные.</param>
         /// <returns>Возвращает коллекцию предсказанных значений.</returns>
         public static IEnumerable<R> Predict<T, R>(this ILearningModel<T, R> learningModel,
-            IEnumerable<IEnumerable<T>> data)
+            IEnumerable<T> data)
         {
             foreach (var value in data)
             {
