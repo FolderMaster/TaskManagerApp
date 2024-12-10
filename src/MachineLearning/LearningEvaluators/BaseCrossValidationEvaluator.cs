@@ -25,7 +25,8 @@ namespace MachineLearning.LearningEvaluators
         }
 
         /// <summary>
-        /// Конструктор <see cref="BaseCrossValidationLearningEvaluator"/> по умолчанию.
+        /// Создаёт экземпляр класса <see cref="BaseCrossValidationLearningEvaluator"/>
+        /// по умолчанию.
         /// </summary>
         public BaseCrossValidationLearningEvaluator()
         {

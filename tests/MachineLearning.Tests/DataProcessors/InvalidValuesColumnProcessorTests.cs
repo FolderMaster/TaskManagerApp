@@ -23,16 +23,26 @@ namespace MachineLearning.Tests.DataProcessors
                 [double.NaN, 3, 5],
                 [null, 2, null]
             };
-            var expected = new double[][] {
-                [0, 2.5, -7],
-                [0, 3, 5],
-                [0, 2, -1]
-            };
+            var expected = new DataProcessorResult<IEnumerable<double>>
+                ([
+                    [0, 2.5, -7],
+                    [0, 3, 5],
+                    [0, 2, -1]
+                ]);
 
             var result = _dataProcessor.Process(data);
 
-            Assert.That(result, Is.EqualTo(expected),
-                "Неправильно исправлены некорректные значения!");
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Result, Is.EqualTo(expected.Result),
+                    "Неправильно исправлены некорректные значения!");
+                Assert.That(result.RemovedColumnsIndices,
+                    Is.EqualTo(expected.RemovedColumnsIndices),
+                    "Неправильно указаны удалённые столбцы!");
+                Assert.That(result.RemovedRowsIndices,
+                    Is.EqualTo(expected.RemovedRowsIndices),
+                    "Неправильно указаны удалённые строки!");
+            });
         }
     }
 }

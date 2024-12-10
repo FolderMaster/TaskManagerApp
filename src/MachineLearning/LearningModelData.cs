@@ -10,11 +10,22 @@
         /// <summary>
         /// Возвращает и задаёт данные.
         /// </summary>
-        public IEnumerable<T> Data { get; set; }
+        public IEnumerable<T> Data { get; private set; }
 
         /// <summary>
         /// Возвращает и задаёт целевые значения.
         /// </summary>
-        public IEnumerable<R> Target { get; set; }
+        public IEnumerable<R> Targets { get; private set; }
+
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="LearningModelData{T, R}"/>.
+        /// </summary>
+        /// <param name="data">Данные.</param>
+        /// <param name="targets">целевые значения.</param>
+        public LearningModelData(IEnumerable<T> data, IEnumerable<R> targets)
+        {
+            Data = data;
+            Targets = targets;
+        }
     }
 }

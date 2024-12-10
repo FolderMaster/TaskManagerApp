@@ -17,14 +17,23 @@ namespace MachineLearning.DataProcessors
         private static readonly double _threshold = 2;
 
         /// <inheritdoc />
-        public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data)
+        public DataProcessorResult<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data)
         {
             var array = data.To2dArray();
 
             var zScores = array.ZScores();
-            var filteredArray = array.Where((_, rowIndex) =>
-                !zScores.GetRow(rowIndex).Any(z => Math.Abs(z) >= _threshold)).ToArray();
-            return filteredArray;
+            var removedRowsIndices = new List<int>();
+            var filteredArray = array.Where((_, i) =>
+            {
+                var isRowValid = !zScores.GetRow(i).Any(z => Math.Abs(z) >= _threshold);
+                if (!isRowValid)
+                {
+                    removedRowsIndices.Add(i);
+                }
+                return isRowValid;
+            }).ToArray();
+            return new DataProcessorResult<IEnumerable<double>>(filteredArray,
+                removedRowsIndices: removedRowsIndices);
         }
     }
 }

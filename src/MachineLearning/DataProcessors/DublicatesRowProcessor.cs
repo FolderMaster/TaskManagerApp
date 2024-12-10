@@ -11,7 +11,16 @@ namespace MachineLearning.DataProcessors
     public class DuplicatesRowProcessor : IPointDataProcessor<double>
     {
         /// <inheritdoc />
-        public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data) =>
-            data.To2dArray().Distinct().Transpose();
+        public DataProcessorResult<IEnumerable<double>> Process
+            (IEnumerable<IEnumerable<double>> data)
+        {
+            var array = data.To2dArray();
+
+            var result = array.Distinct().Transpose();
+            var removedRowsIndices = Enumerable.Range(0, array.Length).
+                Except(result.Select((_, index) => index));
+            return new DataProcessorResult<IEnumerable<double>>(result,
+                removedRowsIndices: removedRowsIndices);
+        }
     }
 }

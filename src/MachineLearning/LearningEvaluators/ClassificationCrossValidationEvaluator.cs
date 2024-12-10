@@ -39,11 +39,7 @@ namespace MachineLearning.LearningEvaluators
                 var trainIndices = folds.SelectMany
                     ((f, index) => index == i ? Enumerable.Empty<int>() : f);
 
-                yield return new ValidationFold
-                {
-                    TestIndices = trainIndices,
-                    TrainIndices = trainIndices
-                };
+                yield return new ValidationFold(trainIndices, testIndices);
             }
         }
     }

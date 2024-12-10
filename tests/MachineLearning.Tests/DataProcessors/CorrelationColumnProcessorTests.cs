@@ -22,16 +22,26 @@ namespace MachineLearning.Tests.DataProcessors
                 [0, 0],
                 [10, 10]
             };
-            var expected = new double[][] {
-                [-10],
-                [0],
-                [10]
-            };
+            var expected = new DataProcessorResult<IEnumerable<double>>
+                ([
+                    [-10],
+                    [0],
+                    [10]
+                ], removedColumnsIndices: [1]);
 
             var result = _dataProcessor.Process(data);
 
-            Assert.That(result, Is.EqualTo(expected),
-                "Неправильно удалены скоррелированные столбцы!");
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Result, Is.EqualTo(expected.Result),
+                    "Неправильно удалены скоррелированные столбцы!");
+                Assert.That(result.RemovedColumnsIndices,
+                    Is.EqualTo(expected.RemovedColumnsIndices),
+                    "Неправильно указаны удалённые столбцы!");
+                Assert.That(result.RemovedRowsIndices,
+                    Is.EqualTo(expected.RemovedRowsIndices),
+                    "Неправильно указаны удалённые строки!");
+            });
         }
     }
 }

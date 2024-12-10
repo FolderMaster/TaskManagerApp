@@ -17,7 +17,8 @@ namespace MachineLearning.DataProcessors
         private static readonly double _threshold = 0.9;
 
         /// <inheritdoc />
-        public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double>> data)
+        public DataProcessorResult<IEnumerable<double>> Process
+            (IEnumerable<IEnumerable<double>> data)
         {
             var array = data.To2dArray();
             var columnCount = array.First().Length;
@@ -51,7 +52,7 @@ namespace MachineLearning.DataProcessors
             {
                 array = array.RemoveColumn(column);
             }
-            return array;
+            return new DataProcessorResult<IEnumerable<double>>(array, removingColumns);
         }
     }
 }

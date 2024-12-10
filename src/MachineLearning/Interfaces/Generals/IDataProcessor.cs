@@ -11,7 +11,7 @@
         /// Преобразует данные.
         /// </summary>
         /// <param name="data">Данные.</param>
-        /// <returns>Возвращает преобразованные данных.</returns>
-        public IEnumerable<R> Process(IEnumerable<T> data);
+        /// <returns>Возвращает данные о преобразовании.</returns>
+        public DataProcessorResult<R> Process(IEnumerable<T> data);
     }
 }

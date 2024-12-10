@@ -24,18 +24,28 @@ namespace MachineLearning.Tests.DataProcessors
                 [0, 0, 2],
                 [0, 0.5, -5]
             };
-            var expected = new double[][] {
-                [0.4, -7],
-                [1, 5],
-                [-1, 4],
-                [0, 2],
-                [0.5, -5]
-            };
+            var expected = new DataProcessorResult<IEnumerable<double>>
+                ([
+                    [0.4, -7],
+                    [1, 5],
+                    [-1, 4],
+                    [0, 2],
+                    [0.5, -5]
+                ], removedColumnsIndices: [0]);
 
             var result = _dataProcessor.Process(data);
 
-            Assert.That(result, Is.EqualTo(expected),
-                "Неправильно удалены столбцы с низкой вариацией!");
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Result, Is.EqualTo(expected.Result),
+                    "Неправильно удалены столбцы с низкой вариацией!");
+                Assert.That(result.RemovedColumnsIndices,
+                    Is.EqualTo(expected.RemovedColumnsIndices),
+                    "Неправильно указаны удалённые столбцы!");
+                Assert.That(result.RemovedRowsIndices,
+                    Is.EqualTo(expected.RemovedRowsIndices),
+                    "Неправильно указаны удалённые строки!");
+            });
         }
     }
 }

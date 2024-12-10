@@ -21,11 +21,7 @@ namespace MachineLearning.LearningEvaluators
                 var testIndices = indices.Skip(i * foldSize).Take(foldSize);
                 var trainIndices = indices.Except(testIndices);
 
-                yield return new ValidationFold
-                {
-                    TestIndices = trainIndices,
-                    TrainIndices = trainIndices
-                };
+                yield return new ValidationFold(trainIndices, testIndices);
             }
         }
     }

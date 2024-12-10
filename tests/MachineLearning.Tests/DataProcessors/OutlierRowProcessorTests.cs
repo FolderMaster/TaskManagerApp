@@ -25,17 +25,27 @@ namespace MachineLearning.Tests.DataProcessors
                 [-10, 20],
                 [300, -10]
             };
-            var expected = new double[][] {
-                [0, -10],
-                [10, -200],
-                [-10, 20],
-                [300, -10]
-            };
+            var expected = new DataProcessorResult<IEnumerable<double>>
+                ([
+                    [0, -10],
+                    [10, -200],
+                    [-10, 20],
+                    [300, -10]
+                ], removedRowsIndices: [1, 2]);
 
             var result = _dataProcessor.Process(data);
 
-            Assert.That(result, Is.EqualTo(expected),
-                "Неправильно удалены строки с выбросами!");
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Result, Is.EqualTo(expected.Result),
+                    "Неправильно удалены строки с выбросами!");
+                Assert.That(result.RemovedColumnsIndices,
+                    Is.EqualTo(expected.RemovedColumnsIndices),
+                    "Неправильно указаны удалённые столбцы!");
+                Assert.That(result.RemovedRowsIndices,
+                    Is.EqualTo(expected.RemovedRowsIndices),
+                    "Неправильно указаны удалённые строки!");
+            });
         }
     }
 }

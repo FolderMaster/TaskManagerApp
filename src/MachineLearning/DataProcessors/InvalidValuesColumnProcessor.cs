@@ -11,7 +11,8 @@ namespace MachineLearning.DataProcessors
     public class InvalidValuesColumnProcessor : IPointDataProcessor<double?>
     {
         /// <inheritdoc />
-        public IEnumerable<IEnumerable<double>> Process(IEnumerable<IEnumerable<double?>> data)
+        public DataProcessorResult<IEnumerable<double>> Process
+            (IEnumerable<IEnumerable<double?>> data)
         {
             var array = data.To2dArray();
             var rowCount = array.Length;
@@ -33,7 +34,8 @@ namespace MachineLearning.DataProcessors
                     }
                 }
             }
-            return array.Select(a => a.Select(v => (double)v));
+            return new DataProcessorResult<IEnumerable<double>>
+                (array.Select(a => a.Select(v => (double)v)));
         }
 
         /// <summary>
