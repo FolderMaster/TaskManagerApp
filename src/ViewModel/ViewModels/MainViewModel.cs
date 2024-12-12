@@ -30,12 +30,14 @@ public partial class MainViewModel : ViewModelBase
         Pages = pages;
 
         this.WhenAnyValue(x => x.Pages).Subscribe(s => SelectedPage = s?.FirstOrDefault());
+        _appState.AppLifeState.AppDeactivated += AppLifeState_AppClosing;
+        _appState.Session.Load();
     }
 
     [ReactiveCommand]
     private async Task Save()
     {
-        await _appState.Session.Save();
+        
         /**var directoryPath = _appState.Services.FileService.GetDirectoryPath(_fullFilePath);
         if (!_appState.Services.FileService.IsPathExists(directoryPath))
         {
@@ -55,7 +57,7 @@ public partial class MainViewModel : ViewModelBase
     [ReactiveCommand]
     private async Task Load()
     {
-        await _appState.Session.Load();
+        
         /**if (!_appState.Services.FileService.IsPathExists(_fullFilePath))
         {
             return;
@@ -71,5 +73,10 @@ public partial class MainViewModel : ViewModelBase
         {
 
         }**/
+    }
+
+    private void AppLifeState_AppClosing(object? sender, EventArgs e)
+    {
+        _appState.Session.Save();
     }
 }

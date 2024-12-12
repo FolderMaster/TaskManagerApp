@@ -38,6 +38,7 @@ namespace View.Technilcals
 
             builder.RegisterType<MockNotificationManager>().As<INotificationManager>().
                 SingleInstance();
+            builder.RegisterType<MockAppLifeState>().As<IAppLifeState>().SingleInstance();
 
             return CreateContainer(builder, resolver, true);
         }

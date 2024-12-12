@@ -1,4 +1,5 @@
 ﻿using Model.Interfaces;
+
 using ViewModel.Interfaces.AppStates.Events;
 
 namespace ViewModel.Interfaces.AppStates.Sessions

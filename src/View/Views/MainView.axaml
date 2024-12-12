@@ -12,14 +12,6 @@
              x:Class="View.Views.MainView"
              x:DataType="vm:MainViewModel"
 			 Name="mainView">
-	<Interaction.Behaviors>
-		<EventTriggerBehavior EventName="Loaded">
-			<InvokeCommandAction Command="{Binding LoadCommand}" />
-		</EventTriggerBehavior>
-		<EventTriggerBehavior EventName="DetachedFromVisualTree">
-			<InvokeCommandAction Command="{Binding SaveCommand}" />
-		</EventTriggerBehavior>
-	</Interaction.Behaviors>
 	<Grid>
 		<Grid RowDefinitions="*, Auto">
 			<SplitView Grid.Row="0" DisplayMode="CompactOverlay"

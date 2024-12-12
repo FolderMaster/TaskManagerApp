@@ -2,6 +2,6 @@
 {
     public interface IAppLifeState
     {
-        public event EventHandler AppClosing;
+        public event EventHandler AppDeactivated;
     }
 }

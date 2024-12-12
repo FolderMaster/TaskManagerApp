@@ -11,6 +11,8 @@ using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
 using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
+using Model.Tasks;
+using Model.Times;
 
 namespace ViewModel.Implementations.AppStates.Sessions
 {
@@ -84,7 +86,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 throw new ArgumentException(nameof(task));
             }
             var taskEntity = _taskMapper.MapBack(task);
-            _dbContext.Update(taskEntity);
+            _dbContext.Entry(taskEntity).CurrentValues.SetValues(taskEntity);
             ItemsUpdated?.Invoke(this, new ItemsUpdatedEventArgs
                 (UpdateItemsState.Edit, [task], task.GetType()));
         }
@@ -153,7 +155,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
         public void EditTimeInterval(ITimeIntervalElement timeIntervalElement)
         {
             var timeIntervalElementEntity = _timeIntervalMapper.MapBack(timeIntervalElement);
-            _dbContext.Update(timeIntervalElementEntity);
+            _dbContext.Entry(timeIntervalElementEntity).CurrentValues.SetValues(timeIntervalElementEntity);
             ItemsUpdated?.Invoke(this, new ItemsUpdatedEventArgs
                 (UpdateItemsState.Edit, [timeIntervalElement], timeIntervalElement.GetType()));
         }

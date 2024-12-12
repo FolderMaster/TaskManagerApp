@@ -4,10 +4,17 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.DbContexts
 {
     public class SqliteDbContext : BaseDbContext
     {
+        private readonly string _connectionString;
+
+        public SqliteDbContext(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite("Data Source=TaskManager.db3");
+            optionsBuilder.UseSqlite(_connectionString);
         }
     }
 }

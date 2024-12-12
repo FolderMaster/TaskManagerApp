@@ -2,6 +2,6 @@
 {
     public interface INotificationManager
     {
-        public void SendNotification(string content, string title);
+        public void SendNotification(string description, string title);
     }
 }

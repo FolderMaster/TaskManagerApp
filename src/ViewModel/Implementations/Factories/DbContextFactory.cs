@@ -5,6 +5,7 @@ namespace ViewModel.Implementations.Factories
 {
     public class DbContextFactory : IFactory<BaseDbContext>
     {
-        public BaseDbContext Create() => new SqliteDbContext();
+        public BaseDbContext Create() => new SqliteDbContext
+            ($"Data Source={Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/" + "TaskManager.db3"}");
     }
 }

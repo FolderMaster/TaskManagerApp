@@ -1,12 +1,15 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
+
 using ViewModel.Interfaces.AppStates;
 
 namespace View.Android
 {
     public class AndroidNotificationManager : INotificationManager
     {
+        private int _notificationId;
+
         private Context _context;
 
         public AndroidNotificationManager()
@@ -14,7 +17,7 @@ namespace View.Android
             _context = Application.Context;
         }
 
-        public void SendNotification(string content, string title)
+        public void SendNotification(string description, string title)
         {
             var notificationManager = (NotificationManager)_context.GetSystemService(Context.NotificationService);
 
@@ -30,15 +33,14 @@ namespace View.Android
                 notificationManager.CreateNotificationChannel(channel);
             }
 
-            var notificationId = 100;
             var notification = new Notification();
             var notificationBuilder = new Notification.Builder(_context, "default_channel")
                 .SetContentTitle(title)
-                .SetContentText(content)
+                .SetContentText(description)
                 .SetSmallIcon(Resource.Drawable.Icon)
                 .SetAutoCancel(true);
 
-            notificationManager.Notify(notificationId, notificationBuilder.Build());
+            notificationManager.Notify(_notificationId++, notificationBuilder.Build());
         }
     }
 }

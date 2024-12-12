@@ -3,7 +3,10 @@ using Android.Content.PM;
 using Autofac;
 using Avalonia;
 using Avalonia.Android;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
+using System;
+
 using ViewModel.Interfaces.AppStates;
 
 namespace View.Android;
@@ -14,8 +17,15 @@ namespace View.Android;
     Icon = "@drawable/icon",
     MainLauncher = true,
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
-public class MainActivity : AvaloniaMainActivity<App>
+public class MainActivity : AvaloniaMainActivity<App>, IAppLifeState
 {
+    public event EventHandler AppDeactivated;
+
+    public MainActivity()
+    {
+        ((IAvaloniaActivity)this).Deactivated += MainActivity_Deactivated;
+    }
+
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
@@ -28,13 +38,21 @@ public class MainActivity : AvaloniaMainActivity<App>
         return AppBuilder.Configure(CreateApp).UseAndroid();
     }
 
-    private static App CreateApp()
+    private App CreateApp()
     {
         var result = new App();
         result.ContainerBuilderCreated += App_ContainerBuilderCreated;
         return result;
     }
 
-    private static void App_ContainerBuilderCreated(object? sender, ContainerBuilder e) =>
-        e.RegisterType<AndroidNotificationManager>().As<INotificationManager>();
+    private void App_ContainerBuilderCreated(object? sender, ContainerBuilder e)
+    {
+        e.RegisterType<AndroidNotificationManager>().As<INotificationManager>().SingleInstance();
+        e.RegisterInstance(this).As<IAppLifeState>().SingleInstance();
+    }
+
+    private void MainActivity_Deactivated(object? sender, ActivatedEventArgs e)
+    {
+        AppDeactivated?.Invoke(this, EventArgs.Empty);
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Text;
+
 using ViewModel.Interfaces.AppStates;
 
 namespace ViewModel.Implementations

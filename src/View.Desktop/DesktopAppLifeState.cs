@@ -1,11 +1,12 @@
 ﻿using System;
+
 using ViewModel.Interfaces.AppStates;
 
 namespace View.Desktop
 {
     public class DesktopAppLifeState : IAppLifeState
     {
-        public event EventHandler AppClosing;
+        public event EventHandler AppDeactivated;
 
         public DesktopAppLifeState()
         {
@@ -13,6 +14,6 @@ namespace View.Desktop
         }
 
         private void CurrentDomain_ProcessExit(object? sender, EventArgs e) =>
-            AppClosing?.Invoke(this, e);
+            AppDeactivated?.Invoke(this, e);
     }
 }
