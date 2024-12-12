@@ -3,16 +3,14 @@
 using TrackableFeatures;
 
 using Model.Interfaces;
-
-using ViewModel.Interfaces;
 using ViewModel.Interfaces.AppStates.Events;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
 using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
-using Model.Tasks;
-using Model.Times;
+using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Implementations.Sessions.Database.Entities;
 
 namespace ViewModel.Implementations.AppStates.Sessions
 {
@@ -132,6 +130,8 @@ namespace ViewModel.Implementations.AppStates.Sessions
                     _tasks.Remove(task);
                 }
                 list.Add(task);
+                var taskEntity = _taskMapper.MapBack(task);
+                _dbContext.Entry(taskEntity).CurrentValues.SetValues(taskEntity);
             }
             ItemsUpdated?.Invoke(this, new ItemsUpdatedEventArgs
                 (UpdateItemsState.Move, tasks, typeof(ITask)));

@@ -8,13 +8,11 @@ namespace ViewModel.ViewModels.Modals
 {
     public partial class MoveTasksViewModel : TasksViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>
     {
-        [Reactive]
-        private IEnumerable<ITask> _list;
-
         public MoveTasksViewModel()
         {
             _canExecuteGo = this.WhenAnyValue(x => x.SelectedTask).
-                Select(i => SelectedTask is ITaskComposite composite && CheckAccessibleToGo(Items, composite));
+                Select(i => SelectedTask is ITaskComposite composite &&
+                CheckAccessibleToGo(Items, composite));
         }
 
         protected override void GetArgs(ItemsTasksViewModelArgs args)
@@ -24,10 +22,8 @@ namespace ViewModel.ViewModels.Modals
         }
 
         [ReactiveCommand]
-        private void Ok()
-        {
-            _taskSource?.SetResult(null);
-        }
+        private void Ok() =>
+            _taskSource?.SetResult(List);
 
         [ReactiveCommand]
         private void Cancel() =>

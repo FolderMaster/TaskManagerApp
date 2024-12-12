@@ -13,6 +13,7 @@ namespace View.Desktop.Windows
                 AddArgument("conversationId", 300).
                 AddText(title).AddText(description).
                 SetToastScenario(ToastScenario.Alarm);
+            toast.Show();
         }
     }
 }

@@ -9,17 +9,21 @@
 	<Design.DataContext>
 		<vm:CopyTasksViewModel />
 	</Design.DataContext>
-	<Grid RowDefinitions="Auto, *, Auto">
-		<WrapPanel Grid.Row="0">
+	<Grid RowDefinitions="Auto, Auto, *, Auto">
+		<StackPanel Grid.Row="0">
+			<Label Content="{DynamicResource CountLabelContent}"/>
+			<TextBox Text="{Binding Count}"/>
+		</StackPanel>
+		<WrapPanel Grid.Row="1">
 			<Button Content="{DynamicResource GoToPreviousButtonContent}"
 					Command="{Binding GoToPreviousCommand}"/>
 			<Button Content="{DynamicResource GoButtonContent}"
 					Command="{Binding GoCommand}"/>
 		</WrapPanel>
-		<TreeView Grid.Row="1" SelectionMode="Single, Toggle"
+		<TreeView Grid.Row="2" SelectionMode="Single, Toggle"
 				  ItemsSource="{Binding List}" SelectedItem="{Binding SelectedTask}"
 				  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
-		<WrapPanel Grid.Row="2">
+		<WrapPanel Grid.Row="3">
 			<Button Content="{DynamicResource OkButtonContent}"
 					Command="{Binding OkCommand}"/>
 			<Button Content="{DynamicResource CancelButtonContent}"

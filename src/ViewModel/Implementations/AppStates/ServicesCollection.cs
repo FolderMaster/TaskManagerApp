@@ -4,6 +4,8 @@ using ViewModel.Interfaces;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels;
 using ViewModel.Interfaces.AppStates;
+using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.DataManagers;
 
 namespace ViewModel.Implementations.AppStates
 {
@@ -19,13 +21,19 @@ namespace ViewModel.Implementations.AppStates
 
         public IFactory<ITaskComposite> TaskCompositeFactory { get; private set; }
 
-        public IFactory<ITaskElement> TaskElementFactory { get; private set; }
+        public IFactory<ITaskElementProxy> TaskElementProxyFactory { get; private set; }
+
+        public ITaskElementsEditorProxy TaskElementsEditorProxy { get; private set; }
+
+        public ITasksEditorProxy TasksEditorProxy { get; private set; }
+
+        public ITimeIntervalElementsEditorProxy TimeIntervalElementsEditorProxy
+            { get; private set; }
 
         public IFactory<ITimeIntervalElement> TimeIntervalElementFactory { get; private set; }
 
         public DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
-            AddTimeIntervalDialog
-        { get; private set; }
+            AddTimeIntervalDialog { get; private set; }
 
         public DialogViewModel<ITask, bool> AddTaskDialog { get; private set; }
 
@@ -36,7 +44,7 @@ namespace ViewModel.Implementations.AppStates
 
         public DialogViewModel<object, bool> EditTaskDialog { get; private set; }
 
-        public DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> CopyTasksDialog
+        public DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?> CopyTasksDialog
         { get; private set; }
 
         public DialogViewModel<ITimeIntervalElement, bool> EditTimeIntervalDialog
@@ -54,11 +62,14 @@ namespace ViewModel.Implementations.AppStates
             DialogViewModel<IList<ITask>, bool> removeTasksDialog,
             DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> moveTasksDialog,
             DialogViewModel<object, bool> editTaskDialog,
-            DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> copyTasksDialog,
+            DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?> copyTasksDialog,
             DialogViewModel<ITimeIntervalElement, bool> editTimeIntervalDialog,
             IFactory<ITaskComposite> taskCompositeFactory,
-            IFactory<ITaskElement> taskElementFactory,
-            IFactory<ITimeIntervalElement> timeIntervalElementFactory, ITimeScheduler timeScheduler
+            IFactory<ITaskElementProxy> taskElementProxyFactory,
+            IFactory<ITimeIntervalElement> timeIntervalElementFactory,
+            ITimeScheduler timeScheduler,
+            ITaskElementsEditorProxy taskElementsEditorProxy, ITasksEditorProxy tasksEditorProxy,
+            ITimeIntervalElementsEditorProxy timeIntervalElementsEditorProxy
             /**, IEnumerable<PageViewModel> pages**/)
         {
             NotificationManager = notificationManager;
@@ -66,7 +77,7 @@ namespace ViewModel.Implementations.AppStates
             Serializer = serializer;
             ResourceService = resourceService;
             TaskCompositeFactory = taskCompositeFactory;
-            TaskElementFactory = taskElementFactory;
+            TaskElementProxyFactory = taskElementProxyFactory;
             TimeIntervalElementFactory = timeIntervalElementFactory;
             AddTimeIntervalDialog = addTimeIntervalDialog;
             AddTaskDialog = addTaskDialog;
@@ -76,6 +87,9 @@ namespace ViewModel.Implementations.AppStates
             MoveTasksDialog = moveTasksDialog;
             EditTimeIntervalDialog = editTimeIntervalDialog;
             TimeScheduler = timeScheduler;
+            TaskElementsEditorProxy = taskElementsEditorProxy;
+            TasksEditorProxy = tasksEditorProxy;
+            TimeIntervalElementsEditorProxy = timeIntervalElementsEditorProxy;
             //Pages = pages;
         }
     }

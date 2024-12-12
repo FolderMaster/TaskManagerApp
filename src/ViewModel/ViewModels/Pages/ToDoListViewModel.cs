@@ -24,8 +24,6 @@ namespace ViewModel.ViewModels.Pages
             _appState.Session.ItemsUpdated += Session_ItemsUpdated;
         }
 
-        
-
         [ReactiveCommand]
         public void Update()
         {

@@ -6,8 +6,15 @@ namespace ViewModel.ViewModels.Modals
 {
     public partial class AddTaskViewModel : DialogViewModel<ITask, bool>
     {
+        private readonly IObservable<bool> _canExecuteOk;
+
         [Reactive]
         private ITask _item;
+
+        public AddTaskViewModel()
+        {
+
+        }
 
         protected override void GetArgs(ITask args) => Item = args;
 

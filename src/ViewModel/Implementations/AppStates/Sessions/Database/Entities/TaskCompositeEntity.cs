@@ -12,6 +12,6 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Entities
         [ForeignKey(nameof(Id))]
         public virtual TaskEntity Task { get; set; }
 
-        public virtual ICollection<TaskEntity> Subtasks { get; set; }
+        public virtual ICollection<TaskEntity> Subtasks { get; set; } = new List<TaskEntity>();
     }
 }

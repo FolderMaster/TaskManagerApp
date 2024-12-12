@@ -1,9 +1,8 @@
 ﻿using Model.Interfaces;
-
 using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.DataManagers.Generals;
 
-namespace ViewModel.Implementations.Factories
+namespace ViewModel.Implementations.DataManagers.Factories
 {
     public class TaskCompositeFactory : IFactory<ITaskComposite>
     {
@@ -27,6 +26,6 @@ namespace ViewModel.Implementations.Factories
             };
             result.Entity.Task.TaskComposite = result.Entity;
             return result;
-        } 
+        }
     }
 }

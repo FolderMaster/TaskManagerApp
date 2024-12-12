@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+
 using ViewModel.Interfaces.AppStates;
 
 namespace ViewModel.Implementations.Mocks

@@ -50,4 +50,6 @@
 	
 	<sys:String x:Key="TimeSchedulerNotificationTitle">Time!</sys:String>
 	<sys:String x:Key="TimeSchedulerNotificationContent">Time reached for:</sys:String>
+
+	<sys:String x:Key="CountLabelContent">Count</sys:String>
 </ResourceDictionary>

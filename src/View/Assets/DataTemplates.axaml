@@ -5,6 +5,7 @@
 					xmlns:m="clr-namespace:Model;assembly=Model"
 					xmlns:mt="clr-namespace:Model.Tasks;assembly=Model"
 					xmlns:vm="clr-namespace:ViewModel.ViewModels;assembly=ViewModel"
+					xmlns:vmd="clr-namespace:ViewModel.Interfaces.DataManagers;assembly=ViewModel"
 					xmlns:v="clr-namespace:View.DataTemplates"
 					xmlns:e="clr-namespace:View.Extensions"
 					xmlns:vmt="clr-namespace:ViewModel.Technicals;assembly=ViewModel"
@@ -137,6 +138,19 @@
 				</StackPanel>
 			</TreeDataTemplate>
 		</v:TaskDataTemplate.CompositeDataTemplate>
+		<v:TaskDataTemplate.DataTemplate>
+			<TreeDataTemplate x:DataType="mi:ITask">
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<ContentControl Content="{Binding Metadata}"
+									ContentTemplate="{StaticResource TaskMetadataTreeTemplate}"/>
+					<ProgressBar Value="{Binding Progress}" Minimum="0" Maximum="1"/>
+					<TextBlock Text="{Binding Deadline}"/>
+					<TextBlock Text="{Binding Priority}"/>
+					<TextBlock Text="{Binding Difficult}"/>
+					<TextBlock Text="{Binding Status}"/>
+				</StackPanel>
+			</TreeDataTemplate>
+		</v:TaskDataTemplate.DataTemplate>
 	</v:TaskDataTemplate>
 	<v:TaskDataTemplate x:Key="TaskTemplate">
 		<v:TaskDataTemplate.ElementDataTemplate>
@@ -191,6 +205,31 @@
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.CompositeDataTemplate>
+		<v:TaskDataTemplate.DataTemplate>
+			<DataTemplate x:DataType="mi:ITask">
+				<StackPanel>
+					<ContentControl Content="{Binding Metadata}"
+									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
+					<Label Content="{DynamicResource DifficultLabelContent}"/>
+					<TextBox Text="{Binding Difficult}" IsEnabled="False"/>
+					<Label Content="{DynamicResource PriorityLabelContent}"/>
+					<TextBox Text="{Binding Priority}" IsEnabled="False"/>
+					<Label Content="{DynamicResource ProgressLabelContent}"/>
+					<Slider IsEnabled="False" Value="{Binding Progress}" Minimum="0" Maximum="1"/>
+					<Label Content="{DynamicResource PlannedTimeLabelContent}"/>
+					<TimePicker SelectedTime="{Binding PlannedTime}"
+								IsEnabled="False" UseSeconds="True"/>
+					<Label Content="{DynamicResource SpentTimeLabelContent}"/>
+					<TimePicker SelectedTime="{Binding SpentTime}"
+								IsEnabled="False" UseSeconds="True"/>
+					<Label Content="{DynamicResource StatusLabelContent}"/>
+					<ComboBox ItemsSource="{e:Enums {x:Type m:TaskStatus}}"
+							  SelectedItem="{Binding Status}" IsEnabled="False"/>
+					<Label Content="{DynamicResource DeadlineLabelContent}"/>
+					<c:DateTimePicker DateTime="{Binding Deadline}" IsEnabled="False"/>
+				</StackPanel>
+			</DataTemplate>
+		</v:TaskDataTemplate.DataTemplate>
 	</v:TaskDataTemplate>
 	<DataTemplate x:Key="CalendarIntervalTemplate" x:DataType="vmt:CalendarInterval">
 		<Grid>

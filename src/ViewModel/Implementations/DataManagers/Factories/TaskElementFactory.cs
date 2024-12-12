@@ -1,9 +1,9 @@
 ﻿using Model.Interfaces;
 
 using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.DataManagers.Generals;
 
-namespace ViewModel.Implementations.Factories
+namespace ViewModel.Implementations.DataManagers.Factories
 {
     public class TaskElementFactory : IFactory<ITaskElement>
     {

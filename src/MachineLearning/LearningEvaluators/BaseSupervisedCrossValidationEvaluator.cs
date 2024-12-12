@@ -83,11 +83,7 @@ namespace MachineLearning.LearningEvaluators
         /// <inheritdoc />
         protected override void OnPropertyChanged()
         {
-            ClearAllErrors();
-            if (NumberOfFolds <= 1)
-            {
-                AddError($"{nameof(NumberOfFolds)} должно быть больше 1!");
-            }
+            base.OnPropertyChanged();
             if (Model == null)
             {
                 AddError($"{nameof(Model)} должно быть назначено!");

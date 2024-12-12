@@ -7,6 +7,7 @@ using Model.Interfaces;
 
 using ViewModel.ViewModels.Modals;
 using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces.DataManagers.Generals;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -89,7 +90,7 @@ namespace ViewModel.ViewModels.Pages
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
         private async Task AddTaskElement() => await AddTask
-            (_appState.Services.TaskElementFactory.Create());
+            (_appState.Services.TaskElementProxyFactory.Create());
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
         private async Task AddTaskComposite() => await AddTask
@@ -106,7 +107,8 @@ namespace ViewModel.ViewModels.Pages
             var result = await AddModal(_appState.Services.AddTaskDialog, task);
             if (result)
             {
-                _appState.Session.AddTasks([task], taskComposite);
+                _appState.Session.AddTasks
+                    ([task is IProxy<ITask> proxy ? proxy.Target : task], taskComposite);
             }
         }
 
@@ -115,9 +117,23 @@ namespace ViewModel.ViewModels.Pages
         {
             var item = SelectedTasks.First();
             SelectedTasks.Clear();
-            var result = await AddModal(_appState.Services.EditTaskDialog, item);
+            var editorService = (IEditorService)null;
+            if (item is ITaskElement taskElement)
+            {
+                var taskElementsEditorService = _appState.Services.TaskElementsEditorProxy;
+                taskElementsEditorService.Target = taskElement;
+                editorService = taskElementsEditorService;
+            }
+            else
+            {
+                var tasksEditorService = _appState.Services.TasksEditorProxy;
+                tasksEditorService.Target = item;
+                editorService = tasksEditorService;
+            }
+            var result = await AddModal(_appState.Services.EditTaskDialog, editorService);
             if (result)
             {
+                editorService.ApplyChanges();
                 _appState.Session.EditTask(item);
             }
         }
@@ -140,19 +156,22 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var list = await AddModal(_appState.Services.CopyTasksDialog,
+            var result = await AddModal(_appState.Services.CopyTasksDialog,
                 new ItemsTasksViewModelArgs(items, TaskListView, _appState.Session.Tasks));
-            if (list != null)
+            if (result != null)
             {
                 var copyList = new List<ITask>();
                 foreach (var task in items)
                 {
                     if (task is ICloneable cloneable)
                     {
-                        copyList.Add((ITask)cloneable.Clone());
+                        for (var i = 0; i < result.Count; ++i)
+                        {
+                            copyList.Add((ITask)cloneable.Clone());
+                        }
                     }
                 }
-                _appState.Session.AddTasks(copyList, (ITaskComposite?)list);
+                _appState.Session.AddTasks(copyList, result.List as ITaskComposite);
             }
         }
 

@@ -2,6 +2,7 @@
 using ReactiveUI;
 using System.Reactive.Linq;
 using System.Collections.ObjectModel;
+using DynamicData;
 
 using Model;
 using Model.Interfaces;
@@ -10,8 +11,6 @@ using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
 using ViewModel.Interfaces.AppStates.Events;
 using ViewModel.Implementations.AppStates;
-using Accord;
-using DynamicData;
 
 namespace ViewModel.ViewModels.Pages;
 
@@ -105,11 +104,14 @@ public partial class TimeViewModel : PageViewModel
     [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]
     private async Task Edit()
     {
-        var result = await AddModal(_appState.Services.EditTimeIntervalDialog,
-            SelectedCalendarInterval.TimeInterval);
+        var timeInterval = SelectedCalendarInterval.TimeInterval;
+        var editorService = _appState.Services.TimeIntervalElementsEditorProxy;
+        editorService.Target = timeInterval;
+        var result = await AddModal(_appState.Services.EditTimeIntervalDialog, editorService);
         if (result)
         {
-            _appState.Session.EditTimeInterval(SelectedCalendarInterval.TimeInterval);
+            editorService.ApplyChanges();
+            _appState.Session.EditTimeInterval(timeInterval);
         }
     }
 

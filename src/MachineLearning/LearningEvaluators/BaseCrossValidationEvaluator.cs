@@ -36,6 +36,13 @@ namespace MachineLearning.LearningEvaluators
         /// <summary>
         /// Вызывается при изменении свойства.
         /// </summary>
-        protected abstract void OnPropertyChanged();
+        protected virtual void OnPropertyChanged()
+        {
+            ClearAllErrors();
+            if (NumberOfFolds <= 1)
+            {
+                AddError($"{nameof(NumberOfFolds)} должно быть больше 1!");
+            }
+        }
     }
 }

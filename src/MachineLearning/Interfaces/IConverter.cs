@@ -11,11 +11,11 @@
     public interface IConverter<T, R, D, DT, DR>
     {
         /// <summary>
-        /// Конвертирует данные под данные для предсказания.
+        /// Адаптирует конвертацию данных под данные для предсказания.
         /// </summary>
         /// <param name="data">Данные.</param>
         /// <returns>Возвращает конвертированные данные для предсказания.</returns>
-        public LearningModelData<T, R> ConvertData(IEnumerable<D> data);
+        public LearningModelData<T, R> FitConvertData(IEnumerable<D> data);
 
         /// <summary>
         /// Конвертирует входные данные под входные данные для предсказания.

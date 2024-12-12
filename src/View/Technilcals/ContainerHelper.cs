@@ -13,12 +13,6 @@ using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels.Modals;
 using ViewModel.Implementations;
 using ViewModel.Implementations.Mocks;
-using ViewModel.Implementations.Factories;
-
-using View.Views;
-using View.Views.Pages;
-using View.Views.Modals;
-using View.Implementations;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Settings;
@@ -27,6 +21,15 @@ using ViewModel.Implementations.AppStates.Sessions;
 using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
+using ViewModel.Implementations.DataManagers.Factories;
+using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.DataManagers;
+using ViewModel.Implementations.DataManagers.Editors;
+
+using View.Views;
+using View.Views.Pages;
+using View.Views.Modals;
+using View.Implementations;
 
 namespace View.Technilcals
 {
@@ -63,23 +66,36 @@ namespace View.Technilcals
                 SingleInstance();
             builder.RegisterType<TimeIntervalElementFactory>().
                 As<IFactory<ITimeIntervalElement>>().SingleInstance();
-            builder.RegisterType<DbContextFactory>().As<IFactory<BaseDbContext>>().SingleInstance();
+            builder.RegisterType<DbContextFactory>().
+                As<IFactory<BaseDbContext>>().SingleInstance();
+
+            builder.RegisterType<TaskElementCreatorProxyFactory>().
+                As<IFactory<ITaskElementProxy>>().SingleInstance();
+            builder.RegisterType<TasksEditorProxy>().As<ITasksEditorProxy>().SingleInstance();
+            builder.RegisterType<TaskElementsEditorProxy>().
+                As<ITaskElementsEditorProxy>().SingleInstance();
+            builder.RegisterType<TimeIntervalElementsEditorProxy>().
+                As<ITimeIntervalElementsEditorProxy>().SingleInstance();
+            builder.RegisterType<TimeIntervalElementsEditorProxy>().
+                As<ITimeIntervalElementsEditorProxy>().SingleInstance();
 
             builder.RegisterType<AddTimeIntervalViewModel>().
                 As<DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
                 SingleInstance();
             builder.RegisterType<EditTimeIntervalViewModel>().
                 As<DialogViewModel<ITimeIntervalElement, bool>>().SingleInstance();
-            builder.RegisterType<AddTaskViewModel>().As<DialogViewModel<ITask, bool>>().
-                SingleInstance();
+            builder.RegisterType<AddTaskViewModel>().
+                As<DialogViewModel<ITask, bool>>().SingleInstance();
             builder.RegisterType<RemoveTasksViewModel>().
                 As<DialogViewModel<IList<ITask>, bool>>().SingleInstance();
             builder.RegisterType<MoveTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().SingleInstance();
+                As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().
+                SingleInstance();
             builder.RegisterType<EditTaskViewModel>().
                 As<DialogViewModel<object, bool>>().SingleInstance();
             builder.RegisterType<CopyTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().SingleInstance();
+                As<DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>>().
+                SingleInstance();
 
             builder.RegisterType<TimeIntervalMapper>().
                 As<IMapper<TimeIntervalEntity, ITimeIntervalElement>>().SingleInstance();

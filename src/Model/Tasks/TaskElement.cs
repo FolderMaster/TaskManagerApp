@@ -152,7 +152,7 @@ namespace Model.Tasks
         }
 
         /// <inheritdoc/>
-        public object Clone()
+        public virtual object Clone()
         {
             var result = new TaskElement()
             {

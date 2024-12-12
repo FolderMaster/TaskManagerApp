@@ -1,7 +1,7 @@
 ﻿using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
-using ViewModel.Interfaces;
+using ViewModel.Interfaces.DataManagers.Generals;
 
-namespace ViewModel.Implementations.Factories
+namespace ViewModel.Implementations.DataManagers.Factories
 {
     public class DbContextFactory : IFactory<BaseDbContext>
     {

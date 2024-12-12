@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls.Templates;
 using Avalonia.Controls;
 using Avalonia.Data;
+
 using Model.Interfaces;
 
 namespace View.DataTemplates
@@ -11,6 +12,8 @@ namespace View.DataTemplates
 
         public IDataTemplate? CompositeDataTemplate { get; set; }
 
+        public IDataTemplate? DataTemplate { get; set; }
+
         public Control? Build(object? param)
         {
             if (param is ITaskElement && ElementDataTemplate != null)
@@ -20,6 +23,10 @@ namespace View.DataTemplates
             else if (param is ITaskComposite && CompositeDataTemplate != null)
             {
                 return CompositeDataTemplate.Build(param);
+            }
+            else if (DataTemplate != null)
+            {
+                return DataTemplate.Build(param);
             }
             return null;
         }
@@ -35,6 +42,11 @@ namespace View.DataTemplates
                 CompositeDataTemplate is ITreeDataTemplate treeTemplate2)
             {
                 return treeTemplate2.ItemsSelector(item);
+            }
+            else if (DataTemplate != null &&
+                ElementDataTemplate is ITreeDataTemplate treeTemplate3)
+            {
+                return treeTemplate3.ItemsSelector(item);
             }
             return null;
         }
