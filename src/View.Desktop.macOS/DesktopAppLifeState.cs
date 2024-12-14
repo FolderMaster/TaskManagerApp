@@ -2,7 +2,7 @@
 
 using ViewModel.Interfaces.AppStates;
 
-namespace View.Desktop
+namespace View.Desktop.macOS
 {
     public class DesktopAppLifeState : IAppLifeState
     {

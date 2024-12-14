@@ -23,15 +23,18 @@ public partial class MainViewModel : ViewModelBase
     public MainViewModel(IEnumerable<PageViewModel> pages, AppState appState)
     {
         _appState = appState;
-
+        Activator = new ViewModelActivator();
         /**_fullFilePath = _appState.Services.FileService.CombinePath
             (_appState.Services.FileService.PersonalDirectoryPath, _partFilePath);**/
-
+        this.WhenActivated((Action<IDisposable> action) =>
+        {
+            _appState.Session.Load();
+        });
+        
         Pages = pages;
 
         this.WhenAnyValue(x => x.Pages).Subscribe(s => SelectedPage = s?.FirstOrDefault());
         _appState.AppLifeState.AppDeactivated += AppLifeState_AppClosing;
-        _appState.Session.Load();
     }
 
     [ReactiveCommand]
