@@ -33,7 +33,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.Add(item);
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование события" +
@@ -56,7 +56,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.Insert(index, item);
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование события" +
@@ -79,7 +79,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.Remove(item);
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование события" +
@@ -103,7 +103,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.RemoveAt(index);
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование события" +
@@ -123,7 +123,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.Clear();
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование события" +
@@ -148,7 +148,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.Replace(index, newItem);
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование события" +
@@ -176,7 +176,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableCollection.Move(oldIndex, newIndex);
 
-            Assert.IsTrue(result, "Должно отработать событие!");
+            Assert.That(result, "Должно отработать событие!");
         }
 
         [Test(Description = "Тестирование метода OnAddedItem при добавлении элементов.")]
@@ -213,7 +213,7 @@ namespace TrackableFeatures.Tests
             _trackableCollection = new([1]);
             var result = _trackableCollection.LastEditedItem;
 
-            Assert.IsNull(result, "Не должен отработать метод!");
+            Assert.That(result, Is.Null, "Не должен отработать метод!");
         }
     }
 }

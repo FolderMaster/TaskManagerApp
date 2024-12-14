@@ -27,5 +27,29 @@ namespace MachineLearning.Tests.ScoreMetrics
             Assert.That(result, Is.EqualTo(expected).Within(tolerance),
                 "Неправильно расчитана оценка!");
         }
+
+        [Test(Description = "Тестирование метода " +
+            $"{nameof(AccuracyScoreMetric.GetScoreCategory)}.")]
+        public void GetScoreCategory_ReturnCorrectValue()
+        {
+            var actual = new double[] { 0, 0.15, 0.25, 0.4, 0.6 };
+            var expected = new ScoreMetricCategory[]
+            {
+                ScoreMetricCategory.Excellent,
+                ScoreMetricCategory.Good,
+                ScoreMetricCategory.Satisfactory,
+                ScoreMetricCategory.Bad,
+                ScoreMetricCategory.Horrible
+            };
+
+            var result = new List<ScoreMetricCategory>();
+            foreach (var item in actual)
+            {
+                var category = _scoreMetric.GetScoreCategory(item);
+                result.Add(category);
+            }
+
+            Assert.That(result, Is.EqualTo(expected), "Неправильно расчитаны категории оценок!");
+        }
     }
 }

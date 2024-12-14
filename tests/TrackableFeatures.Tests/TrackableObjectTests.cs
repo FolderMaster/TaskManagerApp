@@ -32,7 +32,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableObject.Property = lastPropertyValue;
 
-            Assert.IsTrue(result, "Должно было отработать событие!");
+            Assert.That(result, "Должно было отработать событие!");
         }
 
         [Test(Description = $"Тестирование события {nameof(TrackableObject.PropertyChanged)}" +
@@ -53,7 +53,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableObject.Property = lastPropertyValue;
 
-            Assert.IsFalse(result, "Не должно было отработать событие!");
+            Assert.That(result, Is.False, "Не должно было отработать событие!");
         }
 
         [Test(Description = $"Тестирование события {nameof(TrackableObject.ErrorsChanged)}" +
@@ -74,7 +74,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableObject.Property = lastPropertyValue;
 
-            Assert.IsTrue(result, "Должно было отработать событие!");
+            Assert.That(result, "Должно было отработать событие!");
         }
 
         [Test(Description = $"Тестирование события {nameof(TrackableObject.ErrorsChanged)}" +
@@ -95,7 +95,7 @@ namespace TrackableFeatures.Tests
             };
             _trackableObject.Property = lastPropertyValue;
 
-            Assert.IsFalse(result, "Не должно было отработать событие!");
+            Assert.That(result, Is.False, "Не должно было отработать событие!");
         }
 
         [Test(Description = $"Тестирование метода {nameof(TrackableObject.GetErrors)}" +
@@ -149,7 +149,7 @@ namespace TrackableFeatures.Tests
             _trackableObject.Property = propertyValue;
             var result = _trackableObject.HasErrors;
 
-            Assert.IsTrue(result, "Должно иметь ошибку!");
+            Assert.That(result, "Должно иметь ошибку!");
         }
 
         [Test(Description = $"Тестирование свойства {nameof(TrackableObject.HasErrors)}" +
@@ -161,7 +161,7 @@ namespace TrackableFeatures.Tests
             _trackableObject.Property = propertyValue;
             var result = _trackableObject.HasErrors;
 
-            Assert.IsFalse(result, "Не должно иметь никаких ошибок!");
+            Assert.That(result, Is.False, "Не должно иметь никаких ошибок!");
         }
     }
 }
