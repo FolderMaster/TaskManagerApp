@@ -8,13 +8,8 @@
 			 Design.DataContext="{e:Design {x:Type vm:SettingsViewModel}}"
              x:Class="View.Views.Pages.SettingsView"
 			 x:DataType="vm:SettingsViewModel">
-	<StackPanel>
-		<Label Content="{DynamicResource ThemeLabelContent}"/>
-		<ComboBox ItemsSource="{Binding Themes}"
-				  SelectedItem="{Binding SelectedTheme}"/>
-		<Label Content="{DynamicResource LocalizationLabelContent}"/>
-		<ComboBox ItemsSource="{Binding Localizations}"
-				  SelectedItem="{Binding SelectedLocalization}"
-				  DisplayMemberBinding="{Binding NativeName}"/>
-	</StackPanel>
+	<ScrollViewer>
+		<ContentControl Content="{Binding Configuration}"
+						ContentTemplate="{StaticResource ConfigurationTemplate}"/>
+	</ScrollViewer>
 </UserControl>

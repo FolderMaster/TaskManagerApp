@@ -36,8 +36,8 @@ public partial class App : Application
 
     private IContainer BuildContainer()
     {
-        var (builder, resolver) = ContainerHelper.GetContainerElements();
+        var (builder, resolver) = ViewContainerHelper.GetContainerElements();
         ContainerBuilderCreated?.Invoke(this, builder);
-        return ContainerHelper.CreateContainer(builder, resolver,  true);
+        return ViewContainerHelper.CreateContainer(builder, resolver,  true);
     }
 }

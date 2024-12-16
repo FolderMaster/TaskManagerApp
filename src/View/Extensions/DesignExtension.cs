@@ -11,7 +11,7 @@ namespace View.Extensions
     {
         private readonly Type _type;
 
-        private static readonly IContainer _container = ContainerHelper.GetMockContainer();
+        private static readonly IContainer _container = ViewContainerHelper.GetMockContainer();
 
         public DesignExtension(Type type)
         {

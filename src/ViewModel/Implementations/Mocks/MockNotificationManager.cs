@@ -1,14 +1,12 @@
-﻿using System.Diagnostics;
-
-using ViewModel.Interfaces.AppStates;
+﻿using ViewModel.Interfaces.AppStates;
 
 namespace ViewModel.Implementations.Mocks
 {
     public class MockNotificationManager : INotificationManager
     {
-        public void SendNotification(string content, string title)
-        {
-            Debug.WriteLine(content, title);
-        }
+        public event EventHandler<NotificationEventArgs> NotificationSended;
+
+        public void SendNotification(string description, string title) =>
+            NotificationSended?.Invoke(this, new NotificationEventArgs(description, title));
     }
 }

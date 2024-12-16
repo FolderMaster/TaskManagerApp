@@ -4,9 +4,11 @@
     {
         public string PersonalDirectoryPath { get; }
 
-        public void Save(string path, byte[] data);
+        public Task Save(string path, byte[] data);
 
-        public byte[] Load(string path);
+        public Task<byte[]> Load(string path);
+
+        public Stream CreateStream(string path, FileMode mode, FileAccess access, FileShare share);
 
         public void CreateDirectory(string path);
 

@@ -4,34 +4,34 @@ using ReactiveUI;
 using Model;
 
 using ViewModel.Technicals;
-using ViewModel.Interfaces.AppStates.Events;
-using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces.AppStates.Sessions;
+using ViewModel.Interfaces.AppStates;
 
 namespace ViewModel.ViewModels.Pages
 {
     public partial class ToDoListViewModel : PageViewModel
     {
-        private readonly AppState _appState;
+        private ISession _session;
 
         [Reactive]
         private IEnumerable<ToDoListElement>? _toDoList;
 
-        public ToDoListViewModel(AppState appStateManager)
+        public ToDoListViewModel(ISession session, IResourceService resourceService)
         {
-            _appState = appStateManager;
+            _session = session;
 
-            Metadata = _appState.Services.ResourceService.GetResource("ToDoListPageMetadata");
-            _appState.Session.ItemsUpdated += Session_ItemsUpdated;
+            Metadata = resourceService.GetResource("ToDoListPageMetadata");
+            _session.ItemsUpdated += Session_ItemsUpdated;
         }
 
         [ReactiveCommand]
         public void Update()
         {
-            if (_appState.Session.Tasks == null)
+            if (_session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
             ToDoList = uncompletedTasks.OrderBy(t => t.Difficult).
                 OrderBy(t => t.Priority).OrderBy(t => t.PlannedTime - t.SpentTime).Select

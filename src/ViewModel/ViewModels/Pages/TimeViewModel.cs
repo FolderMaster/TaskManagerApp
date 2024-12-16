@@ -9,8 +9,11 @@ using Model.Interfaces;
 
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
-using ViewModel.Interfaces.AppStates.Events;
-using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces;
+using ViewModel.Interfaces.AppStates.Sessions;
+using ViewModel.Interfaces.AppStates;
+using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.DataManagers;
 
 namespace ViewModel.ViewModels.Pages;
 
@@ -20,7 +23,22 @@ public partial class TimeViewModel : PageViewModel
 
     private readonly IObservable<bool> _canExecuteEdit;
 
-    private readonly AppState _appState;
+    private ISession _session;
+
+    private IResourceService _resourceService;
+
+    private ITimeScheduler _timeScheduler;
+
+    private INotificationManager _notificationManager;
+
+    private DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
+        _addTimeIntervalDialog;
+
+    private DialogViewModel<ITimeIntervalElement, bool> _editTimeIntervalDialog;
+
+    private IFactory<ITimeIntervalElement> _timeIntervalElementFactory;
+
+    private ITimeIntervalElementsEditorProxy _timeIntervalElementsEditorProxy;
 
     private Dictionary<DateTime, IEnumerable<ITaskElement>> _tasksSchedulerDictionary;
 
@@ -34,29 +52,42 @@ public partial class TimeViewModel : PageViewModel
     [Reactive]
     private DateTime _currentWeek = DateTime.Now;
 
-    public TimeViewModel(AppState appState)
+    public TimeViewModel(ISession session, IResourceService resourceService,
+        ITimeScheduler timeScheduler, INotificationManager notificationManager,
+        DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
+            addTimeIntervalDialog,
+        DialogViewModel<ITimeIntervalElement, bool> editTimeIntervalDialog,
+        IFactory<ITimeIntervalElement> timeIntervalElementFactory,
+        ITimeIntervalElementsEditorProxy timeIntervalElementsEditorProxy)
     {
-        _appState = appState;
+        _session = session;
+        _resourceService = resourceService;
+        _timeScheduler = timeScheduler;
+        _notificationManager = notificationManager;
+        _addTimeIntervalDialog = addTimeIntervalDialog;
+        _editTimeIntervalDialog = editTimeIntervalDialog;
+        _timeIntervalElementFactory = timeIntervalElementFactory;
+        _timeIntervalElementsEditorProxy = timeIntervalElementsEditorProxy;
 
         _canExecuteRemove = this.WhenAnyValue(c => c.SelectedCalendarInterval).
             Select(c => c != null);
         _canExecuteEdit = this.WhenAnyValue(c => c.SelectedCalendarInterval).
             Select(c => c != null);
 
-        Metadata = _appState.Services.ResourceService.GetResource("TimePageMetadata");
-        _appState.Session.ItemsUpdated += Session_ItemsUpdated;
-        _appState.Services.TimeScheduler.TimepointReached += TimeScheduler_TimepointReached;
+        Metadata = resourceService.GetResource("TimePageMetadata");
+        _session.ItemsUpdated += Session_ItemsUpdated;
+        _timeScheduler.TimepointReached += TimeScheduler_TimepointReached;
     }
 
     [ReactiveCommand]
     private void Update()
     {
-        if (_appState.Session.Tasks == null)
+        if (_session.Tasks == null)
         {
             return;
         }
         CalendarIntervals.Clear();
-        var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
+        var tasks = TaskHelper.GetTaskElements(_session.Tasks);
         foreach (var task in tasks)
         {
             foreach(var timeInterval in task.TimeIntervals)
@@ -67,9 +98,8 @@ public partial class TimeViewModel : PageViewModel
         _tasksSchedulerDictionary = tasks.SelectMany(t => t.TimeIntervals).GroupBy(i => i.Start).
             Where(g => g.Key > DateTime.Now).ToDictionary(g => g.Key,
             g => tasks.Where(task => task.TimeIntervals.Any(i => i.Start == g.Key)));
-        _appState.Services.TimeScheduler.Timepoints.Clear();
-        _appState.Services.TimeScheduler.Timepoints.AddRange
-            (_tasksSchedulerDictionary.Keys);
+        _timeScheduler.Timepoints.Clear();
+        _timeScheduler.Timepoints.AddRange(_tasksSchedulerDictionary.Keys);
     }
 
     [ReactiveCommand]
@@ -84,20 +114,19 @@ public partial class TimeViewModel : PageViewModel
     [ReactiveCommand]
     private async Task Add()
     {
-        var timeIntervalElement = _appState.Services.TimeIntervalElementFactory.Create();
-        var result = await AddModal(_appState.Services.AddTimeIntervalDialog,
-            new TimeIntervalViewModelArgs(_appState.Session.Tasks,
-            _appState.Session.Tasks, timeIntervalElement));
+        var timeIntervalElement = _timeIntervalElementFactory.Create();
+        var result = await AddModal(_addTimeIntervalDialog,
+            new TimeIntervalViewModelArgs(_session.Tasks, _session.Tasks, timeIntervalElement));
         if (result != null)
         {
-            _appState.Session.AddTimeInterval(result.TimeIntervalElement, result.TaskElement);
+            _session.AddTimeInterval(result.TimeIntervalElement, result.TaskElement);
         }
     }
 
     [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
     private void Remove()
     {
-        _appState.Session.RemoveTimeInterval(SelectedCalendarInterval.TimeInterval,
+        _session.RemoveTimeInterval(SelectedCalendarInterval.TimeInterval,
             SelectedCalendarInterval.TaskElement);
     }
 
@@ -105,13 +134,13 @@ public partial class TimeViewModel : PageViewModel
     private async Task Edit()
     {
         var timeInterval = SelectedCalendarInterval.TimeInterval;
-        var editorService = _appState.Services.TimeIntervalElementsEditorProxy;
+        var editorService = _timeIntervalElementsEditorProxy;
         editorService.Target = timeInterval;
-        var result = await AddModal(_appState.Services.EditTimeIntervalDialog, editorService);
+        var result = await AddModal(_editTimeIntervalDialog, editorService);
         if (result)
         {
             editorService.ApplyChanges();
-            _appState.Session.EditTimeInterval(timeInterval);
+            _session.EditTimeInterval(timeInterval);
         }
     }
 
@@ -119,16 +148,14 @@ public partial class TimeViewModel : PageViewModel
 
     private void TimeScheduler_TimepointReached(object? sender, DateTime e)
     {
-        var titleResource = _appState.Services.ResourceService.
-            GetResource("TimeSchedulerNotificationTitle");
-        var contentResource = _appState.Services.ResourceService.
-            GetResource("TimeSchedulerNotificationContent");
+        var titleResource = _resourceService.GetResource("TimeSchedulerNotificationTitle");
+        var contentResource = _resourceService.GetResource("TimeSchedulerNotificationContent");
         
         var content = $"{contentResource}\n";
         foreach (var task in _tasksSchedulerDictionary[e])
         {
             content += $"- {task.Metadata}\n";
         }
-        _appState.Services.NotificationManager.SendNotification(content, $"{titleResource}");
+        _notificationManager.SendNotification(content, $"{titleResource}");
     }
 }

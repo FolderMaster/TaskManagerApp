@@ -38,6 +38,17 @@
 	<DataTemplate x:Key="TaskMetadataTreeTemplate" x:DataType="vmt:Metadata">
 		<Label Content="{Binding Title}"/>
 	</DataTemplate>
+	<DataTemplate x:Key="ConfigurationTemplate" x:DataType="vmt:AppConfiguration">
+		<StackPanel>
+			<Label Content="{DynamicResource ThemeLabelContent}"/>
+			<ComboBox ItemsSource="{Binding Themes}"
+					  SelectedItem="{Binding ActualTheme}"/>
+			<Label Content="{DynamicResource LocalizationLabelContent}"/>
+			<ComboBox ItemsSource="{Binding Localizations}"
+					  SelectedItem="{Binding ActualLocalization}"
+					  DisplayMemberBinding="{Binding NativeName}"/>
+		</StackPanel>
+	</DataTemplate>
 	<DataTemplate x:Key="TaskMetadataTemplate" x:DataType="vmt:Metadata">
 		<StackPanel>
 			<Label Content="{DynamicResource NameLabelContent}"/>

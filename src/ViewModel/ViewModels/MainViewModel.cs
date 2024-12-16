@@ -2,17 +2,17 @@
 using ReactiveUI.SourceGenerators;
 using System.Reactive.Linq;
 
-using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces.AppStates;
+using ViewModel.Interfaces.AppStates.Sessions;
+using ViewModel.Interfaces.AppStates.Settings;
 
 namespace ViewModel.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    //private static readonly string _partFilePath = "TaskManager/session.json";
+    private ISettings _settings;
 
-    //private readonly string _fullFilePath;
-
-    private readonly AppState _appState;
+    private ISession _session;
 
     [Reactive]
     private IEnumerable<PageViewModel> _pages;
@@ -20,66 +20,26 @@ public partial class MainViewModel : ViewModelBase
     [Reactive]
     private PageViewModel? _selectedPage;
 
-    public MainViewModel(IEnumerable<PageViewModel> pages, AppState appState)
+    public MainViewModel(IEnumerable<PageViewModel> pages, ISettings settings,
+        ISession session, IAppLifeState appLifeState)
     {
-        _appState = appState;
-        Activator = new ViewModelActivator();
-        /**_fullFilePath = _appState.Services.FileService.CombinePath
-            (_appState.Services.FileService.PersonalDirectoryPath, _partFilePath);**/
+        Pages = pages;
+        _settings = settings;
+        _session = session;
+
+        _settings.Load();
         this.WhenActivated((Action<IDisposable> action) =>
         {
-            _appState.Session.Load();
+            _session.Load();
         });
-        
-        Pages = pages;
 
         this.WhenAnyValue(x => x.Pages).Subscribe(s => SelectedPage = s?.FirstOrDefault());
-        _appState.AppLifeState.AppDeactivated += AppLifeState_AppClosing;
+        appLifeState.AppDeactivated += AppLifeState_AppDeactivated;
     }
 
-    [ReactiveCommand]
-    private async Task Save()
+    private void AppLifeState_AppDeactivated(object? sender, EventArgs e)
     {
-        
-        /**var directoryPath = _appState.Services.FileService.GetDirectoryPath(_fullFilePath);
-        if (!_appState.Services.FileService.IsPathExists(directoryPath))
-        {
-            _appState.Services.FileService.CreateDirectory(directoryPath);
-        }
-        try
-        {
-            var data = _appState.Services.Serializer.Serialize(_appState.Session.Tasks);
-            _appState.Services.FileService.Save(_fullFilePath, data);
-        }
-        catch (Exception ex)
-        {
-
-        }**/
-    }
-
-    [ReactiveCommand]
-    private async Task Load()
-    {
-        
-        /**if (!_appState.Services.FileService.IsPathExists(_fullFilePath))
-        {
-            return;
-        }
-        try
-        {
-            var data = _appState.Services.FileService.Load(_fullFilePath);
-            _appState.Session.Tasks = _appState.Services.Serializer.
-                Deserialize<IList<ITask>>(data);
-            _appState.UpdateSessionItems();
-        }
-        catch (Exception ex)
-        {
-
-        }**/
-    }
-
-    private void AppLifeState_AppClosing(object? sender, EventArgs e)
-    {
-        _appState.Session.Save();
+        _settings.Save();
+        _session.Save();
     }
 }

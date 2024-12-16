@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace TrackableFeatures.Tests
+﻿namespace TrackableFeatures.Tests
 {
     [TestFixture(Category = "Unit", TestOf = typeof(TrackableObject),
         Description = $"Тестирование класса {nameof(TrackableObject)}.")]

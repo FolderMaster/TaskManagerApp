@@ -1,11 +1,11 @@
 ﻿using Model.Interfaces;
 
-using ViewModel.Interfaces.AppStates.Events;
-
 namespace ViewModel.Interfaces.AppStates.Sessions
 {
     public interface ISession : IStorageService
     {
+        public string SavePath { get; set; }
+
         public IEnumerable<ITask> Tasks { get; }
 
         public event EventHandler<ItemsUpdatedEventArgs> ItemsUpdated;

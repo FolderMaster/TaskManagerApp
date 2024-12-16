@@ -2,5 +2,6 @@
 {
     public interface ISettings : IStorageService
     {
+        public object Configuration { get; }
     }
 }

@@ -1,35 +1,27 @@
-﻿using System.Globalization;
+﻿using ReactiveUI;
+using ReactiveUI.SourceGenerators;
 
-using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces.AppStates;
+using ViewModel.Interfaces.AppStates.Settings;
 
 namespace ViewModel.ViewModels.Pages
 {
     public partial class SettingsViewModel : PageViewModel
     {
-        private readonly AppState _appState;
+        private ISettings _settings;
 
-        public IEnumerable<object> Themes => _appState.Settings.ThemeManager.Themes;
+        [Reactive]
+        public object _configuration;
 
-        public object SelectedTheme
+        public SettingsViewModel(ISettings settings, IResourceService resourceService)
         {
-            get => _appState.Settings.ThemeManager.ActualTheme;
-            set => _appState.Settings.ThemeManager.ActualTheme = value;
-        }
+            _settings = settings;
+            Configuration = _settings.Configuration;
 
-        public IEnumerable<CultureInfo> Localizations =>
-            _appState.Settings.LocalizationManager.Localizations;
+            this.WhenAnyValue(x => x._settings.Configuration).Subscribe
+                (c => Configuration = c);
 
-        public CultureInfo SelectedLocalization
-        {
-            get => _appState.Settings.LocalizationManager.ActualLocalization;
-            set => _appState.Settings.LocalizationManager.ActualLocalization = value;
-        }
-
-        public SettingsViewModel(AppState appState)
-        {
-            _appState = appState;
-
-            Metadata = _appState.Services.ResourceService.GetResource("SettingsPageMetadata");
+            Metadata = resourceService.GetResource("SettingsPageMetadata");
         }
     }
 }

@@ -13,7 +13,7 @@ public partial class ViewModelBase : ReactiveObject, IActivatableViewModel
 
     public ObservableCollection<ViewModelBase> Modals => _modals;
 
-    public ViewModelActivator Activator { get; protected set; }
+    public ViewModelActivator Activator { get; private set; } = new ViewModelActivator();
 
     public async Task<R> AddDialog<A, R>(DialogViewModel<A, R> dialog, A args)
     {

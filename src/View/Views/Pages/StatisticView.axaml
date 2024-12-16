@@ -33,15 +33,5 @@
 			<lc:CartesianChart Series="{Binding TasksTimeStatistic,
 								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
 		</TabItem>
-		<TabItem Header="Clusters">
-			<Grid RowDefinitions="Auto, *">
-				<WrapPanel Grid.Row="0">
-					<Button Content="Predict" Command="{Binding PredictCommand}"/>
-				</WrapPanel>
-				<lc:CartesianChart Grid.Row="1" Series="{Binding ClustersElements,
-								   Converter={StaticResource GroupPointsToScatterSeriesConverter}}"/>
-			</Grid>
-			
-		</TabItem>
 	</TabControl>
 </UserControl>

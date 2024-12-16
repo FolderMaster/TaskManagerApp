@@ -3,7 +3,7 @@ using System.Text;
 
 using ViewModel.Interfaces.AppStates;
 
-namespace ViewModel.Implementations
+namespace ViewModel.Implementations.AppStates
 {
     public class JsonSerializer : ISerializer
     {

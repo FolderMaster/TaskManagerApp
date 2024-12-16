@@ -7,6 +7,8 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.DbContexts
 {
     public class BaseDbContext : DbContext
     {
+        protected string _connectionString;
+
         public DbSet<TaskEntity> Tasks { get; set; }
 
         public DbSet<MetadataEntity> Metadata { get; set; }
@@ -18,6 +20,11 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.DbContexts
         public DbSet<TaskElementEntity> TaskElements { get; set; }
 
         public DbSet<TimeIntervalEntity> TimeIntervals { get; set; }
+
+        public BaseDbContext(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

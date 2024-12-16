@@ -6,8 +6,11 @@ using ReactiveUI.SourceGenerators;
 using Model.Interfaces;
 
 using ViewModel.ViewModels.Modals;
-using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces.DataManagers;
 using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.AppStates.Sessions;
+
+using IResourceService = ViewModel.Interfaces.AppStates.IResourceService;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -29,7 +32,26 @@ namespace ViewModel.ViewModels.Pages
 
         private readonly IObservable<bool> _canExecuteSwap;
 
-        private readonly AppState _appState;
+        private ISession _session;
+
+        private DialogViewModel<IList<ITask>, bool> _removeTasksDialog;
+
+        private DialogViewModel<ITask, bool> _addTasksDialog;
+
+        private DialogViewModel<object, bool> _editTaskDialog;
+
+        private DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> _moveTasksDialog;
+
+        private DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>
+            _copyTasksDialog;
+
+        private IFactory<ITaskComposite> _taskCompositeFactory;
+
+        private IFactory<ITaskElementProxy> _taskElementProxyFactory;
+
+        private ITasksEditorProxy _tasksEditorProxy;
+
+        private ITaskElementsEditorProxy _taskElementsEditorProxy;
 
         [Reactive]
         private IEnumerable<ITask> _taskListView;
@@ -37,13 +59,30 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
-        public EditorViewModel(AppState appState)
+        public EditorViewModel(ISession session, IResourceService resourceService,
+            DialogViewModel<IList<ITask>, bool> removeTasksDialog,
+            DialogViewModel<ITask, bool> addTasksDialog,
+            DialogViewModel<object, bool> editTaskDialog,
+            DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> moveTasksDialog,
+            DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?> copyTasksDialog,
+            IFactory<ITaskComposite> taskCompositeFactory,
+            IFactory<ITaskElementProxy> taskElementProxyFactory,
+            ITasksEditorProxy tasksEditorProxy,
+            ITaskElementsEditorProxy taskElementsEditorProxy)
         {
-            _appState = appState;
-            TaskListView = _appState.Session.Tasks;
+            _session = session;
+            _removeTasksDialog = removeTasksDialog;
+            _addTasksDialog = addTasksDialog;
+            _editTaskDialog = editTaskDialog;
+            _moveTasksDialog = moveTasksDialog;
+            _copyTasksDialog = copyTasksDialog;
+            _taskCompositeFactory = taskCompositeFactory;
+            _taskElementProxyFactory = taskElementProxyFactory;
+            _tasksEditorProxy = tasksEditorProxy;
+            _taskElementsEditorProxy = taskElementsEditorProxy;
 
-            this.WhenAnyValue(x => x._appState.Session.Tasks).Subscribe
-                (t => TaskListView = t);
+            TaskListView = _session.Tasks;
+            this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => TaskListView = t);
 
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.TaskListView).
                 Select(i => TaskListView is ITask);
@@ -58,14 +97,14 @@ namespace ViewModel.ViewModels.Pages
             _canExecuteSwap = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 2 &&
                 SelectedTasks.First().ParentTask == SelectedTasks.Last().ParentTask);
 
-            Metadata = _appState.Services.ResourceService.GetResource("EditorPageMetadata");
+            Metadata = resourceService.GetResource("EditorPageMetadata");
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()
         {
             var composite = (ITask)TaskListView;
-            TaskListView = composite.ParentTask ?? _appState.Session.Tasks;
+            TaskListView = composite.ParentTask ?? _session.Tasks;
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]
@@ -81,20 +120,18 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var result = await AddModal(_appState.Services.RemoveTasksDialog, items);
+            var result = await AddModal(_removeTasksDialog, items);
             if (result)
             {
-                _appState.Session.RemoveTasks(items);
+                _session.RemoveTasks(items);
             }
         }
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private async Task AddTaskElement() => await AddTask
-            (_appState.Services.TaskElementProxyFactory.Create());
+        private async Task AddTaskElement() => await AddTask(_taskElementProxyFactory.Create());
 
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private async Task AddTaskComposite() => await AddTask
-            (_appState.Services.TaskCompositeFactory.Create());
+        private async Task AddTaskComposite() => await AddTask(_taskCompositeFactory.Create());
 
         private async Task AddTask(ITask task)
         {
@@ -104,11 +141,11 @@ namespace ViewModel.ViewModels.Pages
                 taskComposite = (ITaskComposite)SelectedTasks.First();
                 SelectedTasks.Clear();
             }
-            var result = await AddModal(_appState.Services.AddTaskDialog, task);
+            var result = await AddModal(_addTasksDialog, task);
             if (result)
             {
-                _appState.Session.AddTasks
-                    ([task is IProxy<ITask> proxy ? proxy.Target : task], taskComposite);
+                _session.AddTasks([task is IProxy<ITask> proxy ? proxy.Target : task],
+                    taskComposite);
             }
         }
 
@@ -120,21 +157,21 @@ namespace ViewModel.ViewModels.Pages
             var editorService = (IEditorService)null;
             if (item is ITaskElement taskElement)
             {
-                var taskElementsEditorService = _appState.Services.TaskElementsEditorProxy;
+                var taskElementsEditorService = _taskElementsEditorProxy;
                 taskElementsEditorService.Target = taskElement;
                 editorService = taskElementsEditorService;
             }
             else
             {
-                var tasksEditorService = _appState.Services.TasksEditorProxy;
+                var tasksEditorService = _tasksEditorProxy;
                 tasksEditorService.Target = item;
                 editorService = tasksEditorService;
             }
-            var result = await AddModal(_appState.Services.EditTaskDialog, editorService);
+            var result = await AddModal(_editTaskDialog, editorService);
             if (result)
             {
                 editorService.ApplyChanges();
-                _appState.Session.EditTask(item);
+                _session.EditTask(item);
             }
         }
 
@@ -143,11 +180,11 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var list = await AddModal(_appState.Services.MoveTasksDialog,
-                new ItemsTasksViewModelArgs(items, TaskListView, _appState.Session.Tasks));
+            var list = await AddModal(_moveTasksDialog,
+                new ItemsTasksViewModelArgs(items, TaskListView, _session.Tasks));
             if (list != null)
             {
-                _appState.Session.MoveTasks(items, (ITaskComposite?)list);
+                _session.MoveTasks(items, (ITaskComposite?)list);
             }
         }
 
@@ -156,8 +193,8 @@ namespace ViewModel.ViewModels.Pages
         {
             var items = SelectedTasks.ToList();
             SelectedTasks.Clear();
-            var result = await AddModal(_appState.Services.CopyTasksDialog,
-                new ItemsTasksViewModelArgs(items, TaskListView, _appState.Session.Tasks));
+            var result = await AddModal(_copyTasksDialog,
+                new ItemsTasksViewModelArgs(items, TaskListView, _session.Tasks));
             if (result != null)
             {
                 var copyList = new List<ITask>();
@@ -171,7 +208,7 @@ namespace ViewModel.ViewModels.Pages
                         }
                     }
                 }
-                _appState.Session.AddTasks(copyList, result.List as ITaskComposite);
+                _session.AddTasks(copyList, result.List as ITaskComposite);
             }
         }
 
@@ -184,7 +221,7 @@ namespace ViewModel.ViewModels.Pages
             var item1 = items.First();
             var item2 = items.Last();
 
-            var list = item1.ParentTask ?? _appState.Session.Tasks as IList<ITask>;
+            var list = item1.ParentTask ?? _session.Tasks as IList<ITask>;
 
             var index1 = list.IndexOf(item1);
             var index2 = list.IndexOf(item2);

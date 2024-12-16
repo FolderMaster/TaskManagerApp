@@ -1,4 +1,4 @@
-﻿namespace ViewModel.Interfaces.AppStates.Events
+﻿namespace ViewModel.Interfaces.AppStates.Sessions
 {
     public enum UpdateItemsState
     {

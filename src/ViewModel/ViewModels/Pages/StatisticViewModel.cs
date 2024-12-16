@@ -3,20 +3,16 @@ using ReactiveUI;
 
 using Model;
 
-using MachineLearning;
-using MachineLearning.LearningModels;
-
 using ViewModel.Technicals;
-using ViewModel.Interfaces.AppStates.Events;
-using ViewModel.Implementations.AppStates;
+using ViewModel.Interfaces.AppStates;
+using ViewModel.Interfaces.AppStates.Sessions;
+
 
 namespace ViewModel.ViewModels.Pages
 {
     public partial class StatisticViewModel : PageViewModel
     {
-        private readonly AppState _appState;
-
-        private readonly KMeanLearningModel _learningModel = new();
+        private ISession _session;
 
         [Reactive]
         private IEnumerable<TimeSpan> _times =
@@ -51,15 +47,15 @@ namespace ViewModel.ViewModels.Pages
         [Reactive]
         private IEnumerable<GroupPoint> _clustersElements;
 
-        public StatisticViewModel(AppState appState)
+        public StatisticViewModel(ISession session, IResourceService resourceService)
         {
-            _appState = appState;
+            _session = session;
 
             this.WhenAnyValue(x => x.Times).Subscribe(s => SelectedTime = s?.FirstOrDefault());
             this.WhenAnyValue(x => x.SelectedTime).Subscribe(t => UpdateExpiredTasksStatistics());
 
-            Metadata = _appState.Services.ResourceService.GetResource("StatisticPageMetadata");
-            _appState.Session.ItemsUpdated += Session_ItemsUpdated;
+            Metadata = resourceService.GetResource("StatisticPageMetadata");
+            _session.ItemsUpdated += Session_ItemsUpdated;
         }
 
         [ReactiveCommand]
@@ -70,29 +66,13 @@ namespace ViewModel.ViewModels.Pages
             UpdateTimeTasksStatistic();
         }
 
-        [ReactiveCommand]
-        private async Task Predict()
-        {
-            if (_appState.Session.Tasks == null)
-            {
-                return;
-            }
-            _learningModel.NumberOfClusters = 3;
-            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
-            var inputs = tasks.Select(t => new double[] {t.Difficult, t.Priority, (int)t.Status});
-            await _learningModel.Train(inputs);
-            var clusters = _learningModel.Predict(inputs);
-            ClustersElements = tasks.Zip(clusters).Select(g => new GroupPoint(g.First.Priority,
-                g.First.Difficult, g.First.Metadata.ToString(), g.Second));
-        }
-
         private void UpdateTasksCountStatistics()
         {
-            if (_appState.Session.Tasks == null)
+            if (_session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
@@ -110,11 +90,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateExpiredTasksStatistics()
         {
-            if (_appState.Session.Tasks == null)
+            if (_session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var where = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
                 TaskHelper.HasTaskExpired(t, SelectedTime));
 
@@ -134,11 +114,11 @@ namespace ViewModel.ViewModels.Pages
 
         private void UpdateTimeTasksStatistic()
         {
-            if (_appState.Session.Tasks == null)
+            if (_session.Tasks == null)
             {
                 return;
             }
-            var tasks = TaskHelper.GetTaskElements(_appState.Session.Tasks);
+            var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             var plannedTime = uncompletedTasks.Aggregate(TimeSpan.Zero,

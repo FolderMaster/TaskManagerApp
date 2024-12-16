@@ -3,30 +3,37 @@
 using TrackableFeatures;
 
 using Model.Interfaces;
-using ViewModel.Interfaces.AppStates.Events;
+
+using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
 using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
-using ViewModel.Interfaces.DataManagers.Generals;
-using ViewModel.Implementations.Sessions.Database.Entities;
 
 namespace ViewModel.Implementations.AppStates.Sessions
 {
     public class DbSession : TrackableObject, ISession
     {
-        private readonly IFactory<BaseDbContext> _dbContextFactory;
+        private static readonly string _filePath = "database.db";
+
+        private readonly IDbContextFactory<BaseDbContext> _dbContextFactory;
 
         private readonly IMapper<TaskEntity, ITask> _taskMapper;
 
         private readonly IMapper<TimeIntervalEntity, ITimeIntervalElement> _timeIntervalMapper;
 
+        private string _savePath;
+
         private BaseDbContext? _dbContext;
 
         private ObservableCollection<ITask> _tasks = new();
 
-        public event EventHandler<ItemsUpdatedEventArgs> ItemsUpdated;
+        public string SavePath
+        {
+            get => _savePath;
+            set => UpdateProperty(ref _savePath, value);
+        }
 
         public IEnumerable<ITask> Tasks
         {
@@ -34,10 +41,15 @@ namespace ViewModel.Implementations.AppStates.Sessions
             private set => UpdateProperty(ref _tasks, (ObservableCollection<ITask>)value);
         }
 
-        public DbSession(IFactory<BaseDbContext> contextFactory,
+        public event EventHandler<ItemsUpdatedEventArgs> ItemsUpdated;
+
+        public DbSession(IDbContextFactory<BaseDbContext> contextFactory,
             IMapper<TaskEntity, ITask> taskMapper,
-            IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalMapper)
+            IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalMapper,
+            IFileService fileService)
         {
+            _savePath = $"Data Source={fileService.CombinePath
+                (fileService.PersonalDirectoryPath, _filePath)}";
             _dbContextFactory = contextFactory;
             _taskMapper = taskMapper;
             _timeIntervalMapper = timeIntervalMapper;
@@ -45,6 +57,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
 
         public async Task Load()
         {
+            _dbContextFactory.ConnectionString = SavePath;
             _dbContext = _dbContextFactory.Create();
             await _dbContext.Database.EnsureCreatedAsync();
             var taskEntities = _dbContext.Tasks.Where(t => t.ParentTaskId == null);

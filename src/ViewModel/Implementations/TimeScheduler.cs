@@ -15,6 +15,8 @@ namespace ViewModel.Implementations
 
         private readonly ObservableCollection<DateTime> _timepoints = new();
 
+        private readonly object _lock = new();
+
         private bool _isUpdateScheduler = true;
 
         private DateTime _selectedTimepoint;
@@ -38,7 +40,7 @@ namespace ViewModel.Implementations
             }
 
             var nextTimepoints = _timepoints.Where(tp => tp > DateTime.Now).
-                OrderBy(tp => tp);
+                OrderBy(tp => tp).ToList();
             _selectedTimepoint = nextTimepoints.FirstOrDefault();
             if (_selectedTimepoint == default)
             {
@@ -84,8 +86,8 @@ namespace ViewModel.Implementations
                         RescheduleTimer();
                     }
                     break;
-                case NotifyCollectionChangedAction.Replace:
                 case NotifyCollectionChangedAction.Remove:
+                    RescheduleTimer();
                     break;
             }
 

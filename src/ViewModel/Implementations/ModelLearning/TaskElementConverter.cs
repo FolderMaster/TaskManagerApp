@@ -5,14 +5,16 @@ using Model.Interfaces;
 
 namespace ViewModel.Implementations.ModelLearning
 {
-    public class TaskElementConverter<R, DR> : IConverter<IEnumerable<double>, R, ITaskElement, ITaskElement, DR>
+    public class TaskElementConverter<R, DR> :
+        IConverter<IEnumerable<double>, R, ITaskElement, ITaskElement, DR>
     {
         public TaskElementConverter()
         {
-
+            
         }
 
-        public LearningModelData<IEnumerable<double>, R> FitConvertData(IEnumerable<ITaskElement> data)
+        public LearningModelData<IEnumerable<double>, R> FitConvertData
+            (IEnumerable<ITaskElement> data)
         {
             var dataResult = new List<IEnumerable<double>>();
             var targets = new List<R>();
