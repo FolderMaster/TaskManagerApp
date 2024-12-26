@@ -4,7 +4,9 @@ namespace MachineLearning.Interfaces
 {
     /// <summary>
     /// Интерфейс модели обучения классификации.
-    /// Наследует <see cref="ISupervisedLearningModel{IEnumerable{double}, int}"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="ISupervisedLearningModel{IEnumerable{double}, int}"/>.
+    /// </remarks>
     public interface IClassificationModel : ISupervisedLearningModel<IEnumerable<double>, int> { }
 }

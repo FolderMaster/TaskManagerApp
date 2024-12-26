@@ -7,9 +7,11 @@ namespace MachineLearning.DataProcessors
 {
     /// <summary>
     /// Класс обработчика столбцов для устранения корреляции.
-    /// Реализует <see cref="IPointDataProcessor{double}"/>.
     /// </summary>
-    public class CorrelationColumnProcessor : IPointDataProcessor<double>
+    /// <remarks>
+    /// Реализует <see cref="IPointDataProcessor"/>.
+    /// </remarks>
+    public class CorrelationColumnProcessor : IPointDataProcessor
     {
         /// <summary>
         /// Порог.

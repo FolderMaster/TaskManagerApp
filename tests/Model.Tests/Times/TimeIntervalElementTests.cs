@@ -1,6 +1,6 @@
 ﻿using Model.Times;
 
-namespace Model.Tests.Tasks.Times
+namespace Model.Tests.Times
 {
     [TestFixture(Category = "Unit", TestOf = typeof(TimeIntervalElement),
         Description = $"Тестирование класса {nameof(TimeIntervalElement)}.")]

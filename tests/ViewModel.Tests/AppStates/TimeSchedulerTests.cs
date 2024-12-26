@@ -1,6 +1,6 @@
-﻿using ViewModel.Implementations;
+﻿using ViewModel.Implementations.AppStates;
 
-namespace ViewModel.Tests
+namespace ViewModel.Tests.AppStates
 {
     [TestFixture(Category = "Unit", TestOf = typeof(TimeScheduler),
         Description = $"Тестирование класса {nameof(TimeScheduler)}.")]

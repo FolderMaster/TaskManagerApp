@@ -3,10 +3,11 @@
 namespace MachineLearning.Interfaces
 {
     /// <summary>
-    /// Интерфейс обработчика данных в точечные данные.
-    /// Наследует <see cref="IDataProcessor{IEnumerable{T}, IEnumerable{double}}"/>.
+    /// Интерфейс обработчика точечных данных.
     /// </summary>
-    /// <typeparam name="T">Тип входных данных.</typeparam>
-    public interface IPointDataProcessor<T> :
-        IDataProcessor<IEnumerable<T>, IEnumerable<double>> { }
+    /// <remarks>
+    /// Наследует <see cref="IDataProcessor{IEnumerable{double}, IEnumerable{double}}"/>.
+    /// </remarks>
+    public interface IPointDataProcessor :
+        IDataProcessor<IEnumerable<double>, IEnumerable<double>> { }
 }

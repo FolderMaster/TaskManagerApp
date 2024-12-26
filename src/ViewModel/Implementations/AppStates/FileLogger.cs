@@ -4,9 +4,9 @@ namespace ViewModel.Implementations.AppStates
 {
     public class FileLogger : ILogger
     {
-        private static readonly string _filePath = "log.txt";
+        private static readonly string _partFilePath = "log.txt";
 
-        private readonly string _fullFilePath;
+        public string FilePath { get; set; }
 
         private readonly object _lock = new();
 
@@ -16,8 +16,8 @@ namespace ViewModel.Implementations.AppStates
         {
             _fileService = fileService;
 
-            _fullFilePath = _fileService.CombinePath
-                (_fileService.PersonalDirectoryPath, _filePath);
+            FilePath = _fileService.CombinePath
+                (_fileService.PersonalDirectoryPath, _partFilePath);
         }
 
         public void Log(string message)
@@ -25,13 +25,15 @@ namespace ViewModel.Implementations.AppStates
             var logMessage = $"{DateTime.Now}: {message}";
             lock (_lock)
             {
-                var stream = _fileService.CreateStream(_fullFilePath,
-                    FileMode.Append, FileAccess.Write, FileShare.Write);
-                var writer = new StreamWriter(stream)
+                using (var stream = _fileService.CreateStream(FilePath,
+                    FileMode.Append, FileAccess.Write, FileShare.Write))
                 {
-                    AutoFlush = true
-                };
-                writer.WriteLine(logMessage);
+                    var writer = new StreamWriter(stream)
+                    {
+                        AutoFlush = true
+                    };
+                    writer.WriteLine(logMessage);
+                }
             }
         }
     }

@@ -2,12 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Timers;
-
 using ViewModel.Interfaces;
 
 using Timer = System.Timers.Timer;
 
-namespace ViewModel.Implementations
+namespace ViewModel.Implementations.AppStates
 {
     public class TimeScheduler : ITimeScheduler
     {

@@ -4,9 +4,11 @@ namespace MachineLearning.LearningEvaluators
 {
     /// <summary>
     /// Абстрактный класс базовой оценки модели обучения без учителя методом кросс-валидации.
+    /// </summary>
+    /// <remarks>
     /// Наследует <see cref="BaseCrossValidationLearningEvaluator"/>.
     /// Реализует <see cref="IUnsupervisedLearningEvaluator{T, R}"/>.
-    /// </summary>
+    /// </remarks>
     /// <typeparam name="T">Тип входных данных для предсказания.</typeparam>
     /// <typeparam name="R">Тип выходных данных для предсказания.</typeparam>
     public abstract class BaseUnsupervisedCrossValidationEvaluator<T, R> :

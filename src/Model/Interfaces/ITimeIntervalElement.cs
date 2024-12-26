@@ -1,8 +1,11 @@
 ﻿namespace Model.Interfaces
 {
     /// <summary>
-    /// Интерфейс элементарного временного интервала. Наследует <see cref="ITimeInterval"/>.
+    /// Интерфейс элементарного временного интервала.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="ITimeInterval"/>.
+    /// </remarks>
     public interface ITimeIntervalElement : ITimeInterval
     {
         /// <summary>

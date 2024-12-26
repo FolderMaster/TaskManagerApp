@@ -6,8 +6,10 @@ namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
     /// Класс метрики R² оценки для модели обучения регрессии.
-    /// Реализует <see cref="IRegressionScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IRegressionScoreMetric"/>.
+    /// </remarks>
     public class RSquaredScoreMetric : IRegressionScoreMetric
     {
         /// <inheritdoc />

@@ -7,9 +7,11 @@ using Model.Interfaces;
 namespace Model.Times
 {
     /// <summary>
-    /// Класс элементарного временного интервала. Наследует <see cref="TrackableObject"/>.
-    /// Реализует <see cref="ITimeIntervalElement"/>.
+    /// Класс элементарного временного интервала.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="ITimeIntervalElement"/>.
+    /// </remarks>
     public class TimeIntervalElement : TrackableObject, ITimeIntervalElement
     {
         /// <summary>

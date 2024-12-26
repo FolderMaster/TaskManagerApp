@@ -165,7 +165,7 @@
 	</v:TaskDataTemplate>
 	<v:TaskDataTemplate x:Key="TaskTemplate">
 		<v:TaskDataTemplate.ElementDataTemplate>
-			<DataTemplate x:DataType="mi:ITaskElement">
+			<DataTemplate x:DataType="vmd:ITaskElementProxy">
 				<StackPanel>
 					<ContentControl Content="{Binding Metadata}"
 									ContentTemplate="{StaticResource TaskMetadataTemplate}"/>
@@ -177,10 +177,14 @@
 					<Slider Value="{Binding Progress}" Minimum="0" Maximum="1"/>
 					<Label Content="{DynamicResource TotalRealLabelContent}"/>
 					<TextBox Text="{Binding PlannedReal}"/>
+					<TextBox Text="{Binding PredictedPlannedReal}"
+							 IsEnabled="{Binding IsValidPredictedPlannedReal}"/>
 					<Label Content="{DynamicResource ExecutedRealLabelContent}"/>
 					<TextBox Text="{Binding ExecutedReal}"/>
 					<Label Content="{DynamicResource PlannedTimeLabelContent}"/>
 					<TimePicker SelectedTime="{Binding PlannedTime}" UseSeconds="True"/>
+					<TimePicker SelectedTime="{Binding PredictedPlannedTime}"
+							 IsEnabled="{Binding IsValidPredictedPlannedTime}"/>
 					<Label Content="{DynamicResource SpentTimeLabelContent}"/>
 					<TimePicker SelectedTime="{Binding SpentTime}" UseSeconds="True"/>
 					<Label Content="{DynamicResource StatusLabelContent}"/>
@@ -188,6 +192,8 @@
 							  SelectedItem="{Binding Status}"/>
 					<Label Content="{DynamicResource DeadlineLabelContent}"/>
 					<c:DateTimePicker DateTime="{Binding Deadline}"/>
+					<c:DateTimePicker DateTime="{Binding PredictedDeadline}"
+							 IsEnabled="{Binding IsValidPredictedDeadline}"/>
 				</StackPanel>
 			</DataTemplate>
 		</v:TaskDataTemplate.ElementDataTemplate>

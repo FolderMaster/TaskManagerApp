@@ -4,9 +4,11 @@ namespace MachineLearning.LearningEvaluators
 {
     /// <summary>
     /// Абстрактный класс базовой оценки модели обучения с учителем методом кросс-валидации.
+    /// </summary>
+    /// <remarks>
     /// Наследует <see cref="BaseCrossValidationLearningEvaluator"/>.
     /// Реализует <see cref="ISupervisedLearningEvaluator{T, R}"/>.
-    /// </summary>
+    /// </remarks>
     /// <typeparam name="T">Тип входных данных для предсказания.</typeparam>
     /// <typeparam name="R">Тип выходных данных для предсказания.</typeparam>
     public abstract class BaseSupervisedCrossValidationEvaluator<T, R> :
@@ -44,6 +46,10 @@ namespace MachineLearning.LearningEvaluators
         public async Task<ScoreMetricCategory> Evaluate
             (IEnumerable<T> data, IEnumerable<R> targets)
         {
+            if (NumberOfFolds > data.Count())
+            {
+                throw new ArgumentException(nameof(data));
+            }
             var dataArray = data.ToArray();
             var targetsArray = targets.ToArray();
             var scores = new List<double>();

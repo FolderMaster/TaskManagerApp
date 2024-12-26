@@ -8,9 +8,11 @@ namespace Model.Times
 {
     /// <summary>
     /// Класс списка временных интервалов.
+    /// </summary>
+    /// <remarks>
     /// Наследует <see cref="TrackableCollection{ITimeIntervalElement}"/>.
     /// Реализует <see cref="ITimeIntervalList"/>.
-    /// </summary>
+    /// </remarks>
     public class TimeIntervalList : TrackableCollection<ITimeIntervalElement>, ITimeIntervalList
     {
         /// <inheritdoc/>

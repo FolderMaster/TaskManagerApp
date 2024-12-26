@@ -6,8 +6,10 @@ namespace MachineLearning.LearningEvaluators
 {
     /// <summary>
     /// Абстрактный класс базовой оценки модели обучения методом кросс-валидации.
-    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="ILearningEvaluator"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="ILearningEvaluator"/>.
+    /// </remarks>
     public abstract class BaseCrossValidationLearningEvaluator : TrackableObject, ILearningEvaluator
     {
         /// <summary>

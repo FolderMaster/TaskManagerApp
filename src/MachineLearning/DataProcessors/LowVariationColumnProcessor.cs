@@ -7,9 +7,11 @@ namespace MachineLearning.DataProcessors
 {
     /// <summary>
     /// Класс обработчика столбцов для устранения низкой вариативности.
-    /// Реализует <see cref="IPointDataProcessor{double}"/>.
     /// </summary>
-    public class LowVariationColumnProcessor : IPointDataProcessor<double>
+    /// <remarks>
+    /// Реализует <see cref="IPointDataProcessor"/>.
+    /// </remarks>
+    public class LowVariationColumnProcessor : IPointDataProcessor
     {
         /// <summary>
         /// Порог.
@@ -42,8 +44,7 @@ namespace MachineLearning.DataProcessors
                 }
             }
 
-            removingColumns.OrderDescending();
-            foreach (var column in removingColumns)
+            foreach (var column in removingColumns.OrderDescending())
             {
                 array = array.RemoveColumn(column);
             }

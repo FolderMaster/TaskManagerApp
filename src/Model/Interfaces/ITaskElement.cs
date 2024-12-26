@@ -1,8 +1,11 @@
 ﻿namespace Model.Interfaces
 {
     /// <summary>
-    /// Интерфейс элементарной задачи. Наследует <see cref="ITask"/>.
+    /// Интерфейс элементарной задачи.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="ITask"/>.
+    /// </remarks>
     public interface ITaskElement : ITask
     {
         /// <summary>

@@ -6,8 +6,10 @@ namespace MachineLearning.LearningModels
 {
     /// <summary>
     /// Класс модель обучения регрессии с алгоритмом мультилинейной регрессии.
-    /// Реализует <see cref="IRegressionModel"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IRegressionModel"/>.
+    /// </remarks>
     public class MultipleLinearRegressionModel : IRegressionModel
     {
         /// <summary>

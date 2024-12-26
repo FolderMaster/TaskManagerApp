@@ -4,8 +4,10 @@ namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
     /// Класс метрики оценки точности для модели обучения классификации.
-    /// Реализует <see cref="IClassificationScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IClassificationScoreMetric"/>.
+    /// </remarks>
     public class AccuracyScoreMetric : IClassificationScoreMetric
     {
         /// <inheritdoc />

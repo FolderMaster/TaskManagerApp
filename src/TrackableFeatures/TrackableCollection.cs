@@ -5,9 +5,11 @@ namespace TrackableFeatures
 {
     /// <summary>
     /// Базовый класс коллекции, предоставляющий поддержку отслеживания изменений в коллекции.
+    /// </summary>
+    /// <remarks>
     /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="INotifyCollectionChanged"/>,
     /// <see cref="IList"/> и <see cref="IList{T}"/>.
-    /// </summary>
+    /// </remarks>
     /// <typeparam name="T">Тип элементов коллекции.</typeparam>
     public class TrackableCollection<T> : TrackableObject,
         IList<T>, IList, INotifyCollectionChanged

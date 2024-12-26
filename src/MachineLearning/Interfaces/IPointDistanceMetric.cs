@@ -4,7 +4,9 @@ namespace MachineLearning.Interfaces
 {
     /// <summary>
     /// Интерфейс метрики расстояния для точечных данных.
-    /// Наследует <see cref="IDistanceMetric{IEnumerable{double}}"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="IDistanceMetric{IEnumerable{double}}"/>.
+    /// </remarks>
     public interface IPointDistanceMetric : IDistanceMetric<IEnumerable<double>> { }
 }

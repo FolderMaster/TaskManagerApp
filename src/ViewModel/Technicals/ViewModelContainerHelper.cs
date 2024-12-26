@@ -1,5 +1,12 @@
 ﻿using Autofac;
 
+using MachineLearning.Interfaces;
+using MachineLearning.ScoreMetrics;
+using MachineLearning.LearningModels;
+using MachineLearning.DistanceMetrics;
+using MachineLearning.LearningEvaluators;
+using MachineLearning.DataProcessors;
+
 using Model.Interfaces;
 
 using ViewModel.Interfaces;
@@ -11,7 +18,6 @@ using ViewModel.Interfaces.DataManagers.Generals;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels;
-using ViewModel.Implementations;
 using ViewModel.Implementations.Mocks;
 using ViewModel.Implementations.AppStates;
 using ViewModel.Implementations.DataManagers.Factories;
@@ -21,6 +27,9 @@ using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
 using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Settings;
+using ViewModel.Implementations.ModelLearning.Converters;
+using ViewModel.Implementations.ModelLearning;
+using ViewModel.Interfaces.ModelLearning;
 
 namespace ViewModel.Technicals
 {
@@ -45,6 +54,61 @@ namespace ViewModel.Technicals
         public static ContainerBuilder GetContainerBuilder()
         {
             var result = new ContainerBuilder();
+
+            result.RegisterType<InvalidValuesColumnProcessor>().
+                As<IPrimaryPointDataProcessor>().SingleInstance();
+            result.RegisterType<DuplicatesRowProcessor>().
+                As<IPointDataProcessor>().SingleInstance();
+            result.RegisterType<OutlierRowProcessor>().
+                As<IPointDataProcessor>().SingleInstance();
+            result.RegisterType<CorrelationColumnProcessor>().
+                As<IPointDataProcessor>().SingleInstance();
+            result.RegisterType<LowVariationColumnProcessor>().
+                As<IPointDataProcessor>().SingleInstance();
+
+            result.RegisterType<EuclideanDistanceMetric>().
+                As<IPointDistanceMetric>().SingleInstance();
+
+            result.RegisterType<MinMaxScalerFactory>().As<IFactory<IScaler>>().SingleInstance();
+
+            result.RegisterType<KNearestNeighborsModel>().
+                As<IClassificationModel>();
+            result.RegisterType<MultipleLinearRegressionModel>().
+                As<IRegressionModel>();
+            result.RegisterType<KMeanLearningModel>().
+                As<IClusteringModel>();
+
+            result.RegisterType<F1ScoreMetric>().
+                As<IClassificationScoreMetric>().SingleInstance();
+            result.RegisterType<SmapeScoreMetric>().
+                As<IRegressionScoreMetric>().SingleInstance();
+            result.RegisterType<SilhouetteScoreMetric>().
+                As<IClusteringScoreMetric>().SingleInstance();
+
+            result.RegisterType<ClassificationCrossValidationEvaluator>().
+                As<IClassificationEvaluator>();
+            result.RegisterType<RegressionCrossValidationEvaluator>().
+                As<IRegressionEvaluator>();
+            result.RegisterType<ClusteringCrossValidationEvaluator>().
+                As<IClusteringEvaluator>();
+
+            result.RegisterType<DeadlineTaskElementLearningConverter>().SingleInstance();
+            result.RegisterType<PlannedRealTaskElementLearningConverter>().SingleInstance();
+            result.RegisterType<PlannedTimeTaskElementLearningConverter>().SingleInstance();
+            result.RegisterType<ProgressTaskElementLearningConverter>().SingleInstance();
+
+            result.RegisterType<DeadlineTaskElementEvaluatorLearningController>().
+                As<DeadlineTaskElementEvaluatorLearningController>().
+                As<IModelTeacher<ITaskElement>>().SingleInstance();
+            result.RegisterType<PlannedRealTaskElementEvaluatorLearningController>().
+                As<PlannedRealTaskElementEvaluatorLearningController>().
+                As<IModelTeacher<ITaskElement>>().SingleInstance();
+            result.RegisterType<PlannedTimeTaskElementEvaluatorLearningController>().
+                As<PlannedTimeTaskElementEvaluatorLearningController>().
+                As<IModelTeacher<ITaskElement>>().SingleInstance();
+            result.RegisterType<ProgressTaskElementEvaluatorLearningController>().
+                As<ProgressTaskElementEvaluatorLearningController>().
+                As<IModelTeacher<ITaskElement>>().SingleInstance();
 
             result.RegisterType<FileService>().As<IFileService>().SingleInstance();
             result.RegisterType<JsonSerializer>().As<ISerializer>().SingleInstance();

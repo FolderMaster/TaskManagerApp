@@ -2,8 +2,10 @@
 {
     /// <summary>
     /// Интерфейс метрики оценки для модели обучения с учителем.
-    /// Наследует <see cref="IScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="IScoreMetric"/>.
+    /// </remarks>
     /// <typeparam name="T">Тип данных для оценки.</typeparam>
     public interface ISupervisedScoreMetric<T> : IScoreMetric
     {

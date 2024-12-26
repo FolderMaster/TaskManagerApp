@@ -6,8 +6,10 @@ namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
     /// Класс метрики оценки скорректированного индекса Рэнда для модели обучения классификации.
-    /// Реализует <see cref="IClassificationScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IClassificationScoreMetric"/>.
+    /// </remarks>
     public class AdjustedRandIndexScoreMetric : IClassificationScoreMetric
     {
         /// <inheritdoc />

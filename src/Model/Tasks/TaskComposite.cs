@@ -7,9 +7,12 @@ using Model.Interfaces;
 namespace Model.Tasks
 {
     /// <summary>
-    /// Класс составной задачи. Наследует <see cref="TrackableCollection{ITask}"/>.
-    /// Реализует <see cref="ITaskComposite"/> и <see cref="ICloneable"/>.
+    /// Класс составной задачи.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableCollection{ITask}"/>.
+    /// Реализует <see cref="ITaskComposite"/> и <see cref="ICloneable"/>.
+    /// </remarks>
     public class TaskComposite : TrackableCollection<ITask>, ITaskComposite, ICloneable
     {
         /// <summary>

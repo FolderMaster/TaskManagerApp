@@ -9,8 +9,10 @@ namespace MachineLearning.LearningModels
 {
     /// <summary>
     /// Класс модель обучения классификации с алгоритмом K-ближащих соседей.
-    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="IClassificationModel"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="IClassificationModel"/>.
+    /// </remarks>
     public class KNearestNeighborsModel : TrackableObject, IClassificationModel
     {
         /// <summary>

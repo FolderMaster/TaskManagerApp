@@ -9,8 +9,10 @@ namespace MachineLearning.LearningModels
 {
     /// <summary>
     /// Класс модель обучения кластеризации с алгоритмом K-средних.
-    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="IClusteringModel"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="IClusteringModel"/>.
+    /// </remarks>
     public class KMeanLearningModel : TrackableObject, IClusteringModel
     {
         /// <summary>

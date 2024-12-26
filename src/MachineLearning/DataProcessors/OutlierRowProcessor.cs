@@ -7,9 +7,11 @@ namespace MachineLearning.DataProcessors
 {
     /// <summary>
     /// Класс обработчика строк для устранения выбросов.
-    /// Реализует <see cref="IPointDataProcessor{double}"/>.
     /// </summary>
-    public class OutlierRowProcessor : IPointDataProcessor<double>
+    /// <remarks>
+    /// Реализует <see cref="IPointDataProcessor"/>.
+    /// </remarks>
+    public class OutlierRowProcessor : IPointDataProcessor
     {
         /// <summary>
         /// Порог.

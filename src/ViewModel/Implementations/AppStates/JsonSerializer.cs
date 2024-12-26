@@ -7,7 +7,7 @@ namespace ViewModel.Implementations.AppStates
 {
     public class JsonSerializer : ISerializer
     {
-        private static readonly JsonSerializerSettings _jsonSerializerSettings = new()
+        public JsonSerializerSettings Settings { get; private set; } = new()
         {
             ObjectCreationHandling = ObjectCreationHandling.Replace,
             TypeNameHandling = TypeNameHandling.All,
@@ -17,12 +17,12 @@ namespace ViewModel.Implementations.AppStates
         public T? Deserialize<T>(byte[] data)
         {
             var text = Encoding.Default.GetString(data);
-            return JsonConvert.DeserializeObject<T>(text, _jsonSerializerSettings);
+            return JsonConvert.DeserializeObject<T>(text, Settings);
         }
 
         public byte[] Serialize(object value)
         {
-            var text = JsonConvert.SerializeObject(value, _jsonSerializerSettings);
+            var text = JsonConvert.SerializeObject(value, Settings);
             return Encoding.Default.GetBytes(text);
         }
     }

@@ -6,8 +6,10 @@ namespace TrackableFeatures
 {
     /// <summary>
     /// Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок.
-    /// Реализует <see cref="INotifyPropertyChanged"/> и <see cref="INotifyDataErrorInfo"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="INotifyPropertyChanged"/> и <see cref="INotifyDataErrorInfo"/>.
+    /// </remarks>
     public class TrackableObject : INotifyPropertyChanged, INotifyDataErrorInfo
     {
         /// <summary>
@@ -55,6 +57,28 @@ namespace TrackableFeatures
                 newValue != null && !newValue.Equals(field))
             {
                 field = newValue;
+                action?.Invoke();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="getProperty"></param>
+        /// <param name="setProperty"></param>
+        /// <param name="newValue"></param>
+        /// <param name="action"></param>
+        /// <param name="propertyName"></param>
+        protected void UpdateProperty<T>(Func<T> getProperty, Action<T> setProperty, T newValue,
+            Action? action = null, [CallerMemberName] string propertyName = "")
+        {
+            var propertyValue = getProperty();
+            if (propertyValue != null && !propertyValue.Equals(newValue) ||
+                newValue != null && !newValue.Equals(propertyValue))
+            {
+                setProperty(newValue);
                 action?.Invoke();
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }

@@ -4,7 +4,9 @@ namespace MachineLearning.Interfaces
 {
     /// <summary>
     /// Интерфейс модели обучения кластеризации.
-    /// Наследует <see cref="IUnsupervisedLearningEvaluator{IEnumerable{double}, int}"/>.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="IUnsupervisedLearningModel{IEnumerable{double}, int}"/>.
+    /// </remarks>
     public interface IClusteringModel : IUnsupervisedLearningModel<IEnumerable<double>, int> { }
 }

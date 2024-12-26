@@ -5,8 +5,10 @@ namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
     /// Класс метрики оценки Силуэта для модели обучения кластеризации.
-    /// Реализует <see cref="IClusteringScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IClusteringScoreMetric"/>.
+    /// </remarks>
     public class SilhouetteScoreMetric : IClusteringScoreMetric
     {
         /// <summary>

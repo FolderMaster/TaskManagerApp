@@ -6,8 +6,11 @@ namespace MachineLearning.LearningModels
 {
     /// <summary>
     /// Адаптер для использования метрики расстояния <see cref="IPointDistanceMetric"/>
-    /// с интерфейсом <see cref="IMetric{double[]}"/>. Реализует <see cref="IMetric{double[]}"/>.
+    /// с интерфейсом <see cref="IMetric{double[]}"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IMetric{double[]}"/>.
+    /// </remarks>
     public class MetricAdapter : IMetric<double[]>
     {
         /// <summary>

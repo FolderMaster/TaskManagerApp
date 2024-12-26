@@ -4,8 +4,10 @@ namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
     /// Класс метрики оценки SMAPE для модели обучения регрессии.
-    /// Реализует <see cref="IRegressionScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IRegressionScoreMetric"/>.
+    /// </remarks>
     public class SmapeScoreMetric : IRegressionScoreMetric
     {
         /// <inheritdoc />

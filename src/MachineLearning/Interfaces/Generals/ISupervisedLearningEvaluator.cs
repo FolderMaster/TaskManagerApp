@@ -1,8 +1,11 @@
 ﻿namespace MachineLearning.Interfaces.Generals
 {
     /// <summary>
-    /// Интерфейс оценки модели обучения с учителем. Наследует <see cref="ILearningEvaluator"/>.
+    /// Интерфейс оценки модели обучения с учителем.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="ILearningEvaluator"/>.
+    /// </remarks>
     /// <typeparam name="T">Тип входных данных для предсказания.</typeparam>
     /// <typeparam name="R">Тип выходных данных для предсказания.</typeparam>
     public interface ISupervisedLearningEvaluator<T, R> : ILearningEvaluator

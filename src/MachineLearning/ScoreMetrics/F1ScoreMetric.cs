@@ -6,8 +6,10 @@ namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
     /// Класс метрики F1 оценки для модели обучения классификации.
-    /// Реализует <see cref="IClassificationScoreMetric"/>.
     /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IClassificationScoreMetric"/>.
+    /// </remarks>
     public class F1ScoreMetric : IClassificationScoreMetric
     {
         /// <inheritdoc />

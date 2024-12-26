@@ -1,15 +1,26 @@
 ﻿using MachineLearning.Interfaces;
+using MachineLearning.ScoreMetrics;
 
 namespace MachineLearning.LearningEvaluators
 {
     /// <summary>
     /// Класс оценки модели обучения кластеризации методом кросс-валидации.
+    /// </summary>
+    /// <remarks>
     /// Наследует <see cref="BaseUnsupervisedCrossValidationEvaluator{IEnumerable{double}, int}"/>.
     /// Реализует <see cref="IClusteringEvaluator"/>.
-    /// </summary>
+    /// </remarks>
     public class ClusteringCrossValidationEvaluator :
         BaseUnsupervisedCrossValidationEvaluator<IEnumerable<double>, int>, IClusteringEvaluator
     {
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="ClusteringCrossValidationEvaluator"/> по умолчанию.
+        /// </summary>
+        public ClusteringCrossValidationEvaluator()
+        {
+            ScoreMetric = new SilhouetteScoreMetric();
+        }
+
         /// <inheritdoc />
         protected override IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<IEnumerable<double>> data)

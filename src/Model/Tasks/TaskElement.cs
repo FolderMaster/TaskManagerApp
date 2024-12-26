@@ -6,9 +6,12 @@ using Model.Times;
 namespace Model.Tasks
 {
     /// <summary>
-    /// Класс элементарной задачи. Наследует <see cref="TrackableObject"/>.
-    /// Реализует <see cref="ITaskElement"/> и <see cref="ICloneable"/>.
+    /// Класс элементарной задачи.
     /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>.
+    /// Реализует <see cref="ITaskElement"/> и <see cref="ICloneable"/>.
+    /// </remarks>
     public class TaskElement : TrackableObject, ITaskElement, ICloneable
     {
         /// <summary>

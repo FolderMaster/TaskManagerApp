@@ -6,10 +6,24 @@ namespace MachineLearning.DataProcessors
 {
     /// <summary>
     /// Класс обработчика столбцов для устранения некорректных значений.
-    /// Реализует <see cref="IPointDataProcessor{double?}"/>.
     /// </summary>
-    public class InvalidValuesColumnProcessor : IPointDataProcessor<double?>
+    /// <remarks>
+    /// Реализует <see cref="IPrimaryPointDataProcessor"/>.
+    /// </remarks>
+    public class InvalidValuesColumnProcessor : IPrimaryPointDataProcessor
     {
+        /// <summary>
+        /// Значение для замены некорректных значений.
+        /// </summary>
+        private static double _replacementInvalidValue = -1;
+
+        /// <inheritdoc />
+        public DataProcessorResult<double> Process(IEnumerable<double?> data)
+        {
+            var result = data.Select(v => (double)(v != null ? v : _replacementInvalidValue));
+            return new DataProcessorResult<double>(result);
+        }
+
         /// <inheritdoc />
         public DataProcessorResult<IEnumerable<double>> Process
             (IEnumerable<IEnumerable<double?>> data)

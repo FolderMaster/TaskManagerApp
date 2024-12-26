@@ -1,15 +1,27 @@
 ﻿using MachineLearning.Interfaces;
+using MachineLearning.ScoreMetrics;
 
 namespace MachineLearning.LearningEvaluators
 {
     /// <summary>
     /// Класс оценки модели обучения классификации методом кросс-валидации.
+    /// </summary>
+    /// <remarks>
     /// Наследует <see cref="BaseSupervisedCrossValidationEvaluator{IEnumerable{double}, int}"/>.
     /// Реализует <see cref="IRegressionEvaluator"/>.
-    /// </summary>
+    /// </remarks>
     public class ClassificationCrossValidationEvaluator :
         BaseSupervisedCrossValidationEvaluator<IEnumerable<double>, int>, IClassificationEvaluator
     {
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="ClassificationCrossValidationEvaluator"/>
+        /// по умолчанию.
+        /// </summary>
+        public ClassificationCrossValidationEvaluator()
+        {
+            ScoreMetric = new F1ScoreMetric();
+        }
+
         /// <inheritdoc />
         protected override IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<IEnumerable<double>> data, IEnumerable<int> targets)
