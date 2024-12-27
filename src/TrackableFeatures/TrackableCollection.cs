@@ -17,7 +17,7 @@ namespace TrackableFeatures
         /// <summary>
         /// Список элементов.
         /// </summary>
-        protected readonly List<T> _items = new();
+        private readonly List<T> _items = new();
 
         /// <inheritdoc/>
         public event NotifyCollectionChangedEventHandler? CollectionChanged;

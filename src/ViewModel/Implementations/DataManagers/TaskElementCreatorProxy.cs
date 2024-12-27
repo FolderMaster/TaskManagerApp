@@ -144,7 +144,7 @@ namespace ViewModel.Implementations.DataManagers
             _deadlineLearningController = deadlineLearningController;
         }
 
-        protected void UpdatePredictedValues()
+        protected void UpdatePredictedValues<T>(T oldValue, T newValue)
         {
             if (IsValidPredictedDeadline)
             {

@@ -29,13 +29,13 @@ namespace ViewModel.Implementations.DataManagers.Editors
         public DateTime Start
         {
             get => _start;
-            set => UpdateProperty(ref _start, value, () => OnPropertyChanged(nameof(Start)));
+            set => UpdateProperty(ref _start, value, (s, e) => OnPropertyChanged(nameof(Start)));
         }
 
         public DateTime End
         {
             get => _end;
-            set => UpdateProperty(ref _end, value, () => OnPropertyChanged(nameof(End)));
+            set => UpdateProperty(ref _end, value, (s, e) => OnPropertyChanged(nameof(End)));
         }
 
         public TimeSpan Duration => End - Start;

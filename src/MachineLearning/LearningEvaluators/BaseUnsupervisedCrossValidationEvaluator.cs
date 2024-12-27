@@ -77,7 +77,7 @@ namespace MachineLearning.LearningEvaluators
             ScoreMetric.GetScoreCategory(scores.Average());
 
         /// <inheritdoc />
-        protected override void OnPropertyChanged()
+        protected override void OnPropertyChanged<T>(T oldValue, T newValue)
         {
             base.OnPropertyChanged();
             if (Model == null)

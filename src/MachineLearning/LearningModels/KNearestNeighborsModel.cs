@@ -69,7 +69,7 @@ namespace MachineLearning.LearningModels
         /// <summary>
         /// Вызывается при изменении свойства.
         /// </summary>
-        private void OnPropertyChanged()
+        private void OnPropertyChanged<T>(T oldValue, T newValue)
         {
             ClearAllErrors();
             if (NumberOfNeighbors <= 0)

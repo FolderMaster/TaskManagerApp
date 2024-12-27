@@ -34,7 +34,7 @@ namespace View.Implementations
             Themes = themes;
         }
 
-        private void SetTheme() =>
+        private void SetTheme<T>(T oldValue, T newValue) =>
             Application.Current.RequestedThemeVariant = (ThemeVariant)ActualTheme;
     }
 }

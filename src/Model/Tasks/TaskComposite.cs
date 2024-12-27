@@ -47,25 +47,27 @@ namespace Model.Tasks
         }
 
         /// <inheritdoc/>
-        public int Difficult => _items.Count > 0 ? _items.Max(x => x.Difficult) : 0;
+        public int Difficult => Count > 0 ? this.Max(x => x.Difficult) : 0;
 
         /// <inheritdoc/>
-        public int Priority => _items.Count > 0 ? _items.Max(y => y.Priority) : 0;
+        public int Priority => Count > 0 ? this.Max(y => y.Priority) : 0;
 
         /// <inheritdoc/>
-        public TaskStatus Status => _items.Count > 0 ? _items.Min(x => x.Status) : TaskStatus.Planned;
+        public TaskStatus Status => Count > 0 ? this.Min(x => x.Status) : TaskStatus.Planned;
 
         /// <inheritdoc/>
-        public DateTime? Deadline => _items.Count > 0 ? _items.Max(x => x.Deadline) : null;
+        public DateTime? Deadline => Count > 0 ? this.Max(x => x.Deadline) : null;
 
         /// <inheritdoc/>
-        public double Progress => _items.Count > 0 ? _items.Sum(i => i.Progress) / _items.Count : 0;
+        public double Progress => Count > 0 ? this.Sum(i => i.Progress) / this.Count : 0;
 
         /// <inheritdoc/>
-        public TimeSpan PlannedTime => _items.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.PlannedTime);
+        public TimeSpan PlannedTime => this.Aggregate(TimeSpan.Zero,
+            (sum, interval) => sum + interval.PlannedTime);
 
         /// <inheritdoc/>
-        public TimeSpan SpentTime => _items.Aggregate(TimeSpan.Zero, (sum, interval) => sum + interval.SpentTime);
+        public TimeSpan SpentTime => this.Aggregate(TimeSpan.Zero,
+            (sum, interval) => sum + interval.SpentTime);
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="TaskComposite"/>.

@@ -20,16 +20,7 @@ namespace MachineLearning.DataProcessors
             var index = 0;
             foreach (var row in dataArray)
             {
-                var isUnique = true;
-                foreach (var uniqueRow in uniqueRows)
-                {
-                    if (AreRowsEqual(row, uniqueRow))
-                    {
-                        isUnique = false;
-                        break;
-                    }
-                }
-                if (isUnique)
+                if (!uniqueRows.Any(r => AreRowsEqual(row, r)))
                 {
                     uniqueRows.Add(row);
                 }
@@ -43,6 +34,12 @@ namespace MachineLearning.DataProcessors
                 removedRowsIndices: removedRowsIndices);
         }
 
+        /// <summary>
+        /// Проверяет строки на равенство.
+        /// </summary>
+        /// <param name="row1">Первая строка.</param>
+        /// <param name="row2">Вторая строка.</param>
+        /// <returns>Возращает, если строки равны, <c>true</c>, иначе <c>false</c>.</returns>
         private bool AreRowsEqual(double[] row1, double[] row2)
         {
             var count = row1.Length;

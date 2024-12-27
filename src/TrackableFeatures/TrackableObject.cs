@@ -50,36 +50,15 @@ namespace TrackableFeatures
         /// Дополнительное действие, выполняемое при изменении свойства.
         /// </param>
         /// <param name="propertyName">Название свойства.</param>
-        protected void UpdateProperty<T>(ref T field, T newValue, Action? action = null,
+        protected void UpdateProperty<T>(ref T field, T newValue, Action<T, T>? action = null,
             [CallerMemberName] string propertyName = "")
         {
             if (field != null && !field.Equals(newValue) ||
                 newValue != null && !newValue.Equals(field))
             {
+                var oldValue = field;
                 field = newValue;
-                action?.Invoke();
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="getProperty"></param>
-        /// <param name="setProperty"></param>
-        /// <param name="newValue"></param>
-        /// <param name="action"></param>
-        /// <param name="propertyName"></param>
-        protected void UpdateProperty<T>(Func<T> getProperty, Action<T> setProperty, T newValue,
-            Action? action = null, [CallerMemberName] string propertyName = "")
-        {
-            var propertyValue = getProperty();
-            if (propertyValue != null && !propertyValue.Equals(newValue) ||
-                newValue != null && !newValue.Equals(propertyValue))
-            {
-                setProperty(newValue);
-                action?.Invoke();
+                action?.Invoke(oldValue, newValue);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
@@ -88,19 +67,21 @@ namespace TrackableFeatures
         /// Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.
         /// </summary>
         /// <typeparam name="T">Тип свойства.</typeparam>
-        /// <param name="field">Ссылка на поле свойства.</param>
+        /// <param name="getProperty">Функция для получения значения свойства.</param>
+        /// <param name="setProperty">Действие для установки значения свойства.</param>
         /// <param name="newValue">Новое значение свойства.</param>
-        /// <param name="action">Дополнительное действие с новым и старыми значениями,
-        /// выполняемое при изменении свойства. </param>
+        /// <param name="action">
+        /// Дополнительное действие, выполняемое при изменении свойства.
+        /// </param>
         /// <param name="propertyName">Название свойства.</param>
-        protected void UpdateProperty<T>(ref T field, T newValue, Action<T, T> action,
-            [CallerMemberName] string propertyName = "")
+        protected void UpdateProperty<T>(Func<T> getProperty, Action<T> setProperty, T newValue,
+            Action<T, T>? action = null, [CallerMemberName] string propertyName = "")
         {
-            if (field != null && !field.Equals(newValue) ||
-                newValue != null && !newValue.Equals(field))
+            var oldValue = getProperty();
+            if (oldValue != null && !oldValue.Equals(newValue) ||
+                newValue != null && !newValue.Equals(oldValue))
             {
-                var oldValue = field;
-                field = newValue;
+                setProperty(newValue);
                 action?.Invoke(oldValue, newValue);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
@@ -133,7 +114,7 @@ namespace TrackableFeatures
         /// Очищает все ошибки для свойства.
         /// </summary>
         /// <param name="propertyName">Название свойства.</param>
-        public void ClearErrors([CallerMemberName] string propertyName = "")
+        protected void ClearErrors([CallerMemberName] string propertyName = "")
         {
             if (_errors.Remove(propertyName))
             {
@@ -148,7 +129,7 @@ namespace TrackableFeatures
         /// <summary>
         /// Очищает все ошибки для всех свойств.
         /// </summary>
-        public void ClearAllErrors()
+        protected void ClearAllErrors()
         {
             if (_errors.Any())
             {

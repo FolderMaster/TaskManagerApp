@@ -38,7 +38,7 @@ namespace MachineLearning.LearningEvaluators
         /// <summary>
         /// Вызывается при изменении свойства.
         /// </summary>
-        protected virtual void OnPropertyChanged()
+        protected virtual void OnPropertyChanged<T>(T oldValue, T newValue)
         {
             ClearAllErrors();
             if (NumberOfFolds <= 1)

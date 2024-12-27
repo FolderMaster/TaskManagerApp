@@ -42,7 +42,7 @@ namespace View.Implementations
                 Localizations.First();
         }
 
-        private void SetLocalization()
+        private void SetLocalization(CultureInfo oldValue, CultureInfo newValue)
         {
             CultureInfo.CurrentCulture = ActualLocalization;
             var app = Application.Current;

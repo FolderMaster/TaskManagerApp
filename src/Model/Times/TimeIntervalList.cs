@@ -16,7 +16,7 @@ namespace Model.Times
     public class TimeIntervalList : TrackableCollection<ITimeIntervalElement>, ITimeIntervalList
     {
         /// <inheritdoc/>
-        public TimeSpan Duration => _items.Aggregate(TimeSpan.Zero, (s, i) => s + i.Duration);
+        public TimeSpan Duration => this.Aggregate(TimeSpan.Zero, (s, i) => s + i.Duration);
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="TimeIntervalList"/>.
