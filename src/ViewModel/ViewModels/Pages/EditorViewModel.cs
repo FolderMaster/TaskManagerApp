@@ -85,17 +85,25 @@ namespace ViewModel.ViewModels.Pages
             this.WhenAnyValue(x => x._session.Tasks).Subscribe(t => TaskListView = t);
 
             _canExecuteGoToPrevious = this.WhenAnyValue(x => x.TaskListView).
-                Select(i => TaskListView is ITask);
+                Select(i => TaskListView is ITask).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
             _canExecuteGo = this.WhenAnyValue(x => x.SelectedTasks.Count).
-                Select(i => i == 1 && SelectedTasks.First() is ITaskComposite);
-            _canExecuteRemove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
+                Select(i => i == 1 && SelectedTasks.First() is ITaskComposite).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
+            _canExecuteRemove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
             _canExecuteAdd = this.WhenAnyValue(x => x.SelectedTasks.Count).
-                Select(i => i == 0 || (i == 1 && SelectedTasks.First() is ITaskComposite));
-            _canExecuteEdit = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 1);
-            _canExecuteCopy = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
-            _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0);
+                Select(i => i == 0 || (i == 1 && SelectedTasks.First() is ITaskComposite)).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
+            _canExecuteEdit = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 1).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
+            _canExecuteCopy = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
+            _canExecuteMove = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i > 0).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
             _canExecuteSwap = this.WhenAnyValue(x => x.SelectedTasks.Count).Select(i => i == 2 &&
-                SelectedTasks.First().ParentTask == SelectedTasks.Last().ParentTask);
+                SelectedTasks.First().ParentTask == SelectedTasks.Last().ParentTask).
+                CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
 
             Metadata = resourceService.GetResource("EditorPageMetadata");
         }

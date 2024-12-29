@@ -14,6 +14,8 @@ namespace ViewModel.ViewModels.Pages
     {
         private ISession _session;
 
+        private IResourceService _resourceService;
+
         [Reactive]
         private IEnumerable<TimeSpan> _times =
         [
@@ -50,11 +52,12 @@ namespace ViewModel.ViewModels.Pages
         public StatisticViewModel(ISession session, IResourceService resourceService)
         {
             _session = session;
+            _resourceService = resourceService;
 
             this.WhenAnyValue(x => x.Times).Subscribe(s => SelectedTime = s?.FirstOrDefault());
             this.WhenAnyValue(x => x.SelectedTime).Subscribe(t => UpdateExpiredTasksStatistics());
 
-            Metadata = resourceService.GetResource("StatisticPageMetadata");
+            Metadata = _resourceService.GetResource("StatisticPageMetadata");
             _session.ItemsUpdated += Session_ItemsUpdated;
         }
 
@@ -75,6 +78,9 @@ namespace ViewModel.ViewModels.Pages
             var tasks = TaskHelper.GetTaskElements(_session.Tasks);
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
+            var difficultDiagramContent = _resourceService.GetResource("DifficultDiagramContent");
+            var priorityDiagramContent = _resourceService.GetResource("PriorityDiagramContent");
+
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
                 GroupBy(t => ((Metadata)t.Metadata).Category).
                 Select(g => new StatisticElement(g.Count(), $"{g.Key}"));
@@ -83,9 +89,9 @@ namespace ViewModel.ViewModels.Pages
                 new { Task = task, Tag = tag }).GroupBy(e => e.Tag).
                 Select(g => new StatisticElement(g.Count(), $"{g.Key}"));
             UncompletedTasksCountByPriorityStatistic = uncompletedTasks.GroupBy(t => t.Priority).
-                Select(g => new StatisticElement(g.Count(), $"Priority {g.Key}"));
+                Select(g => new StatisticElement(g.Count(), $"{priorityDiagramContent} {g.Key}"));
             UncompletedTasksCountByDifficultStatistic = uncompletedTasks.GroupBy(t => t.Difficult).
-                Select(g => new StatisticElement(g.Count(), $"Difficult {g.Key}"));
+                Select(g => new StatisticElement(g.Count(), $"{difficultDiagramContent} {g.Key}"));
         }
 
         private void UpdateExpiredTasksStatistics()
@@ -104,11 +110,15 @@ namespace ViewModel.ViewModels.Pages
             var spentTime = tasks.Aggregate(TimeSpan.Zero,
                 (sum, interval) => sum + interval.SpentTime).Hours;
 
+            var countDiagramContent = _resourceService.GetResource("CountDiagramContent");
+            var plannedTimeDiagramContent = _resourceService.GetResource("PlannedTimeDiagramContent");
+            var spentTimeDiagramContent = _resourceService.GetResource("SpentTimeDiagramContent");
+
             ExpiredTasksStatistic =
             [
-                new StatisticElement(count, "Count"),
-                new StatisticElement(plannedTime, "PlannedTime"),
-                new StatisticElement(spentTime, "SpentTime")
+                new StatisticElement(count, countDiagramContent?.ToString()),
+                new StatisticElement(plannedTime, plannedTimeDiagramContent?.ToString()),
+                new StatisticElement(spentTime, spentTimeDiagramContent?.ToString())
             ];
         }
 
@@ -126,10 +136,13 @@ namespace ViewModel.ViewModels.Pages
             var spentTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
                 (sum, interval) => sum + interval.SpentTime).Hours;
 
+            var plannedTimeDiagramContent = _resourceService.GetResource("PlannedTimeDiagramContent");
+            var spentTimeDiagramContent = _resourceService.GetResource("SpentTimeDiagramContent");
+
             TasksTimeStatistic =
             [
-                new StatisticElement(plannedTime, "PlannedTime"),
-                new StatisticElement(spentTime, "SpentTime")
+                new StatisticElement(plannedTime, plannedTimeDiagramContent.ToString()),
+                new StatisticElement(spentTime, spentTimeDiagramContent.ToString())
             ];
         }
 

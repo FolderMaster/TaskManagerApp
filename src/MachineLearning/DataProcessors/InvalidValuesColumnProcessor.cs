@@ -20,7 +20,8 @@ namespace MachineLearning.DataProcessors
         /// <inheritdoc />
         public DataProcessorResult<double> Process(IEnumerable<double?> data)
         {
-            var result = data.Select(v => (double)(v != null ? v : _replacementInvalidValue));
+            var result = data.Select(v =>
+                (double)(IsInvalidValue(v) ? v : _replacementInvalidValue));
             return new DataProcessorResult<double>(result);
         }
 
@@ -68,6 +69,6 @@ namespace MachineLearning.DataProcessors
         /// <param name="column">Столбец.</param>
         /// <returns>Возвращает значение для замещения.</returns>
         protected virtual double CalculateReplacementValue(IEnumerable<double> column) =>
-            column.Average();
+            column.Count() > 0 ? column.Average() : _replacementInvalidValue;
     }
 }

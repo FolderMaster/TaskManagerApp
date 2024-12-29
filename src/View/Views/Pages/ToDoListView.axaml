@@ -9,8 +9,37 @@
              x:Class="View.Views.Pages.ToDoListView"
 			 x:DataType="vm:ToDoListViewModel">
 	<Grid RowDefinitions="Auto, *">
-		<WrapPanel Grid.Row="0">
-		</WrapPanel>
+		<Expander Grid.Row="0" HorizontalAlignment="Stretch"
+				  Header="{DynamicResource DataViewSettingsExpanderHeader}">
+			<UniformGrid Columns="2">
+				<Border Grid.Column="0" BorderThickness="1" CornerRadius="5" Margin="5"
+						Padding="5" BorderBrush="{DynamicResource SystemChromeHighColor}">
+					<StackPanel>
+						<Label Content="{DynamicResource FilterLabelContent}"/>
+						<CheckBox IsChecked="{Binding IsExpiredFilter}"
+								  Content="{DynamicResource ExpiredCheckBoxContent}"/>
+						<CheckBox IsChecked="{Binding IsLaggingFilter}"
+								  Content="{DynamicResource LaggingCheckBoxContent}"/>
+					</StackPanel>
+				</Border>
+				<Border Grid.Column="1" BorderThickness="1" CornerRadius="5" Margin="5"
+						Padding="5" BorderBrush="{DynamicResource SystemChromeHighColor}">
+					<StackPanel>
+						<Label Content="{DynamicResource SortLabelContent}"/>
+						<CheckBox IsChecked="{Binding IsExecutionChanceSort}"
+								  Content="{DynamicResource ExecutionChanceCheckBoxContent}"/>
+						<CheckBox IsChecked="{Binding IsRealSort}"
+								  Content="{DynamicResource RealCheckBoxContent}"/>
+						<CheckBox IsChecked="{Binding IsTimeSort}"
+								  Content="{DynamicResource TimeCheckBoxContent}"/>
+						<CheckBox IsChecked="{Binding IsDifficultSort}"
+								  Content="{DynamicResource DifficultCheckBoxContent}"/>
+						<CheckBox IsChecked="{Binding IsPrioritySort}"
+								  Content="{DynamicResource PriorityCheckBoxContent}"/>
+					</StackPanel>
+				</Border>
+			</UniformGrid>
+		</Expander>
 		<ListBox Grid.Row="1" ItemsSource="{Binding ToDoList}"
 				 ItemTemplate="{StaticResource ToDoListElementTemplate}"/>
 	</Grid>

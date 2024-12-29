@@ -15,6 +15,7 @@ using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Interfaces.DataManagers;
 using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.ModelLearning;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels;
@@ -29,7 +30,6 @@ using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Settings;
 using ViewModel.Implementations.ModelLearning.Converters;
 using ViewModel.Implementations.ModelLearning;
-using ViewModel.Interfaces.ModelLearning;
 
 namespace ViewModel.Technicals
 {
@@ -54,6 +54,11 @@ namespace ViewModel.Technicals
         public static ContainerBuilder GetContainerBuilder()
         {
             var result = new ContainerBuilder();
+
+            result.RegisterType<MetadataCategoriesTransformer>().
+                As<IDataTransformer<Metadata, int?>>();
+            result.RegisterType<MetadataTagsTransformer>().
+                As<IDataTransformer<Metadata, IEnumerable<int>>>();
 
             result.RegisterType<InvalidValuesColumnProcessor>().
                 As<IPrimaryPointDataProcessor>().SingleInstance();
@@ -95,7 +100,7 @@ namespace ViewModel.Technicals
             result.RegisterType<DeadlineTaskElementLearningConverter>().SingleInstance();
             result.RegisterType<PlannedRealTaskElementLearningConverter>().SingleInstance();
             result.RegisterType<PlannedTimeTaskElementLearningConverter>().SingleInstance();
-            result.RegisterType<ProgressTaskElementLearningConverter>().SingleInstance();
+            result.RegisterType<ExecutionChanceTaskElementLearningConverter>().SingleInstance();
 
             result.RegisterType<DeadlineTaskElementEvaluatorLearningController>().
                 As<DeadlineTaskElementEvaluatorLearningController>().
@@ -106,8 +111,8 @@ namespace ViewModel.Technicals
             result.RegisterType<PlannedTimeTaskElementEvaluatorLearningController>().
                 As<PlannedTimeTaskElementEvaluatorLearningController>().
                 As<IModelTeacher<ITaskElement>>().SingleInstance();
-            result.RegisterType<ProgressTaskElementEvaluatorLearningController>().
-                As<ProgressTaskElementEvaluatorLearningController>().
+            result.RegisterType<ExecutionChanceTaskElementEvaluatorLearningController>().
+                As<ExecutionChanceTaskElementEvaluatorLearningController>().
                 As<IModelTeacher<ITaskElement>>().SingleInstance();
 
             result.RegisterType<FileService>().As<IFileService>().SingleInstance();
@@ -136,21 +141,21 @@ namespace ViewModel.Technicals
             result.RegisterType<TimeIntervalElementsEditorProxy>().
                 As<ITimeIntervalElementsEditorProxy>().SingleInstance();
 
-            result.RegisterType<AddTimeIntervalViewModel>().
+            result.RegisterType<AddTimeIntervalViewModel>().As<AddTimeIntervalViewModel>().
                 As<DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
                 SingleInstance();
-            result.RegisterType<EditTimeIntervalViewModel>().
+            result.RegisterType<EditTimeIntervalViewModel>().As<EditTimeIntervalViewModel>().
                 As<DialogViewModel<ITimeIntervalElement, bool>>().SingleInstance();
-            result.RegisterType<AddTaskViewModel>().
+            result.RegisterType<AddTaskViewModel>().As<AddTaskViewModel>().
                 As<DialogViewModel<ITask, bool>>().SingleInstance();
-            result.RegisterType<RemoveTasksViewModel>().
+            result.RegisterType<RemoveTasksViewModel>().As<RemoveTasksViewModel>().
                 As<DialogViewModel<IList<ITask>, bool>>().SingleInstance();
-            result.RegisterType<MoveTasksViewModel>().
+            result.RegisterType<MoveTasksViewModel>().As<MoveTasksViewModel>().
                 As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().
                 SingleInstance();
-            result.RegisterType<EditTaskViewModel>().
+            result.RegisterType<EditTaskViewModel>().As<EditTaskViewModel>().
                 As<DialogViewModel<object, bool>>().SingleInstance();
-            result.RegisterType<CopyTasksViewModel>().
+            result.RegisterType<CopyTasksViewModel>().As<CopyTasksViewModel>().
                 As<DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>>().
                 SingleInstance();
 

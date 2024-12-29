@@ -56,7 +56,7 @@ namespace MachineLearning.Converters
             var featuresList = ExtractFeatures(data).ToList();
             foreach (var index in _removedColumnsIndices.OrderDescending())
             {
-                featuresList.Remove(index);
+                featuresList.RemoveAt(index);
             }
             var featuresProcessorResult = _primaryPointDataProcessor.Process(featuresList).Result;
             var featuresScalersResult = featuresProcessorResult.

@@ -3,6 +3,8 @@
 using Model.Interfaces;
 
 using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.ModelLearning;
+using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.ModelLearning.Converters
 {
@@ -12,26 +14,21 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         public DeadlineTaskElementLearningConverter
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors,
-            IFactory<IScaler> scalerFactory) :
-            base(primaryPointDataProcessor, pointDataProcessors, scalerFactory) { }
+            IFactory<IScaler> scalerFactory,
+            IDataTransformer<Metadata, int?> metadataCategoriesTransformer,
+            IDataTransformer<Metadata, IEnumerable<int>> metadataTagsITransformer) :
+            base(primaryPointDataProcessor, pointDataProcessors, scalerFactory,
+                metadataCategoriesTransformer, metadataTagsITransformer) { }
 
         public override DateTime? ConvertPredicted(double predicted) =>
             predicted > 0 ? new DateTime((long)predicted) : null;
 
-        protected override IEnumerable<double?> ExtractFeatures(ITaskElement dataItem) =>
-            new double?[]
+        protected override List<double?> ExtractPrimaryFeatures(ITaskElement dataItem) =>
+            new List<double?>()
             {
                 dataItem.Priority,
                 dataItem.Difficult
             };
-
-        protected override IEnumerable<IEnumerable<double?>> ProcessFeatures(IEnumerable<ITaskElement> data)
-        {
-            foreach (var dataItem in data)
-            {
-                yield return ExtractFeatures(dataItem);
-            }
-        }
 
         protected override double ProcessTarget(ITaskElement item) =>
             item.Deadline != null ? item.Deadline.Value.Ticks : -1;

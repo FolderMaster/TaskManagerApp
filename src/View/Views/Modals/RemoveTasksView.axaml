@@ -2,17 +2,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:ViewModel.ViewModels.Modals;assembly=ViewModel"
+			 xmlns:e="clr-namespace:View.Extensions"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:vm="clr-namespace:ViewModel.ViewModels.Modals;assembly=ViewModel"
+			 Design.DataContext="{e:Design {x:Type vm:RemoveTasksViewModel}}"
              x:Class="View.Views.Modals.RemoveTasksView"
 			 x:DataType="vm:RemoveTasksViewModel">
-    <Design.DataContext>
-		<vm:RemoveTasksViewModel />
-	</Design.DataContext>
-	<Grid RowDefinitions="*, Auto">
-		<ItemsControl ItemsSource="{Binding Items}"
+	<Grid RowDefinitions="Auto, *, Auto">
+		<Label Grid.Row="0" Content="{DynamicResource RemovingTasksLabelContent}"/>
+		<ItemsControl Grid.Row="1" ItemsSource="{Binding Items}"
 					  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
-		<WrapPanel Grid.Row="1">
+		<WrapPanel Grid.Row="2">
 			<Button Content="{DynamicResource OkButtonContent}"
 					Command="{Binding OkCommand}"/>
 			<Button Content="{DynamicResource CancelButtonContent}"

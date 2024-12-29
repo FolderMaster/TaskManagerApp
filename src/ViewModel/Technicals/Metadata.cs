@@ -40,6 +40,7 @@ namespace ViewModel.Technicals
         {
             Title = Title,
             Description = Description,
+            Category = Category,
             Tags = Tags.ToList()
         };
 

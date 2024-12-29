@@ -13,13 +13,16 @@ namespace ViewModel.Implementations.DataManagers
     {
         private readonly ITaskElement _taskElement;
 
-        private readonly PlannedRealTaskElementEvaluatorLearningController
+        private readonly BaseSupervisedEvaluatorLearningController
+            <IEnumerable<double>, double, ITaskElement, ITaskElement, double>
             _plannedRealLearningController;
 
-        private readonly PlannedTimeTaskElementEvaluatorLearningController
+        private readonly BaseSupervisedEvaluatorLearningController
+            <IEnumerable<double>, double, ITaskElement, ITaskElement, TimeSpan>
             _plannedTimeLearningController;
 
-        private readonly DeadlineTaskElementEvaluatorLearningController
+        private readonly BaseSupervisedEvaluatorLearningController
+            <IEnumerable<double>, double, ITaskElement, ITaskElement, DateTime?>
             _deadlineLearningController;
 
         private DateTime? _predictedDeadline;
@@ -134,9 +137,15 @@ namespace ViewModel.Implementations.DataManagers
         public bool IsValidPredictedPlannedReal => _plannedRealLearningController.IsValidModel;
 
         public TaskElementCreatorProxy(ITaskElement taskElement,
-            PlannedRealTaskElementEvaluatorLearningController plannedRealLearningController,
-            PlannedTimeTaskElementEvaluatorLearningController plannedTimeLearningController,
-            DeadlineTaskElementEvaluatorLearningController deadlineLearningController)
+            BaseSupervisedEvaluatorLearningController
+            <IEnumerable<double>, double, ITaskElement, ITaskElement, double>
+            plannedRealLearningController,
+            BaseSupervisedEvaluatorLearningController
+            <IEnumerable<double>, double, ITaskElement, ITaskElement, TimeSpan>
+            plannedTimeLearningController,
+            BaseSupervisedEvaluatorLearningController
+            <IEnumerable<double>, double, ITaskElement, ITaskElement, DateTime?>
+            deadlineLearningController)
         {
             _taskElement = taskElement;
             _plannedRealLearningController = plannedRealLearningController;

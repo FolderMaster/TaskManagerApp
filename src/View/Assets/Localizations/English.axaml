@@ -6,13 +6,13 @@
 	<sys:String x:Key="OkButtonContent">OK</sys:String>
 	<sys:String x:Key="CancelButtonContent">Cancel</sys:String>
 
-	<sys:String x:Key="RemoveButtonContent">Remove</sys:String>
+	<sys:String x:Key="RemoveTaskButtonContent">Remove</sys:String>
 	<sys:String x:Key="AddTaskElementButtonContent">Add task element</sys:String>
 	<sys:String x:Key="AddTaskCompositeButtonContent">Add task composite</sys:String>
-	<sys:String x:Key="EditButtonContent">Edit</sys:String>
-	<sys:String x:Key="CopyButtonContent">Copy</sys:String>
-	<sys:String x:Key="MoveButtonContent">Move</sys:String>
-	<sys:String x:Key="SwapButtonContent">Swap</sys:String>
+	<sys:String x:Key="EditTaskButtonContent">Edit</sys:String>
+	<sys:String x:Key="CopyTaskButtonContent">Copy</sys:String>
+	<sys:String x:Key="MoveTaskButtonContent">Move</sys:String>
+	<sys:String x:Key="SwapTaskButtonContent">Swap</sys:String>
 	<sys:String x:Key="GoButtonContent">Go</sys:String>
 	<sys:String x:Key="GoToPreviousButtonContent">&lt;&#45;</sys:String>
 
@@ -50,6 +50,34 @@
 	
 	<sys:String x:Key="TimeSchedulerNotificationTitle">Time!</sys:String>
 	<sys:String x:Key="TimeSchedulerNotificationContent">Time reached for:</sys:String>
-
+	
 	<sys:String x:Key="CountLabelContent">Count</sys:String>
+	
+	<sys:String x:Key="ValuesExpanderHeader">Values</sys:String>
+
+	<sys:String x:Key="RemovingTasksLabelContent">Removing tasks:</sys:String>
+
+	<sys:String x:Key="PrioritiesDiagramLabelContent">Priorities' diagram</sys:String>
+	<sys:String x:Key="DifficultiesDiagramLabelContent">Difficulties' diagram</sys:String>
+	<sys:String x:Key="CategoriesDiagramLabelContent">Categories' diagram</sys:String>
+	<sys:String x:Key="TagsDiagramLabelContent">Tags' diagram</sys:String>
+	<sys:String x:Key="DifficultDiagramContent">Difficult</sys:String>
+	<sys:String x:Key="PriorityDiagramContent">Priority</sys:String>
+	<sys:String x:Key="CountDiagramContent">Count</sys:String>
+	<sys:String x:Key="PlannedTimeDiagramContent">Planned time</sys:String>
+	<sys:String x:Key="SpentTimeDiagramContent">Spent time</sys:String>
+	<sys:String x:Key="SelectedTimeLabelContent">Selected time</sys:String>
+
+	<sys:String x:Key="DataViewSettingsExpanderHeader">Data view settings</sys:String>
+	<sys:String x:Key="LaggingTextBlockText">Lagging</sys:String>
+	<sys:String x:Key="ExpiredTextBlockText">Expired</sys:String>
+	<sys:String x:Key="FilterLabelContent">Filter</sys:String>
+	<sys:String x:Key="LaggingCheckBoxContent">Lagging</sys:String>
+	<sys:String x:Key="ExpiredCheckBoxContent">Expired</sys:String>
+	<sys:String x:Key="SortLabelContent">Sort</sys:String>
+	<sys:String x:Key="DifficultCheckBoxContent">Difficult</sys:String>
+	<sys:String x:Key="PriorityCheckBoxContent">Priority</sys:String>
+	<sys:String x:Key="TimeCheckBoxContent">Time</sys:String>
+	<sys:String x:Key="ExecutionChanceCheckBoxContent">Execution chance</sys:String>
+	<sys:String x:Key="RealCheckBoxContent">Real</sys:String>
 </ResourceDictionary>

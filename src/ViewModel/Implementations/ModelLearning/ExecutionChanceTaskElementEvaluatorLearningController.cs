@@ -6,12 +6,12 @@ using ViewModel.Implementations.ModelLearning.Converters;
 
 namespace ViewModel.Implementations.ModelLearning
 {
-    public class ProgressTaskElementEvaluatorLearningController :
+    public class ExecutionChanceTaskElementEvaluatorLearningController :
         BaseSupervisedEvaluatorLearningController
         <IEnumerable<double>, double, ITaskElement, ITaskElement, double>
     {
-        public ProgressTaskElementEvaluatorLearningController
-            (ProgressTaskElementLearningConverter converter,
+        public ExecutionChanceTaskElementEvaluatorLearningController
+            (ExecutionChanceTaskElementLearningConverter converter,
             IRegressionModel model, IRegressionEvaluator evaluator) :
             base(converter, model, evaluator) { }
     }

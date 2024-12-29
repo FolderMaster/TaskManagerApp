@@ -6,13 +6,13 @@
 	<sys:String x:Key="OkButtonContent">OK</sys:String>
 	<sys:String x:Key="CancelButtonContent">Отмена</sys:String>
 
-	<sys:String x:Key="RemoveButtonContent">Удалить</sys:String>
+	<sys:String x:Key="RemoveTaskButtonContent">Удалить</sys:String>
 	<sys:String x:Key="AddTaskElementButtonContent">Добавить элемент задачи</sys:String>
 	<sys:String x:Key="AddTaskCompositeButtonContent">Добавить коллекцию задачи</sys:String>
-	<sys:String x:Key="EditButtonContent">Изменить</sys:String>
-	<sys:String x:Key="CopyButtonContent">Копировать</sys:String>
-	<sys:String x:Key="MoveButtonContent">Переместить</sys:String>
-	<sys:String x:Key="SwapButtonContent">Сменить</sys:String>
+	<sys:String x:Key="EditTaskButtonContent">Изменить</sys:String>
+	<sys:String x:Key="CopyTaskButtonContent">Копировать</sys:String>
+	<sys:String x:Key="MoveTaskButtonContent">Переместить</sys:String>
+	<sys:String x:Key="SwapTaskButtonContent">Сменить</sys:String>
 	<sys:String x:Key="GoButtonContent">Перейти</sys:String>
 	<sys:String x:Key="GoToPreviousButtonContent">&lt;&#45;</sys:String>
 
@@ -53,4 +53,32 @@
 	<sys:String x:Key="TimeSchedulerNotificationContent">Время наступило для:</sys:String>
 
 	<sys:String x:Key="CountLabelContent">Количество</sys:String>
+
+	<sys:String x:Key="ValuesExpanderHeader">Значения</sys:String>
+
+	<sys:String x:Key="RemovingTasksLabelContent">Задачи для удаления:</sys:String>
+
+	<sys:String x:Key="PrioritiesDiagramLabelContent">Диаграмма приоритетов</sys:String>
+	<sys:String x:Key="DifficultiesDiagramLabelContent">Диаграмма сложностей</sys:String>
+	<sys:String x:Key="CategoriesDiagramLabelContent">Диаграмма категорий</sys:String>
+	<sys:String x:Key="TagsDiagramLabelContent">Диаграмма тегов</sys:String>
+	<sys:String x:Key="DifficultDiagramContent">Сложность</sys:String>
+	<sys:String x:Key="PriorityDiagramContent">Приоритет</sys:String>
+	<sys:String x:Key="CountDiagramContent">Количество</sys:String>
+	<sys:String x:Key="PlannedTimeDiagramContent">Запланнированное время</sys:String>
+	<sys:String x:Key="SpentTimeDiagramContent">Затраченное время</sys:String>
+	<sys:String x:Key="SelectedTimeLabelContent">Выбранное время</sys:String>
+
+	<sys:String x:Key="DataViewSettingsExpanderHeader">Настройки отображения данных</sys:String>
+	<sys:String x:Key="LaggingTextBlockText">Опаздывает</sys:String>
+	<sys:String x:Key="ExpiredTextBlockText">Просрочена</sys:String>
+	<sys:String x:Key="FilterLabelContent">Фильтр</sys:String>
+	<sys:String x:Key="LaggingCheckBoxContent">Опаздывает</sys:String>
+	<sys:String x:Key="ExpiredCheckBoxContent">Просрочена</sys:String>
+	<sys:String x:Key="SortLabelContent">Сортировка</sys:String>
+	<sys:String x:Key="DifficultCheckBoxContent">Сложность</sys:String>
+	<sys:String x:Key="PriorityCheckBoxContent">Приоритет</sys:String>
+	<sys:String x:Key="TimeCheckBoxContent">Время</sys:String>
+	<sys:String x:Key="ExecutionChanceCheckBoxContent">Шанс выполнения</sys:String>
+	<sys:String x:Key="RealCheckBoxContent">Реальный показатель</sys:String>
 </ResourceDictionary>

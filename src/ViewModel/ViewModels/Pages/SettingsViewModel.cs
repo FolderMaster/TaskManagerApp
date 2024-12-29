@@ -18,8 +18,7 @@ namespace ViewModel.ViewModels.Pages
             _settings = settings;
             Configuration = _settings.Configuration;
 
-            this.WhenAnyValue(x => x._settings.Configuration).Subscribe
-                (c => Configuration = c);
+            this.WhenAnyValue(x => x._settings.Configuration).Subscribe(c => Configuration = c);
 
             Metadata = resourceService.GetResource("SettingsPageMetadata");
         }

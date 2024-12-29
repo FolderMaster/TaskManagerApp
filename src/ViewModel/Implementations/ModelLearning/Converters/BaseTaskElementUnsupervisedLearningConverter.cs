@@ -4,6 +4,8 @@ using MachineLearning.Interfaces;
 using Model.Interfaces;
 
 using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.ModelLearning;
+using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.ModelLearning.Converters
 {
@@ -12,13 +14,21 @@ namespace ViewModel.Implementations.ModelLearning.Converters
     {
         protected readonly IFactory<IScaler> _scalerFactory;
 
+        protected readonly IDataTransformer<Metadata, int?> _metadataCategoriesTransformer;
+
+        protected readonly IDataTransformer<Metadata, IEnumerable<int>> _metadataTagsITransformer;
+
         protected BaseTaskElementUnsupervisedLearningConverter
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors,
-            IFactory<IScaler> scalerFactory) :
+            IFactory<IScaler> scalerFactory,
+            IDataTransformer<Metadata, int?> metadataCategoriesTransformer,
+            IDataTransformer<Metadata, IEnumerable<int>> metadataTagsITransformer) :
             base(primaryPointDataProcessor, pointDataProcessors)
         {
             _scalerFactory = scalerFactory;
+            _metadataCategoriesTransformer = metadataCategoriesTransformer;
+            _metadataTagsITransformer = metadataTagsITransformer;
         }
 
         protected override IScaler CreateScaler

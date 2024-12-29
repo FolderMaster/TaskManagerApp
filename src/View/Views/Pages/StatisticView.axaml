@@ -12,26 +12,42 @@
 	<TabControl>
 		<TabItem Header="{DynamicResource CountTabItemHeader}">
 			<UniformGrid Rows="2" Columns="2">
-				<lc:PieChart Grid.Row="0" Grid.Column="0" Series="{Binding UncompletedTasksCountByCategoryStatistic,
-							 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
-				<lc:PieChart Grid.Row="0" Grid.Column="1" Series="{Binding UncompletedTasksCountByPriorityStatistic,
-							 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
-				<lc:PieChart Grid.Row="1" Grid.Column="0" Series="{Binding UncompletedTasksCountByDifficultStatistic,
-							 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
-				<lc:CartesianChart Grid.Row="1" Grid.Column="1" Series="{Binding UncompletedTasksCountByTagsStatistic,
-								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
+				<Grid Grid.Column="0" Grid.Row="0" RowDefinitions="Auto, *">
+					<Label Grid.Row="0" Content="{DynamicResource CategoriesDiagramLabelContent}"/>
+					<lc:PieChart Grid.Row="1" Series="{Binding UncompletedTasksCountByCategoryStatistic,
+								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
+				</Grid>
+				<Grid Grid.Row="0" Grid.Column="1" RowDefinitions="Auto, *">
+					<Label Grid.Row="0" Content="{DynamicResource PrioritiesDiagramLabelContent}"/>
+					<lc:PieChart Grid.Row="1" Series="{Binding UncompletedTasksCountByPriorityStatistic,
+								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
+				</Grid>
+				<Grid Grid.Column="1" Grid.Row="0" RowDefinitions="Auto, *">
+					<Label Grid.Row="0" Content="{DynamicResource DifficultiesDiagramLabelContent}"/>
+					<lc:PieChart Grid.Row="1" Series="{Binding UncompletedTasksCountByDifficultStatistic,
+								 Converter={StaticResource StatisticElementsToPieSeriesConverter}}"/>
+				</Grid>
+				<Grid Grid.Column="1" Grid.Row="1" RowDefinitions="Auto, *">
+					<Label Grid.Row="0" Content="{DynamicResource TagsDiagramLabelContent}"/>
+					<lc:CartesianChart Grid.Row="1" Series="{Binding UncompletedTasksCountByTagsStatistic,
+									   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
+				</Grid>
 			</UniformGrid>
 		</TabItem>
 		<TabItem Header="{DynamicResource ExpiredTasksTabItemHeader}">
 			<Grid RowDefinitions="Auto, *">
-				<ComboBox Grid.Row="0" ItemsSource="{Binding Times}" SelectedItem="{Binding SelectedTime}"/>
+				<StackPanel Grid.Row="0">
+					<Label Content="{DynamicResource SelectedTimeLabelContent}"/>
+					<ComboBox ItemsSource="{Binding Times}"
+							  SelectedItem="{Binding SelectedTime}"/>
+				</StackPanel>
 				<lc:CartesianChart Grid.Row="1" Series="{Binding ExpiredTasksStatistic,
-									   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
+								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
 			</Grid>
 		</TabItem>
 		<TabItem Header="{DynamicResource TimeTabItemHeader}">
 			<lc:CartesianChart Series="{Binding TasksTimeStatistic,
-								   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
+							   Converter={StaticResource StatisticElementsToColumnSeriesConverter}}"/>
 		</TabItem>
 	</TabControl>
 </UserControl>

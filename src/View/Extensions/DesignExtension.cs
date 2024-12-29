@@ -2,8 +2,9 @@
 using Avalonia.Markup.Xaml;
 using System;
 
-using View.Technilcals;
 using ViewModel.ViewModels;
+
+using View.Technilcals;
 
 namespace View.Extensions
 {

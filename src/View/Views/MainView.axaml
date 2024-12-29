@@ -12,31 +12,31 @@
              x:Class="View.Views.MainView"
              x:DataType="vm:MainViewModel"
 			 Name="mainView">
-	<Grid>
-		<Grid RowDefinitions="*, Auto">
-			<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
-					   IsPaneOpen="{Binding #mainView.IsPaneOpen}">
-				<SplitView.Pane>
-					<StackPanel>
-						<Button Click="Button_Click"
-								HorizontalAlignment="Stretch"
-								HorizontalContentAlignment="Left">
-							<PathIcon Data="{StaticResource MenuPageIcon}"
-									  Width="20" Height="20" Margin="5"/>
-						</Button>
-						<ListBox ItemsSource="{Binding Pages}"
-								 SelectedItem="{Binding SelectedPage}"
-								 ItemTemplate="{StaticResource PageTemplate}">
-							<ListBox.Styles>
-								<Style Selector="ListBoxItem">
-									<Setter Property="Margin" Value="0"/>
-								</Style>
-							</ListBox.Styles>
-						</ListBox>
-					</StackPanel>
-				</SplitView.Pane>
+	<Grid RowDefinitions="*, Auto">
+		<SplitView Grid.Row="0" DisplayMode="CompactOverlay"
+				   IsPaneOpen="{Binding #mainView.IsPaneOpen}">
+			<SplitView.Pane>
+				<StackPanel>
+					<Button Click="Button_Click"
+							HorizontalAlignment="Stretch"
+							HorizontalContentAlignment="Left">
+						<PathIcon Data="{StaticResource MenuPageIcon}"
+								  Width="20" Height="20" Margin="5" />
+					</Button>
+					<ListBox ItemsSource="{Binding Pages}"
+							 SelectedItem="{Binding SelectedPage}"
+							 ItemTemplate="{StaticResource PageTemplate}">
+						<ListBox.Styles>
+							<Style Selector="ListBoxItem">
+								<Setter Property="Margin" Value="0"/>
+							</Style>
+						</ListBox.Styles>
+					</ListBox>
+				</StackPanel>
+			</SplitView.Pane>
+			<Grid>
 				<TransitioningContentControl Content="{Binding SelectedPage}"
-											 ContentTemplate="{StaticResource PageTemplates}">
+										 ContentTemplate="{StaticResource PageTemplates}">
 					<TransitioningContentControl.PageTransition>
 						<CompositePageTransition>
 							<CrossFade Duration="0:00:00.500" />
@@ -44,13 +44,16 @@
 						</CompositePageTransition>
 					</TransitioningContentControl.PageTransition>
 				</TransitioningContentControl>
-			</SplitView>
-			<Grid Grid.Row="1" Height="{Binding #mainView.InputPaneHeight, Mode=OneWay}"
-				  IsVisible="{Binding #mainView.IsInputPaneVisible, Mode=OneWay}"/>
-		</Grid>
-		<Grid Background="{DynamicResource SystemAltMediumColor}"
-			  IsVisible="{Binding !!SelectedPage.Modals.Count}"/>
-		<ItemsControl ItemsSource="{Binding SelectedPage.Dialogs}"
-					  ItemTemplate="{StaticResource DialogTemplate}"/>
+				<Grid Background="{DynamicResource SystemAltMediumColor}"
+					  IsVisible="{Binding !!SelectedPage.Modals.Count}">
+					<ScrollViewer>
+						<ItemsControl ItemsSource="{Binding SelectedPage.Dialogs}"
+							  ItemTemplate="{StaticResource DialogTemplate}"/>
+					</ScrollViewer>
+				</Grid>
+			</Grid>
+		</SplitView>
+		<Grid Grid.Row="1" Height="{Binding #mainView.InputPaneHeight, Mode=OneWay}"
+			  IsVisible="{Binding #mainView.IsInputPaneVisible, Mode=OneWay}"/>
 	</Grid>
 </UserControl>

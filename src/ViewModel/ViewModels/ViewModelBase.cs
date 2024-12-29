@@ -1,10 +1,13 @@
 ﻿using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using ReactiveUI;
 
 namespace ViewModel.ViewModels;
 
 public partial class ViewModelBase : ReactiveObject, IActivatableViewModel
 {
+    protected readonly IObservable<bool> _modalsObservable;
+
     private ObservableCollection<ViewModelBase> _dialogs = new();
 
     private ObservableCollection<ViewModelBase> _modals = new();
@@ -14,6 +17,11 @@ public partial class ViewModelBase : ReactiveObject, IActivatableViewModel
     public ObservableCollection<ViewModelBase> Modals => _modals;
 
     public ViewModelActivator Activator { get; private set; } = new ViewModelActivator();
+
+    public ViewModelBase()
+    {
+        _modalsObservable = this.WhenAnyValue(x => x._modals).Select(x => x.Count == 0);
+    }
 
     public async Task<R> AddDialog<A, R>(DialogViewModel<A, R> dialog, A args)
     {

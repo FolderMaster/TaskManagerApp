@@ -70,9 +70,9 @@ public partial class TimeViewModel : PageViewModel
         _timeIntervalElementsEditorProxy = timeIntervalElementsEditorProxy;
 
         _canExecuteRemove = this.WhenAnyValue(c => c.SelectedCalendarInterval).
-            Select(c => c != null);
+            Select(c => c != null).CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
         _canExecuteEdit = this.WhenAnyValue(c => c.SelectedCalendarInterval).
-            Select(c => c != null);
+            Select(c => c != null).CombineLatest(_modalsObservable, (r1, r2) => r1 && r2);
 
         Metadata = resourceService.GetResource("TimePageMetadata");
         _session.ItemsUpdated += Session_ItemsUpdated;
@@ -111,7 +111,7 @@ public partial class TimeViewModel : PageViewModel
     [ReactiveCommand]
     private void GoToPrevious() => CurrentWeek = CurrentWeek.AddDays(-7);
 
-    [ReactiveCommand]
+    [ReactiveCommand(CanExecute = nameof(_modalsObservable))]
     private async Task Add()
     {
         var timeIntervalElement = _timeIntervalElementFactory.Create();
