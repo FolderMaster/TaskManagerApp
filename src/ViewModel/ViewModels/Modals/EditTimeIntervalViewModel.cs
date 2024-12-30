@@ -7,12 +7,27 @@ using Model.Interfaces;
 
 namespace ViewModel.ViewModels.Modals
 {
-    public partial class EditTimeIntervalViewModel : DialogViewModel<ITimeIntervalElement, bool>
+    /// <summary>
+    /// Класс диалога изменения временного интервала.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="BaseDialogViewModel{ITimeIntervalElement, bool}"/>.
+    /// </remarks>
+    public partial class EditTimeIntervalViewModel : BaseDialogViewModel<ITimeIntervalElement, bool>
     {
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Ok"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteOk;
 
+        /// <summary>
+        /// Возвращает элементарнай временной интервал.
+        /// </summary>
         public ITimeIntervalElement TimeIntervalElement { get; private set; }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="EditTimeIntervalViewModel"/> по умолчанию.
+        /// </summary>
         public EditTimeIntervalViewModel()
         {
             _canExecuteOk = this.WhenAnyValue(x => x.TimeIntervalElement).Select(i =>
@@ -27,15 +42,22 @@ namespace ViewModel.ViewModels.Modals
             }).Switch();
         }
 
+        /// <inheritdoc/>
         protected override void GetArgs(ITimeIntervalElement args)
         {
             TimeIntervalElement = args;
         }
 
+        /// <summary>
+        /// Подтверждает действие.
+        /// </summary>
         [ReactiveCommand(CanExecute = nameof(_canExecuteOk))]
         private void Ok() =>
             _taskSource?.SetResult(true);
 
+        /// <summary>
+        /// Отменяет действие.
+        /// </summary>
         [ReactiveCommand]
         private void Cancel() =>
             _taskSource?.SetResult(false);

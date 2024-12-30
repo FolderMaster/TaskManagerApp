@@ -17,46 +17,109 @@ using ViewModel.Interfaces.DataManagers;
 
 namespace ViewModel.ViewModels.Pages;
 
-public partial class TimeViewModel : PageViewModel
+/// <summary>
+/// Класс контроллера страницы календаря.
+/// </summary>
+/// <remarks>
+/// Наследует <see cref="BasePageViewModel"/>.
+/// </remarks>
+public partial class TimeViewModel : BasePageViewModel
 {
+    /// <summary>
+    /// Наблюдатель, который отслеживает возможность выполнения <see cref="Remove"/>.
+    /// </summary>
     private readonly IObservable<bool> _canExecuteRemove;
 
+    /// <summary>
+    /// Наблюдатель, который отслеживает возможность выполнения <see cref="Edit"/>.
+    /// </summary>
     private readonly IObservable<bool> _canExecuteEdit;
 
+    /// <summary>
+    /// Сессия.
+    /// </summary>
     private ISession _session;
 
+    /// <summary>
+    /// Сервис ресурсов.
+    /// </summary>
     private IResourceService _resourceService;
 
+    /// <summary>
+    /// Планировщик времени.
+    /// </summary>
     private ITimeScheduler _timeScheduler;
 
+    /// <summary>
+    /// Менеджер уведомлений.
+    /// </summary>
     private INotificationManager _notificationManager;
 
-    private DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
+    /// <summary>
+    /// Диалог добавления временного интервала.
+    /// </summary>
+    private BaseDialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
         _addTimeIntervalDialog;
 
-    private DialogViewModel<ITimeIntervalElement, bool> _editTimeIntervalDialog;
+    /// <summary>
+    /// Диалог изменения временного интервала.
+    /// </summary>
+    private BaseDialogViewModel<ITimeIntervalElement, bool> _editTimeIntervalDialog;
 
+    /// <summary>
+    /// Фабрика, создающая элементарный временной интервал.
+    /// </summary>
     private IFactory<ITimeIntervalElement> _timeIntervalElementFactory;
 
+    /// <summary>
+    /// Заместитель элементарный временной интервал для редактирования.
+    /// </summary>
     private ITimeIntervalElementsEditorProxy _timeIntervalElementsEditorProxy;
 
+    /// <summary>
+    /// Словарь планировщика задач.
+    /// </summary>
     private Dictionary<DateTime, IEnumerable<ITaskElement>> _tasksSchedulerDictionary;
 
+    /// <summary>
+    /// Список интервалов календаря.
+    /// </summary>
     [Reactive]
     private IList<CalendarInterval> _calendarIntervals =
         new ObservableCollection<CalendarInterval>();
 
+    /// <summary>
+    /// Выбранный интервал календаря.
+    /// </summary>
     [Reactive]
     private CalendarInterval? _selectedCalendarInterval;
 
+    /// <summary>
+    /// Текущая неделя.
+    /// </summary>
     [Reactive]
     private DateTime _currentWeek = DateTime.Now;
 
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="TimeViewModel"/>.
+    /// </summary>
+    /// <param name="session">Сессия.</param>
+    /// <param name="resourceService">Сервис ресурсов.</param>
+    /// <param name="timeScheduler">Планировщик времени.</param>
+    /// <param name="notificationManager">Менеджер уведомлений.</param>
+    /// <param name="addTimeIntervalDialog">Диалог добавления временного интервала.</param>
+    /// <param name="editTimeIntervalDialog">Диалог изменения временного интервала.</param>
+    /// <param name="timeIntervalElementFactory">
+    /// Фабрика, создающая элементарный временной интервал.
+    /// </param>
+    /// <param name="timeIntervalElementsEditorProxy">
+    /// Заместитель элементарный временной интервал для редактирования.
+    /// </param>
     public TimeViewModel(ISession session, IResourceService resourceService,
         ITimeScheduler timeScheduler, INotificationManager notificationManager,
-        DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
+        BaseDialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>
             addTimeIntervalDialog,
-        DialogViewModel<ITimeIntervalElement, bool> editTimeIntervalDialog,
+        BaseDialogViewModel<ITimeIntervalElement, bool> editTimeIntervalDialog,
         IFactory<ITimeIntervalElement> timeIntervalElementFactory,
         ITimeIntervalElementsEditorProxy timeIntervalElementsEditorProxy)
     {
@@ -79,6 +142,9 @@ public partial class TimeViewModel : PageViewModel
         _timeScheduler.TimepointReached += TimeScheduler_TimepointReached;
     }
 
+    /// <summary>
+    /// Обновляет данные.
+    /// </summary>
     [ReactiveCommand]
     private void Update()
     {
@@ -102,15 +168,28 @@ public partial class TimeViewModel : PageViewModel
         _timeScheduler.Timepoints.AddRange(_tasksSchedulerDictionary.Keys);
     }
 
+    /// <summary>
+    /// Переходит на следующую неделю.
+    /// </summary>
     [ReactiveCommand]
     private void GoToNext() => CurrentWeek = CurrentWeek.AddDays(7);
 
+    /// <summary>
+    /// Переходит на текущую неделю.
+    /// </summary>
     [ReactiveCommand]
     private void GoToNow() => CurrentWeek = DateTime.Now;
 
+    /// <summary>
+    /// Переходит на предыдущую неделю.
+    /// </summary>
     [ReactiveCommand]
     private void GoToPrevious() => CurrentWeek = CurrentWeek.AddDays(-7);
 
+    /// <summary>
+    /// Добавляет временной интервал.
+    /// </summary>
+    /// <returns>Возвращет задачу процесса добавления.</returns>
     [ReactiveCommand(CanExecute = nameof(_modalsObservable))]
     private async Task Add()
     {
@@ -123,6 +202,9 @@ public partial class TimeViewModel : PageViewModel
         }
     }
 
+    /// <summary>
+    /// Удаляет выбранный временной интервал.
+    /// </summary>
     [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
     private void Remove()
     {
@@ -130,6 +212,10 @@ public partial class TimeViewModel : PageViewModel
             SelectedCalendarInterval.TaskElement);
     }
 
+    /// <summary>
+    /// Изменяет выбранный временной интервал.
+    /// </summary>
+    /// <returns>Возвращет задачу процесса изменения.</returns>
     [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]
     private async Task Edit()
     {

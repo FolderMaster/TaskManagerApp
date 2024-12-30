@@ -1,33 +1,63 @@
 ﻿using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 using System.Reactive.Linq;
+using System.Diagnostics;
 
+using Model;
 using Model.Interfaces;
 
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Interfaces.ModelLearning;
-using Model;
-using System.Diagnostics;
 
 namespace ViewModel.ViewModels;
 
-public partial class MainViewModel : ViewModelBase
+
+/// <summary>
+/// Класс главного контроллера.
+/// </summary>
+/// <remarks>
+/// Наследует <see cref="BaseViewModel"/>.
+/// </remarks>
+public partial class MainViewModel : BaseViewModel
 {
+    /// <summary>
+    /// Найстройки.
+    /// </summary>
     private ISettings _settings;
 
+    /// <summary>
+    /// Сессия.
+    /// </summary>
     private ISession _session;
 
+    /// <summary>
+    /// Учителя моделей обучения на элементарных задачах.
+    /// </summary>
     private IEnumerable<IModelTeacher<ITaskElement>> _modelTeachers;
 
+    /// <summary>
+    /// Страницы.
+    /// </summary>
     [Reactive]
-    private IEnumerable<PageViewModel> _pages;
+    private IEnumerable<BasePageViewModel> _pages;
 
+    /// <summary>
+    /// Выбранная странница.
+    /// </summary>
     [Reactive]
-    private PageViewModel? _selectedPage;
+    private BasePageViewModel? _selectedPage;
 
-    public MainViewModel(IEnumerable<PageViewModel> pages, ISettings settings,
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="MainViewModel"/>.
+    /// </summary>
+    /// <param name="pages">Страницы.</param>
+    /// <param name="settings">Настройки.</param>
+    /// <param name="session">Сессия.</param>
+    /// <param name="appLifeState">Управление жизненным циклом приложения.</param>
+    /// <param name="modelTeachers">Учителя моделей обучения на элементарных задачах.</param>
+    public MainViewModel(IEnumerable<BasePageViewModel> pages, ISettings settings,
         ISession session, IAppLifeState appLifeState,
         IEnumerable<IModelTeacher<ITaskElement>> modelTeachers)
     {

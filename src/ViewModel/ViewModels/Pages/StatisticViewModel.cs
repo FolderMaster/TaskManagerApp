@@ -7,48 +7,85 @@ using ViewModel.Technicals;
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Sessions;
 
-
 namespace ViewModel.ViewModels.Pages
 {
-    public partial class StatisticViewModel : PageViewModel
+    /// <summary>
+    /// Класс контроллера страницы статистики.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="BasePageViewModel"/>.
+    /// </remarks>
+    public partial class StatisticViewModel : BasePageViewModel
     {
+        /// <summary>
+        /// Сессия.
+        /// </summary>
         private ISession _session;
 
+        /// <summary>
+        /// Сервис ресурсов.
+        /// </summary>
         private IResourceService _resourceService;
 
+        /// <summary>
+        /// Список возможных временных интервалов.
+        /// </summary>
         [Reactive]
         private IEnumerable<TimeSpan> _times =
         [
-            new TimeSpan(1, 0, 0, 0),
-            new TimeSpan(7, 0, 0, 0),
-            new TimeSpan(30, 0, 0, 0),
-            new TimeSpan(365, 0, 0, 0)
+            new TimeSpan(1, 0, 0, 0),  // День.
+            new TimeSpan(7, 0, 0, 0),  // Неделя.
+            new TimeSpan(30, 0, 0, 0), // Месяц.
+            new TimeSpan(365, 0, 0, 0) // Год.
         ];
 
+        /// <summary>
+        /// Выбранный временной интервал
+        /// </summary>
         [Reactive]
         private TimeSpan? _selectedTime;
 
+        /// <summary>
+        /// Статистика по количеству невыполненных задач по категориям.
+        /// </summary>
         [Reactive]
         private IEnumerable<StatisticElement> _uncompletedTasksCountByCategoryStatistic;
 
+        /// <summary>
+        /// Статистика по количеству невыполненных задач по тегам.
+        /// </summary>
         [Reactive]
         private IEnumerable<StatisticElement> _uncompletedTasksCountByTagsStatistic;
 
+        /// <summary>
+        /// Статистика по количеству невыполненных задач по приоритетам.
+        /// </summary>
         [Reactive]
         private IEnumerable<StatisticElement> _uncompletedTasksCountByPriorityStatistic;
 
+        /// <summary>
+        /// Статистика по количеству невыполненных задач по сложности.
+        /// </summary>
         [Reactive]
         private IEnumerable<StatisticElement> _uncompletedTasksCountByDifficultStatistic;
 
+        /// <summary>
+        /// Статистика по просроченным задачам.
+        /// </summary>
         [Reactive]
         private IEnumerable<StatisticElement> _expiredTasksStatistic;
 
+        /// <summary>
+        /// Статистика по времени задач.
+        /// </summary>
         [Reactive]
         private IEnumerable<StatisticElement> _tasksTimeStatistic;
 
-        [Reactive]
-        private IEnumerable<GroupPoint> _clustersElements;
-
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="StatisticViewModel"/>.
+        /// </summary>
+        /// <param name="session">Сессия.</param>
+        /// <param name="resourceService">Сервис ресурсов.</param>
         public StatisticViewModel(ISession session, IResourceService resourceService)
         {
             _session = session;
@@ -61,6 +98,9 @@ namespace ViewModel.ViewModels.Pages
             _session.ItemsUpdated += Session_ItemsUpdated;
         }
 
+        /// <summary>
+        /// Обновляет статистику.
+        /// </summary>
         [ReactiveCommand]
         private void Update()
         {
@@ -69,6 +109,9 @@ namespace ViewModel.ViewModels.Pages
             UpdateTimeTasksStatistic();
         }
 
+        /// <summary>
+        /// Обновляет статистику по количеству невыполненных задач.
+        /// </summary>
         private void UpdateTasksCountStatistics()
         {
             if (_session.Tasks == null)
@@ -94,6 +137,9 @@ namespace ViewModel.ViewModels.Pages
                 Select(g => new StatisticElement(g.Count(), $"{difficultDiagramContent} {g.Key}"));
         }
 
+        /// <summary>
+        /// Обновляет статистику по просроченным задачам.
+        /// </summary>
         private void UpdateExpiredTasksStatistics()
         {
             if (_session.Tasks == null)
@@ -122,6 +168,9 @@ namespace ViewModel.ViewModels.Pages
             ];
         }
 
+        /// <summary>
+        /// Обработчик события обновления элементов сессии.
+        /// </summary>
         private void UpdateTimeTasksStatistic()
         {
             if (_session.Tasks == null)

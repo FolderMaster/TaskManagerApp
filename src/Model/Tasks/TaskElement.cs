@@ -17,7 +17,7 @@ namespace Model.Tasks
         /// <summary>
         /// Родительская задача.
         /// </summary>
-        private IList<ITask>? _parentTask;
+        private ITaskComposite? _parentTask;
 
         /// <summary>
         /// Метаданные.
@@ -75,7 +75,7 @@ namespace Model.Tasks
         private readonly TimeIntervalList _timeIntervals = new();
 
         /// <inheritdoc/>
-        public IList<ITask>? ParentTask
+        public ITaskComposite? ParentTask
         {
             get => _parentTask;
             set => UpdateProperty(ref _parentTask, value);

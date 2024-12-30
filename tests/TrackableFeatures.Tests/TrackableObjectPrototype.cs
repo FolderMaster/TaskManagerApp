@@ -8,7 +8,7 @@
             $"{ nameof(Property)} начинается с Task!";
 
         public static string PropertyEndsWithManagerError =>
-            $"{nameof(Property)} кончается с Manager!";
+            $"{nameof(Property)} кончается на Manager!";
 
         private string _property;
 
@@ -18,7 +18,7 @@
             set => UpdateProperty(ref _property, value, OnPropertyChanged);
         }
 
-        private void OnPropertyChanged()
+        private void OnPropertyChanged(string oldValue, string newValue)
         {
             ClearAllErrors();
             if (string.IsNullOrEmpty(Property))

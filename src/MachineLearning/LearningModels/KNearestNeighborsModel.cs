@@ -69,6 +69,9 @@ namespace MachineLearning.LearningModels
         /// <summary>
         /// Вызывается при изменении свойства.
         /// </summary>
+        /// <typeparam name="T">Тип данных.</typeparam>
+        /// <param name="oldValue">Старое значение.</param>
+        /// <param name="newValue">Новое значение.</param>
         private void OnPropertyChanged<T>(T oldValue, T newValue)
         {
             ClearAllErrors();

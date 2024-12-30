@@ -19,16 +19,16 @@ namespace MachineLearning.Tests.DataProcessors
         public void Process_ReturnCorrectData()
         {
             var data = new double?[][] {
-                [0, double.NaN, -7],
-                [double.NaN, 3, 5],
-                [null, 2, null]
+                [0, double.NaN, null, -7],
+                [double.NaN, 3, double.NaN, 5],
+                [null, 2, null, null]
             };
             var expected = new DataProcessorResult<IEnumerable<double>>
                 ([
                     [0, 2.5, -7],
                     [0, 3, 5],
                     [0, 2, -1]
-                ]);
+                ], [2]);
 
             var result = _dataProcessor.Process(data);
 

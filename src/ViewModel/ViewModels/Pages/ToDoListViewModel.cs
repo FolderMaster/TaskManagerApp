@@ -10,36 +10,80 @@ using ViewModel.Implementations.ModelLearning;
 
 namespace ViewModel.ViewModels.Pages
 {
-    public partial class ToDoListViewModel : PageViewModel
+    /// <summary>
+    /// Класс контроллера страницы списка задач для выполнения.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="BasePageViewModel"/>.
+    /// </remarks>
+    public partial class ToDoListViewModel : BasePageViewModel
     {
+        /// <summary>
+        /// Сессия.
+        /// </summary>
         private ISession _session;
 
+        /// <summary>
+        /// Контроллер обучения модели выполнения шанса.
+        /// </summary>
         private ExecutionChanceTaskElementEvaluatorLearningController _progressLearningController;
 
+        /// <summary>
+        /// Флаг для фильтрации задач по отставанию.
+        /// </summary>
         [Reactive]
         private bool _isLaggingFilter;
 
+        /// <summary>
+        /// Флаг для фильтрации задач по истечению срока.
+        /// </summary>
         [Reactive]
         private bool _isExpiredFilter;
 
+        /// <summary>
+        /// Флаг для сортировки задач по вероятности выполнения.
+        /// </summary>
         [Reactive]
         private bool _isExecutionChanceSort;
 
+        /// <summary>
+        /// Флаг для сортировки задач по реальному времени.
+        /// </summary>
         [Reactive]
         private bool _isRealSort;
 
+        /// <summary>
+        /// Флаг для сортировки задач по времени.
+        /// </summary>
         [Reactive]
         private bool _isTimeSort;
 
+        /// <summary>
+        /// Флаг для сортировки задач по сложности.
+        /// </summary>
         [Reactive]
         private bool _isDifficultSort;
 
+        /// <summary>
+        /// Флаг для сортировки задач по приоритету.
+        /// </summary>
         [Reactive]
         private bool _isPrioritySort;
 
+        /// <summary>
+        /// Список задач для выполнения.
+        /// </summary>
         [Reactive]
         private IEnumerable<ToDoListElement>? _toDoList;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="ToDoListViewModel"/>.
+        /// </summary>
+        /// <param name="session">Сессия.</param>
+        /// <param name="resourceService">Сервис ресурсов.</param>
+        /// <param name="progressLearningController">
+        /// Контроллер обучения модели выполнения шанса.
+        /// </param>
         public ToDoListViewModel(ISession session, IResourceService resourceService,
             ExecutionChanceTaskElementEvaluatorLearningController progressLearningController)
         {
@@ -58,6 +102,9 @@ namespace ViewModel.ViewModels.Pages
             _session.ItemsUpdated += Session_ItemsUpdated;
         }
 
+        /// <summary>
+        /// Обновляет список задач для выполнения.
+        /// </summary>
         [ReactiveCommand]
         public void Update()
         {

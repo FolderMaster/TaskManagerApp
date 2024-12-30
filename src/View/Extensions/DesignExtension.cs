@@ -16,7 +16,7 @@ namespace View.Extensions
 
         public DesignExtension(Type type)
         {
-            if (type == null || !type.IsAssignableTo(typeof(ViewModelBase)) || type.IsAbstract)
+            if (type == null || !type.IsAssignableTo(typeof(BaseViewModel)) || type.IsAbstract)
             {
                 throw new ArgumentException(nameof(type));
             }

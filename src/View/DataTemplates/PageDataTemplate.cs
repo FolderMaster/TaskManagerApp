@@ -15,7 +15,7 @@ namespace View.DataTemplates
         [TemplateContent]
         public object? Content { get; set; }
 
-        public bool Match(object? data) => data is ViewModelBase;
+        public bool Match(object? data) => data is BaseViewModel;
 
         public Control? Build(object? data) => Build(data, null);
 

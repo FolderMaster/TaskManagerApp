@@ -33,8 +33,16 @@ using ViewModel.Implementations.ModelLearning;
 
 namespace ViewModel.Technicals
 {
+    /// <summary>
+    /// Вспомогательный статичный класс для работы с контейнером зависимостей в контексте
+    /// <see cref="ViewModel"/>.
+    /// </summary>
     public static class ViewModelContainerHelper
     {
+        /// <summary>
+        /// Создаёт и возвращает контейнер зависимости с заглушками.
+        /// </summary>
+        /// <returns>Возвращает контейнер зависимости с заглушками.</returns>
         public static IContainer GetMockContainer()
         {
             var builder = GetContainerBuilder();
@@ -51,6 +59,10 @@ namespace ViewModel.Technicals
             return builder.Build();
         }
 
+        /// <summary>
+        /// Создаёт и возвращает конфигуратор контейнера зависимости.
+        /// </summary>
+        /// <returns>Возвращает конфигуратор контейнера зависимости.</returns>
         public static ContainerBuilder GetContainerBuilder()
         {
             var result = new ContainerBuilder();
@@ -142,21 +154,21 @@ namespace ViewModel.Technicals
                 As<ITimeIntervalElementsEditorProxy>().SingleInstance();
 
             result.RegisterType<AddTimeIntervalViewModel>().As<AddTimeIntervalViewModel>().
-                As<DialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
+                As<BaseDialogViewModel<TimeIntervalViewModelArgs, TimeIntervalViewModelResult>>().
                 SingleInstance();
             result.RegisterType<EditTimeIntervalViewModel>().As<EditTimeIntervalViewModel>().
-                As<DialogViewModel<ITimeIntervalElement, bool>>().SingleInstance();
+                As<BaseDialogViewModel<ITimeIntervalElement, bool>>().SingleInstance();
             result.RegisterType<AddTaskViewModel>().As<AddTaskViewModel>().
-                As<DialogViewModel<ITask, bool>>().SingleInstance();
+                As<BaseDialogViewModel<ITask, bool>>().SingleInstance();
             result.RegisterType<RemoveTasksViewModel>().As<RemoveTasksViewModel>().
-                As<DialogViewModel<IList<ITask>, bool>>().SingleInstance();
+                As<BaseDialogViewModel<IList<ITask>, bool>>().SingleInstance();
             result.RegisterType<MoveTasksViewModel>().As<MoveTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().
+                As<BaseDialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?>>().
                 SingleInstance();
             result.RegisterType<EditTaskViewModel>().As<EditTaskViewModel>().
-                As<DialogViewModel<object, bool>>().SingleInstance();
+                As<BaseDialogViewModel<object, bool>>().SingleInstance();
             result.RegisterType<CopyTasksViewModel>().As<CopyTasksViewModel>().
-                As<DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>>().
+                As<BaseDialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>>().
                 SingleInstance();
 
             result.RegisterType<TimeIntervalMapper>().
@@ -173,15 +185,15 @@ namespace ViewModel.Technicals
             result.RegisterType<AppSettings>().As<ISettings>().SingleInstance();
 
             result.RegisterType<EditorViewModel>().As<EditorViewModel>().
-                As<PageViewModel>().SingleInstance();
+                As<BasePageViewModel>().SingleInstance();
             result.RegisterType<TimeViewModel>().As<TimeViewModel>().
-                As<PageViewModel>().SingleInstance();
+                As<BasePageViewModel>().SingleInstance();
             result.RegisterType<StatisticViewModel>().As<StatisticViewModel>().
-                As<PageViewModel>().SingleInstance();
+                As<BasePageViewModel>().SingleInstance();
             result.RegisterType<ToDoListViewModel>().As<ToDoListViewModel>().
-                As<PageViewModel>().SingleInstance();
+                As<BasePageViewModel>().SingleInstance();
             result.RegisterType<SettingsViewModel>().As<SettingsViewModel>().
-                As<PageViewModel>().SingleInstance();
+                As<BasePageViewModel>().SingleInstance();
             result.RegisterType<MainViewModel>().SingleInstance();
 
             return result;

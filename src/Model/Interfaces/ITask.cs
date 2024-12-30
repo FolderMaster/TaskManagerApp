@@ -8,7 +8,7 @@
         /// <summary>
         /// Возращает и задаёт родительскую задачу.
         /// </summary>
-        public IList<ITask>? ParentTask { get; set; }
+        public ITaskComposite? ParentTask { get; set; }
 
         /// <summary>
         /// Возращает и задаёт метаданные.

@@ -32,11 +32,16 @@ namespace MachineLearning.DataProcessors
             var array = data.To2dArray();
             var rowCount = array.Length;
             var columnCount = array.First().Length;
+            var removingColumns = new List<int>();
 
             for (var n = 0; n < columnCount; ++n)
             {
                 var column = array.GetColumn(n);
-                if (column.Any(IsInvalidValue))
+                if (column.All(IsInvalidValue))
+                {
+                    removingColumns.Add(n);
+                }
+                else if (column.Any(IsInvalidValue))
                 {
                     var replacementValue = CalculateReplacementValue
                         (column.Where(v => !IsInvalidValue(v)).Cast<double>());
@@ -49,8 +54,13 @@ namespace MachineLearning.DataProcessors
                     }
                 }
             }
+
+            foreach (var column in removingColumns.OrderDescending())
+            {
+                array = array.RemoveColumn(column);
+            }
             return new DataProcessorResult<IEnumerable<double>>
-                (array.Select(a => a.Select(v => (double)v)));
+                (array.Select(a => a.Select(v => (double)v)), removingColumns);
         }
 
         /// <summary>
@@ -69,6 +79,6 @@ namespace MachineLearning.DataProcessors
         /// <param name="column">Столбец.</param>
         /// <returns>Возвращает значение для замещения.</returns>
         protected virtual double CalculateReplacementValue(IEnumerable<double> column) =>
-            column.Count() > 0 ? column.Average() : _replacementInvalidValue;
+            column.Average();
     }
 }

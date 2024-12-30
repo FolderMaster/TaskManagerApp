@@ -45,12 +45,11 @@
 					</TransitioningContentControl.PageTransition>
 				</TransitioningContentControl>
 				<Grid Background="{DynamicResource SystemAltMediumColor}"
-					  IsVisible="{Binding !!SelectedPage.Modals.Count}">
-					<ScrollViewer>
-						<ItemsControl ItemsSource="{Binding SelectedPage.Dialogs}"
-							  ItemTemplate="{StaticResource DialogTemplate}"/>
-					</ScrollViewer>
-				</Grid>
+					  IsVisible="{Binding !!SelectedPage.Modals.Count}"/>
+				<ScrollViewer>
+					<ItemsControl ItemsSource="{Binding SelectedPage.Dialogs}"
+								  ItemTemplate="{StaticResource DialogTemplate}"/>
+				</ScrollViewer>
 			</Grid>
 		</SplitView>
 		<Grid Grid.Row="1" Height="{Binding #mainView.InputPaneHeight, Mode=OneWay}"

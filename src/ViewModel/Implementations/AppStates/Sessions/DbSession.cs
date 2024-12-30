@@ -13,36 +13,80 @@ using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
 
 namespace ViewModel.Implementations.AppStates.Sessions
 {
+    /// <summary>
+    /// Класс сессии базы данных.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>.
+    /// Реализует <see cref="ISession"/>.
+    /// </remarks>
     public class DbSession : TrackableObject, ISession
     {
+        /// <summary>
+        /// Путь к файлу.
+        /// </summary>
         private static readonly string _filePath = "database.db";
 
+        /// <summary>
+        /// Фабрика, создающая контексты базы данных.
+        /// </summary>
         private readonly IDbContextFactory<BaseDbContext> _dbContextFactory;
 
+        /// <summary>
+        /// Преобразование значений между сущностью задачи и задачей.
+        /// </summary>
         private readonly IMapper<TaskEntity, ITask> _taskMapper;
 
+        /// <summary>
+        /// Преобразование значений между сущностью временного интервала и
+        /// элементарным временным интервалом.
+        /// </summary>
         private readonly IMapper<TimeIntervalEntity, ITimeIntervalElement> _timeIntervalMapper;
 
+        /// <summary>
+        /// Путь к сохранению.
+        /// </summary>
         private string _savePath;
 
+        /// <summary>
+        /// Контекст базы данных.
+        /// </summary>
         private BaseDbContext? _dbContext;
 
+        /// <summary>
+        /// Задачи.
+        /// </summary>
         private ObservableCollection<ITask> _tasks = new();
 
+        /// <inheritdoc/>
         public string SavePath
         {
             get => _savePath;
             set => UpdateProperty(ref _savePath, value);
         }
 
+        /// <inheritdoc/>
         public IEnumerable<ITask> Tasks
         {
             get => _tasks;
             private set => UpdateProperty(ref _tasks, (ObservableCollection<ITask>)value);
         }
 
+        /// <inheritdoc/>
         public event EventHandler<ItemsUpdatedEventArgs> ItemsUpdated;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="DbSession"/>.
+        /// </summary>
+        /// <param name="contextFactory">Фабрика, создающая контексты базы данных.</param>
+        /// <param name="taskMapper">
+        /// Преобразование значений между сущностью задачи и задачей.
+        /// </param>
+        /// <param name="timeIntervalMapper">
+        /// Преобразование значений между сущностью временного интервала и
+        /// элементарным временным интервалом.
+        /// </param>
+        /// <param name="fileService">Файловый сервис.</param>
         public DbSession(IDbContextFactory<BaseDbContext> contextFactory,
             IMapper<TaskEntity, ITask> taskMapper,
             IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalMapper,
@@ -55,6 +99,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
             _timeIntervalMapper = timeIntervalMapper;
         }
 
+        /// <inheritdoc/>
         public async Task Load()
         {
             _dbContextFactory.ConnectionString = SavePath;
@@ -72,11 +117,13 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Reset, Tasks, typeof(ITask)));
         }
 
+        /// <inheritdoc/>
         public async Task Save()
         {
             await _dbContext.SaveChangesAsync();
         }
 
+        /// <inheritdoc/>
         public void AddTasks(IEnumerable<ITask> tasks, ITaskComposite? parentTask)
         {
             var list = parentTask ?? (IList<ITask>)_tasks;
@@ -90,6 +137,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Add, tasks, typeof(ITask)));
         }
 
+        /// <inheritdoc/>
         public void EditTask(ITask task)
         {
             if (task is not IDomain domain)
@@ -102,6 +150,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Edit, [task], task.GetType()));
         }
 
+        /// <inheritdoc/>
         public void RemoveTasks(IEnumerable<ITask> tasks)
         {
             foreach (var task in tasks)
@@ -129,6 +178,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Remove, tasks, typeof(ITask)));
         }
 
+        /// <inheritdoc/>
         public void MoveTasks(IEnumerable<ITask> tasks, ITaskComposite? parentTask)
         {
             var list = parentTask ?? (IList<ITask>)_tasks;
@@ -150,6 +200,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Move, tasks, typeof(ITask)));
         }
 
+        /// <inheritdoc/>
         public void AddTimeInterval(ITimeIntervalElement timeIntervalElement,
             ITaskElement taskElement)
         {
@@ -165,6 +216,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Add, [timeIntervalElement], timeIntervalElement.GetType()));
         }
 
+        /// <inheritdoc/>
         public void EditTimeInterval(ITimeIntervalElement timeIntervalElement)
         {
             var timeIntervalElementEntity = _timeIntervalMapper.MapBack(timeIntervalElement);
@@ -173,6 +225,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
                 (UpdateItemsState.Edit, [timeIntervalElement], timeIntervalElement.GetType()));
         }
 
+        /// <inheritdoc/>
         public void RemoveTimeInterval(ITimeIntervalElement timeIntervalElement, ITaskElement taskElement)
         {
             taskElement.TimeIntervals.Remove(timeIntervalElement);

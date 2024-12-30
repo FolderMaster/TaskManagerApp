@@ -49,8 +49,7 @@ namespace MachineLearning.DataProcessors
                     c.Item2 == removingColumn);
             }
 
-            removingColumns.OrderDescending();
-            foreach (var column in removingColumns)
+            foreach (var column in removingColumns.OrderDescending())
             {
                 array = array.RemoveColumn(column);
             }

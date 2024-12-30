@@ -14,57 +14,139 @@ using IResourceService = ViewModel.Interfaces.AppStates.IResourceService;
 
 namespace ViewModel.ViewModels.Pages
 {
-    public partial class EditorViewModel : PageViewModel
+    /// <summary>
+    /// Класс контроллера страницы изменения.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="BasePageViewModel"/>.
+    /// </remarks>
+    public partial class EditorViewModel : BasePageViewModel
     {
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="GoToPrevious"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteGoToPrevious;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Go"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteGo;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Remove"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteRemove;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Add"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteAdd;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Edit"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteEdit;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Copy"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteCopy;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Move"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteMove;
 
+        /// <summary>
+        /// Наблюдатель, который отслеживает возможность выполнения <see cref="Swap"/>.
+        /// </summary>
         private readonly IObservable<bool> _canExecuteSwap;
 
+        /// <summary>
+        /// Сессия.
+        /// </summary>
         private ISession _session;
 
-        private DialogViewModel<IList<ITask>, bool> _removeTasksDialog;
+        /// <summary>
+        /// Диалог удаления задач.
+        /// </summary>
+        private BaseDialogViewModel<IList<ITask>, bool> _removeTasksDialog;
 
-        private DialogViewModel<ITask, bool> _addTasksDialog;
+        /// <summary>
+        /// Диалог добавления задач.
+        /// </summary>
+        private BaseDialogViewModel<ITask, bool> _addTasksDialog;
 
-        private DialogViewModel<object, bool> _editTaskDialog;
+        /// <summary>
+        /// Диалог изменения задачи.
+        /// </summary>
+        private BaseDialogViewModel<object, bool> _editTaskDialog;
 
-        private DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> _moveTasksDialog;
+        /// <summary>
+        /// Диалог перемещения задач.
+        /// </summary>
+        private BaseDialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> _moveTasksDialog;
 
-        private DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>
+        /// <summary>
+        /// Диалог копирования задач.
+        /// </summary>
+        private BaseDialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?>
             _copyTasksDialog;
 
+        /// <summary>
+        /// Фабрика, создающая составную задачу.
+        /// </summary>
         private IFactory<ITaskComposite> _taskCompositeFactory;
 
+        /// <summary>
+        /// Фабрика, создающая элементарную задачу.
+        /// </summary>
         private IFactory<ITaskElementProxy> _taskElementProxyFactory;
 
+        /// <summary>
+        /// Заместитель задач для редактирования.
+        /// </summary>
         private ITasksEditorProxy _tasksEditorProxy;
 
+        /// <summary>
+        /// Заместитель элементарных задач для редактирования.
+        /// </summary>
         private ITaskElementsEditorProxy _taskElementsEditorProxy;
 
+        /// <summary>
+        /// Список задач для отображения.
+        /// </summary>
         [Reactive]
         private IEnumerable<ITask> _taskListView;
 
+        /// <summary>
+        /// Список выбранных задач.
+        /// </summary>
         [Reactive]
         private IList<ITask> _selectedTasks = new ObservableCollection<ITask>();
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="EditorViewModel"/>.
+        /// </summary>
+        /// <param name="session">Сессия.</param>
+        /// <param name="resourceService">Сервис ресурсов.</param>
+        /// <param name="removeTasksDialog">Диалог удаления задач.</param>
+        /// <param name="addTasksDialog">Диалог добавления задач.</param>
+        /// <param name="editTaskDialog">Диалог изменения задачи.</param>
+        /// <param name="moveTasksDialog">Диалог перемещения задач.</param>
+        /// <param name="copyTasksDialog">Диалог копирования задач.</param>
+        /// <param name="taskCompositeFactory">Фабрика, создающая составную задачу.</param>
+        /// <param name="taskElementProxyFactory">Фабрика, создающая элементарную задачу.</param>
+        /// <param name="tasksEditorProxy">Заместитель задач для редактирования.</param>
+        /// <param name="taskElementsEditorProxy">
+        /// Заместитель элементарных задач для редактирования.
+        /// </param>
         public EditorViewModel(ISession session, IResourceService resourceService,
-            DialogViewModel<IList<ITask>, bool> removeTasksDialog,
-            DialogViewModel<ITask, bool> addTasksDialog,
-            DialogViewModel<object, bool> editTaskDialog,
-            DialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> moveTasksDialog,
-            DialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?> copyTasksDialog,
+            BaseDialogViewModel<IList<ITask>, bool> removeTasksDialog,
+            BaseDialogViewModel<ITask, bool> addTasksDialog,
+            BaseDialogViewModel<object, bool> editTaskDialog,
+            BaseDialogViewModel<ItemsTasksViewModelArgs, IEnumerable<ITask>?> moveTasksDialog,
+            BaseDialogViewModel<ItemsTasksViewModelArgs, CopyTasksViewModelResult?> copyTasksDialog,
             IFactory<ITaskComposite> taskCompositeFactory,
             IFactory<ITaskElementProxy> taskElementProxyFactory,
             ITasksEditorProxy tasksEditorProxy,
@@ -108,6 +190,9 @@ namespace ViewModel.ViewModels.Pages
             Metadata = resourceService.GetResource("EditorPageMetadata");
         }
 
+        /// <summary>
+        /// Переходит к предыдущей задаче по иерархии.
+        /// </summary>
         [ReactiveCommand(CanExecute = nameof(_canExecuteGoToPrevious))]
         private void GoToPrevious()
         {
@@ -115,6 +200,9 @@ namespace ViewModel.ViewModels.Pages
             TaskListView = composite.ParentTask ?? _session.Tasks;
         }
 
+        /// <summary>
+        /// Переходит в выбранную задачу.
+        /// </summary>
         [ReactiveCommand(CanExecute = nameof(_canExecuteGo))]
         private void Go()
         {
@@ -123,6 +211,10 @@ namespace ViewModel.ViewModels.Pages
             TaskListView = composite;
         }
 
+        /// <summary>
+        /// Удаляет выбранные задачи.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса удаления.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]
         private async Task Remove()
         {
@@ -135,13 +227,26 @@ namespace ViewModel.ViewModels.Pages
             }
         }
 
+        /// <summary>
+        /// Добавляет элементарную задачу.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса добавления.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private async Task AddTaskElement() => await AddTask(_taskElementProxyFactory.Create());
+        private async Task AddTaskElement() => await Add(_taskElementProxyFactory.Create());
 
+        /// <summary>
+        /// Добавляет составную задачу.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса добавления.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteAdd))]
-        private async Task AddTaskComposite() => await AddTask(_taskCompositeFactory.Create());
+        private async Task AddTaskComposite() => await Add(_taskCompositeFactory.Create());
 
-        private async Task AddTask(ITask task)
+        /// <summary>
+        /// Добавляет задачу.
+        /// </summary>
+        /// <param name="task">Задача.</param>
+        /// <returns>Возвращет задачу процесса добавления.</returns>
+        private async Task Add(ITask task)
         {
             var taskComposite = TaskListView as ITaskComposite;
             if (SelectedTasks.Count == 1)
@@ -157,6 +262,10 @@ namespace ViewModel.ViewModels.Pages
             }
         }
 
+        /// <summary>
+        /// Изменяет выбранную задачу.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса изменения.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]
         private async Task Edit()
         {
@@ -183,6 +292,10 @@ namespace ViewModel.ViewModels.Pages
             }
         }
 
+        /// <summary>
+        /// Перемещает выбранные задачи.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса перестановки.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteMove))]
         private async Task Move()
         {
@@ -196,6 +309,10 @@ namespace ViewModel.ViewModels.Pages
             }
         }
 
+        /// <summary>
+        /// Копирует выбранные задачи.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса копирования.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteCopy))]
         private async Task Copy()
         {
@@ -220,6 +337,10 @@ namespace ViewModel.ViewModels.Pages
             }
         }
 
+        /// <summary>
+        /// Переставляет местами выбранные задачи.
+        /// </summary>
+        /// <returns>Возвращет задачу процесса перестановки.</returns>
         [ReactiveCommand(CanExecute = nameof(_canExecuteSwap))]
         private void Swap()
         {

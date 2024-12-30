@@ -25,7 +25,7 @@ namespace Model.Tasks
         /// <summary>
         /// Родительская задача.
         /// </summary>
-        private IList<ITask>? _parentTask;
+        private ITaskComposite? _parentTask;
 
         /// <summary>
         /// Метаданные.
@@ -33,7 +33,7 @@ namespace Model.Tasks
         private object? _metadata;
 
         /// <inheritdoc/>
-        public IList<ITask>? ParentTask
+        public ITaskComposite? ParentTask
         {
             get => _parentTask;
             set => UpdateProperty(ref _parentTask, value);
