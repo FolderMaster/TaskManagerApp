@@ -18,8 +18,16 @@ using View.Implementations;
 
 namespace View.Technilcals
 {
+    /// <summary>
+    /// Вспомогательный статичный класс для работы с контейнером зависимостей в контексте
+    /// <see cref="View"/>.
+    /// </summary>
     public static class ViewContainerHelper
     {
+        /// <summary>
+        /// Создаёт и возвращает контейнер зависимостей с заглушками.
+        /// </summary>
+        /// <returns>Возвращает контейнер зависимостей с заглушками.</returns>
         public static IContainer GetMockContainer()
         {
             var (builder, resolver) = GetContainerElements();
@@ -31,6 +39,10 @@ namespace View.Technilcals
             return CreateContainer(builder, resolver, true);
         }
 
+        /// <summary>
+        /// Создаёт и возвращает элементы контейнера зависимостей.
+        /// </summary>
+        /// <returns>Возвращает конфигуратор и решатель контейнера зависимостей.</returns>
         public static (ContainerBuilder, AutofacDependencyResolver) GetContainerElements()
         {
             var builder = ViewModelContainerHelper.GetContainerBuilder();
@@ -65,6 +77,13 @@ namespace View.Technilcals
             return (builder, resolver);
         }
 
+        /// <summary>
+        /// Создаёт конфигуратор контейнера зависимостей.
+        /// </summary>
+        /// <param name="builder">Конфигуратор контейнера зависимостей.</param>
+        /// <param name="resolver">Разрешатель контейнера зависимостей.</param>
+        /// <param name="isSetUpLocator">Флаг настройки локатора.</param>
+        /// <returns>Возвращает контейнер зависимостей.</returns>
         public static IContainer CreateContainer(ContainerBuilder builder,
             AutofacDependencyResolver resolver, bool isSetUpLocator)
         {

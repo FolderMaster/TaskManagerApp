@@ -1,7 +1,7 @@
 ﻿namespace MachineLearning.Interfaces.Generals
 {
     /// <summary>
-    /// Интерфейс модели обучение c учителем.
+    /// Интерфейс модели обучения c учителем.
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="ILearningModel{T, R}"/>.

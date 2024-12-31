@@ -3,10 +3,20 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.ModelLearning.Converters
 {
+    /// <summary>
+    /// Класс преобразования тегов метаданных в данные для предсказания.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IDataTransformer{Metadata, IEnumerable{int}}"/>.
+    /// </remarks>
     public class MetadataTagsTransformer : IDataTransformer<Metadata, IEnumerable<int>>
     {
+        /// <summary>
+        /// Теги.
+        /// </summary>
         private List<string> _tags = new();
 
+        /// <inheritdoc/>
         public IEnumerable<IEnumerable<int>> FitTransform(IEnumerable<Metadata> data)
         {
             foreach (var metadata in data)
@@ -25,6 +35,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             }
         }
 
+        /// <inheritdoc/>
         public IEnumerable<int> Transform(Metadata data)
         {
             foreach (var tag in _tags)

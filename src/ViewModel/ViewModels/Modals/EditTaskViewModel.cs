@@ -6,7 +6,7 @@ using System.Reactive.Linq;
 namespace ViewModel.ViewModels.Modals
 {
     /// <summary>
-    /// Класс диалога копирования задач.
+    /// Класс диалога изменения задачи.
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="BaseDialogViewModel{object, bool}"/>.

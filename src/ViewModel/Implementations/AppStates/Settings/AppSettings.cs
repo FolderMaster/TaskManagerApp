@@ -9,26 +9,61 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.AppStates.Settings
 {
+    /// <summary>
+    /// Класс настроек приложения.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>.
+    /// Реализует <see cref="ISettings"/>.
+    /// </remarks>
     public class AppSettings : TrackableObject, ISettings
     {
+        /// <summary>
+        /// Путь к файлу.
+        /// </summary>
         private static readonly string _filePath = "settings.json";
 
+        /// <summary>
+        /// Полный путь к файлу.
+        /// </summary>
         private readonly string _fullFilePath;
 
+        /// <summary>
+        /// Файловый сервис.
+        /// </summary>
         private IFileService _fileService;
 
+        /// <summary>
+        /// Сериализатор.
+        /// </summary>
         private ISerializer _serializer;
 
+        /// <summary>
+        /// Менеджер тем.
+        /// </summary>
         private IThemeManager _themeManager;
 
+        /// <summary>
+        /// Менеджер локализаций.
+        /// </summary>
         private ILocalizationManager _localizationManager;
 
+        /// <summary>
+        /// Сессия.
+        /// </summary>
         private ISession _session;
 
+        /// <summary>
+        /// Логгирование.
+        /// </summary>
         private ILogger _logger;
 
+        /// <summary>
+        /// Конфигурация.
+        /// </summary>
         private AppConfiguration _configuration = new();
 
+        /// <inheritdoc/>
         public object Configuration
         {
             get => _configuration;
@@ -36,6 +71,15 @@ namespace ViewModel.Implementations.AppStates.Settings
                 OnConfigurationUpdated);
         }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="AppSettings"/>.
+        /// </summary>
+        /// <param name="themeManager">Менеджер тем.</param>
+        /// <param name="localizationManager">Менеджер локализаций.</param>
+        /// <param name="session">Сессия.</param>
+        /// <param name="fileService">Файловый сервис.</param>
+        /// <param name="serializer">Сериализатор.</param>
+        /// <param name="logger">Логгирование.</param>
         public AppSettings(IThemeManager themeManager, ILocalizationManager localizationManager,
             ISession session, IFileService fileService, ISerializer serializer, ILogger logger)
         {
@@ -52,6 +96,7 @@ namespace ViewModel.Implementations.AppStates.Settings
             InitializeConfiguration();
         }
 
+        /// <inheritdoc/>
         public async Task Save()
         {
             try
@@ -76,6 +121,7 @@ namespace ViewModel.Implementations.AppStates.Settings
             }
         }
 
+        /// <inheritdoc/>
         public async Task Load()
         {
             if (!_fileService.IsPathExists(_fullFilePath))
@@ -106,6 +152,9 @@ namespace ViewModel.Implementations.AppStates.Settings
             }
         }
 
+        /// <summary>
+        /// Инициализирует конфигурацию.
+        /// </summary>
         protected void InitializeConfiguration()
         {
             _configuration = new AppConfiguration
@@ -120,6 +169,11 @@ namespace ViewModel.Implementations.AppStates.Settings
             _configuration.PropertyChanged += Configuration_PropertyChanged;
         }
 
+        /// <summary>
+        /// Вызывается при обновлении конфигурации.
+        /// </summary>
+        /// <param name="oldConfiguration">Старая конфигурация.</param>
+        /// <param name="newConfiguration">Новая конфигурация.</param>
         protected void OnConfigurationUpdated(AppConfiguration oldConfiguration,
             AppConfiguration newConfiguration)
         {

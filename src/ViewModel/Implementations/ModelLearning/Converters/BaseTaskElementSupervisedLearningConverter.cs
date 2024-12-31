@@ -10,15 +10,45 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.ModelLearning.Converters
 {
+    /// <summary>
+    /// Абстрактный класс базового конвертора элементраных задач в данные
+    /// для предсказания с учителем и наоборот.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="BaseSupervisedLearningConverter{R, ITaskElement, ITaskElement, DR}"/>.
+    /// </remarks>
+    /// <typeparam name="R">Тип выходных данных для предсказания.</typeparam>
+    /// <typeparam name="DR">Тип выходных данных.</typeparam>
     public abstract class BaseTaskElementSupervisedLearningConverter<R, DR> :
         BaseSupervisedLearningConverter<R, ITaskElement, ITaskElement, DR>
     {
+        /// <summary>
+        /// Фабрика, создающая масштабирования данных.
+        /// </summary>
         protected readonly IFactory<IScaler> _scalerFactory;
 
+        /// <summary>
+        /// Преобразование категории метаданных в данные для предсказания.
+        /// </summary>
         protected readonly IDataTransformer<Metadata, int?> _metadataCategoriesTransformer;
 
+        /// <summary>
+        /// Преобразование теги метаданных в данные для предсказания.
+        /// </summary>
         protected readonly IDataTransformer<Metadata, IEnumerable<int>> _metadataTagsTransformer;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="BaseTaskElementSupervisedLearningConverter{R, DR}"/>.
+        /// </summary>
+        /// <param name="primaryPointDataProcessor">Первичный обработчик точечных данных.</param>
+        /// <param name="pointDataProcessors">Обработчики точечных данных.</param>
+        /// <param name="scalerFactory">Фабрика, создающая масштабирования данных.</param>
+        /// <param name="metadataCategoriesTransformer">
+        /// Преобразование категории метаданных в данные для предсказания.
+        /// </param>
+        /// <param name="metadataTagsITransformer">
+        /// Преобразование теги метаданных в данные для предсказания.
+        /// </param>
         protected BaseTaskElementSupervisedLearningConverter
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors,
@@ -32,6 +62,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             _metadataTagsTransformer = metadataTagsITransformer;
         }
 
+        /// <inheritdoc/>
         protected override IEnumerable<IEnumerable<double?>> ProcessFeatures
             (IEnumerable<ITaskElement> data)
         {
@@ -49,6 +80,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             }
         }
 
+        /// <inheritdoc/>
         protected override IEnumerable<double?> ExtractFeatures(ITaskElement dataItem)
         {
             var metadata = dataItem.Metadata as Metadata;
@@ -58,9 +90,15 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             return result;
         }
 
+        /// <inheritdoc/>
         protected override IScaler CreateScaler
             (int index, IEnumerable<int> removedColumnsIndices) => _scalerFactory.Create();
 
+        /// <summary>
+        /// Извлекает первичные признаки у элемента данных.
+        /// </summary>
+        /// <param name="dataItem">Элемент данных.</param>
+        /// <returns>Возвращает список значений.</returns>
         protected abstract List<double?> ExtractPrimaryFeatures(ITaskElement dataItem);
     }
 }

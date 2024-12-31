@@ -90,7 +90,7 @@
 					   IsVisible="{Binding !ExecutionChance}"/>
 		</StackPanel>
 	</DataTemplate>
-	<DataTemplate x:Key="PageTemplate" x:DataType="vm:PageViewModel">
+	<DataTemplate x:Key="PageTemplate" x:DataType="vm:BasePageViewModel">
 		<ContentControl Content="{Binding Metadata}"
 						ContentTemplate="{StaticResource PageMetadataTemplate}"/>
 	</DataTemplate>
@@ -99,7 +99,7 @@
 			<ContentControl Content="{Binding .}"/>
 		</Grid>
 	</v:PageDataTemplate>
-	<DataTemplate x:Key="DialogTemplate" x:DataType="vm:ViewModelBase">
+	<DataTemplate x:Key="DialogTemplate" x:DataType="vm:BaseViewModel">
 		<Border Background="{DynamicResource SystemAltMediumColor}"
 				BorderBrush="{DynamicResource SystemBaseMediumHighColor}"
 				MaxWidth="1024" Margin="10" Padding="10"

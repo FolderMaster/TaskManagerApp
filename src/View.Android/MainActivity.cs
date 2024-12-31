@@ -11,6 +11,13 @@ using ViewModel.Interfaces.AppStates;
 
 namespace View.Android;
 
+/// <summary>
+/// Класс основной активности.
+/// </summary>
+/// <remarks>
+/// Наследует <see cref="AvaloniaMainActivity{App}"/>.
+/// Реализует <see cref="IAppLifeState"/>.
+/// </remarks>
 [Activity(
     Label = "TaskManager",
     Theme = "@style/MyTheme.NoActionBar",
@@ -19,13 +26,18 @@ namespace View.Android;
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
 public class MainActivity : AvaloniaMainActivity<App>, IAppLifeState
 {
+    /// <inheritdoc/>
     public event EventHandler AppDeactivated;
 
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="MainActivity"/> по умолчанию.
+    /// </summary>
     public MainActivity()
     {
         ((IAvaloniaActivity)this).Deactivated += MainActivity_Deactivated;
     }
 
+    /// <inheritdoc/>
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
@@ -33,11 +45,16 @@ public class MainActivity : AvaloniaMainActivity<App>, IAppLifeState
             .UseReactiveUI();
     }
 
+    /// <inheritdoc/>
     protected override AppBuilder CreateAppBuilder()
     {
         return AppBuilder.Configure(CreateApp).UseAndroid();
     }
 
+    /// <summary>
+    /// Создаёт приложение.
+    /// </summary>
+    /// <returns>Возвращает приложение.</returns>
     private App CreateApp()
     {
         var result = new App();

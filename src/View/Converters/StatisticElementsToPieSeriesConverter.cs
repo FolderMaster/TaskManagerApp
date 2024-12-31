@@ -10,8 +10,15 @@ using ViewModel.Technicals;
 
 namespace View.Converters
 {
+    /// <summary>
+    /// Класс конвертора элементов статистики в сектора круговой диаграммы.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IValueConverter"/>.
+    /// </remarks>
     public class StatisticElementsToPieSeriesConverter : IValueConverter
     {
+        /// <inheritdoc/>
         public object Convert(object? value, Type targetType, object? parameter,
             CultureInfo culture)
         {
@@ -24,6 +31,7 @@ namespace View.Converters
             }).Cast<ISeries>().ToArray();
         }
 
+        /// <inheritdoc/>
         public object ConvertBack(object? value, Type targetType, object? parameter,
             CultureInfo culture) => throw new InvalidOperationException();
     }

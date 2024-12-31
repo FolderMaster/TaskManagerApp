@@ -86,7 +86,7 @@ namespace ViewModel.Technicals
             result.RegisterType<EuclideanDistanceMetric>().
                 As<IPointDistanceMetric>().SingleInstance();
 
-            result.RegisterType<MinMaxScalerFactory>().As<IFactory<IScaler>>().SingleInstance();
+            result.RegisterType<ScalerFactory>().As<IFactory<IScaler>>().SingleInstance();
 
             result.RegisterType<KNearestNeighborsModel>().
                 As<IClassificationModel>();

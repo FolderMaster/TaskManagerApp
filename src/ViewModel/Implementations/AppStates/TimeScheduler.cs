@@ -2,34 +2,59 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Timers;
+
 using ViewModel.Interfaces;
 
 using Timer = System.Timers.Timer;
 
 namespace ViewModel.Implementations.AppStates
 {
+    /// <summary>
+    /// Класс планировщика времени, который отслеживает достижение временных меток.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="ITimeScheduler"/>.
+    /// </remarks>
     public class TimeScheduler : ITimeScheduler
     {
+        /// <summary>
+        /// Таймер.
+        /// </summary>
         private readonly Timer _timer = new();
 
+        /// <summary>
+        /// Временные метки.
+        /// </summary>
         private readonly ObservableCollection<DateTime> _timepoints = new();
 
-        private readonly object _lock = new();
-
+        /// <summary>
+        /// Логическое значение, указывающее на обновление планировщика.
+        /// </summary>
         private bool _isUpdateScheduler = true;
 
+        /// <summary>
+        /// Выбранная  временная метка.
+        /// </summary>
         private DateTime _selectedTimepoint;
 
+        /// <inheritdoc/>
         public IList<DateTime> Timepoints => _timepoints;
 
+        /// <inheritdoc/>
         public event EventHandler<DateTime> TimepointReached;
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="TimeScheduler"/> по умолчанию.
+        /// </summary>
         public TimeScheduler()
         {
             _timepoints.CollectionChanged += Timepoints_CollectionChanged;
             _timer.Elapsed += Timer_Elapsed;
         }
 
+        /// <summary>
+        /// Перестраивает таймера планировщика.
+        /// </summary>
         private void RescheduleTimer()
         {
             if (!_timepoints.Any())

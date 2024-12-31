@@ -44,9 +44,8 @@
 						</CompositePageTransition>
 					</TransitioningContentControl.PageTransition>
 				</TransitioningContentControl>
-				<Grid Background="{DynamicResource SystemAltMediumColor}"
-					  IsVisible="{Binding !!SelectedPage.Modals.Count}"/>
-				<ScrollViewer>
+				<ScrollViewer Background="{DynamicResource SystemAltMediumColor}"
+							  IsVisible="{Binding !!SelectedPage.Dialogs.Count}">
 					<ItemsControl ItemsSource="{Binding SelectedPage.Dialogs}"
 								  ItemTemplate="{StaticResource DialogTemplate}"/>
 				</ScrollViewer>

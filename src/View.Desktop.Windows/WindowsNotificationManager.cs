@@ -4,8 +4,15 @@ using ViewModel.Interfaces.AppStates;
 
 namespace View.Desktop.Windows
 {
+    /// <summary>
+    /// Класс менеджера уведомлений Windows.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="INotificationManager"/>.
+    /// </remarks>
     public class WindowsNotificationManager : INotificationManager
     {
+        /// <inheritdoc/>
         public void SendNotification(string description, string title)
         {
             var toast = new ToastContentBuilder().

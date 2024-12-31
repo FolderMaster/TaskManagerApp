@@ -15,7 +15,7 @@ using IResourceService = ViewModel.Interfaces.AppStates.IResourceService;
 namespace ViewModel.ViewModels.Pages
 {
     /// <summary>
-    /// Класс контроллера страницы изменения.
+    /// Класс контроллера страницы изменения задач.
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="BasePageViewModel"/>.

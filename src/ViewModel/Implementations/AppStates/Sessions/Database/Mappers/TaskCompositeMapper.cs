@@ -5,32 +5,54 @@ using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 
 namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
 {
+    /// <summary>
+    /// Класс перобразования значений составных задач между двумя предметными областями.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IMapper{TimeIntervalEntity, ITimeIntervalElement}"/>.
+    /// </remarks>
     public class TaskCompositeMapper : IMapper<TaskCompositeEntity, ITaskComposite>
     {
-        private readonly IMapper<MetadataEntity, object> _metadataConverter;
+        /// <summary>
+        /// Преобразование значений между сущностью метаданных и метаданными.
+        /// </summary>
+        private readonly IMapper<MetadataEntity, object> _metadataMapper;
 
-        private readonly IMapper<TaskElementEntity, ITaskElement> _taskElementConverter;
+        /// <summary>
+        /// Преобразование значений между сущностью элементарных задач и элементарными задачами.
+        /// </summary>
+        private readonly IMapper<TaskElementEntity, ITaskElement> _taskElementMapper;
 
-        public TaskCompositeMapper(IMapper<MetadataEntity, object> metadataConverter,
-            IMapper<TaskElementEntity, ITaskElement> taskElementConverter)
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="TaskCompositeMapper"/>.
+        /// </summary>
+        /// <param name="metadataMapper">
+        /// Преобразование значений между сущностью метаданных и метаданными.
+        /// </param>
+        /// <param name="taskElementMapper">
+        /// Преобразование значений между сущностью элементарных задач и элементарными задачами.
+        /// </param>
+        public TaskCompositeMapper(IMapper<MetadataEntity, object> metadataMapper,
+            IMapper<TaskElementEntity, ITaskElement> taskElementMapper)
         {
-            _metadataConverter = metadataConverter;
-            _taskElementConverter = taskElementConverter;
+            _metadataMapper = metadataMapper;
+            _taskElementMapper = taskElementMapper;
         }
 
+        /// <inheritdoc/>
         public ITaskComposite Map(TaskCompositeEntity value)
         {
             var result = new TaskCompositeDomain()
             {
                 Entity = value,
-                Metadata = _metadataConverter.Map(value.Task.Metadata)
+                Metadata = _metadataMapper.Map(value.Task.Metadata)
             };
             foreach (var task in value.Subtasks)
             {
                 var addingTask = (ITask?)null;
                 if (task.TaskElement != null)
                 {
-                    addingTask = _taskElementConverter.Map(task.TaskElement);
+                    addingTask = _taskElementMapper.Map(task.TaskElement);
                 }
                 else if (task.TaskComposite != null)
                 {
@@ -45,6 +67,7 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
             return result;
         }
 
+        /// <inheritdoc/>
         public TaskCompositeEntity MapBack(ITaskComposite value)
         {
             if (value is not TaskCompositeDomain domain)
@@ -58,7 +81,7 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
             var result = domain.Entity;
             var parentTask = domain.ParentTask as TaskCompositeDomain;
             result.Task.ParentTask = parentTask?.Entity;
-            result.Task.Metadata = _metadataConverter.MapBack(domain.Metadata);
+            result.Task.Metadata = _metadataMapper.MapBack(domain.Metadata);
             foreach (var subtask in value)
             {
                 var addingTask = (TaskEntity?)null;
@@ -66,7 +89,7 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
                 {
                     case TaskElementDomain elementDomain:
                         var taskElement =
-                            _taskElementConverter.MapBack(elementDomain);
+                            _taskElementMapper.MapBack(elementDomain);
                         addingTask = taskElement.Task;
                         break;
                     case TaskCompositeDomain compositeDomain:

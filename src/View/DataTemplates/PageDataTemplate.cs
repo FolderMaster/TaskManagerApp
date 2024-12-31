@@ -9,16 +9,28 @@ using ViewModel.ViewModels;
 
 namespace View.DataTemplates
 {
+    /// <summary>
+    /// Класс шаблона данных для страниц.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="IRecyclingDataTemplate"/>.
+    /// </remarks>
     public class PageDataTemplate : IRecyclingDataTemplate
     {
+        /// <summary>
+        /// Возвращает и задаёт контент.
+        /// </summary>
         [Content]
         [TemplateContent]
         public object? Content { get; set; }
 
+        /// <inheritdoc/>
         public bool Match(object? data) => data is BaseViewModel;
 
+        /// <inheritdoc/>
         public Control? Build(object? data) => Build(data, null);
 
+        /// <inheritdoc/>
         public Control? Build(object? data, Control? existing)
         {
             var type = typeof(IViewFor<>).MakeGenericType(data.GetType());

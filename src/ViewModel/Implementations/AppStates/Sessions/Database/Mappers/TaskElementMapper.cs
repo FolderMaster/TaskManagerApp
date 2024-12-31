@@ -5,20 +5,43 @@ using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 
 namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
 {
+    /// <summary>
+    /// Класс перобразования значений элементарных задач между двумя предметными областями.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IMapper{TimeIntervalEntity, ITimeIntervalElement}"/>.
+    /// </remarks>
     public class TaskElementMapper : IMapper<TaskElementEntity, ITaskElement>
     {
-        private readonly IMapper<MetadataEntity, object> _metadataConverter;
+        /// <summary>
+        /// Преобразование значений между сущностью метаданных и метаданными.
+        /// </summary>
+        private readonly IMapper<MetadataEntity, object> _metadataMapper;
 
-        private readonly IMapper<TimeIntervalEntity, ITimeIntervalElement>
-            _timeIntervalConverter;
+        /// <summary>
+        /// Преобразование значений между сущностью временных интервалов и
+        /// элементарными временными интервалами.
+        /// </summary>
+        private readonly IMapper<TimeIntervalEntity, ITimeIntervalElement> _timeIntervalMapper;
 
-        public TaskElementMapper(IMapper<MetadataEntity, object> metadataConverter,
-            IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalConverter)
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="TaskElementMapper"/>.
+        /// </summary>
+        /// <param name="metadataMapper">
+        /// Преобразование значений между сущностью метаданных и метаданными.
+        /// </param>
+        /// <param name="timeIntervalMapper">
+        /// Преобразование значений между сущностью временных интервалов и
+        /// элементарными временными интервалами.
+        /// </param>
+        public TaskElementMapper(IMapper<MetadataEntity, object> metadataMapper,
+            IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalMapper)
         {
-            _metadataConverter = metadataConverter;
-            _timeIntervalConverter = timeIntervalConverter;
+            _metadataMapper = metadataMapper;
+            _timeIntervalMapper = timeIntervalMapper;
         }
 
+        /// <inheritdoc/>
         public ITaskElement Map(TaskElementEntity value)
         {
             var result = new TaskElementDomain()
@@ -34,15 +57,16 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
                 ExecutedReal = value.ExecutedReal,
                 PlannedReal = value.PlannedReal
             };
-            result.Metadata = _metadataConverter.Map(value.Task.Metadata);
+            result.Metadata = _metadataMapper.Map(value.Task.Metadata);
             foreach (var timeInterval in value.TimeIntervals)
             {
-                var interval = _timeIntervalConverter.Map(timeInterval);
+                var interval = _timeIntervalMapper.Map(timeInterval);
                 result.TimeIntervals.Add(interval);
             }
             return result;
         }
 
+        /// <inheritdoc/>
         public TaskElementEntity MapBack(ITaskElement value)
         {
             if (value is not TaskElementDomain domain)
@@ -65,9 +89,9 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
             result.PlannedReal = domain.PlannedReal;
             var parentTask = domain.ParentTask as TaskCompositeDomain;
             result.Task.ParentTask = parentTask?.Entity;
-            result.Task.Metadata = _metadataConverter.MapBack(domain.Metadata);
+            result.Task.Metadata = _metadataMapper.MapBack(domain.Metadata);
             result.TimeIntervals = domain.TimeIntervals.
-                Select(_timeIntervalConverter.MapBack).ToList();
+                Select(_timeIntervalMapper.MapBack).ToList();
             return result;
         }
     }

@@ -4,10 +4,17 @@ using ViewModel.Interfaces.AppStates;
 
 namespace View.Desktop.macOS
 {
+    /// <summary>
+    /// Класс менеджера уведомлений macOS.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="INotificationManager"/>.
+    /// </remarks>
     public class MacOsNotificationManager : INotificationManager
     {
         private static string _appName = "TaskManager";
 
+        /// <inheritdoc/>
         public void SendNotification(string description, string title)
         {
             Process.Start(new ProcessStartInfo

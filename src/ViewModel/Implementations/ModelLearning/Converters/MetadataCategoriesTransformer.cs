@@ -3,10 +3,20 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.ModelLearning.Converters
 {
+    /// <summary>
+    /// Класс преобразования категории метаданных в данные для предсказания.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IDataTransformer{Metadata, int?}"/>.
+    /// </remarks>
     public class MetadataCategoriesTransformer : IDataTransformer<Metadata, int?>
     {
+        /// <summary>
+        /// Категории.
+        /// </summary>
         private List<string?> _categories = new();
 
+        /// <inheritdoc/>
         public IEnumerable<int?> FitTransform(IEnumerable<Metadata> data)
         {
             _categories.Clear();
@@ -24,6 +34,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             }
         }
 
+        /// <inheritdoc/>
         public int? Transform(Metadata data)
         {
             var index = _categories.IndexOf(data.Category);

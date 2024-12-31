@@ -10,9 +10,28 @@ using TaskStatus = Model.TaskStatus;
 
 namespace ViewModel.Implementations.ModelLearning.Converters
 {
+    /// <summary>
+    /// Класс конвертора элементраных задач в данные для предсказания шанс выполнения
+    /// с учителем и наоборот.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="BaseTaskElementSupervisedLearningConverter{double, double}"/>.
+    /// </remarks>
     public class ExecutionChanceTaskElementLearningConverter :
         BaseTaskElementSupervisedLearningConverter<double, double>
     {
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="ExecutionChanceTaskElementLearningConverter"/>.
+        /// </summary>
+        /// <param name="primaryPointDataProcessor">Первичный обработчик точечных данных.</param>
+        /// <param name="pointDataProcessors">Обработчики точечных данных.</param>
+        /// <param name="scalerFactory">Фабрика, создающая масштабирования данных.</param>
+        /// <param name="metadataCategoriesTransformer">
+        /// Преобразование категории метаданных в данные для предсказания.
+        /// </param>
+        /// <param name="metadataTagsITransformer">
+        /// Преобразование теги метаданных в данные для предсказания.
+        /// </param>
         public ExecutionChanceTaskElementLearningConverter
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors,
@@ -23,8 +42,10 @@ namespace ViewModel.Implementations.ModelLearning.Converters
                 metadataCategoriesTransformer, metadataTagsITransformer)
         { }
 
+        /// <inheritdoc/>
         public override double ConvertPredicted(double predicted) => predicted;
 
+        /// <inheritdoc/>
         protected override List<double?> ExtractPrimaryFeatures(ITaskElement dataItem) =>
             new List<double?>()
             {
@@ -36,6 +57,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
                 (int)dataItem.Status
             };
 
+        /// <inheritdoc/>
         protected override double ProcessTarget(ITaskElement item) => item.Status switch
         {
             TaskStatus.Closed  => 1,
@@ -43,6 +65,11 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             _ => item.Deadline == null ? 1 : CalculateExecutionChance(item)
         };
 
+        /// <summary>
+        /// Рассчитывает шанс выполнения.
+        /// </summary>
+        /// <param name="taskElement">Элементарная задача.</param>
+        /// <returns>Возвращает шанс выполнения.</returns>
         private double CalculateExecutionChance(ITaskElement taskElement)
         {
             if (taskElement.PlannedTime.TotalSeconds <= 0 ||

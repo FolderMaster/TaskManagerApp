@@ -7,9 +7,17 @@ using System.Text.RegularExpressions;
 
 namespace View.Converters
 {
+    /// <summary>
+    /// Класс конвертора тегов в строку и наоборот.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IValueConverter"/>.
+    /// </remarks>
     public class TagsToStringConverter : IValueConverter
     {
         private static Regex _tagsRegex = new Regex(@"\b\w+\b");
+
+        /// <inheritdoc/>
         public object Convert(object? value, Type targetType, object? parameter,
             CultureInfo culture)
         {
@@ -17,6 +25,7 @@ namespace View.Converters
             return tags != null ? string.Join(" ", tags) : "";
         }
 
+        /// <inheritdoc/>
         public object ConvertBack(object? value, Type targetType, object? parameter,
             CultureInfo culture)
         {

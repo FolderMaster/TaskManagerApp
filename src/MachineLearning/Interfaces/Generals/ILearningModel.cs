@@ -1,7 +1,7 @@
 ﻿namespace MachineLearning.Interfaces.Generals
 {
     /// <summary>
-    /// Интерфейс модели обучение.
+    /// Интерфейс модели обучения.
     /// </summary>
     /// <typeparam name="T">Тип входных данных для предсказания.</typeparam>
     /// <typeparam name="R">Тип выходных данных для предсказания.</typeparam>

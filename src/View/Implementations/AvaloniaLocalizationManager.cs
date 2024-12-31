@@ -12,26 +12,47 @@ using ViewModel.Interfaces.AppStates.Settings;
 
 namespace View.Implementations
 {
+    /// <summary>
+    /// Класс менеджера локализации Avalonia.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>.
+    /// Реализует <see cref="ILocalizationManager"/>.
+    /// </remarks>
     public class AvaloniaLocalizationManager : TrackableObject, ILocalizationManager
     {
+        /// <summary>
+        /// Локализации.
+        /// </summary>
         private static readonly Dictionary<CultureInfo, Uri> _localizations = new()
         {
             [new CultureInfo("en")] = new Uri("avares://View/Assets/Localizations/English.axaml"),
             [new CultureInfo("ru")] = new Uri("avares://View/Assets/Localizations/Russian.axaml")
         };
 
+        /// <summary>
+        /// Локализация.
+        /// </summary>
         private CultureInfo _localization;
 
+        /// <summary>
+        /// Текущий словарь ресурсов.
+        /// </summary>
         private static ResourceDictionary? _currentResources;
 
+        /// <inheritdoc/>
         public IEnumerable<CultureInfo> Localizations => _localizations.Keys;
 
+        /// <inheritdoc/>
         public CultureInfo ActualLocalization
         {
             get => _localization;
             set => UpdateProperty(ref _localization, value, SetLocalization);
         }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="AvaloniaLocalizationManager"/> по умолчанию.
+        /// </summary>
         public AvaloniaLocalizationManager()
         {
             var currentCulture = CultureInfo.CurrentCulture;
@@ -41,7 +62,12 @@ namespace View.Implementations
                     c.TwoLetterISOLanguageName == currentCulture.TwoLetterISOLanguageName) ??
                 Localizations.First();
         }
-
+        
+        /// <summary>
+        /// Устанавливает локализацию.
+        /// </summary>
+        /// <param name="oldValue">Старое значение.</param>
+        /// <param name="newValue">Новое значение.</param>
         private void SetLocalization(CultureInfo oldValue, CultureInfo newValue)
         {
             CultureInfo.CurrentCulture = ActualLocalization;

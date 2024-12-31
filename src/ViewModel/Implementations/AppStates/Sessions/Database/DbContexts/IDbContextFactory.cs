@@ -1,6 +1,6 @@
 ﻿using ViewModel.Interfaces.DataManagers.Generals;
 
-namespace ViewModel.Interfaces.AppStates.Sessions
+namespace ViewModel.Implementations.AppStates.Sessions.Database.DbContexts
 {
     /// <summary>
     /// Интерфейс фабрики, создающая контексты базы данных.

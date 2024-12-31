@@ -9,15 +9,26 @@ using View.Technilcals;
 
 namespace View;
 
+/// <summary>
+/// Класс приложения.
+/// </summary>
+/// <remarks>
+/// Наследует <see cref="Application"/>.
+/// </remarks>
 public partial class App : Application
 {
+    /// <summary>
+    /// Событие, возникающее, когда конфигуратор контейнера зависимостей создан.
+    /// </summary>
     public event EventHandler<ContainerBuilder>? ContainerBuilderCreated;
 
+    /// <inheritdoc />
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
     }
 
+    /// <inheritdoc />
     public override void OnFrameworkInitializationCompleted()
     {
         var container = BuildContainer();
@@ -34,6 +45,10 @@ public partial class App : Application
         base.OnFrameworkInitializationCompleted();
     }
 
+    /// <summary>
+    /// Создаёт контейнер зависимостей.
+    /// </summary>
+    /// <returns>Возвращает контейнер зависимостей.</returns>
     private IContainer BuildContainer()
     {
         var (builder, resolver) = ViewContainerHelper.GetContainerElements();

@@ -1,7 +1,7 @@
 ﻿namespace ViewModel.Interfaces.DataManagers.Generals
 {
     /// <summary>
-    /// Интерфейс для фабрики, создающая объекты.
+    /// Интерфейс фабрики, создающая объекты.
     /// </summary>
     /// <typeparam name="T">Тип данных создаваемых объектов.</typeparam>
     public interface IFactory<out T>

@@ -4,8 +4,15 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
 {
+    /// <summary>
+    /// Класс перобразования значений метаданных между двумя предметными областями.
+    /// </summary>
+    /// <remarks>
+    /// Реализует <see cref="IMapper{MetadataEntity, object}"/>.
+    /// </remarks>
     public class MetadataMapper : IMapper<MetadataEntity, object>
     {
+        /// <inheritdoc/>
         public object Map(MetadataEntity value)
         {
             return new Metadata()
@@ -17,6 +24,7 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
             };
         }
 
+        /// <inheritdoc/>
         public MetadataEntity MapBack(object value)
         {
             if (value is not Metadata metadata)

@@ -6,14 +6,30 @@ using Model.Interfaces;
 
 namespace View.DataTemplates
 {
+    /// <summary>
+    /// Класс шаблона данных для задач.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="ITreeDataTemplate"/>.
+    /// </remarks>
     public class TaskDataTemplate : ITreeDataTemplate
     {
+        /// <summary>
+        /// Возвращает и задаёт шаблона данных для элементарной задачи.
+        /// </summary>
         public IDataTemplate? ElementDataTemplate { get; set; }
 
+        /// <summary>
+        /// Возвращает и задаёт шаблона данных для составной задачи.
+        /// </summary>
         public IDataTemplate? CompositeDataTemplate { get; set; }
 
+        /// <summary>
+        /// Возвращает и задаёт шаблона данных для задачи.
+        /// </summary>
         public IDataTemplate? DataTemplate { get; set; }
 
+        /// <inheritdoc/>
         public Control? Build(object? param)
         {
             if (param is ITaskElement && ElementDataTemplate != null)
@@ -31,6 +47,7 @@ namespace View.DataTemplates
             return null;
         }
 
+        /// <inheritdoc/>
         public InstancedBinding? ItemsSelector(object item)
         {
             if (item is ITaskElement && ElementDataTemplate != null &&
@@ -51,6 +68,7 @@ namespace View.DataTemplates
             return null;
         }
 
+        /// <inheritdoc/>
         public bool Match(object? data) => data is ITask;
     }
 }
