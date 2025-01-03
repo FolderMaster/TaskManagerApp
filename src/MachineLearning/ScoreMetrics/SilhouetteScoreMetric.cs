@@ -33,7 +33,8 @@ namespace MachineLearning.ScoreMetrics
                 var point = data.ElementAt(n);
                 var a = CalculateAverageIntraClusterDistance
                     (clustersPointDictionary, point, cluster);
-                var b = AverageNearestClusterDistance(clustersPointDictionary, point, cluster);
+                var b = CalculateAverageNearestClusterDistance
+                    (clustersPointDictionary, point, cluster);
 
                 var silhouetteScore = (b - a) / Math.Max(a, b);
                 totalSilhouetteScore += silhouetteScore;
@@ -83,7 +84,7 @@ namespace MachineLearning.ScoreMetrics
         /// <param name="currentCluster">Текущий кластер.</param>
         /// <returns>Возвращает минимальное среднее расстояние между точкой и точками из другого
         /// кластера.</returns>
-        private double AverageNearestClusterDistance
+        private double CalculateAverageNearestClusterDistance
             (Dictionary<int, IEnumerable<IEnumerable<double>>> clustersPointDictionary,
             IEnumerable<double> currentPoint, int currentCluster)
         {

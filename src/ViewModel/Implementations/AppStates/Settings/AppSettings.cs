@@ -19,14 +19,9 @@ namespace ViewModel.Implementations.AppStates.Settings
     public class AppSettings : TrackableObject, ISettings
     {
         /// <summary>
-        /// Путь к файлу.
+        /// Частичный путь к файлу.
         /// </summary>
-        private static readonly string _filePath = "settings.json";
-
-        /// <summary>
-        /// Полный путь к файлу.
-        /// </summary>
-        private readonly string _fullFilePath;
+        private static readonly string _partFilePath = "settings.json";
 
         /// <summary>
         /// Файловый сервис.
@@ -63,6 +58,11 @@ namespace ViewModel.Implementations.AppStates.Settings
         /// </summary>
         private AppConfiguration _configuration = new();
 
+        /// <summary>
+        /// Возвращает и задаёт путь к файлу.
+        /// </summary>
+        public string FilePath { get; set; }
+
         /// <inheritdoc/>
         public object Configuration
         {
@@ -90,8 +90,8 @@ namespace ViewModel.Implementations.AppStates.Settings
             _serializer = serializer;
             _logger = logger;
 
-            _fullFilePath = _fileService.CombinePath
-                (_fileService.PersonalDirectoryPath, _filePath);
+            FilePath = _fileService.CombinePath
+                (_fileService.PersonalDirectoryPath, _partFilePath);
 
             InitializeConfiguration();
         }
@@ -101,7 +101,7 @@ namespace ViewModel.Implementations.AppStates.Settings
         {
             try
             {
-                var directoryPath = _fileService.GetDirectoryPath(_fullFilePath);
+                var directoryPath = _fileService.GetDirectoryPath(FilePath);
                 if (!_fileService.IsPathExists(directoryPath))
                 {
                     _fileService.CreateDirectory(directoryPath);
@@ -113,7 +113,7 @@ namespace ViewModel.Implementations.AppStates.Settings
                     SavePath = _configuration.SavePath
                 };
                 var data = _serializer.Serialize(format);
-                await _fileService.Save(_fullFilePath, data);
+                await _fileService.Save(FilePath, data);
             }
             catch (Exception ex)
             {
@@ -124,13 +124,13 @@ namespace ViewModel.Implementations.AppStates.Settings
         /// <inheritdoc/>
         public async Task Load()
         {
-            if (!_fileService.IsPathExists(_fullFilePath))
+            if (!_fileService.IsPathExists(FilePath))
             {
                 return;
             }
             try
             {
-                var bytes = await _fileService.Load(_fullFilePath);
+                var bytes = await _fileService.Load(FilePath);
                 var format = _serializer.Deserialize<AppConfigurationFormat>(bytes);
                 if (format != null)
                 {

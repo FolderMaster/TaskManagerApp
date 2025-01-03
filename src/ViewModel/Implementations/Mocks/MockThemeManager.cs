@@ -10,14 +10,23 @@ namespace ViewModel.Implementations.Mocks
     /// </remarks>
     public class MockThemeManager : IThemeManager
     {
-        /// <inheritdoc/>
-        public IEnumerable<object> Themes => throw new NotImplementedException();
+        /// <summary>
+        /// Темы.
+        /// </summary>
+        private IEnumerable<object> _themes;
 
         /// <inheritdoc/>
-        public object ActualTheme
+        public IEnumerable<object> Themes
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => _themes;
+            set
+            {
+                _themes = value;
+                ActualTheme = _themes.First();
+            }
         }
+
+        /// <inheritdoc/>
+        public object ActualTheme { get; set; }
     }
 }

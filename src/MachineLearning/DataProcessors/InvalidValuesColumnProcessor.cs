@@ -15,7 +15,7 @@ namespace MachineLearning.DataProcessors
         /// <summary>
         /// Значение для замены некорректных значений.
         /// </summary>
-        private static double _replacementInvalidValue = -1;
+        protected double _replacementInvalidValue = -1;
 
         /// <inheritdoc />
         public DataProcessorResult<double> Process(IEnumerable<double?> data)

@@ -20,11 +20,6 @@ namespace MachineLearning.Converters
         IUnsupervisedLearningConverter<IEnumerable<double>, R, D, DT, DR>
     {
         /// <summary>
-        /// Обработчики точечных данных.
-        /// </summary>
-        protected readonly IEnumerable<IPointDataProcessor> _pointDataProcessors;
-
-        /// <summary>
         /// Создаёт экземпляр класса <see cref="BaseUnsupervisedLearningConverter{R, D, DT, DR}"/>.
         /// </summary>
         /// <param name="primaryPointDataProcessor">Первичный обработчик точечных данных.</param>

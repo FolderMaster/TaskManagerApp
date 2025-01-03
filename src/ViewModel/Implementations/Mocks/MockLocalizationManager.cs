@@ -12,14 +12,23 @@ namespace ViewModel.Implementations.Mocks
     /// </remarks>
     public class MockLocalizationManager : ILocalizationManager
     {
-        /// <inheritdoc/>
-        public IEnumerable<CultureInfo> Localizations => throw new NotImplementedException();
+        /// <summary>
+        /// Локализации.
+        /// </summary>
+        private IEnumerable<CultureInfo> _localizations;
 
         /// <inheritdoc/>
-        public CultureInfo ActualLocalization
+        public IEnumerable<CultureInfo> Localizations
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => _localizations;
+            set
+            {
+                _localizations = value;
+                ActualLocalization = _localizations.First();
+            }
         }
+
+        /// <inheritdoc/>
+        public CultureInfo ActualLocalization { get; set; }
     }
 }

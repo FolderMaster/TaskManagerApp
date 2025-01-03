@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   width="1135.2705078125"
-   height="922"
-   id="svg428"
-   sodipodi:docname="TaskManager!ClassDiagram1_0.svg"
+   width="1176.44873046875"
+   height="938"
+   id="svg457"
+   sodipodi:docname="ClassDiagram_Model.svg"
+   inkscape:export-filename="ClassDiagram_Model.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview428"
+     id="namedview457"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -19,142 +22,76 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.291757"
-     inkscape:cx="567.44416"
-     inkscape:cy="522.93115"
+     inkscape:zoom="1.2697228"
+     inkscape:cx="587.92359"
+     inkscape:cy="469"
      inkscape:window-width="2560"
      inkscape:window-height="1387"
      inkscape:window-x="1072"
      inkscape:window-y="472"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g428" />
+     inkscape:current-layer="svg457" />
   <defs
      id="defs1" />
   <g
-     id="g428">
+     id="g457">
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g186">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g192">
       <rect
          fill="#C0C0C0"
          stroke="none"
-         x="215"
+         x="159"
          y="103"
-         width="656"
-         height="220"
+         width="264"
+         height="256"
          opacity="0.2"
-         id="rect186" />
+         id="rect192" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g187">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g193">
       <rect
          fill="#ffffff"
          stroke="none"
-         x="208"
+         x="152"
          y="96"
-         width="656"
-         height="220"
-         id="rect187" />
+         width="264"
+         height="256"
+         id="rect193" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g188">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 208 96 L 864 96 L 864 316 L 208 316 L 208 96 Z Z"
-         stroke-miterlimit="10"
-         id="path187" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g189">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 208 134 L 864 134"
-         stroke-miterlimit="10"
-         id="path188" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g190">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 208 144 L 864 144"
-         stroke-miterlimit="10"
-         id="path189" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g192">
-      <g
-         id="g191">
-        <path
-           fill="none"
-           stroke="none"
-           id="path190" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="503.839599609375"
-           y="112"
-           id="text190">«interface»</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g194">
-      <g
-         id="g193">
-        <path
-           fill="none"
-           stroke="none"
-           id="path192" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="bold"
-           text-decoration="none"
-           x="519.861083984375"
-           y="127"
-           id="text192">ITask</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 152 96 L 416 96 L 416 352 L 152 352 L 152 96 Z Z"
+         stroke-miterlimit="10"
+         id="path193" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g195">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 152 134 L 416 134"
+         stroke-miterlimit="10"
+         id="path194" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g196">
-      <g
-         id="g195">
-        <path
-           fill="none"
-           stroke="none"
-           id="path194" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="213"
-           y="160"
-           id="text194">+getParentTask(): IList&lt;ITask&gt;?</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 152 144 L 416 144"
+         stroke-miterlimit="10"
+         id="path195" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g198">
       <g
          id="g197">
@@ -170,13 +107,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="175"
-           id="text196">+setParentTask(value: IList&lt;ITask&gt;?)</text>
+           x="251.839599609375"
+           y="112"
+           id="text196">«interface»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g200">
       <g
          id="g199">
@@ -190,15 +127,15 @@
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="normal"
+           font-weight="bold"
            text-decoration="none"
-           x="213"
-           y="190"
-           id="text198">+getMetadata(): object?</text>
+           x="267.861083984375"
+           y="127"
+           id="text198">ITask</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g202">
       <g
          id="g201">
@@ -214,13 +151,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="205"
-           id="text200">+setMetadata(value: object?)</text>
+           x="157"
+           y="160"
+           id="text200">+getParentTask(): ITaskComposite?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g204">
       <g
          id="g203">
@@ -236,13 +173,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="220"
-           id="text202">+getDifficult(): int</text>
+           x="157"
+           y="175"
+           id="text202">+setParentTask(value: ITaskComposite?)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g206">
       <g
          id="g205">
@@ -258,13 +195,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="235"
-           id="text204">+getPriority(): int</text>
+           x="157"
+           y="190"
+           id="text204">+getMetadata(): object?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g208">
       <g
          id="g207">
@@ -280,13 +217,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="250"
-           id="text206">+getStatus(): TaskStatus</text>
+           x="157"
+           y="205"
+           id="text206">+setMetadata(value: object?)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g210">
       <g
          id="g209">
@@ -302,13 +239,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="265"
-           id="text208">+getDeadline(): DateTime?</text>
+           x="157"
+           y="220"
+           id="text208">+getDifficult(): int</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g212">
       <g
          id="g211">
@@ -324,13 +261,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="280"
-           id="text210">+getProgress(): double</text>
+           x="157"
+           y="235"
+           id="text210">+getPriority(): int</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g214">
       <g
          id="g213">
@@ -346,13 +283,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="295"
-           id="text212">+getPlannedTime(): TimeSpan</text>
+           x="157"
+           y="250"
+           id="text212">+getStatus(): TaskStatus</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g216">
       <g
          id="g215">
@@ -368,119 +305,20 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="213"
-           y="310"
-           id="text214">+getSpentTime(): TimeSpan</text>
+           x="157"
+           y="265"
+           id="text214">+getDeadline(): DateTime?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g217">
-      <rect
-         fill="#C0C0C0"
-         stroke="none"
-         x="159"
-         y="423"
-         width="222.96044921875"
-         height="235"
-         opacity="0.2"
-         id="rect216" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g218">
-      <rect
-         fill="#ffffff"
-         stroke="none"
-         x="152"
-         y="416"
-         width="222.96044921875"
-         height="235"
-         id="rect217" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g219">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 152 416 L 374.96044921875 416 L 374.96044921875 651 L 152 651 L 152 416 Z Z"
-         stroke-miterlimit="10"
-         id="path218" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g220">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 152 454 L 374.96044921875 454"
-         stroke-miterlimit="10"
-         id="path219" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g221">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 152 464 L 374.96044921875 464"
-         stroke-miterlimit="10"
-         id="path220" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g223">
       <g
-         id="g222">
+         id="g217">
         <path
            fill="none"
            stroke="none"
-           id="path221" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="231.31982421875"
-           y="432"
-           id="text221">«interface»</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g225">
-      <g
-         id="g224">
-        <path
-           fill="none"
-           stroke="none"
-           id="path223" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="bold"
-           text-decoration="none"
-           x="222.055419921875"
-           y="447"
-           id="text223">ITaskElement</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g227">
-      <g
-         id="g226">
-        <path
-           fill="none"
-           stroke="none"
-           id="path225" />
+           id="path216" />
         <text
            fill="#000000"
            stroke="none"
@@ -490,12 +328,111 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="480"
-           id="text225">+setDifficult(value: int)</text>
+           y="280"
+           id="text216">+getProgress(): double</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g220">
+      <g
+         id="g219">
+        <path
+           fill="none"
+           stroke="none"
+           id="path218" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="157"
+           y="295"
+           id="text218">+getPlannedTime(): TimeSpan</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g222">
+      <g
+         id="g221">
+        <path
+           fill="none"
+           stroke="none"
+           id="path220" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="157"
+           y="310"
+           id="text220">+getSpentTime(): TimeSpan</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g223">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="159"
+         y="423"
+         width="222.96044921875"
+         height="235"
+         opacity="0.2"
+         id="rect222" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g224">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="152"
+         y="416"
+         width="222.96044921875"
+         height="235"
+         id="rect223" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g225">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 152 416 L 374.96044921875 416 L 374.96044921875 651 L 152 651 L 152 416 Z Z"
+         stroke-miterlimit="10"
+         id="path224" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g226">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 152 454 L 374.96044921875 454"
+         stroke-miterlimit="10"
+         id="path225" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g227">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 152 464 L 374.96044921875 464"
+         stroke-miterlimit="10"
+         id="path226" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g229">
       <g
          id="g228">
@@ -511,13 +448,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="157"
-           y="495"
-           id="text227">+setPriority(value: int)</text>
+           x="231.31982421875"
+           y="432"
+           id="text227">«interface»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g231">
       <g
          id="g230">
@@ -531,15 +468,15 @@
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="normal"
+           font-weight="bold"
            text-decoration="none"
-           x="157"
-           y="510"
-           id="text229">+setStatus(value: TaskStatus)</text>
+           x="222.055419921875"
+           y="447"
+           id="text229">ITaskElement</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g233">
       <g
          id="g232">
@@ -556,12 +493,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="525"
-           id="text231">+setDeadline(value: DateTime?)</text>
+           y="480"
+           id="text231">+setDifficult(value: int)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g235">
       <g
          id="g234">
@@ -578,12 +515,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="540"
-           id="text233">+setProgress(value: double)</text>
+           y="495"
+           id="text233">+setPriority(value: int)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g237">
       <g
          id="g236">
@@ -600,12 +537,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="555"
-           id="text235">+setPlannedTime(value: TimeSpan)</text>
+           y="510"
+           id="text235">+setStatus(value: TaskStatus)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g239">
       <g
          id="g238">
@@ -622,12 +559,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="570"
-           id="text237">+setSpentTime(value: TimeSpan)</text>
+           y="525"
+           id="text237">+setDeadline(value: DateTime?)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g241">
       <g
          id="g240">
@@ -644,12 +581,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="585"
-           id="text239">+getPlannedReal(): double</text>
+           y="540"
+           id="text239">+setProgress(value: double)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g243">
       <g
          id="g242">
@@ -666,12 +603,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="600"
-           id="text241">+setPlannedReal(value: double)</text>
+           y="555"
+           id="text241">+setPlannedTime(value: TimeSpan)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g245">
       <g
          id="g244">
@@ -688,12 +625,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="615"
-           id="text243">+getExecutedReal(): double</text>
+           y="570"
+           id="text243">+setSpentTime(value: TimeSpan)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g247">
       <g
          id="g246">
@@ -710,12 +647,12 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="630"
-           id="text245">+setExecutedReal(value: double)</text>
+           y="585"
+           id="text245">+getPlannedReal(): double</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g249">
       <g
          id="g248">
@@ -732,133 +669,133 @@
            font-weight="normal"
            text-decoration="none"
            x="157"
-           y="645"
-           id="text247">+getTimeIntervals(): ITimeIntervalList</text>
+           y="600"
+           id="text247">+setPlannedReal(value: double)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g250">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g251">
+      <g
+         id="g250">
+        <path
+           fill="none"
+           stroke="none"
+           id="path249" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="157"
+           y="615"
+           id="text249">+getExecutedReal(): double</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g253">
+      <g
+         id="g252">
+        <path
+           fill="none"
+           stroke="none"
+           id="path251" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="157"
+           y="630"
+           id="text251">+setExecutedReal(value: double)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g255">
+      <g
+         id="g254">
+        <path
+           fill="none"
+           stroke="none"
+           id="path253" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="157"
+           y="645"
+           id="text253">+getTimeIntervals(): ITimeIntervalList</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g256">
       <rect
          fill="#C0C0C0"
          stroke="none"
-         x="959"
-         y="135"
-         width="95.72802734375"
+         x="1151"
+         y="327"
+         width="112"
          height="160"
          opacity="0.2"
-         id="rect249" />
+         id="rect255" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g251">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g257">
       <rect
          fill="#ffffff"
          stroke="none"
-         x="952"
-         y="128"
-         width="95.72802734375"
+         x="1144"
+         y="320"
+         width="112"
          height="160"
-         id="rect250" />
+         id="rect256" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g252">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 952 128 L 1047.72802734375 128 L 1047.72802734375 288 L 952 288 L 952 128 Z Z"
-         stroke-miterlimit="10"
-         id="path251" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g253">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 952 166 L 1047.72802734375 166"
-         stroke-miterlimit="10"
-         id="path252" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g254">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 952 279 L 1047.72802734375 279"
-         stroke-miterlimit="10"
-         id="path253" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g256">
-      <g
-         id="g255">
-        <path
-           fill="none"
-           stroke="none"
-           id="path254" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="976.37451171875"
-           y="142.5"
-           id="text254">«enum»</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g258">
-      <g
-         id="g257">
-        <path
-           fill="none"
-           stroke="none"
-           id="path256" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="bold"
-           text-decoration="none"
-           x="965.666015625"
-           y="159"
-           id="text256">TaskStatus</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1144 320 L 1256 320 L 1256 480 L 1144 480 L 1144 320 Z Z"
+         stroke-miterlimit="10"
+         id="path257" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g259">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1144 358 L 1256 358"
+         stroke-miterlimit="10"
+         id="path258" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g260">
-      <g
-         id="g259">
-        <path
-           fill="none"
-           stroke="none"
-           id="path258" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="957"
-           y="182"
-           id="text258">+cancelled</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1144 471 L 1256 471"
+         stroke-miterlimit="10"
+         id="path259" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g262">
       <g
          id="g261">
@@ -874,13 +811,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="957"
-           y="197"
-           id="text260">+blocked</text>
+           x="1176.510498046875"
+           y="334.5"
+           id="text260">«enum»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g264">
       <g
          id="g263">
@@ -894,15 +831,15 @@
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="normal"
+           font-weight="bold"
            text-decoration="none"
-           x="957"
-           y="212"
-           id="text262">+deferred</text>
+           x="1165.802001953125"
+           y="351"
+           id="text262">TaskStatus</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g266">
       <g
          id="g265">
@@ -918,13 +855,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="957"
-           y="227"
-           id="text264">+onHold</text>
+           x="1149"
+           y="374"
+           id="text264">+cancelled</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g268">
       <g
          id="g267">
@@ -940,13 +877,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="957"
-           y="242"
-           id="text266">+inProgress</text>
+           x="1149"
+           y="389"
+           id="text266">+blocked</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g270">
       <g
          id="g269">
@@ -962,13 +899,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="957"
-           y="257"
-           id="text268">+planned</text>
+           x="1149"
+           y="404"
+           id="text268">+deferred</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g272">
       <g
          id="g271">
@@ -984,174 +921,141 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="957"
-           y="272"
-           id="text270">+closed</text>
+           x="1149"
+           y="419"
+           id="text270">+onHold</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g273">
-      <rect
-         fill="#C0C0C0"
-         stroke="none"
-         x="775"
-         y="375"
-         width="108.44873046875"
-         height="57"
-         opacity="0.2"
-         id="rect272" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g274">
-      <rect
-         fill="#ffffff"
-         stroke="none"
-         x="768"
-         y="368"
-         width="108.44873046875"
-         height="57"
-         id="rect273" />
+      <g
+         id="g273">
+        <path
+           fill="none"
+           stroke="none"
+           id="path272" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="1149"
+           y="434"
+           id="text272">+inProgress</text>
+      </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g275">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 768 368 L 876.44873046875 368 L 876.44873046875 425 L 768 425 L 768 368 Z Z"
-         stroke-miterlimit="10"
-         id="path274" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g276">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 768 406 L 876.44873046875 406"
-         stroke-miterlimit="10"
-         id="path275" />
+      <g
+         id="g275">
+        <path
+           fill="none"
+           stroke="none"
+           id="path274" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="1149"
+           y="449"
+           id="text274">+planned</text>
+      </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g277">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 768 416 L 876.44873046875 416"
-         stroke-miterlimit="10"
-         id="path276" />
+       transform="translate(-142,-70) scale(1,1)"
+       id="g278">
+      <g
+         id="g277">
+        <path
+           fill="none"
+           stroke="none"
+           id="path276" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="1149"
+           y="464"
+           id="text276">+closed</text>
+      </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g279">
-      <g
-         id="g278">
-        <path
-           fill="none"
-           stroke="none"
-           id="path277" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="790.06396484375"
-           y="384"
-           id="text277">«interface»</text>
-      </g>
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="1071"
+         y="87"
+         width="244.44873046875"
+         height="64"
+         opacity="0.2"
+         id="rect278" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g280">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="1064"
+         y="80"
+         width="244.44873046875"
+         height="64"
+         id="rect279" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g281">
-      <g
-         id="g280">
-        <path
-           fill="none"
-           stroke="none"
-           id="path279" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="bold"
-           text-decoration="none"
-           x="772.5"
-           y="399"
-           id="text279">ITaskComposite</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1064 80 L 1308.44873046875 80 L 1308.44873046875 144 L 1064 144 L 1064 80 Z Z"
+         stroke-miterlimit="10"
+         id="path280" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g282">
-      <rect
-         fill="#C0C0C0"
-         stroke="none"
-         x="431"
-         y="367"
-         width="296"
-         height="70"
-         opacity="0.2"
-         id="rect281" />
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1064 118 L 1308.44873046875 118"
+         stroke-miterlimit="10"
+         id="path281" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g283">
-      <rect
-         fill="#ffffff"
-         stroke="none"
-         x="424"
-         y="360"
-         width="296"
-         height="70"
-         id="rect282" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g284">
       <path
          fill="none"
          stroke="#000000"
-         d="M 424 360 L 720 360 L 720 430 L 424 430 L 424 360 Z Z"
+         d="M 1064 128 L 1308.44873046875 128"
          stroke-miterlimit="10"
-         id="path283" />
+         id="path282" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g285">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 424 398 L 720 398"
-         stroke-miterlimit="10"
-         id="path284" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g286">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 424 408 L 720 408"
-         stroke-miterlimit="10"
-         id="path285" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g288">
       <g
-         id="g287">
+         id="g284">
         <path
            fill="none"
            stroke="none"
-           id="path286" />
+           id="path283" />
         <text
            fill="#000000"
            stroke="none"
@@ -1160,20 +1064,20 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="539.839599609375"
-           y="376"
-           id="text286">«interface»</text>
+           x="1154.06396484375"
+           y="96"
+           id="text283">«interface»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g290">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g287">
       <g
-         id="g289">
+         id="g286">
         <path
            fill="none"
            stroke="none"
-           id="path288" />
+           id="path285" />
         <text
            fill="#000000"
            stroke="none"
@@ -1182,97 +1086,97 @@
            font-style="normal"
            font-weight="bold"
            text-decoration="none"
-           x="532.019287109375"
-           y="391"
-           id="text288">ITimeInterval</text>
+           x="1136.5"
+           y="111"
+           id="text285">ITaskComposite</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g292">
-      <g
-         id="g291">
-        <path
-           fill="none"
-           stroke="none"
-           id="path290" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="429"
-           y="424"
-           id="text290">+getDuration(): TimeSpan</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g293">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g288">
       <rect
          fill="#C0C0C0"
          stroke="none"
-         x="183"
-         y="783"
-         width="480"
-         height="222"
+         x="455"
+         y="383"
+         width="296"
+         height="70"
          opacity="0.2"
-         id="rect292" />
+         id="rect287" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g294">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g289">
       <rect
          fill="#ffffff"
          stroke="none"
-         x="176"
-         y="776"
-         width="480"
-         height="222"
-         id="rect293" />
+         x="448"
+         y="376"
+         width="296"
+         height="70"
+         id="rect288" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g295">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g290">
       <path
          fill="none"
          stroke="#000000"
-         d="M 176 776 L 656 776 L 656 998 L 176 998 L 176 776 Z Z"
+         d="M 448 376 L 744 376 L 744 446 L 448 446 L 448 376 Z Z"
          stroke-miterlimit="10"
-         id="path294" />
+         id="path289" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g296">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g291">
       <path
          fill="none"
          stroke="#000000"
-         d="M 176 801 L 656 801"
+         d="M 448 414 L 744 414"
          stroke-miterlimit="10"
-         id="path295" />
+         id="path290" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g297">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g292">
       <path
          fill="none"
          stroke="#000000"
-         d="M 176 989 L 656 989"
+         d="M 448 424 L 744 424"
          stroke-miterlimit="10"
-         id="path296" />
+         id="path291" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g299">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g294">
       <g
-         id="g298">
+         id="g293">
         <path
            fill="none"
            stroke="none"
-           id="path297" />
+           id="path292" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="563.839599609375"
+           y="392"
+           id="text292">«interface»</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g296">
+      <g
+         id="g295">
+        <path
+           fill="none"
+           stroke="none"
+           id="path294" />
         <text
            fill="#000000"
            stroke="none"
@@ -1281,57 +1185,90 @@
            font-style="normal"
            font-weight="bold"
            text-decoration="none"
-           x="376.381103515625"
-           y="794"
-           id="text297">TaskElement</text>
+           x="556.019287109375"
+           y="407"
+           id="text294">ITimeInterval</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g298">
+      <g
+         id="g297">
+        <path
+           fill="none"
+           stroke="none"
+           id="path296" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="453"
+           y="440"
+           id="text296">+getDuration(): TimeSpan</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g299">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="191"
+         y="783"
+         width="392"
+         height="222"
+         opacity="0.2"
+         id="rect298" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g300">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="184"
+         y="776"
+         width="392"
+         height="222"
+         id="rect299" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g301">
-      <g
-         id="g300">
-        <path
-           fill="none"
-           stroke="none"
-           id="path299" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="181"
-           y="817"
-           id="text299">-timeIntervals: TimeIntervalsList = new() {readOnly}</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 184 776 L 576 776 L 576 998 L 184 998 L 184 776 Z Z"
+         stroke-miterlimit="10"
+         id="path300" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g302">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 184 801 L 576 801"
+         stroke-miterlimit="10"
+         id="path301" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g303">
-      <g
-         id="g302">
-        <path
-           fill="none"
-           stroke="none"
-           id="path301" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="181"
-           y="832"
-           id="text301">-parentTask: List&lt;ITask&gt;?</text>
-      </g>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 184 989 L 576 989"
+         stroke-miterlimit="10"
+         id="path302" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g305">
       <g
          id="g304">
@@ -1345,15 +1282,15 @@
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="normal"
+           font-weight="bold"
            text-decoration="none"
-           x="181"
-           y="847"
-           id="text303">-metadata: object?</text>
+           x="340.381103515625"
+           y="794"
+           id="text303">TaskElement</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g307">
       <g
          id="g306">
@@ -1369,13 +1306,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="862"
-           id="text305">-difficult: int</text>
+           x="189"
+           y="817"
+           id="text305">-timeIntervals: TimeIntervalsList = new() {readOnly}</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g309">
       <g
          id="g308">
@@ -1391,13 +1328,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="877"
-           id="text307">-priority: int</text>
+           x="189"
+           y="832"
+           id="text307">-parentTask: ITaskComposite?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g311">
       <g
          id="g310">
@@ -1413,13 +1350,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="892"
-           id="text309">-deadline: DateTime?</text>
+           x="189"
+           y="847"
+           id="text309">-metadata: object?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g313">
       <g
          id="g312">
@@ -1435,13 +1372,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="907"
-           id="text311">-status: TaskStatus = TaskStatus.Planned</text>
+           x="189"
+           y="862"
+           id="text311">-difficult: int</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g315">
       <g
          id="g314">
@@ -1457,13 +1394,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="922"
-           id="text313">-progress: double</text>
+           x="189"
+           y="877"
+           id="text313">-priority: int</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g317">
       <g
          id="g316">
@@ -1479,13 +1416,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="937"
-           id="text315">-plannedTime: TimeSpan</text>
+           x="189"
+           y="892"
+           id="text315">-deadline: DateTime?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g319">
       <g
          id="g318">
@@ -1501,13 +1438,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="952"
-           id="text317">-spentTime: TimeSpan</text>
+           x="189"
+           y="907"
+           id="text317">-status: TaskStatus = TaskStatus.Planned</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g321">
       <g
          id="g320">
@@ -1523,13 +1460,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="967"
-           id="text319">-plannedReal: double</text>
+           x="189"
+           y="922"
+           id="text319">-progress: double</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g323">
       <g
          id="g322">
@@ -1545,75 +1482,141 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="181"
-           y="982"
-           id="text321">-executedReal: double</text>
+           x="189"
+           y="937"
+           id="text321">-plannedTime: TimeSpan</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g324">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g325">
+      <g
+         id="g324">
+        <path
+           fill="none"
+           stroke="none"
+           id="path323" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="189"
+           y="952"
+           id="text323">-spentTime: TimeSpan</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g327">
+      <g
+         id="g326">
+        <path
+           fill="none"
+           stroke="none"
+           id="path325" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="189"
+           y="967"
+           id="text325">-plannedReal: double</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g329">
+      <g
+         id="g328">
+        <path
+           fill="none"
+           stroke="none"
+           id="path327" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="189"
+           y="982"
+           id="text327">-executedReal: double</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g330">
       <rect
          fill="#C0C0C0"
          stroke="none"
          x="943"
-         y="359"
+         y="215"
          width="331.2705078125"
-         height="72"
+         height="100"
          opacity="0.2"
-         id="rect323" />
+         id="rect329" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g325">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g331">
       <rect
          fill="#ffffff"
          stroke="none"
          x="936"
-         y="352"
+         y="208"
          width="331.2705078125"
-         height="72"
-         id="rect324" />
+         height="100"
+         id="rect330" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g326">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g332">
       <path
          fill="none"
          stroke="#000000"
-         d="M 936 352 L 1267.2705078125 352 L 1267.2705078125 424 L 936 424 L 936 352 Z Z"
+         d="M 936 208 L 1267.2705078125 208 L 1267.2705078125 308 L 936 308 L 936 208 Z Z"
          stroke-miterlimit="10"
-         id="path325" />
+         id="path331" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g327">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g333">
       <path
          fill="none"
          stroke="#000000"
-         d="M 936 377 L 1267.2705078125 377"
+         d="M 936 233 L 1267.2705078125 233"
          stroke-miterlimit="10"
-         id="path326" />
+         id="path332" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g328">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g334">
       <path
          fill="none"
          stroke="#000000"
-         d="M 936 387 L 1267.2705078125 387"
+         d="M 936 271 L 1267.2705078125 271"
          stroke-miterlimit="10"
-         id="path327" />
+         id="path333" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g330">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g336">
       <g
-         id="g329">
+         id="g335">
         <path
            fill="none"
            stroke="none"
-           id="path328" />
+           id="path334" />
         <text
            fill="#000000"
            stroke="none"
@@ -1623,19 +1626,19 @@
            font-weight="bold"
            text-decoration="none"
            x="1053.716796875"
-           y="370"
-           id="text328">TaskComposite</text>
+           y="226"
+           id="text334">TaskComposite</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g332">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g338">
       <g
-         id="g331">
+         id="g337">
         <path
            fill="none"
            stroke="none"
-           id="path330" />
+           id="path336" />
         <text
            fill="#000000"
            stroke="none"
@@ -1645,19 +1648,19 @@
            font-weight="normal"
            text-decoration="none"
            x="941"
-           y="403"
-           id="text330">+taskComposite(subtasks: IEnumerable&lt;ITask&gt;? = null)</text>
+           y="249"
+           id="text336">-parentTask: ITaskComposite?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g334">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g340">
       <g
-         id="g333">
+         id="g339">
         <path
            fill="none"
            stroke="none"
-           id="path332" />
+           id="path338" />
         <text
            fill="#000000"
            stroke="none"
@@ -1667,13 +1670,57 @@
            font-weight="normal"
            text-decoration="none"
            x="941"
-           y="418"
-           id="text332">+taskComposite()</text>
+           y="264"
+           id="text338">-metadata: object?</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g335">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g342">
+      <g
+         id="g341">
+        <path
+           fill="none"
+           stroke="none"
+           id="path340" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="941"
+           y="287"
+           id="text340">+taskComposite(subtasks: IEnumerable&lt;ITask&gt;? = null)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g344">
+      <g
+         id="g343">
+        <path
+           fill="none"
+           stroke="none"
+           id="path342" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="941"
+           y="302"
+           id="text342">+taskComposite()</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g345">
       <rect
          fill="#C0C0C0"
          stroke="none"
@@ -1682,11 +1729,11 @@
          width="164.212890625"
          height="115"
          opacity="0.2"
-         id="rect334" />
+         id="rect344" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g336">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g346">
       <rect
          fill="#ffffff"
          stroke="none"
@@ -1694,150 +1741,40 @@
          y="480"
          width="164.212890625"
          height="115"
-         id="rect335" />
+         id="rect345" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g337">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g347">
       <path
          fill="none"
          stroke="#000000"
          d="M 584 480 L 748.212890625 480 L 748.212890625 595 L 584 595 L 584 480 Z Z"
          stroke-miterlimit="10"
-         id="path336" />
+         id="path346" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g338">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g348">
       <path
          fill="none"
          stroke="#000000"
          d="M 584 518 L 748.212890625 518"
          stroke-miterlimit="10"
-         id="path337" />
+         id="path347" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g339">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g349">
       <path
          fill="none"
          stroke="#000000"
          d="M 584 528 L 748.212890625 528"
          stroke-miterlimit="10"
-         id="path338" />
+         id="path348" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g341">
-      <g
-         id="g340">
-        <path
-           fill="none"
-           stroke="none"
-           id="path339" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="633.946044921875"
-           y="496"
-           id="text339">«interface»</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g343">
-      <g
-         id="g342">
-        <path
-           fill="none"
-           stroke="none"
-           id="path341" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="bold"
-           text-decoration="none"
-           x="600.83984375"
-           y="511"
-           id="text341">ITimeIntervalElement</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g345">
-      <g
-         id="g344">
-        <path
-           fill="none"
-           stroke="none"
-           id="path343" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="589"
-           y="544"
-           id="text343">+getStart(): DateTime</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g347">
-      <g
-         id="g346">
-        <path
-           fill="none"
-           stroke="none"
-           id="path345" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="589"
-           y="559"
-           id="text345">+setStart(value: DateTime)</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g349">
-      <g
-         id="g348">
-        <path
-           fill="none"
-           stroke="none"
-           id="path347" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="589"
-           y="574"
-           id="text347">+getEnd(): DateTime</text>
-      </g>
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g351">
       <g
          id="g350">
@@ -1853,75 +1790,185 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="589"
-           y="589"
-           id="text349">+setEnd(value: DateTime)</text>
+           x="633.946044921875"
+           y="496"
+           id="text349">«interface»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g352">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g353">
+      <g
+         id="g352">
+        <path
+           fill="none"
+           stroke="none"
+           id="path351" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="600.83984375"
+           y="511"
+           id="text351">ITimeIntervalElement</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g355">
+      <g
+         id="g354">
+        <path
+           fill="none"
+           stroke="none"
+           id="path353" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="589"
+           y="544"
+           id="text353">+getStart(): DateTime</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g357">
+      <g
+         id="g356">
+        <path
+           fill="none"
+           stroke="none"
+           id="path355" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="589"
+           y="559"
+           id="text355">+setStart(value: DateTime)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g359">
+      <g
+         id="g358">
+        <path
+           fill="none"
+           stroke="none"
+           id="path357" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="589"
+           y="574"
+           id="text357">+getEnd(): DateTime</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g361">
+      <g
+         id="g360">
+        <path
+           fill="none"
+           stroke="none"
+           id="path359" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="589"
+           y="589"
+           id="text359">+setEnd(value: DateTime)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g362">
       <rect
          fill="#C0C0C0"
          stroke="none"
          x="447"
-         y="487"
+         y="495"
          width="112.0732421875"
          height="57"
          opacity="0.2"
-         id="rect351" />
+         id="rect361" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g353">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g363">
       <rect
          fill="#ffffff"
          stroke="none"
          x="440"
-         y="480"
+         y="488"
          width="112.0732421875"
          height="57"
-         id="rect352" />
+         id="rect362" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g354">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g364">
       <path
          fill="none"
          stroke="#000000"
-         d="M 440 480 L 552.0732421875 480 L 552.0732421875 537 L 440 537 L 440 480 Z Z"
+         d="M 440 488 L 552.0732421875 488 L 552.0732421875 545 L 440 545 L 440 488 Z Z"
          stroke-miterlimit="10"
-         id="path353" />
+         id="path363" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g355">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g365">
       <path
          fill="none"
          stroke="#000000"
-         d="M 440 518 L 552.0732421875 518"
+         d="M 440 526 L 552.0732421875 526"
          stroke-miterlimit="10"
-         id="path354" />
+         id="path364" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g356">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g366">
       <path
          fill="none"
          stroke="#000000"
-         d="M 440 528 L 552.0732421875 528"
+         d="M 440 536 L 552.0732421875 536"
          stroke-miterlimit="10"
-         id="path355" />
+         id="path365" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g358">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g368">
       <g
-         id="g357">
+         id="g367">
         <path
            fill="none"
            stroke="none"
-           id="path356" />
+           id="path366" />
         <text
            fill="#000000"
            stroke="none"
@@ -1931,19 +1978,19 @@
            font-weight="normal"
            text-decoration="none"
            x="463.876220703125"
-           y="496"
-           id="text356">«interface»</text>
+           y="504"
+           id="text366">«interface»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g360">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g370">
       <g
-         id="g359">
+         id="g369">
         <path
            fill="none"
            stroke="none"
-           id="path358" />
+           id="path368" />
         <text
            fill="#000000"
            stroke="none"
@@ -1953,247 +2000,149 @@
            font-weight="bold"
            text-decoration="none"
            x="444.5"
-           y="511"
-           id="text358">ITimeIntervalList</text>
+           y="519"
+           id="text368">ITimeIntervalList</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g361">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 496 480 L 496 430"
-         stroke-miterlimit="10"
-         stroke-dasharray="3"
-         id="path360" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g362">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 504.419035512032 450.3253497152483 L 496 430 L 487.580964487968 450.3253497152483"
-         id="path361" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g363">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 504.419035512032 450.3253497152483 L 496 430 L 487.580964487968 450.3253497152483 L 504.419035512032 450.3253497152483"
-         stroke-miterlimit="10"
-         id="path362" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g364">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 672 480 L 672 430"
-         stroke-miterlimit="10"
-         stroke-dasharray="3"
-         id="path363" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g365">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 680.419035512032 450.3253497152483 L 672 430 L 663.580964487968 450.3253497152483"
-         id="path364" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g366">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 680.419035512032 450.3253497152483 L 672 430 L 663.580964487968 450.3253497152483 L 680.419035512032 450.3253497152483"
-         stroke-miterlimit="10"
-         id="path365" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g367">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 816 368 L 816 316"
-         stroke-miterlimit="10"
-         stroke-dasharray="3"
-         id="path366" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g368">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 824.419035512032 336.3253497152483 L 816 316 L 807.580964487968 336.3253497152483"
-         id="path367" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g369">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 824.419035512032 336.3253497152483 L 816 316 L 807.580964487968 336.3253497152483 L 824.419035512032 336.3253497152483"
-         stroke-miterlimit="10"
-         id="path368" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g370">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 272 416 L 272 316"
-         stroke-miterlimit="10"
-         stroke-dasharray="3"
-         id="path369" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g371">
       <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 280.419035512032 336.3253497152483 L 272 316 L 263.580964487968 336.3253497152483"
+         fill="none"
+         stroke="#000000"
+         d="M 1134 208 L 1134 144"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
          id="path370" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g372">
       <path
-         fill="none"
-         stroke="#000000"
-         d="M 280.419035512032 336.3253497152483 L 272 316 L 263.580964487968 336.3253497152483 L 280.419035512032 336.3253497152483"
-         stroke-miterlimit="10"
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 1142.419035512032 164.3253497152483 L 1134 144 L 1125.580964487968 164.3253497152483"
          id="path371" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g373">
       <path
          fill="none"
          stroke="#000000"
-         d="M 936 392 L 876 392"
+         d="M 1142.419035512032 164.3253497152483 L 1134 144 L 1125.580964487968 164.3253497152483 L 1142.419035512032 164.3253497152483"
          stroke-miterlimit="10"
-         stroke-dasharray="3"
          id="path372" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g374">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 896.3253497152483 383.580964487968 L 876 392 L 896.3253497152483 400.419035512032"
-         id="path373" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g375">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 896.3253497152483 383.580964487968 L 876 392 L 896.3253497152483 400.419035512032 L 896.3253497152483 383.580964487968"
-         stroke-miterlimit="10"
-         id="path374" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g376">
       <path
          fill="none"
          stroke="#000000"
          d="M 232 776 L 232 651"
          stroke-miterlimit="10"
          stroke-dasharray="3"
-         id="path375" />
+         id="path373" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g377">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g375">
       <path
          fill="#FFFFFF"
          stroke="none"
          d="M 240.41903551203197 671.3253497152483 L 232 651 L 223.58096448796803 671.3253497152483"
-         id="path376" />
+         id="path374" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g378">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g376">
       <path
          fill="none"
          stroke="#000000"
          d="M 240.41903551203197 671.3253497152483 L 232 651 L 223.58096448796803 671.3253497152483 L 240.41903551203197 671.3253497152483"
          stroke-miterlimit="10"
-         id="path377" />
+         id="path375" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g379">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g377">
       <rect
          fill="#C0C0C0"
          stroke="none"
-         x="423"
+         x="415"
          y="631"
          width="450.7080078125"
          height="72"
          opacity="0.2"
-         id="rect378" />
+         id="rect376" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g380">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g378">
       <rect
          fill="#ffffff"
          stroke="none"
-         x="416"
+         x="408"
          y="624"
          width="450.7080078125"
          height="72"
-         id="rect379" />
+         id="rect377" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g379">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 408 624 L 858.7080078125 624 L 858.7080078125 696 L 408 696 L 408 624 Z Z"
+         stroke-miterlimit="10"
+         id="path378" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g380">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 408 649 L 858.7080078125 649"
+         stroke-miterlimit="10"
+         id="path379" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g381">
       <path
          fill="none"
          stroke="#000000"
-         d="M 416 624 L 866.7080078125 624 L 866.7080078125 696 L 416 696 L 416 624 Z Z"
+         d="M 408 659 L 858.7080078125 659"
          stroke-miterlimit="10"
          id="path380" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g382">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 416 649 L 866.7080078125 649"
-         stroke-miterlimit="10"
-         id="path381" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g383">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 416 659 L 866.7080078125 659"
-         stroke-miterlimit="10"
-         id="path382" />
+      <g
+         id="g382">
+        <path
+           fill="none"
+           stroke="none"
+           id="path381" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="583.623291015625"
+           y="642"
+           id="text381">TimeIntervalList</text>
+      </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g385">
       <g
          id="g384">
@@ -2207,15 +2156,15 @@
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="bold"
+           font-weight="normal"
            text-decoration="none"
-           x="591.623291015625"
-           y="642"
-           id="text383">TimeIntervalList</text>
+           x="413"
+           y="675"
+           id="text383">+timeIntervalList(timeIntervals: IEnumerable&lt;ITimeIntervalElement&gt;? = null)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g387">
       <g
          id="g386">
@@ -2231,120 +2180,120 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="421"
-           y="675"
-           id="text385">+timeIntervalList(timeIntervals: IEnumerable&lt;ITimeIntervalElement&gt;? = null)</text>
+           x="413"
+           y="690"
+           id="text385">+timeIntervalList()</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g388">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 496 624 L 496 545"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path387" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g389">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 504.419035512032 565.3253497152483 L 496 545 L 487.580964487968 565.3253497152483"
+         id="path388" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g390">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 504.419035512032 565.3253497152483 L 496 545 L 487.580964487968 565.3253497152483 L 504.419035512032 565.3253497152483"
+         stroke-miterlimit="10"
+         id="path389" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g391">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="807"
+         y="527"
+         width="405.068359375"
+         height="72"
+         opacity="0.2"
+         id="rect390" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g392">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="800"
+         y="520"
+         width="405.068359375"
+         height="72"
+         id="rect391" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g393">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 800 520 L 1205.068359375 520 L 1205.068359375 592 L 800 592 L 800 520 Z Z"
+         stroke-miterlimit="10"
+         id="path392" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g394">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 800 545 L 1205.068359375 545"
+         stroke-miterlimit="10"
+         id="path393" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g395">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 800 555 L 1205.068359375 555"
+         stroke-miterlimit="10"
+         id="path394" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g397">
       <g
-         id="g388">
+         id="g396">
         <path
            fill="none"
            stroke="none"
-           id="path387" />
+           id="path395" />
         <text
            fill="#000000"
            stroke="none"
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="normal"
+           font-weight="bold"
            text-decoration="none"
-           x="421"
-           y="690"
-           id="text387">+timeIntervalList()</text>
+           x="939.073486328125"
+           y="538"
+           id="text395">TimeIntervalElement</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g390">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 496 624 L 496 537"
-         stroke-miterlimit="10"
-         stroke-dasharray="3"
-         id="path389" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g391">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 504.419035512032 557.3253497152483 L 496 537 L 487.580964487968 557.3253497152483"
-         id="path390" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g392">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 504.419035512032 557.3253497152483 L 496 537 L 487.580964487968 557.3253497152483 L 504.419035512032 557.3253497152483"
-         stroke-miterlimit="10"
-         id="path391" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g393">
-      <rect
-         fill="#C0C0C0"
-         stroke="none"
-         x="823"
-         y="503"
-         width="405.068359375"
-         height="72"
-         opacity="0.2"
-         id="rect392" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g394">
-      <rect
-         fill="#ffffff"
-         stroke="none"
-         x="816"
-         y="496"
-         width="405.068359375"
-         height="72"
-         id="rect393" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g395">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 816 496 L 1221.068359375 496 L 1221.068359375 568 L 816 568 L 816 496 Z Z"
-         stroke-miterlimit="10"
-         id="path394" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g396">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 816 521 L 1221.068359375 521"
-         stroke-miterlimit="10"
-         id="path395" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g397">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 816 531 L 1221.068359375 531"
-         stroke-miterlimit="10"
-         id="path396" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g399">
       <g
          id="g398">
@@ -2358,15 +2307,15 @@
            font-family="Arial"
            font-size="13px"
            font-style="normal"
-           font-weight="bold"
+           font-weight="normal"
            text-decoration="none"
-           x="955.073486328125"
-           y="514"
-           id="text397">TimeIntervalElement</text>
+           x="805"
+           y="571"
+           id="text397">+timeIntervalElement(start: DateTime? = null, end: DateTime? = null)</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g401">
       <g
          id="g400">
@@ -2382,20 +2331,79 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="821"
-           y="547"
-           id="text399">+timeIntervalElement(start: DateTime? = null, end: DateTime? = null)</text>
+           x="805"
+           y="586"
+           id="text399">+timeIntervalElement()</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g402">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 800 552 L 748 552"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path401" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g403">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 768.3253497152483 543.580964487968 L 748 552 L 768.3253497152483 560.419035512032"
+         id="path402" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g404">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 768.3253497152483 543.580964487968 L 748 552 L 768.3253497152483 560.419035512032 L 768.3253497152483 543.580964487968"
+         stroke-miterlimit="10"
+         id="path403" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g405">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 536 696 L 536 776"
+         stroke-miterlimit="10"
+         id="path404" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g406">
+      <path
+         fill="#000000"
+         stroke="none"
+         d="M 531.790482243984 765.8373251423759 L 536 776 L 540.209517756016 765.8373251423759 L 536 754"
+         id="path405" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g407">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 531.790482243984 765.8373251423759 L 536 776 L 540.209517756016 765.8373251423759 L 536 754 L 531.790482243984 765.8373251423759"
+         stroke-miterlimit="10"
+         id="path406" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g409">
       <g
-         id="g402">
+         id="g408">
         <path
            fill="none"
            stroke="none"
-           id="path401" />
+           id="path407" />
         <text
            fill="#000000"
            stroke="none"
@@ -2404,72 +2412,13 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="821"
-           y="562"
-           id="text401">+timeIntervalElement()</text>
+           x="519.5"
+           y="722"
+           id="text407">1</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g404">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 816 536 L 748 536"
-         stroke-miterlimit="10"
-         stroke-dasharray="3"
-         id="path403" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g405">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 768.3253497152483 527.580964487968 L 748 536 L 768.3253497152483 544.419035512032"
-         id="path404" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g406">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 768.3253497152483 527.580964487968 L 748 536 L 768.3253497152483 544.419035512032 L 768.3253497152483 527.580964487968"
-         stroke-miterlimit="10"
-         id="path405" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g407">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 440 512 L 375 512"
-         stroke-miterlimit="10"
-         id="path406" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g408">
-      <path
-         fill="#000000"
-         stroke="none"
-         d="M 385.16267485762415 507.790482243984 L 375 512 L 385.16267485762415 516.209517756016 L 397 512"
-         id="path407" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g409">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 385.16267485762415 507.790482243984 L 375 512 L 385.16267485762415 516.209517756016 L 397 512 L 385.16267485762415 507.790482243984"
-         stroke-miterlimit="10"
-         id="path408" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g411">
       <g
          id="g410">
@@ -2485,64 +2434,63 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="414.5"
-           y="504"
+           x="519.5"
+           y="759"
            id="text409">1</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g413">
-      <g
-         id="g412">
-        <path
-           fill="none"
-           stroke="none"
-           id="path411" />
-        <text
-           fill="#000000"
-           stroke="none"
-           font-family="Arial"
-           font-size="13px"
-           font-style="normal"
-           font-weight="normal"
-           text-decoration="none"
-           x="392.5"
-           y="504"
-           id="text411">1</text>
-      </g>
+       transform="translate(-142,-70) scale(1,1)"
+       id="g412">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1064 136 L 416 136"
+         stroke-miterlimit="10"
+         id="path411" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g413">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 436.3253497152483 127.58096448796803 L 416 136 L 436.3253497152483 144.41903551203197"
+         id="path412" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g414">
       <path
          fill="none"
          stroke="#000000"
-         d="M 536 696 L 536 776"
+         d="M 436.3253497152483 127.58096448796803 L 416 136 L 436.3253497152483 144.41903551203197 L 436.3253497152483 127.58096448796803"
          stroke-miterlimit="10"
          id="path413" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g415">
       <path
-         fill="#000000"
-         stroke="none"
-         d="M 531.790482243984 765.8373251423759 L 536 776 L 540.209517756016 765.8373251423759 L 536 754"
+         fill="none"
+         stroke="#000000"
+         d="M 416 336 L 1144 336"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
          id="path414" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g416">
       <path
          fill="none"
          stroke="#000000"
-         d="M 531.790482243984 765.8373251423759 L 536 776 L 540.209517756016 765.8373251423759 L 536 754 L 531.790482243984 765.8373251423759"
+         d="M 1133.837325142376 340.209517756016 L 1144 336 L 1133.837325142376 331.790482243984"
          stroke-miterlimit="10"
          id="path415" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g418">
       <g
          id="g417">
@@ -2558,20 +2506,41 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="519.5"
-           y="722"
-           id="text416">1</text>
+           x="809.66455078125"
+           y="360.5"
+           id="text416">«use»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g419">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 416 112 L 1064 112"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path418" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g420">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1053.837325142376 116.20951775601598 L 1064 112 L 1053.837325142376 107.79048224398402"
+         stroke-miterlimit="10"
+         id="path419" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g422">
       <g
-         id="g419">
+         id="g421">
         <path
            fill="none"
            stroke="none"
-           id="path418" />
+           id="path420" />
         <text
            fill="#000000"
            stroke="none"
@@ -2580,49 +2549,128 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="519.5"
-           y="759"
-           id="text418">1</text>
+           x="743.5"
+           y="97.5"
+           id="text420">«use»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g421">
-      <path
-         fill="none"
-         stroke="#000000"
-         d="M 952 230 L 864 230"
-         stroke-miterlimit="10"
-         id="path420" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g422">
-      <path
-         fill="#FFFFFF"
-         stroke="none"
-         d="M 874.1626748576241 225.790482243984 L 864 230 L 874.1626748576241 234.209517756016 L 886 230"
-         id="path421" />
-    </g>
-    <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
        id="g423">
       <path
          fill="none"
          stroke="#000000"
-         d="M 874.1626748576241 225.790482243984 L 864 230 L 874.1626748576241 234.209517756016 L 886 230 L 874.1626748576241 225.790482243984"
+         d="M 264 416 L 264 352"
          stroke-miterlimit="10"
          id="path422" />
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
+       transform="translate(-142,-70) scale(1,1)"
+       id="g424">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 272.419035512032 372.3253497152483 L 264 352 L 255.58096448796803 372.3253497152483"
+         id="path423" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
        id="g425">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 272.419035512032 372.3253497152483 L 264 352 L 255.58096448796803 372.3253497152483 L 272.419035512032 372.3253497152483"
+         stroke-miterlimit="10"
+         id="path424" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g426">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 496 488 L 496 446"
+         stroke-miterlimit="10"
+         id="path425" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g427">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 504.419035512032 466.3253497152483 L 496 446 L 487.580964487968 466.3253497152483"
+         id="path426" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g428">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 504.419035512032 466.3253497152483 L 496 446 L 487.580964487968 466.3253497152483 L 504.419035512032 466.3253497152483"
+         stroke-miterlimit="10"
+         id="path427" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g429">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 664 480 L 664 446"
+         stroke-miterlimit="10"
+         id="path428" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g430">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 672.419035512032 466.3253497152483 L 664 446 L 655.580964487968 466.3253497152483"
+         id="path429" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g431">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 672.419035512032 466.3253497152483 L 664 446 L 655.580964487968 466.3253497152483 L 672.419035512032 466.3253497152483"
+         stroke-miterlimit="10"
+         id="path430" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g432">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 375 528 L 440 528"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path431" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g433">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 429.83732514237585 532.209517756016 L 440 528 L 429.83732514237585 523.790482243984"
+         stroke-miterlimit="10"
+         id="path432" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g435">
       <g
-         id="g424">
+         id="g434">
         <path
            fill="none"
            stroke="none"
-           id="path423" />
+           id="path433" />
         <text
            fill="#000000"
            stroke="none"
@@ -2631,20 +2679,49 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="926.5"
-           y="222"
-           id="text423">1</text>
+           x="389.5"
+           y="505.5"
+           id="text433">«use»</text>
       </g>
     </g>
     <g
-       transform="translate(-142,-86) scale(1,1)"
-       id="g427">
+       transform="translate(-142,-70) scale(1,1)"
+       id="g436">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1288 144 L 1288 919 L 576 919"
+         stroke-miterlimit="10"
+         id="path435" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g437">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 586.1626748576241 914.790482243984 L 576 919 L 586.1626748576241 923.209517756016 L 598 919"
+         id="path436" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g438">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 586.1626748576241 914.790482243984 L 576 919 L 586.1626748576241 923.209517756016 L 598 919 L 586.1626748576241 914.790482243984"
+         stroke-miterlimit="10"
+         id="path437" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g440">
       <g
-         id="g426">
+         id="g439">
         <path
            fill="none"
            stroke="none"
-           id="path425" />
+           id="path438" />
         <text
            fill="#000000"
            stroke="none"
@@ -2653,9 +2730,177 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="881.5"
-           y="222"
-           id="text425">1</text>
+           x="1271.5"
+           y="170"
+           id="text438">1</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g442">
+      <g
+         id="g441">
+        <path
+           fill="none"
+           stroke="none"
+           id="path440" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="594.220458984375"
+           y="911"
+           id="text440">*</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g443">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1248 144 L 1248 208"
+         stroke-miterlimit="10"
+         id="path442" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g444">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 1243.7904822439841 197.83732514237585 L 1248 208 L 1252.2095177560159 197.83732514237585 L 1248 186"
+         id="path443" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g445">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1243.7904822439841 197.83732514237585 L 1248 208 L 1252.2095177560159 197.83732514237585 L 1248 186 L 1243.7904822439841 197.83732514237585"
+         stroke-miterlimit="10"
+         id="path444" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g447">
+      <g
+         id="g446">
+        <path
+           fill="none"
+           stroke="none"
+           id="path445" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="1231.5"
+           y="170"
+           id="text445">1</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g449">
+      <g
+         id="g448">
+        <path
+           fill="none"
+           stroke="none"
+           id="path447" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="1232.58544921875"
+           y="191"
+           id="text447">*</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g450">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 1232 480 L 1232 880 L 576 880"
+         stroke-miterlimit="10"
+         id="path449" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g451">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 586.1626748576241 875.790482243984 L 576 880 L 586.1626748576241 884.209517756016 L 598 880"
+         id="path450" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g452">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 586.1626748576241 875.790482243984 L 576 880 L 586.1626748576241 884.209517756016 L 598 880 L 586.1626748576241 875.790482243984"
+         stroke-miterlimit="10"
+         id="path451" />
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g454">
+      <g
+         id="g453">
+        <path
+           fill="none"
+           stroke="none"
+           id="path452" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="1215.5"
+           y="506"
+           id="text452">1</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-142,-70) scale(1,1)"
+       id="g456">
+      <g
+         id="g455">
+        <path
+           fill="none"
+           stroke="none"
+           id="path454" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="593.5"
+           y="872"
+           id="text454">1</text>
       </g>
     </g>
   </g>
