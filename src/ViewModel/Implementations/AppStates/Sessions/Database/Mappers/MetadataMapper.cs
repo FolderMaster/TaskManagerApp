@@ -15,7 +15,7 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
         /// <inheritdoc/>
         public object Map(MetadataEntity value)
         {
-            return new Metadata()
+            return new TaskMetadata()
             {
                 Title = value.Title,
                 Description = value.Description,
@@ -27,7 +27,7 @@ namespace ViewModel.Implementations.AppStates.Sessions.Database.Mappers
         /// <inheritdoc/>
         public MetadataEntity MapBack(object value)
         {
-            if (value is not Metadata metadata)
+            if (value is not TaskMetadata metadata)
             {
                 throw new ArgumentException(nameof(value));
             }

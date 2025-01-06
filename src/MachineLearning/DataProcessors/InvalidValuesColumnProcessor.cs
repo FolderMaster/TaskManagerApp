@@ -20,8 +20,7 @@ namespace MachineLearning.DataProcessors
         /// <inheritdoc />
         public DataProcessorResult<double> Process(IEnumerable<double?> data)
         {
-            var result = data.Select(v =>
-                (double)(IsInvalidValue(v) ? v : _replacementInvalidValue));
+            var result = data.Select(v => IsInvalidValue(v) ? _replacementInvalidValue : v.Value);
             return new DataProcessorResult<double>(result);
         }
 

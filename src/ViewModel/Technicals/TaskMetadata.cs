@@ -3,13 +3,13 @@
 namespace ViewModel.Technicals
 {
     /// <summary>
-    /// Класс метаданных.
+    /// Класс метаданных задачи.
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="TrackableObject"/>.
     /// Реализует <see cref="ICloneable"/>.
     /// </remarks>
-    public class Metadata : TrackableObject, ICloneable
+    public class TaskMetadata : TrackableObject, ICloneable
     {
         /// <summary>
         /// Название.
@@ -68,7 +68,7 @@ namespace ViewModel.Technicals
         }
 
         /// <inheritdoc/>
-        public object Clone() => new Metadata()
+        public object Clone() => new TaskMetadata()
         {
             Title = Title,
             Description = Description,

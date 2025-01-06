@@ -10,14 +10,14 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Tests.AppStates.Settings
 {
-    [NonParallelizable]
+    [Parallelizable(scope: ParallelScope.Fixtures)]
     [TestFixture(TestOf = typeof(AppSettings), Category = "Integration",
         Description = $"Тестирование класса {nameof(AppSettings)}.")]
     public class AppSettingsTests
     {
-        private static string _filePath = "settings.json";
+        private static string _settingsPath = "AppSettings_settings.json";
 
-        private static string _connectionString = "Data Source=test.db";
+        private static string _connectionString = "Data Source=AppSettings_database.db";
 
         private static string[] _themes = ["Light", "Dark"];
 
@@ -47,13 +47,13 @@ namespace ViewModel.Tests.AppStates.Settings
             _session = (DbSession)mockContainer.Resolve<ISession>();
             _session.SavePath = _connectionString;
             _settings = (AppSettings)mockContainer.Resolve<ISettings>();
-            _settings.FilePath = _filePath;
+            _settings.FilePath = _settingsPath;
         }
 
         [TearDown]
         public void Teardown()
         {
-            File.Delete(_filePath);
+            File.Delete(_settingsPath);
         }
 
         [Test(Description = $"Тестирование свойства {nameof(AppSettings.Configuration)} " +

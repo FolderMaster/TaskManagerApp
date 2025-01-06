@@ -143,7 +143,7 @@ namespace MachineLearning.Converters
                     var normalizedIndex = index;
                     foreach (var removedIndex in result)
                     {
-                        if (normalizedIndex > removedIndex)
+                        if (normalizedIndex < removedIndex)
                         {
                             break;
                         }

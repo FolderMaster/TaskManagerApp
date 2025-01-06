@@ -35,7 +35,7 @@
 			<Label Content="{Binding Title}" VerticalAlignment="Center"/>
 		</StackPanel>
 	</DataTemplate>
-	<DataTemplate x:Key="TaskMetadataTreeTemplate" x:DataType="vmt:Metadata">
+	<DataTemplate x:Key="TaskMetadataTreeTemplate" x:DataType="vmt:TaskMetadata">
 		<Label Content="{Binding Title}"/>
 	</DataTemplate>
 	<DataTemplate x:Key="ConfigurationTemplate" x:DataType="vmt:AppConfiguration">
@@ -49,7 +49,7 @@
 					  DisplayMemberBinding="{Binding NativeName}"/>
 		</StackPanel>
 	</DataTemplate>
-	<DataTemplate x:Key="TaskMetadataTemplate" x:DataType="vmt:Metadata">
+	<DataTemplate x:Key="TaskMetadataTemplate" x:DataType="vmt:TaskMetadata">
 		<StackPanel>
 			<Label Content="{DynamicResource NameLabelContent}"/>
 			<TextBox Text="{Binding Title}"/>

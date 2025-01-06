@@ -34,8 +34,8 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors,
             IFactory<IScaler> scalerFactory,
-            IDataTransformer<Metadata, int?> metadataCategoriesTransformer,
-            IDataTransformer<Metadata, IEnumerable<int>> metadataTagsITransformer) :
+            IDataTransformer<TaskMetadata, int?> metadataCategoriesTransformer,
+            IDataTransformer<TaskMetadata, IEnumerable<int>> metadataTagsITransformer) :
             base(primaryPointDataProcessor, pointDataProcessors, scalerFactory,
                 metadataCategoriesTransformer, metadataTagsITransformer)
         { }

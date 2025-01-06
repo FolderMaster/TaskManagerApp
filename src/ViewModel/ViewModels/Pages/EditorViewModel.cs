@@ -305,7 +305,7 @@ namespace ViewModel.ViewModels.Pages
                 new ItemsTasksViewModelArgs(items, TaskListView, _session.Tasks));
             if (list != null)
             {
-                _session.MoveTasks(items, (ITaskComposite?)list);
+                _session.MoveTasks(items, list as ITaskComposite);
             }
         }
 

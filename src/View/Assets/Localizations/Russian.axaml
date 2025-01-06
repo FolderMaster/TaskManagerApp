@@ -67,6 +67,7 @@
 	<sys:String x:Key="CountDiagramContent">Количество</sys:String>
 	<sys:String x:Key="PlannedTimeDiagramContent">Запланнированное время</sys:String>
 	<sys:String x:Key="SpentTimeDiagramContent">Затраченное время</sys:String>
+	<sys:String x:Key="UnplannedTimeDiagramContent">Незапланнированное время</sys:String>
 	<sys:String x:Key="SelectedTimeLabelContent">Выбранное время</sys:String>
 
 	<sys:String x:Key="DataViewSettingsExpanderHeader">Настройки отображения данных</sys:String>

@@ -125,10 +125,10 @@ namespace ViewModel.ViewModels.Pages
             var priorityDiagramContent = _resourceService.GetResource("PriorityDiagramContent");
 
             UncompletedTasksCountByCategoryStatistic = uncompletedTasks.
-                GroupBy(t => ((Metadata)t.Metadata).Category).
+                GroupBy(t => ((TaskMetadata)t.Metadata).Category).
                 Select(g => new StatisticElement(g.Count(), $"{g.Key}"));
             UncompletedTasksCountByTagsStatistic = uncompletedTasks.
-                SelectMany(t => ((Metadata)t.Metadata).Tags, (task, tag) =>
+                SelectMany(t => ((TaskMetadata)t.Metadata).Tags, (task, tag) =>
                 new { Task = task, Tag = tag }).GroupBy(e => e.Tag).
                 Select(g => new StatisticElement(g.Count(), $"{g.Key}"));
             UncompletedTasksCountByPriorityStatistic = uncompletedTasks.GroupBy(t => t.Priority).
@@ -147,14 +147,14 @@ namespace ViewModel.ViewModels.Pages
                 return;
             }
             var tasks = TaskHelper.GetTaskElements(_session.Tasks);
-            var where = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
+            var expiredTasks = tasks.Where(t => !TaskHelper.HasTaskExpired(t) &&
                 TaskHelper.HasTaskExpired(t, SelectedTime));
 
-            var count = where.Count();
-            var plannedTime = tasks.Aggregate(TimeSpan.Zero,
-                (sum, interval) => sum + interval.PlannedTime).Hours;
-            var spentTime = tasks.Aggregate(TimeSpan.Zero,
-                (sum, interval) => sum + interval.SpentTime).Hours;
+            var count = expiredTasks.Count();
+            var plannedTime = expiredTasks.Aggregate(TimeSpan.Zero,
+                (sum, task) => sum + task.PlannedTime).Hours;
+            var spentTime = expiredTasks.Aggregate(TimeSpan.Zero,
+                (sum, task) => sum + task.SpentTime).Hours;
 
             var countDiagramContent = _resourceService.GetResource("CountDiagramContent");
             var plannedTimeDiagramContent = _resourceService.GetResource("PlannedTimeDiagramContent");
@@ -169,7 +169,7 @@ namespace ViewModel.ViewModels.Pages
         }
 
         /// <summary>
-        /// Обработчик события обновления элементов сессии.
+        /// Обновляет статистику по времени.
         /// </summary>
         private void UpdateTimeTasksStatistic()
         {
@@ -181,17 +181,17 @@ namespace ViewModel.ViewModels.Pages
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             var plannedTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
-                (sum, interval) => sum + interval.PlannedTime).Hours;
-            var spentTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
-                (sum, interval) => sum + interval.SpentTime).Hours;
+                (sum, task) => sum + task.TimeIntervals.Duration).Hours;
+            var unplannedTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
+                (sum, task) => sum + task.PlannedTime).Hours - plannedTime;
 
             var plannedTimeDiagramContent = _resourceService.GetResource("PlannedTimeDiagramContent");
-            var spentTimeDiagramContent = _resourceService.GetResource("SpentTimeDiagramContent");
+            var unplannedTimeDiagramContent = _resourceService.GetResource("UnplannedTimeDiagramContent");
 
             TasksTimeStatistic =
             [
-                new StatisticElement(plannedTime, plannedTimeDiagramContent.ToString()),
-                new StatisticElement(spentTime, spentTimeDiagramContent.ToString())
+                new StatisticElement(plannedTime, plannedTimeDiagramContent?.ToString()),
+                new StatisticElement(unplannedTime, unplannedTimeDiagramContent?.ToString())
             ];
         }
 

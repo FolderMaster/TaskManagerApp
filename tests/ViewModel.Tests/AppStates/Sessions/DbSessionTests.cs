@@ -9,12 +9,12 @@ using ViewModel.Technicals;
 
 namespace ViewModel.Tests.AppStates.Sessions
 {
-    [NonParallelizable]
+    [Parallelizable(scope: ParallelScope.Fixtures)]
     [TestFixture(TestOf = typeof(DbSession), Category = "Integration",
         Description = $"Тестирование класса {nameof(DbSession)}.")]
     public class DbSessionTests
     {
-        private static string _dbPath = "test.db";
+        private static string _dbPath = "DbSession_database.db";
 
         private DbSession _session;
 

@@ -66,6 +66,7 @@
 	<sys:String x:Key="CountDiagramContent">Count</sys:String>
 	<sys:String x:Key="PlannedTimeDiagramContent">Planned time</sys:String>
 	<sys:String x:Key="SpentTimeDiagramContent">Spent time</sys:String>
+	<sys:String x:Key="UnplannedTimeDiagramContent">Unplanned time</sys:String>
 	<sys:String x:Key="SelectedTimeLabelContent">Selected time</sys:String>
 
 	<sys:String x:Key="DataViewSettingsExpanderHeader">Data view settings</sys:String>

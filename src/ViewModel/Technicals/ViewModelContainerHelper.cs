@@ -68,9 +68,9 @@ namespace ViewModel.Technicals
             var result = new ContainerBuilder();
 
             result.RegisterType<MetadataCategoriesTransformer>().
-                As<IDataTransformer<Metadata, int?>>();
+                As<IDataTransformer<TaskMetadata, int?>>();
             result.RegisterType<MetadataTagsTransformer>().
-                As<IDataTransformer<Metadata, IEnumerable<int>>>();
+                As<IDataTransformer<TaskMetadata, IEnumerable<int>>>();
 
             result.RegisterType<InvalidValuesColumnProcessor>().
                 As<IPrimaryPointDataProcessor>().SingleInstance();
@@ -133,7 +133,7 @@ namespace ViewModel.Technicals
 
             result.RegisterType<TimeScheduler>().As<ITimeScheduler>().SingleInstance();
 
-            result.RegisterType<MetadataFactory>().As<IFactory<object>>().SingleInstance();
+            result.RegisterType<TaskMetadataFactory>().As<IFactory<object>>().SingleInstance();
             result.RegisterType<TaskElementFactory>().As<IFactory<ITaskElement>>().
                 SingleInstance();
             result.RegisterType<TaskCompositeFactory>().As<IFactory<ITaskComposite>>().

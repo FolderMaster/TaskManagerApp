@@ -9,7 +9,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
     /// <remarks>
     /// Реализует <see cref="IDataTransformer{Metadata, IEnumerable{int}}"/>.
     /// </remarks>
-    public class MetadataTagsTransformer : IDataTransformer<Metadata, IEnumerable<int>>
+    public class MetadataTagsTransformer : IDataTransformer<TaskMetadata, IEnumerable<int>>
     {
         /// <summary>
         /// Теги.
@@ -17,7 +17,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         private List<string> _tags = new();
 
         /// <inheritdoc/>
-        public IEnumerable<IEnumerable<int>> FitTransform(IEnumerable<Metadata> data)
+        public IEnumerable<IEnumerable<int>> FitTransform(IEnumerable<TaskMetadata> data)
         {
             foreach (var metadata in data)
             {
@@ -36,7 +36,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         }
 
         /// <inheritdoc/>
-        public IEnumerable<int> Transform(Metadata data)
+        public IEnumerable<int> Transform(TaskMetadata data)
         {
             foreach (var tag in _tags)
             {

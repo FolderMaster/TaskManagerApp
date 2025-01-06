@@ -16,7 +16,7 @@ namespace MachineLearning.Tests.DataProcessors
 
         [Test(Description = "Тестирование метода " +
             $"{nameof(InvalidValuesColumnProcessor.Process)}.")]
-        public void Process_ReturnCorrectData()
+        public void Process1_ReturnCorrectData()
         {
             var data = new double?[][] {
                 [0, double.NaN, null, -7],
@@ -29,6 +29,28 @@ namespace MachineLearning.Tests.DataProcessors
                     [0, 3, 5],
                     [0, 2, -1]
                 ], [2]);
+
+            var result = _dataProcessor.Process(data);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Result, Is.EqualTo(expected.Result),
+                    "Неправильно исправлены некорректные значения!");
+                Assert.That(result.RemovedColumnsIndices,
+                    Is.EqualTo(expected.RemovedColumnsIndices),
+                    "Неправильно указаны удалённые столбцы!");
+                Assert.That(result.RemovedRowsIndices,
+                    Is.EqualTo(expected.RemovedRowsIndices),
+                    "Неправильно указаны удалённые строки!");
+            });
+        }
+
+        [Test(Description = "Тестирование метода " +
+            $"{nameof(InvalidValuesColumnProcessor.Process)}.")]
+        public void Process2_ReturnCorrectData()
+        {
+            var data = new double?[] { double.NaN, null, 2 };
+            var expected = new DataProcessorResult<double>([-1, -1, 2]);
 
             var result = _dataProcessor.Process(data);
 

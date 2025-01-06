@@ -30,12 +30,12 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         /// <summary>
         /// Преобразование категории метаданных в данные для предсказания.
         /// </summary>
-        protected readonly IDataTransformer<Metadata, int?> _metadataCategoriesTransformer;
+        protected readonly IDataTransformer<TaskMetadata, int?> _metadataCategoriesTransformer;
 
         /// <summary>
         /// Преобразование теги метаданных в данные для предсказания.
         /// </summary>
-        protected readonly IDataTransformer<Metadata, IEnumerable<int>> _metadataTagsTransformer;
+        protected readonly IDataTransformer<TaskMetadata, IEnumerable<int>> _metadataTagsTransformer;
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="BaseTaskElementSupervisedLearningConverter{R, DR}"/>.
@@ -53,8 +53,8 @@ namespace ViewModel.Implementations.ModelLearning.Converters
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors,
             IFactory<IScaler> scalerFactory,
-            IDataTransformer<Metadata, int?> metadataCategoriesTransformer,
-            IDataTransformer<Metadata, IEnumerable<int>> metadataTagsITransformer) :
+            IDataTransformer<TaskMetadata, int?> metadataCategoriesTransformer,
+            IDataTransformer<TaskMetadata, IEnumerable<int>> metadataTagsITransformer) :
             base(primaryPointDataProcessor, pointDataProcessors)
         {
             _scalerFactory = scalerFactory;
@@ -66,7 +66,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         protected override IEnumerable<IEnumerable<double?>> ProcessFeatures
             (IEnumerable<ITaskElement> data)
         {
-            var metadataSet = data.Select(t => t.Metadata as Metadata);
+            var metadataSet = data.Select(t => t.Metadata as TaskMetadata);
             var categories = _metadataCategoriesTransformer.FitTransform(metadataSet);
             var tags = _metadataTagsTransformer.FitTransform(metadataSet);
             var index = 0;
@@ -83,7 +83,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         /// <inheritdoc/>
         protected override IEnumerable<double?> ExtractFeatures(ITaskElement dataItem)
         {
-            var metadata = dataItem.Metadata as Metadata;
+            var metadata = dataItem.Metadata as TaskMetadata;
             var result = ExtractPrimaryFeatures(dataItem);
             result.Add(_metadataCategoriesTransformer.Transform(metadata));
             result.AddRange(_metadataTagsTransformer.Transform(metadata).Cast<double?>());

@@ -9,7 +9,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
     /// <remarks>
     /// Реализует <see cref="IDataTransformer{Metadata, int?}"/>.
     /// </remarks>
-    public class MetadataCategoriesTransformer : IDataTransformer<Metadata, int?>
+    public class MetadataCategoriesTransformer : IDataTransformer<TaskMetadata, int?>
     {
         /// <summary>
         /// Категории.
@@ -17,7 +17,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         private List<string?> _categories = new();
 
         /// <inheritdoc/>
-        public IEnumerable<int?> FitTransform(IEnumerable<Metadata> data)
+        public IEnumerable<int?> FitTransform(IEnumerable<TaskMetadata> data)
         {
             _categories.Clear();
             foreach (var metadata in data)
@@ -35,7 +35,7 @@ namespace ViewModel.Implementations.ModelLearning.Converters
         }
 
         /// <inheritdoc/>
-        public int? Transform(Metadata data)
+        public int? Transform(TaskMetadata data)
         {
             var index = _categories.IndexOf(data.Category);
             return index != -1 ? index : null;

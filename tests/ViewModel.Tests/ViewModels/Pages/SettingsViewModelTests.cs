@@ -11,14 +11,14 @@ using ViewModel.ViewModels.Pages;
 
 namespace ViewModel.Tests.ViewModels.Pages
 {
-    [NonParallelizable]
+    [Parallelizable(scope: ParallelScope.Fixtures)]
     [TestFixture(TestOf = typeof(SettingsViewModel), Category = "Integration",
         Description = $"Тестирование класса {nameof(SettingsViewModel)}.")]
     public class SettingsViewModelTests
     {
-        private static string _filePath = "settings.json";
+        private static string _settingsPath = "SettingsViewModel_settings.json";
 
-        private static string _connectionString = "Data Source=test.db";
+        private static string _connectionString = "Data Source=SettingsViewModel_database.db";
 
         private static string[] _themes = ["Light", "Dark"];
 
@@ -49,17 +49,17 @@ namespace ViewModel.Tests.ViewModels.Pages
             _session = (DbSession)mockContainer.Resolve<ISession>();
             _session.SavePath = _connectionString;
             var settings = (AppSettings)mockContainer.Resolve<ISettings>();
-            settings.FilePath = _filePath;
+            settings.FilePath = _settingsPath;
         }
 
         [TearDown]
         public void Teardown()
         {
-            File.Delete(_filePath);
+            File.Delete(_settingsPath);
         }
 
         [Test(Description = "Тестирование изменения свойства " +
-            $"{nameof(SettingsViewModel.Configuration)}")]
+            $"{nameof(SettingsViewModel.Configuration)}.")]
         public void EditConfiguration_EditServicesProperties()
         {
             var expectedTheme = _themes[1];
