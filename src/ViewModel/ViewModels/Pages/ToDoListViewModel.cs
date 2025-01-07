@@ -116,8 +116,8 @@ namespace ViewModel.ViewModels.Pages
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
             var toDoList = uncompletedTasks.Select(t =>
                 new ToDoListElement(t, _progressLearningController.IsValidModel ?
-                _progressLearningController.Predict(t) : null, t.Deadline +
-                (t.PlannedTime - t.SpentTime) < DateTime.Now, t.Deadline < DateTime.Now));
+                _progressLearningController.Predict(t) : null, t.Deadline < DateTime.Now +
+                (t.PlannedTime - t.SpentTime), t.Deadline < DateTime.Now));
             if (IsLaggingFilter)
             {
                 toDoList = toDoList.Where(e => e.IsLagging);

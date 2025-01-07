@@ -53,7 +53,9 @@ namespace ViewModel.Implementations.ModelLearning.Converters
                 dataItem.Difficult,
                 dataItem.Deadline != null ? dataItem.Deadline.Value.Ticks : null,
                 dataItem.PlannedReal,
+                dataItem.ExecutedReal,
                 dataItem.PlannedTime.TotalSeconds,
+                dataItem.SpentTime.TotalSeconds,
                 (int)dataItem.Status
             };
 

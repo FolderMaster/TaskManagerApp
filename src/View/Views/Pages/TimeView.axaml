@@ -9,18 +9,22 @@
 			 Design.DataContext="{e:Design {x:Type vm:TimeViewModel}}"
              x:Class="View.Views.Pages.TimeView"
 			 x:DataType="vm:TimeViewModel">
-	<Grid Grid.Row="0" RowDefinitions="Auto, *, Auto">
-		<WrapPanel Grid.Row="0">
-			<TextBlock FontSize="24" Text="{Binding CurrentWeek,
+	<Grid RowDefinitions="Auto, *, Auto">
+		<Grid Grid.Row="0" RowDefinitions="Auto, Auto">
+			<TextBlock Grid.Row="0" Name="leftTopElement" FontSize="24"
+					   HorizontalAlignment="Left" Text="{Binding CurrentWeek,
 					   Converter={StaticResource DateTimeToStringConverter},
 					   ConverterParameter='yyyy, MMMM'}"/>
-			<Button Content="{DynamicResource PreviousButtonContent}"
-					Command="{Binding GoToPreviousCommand}"/>
-			<Button Content="{DynamicResource NowButtonContent}"
-					Command="{Binding GoToNowCommand}"/>
-			<Button Content="{DynamicResource NextButtonContent}"
-					Command="{Binding GoToNextCommand}"/>
-		</WrapPanel>
+			<WrapPanel Name="rightTopElement" VerticalAlignment="Center"
+					   HorizontalAlignment="Right">
+				<Button Content="{DynamicResource PreviousButtonContent}"
+						Command="{Binding GoToPreviousCommand}"/>
+				<Button Content="{DynamicResource NowButtonContent}"
+						Command="{Binding GoToNowCommand}"/>
+				<Button Content="{DynamicResource NextButtonContent}"
+						Command="{Binding GoToNextCommand}"/>
+			</WrapPanel>
+		</Grid>
 		<si:CalendarControl Grid.Row="1" AutoScrollToSelectedItem="True"
 							CurrentWeek="{Binding CurrentWeek}" Items="{Binding CalendarIntervals}"
 							ItemTemplate="{StaticResource CalendarIntervalTemplate}"

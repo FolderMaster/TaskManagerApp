@@ -1,8 +1,8 @@
 ﻿using Autofac;
+using System.Reactive.Threading.Tasks;
 
 using Model.Interfaces;
-using Model.Times;
-using System.Reactive.Threading.Tasks;
+
 using ViewModel.Implementations.AppStates.Sessions;
 using ViewModel.Implementations.Mocks;
 using ViewModel.Interfaces.AppStates;
@@ -153,6 +153,40 @@ namespace ViewModel.Tests.ViewModels.Pages
 
             Assert.That(result, Is.EqualTo(expected).UsingPropertiesComparer(),
                 "Неправильно удалён временной интервал!");
+        }
+
+        [Test(Description = $"Тестирование команды {nameof(TimeViewModel.EditCommand)}.")]
+        public async Task EditCommand_TimeIntervalElementEdited()
+        {
+            var task1 = _taskElementFactory.Create();
+            var timeInterval1 = _timeIntervalElementFactory.Create();
+            timeInterval1.Start = DateTime.Now + new TimeSpan(0, 5, 0, 0);
+            timeInterval1.End = DateTime.Now + new TimeSpan(0, 6, 0, 0);
+            task1.TimeIntervals.Add(timeInterval1);
+            var timeInterval2 = _timeIntervalElementFactory.Create();
+            timeInterval2.Start = DateTime.Now + new TimeSpan(0, 4, 0, 0);
+            timeInterval2.End = DateTime.Now + new TimeSpan(0, 7, 0, 0);
+            task1.TimeIntervals.Add(timeInterval2);
+
+            var tasks = new ITask[] { task1 };
+
+            await _session.Load();
+            _session.AddTasks(tasks, null);
+            var expected = _viewModel.CalendarIntervals;
+            _viewModel.SelectedCalendarInterval = _viewModel.CalendarIntervals.First();
+            var commandTask = _viewModel.EditCommand.Execute().ToTask();
+            var dialog = (EditTimeIntervalViewModel?)_viewModel.Dialogs.FirstOrDefault();
+
+            Assert.That(dialog, Is.Not.Null, "Должен быть диалог!");
+
+            dialog.TimeIntervalElement.Start = DateTime.Now + new TimeSpan(0, 1, 0, 0);
+            dialog.TimeIntervalElement.End = DateTime.Now + new TimeSpan(0, 2, 0, 0);
+            await dialog.OkCommand.Execute().ToTask();
+            await commandTask;
+            var result = _viewModel.CalendarIntervals;
+
+            Assert.That(result, Is.EqualTo(expected).UsingPropertiesComparer(),
+                "Неправильно изменён временной интервал!");
         }
 
         [Repeat(5)]

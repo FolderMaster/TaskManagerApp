@@ -10,6 +10,8 @@ using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels.Pages;
 using ViewModel.Interfaces.DataManagers.Generals;
+using ViewModel.Interfaces.DataManagers;
+using ViewModel.ViewModels;
 
 namespace ViewModel.Tests.ViewModels.Pages
 {
@@ -21,6 +23,8 @@ namespace ViewModel.Tests.ViewModels.Pages
         private static string _dbPath = "EditorViewModel_database.db";
 
         private EditorViewModel _viewModel;
+
+        private MainViewModel _mainViewModel;
 
         private DbSession _session;
 
@@ -36,6 +40,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             _session.SavePath = $"Data Source={_dbPath};Pooling=false";
             _taskElementFactory = mockContainer.Resolve<IFactory<ITaskElement>>();
             _taskCompositeFactory = mockContainer.Resolve<IFactory<ITaskComposite>>();
+            _mainViewModel = mockContainer.Resolve<MainViewModel>();
             _viewModel = mockContainer.Resolve<EditorViewModel>();
         }
 
@@ -83,6 +88,88 @@ namespace ViewModel.Tests.ViewModels.Pages
             var result = _viewModel.TaskListView;
 
             Assert.That(result, Is.EqualTo(expected), "Неправильно добавлена задача!");
+        }
+
+        [Test(Description = "Тестирование команды " +
+            $"{nameof(EditorViewModel.AddTaskCompositeCommand)} " +
+            "при обучении моделей для прогнозирования.")]
+        public void AddTaskElementCommand_TeachLearningModels_ModelsPredictCorrectResults()
+        {
+            var expectedPredictedDeadline = new DateTime(2025, 1, 20);
+            var expectedPredictedPlannedReal = 8.5;
+            var expectedPredictedPlannedTime = new TimeSpan(10, 0, 0);
+
+            var task1 = _taskElementFactory.Create();
+            task1.Difficult = 3;
+            task1.Priority = 2;
+            task1.PlannedTime = new TimeSpan(10, 0, 0);
+            task1.PlannedReal = 8.5;
+            task1.Deadline = new DateTime(2025, 1, 20);
+
+            var task2 = _taskElementFactory.Create();
+            task2.Difficult = 1;
+            task2.Priority = 1;
+            task2.PlannedTime = new TimeSpan(5, 0, 0);
+            task2.PlannedReal = 4.2;
+            task2.Deadline = new DateTime(2025, 1, 10);
+
+            var task3 = _taskElementFactory.Create();
+            task3.Difficult = 5;
+            task3.Priority = 3;
+            task3.PlannedTime = new TimeSpan(20, 0, 0);
+            task3.PlannedReal = 18.3;
+            task3.Deadline = new DateTime(2025, 1, 30);
+
+            var task4 = _taskElementFactory.Create();
+            task4.Difficult = 2;
+            task4.Priority = 1;
+            task4.PlannedTime = new TimeSpan(8, 0, 0);
+            task4.PlannedReal = 6.7;
+            task4.Deadline = new DateTime(2025, 1, 12);
+
+            var tasks = new ITask[] { task1, task2 };
+
+            _mainViewModel.Activator.Activate();
+            _session.AddTasks(tasks, null);
+            var commandTask = _viewModel.AddTaskElementCommand.Execute().ToTask();
+            var dialog = (AddTaskViewModel?)_viewModel.Dialogs.FirstOrDefault();
+
+            Assert.That(dialog, Is.Not.Null, "Должен быть диалог!");
+
+            var proxy = (ITaskElementProxy)dialog.Item;
+            var isValidPredictedDeadline = proxy.IsValidPredictedDeadline;
+            var isValidPredictedPlannedReal = proxy.IsValidPredictedPlannedReal;
+            var isValidPredictedPlannedTime = proxy.IsValidPredictedPlannedTime;
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(isValidPredictedDeadline,
+                    "Не обучена модель для прогнозирования сроков!");
+                Assert.That(isValidPredictedPlannedReal,
+                    "Не обучена модель для прогнозирования запланированого реального показателя!");
+                Assert.That(isValidPredictedPlannedTime,
+                    "Не обучена модель для прогнозирования запланированого времени!");
+            });
+
+            proxy.Difficult = 4;
+            proxy.Priority = 2;
+            var predictedDeadline = proxy.PredictedDeadline;
+            var predictedPlannedReal = proxy.PredictedPlannedReal;
+            var predictedPlannedTime = proxy.PredictedPlannedTime;
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(predictedDeadline,
+                    Is.EqualTo(expectedPredictedDeadline).Within(TimeSpan.FromHours(1)),
+                    "Неправильно обучена модель для прогнозирования сроков!");
+                Assert.That(predictedPlannedReal,
+                    Is.EqualTo(expectedPredictedPlannedReal).Within(1),
+                    "Неправильно обучена модель для прогнозирования запланированого " +
+                    "реального показателя!");
+                Assert.That(predictedPlannedTime,
+                    Is.EqualTo(expectedPredictedPlannedTime).Within(TimeSpan.FromDays(1)),
+                    "Неправильно обучена модель для прогнозирования запланированого времени!");
+            });
         }
 
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.RemoveCommand)} " +

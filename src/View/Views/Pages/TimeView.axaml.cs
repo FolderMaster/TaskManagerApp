@@ -1,4 +1,7 @@
+using Avalonia.Controls;
+using Avalonia.Layout;
 using Avalonia.ReactiveUI;
+
 using SatialInterfaces.Controls.Calendar;
 
 using ViewModel.Technicals;
@@ -20,6 +23,25 @@ public partial class TimeView : ReactiveUserControl<TimeViewModel>
     public TimeView()
     {
         InitializeComponent();
+    }
+
+    /// <inheritdoc/>
+    protected override void OnSizeChanged(SizeChangedEventArgs e)
+    {
+        base.OnSizeChanged(e);
+        var leftElementRight = leftTopElement.Bounds.Width + leftTopElement.Margin.Right;
+        var rightElementLeft = Bounds.Width - (rightTopElement.Bounds.Width +
+            rightTopElement.Margin.Right);
+        if (leftElementRight > rightElementLeft)
+        {
+            Grid.SetRow(rightTopElement, 1);
+            rightTopElement.HorizontalAlignment = HorizontalAlignment.Left;
+        }
+        else
+        {
+            Grid.SetRow(rightTopElement, 0);
+            rightTopElement.HorizontalAlignment = HorizontalAlignment.Right;
+        }
     }
 
     private void CalendarControl_SelectionChanged(object? sender,
