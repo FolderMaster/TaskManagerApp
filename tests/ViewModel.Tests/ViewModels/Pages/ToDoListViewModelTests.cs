@@ -4,11 +4,9 @@ using Model.Interfaces;
 
 using ViewModel.Implementations.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Sessions;
-using ViewModel.Interfaces.DataManagers;
 using ViewModel.Interfaces.DataManagers.Generals;
 using ViewModel.Technicals;
 using ViewModel.ViewModels;
-using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels.Pages;
 
 using TaskStatus = Model.TaskStatus;
@@ -47,6 +45,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             File.Delete(_dbPath);
         }
 
+        [Order(1)]
         [Test(Description = $"Тестирование свойства {nameof(ToDoListViewModel.ToDoList)} " +
             $"при выполнении команды {nameof(ToDoListViewModel.UpdateCommand)}.")]
         public async Task GetToDoList_Update_ReturnCorrectResult()
@@ -94,6 +93,7 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно рассчитан список дел!");
         }
 
+        [Order(3)]
         [Test(Description = $"Тестирование свойства {nameof(ToDoListViewModel.ToDoList)} " +
             $"при выполнении команды {nameof(ToDoListViewModel.UpdateCommand)} " +
             "и обучении моделей для прогнозирования.")]
@@ -148,6 +148,7 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно рассчитан список дел!");
         }
 
+        [Order(2)]
         [Pairwise]
         [Test(Description = $"Тестирование свойства {nameof(ToDoListViewModel.ToDoList)}, " +
             $"при настройке фильтров {nameof(ToDoListViewModel.IsExpiredFilter)}, " +

@@ -41,6 +41,11 @@ public partial class MainViewModel : BaseViewModel
     private IEnumerable<IModelTeacher<ITaskElement>> _modelTeachers;
 
     /// <summary>
+    /// Логическое значение, указывающее активированн ли контроллер.
+    /// </summary>
+    private bool _isActivated = false;
+
+    /// <summary>
     /// Страницы.
     /// </summary>
     [Reactive]
@@ -74,6 +79,7 @@ public partial class MainViewModel : BaseViewModel
         _settings.Load();
         this.WhenActivated((Action<IDisposable> action) =>
         {
+            _isActivated = true;
             _session.Load();
         });
 
@@ -90,6 +96,10 @@ public partial class MainViewModel : BaseViewModel
 
     private async void Session_ItemsUpdated(object? sender, ItemsUpdatedEventArgs e)
     {
+        if (!_isActivated)
+        {
+            return;
+        }
         var taskElements = TaskHelper.GetTaskElements(_session.Tasks);
         foreach (var teacher in _modelTeachers)
         {
