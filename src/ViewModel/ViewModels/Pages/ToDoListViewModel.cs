@@ -7,6 +7,7 @@ using ViewModel.Technicals;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Implementations.ModelLearning;
+using Model.Interfaces;
 
 namespace ViewModel.ViewModels.Pages
 {
@@ -114,10 +115,7 @@ namespace ViewModel.ViewModels.Pages
             }
             var tasks = TaskHelper.GetTaskElements(_session.Tasks.ToList());
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
-            var toDoList = uncompletedTasks.Select(t =>
-                new ToDoListElement(t, _progressLearningController.IsValidModel ?
-                _progressLearningController.Predict(t) : null, t.Deadline < DateTime.Now +
-                (t.PlannedTime - t.SpentTime), t.Deadline < DateTime.Now));
+            var toDoList = uncompletedTasks.Select(CreateToDoListElement);
             if (IsLaggingFilter)
             {
                 toDoList = toDoList.Where(e => e.IsLagging);
@@ -149,6 +147,17 @@ namespace ViewModel.ViewModels.Pages
                 toDoList = toDoList.OrderBy(e => e.TaskElement.Priority);
             }
             ToDoList = toDoList;
+        }
+
+        private ToDoListElement CreateToDoListElement(ITaskElement taskElement)
+        {
+            var executionChance = _progressLearningController.IsValidModel ?
+                (double?)_progressLearningController.Predict(taskElement) : null;
+            var isExpired = taskElement.Deadline < DateTime.Now;
+            var isLagging = !isExpired && taskElement.Deadline < DateTime.Now +
+                (taskElement.PlannedTime - taskElement.SpentTime);
+
+            return new ToDoListElement(taskElement, executionChance, isLagging, isExpired);
         }
 
         private void Session_ItemsUpdated(object? sender, ItemsUpdatedEventArgs e) => Update();

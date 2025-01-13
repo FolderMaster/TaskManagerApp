@@ -86,8 +86,10 @@
 					   Text="{DynamicResource ExpiredTextBlockText}"/>
 			<TextBlock IsVisible="{Binding IsLagging}"
 					   Text="{DynamicResource LaggingTextBlockText}"/>
-			<TextBlock Text="{Binding ExecutionChance, StringFormat={}{0}%}"
-					   IsVisible="{Binding !ExecutionChance}"/>
+			<TextBlock Text="{Binding ExecutionChance,
+					   Converter={StaticResource FormattableToStringConverter},
+					   ConverterParameter='F', StringFormat='{}{0}%'}"
+					   IsVisible="{Binding !!ExecutionChance}"/>
 		</StackPanel>
 	</DataTemplate>
 	<DataTemplate x:Key="PageTemplate" x:DataType="vm:BasePageViewModel">

@@ -4,5 +4,5 @@
 	<c:TagsToStringConverter x:Key="TagsToStringConverter"/>
 	<c:StatisticElementsToPieSeriesConverter x:Key="StatisticElementsToPieSeriesConverter"/>
 	<c:StatisticElementsToColumnSeriesConverter x:Key="StatisticElementsToColumnSeriesConverter"/>
-	<c:DateTimeToStringConverter x:Key="DateTimeToStringConverter"/>
+	<c:FormattableToStringConverter x:Key="FormattableToStringConverter"/>
 </ResourceDictionary>

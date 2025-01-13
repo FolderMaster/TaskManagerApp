@@ -13,7 +13,7 @@
 		<Grid Grid.Row="0" RowDefinitions="Auto, Auto">
 			<TextBlock Grid.Row="0" Name="leftTopElement" FontSize="24"
 					   HorizontalAlignment="Left" Text="{Binding CurrentWeek,
-					   Converter={StaticResource DateTimeToStringConverter},
+					   Converter={StaticResource FormattableToStringConverter},
 					   ConverterParameter='yyyy, MMMM'}"/>
 			<WrapPanel Name="rightTopElement" VerticalAlignment="Center"
 					   HorizontalAlignment="Right">

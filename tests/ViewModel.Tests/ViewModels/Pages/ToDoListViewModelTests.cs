@@ -79,7 +79,7 @@ namespace ViewModel.Tests.ViewModels.Pages
 
             var expected = new ToDoListElement[]
             {
-                new(task1, null, true, true),
+                new(task1, null, false, true),
                 new(task2, null, true, false),
                 new(task4, null, false, false)
             };
@@ -135,7 +135,7 @@ namespace ViewModel.Tests.ViewModels.Pages
 
             var expected = new ToDoListElement[]
             {
-                new(task1, 0, true, true),
+                new(task1, 0, false, true),
                 new(task2, 0.3, true, false),
                 new(task4, 0.8, false, false)
             };
@@ -202,7 +202,7 @@ namespace ViewModel.Tests.ViewModels.Pages
 
             var expected = new ToDoListElement[]
             {
-                new(task1, null, true, true),
+                new(task1, null, false, true),
                 new(task2, null, true, false),
                 new(task4, null, false, false)
             }.Where(e => (!isExpiredFilter || e.IsExpired) && (!isLaggingFilter || e.IsLagging));

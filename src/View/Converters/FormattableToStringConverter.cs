@@ -5,27 +5,24 @@ using System.Globalization;
 namespace View.Converters
 {
     /// <summary>
-    /// Класс конвертора даты в строку.
+    /// Класс конвертора форматируемого объекта в строку.
     /// </summary>
     /// <remarks>
     /// Реализует <see cref="IValueConverter"/>.
     /// </remarks>
-    public class DateTimeToStringConverter : IValueConverter
+    public class FormattableToStringConverter : IValueConverter
     {
         /// <inheritdoc/>
         public object? Convert(object? value, Type targetType, object? parameter,
             CultureInfo culture)
         {
-            var dateTime = (DateTime)value;
+            var dateTime = (IFormattable)value;
             var format = parameter.ToString();
             return dateTime.ToString(format, culture);
         }
 
         /// <inheritdoc/>
         public object? ConvertBack(object? value, Type targetType, object? parameter,
-            CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+            CultureInfo culture) => throw new NotImplementedException();
     }
 }
