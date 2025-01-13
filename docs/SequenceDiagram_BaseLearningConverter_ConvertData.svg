@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="652"
+   height="460"
+   id="svg157"
+   sodipodi:docname="SequenceDiagram_BaseLearningConverter_ConvertData.svg"
+   inkscape:export-filename="SequenceDiagram_BaseLearningConverter_ConvertData.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview157"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.3297546"
+     inkscape:cx="326"
+     inkscape:cy="229.85253"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1072"
+     inkscape:window-y="472"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg157" />
+  <defs
+     id="defs1" />
+  <g
+     id="g157">
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g64">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 8 8 L 640 8 L 640 448 L 8 448 L 8 8"
+         stroke-miterlimit="10"
+         id="path64" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g65">
+      <path
+         fill="#ffffff"
+         stroke="none"
+         d="M 8 8 L 8 30 L 370.150390625 30 L 381.150390625 19 L 381.150390625 8 L 8 8"
+         id="path65" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g66">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 8 8 L 8 30 L 370.150390625 30 L 381.150390625 19 L 381.150390625 8 L 8 8 L 8 8"
+         stroke-miterlimit="10"
+         id="path66" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g68">
+      <g
+         id="g67">
+        <path
+           fill="none"
+           stroke="none"
+           id="path67" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="32.72998046875"
+           y="24"
+           id="text67">SequenceDiagram_BaseLearningConverter_ConvertData</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g70">
+      <g
+         id="g69">
+        <path
+           fill="none"
+           stroke="none"
+           id="path68" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="12.279541015625"
+           y="24"
+           id="text68">sd</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g71">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="167"
+         y="47"
+         width="170.708984375"
+         height="39"
+         opacity="0.2"
+         id="rect70" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g72">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="160"
+         y="40"
+         width="170.708984375"
+         height="39"
+         id="rect71" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g73">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 160 40 L 330.708984375 40 L 330.708984375 79 L 160 79 L 160 40 Z Z"
+         stroke-miterlimit="10"
+         id="path72" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g75">
+      <g
+         id="g74">
+        <path
+           fill="none"
+           stroke="none"
+           id="path73" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="169.5"
+           y="58"
+           id="text73">BaseLearningConverter:</text>
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="171.66455078125"
+           y="71"
+           id="text74">BaseLearningConverter</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g76">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 246.5 80 L 246.5 446"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path75" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g77">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="351"
+         y="47"
+         width="196.0107421875"
+         height="39"
+         opacity="0.2"
+         id="rect76" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g78">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="344"
+         y="40"
+         width="196.0107421875"
+         height="39"
+         id="rect77" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g79">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 344 40 L 540.0107421875 40 L 540.0107421875 79 L 344 79 L 344 40 Z Z"
+         stroke-miterlimit="10"
+         id="path78" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g81">
+      <g
+         id="g80">
+        <path
+           fill="none"
+           stroke="none"
+           id="path79" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="353.5"
+           y="58"
+           id="text79">PrimaryPointDataProcessor:</text>
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="353.858642578125"
+           y="71"
+           id="text80">IPrimaryPointDataProcessor</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g82">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 443.5 80 L 443.5 342"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path81" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g83">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="559"
+         y="47"
+         width="69.5908203125"
+         height="39"
+         opacity="0.2"
+         id="rect82" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g84">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 557 45 L 626.5908203125 45 L 626.5908203125 84 L 557 84 L 557 45 Z Z"
+         stroke-miterlimit="10"
+         id="path83" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g85">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="552"
+         y="40"
+         width="69.5908203125"
+         height="39"
+         id="rect84" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g86">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 552 40 L 621.5908203125 40 L 621.5908203125 79 L 552 79 L 552 40 Z Z"
+         stroke-miterlimit="10"
+         id="path85" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g88">
+      <g
+         id="g87">
+        <path
+           fill="none"
+           stroke="none"
+           id="path86" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="561.5"
+           y="58"
+           id="text86">Scalers:</text>
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="565.4736328125"
+           y="71"
+           id="text87">IScaler</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g89">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 587.5 80 L 587.5 414"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path88" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g90">
+      <rect
+         fill="#C0C0C0"
+         stroke="none"
+         x="47"
+         y="47"
+         width="71.736328125"
+         height="39"
+         opacity="0.2"
+         id="rect89" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g91">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="40"
+         y="40"
+         width="71.736328125"
+         height="39"
+         id="rect90" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g92">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 40 40 L 111.736328125 40 L 111.736328125 79 L 40 79 L 40 40 Z Z"
+         stroke-miterlimit="10"
+         id="path91" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g94">
+      <g
+         id="g93">
+        <path
+           fill="none"
+           stroke="none"
+           id="path92" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="52.74365234375"
+           y="58"
+           id="text92">System</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g95">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 76.5 80 L 76.5 446"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path94" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g96">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 76 122 L 239 122"
+         stroke-miterlimit="10"
+         id="path95" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g97">
+      <path
+         fill="#000000"
+         stroke="none"
+         d="M 228.83732514237585 126.20951775601598 L 239 122 L 228.83732514237585 117.79048224398402"
+         id="path96" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g98">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 228.83732514237585 126.20951775601598 L 239 122 L 228.83732514237585 117.79048224398402 L 228.83732514237585 126.20951775601598"
+         stroke-miterlimit="10"
+         id="path97" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g100">
+      <g
+         id="g99">
+        <path
+           fill="none"
+           stroke="none"
+           id="path98" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="94.5"
+           y="117"
+           id="text98">1 : ConvertData(data)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g101">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="239"
+         y="122"
+         width="13"
+         height="294"
+         id="rect100" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g102">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 239 122 L 252 122 L 252 416 L 239 416 L 239 122 Z Z"
+         stroke-miterlimit="10"
+         id="path101" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g103">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 252 136 L 282 136 L 282 156 L 259 156"
+         stroke-miterlimit="10"
+         id="path102" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g104">
+      <path
+         fill="#000000"
+         stroke="none"
+         d="M 269.16267485762415 151.790482243984 L 259 156 L 269.16267485762415 160.209517756016"
+         id="path103" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g105">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 269.16267485762415 151.790482243984 L 259 156 L 269.16267485762415 160.209517756016 L 269.16267485762415 151.790482243984"
+         stroke-miterlimit="10"
+         id="path104" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g107">
+      <g
+         id="g106">
+        <path
+           fill="none"
+           stroke="none"
+           id="path105" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="287.5"
+           y="147"
+           id="text105">2 : ExtractFeatures(data)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g108">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="246"
+         y="156"
+         width="13"
+         height="28"
+         id="rect107" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g109">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 246 156 L 259 156 L 259 184 L 246 184 L 246 156 Z Z"
+         stroke-miterlimit="10"
+         id="path108" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g110">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 252 208 L 282 208 L 282 228 L 259 228"
+         stroke-miterlimit="10"
+         id="path109" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g111">
+      <path
+         fill="#000000"
+         stroke="none"
+         d="M 269.16267485762415 223.790482243984 L 259 228 L 269.16267485762415 232.209517756016"
+         id="path110" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g112">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 269.16267485762415 223.790482243984 L 259 228 L 269.16267485762415 232.209517756016 L 269.16267485762415 223.790482243984"
+         stroke-miterlimit="10"
+         id="path111" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g114">
+      <g
+         id="g113">
+        <path
+           fill="none"
+           stroke="none"
+           id="path112" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="286.5"
+           y="222"
+           id="text112">3 : features.Remove(index)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g115">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="246"
+         y="228"
+         width="13"
+         height="28"
+         id="rect114" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g116">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 246 228 L 259 228 L 259 256 L 246 256 L 246 228 Z Z"
+         stroke-miterlimit="10"
+         id="path115" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g117">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 252 288 L 436 288"
+         stroke-miterlimit="10"
+         id="path116" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g118">
+      <path
+         fill="#000000"
+         stroke="none"
+         d="M 425.83732514237585 292.209517756016 L 436 288 L 425.83732514237585 283.790482243984"
+         id="path117" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g119">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 425.83732514237585 292.209517756016 L 436 288 L 425.83732514237585 283.790482243984 L 425.83732514237585 292.209517756016"
+         stroke-miterlimit="10"
+         id="path118" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g121">
+      <g
+         id="g120">
+        <path
+           fill="none"
+           stroke="none"
+           id="path119" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="283.5"
+           y="283"
+           id="text119">4 : Process(features)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g122">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="436"
+         y="288"
+         width="13"
+         height="28"
+         id="rect121" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g123">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 436 288 L 449 288 L 449 316 L 436 316 L 436 288 Z Z"
+         stroke-miterlimit="10"
+         id="path122" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g124">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 436 312 L 252 312"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path123" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g125">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 262.16267485762415 307.790482243984 L 252 312 L 262.16267485762415 316.209517756016"
+         stroke-miterlimit="10"
+         id="path124" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g127">
+      <g
+         id="g126">
+        <path
+           fill="none"
+           stroke="none"
+           id="path125" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="262.5"
+           y="327"
+           id="text125">5 : featuresProcessorResult</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g128">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 252 360 L 580 360"
+         stroke-miterlimit="10"
+         id="path127" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g129">
+      <path
+         fill="#000000"
+         stroke="none"
+         d="M 569.8373251423759 364.209517756016 L 580 360 L 569.8373251423758 355.790482243984"
+         id="path128" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g130">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 569.8373251423759 364.209517756016 L 580 360 L 569.8373251423758 355.790482243984 L 569.8373251423759 364.209517756016"
+         stroke-miterlimit="10"
+         id="path129" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g132">
+      <g
+         id="g131">
+        <path
+           fill="none"
+           stroke="none"
+           id="path130" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="277.5"
+           y="355"
+           id="text130">6 : column.ElementAt(index).Transform(column)</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g133">
+      <rect
+         fill="#ffffff"
+         stroke="none"
+         x="580"
+         y="360"
+         width="13"
+         height="28"
+         id="rect132" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g134">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 580 360 L 593 360 L 593 388 L 580 388 L 580 360 Z Z"
+         stroke-miterlimit="10"
+         id="path133" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g135">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 580 384 L 252 384"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path134" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g136">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 262.16267485762415 379.790482243984 L 252 384 L 262.16267485762415 388.209517756016"
+         stroke-miterlimit="10"
+         id="path135" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g138">
+      <g
+         id="g137">
+        <path
+           fill="none"
+           stroke="none"
+           id="path136" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="371.5"
+           y="399"
+           id="text136">7 : newColumn</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g139">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 246 416 L 76 416"
+         stroke-miterlimit="10"
+         stroke-dasharray="3"
+         id="path138" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g140">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 86.16267485762415 411.790482243984 L 76 416 L 86.16267485762415 420.209517756016"
+         stroke-miterlimit="10"
+         id="path139" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g142">
+      <g
+         id="g141">
+        <path
+           fill="none"
+           stroke="none"
+           id="path140" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="127.5"
+           y="431"
+           id="text140">8 : features</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g143">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 16 192 L 448 192 L 448 264 L 16 264 L 16 192"
+         stroke-miterlimit="10"
+         id="path142" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g144">
+      <path
+         fill="#ffffff"
+         stroke="none"
+         d="M 16 192 L 16 214 L 56.578125 214 L 67.578125 203 L 67.578125 192 L 16 192"
+         id="path143" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g145">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 16 192 L 16 214 L 56.578125 214 L 67.578125 203 L 67.578125 192 L 16 192 L 16 192"
+         stroke-miterlimit="10"
+         id="path144" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g147">
+      <g
+         id="g146">
+        <path
+           fill="none"
+           stroke="none"
+           id="path145" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="19.57177734375"
+           y="208"
+           id="text145">loop</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g149">
+      <g
+         id="g148">
+        <path
+           fill="none"
+           stroke="none"
+           id="path147" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="35.5"
+           y="241"
+           id="text147">[index in removedColumnsIndices]</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g150">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 16 336 L 608 336 L 608 408 L 16 408 L 16 336"
+         stroke-miterlimit="10"
+         id="path149" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g151">
+      <path
+         fill="#ffffff"
+         stroke="none"
+         d="M 16 336 L 16 358 L 56.578125 358 L 67.578125 347 L 67.578125 336 L 16 336"
+         id="path150" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g152">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 16 336 L 16 358 L 56.578125 358 L 67.578125 347 L 67.578125 336 L 16 336 L 16 336"
+         stroke-miterlimit="10"
+         id="path151" />
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g154">
+      <g
+         id="g153">
+        <path
+           fill="none"
+           stroke="none"
+           id="path152" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="19.57177734375"
+           y="352"
+           id="text152">loop</text>
+      </g>
+    </g>
+    <g
+       transform="translate(2,2) scale(1,1)"
+       id="g156">
+      <g
+         id="g155">
+        <path
+           fill="none"
+           stroke="none"
+           id="path154" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="35.5"
+           y="385"
+           id="text154">[column, index in features]</text>
+      </g>
+    </g>
+  </g>
+</svg>

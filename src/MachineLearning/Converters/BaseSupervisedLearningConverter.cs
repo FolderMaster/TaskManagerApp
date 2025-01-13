@@ -167,13 +167,13 @@ namespace MachineLearning.Converters
             IEnumerable<int> removedRowsIndices)
         {
             var index = 0;
-            foreach (var taskElement in data)
+            foreach (var element in data)
             {
                 if (removedRowsIndices.Contains(index))
                 {
                     continue;
                 }
-                yield return ProcessTarget(taskElement);
+                yield return ProcessTarget(element);
                 ++index;
             }
         }

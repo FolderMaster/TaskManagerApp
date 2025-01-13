@@ -1,7 +1,6 @@
 ﻿using ReactiveUI;
 using ReactiveUI.SourceGenerators;
 using System.Reactive.Linq;
-using System.Diagnostics;
 
 using Model;
 using Model.Interfaces;
@@ -12,7 +11,6 @@ using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Interfaces.ModelLearning;
 
 namespace ViewModel.ViewModels;
-
 
 /// <summary>
 /// Класс главного контроллера.
