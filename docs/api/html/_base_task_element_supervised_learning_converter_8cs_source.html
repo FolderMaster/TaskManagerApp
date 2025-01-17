@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/ModelLearning/Converters/BaseTaskElementSupervisedLearningConverter.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_28229d5b5ece2a2daa8a5d1821d2aecd.html">ModelLearning</a></li><li class="navelem"><a class="el" href="dir_49a50694d3224e70e19cae26bc4705e8.html">Converters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">BaseTaskElementSupervisedLearningConverter.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>DynamicData;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_converters.html">MachineLearning.Converters</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_model_learning.html">ViewModel.Interfaces.ModelLearning</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">   11</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">ViewModel.Implementations.ModelLearning.Converters</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html">   22</a></span>    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#aea715799b42430b7b34f5a770edb7def">BaseTaskElementSupervisedLearningConverter</a>&lt;R, DR&gt; :</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_supervised_learning_converter-4-g.html#a6fe08e7d2d1fa5376d4d8d9b2e301e7e">BaseSupervisedLearningConverter</a>&lt;R, ITaskElement, ITaskElement, DR&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a636b730d023b217d607909b848583823">   28</a></span>        <span class="keyword">protected</span> readonly IFactory&lt;IScaler&gt; <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a636b730d023b217d607909b848583823">_scalerFactory</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#ae1289373399f72fc32b353bed132819b">   33</a></span>        <span class="keyword">protected</span> readonly IDataTransformer&lt;TaskMetadata, int?&gt; <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#ae1289373399f72fc32b353bed132819b">_metadataCategoriesTransformer</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a8b8f1a18530b0cc21aa3b7762b244ee8">   38</a></span>        <span class="keyword">protected</span> readonly IDataTransformer&lt;TaskMetadata, IEnumerable&lt;int&gt;&gt; <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a8b8f1a18530b0cc21aa3b7762b244ee8">_metadataTagsTransformer</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#aea715799b42430b7b34f5a770edb7def">   52</a></span>        <span class="keyword">protected</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#aea715799b42430b7b34f5a770edb7def">BaseTaskElementSupervisedLearningConverter</a></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            (<a class="code hl_interface" href="interface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor.html">IPrimaryPointDataProcessor</a> primaryPointDataProcessor,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            IEnumerable&lt;IPointDataProcessor&gt; pointDataProcessors,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            IFactory&lt;IScaler&gt; scalerFactory,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            IDataTransformer&lt;TaskMetadata, int?&gt; metadataCategoriesTransformer,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            IDataTransformer&lt;<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_task_metadata.html">TaskMetadata</a>, IEnumerable&lt;int&gt;&gt; metadataTagsITransformer) :</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            base(primaryPointDataProcessor, pointDataProcessors)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a636b730d023b217d607909b848583823">_scalerFactory</a> = scalerFactory;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#ae1289373399f72fc32b353bed132819b">_metadataCategoriesTransformer</a> = metadataCategoriesTransformer;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a8b8f1a18530b0cc21aa3b7762b244ee8">_metadataTagsTransformer</a> = metadataTagsITransformer;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a365a9d4cc4dfe31071434abdeea475fe">   66</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> IEnumerable&lt;IEnumerable&lt;double?&gt;&gt; <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a365a9d4cc4dfe31071434abdeea475fe">ProcessFeatures</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            (IEnumerable&lt;ITaskElement&gt; data)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            var metadataSet = data.Select(t =&gt; t.Metadata as <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_task_metadata.html">TaskMetadata</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            var categories = <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#ae1289373399f72fc32b353bed132819b">_metadataCategoriesTransformer</a>.FitTransform(metadataSet);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            var tags = <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a8b8f1a18530b0cc21aa3b7762b244ee8">_metadataTagsTransformer</a>.FitTransform(metadataSet);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            var index = 0;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">foreach</span> (var dataItem <span class="keywordflow">in</span> data)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                var result = <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a73641ae2398b20b068deea192c64e0c1">ExtractPrimaryFeatures</a>(dataItem);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                result.Add(categories.ElementAt(index));</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                result.AddRange(tags.ElementAt(index).Cast&lt;<span class="keywordtype">double</span>?&gt;());</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                yield <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                ++index;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#af48fbafb2eb1b38ed4dc895d60109902">   84</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> IEnumerable&lt;double?&gt; <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#af48fbafb2eb1b38ed4dc895d60109902">ExtractFeatures</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> dataItem)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            var metadata = dataItem.Metadata as <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_task_metadata.html">TaskMetadata</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            var result = <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a73641ae2398b20b068deea192c64e0c1">ExtractPrimaryFeatures</a>(dataItem);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            result.Add(<a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#ae1289373399f72fc32b353bed132819b">_metadataCategoriesTransformer</a>.Transform(metadata));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            result.AddRange(<a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a8b8f1a18530b0cc21aa3b7762b244ee8">_metadataTagsTransformer</a>.Transform(metadata).Cast&lt;<span class="keywordtype">double</span>?&gt;());</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a501bef103cf4b58dcaf640624e4ed81d">   94</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code hl_interface" href="interface_machine_learning_1_1_interfaces_1_1_i_scaler.html">IScaler</a> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a501bef103cf4b58dcaf640624e4ed81d">CreateScaler</a></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            (<span class="keywordtype">int</span> index, IEnumerable&lt;int&gt; removedColumnsIndices) =&gt; <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a636b730d023b217d607909b848583823">_scalerFactory</a>.Create();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a73641ae2398b20b068deea192c64e0c1">  102</a></span>        <span class="keyword">protected</span> <span class="keyword">abstract</span> List&lt;double?&gt; <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a73641ae2398b20b068deea192c64e0c1">ExtractPrimaryFeatures</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> dataItem);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+</div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_supervised_learning_converter-4-g_html_a6fe08e7d2d1fa5376d4d8d9b2e301e7e"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_supervised_learning_converter-4-g.html#a6fe08e7d2d1fa5376d4d8d9b2e301e7e">MachineLearning.Converters.BaseSupervisedLearningConverter-4-g.BaseSupervisedLearningConverter</a></div><div class="ttdeci">BaseSupervisedLearningConverter(IPrimaryPointDataProcessor primaryPointDataProcessor, IEnumerable&lt; IPointDataProcessor &gt; pointDataProcessors)</div><div class="ttdoc">Создаёт экземпляр класса BaseSupervisedLearningConverter&lt;R, D, DT, DR&gt;.</div><div class="ttdef"><b>Определения</b> <a href="_base_supervised_learning_converter_8cs_source.html#l00034">BaseSupervisedLearningConverter.cs:35</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_a365a9d4cc4dfe31071434abdeea475fe"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a365a9d4cc4dfe31071434abdeea475fe">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g.ProcessFeatures</a></div><div class="ttdeci">override IEnumerable&lt; IEnumerable&lt; double?&gt; &gt; ProcessFeatures(IEnumerable&lt; ITaskElement &gt; data)</div><div class="ttdef"><b>Определения</b> <a href="#l00066">BaseTaskElementSupervisedLearningConverter.cs:67</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_a501bef103cf4b58dcaf640624e4ed81d"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a501bef103cf4b58dcaf640624e4ed81d">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g.CreateScaler</a></div><div class="ttdeci">override IScaler CreateScaler(int index, IEnumerable&lt; int &gt; removedColumnsIndices)</div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_a636b730d023b217d607909b848583823"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a636b730d023b217d607909b848583823">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g._scalerFactory</a></div><div class="ttdeci">readonly IFactory&lt; IScaler &gt; _scalerFactory</div><div class="ttdoc">Фабрика, создающая масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00028">BaseTaskElementSupervisedLearningConverter.cs:28</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_a73641ae2398b20b068deea192c64e0c1"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a73641ae2398b20b068deea192c64e0c1">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g.ExtractPrimaryFeatures</a></div><div class="ttdeci">List&lt; double?&gt; ExtractPrimaryFeatures(ITaskElement dataItem)</div><div class="ttdoc">Извлекает первичные признаки у элемента данных.</div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_a8b8f1a18530b0cc21aa3b7762b244ee8"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#a8b8f1a18530b0cc21aa3b7762b244ee8">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g._metadataTagsTransformer</a></div><div class="ttdeci">readonly IDataTransformer&lt; TaskMetadata, IEnumerable&lt; int &gt; &gt; _metadataTagsTransformer</div><div class="ttdoc">Преобразование теги метаданных в данные для предсказания.</div><div class="ttdef"><b>Определения</b> <a href="#l00038">BaseTaskElementSupervisedLearningConverter.cs:38</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_ae1289373399f72fc32b353bed132819b"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#ae1289373399f72fc32b353bed132819b">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g._metadataCategoriesTransformer</a></div><div class="ttdeci">readonly IDataTransformer&lt; TaskMetadata, int?&gt; _metadataCategoriesTransformer</div><div class="ttdoc">Преобразование категории метаданных в данные для предсказания.</div><div class="ttdef"><b>Определения</b> <a href="#l00033">BaseTaskElementSupervisedLearningConverter.cs:33</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_aea715799b42430b7b34f5a770edb7def"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#aea715799b42430b7b34f5a770edb7def">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g.BaseTaskElementSupervisedLearningConverter</a></div><div class="ttdeci">BaseTaskElementSupervisedLearningConverter(IPrimaryPointDataProcessor primaryPointDataProcessor, IEnumerable&lt; IPointDataProcessor &gt; pointDataProcessors, IFactory&lt; IScaler &gt; scalerFactory, IDataTransformer&lt; TaskMetadata, int?&gt; metadataCategoriesTransformer, IDataTransformer&lt; TaskMetadata, IEnumerable&lt; int &gt; &gt; metadataTagsITransformer)</div><div class="ttdoc">Создаёт экземпляр класса BaseTaskElementSupervisedLearningConverter&lt;R, DR&gt;.</div><div class="ttdef"><b>Определения</b> <a href="#l00052">BaseTaskElementSupervisedLearningConverter.cs:53</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_af48fbafb2eb1b38ed4dc895d60109902"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#af48fbafb2eb1b38ed4dc895d60109902">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g.ExtractFeatures</a></div><div class="ttdeci">override IEnumerable&lt; double?&gt; ExtractFeatures(ITaskElement dataItem)</div><div class="ttdef"><b>Определения</b> <a href="#l00084">BaseTaskElementSupervisedLearningConverter.cs:84</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_task_metadata_html"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_task_metadata.html">ViewModel.Technicals.TaskMetadata</a></div><div class="ttdoc">Класс метаданных задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_metadata_8cs_source.html#l00012">TaskMetadata.cs:13</a></div></div>
+<div class="ttc" id="ainterface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor_html"><div class="ttname"><a href="interface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor.html">MachineLearning.Interfaces.IPrimaryPointDataProcessor</a></div><div class="ttdoc">Интерфейс первичного обработчика точечных данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_primary_point_data_processor_8cs_source.html#l00012">IPrimaryPointDataProcessor.cs:13</a></div></div>
+<div class="ttc" id="ainterface_machine_learning_1_1_interfaces_1_1_i_scaler_html"><div class="ttname"><a href="interface_machine_learning_1_1_interfaces_1_1_i_scaler.html">MachineLearning.Interfaces.IScaler</a></div><div class="ttdoc">Интерфейс масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_scaler_8cs_source.html#l00006">IScaler.cs:7</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_element_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_element.html">Model.Interfaces.ITaskElement</a></div><div class="ttdoc">Интерфейс элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_element_8cs_source.html#l00009">ITaskElement.cs:10</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_converters_html"><div class="ttname"><a href="namespace_machine_learning_1_1_converters.html">MachineLearning.Converters</a></div><div class="ttdef"><b>Определения</b> <a href="_base_learning_converter_8cs_source.html#l00004">BaseLearningConverter.cs:5</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_interfaces_html"><div class="ttname"><a href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_processor_8cs_source.html#l00001">IDataProcessor.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">ViewModel.Implementations.ModelLearning.Converters</a></div><div class="ttdef"><b>Определения</b> <a href="#l00011">BaseTaskElementSupervisedLearningConverter.cs:12</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a></div><div class="ttdef"><b>Определения</b> <a href="_i_editor_proxy_8cs_source.html#l00001">IEditorProxy.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_model_learning_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_model_learning.html">ViewModel.Interfaces.ModelLearning</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_transformer_8cs_source.html#l00001">IDataTransformer.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_technicals_html"><div class="ttname"><a href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a></div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00005">AppConfiguration.cs:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

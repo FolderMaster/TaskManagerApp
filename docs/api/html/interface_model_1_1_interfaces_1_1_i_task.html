@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Интерфейс Model.Interfaces.ITask</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_model.html">Model</a></li><li class="navelem"><a class="el" href="namespace_model_1_1_interfaces.html">Interfaces</a></li><li class="navelem"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#properties">Свойства</a> &#124;
+<a href="interface_model_1_1_interfaces_1_1_i_task-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Интерфейс Model.Interfaces.ITask</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс задачи.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:Model.Interfaces.ITask:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_model_1_1_interfaces_1_1_i_task.png" usemap="#Model.Interfaces.ITask_map" alt=""/>
+  <map id="Model.Interfaces.ITask_map" name="Model.Interfaces.ITask_map">
+<area href="interface_model_1_1_interfaces_1_1_i_task_composite.html" title="Интерфейс составной задачи." alt="Model.Interfaces.ITaskComposite" shape="rect" coords="0,56,521,80"/>
+<area href="interface_model_1_1_interfaces_1_1_i_task_element.html" title="Интерфейс элементарной задачи." alt="Model.Interfaces.ITaskElement" shape="rect" coords="1062,56,1583,80"/>
+<area href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_tasks_editor_proxy.html" title="Интерфейс заместителя задачи для редактирования." alt="ViewModel.Interfaces.DataManagers.ITasksEditorProxy" shape="rect" coords="2124,56,2645,80"/>
+<area href="class_model_1_1_tasks_1_1_task_composite.html" title="Класс составной задачи." alt="Model.Tasks.TaskComposite" shape="rect" coords="0,112,521,136"/>
+<area href="class_model_1_1_tasks_1_1_task_element.html" title="Класс элементарной задачи." alt="Model.Tasks.TaskElement" shape="rect" coords="531,112,1052,136"/>
+<area href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_task_element_proxy.html" title="Интерфейс заместителя элементарной задачи." alt="ViewModel.Interfaces.DataManagers.ITaskElementProxy" shape="rect" coords="1062,112,1583,136"/>
+<area href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_task_elements_editor_proxy.html" title="Интерфейс заместителя элементарной задачи для редактирования." alt="ViewModel.Interfaces.DataManagers.ITaskElementsEditorProxy" shape="rect" coords="1593,112,2114,136"/>
+<area href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html" title="Класс заместитель задач для редактирования." alt="ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy" shape="rect" coords="2124,112,2645,136"/>
+<area href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html" title="Класс домменной модели составной задачи." alt="ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain" shape="rect" coords="0,168,521,192"/>
+<area href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html" title="Класс домменной модели элементарной задачи." alt="ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskElementDomain" shape="rect" coords="531,168,1052,192"/>
+<area href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html" alt="ViewModel.Implementations.DataManagers.TaskElementCreatorProxy" shape="rect" coords="1062,168,1583,192"/>
+<area href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html" title="Класс заместитель элементарых задач для редактирования." alt="ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy" shape="rect" coords="1593,168,2114,192"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:a91c18eee7cc8d231705ed21e50257342" id="r_a91c18eee7cc8d231705ed21e50257342"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91c18eee7cc8d231705ed21e50257342">ParentTask</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a91c18eee7cc8d231705ed21e50257342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает и задаёт родительскую задачу.  <br /></td></tr>
+<tr class="separator:a91c18eee7cc8d231705ed21e50257342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a499dc0154fedf77b598bd14e8cff23" id="r_a1a499dc0154fedf77b598bd14e8cff23"><td class="memItemLeft" align="right" valign="top">object?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a499dc0154fedf77b598bd14e8cff23">Metadata</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1a499dc0154fedf77b598bd14e8cff23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает и задаёт метаданные.  <br /></td></tr>
+<tr class="separator:a1a499dc0154fedf77b598bd14e8cff23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab972237c44d9dbb1016c0953085902" id="r_acab972237c44d9dbb1016c0953085902"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab972237c44d9dbb1016c0953085902">Difficult</a><code> [get]</code></td></tr>
+<tr class="memdesc:acab972237c44d9dbb1016c0953085902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает сложность.  <br /></td></tr>
+<tr class="separator:acab972237c44d9dbb1016c0953085902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addee0894ecfc9d2cee6af1c0152d6a66" id="r_addee0894ecfc9d2cee6af1c0152d6a66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addee0894ecfc9d2cee6af1c0152d6a66">Priority</a><code> [get]</code></td></tr>
+<tr class="memdesc:addee0894ecfc9d2cee6af1c0152d6a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает приоритет.  <br /></td></tr>
+<tr class="separator:addee0894ecfc9d2cee6af1c0152d6a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd42730c3bab930c013cc6c25ffbb82b" id="r_abd42730c3bab930c013cc6c25ffbb82b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd42730c3bab930c013cc6c25ffbb82b">Status</a><code> [get]</code></td></tr>
+<tr class="memdesc:abd42730c3bab930c013cc6c25ffbb82b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает статус.  <br /></td></tr>
+<tr class="separator:abd42730c3bab930c013cc6c25ffbb82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a067cc5f72427fc2edc6a8f88ef2e7b82" id="r_a067cc5f72427fc2edc6a8f88ef2e7b82"><td class="memItemLeft" align="right" valign="top">DateTime?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a067cc5f72427fc2edc6a8f88ef2e7b82">Deadline</a><code> [get]</code></td></tr>
+<tr class="memdesc:a067cc5f72427fc2edc6a8f88ef2e7b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает срок.  <br /></td></tr>
+<tr class="separator:a067cc5f72427fc2edc6a8f88ef2e7b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f8b1fbcf773be4b02ec4b11a73c4d77" id="r_a7f8b1fbcf773be4b02ec4b11a73c4d77"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f8b1fbcf773be4b02ec4b11a73c4d77">Progress</a><code> [get]</code></td></tr>
+<tr class="memdesc:a7f8b1fbcf773be4b02ec4b11a73c4d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает прогресс.  <br /></td></tr>
+<tr class="separator:a7f8b1fbcf773be4b02ec4b11a73c4d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d63efd7127f305a10ce801e5cf976a" id="r_a32d63efd7127f305a10ce801e5cf976a"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32d63efd7127f305a10ce801e5cf976a">PlannedTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:a32d63efd7127f305a10ce801e5cf976a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает запланированное время.  <br /></td></tr>
+<tr class="separator:a32d63efd7127f305a10ce801e5cf976a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22319f46852f3a21f507b657f21436f6" id="r_a22319f46852f3a21f507b657f21436f6"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22319f46852f3a21f507b657f21436f6">SpentTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:a22319f46852f3a21f507b657f21436f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает потраченное время.  <br /></td></tr>
+<tr class="separator:a22319f46852f3a21f507b657f21436f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс задачи. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00006">6</a></p>
+</div><h2 class="groupheader">Полный список свойств</h2>
+<a id="a067cc5f72427fc2edc6a8f88ef2e7b82" name="a067cc5f72427fc2edc6a8f88ef2e7b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067cc5f72427fc2edc6a8f88ef2e7b82">&#9670;&#160;</a></span>Deadline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DateTime? Model.Interfaces.ITask.Deadline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает срок. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#a5f3b1b15bdeaf8e8edf2a8f506e1e154">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a06611b8426e3644493d6d76a78636168">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#a7f4bf564b841931c94ba51d79fe72a1b">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a6647cf518e566a3e3b53edd677770331">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a1425b93ea6f427afc1195ef3c1742138">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a id="acab972237c44d9dbb1016c0953085902" name="acab972237c44d9dbb1016c0953085902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab972237c44d9dbb1016c0953085902">&#9670;&#160;</a></span>Difficult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Model.Interfaces.ITask.Difficult</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает сложность. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#ab1474945d7b79cd54e0c88f126c657cc">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#ac44cac245392657cc863cafd11ff500a">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#a39d0d17f89714938cdd000138c07de6f">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a5768f4bac59ee0c9ec46d520055d771e">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a8ec8d4caf2c0cd9adbc6862f96bbe090">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a id="a1a499dc0154fedf77b598bd14e8cff23" name="a1a499dc0154fedf77b598bd14e8cff23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a499dc0154fedf77b598bd14e8cff23">&#9670;&#160;</a></span>Metadata</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">object? Model.Interfaces.ITask.Metadata</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает и задаёт метаданные. </p>
+
+<p>Замещается в <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#a15c7dc2d2a86273be33330b7b700944d">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a8a8d162aa9e4e34b7b002d566a2f36c3">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a4576209490551edd61d3d275c98746a1">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a id="a91c18eee7cc8d231705ed21e50257342" name="a91c18eee7cc8d231705ed21e50257342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c18eee7cc8d231705ed21e50257342">&#9670;&#160;</a></span>ParentTask</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? Model.Interfaces.ITask.ParentTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает и задаёт родительскую задачу. </p>
+
+<p>Замещается в <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a66b5b13651ad361c70756d60d1cfce59">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#a266a2c21e16e3e970c10cbbc96bfdee6">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#a61be82e6ce82934f7e6c23985b5714da">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#aa15721a0e1c4b81bd02eb1ef4182ab87">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a39989b737fb455b37e01e97d41ea68c7">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00011">11</a></p>
+
+</div>
+</div>
+<a id="a32d63efd7127f305a10ce801e5cf976a" name="a32d63efd7127f305a10ce801e5cf976a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d63efd7127f305a10ce801e5cf976a">&#9670;&#160;</a></span>PlannedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeSpan Model.Interfaces.ITask.PlannedTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает запланированное время. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#aecc6e1902a0ddac375213bf83cb3b872">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a8d1f7118b82473664f772c9d6f45ccda">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#ae6abf800bc133c30ae4d3f42ae2894b6">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a94fc8539db9d2a9900b8f9f2605c5fef">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#abfcae1c794260c127a385ad0bd3a0dc0">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a id="addee0894ecfc9d2cee6af1c0152d6a66" name="addee0894ecfc9d2cee6af1c0152d6a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addee0894ecfc9d2cee6af1c0152d6a66">&#9670;&#160;</a></span>Priority</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Model.Interfaces.ITask.Priority</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает приоритет. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#ac0ea40f0846c1902be117dc41135d467">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#ae7f8d3464839f3f62795eb356c86dcb7">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#ac975576a8ac68f574f0daa8e6e76c2aa">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a90bea6801c765a92c57d8454f4c884dc">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a07cddffa9eb5b5bbe5856bc9fc3e94d2">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a id="a7f8b1fbcf773be4b02ec4b11a73c4d77" name="a7f8b1fbcf773be4b02ec4b11a73c4d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8b1fbcf773be4b02ec4b11a73c4d77">&#9670;&#160;</a></span>Progress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Model.Interfaces.ITask.Progress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает прогресс. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#a51af915b753451e9f1dbbfccd84863e9">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a269a8c84bb8de6922a346f4a7110c8cf">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#a8625b5811392cdb68952d9caf1d2ec2b">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a40af48b08db83646749c7dfb51c44f53">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a617180b291dd790ceeac23692677e7bd">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a id="a22319f46852f3a21f507b657f21436f6" name="a22319f46852f3a21f507b657f21436f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22319f46852f3a21f507b657f21436f6">&#9670;&#160;</a></span>SpentTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TimeSpan Model.Interfaces.ITask.SpentTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает потраченное время. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#afd7efc4cc14b3e35527ebf6a392bb2fa">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a208bfe8892e629151c2b09e60b1c3d8e">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#a65f6f323e1d4a9a0d960d5185c9a19c1">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#a7e820043155220355a3c4b249fb9a70a">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a0b26f98d66682fefa9d432973825fe49">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00051">51</a></p>
+
+</div>
+</div>
+<a id="abd42730c3bab930c013cc6c25ffbb82b" name="abd42730c3bab930c013cc6c25ffbb82b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd42730c3bab930c013cc6c25ffbb82b">&#9670;&#160;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a> Model.Interfaces.ITask.Status</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возращает статус. </p>
+
+<p>Замещается в <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html#a562f9d707d9e3077982c56f8409c19d0">Model.Interfaces.ITaskElement</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a3bcb15e9eaf40453ca93faee96e4853d">Model.Tasks.TaskComposite</a>, <a class="el" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Model.Tasks.TaskElement</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_task_elements_editor_proxy.html#ad9d83125fb8f792741042df7b758a2cd">ViewModel.Implementations.DataManagers.Editors.TaskElementsEditorProxy</a>, <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_tasks_editor_proxy.html#ab550b73cf6e57375da1b94a62ebf2820">ViewModel.Implementations.DataManagers.Editors.TasksEditorProxy</a> и <a class="el" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html#a9df1e5b4a723d15c30a7992e0eee5c3a">ViewModel.Implementations.DataManagers.TaskElementCreatorProxy</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_task_8cs_source.html">ITask.cs</a> строка <a class="el" href="_i_task_8cs_source.html#l00031">31</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

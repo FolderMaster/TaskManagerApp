@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Шаблон класса ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations.html">Implementations</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_model_learning.html">ModelLearning</a></li><li class="navelem"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html">BaseSupervisedEvaluatorLearningController-5-g</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон класса ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Абстрактный класс базового контроллера обучения модели обучения с учителем.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.png" usemap="#ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController_3C_20T_2C_20R_2C_20D_2C_20DT_2C_20DR_20_3E_map" alt=""/>
+  <map id="ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController_3C_20T_2C_20R_2C_20D_2C_20DT_2C_20DR_20_3E_map" name="ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController_3C_20T_2C_20R_2C_20D_2C_20DT_2C_20DR_20_3E_map">
+<area href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_learning_controller-3-g.html" title="Интерфейс контроллера обучения модели обучения." alt="ViewModel.Interfaces.ModelLearning.ILearningController&lt; D, DT, DR &gt;" shape="rect" coords="958,56,1587,80"/>
+<area href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_model_teacher-1-g.html" title="Интерфейс для обучения модели на основе данных." alt="ViewModel.Interfaces.ModelLearning.IModelTeacher&lt; D &gt;" shape="rect" coords="958,0,1587,24"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_deadline_task_element_evaluator_learning_controller.html" title="Класс контроллера обучения модели обучения с учителем для предсказания срока элементарной задачи." alt="ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController" shape="rect" coords="0,168,629,192"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_execution_chance_task_element_evaluator_learning_controller.html" title="Класс контроллера обучения модели обучения с учителем для предсказания шанса выполнения элементарной ..." alt="ViewModel.Implementations.ModelLearning.ExecutionChanceTaskElementEvaluatorLearningController" shape="rect" coords="639,168,1268,192"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_planned_real_task_element_evaluator_learning_controller.html" title="Класс контроллера обучения модели обучения с учителем для предсказания запланированого реального пока..." alt="ViewModel.Implementations.ModelLearning.PlannedRealTaskElementEvaluatorLearningController" shape="rect" coords="1278,168,1907,192"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_planned_time_task_element_evaluator_learning_controller.html" title="Класс контроллера обучения модели обучения с учителем для предсказания запланированого времени элемен..." alt="ViewModel.Implementations.ModelLearning.PlannedTimeTaskElementEvaluatorLearningController" shape="rect" coords="1917,168,2546,192"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a72ce6f88e37d15f80dc4dfe7c0570e9e" id="r_a72ce6f88e37d15f80dc4dfe7c0570e9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72ce6f88e37d15f80dc4dfe7c0570e9e">BaseSupervisedEvaluatorLearningController</a> (ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt; converter, ISupervisedLearningModel&lt; T, R &gt; model, ISupervisedLearningEvaluator&lt; T, R &gt; evaluator)</td></tr>
+<tr class="memdesc:a72ce6f88e37d15f80dc4dfe7c0570e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр классса <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html" title="Абстрактный класс базового контроллера обучения модели обучения с учителем.">BaseSupervisedEvaluatorLearningController&lt;T, R, D, DT, DR&gt;</a>.  <br /></td></tr>
+<tr class="separator:a72ce6f88e37d15f80dc4dfe7c0570e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fcf0e74502bee12c2f315da0f3eafca" id="r_a5fcf0e74502bee12c2f315da0f3eafca"><td class="memItemLeft" align="right" valign="top">async Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fcf0e74502bee12c2f315da0f3eafca">Train</a> (IEnumerable&lt; D &gt; data)</td></tr>
+<tr class="memdesc:a5fcf0e74502bee12c2f315da0f3eafca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет обучение модели на основе данных.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает задачу процесса обучения с результатом <code>true</code>, если обучение прошло успешно, иначе <code>false</code>. </dd></dl>
+  <br /></td></tr>
+<tr class="separator:a5fcf0e74502bee12c2f315da0f3eafca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a4f0fc5024b436661c51328aa15ed4" id="r_a75a4f0fc5024b436661c51328aa15ed4"><td class="memItemLeft" align="right" valign="top">DR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a4f0fc5024b436661c51328aa15ed4">Predict</a> (DT data)</td></tr>
+<tr class="memdesc:a75a4f0fc5024b436661c51328aa15ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет предсказание на основе данных.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает предсказанное значение.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:a75a4f0fc5024b436661c51328aa15ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:a05620b1cedeee2681d4279935d010751" id="r_a05620b1cedeee2681d4279935d010751"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05620b1cedeee2681d4279935d010751">MinScoreCategory</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a05620b1cedeee2681d4279935d010751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт минимальную категорию метрики оценки.  <br /></td></tr>
+<tr class="separator:a05620b1cedeee2681d4279935d010751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36dcdbddf19a681714d3f90c66c54cd" id="r_aa36dcdbddf19a681714d3f90c66c54cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa36dcdbddf19a681714d3f90c66c54cd">IsValidModel</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:aa36dcdbddf19a681714d3f90c66c54cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает логическое значение, указывающее на достоверность модели обучения.  <br /></td></tr>
+<tr class="separator:aa36dcdbddf19a681714d3f90c66c54cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Абстрактный класс базового контроллера обучения модели обучения с учителем. </p>
+<p>Реализует <a class="el" href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_learning_controller-3-g.html" title="Интерфейс контроллера обучения модели обучения.">ILearningController&lt;D, DT, DR&gt;</a>. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип входных данных для предсказания.</td></tr>
+    <tr><td class="paramname">R</td><td>Тип выходных данных для предсказания.</td></tr>
+    <tr><td class="paramname">D</td><td>Тип данных.</td></tr>
+    <tr><td class="paramname">DT</td><td>Тип входных данных.</td></tr>
+    <tr><td class="paramname">DR</td><td>Тип выходных данных.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html">BaseSupervisedEvaluatorLearningController.cs</a> строка <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html#l00019">19</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a72ce6f88e37d15f80dc4dfe7c0570e9e" name="a72ce6f88e37d15f80dc4dfe7c0570e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ce6f88e37d15f80dc4dfe7c0570e9e">&#9670;&#160;</a></span>BaseSupervisedEvaluatorLearningController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;.BaseSupervisedEvaluatorLearningController </td>
+          <td>(</td>
+          <td class="paramtype">ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt;</td>          <td class="paramname"><span class="paramname"><em>converter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ISupervisedLearningModel&lt; T, R &gt;</td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ISupervisedLearningEvaluator&lt; T, R &gt;</td>          <td class="paramname"><span class="paramname"><em>evaluator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт экземпляр классса <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html" title="Абстрактный класс базового контроллера обучения модели обучения с учителем.">BaseSupervisedEvaluatorLearningController&lt;T, R, D, DT, DR&gt;</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>Конвертор данных в данные для предсказания с учителем и наоборот. </td></tr>
+    <tr><td class="paramname">model</td><td>Модель обучения c учителем.</td></tr>
+    <tr><td class="paramname">evaluator</td><td>Оценка модели обучения с учителем.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html">BaseSupervisedEvaluatorLearningController.cs</a> строка <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html#l00054">54</a></p>
+
+</div>
+</div>
+<a id="a75a4f0fc5024b436661c51328aa15ed4" name="a75a4f0fc5024b436661c51328aa15ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a4f0fc5024b436661c51328aa15ed4">&#9670;&#160;</a></span>Predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DR ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;.Predict </td>
+          <td>(</td>
+          <td class="paramtype">DT</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет предсказание на основе данных.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает предсказанное значение.</dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_learning_controller-3-g.html#a781268bee4a444b83ec586ad831bd1e2">ViewModel.Interfaces.ModelLearning.ILearningController&lt; D, DT, DR &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html">BaseSupervisedEvaluatorLearningController.cs</a> строка <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html#l00088">88</a></p>
+
+</div>
+</div>
+<a id="a5fcf0e74502bee12c2f315da0f3eafca" name="a5fcf0e74502bee12c2f315da0f3eafca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fcf0e74502bee12c2f315da0f3eafca">&#9670;&#160;</a></span>Train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; bool &gt; ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;.Train </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; D &gt;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет обучение модели на основе данных.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает задачу процесса обучения с результатом <code>true</code>, если обучение прошло успешно, иначе <code>false</code>. </dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_model_teacher-1-g.html#af567ac24b08d35a0f412dba44ce47cd9">ViewModel.Interfaces.ModelLearning.IModelTeacher&lt; D &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html">BaseSupervisedEvaluatorLearningController.cs</a> строка <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="aa36dcdbddf19a681714d3f90c66c54cd" name="aa36dcdbddf19a681714d3f90c66c54cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa36dcdbddf19a681714d3f90c66c54cd">&#9670;&#160;</a></span>IsValidModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;.IsValidModel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel protected-set">protected set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает логическое значение, указывающее на достоверность модели обучения. </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_learning_controller-3-g.html#a8432c85fbaa4e360e1c39911a81ca459">ViewModel.Interfaces.ModelLearning.ILearningController&lt; D, DT, DR &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html">BaseSupervisedEvaluatorLearningController.cs</a> строка <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html#l00043">43</a></p>
+
+</div>
+</div>
+<a id="a05620b1cedeee2681d4279935d010751" name="a05620b1cedeee2681d4279935d010751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05620b1cedeee2681d4279935d010751">&#9670;&#160;</a></span>MinScoreCategory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;.MinScoreCategory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт минимальную категорию метрики оценки. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html">BaseSupervisedEvaluatorLearningController.cs</a> строка <a class="el" href="_base_supervised_evaluator_learning_controller_8cs_source.html#l00040">40</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

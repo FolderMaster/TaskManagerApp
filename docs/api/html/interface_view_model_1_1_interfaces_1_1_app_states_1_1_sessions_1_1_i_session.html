@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Интерфейс ViewModel.Interfaces.AppStates.Sessions.ISession</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_interfaces.html">Interfaces</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_interfaces_1_1_app_states.html">AppStates</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions.html">Sessions</a></li><li class="navelem"><a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ISession</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="#events">События</a> &#124;
+<a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Интерфейс ViewModel.Interfaces.AppStates.Sessions.ISession</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс сессии для хранения и изменения данных.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:ViewModel.Interfaces.AppStates.Sessions.ISession:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.png" usemap="#ViewModel.Interfaces.AppStates.Sessions.ISession_map" alt=""/>
+  <map id="ViewModel.Interfaces.AppStates.Sessions.ISession_map" name="ViewModel.Interfaces.AppStates.Sessions.ISession_map">
+<area href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service.html" title="Интерфейс для сервиса хранилища." alt="ViewModel.Interfaces.AppStates.IStorageService" shape="rect" coords="0,0,346,24"/>
+<area href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html" title="Класс сессии базы данных." alt="ViewModel.Implementations.AppStates.Sessions.DbSession" shape="rect" coords="0,112,346,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af82ac3b383fd950f71df1183162729ed" id="r_af82ac3b383fd950f71df1183162729ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af82ac3b383fd950f71df1183162729ed">AddTasks</a> (IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt; tasks, <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? parentTask)</td></tr>
+<tr class="memdesc:af82ac3b383fd950f71df1183162729ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет задачи.  <br /></td></tr>
+<tr class="separator:af82ac3b383fd950f71df1183162729ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a229245a6d519c52fdfe95ea8cd3823c6" id="r_a229245a6d519c52fdfe95ea8cd3823c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a229245a6d519c52fdfe95ea8cd3823c6">EditTask</a> (<a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> task)</td></tr>
+<tr class="memdesc:a229245a6d519c52fdfe95ea8cd3823c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет задачу.  <br /></td></tr>
+<tr class="separator:a229245a6d519c52fdfe95ea8cd3823c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4864461b65f011fe2409865b5d697c85" id="r_a4864461b65f011fe2409865b5d697c85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4864461b65f011fe2409865b5d697c85">RemoveTasks</a> (IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt; tasks)</td></tr>
+<tr class="memdesc:a4864461b65f011fe2409865b5d697c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет задачи.  <br /></td></tr>
+<tr class="separator:a4864461b65f011fe2409865b5d697c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126d8f081ff9926d7774e93b9a9463e7" id="r_a126d8f081ff9926d7774e93b9a9463e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a126d8f081ff9926d7774e93b9a9463e7">MoveTasks</a> (IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt; tasks, <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? parentTask)</td></tr>
+<tr class="memdesc:a126d8f081ff9926d7774e93b9a9463e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перемещает задачи.  <br /></td></tr>
+<tr class="separator:a126d8f081ff9926d7774e93b9a9463e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099ce1cb92c4a837447dfe6c50b321a4" id="r_a099ce1cb92c4a837447dfe6c50b321a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a099ce1cb92c4a837447dfe6c50b321a4">AddTimeInterval</a> (<a class="el" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a> timeIntervalElement, <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> taskElement)</td></tr>
+<tr class="memdesc:a099ce1cb92c4a837447dfe6c50b321a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет временной интервал.  <br /></td></tr>
+<tr class="separator:a099ce1cb92c4a837447dfe6c50b321a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ba84e44396121d0c8f09259ed71ebf" id="r_a91ba84e44396121d0c8f09259ed71ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91ba84e44396121d0c8f09259ed71ebf">EditTimeInterval</a> (<a class="el" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a> timeIntervalElement)</td></tr>
+<tr class="memdesc:a91ba84e44396121d0c8f09259ed71ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет временной интервал.  <br /></td></tr>
+<tr class="separator:a91ba84e44396121d0c8f09259ed71ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab158ac28a2704d22253800fa2efd23e2" id="r_ab158ac28a2704d22253800fa2efd23e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab158ac28a2704d22253800fa2efd23e2">RemoveTimeInterval</a> (<a class="el" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a> timeIntervalElement, <a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> taskElement)</td></tr>
+<tr class="memdesc:ab158ac28a2704d22253800fa2efd23e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет временной интервал.  <br /></td></tr>
+<tr class="separator:ab158ac28a2704d22253800fa2efd23e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service.html">ViewModel.Interfaces.AppStates.IStorageService</a></td></tr>
+<tr class="memitem:a8f007de5bbfb8820c3448b0c13fa1ab9 inherit pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service" id="r_a8f007de5bbfb8820c3448b0c13fa1ab9"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service.html#a8f007de5bbfb8820c3448b0c13fa1ab9">Save</a> ()</td></tr>
+<tr class="memdesc:a8f007de5bbfb8820c3448b0c13fa1ab9 inherit pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет данные в хранилище.  <br /></td></tr>
+<tr class="separator:a8f007de5bbfb8820c3448b0c13fa1ab9 inherit pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06bcb019030d5791cfdf657abc249ef inherit pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service" id="r_ac06bcb019030d5791cfdf657abc249ef"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service.html#ac06bcb019030d5791cfdf657abc249ef">Load</a> ()</td></tr>
+<tr class="memdesc:ac06bcb019030d5791cfdf657abc249ef inherit pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает данные из хранилища.  <br /></td></tr>
+<tr class="separator:ac06bcb019030d5791cfdf657abc249ef inherit pub_methods_interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:a9bf00169d1e0095c71bc8666ccfafbd0" id="r_a9bf00169d1e0095c71bc8666ccfafbd0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bf00169d1e0095c71bc8666ccfafbd0">SavePath</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9bf00169d1e0095c71bc8666ccfafbd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт путь сохранения.  <br /></td></tr>
+<tr class="separator:a9bf00169d1e0095c71bc8666ccfafbd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2bc5b828ec0f9c1c33b21eabf36f248" id="r_aa2bc5b828ec0f9c1c33b21eabf36f248"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2bc5b828ec0f9c1c33b21eabf36f248">Tasks</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa2bc5b828ec0f9c1c33b21eabf36f248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает задачи.  <br /></td></tr>
+<tr class="separator:aa2bc5b828ec0f9c1c33b21eabf36f248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
+События</h2></td></tr>
+<tr class="memitem:a9c21f6fb4ec62fc4ef522c43f41086f9" id="r_a9c21f6fb4ec62fc4ef522c43f41086f9"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_items_updated_event_args.html">ItemsUpdatedEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c21f6fb4ec62fc4ef522c43f41086f9">ItemsUpdated</a></td></tr>
+<tr class="memdesc:a9c21f6fb4ec62fc4ef522c43f41086f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Событие, которое возникает при обновлении данных.  <br /></td></tr>
+<tr class="separator:a9c21f6fb4ec62fc4ef522c43f41086f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс сессии для хранения и изменения данных. </p>
+<p>Наследует <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_storage_service.html" title="Интерфейс для сервиса хранилища.">IStorageService</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_session_8cs_source.html">ISession.cs</a> строка <a class="el" href="_i_session_8cs_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="af82ac3b383fd950f71df1183162729ed" name="af82ac3b383fd950f71df1183162729ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af82ac3b383fd950f71df1183162729ed">&#9670;&#160;</a></span>AddTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.AddTasks </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tasks</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>?</td>          <td class="paramname"><span class="paramname"><em>parentTask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет задачи. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>Задачи.</td></tr>
+    <tr><td class="paramname">parentTask</td><td>Родительская задача.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#aca68bd29c3d9991517b457cf12ceb169">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<a id="a099ce1cb92c4a837447dfe6c50b321a4" name="a099ce1cb92c4a837447dfe6c50b321a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099ce1cb92c4a837447dfe6c50b321a4">&#9670;&#160;</a></span>AddTimeInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.AddTimeInterval </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a></td>          <td class="paramname"><span class="paramname"><em>timeIntervalElement</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a></td>          <td class="paramname"><span class="paramname"><em>taskElement</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет временной интервал. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeIntervalElement</td><td>Элементарный временной интервал.</td></tr>
+    <tr><td class="paramname">taskElement</td><td>Элементарная задача.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#af438f642c16001ce48417b0bfb9c5de7">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<a id="a229245a6d519c52fdfe95ea8cd3823c6" name="a229245a6d519c52fdfe95ea8cd3823c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a229245a6d519c52fdfe95ea8cd3823c6">&#9670;&#160;</a></span>EditTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.EditTask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a></td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменяет задачу. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>Задача.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#aca32a4118973f1b7359fd061d0dbbee5">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<a id="a91ba84e44396121d0c8f09259ed71ebf" name="a91ba84e44396121d0c8f09259ed71ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ba84e44396121d0c8f09259ed71ebf">&#9670;&#160;</a></span>EditTimeInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.EditTimeInterval </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a></td>          <td class="paramname"><span class="paramname"><em>timeIntervalElement</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменяет временной интервал. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeIntervalElement</td><td>Элементарный временной интервал.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#a4c02c0c0e475334cf6f338fc39898a4e">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<a id="a126d8f081ff9926d7774e93b9a9463e7" name="a126d8f081ff9926d7774e93b9a9463e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126d8f081ff9926d7774e93b9a9463e7">&#9670;&#160;</a></span>MoveTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.MoveTasks </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tasks</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>?</td>          <td class="paramname"><span class="paramname"><em>parentTask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перемещает задачи. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>Задачи.</td></tr>
+    <tr><td class="paramname">parentTask</td><td>Родительская задача.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#ab96de5c439506e96bba365d1559da139">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<a id="a4864461b65f011fe2409865b5d697c85" name="a4864461b65f011fe2409865b5d697c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4864461b65f011fe2409865b5d697c85">&#9670;&#160;</a></span>RemoveTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.RemoveTasks </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>tasks</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет задачи. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tasks</td><td>Задачи.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#a03dd8fd805b294c82a6a95a9ef124895">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<a id="ab158ac28a2704d22253800fa2efd23e2" name="ab158ac28a2704d22253800fa2efd23e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab158ac28a2704d22253800fa2efd23e2">&#9670;&#160;</a></span>RemoveTimeInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Interfaces.AppStates.Sessions.ISession.RemoveTimeInterval </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a></td>          <td class="paramname"><span class="paramname"><em>timeIntervalElement</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a></td>          <td class="paramname"><span class="paramname"><em>taskElement</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет временной интервал. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeIntervalElement</td><td>Элементарный временной интервал.</td></tr>
+    <tr><td class="paramname">taskElement</td><td>Элементарная задача.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#a07587e04f5a65141faa3f7f9c6da1e95">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="a9bf00169d1e0095c71bc8666ccfafbd0" name="a9bf00169d1e0095c71bc8666ccfafbd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf00169d1e0095c71bc8666ccfafbd0">&#9670;&#160;</a></span>SavePath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ViewModel.Interfaces.AppStates.Sessions.ISession.SavePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт путь сохранения. </p>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#a0211d98ff1bfbecc867c3d136dd2fc61">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_session_8cs_source.html">ISession.cs</a> строка <a class="el" href="_i_session_8cs_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a id="aa2bc5b828ec0f9c1c33b21eabf36f248" name="aa2bc5b828ec0f9c1c33b21eabf36f248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2bc5b828ec0f9c1c33b21eabf36f248">&#9670;&#160;</a></span>Tasks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;<a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a>&gt; ViewModel.Interfaces.AppStates.Sessions.ISession.Tasks</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает задачи. </p>
+
+<p>Замещается в <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html#a1cc71f3b4cdb0bcdd74d27de59f92bbf">ViewModel.Implementations.AppStates.Sessions.DbSession</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_session_8cs_source.html">ISession.cs</a> строка <a class="el" href="_i_session_8cs_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Cобытия</h2>
+<a id="a9c21f6fb4ec62fc4ef522c43f41086f9" name="a9c21f6fb4ec62fc4ef522c43f41086f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c21f6fb4ec62fc4ef522c43f41086f9">&#9670;&#160;</a></span>ItemsUpdated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_items_updated_event_args.html">ItemsUpdatedEventArgs</a>&gt; ViewModel.Interfaces.AppStates.Sessions.ISession.ItemsUpdated</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Событие, которое возникает при обновлении данных. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_session_8cs_source.html">ISession.cs</a> строка <a class="el" href="_i_session_8cs_source.html#l00026">26</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

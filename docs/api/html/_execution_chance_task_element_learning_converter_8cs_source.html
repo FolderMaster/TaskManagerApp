@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/ModelLearning/Converters/ExecutionChanceTaskElementLearningConverter.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_28229d5b5ece2a2daa8a5d1821d2aecd.html">ModelLearning</a></li><li class="navelem"><a class="el" href="dir_49a50694d3224e70e19cae26bc4705e8.html">Converters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">ExecutionChanceTaskElementLearningConverter.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_model_learning.html">ViewModel.Interfaces.ModelLearning</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using </span>TaskStatus = <a class="code hl_namespace" href="namespace_model.html">Model</a>.TaskStatus;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">ViewModel.Implementations.ModelLearning.Converters</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html">   20</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a4de551fec6b4714cea706d30acd88a41">ExecutionChanceTaskElementLearningConverter</a> :</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#aea715799b42430b7b34f5a770edb7def">BaseTaskElementSupervisedLearningConverter</a>&lt;double, double&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a4de551fec6b4714cea706d30acd88a41">   35</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a4de551fec6b4714cea706d30acd88a41">ExecutionChanceTaskElementLearningConverter</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            (<a class="code hl_interface" href="interface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor.html">IPrimaryPointDataProcessor</a> primaryPointDataProcessor,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            IEnumerable&lt;IPointDataProcessor&gt; pointDataProcessors,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            IFactory&lt;IScaler&gt; scalerFactory,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            IDataTransformer&lt;TaskMetadata, int?&gt; metadataCategoriesTransformer,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            IDataTransformer&lt;<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_task_metadata.html">TaskMetadata</a>, IEnumerable&lt;int&gt;&gt; metadataTagsITransformer) :</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            base(primaryPointDataProcessor, pointDataProcessors, scalerFactory,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                metadataCategoriesTransformer, metadataTagsITransformer)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        { }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#acaba342c30131b85580e794071e41f9a">   46</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#acaba342c30131b85580e794071e41f9a">ConvertPredicted</a>(<span class="keywordtype">double</span> predicted) =&gt; predicted;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a3f76e53e0dcca2ce3a2a394ac1ea90f2">   49</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> List&lt;double?&gt; <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a3f76e53e0dcca2ce3a2a394ac1ea90f2">ExtractPrimaryFeatures</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> dataItem) =&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keyword">new</span> List&lt;double?&gt;()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                dataItem.Priority,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                dataItem.Difficult,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                dataItem.Deadline != <span class="keyword">null</span> ? dataItem.Deadline.Value.Ticks : <span class="keyword">null</span>,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                dataItem.PlannedReal,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                dataItem.ExecutedReal,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                dataItem.PlannedTime.TotalSeconds,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                dataItem.SpentTime.TotalSeconds,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                (int)dataItem.Status</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            };</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#ac27a1158174c3a26c094e63a28e43d58">   63</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#ac27a1158174c3a26c094e63a28e43d58">ProcessTarget</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> item) =&gt; item.Status <span class="keywordflow">switch</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            TaskStatus.Closed  =&gt; 1,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            TaskStatus.Cancelled =&gt; 0,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            _ =&gt; item.Deadline == <span class="keyword">null</span> ? 1 : CalculateExecutionChance(item)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        };</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">private</span> <span class="keywordtype">double</span> CalculateExecutionChance(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> taskElement)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> (taskElement.<a class="code hl_property" href="interface_model_1_1_interfaces_1_1_i_task_element.html#aecc6e1902a0ddac375213bf83cb3b872">PlannedTime</a>.TotalSeconds &lt;= 0 ||</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                (taskElement.<a class="code hl_property" href="interface_model_1_1_interfaces_1_1_i_task_element.html#a5f3b1b15bdeaf8e8edf2a8f506e1e154">Deadline</a> != <span class="keyword">null</span> &amp;&amp; taskElement.<a class="code hl_property" href="interface_model_1_1_interfaces_1_1_i_task_element.html#a5f3b1b15bdeaf8e8edf2a8f506e1e154">Deadline</a> &lt;= DateTime.Now))</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            var normalizedTimeDifference = taskElement.SpentTime.TotalSeconds -</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                taskElement.PlannedTime.TotalSeconds / taskElement.<a class="code hl_property" href="interface_model_1_1_interfaces_1_1_i_task_element.html#aecc6e1902a0ddac375213bf83cb3b872">PlannedTime</a>.TotalSeconds;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            var leftTime = (taskElement.Deadline.Value - DateTime.Now).TotalSeconds;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">return</span> leftTime / (leftTime + normalizedTimeDifference);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g_html_aea715799b42430b7b34f5a770edb7def"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html#aea715799b42430b7b34f5a770edb7def">ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter-2-g.BaseTaskElementSupervisedLearningConverter</a></div><div class="ttdeci">BaseTaskElementSupervisedLearningConverter(IPrimaryPointDataProcessor primaryPointDataProcessor, IEnumerable&lt; IPointDataProcessor &gt; pointDataProcessors, IFactory&lt; IScaler &gt; scalerFactory, IDataTransformer&lt; TaskMetadata, int?&gt; metadataCategoriesTransformer, IDataTransformer&lt; TaskMetadata, IEnumerable&lt; int &gt; &gt; metadataTagsITransformer)</div><div class="ttdoc">Создаёт экземпляр класса BaseTaskElementSupervisedLearningConverter&lt;R, DR&gt;.</div><div class="ttdef"><b>Определения</b> <a href="_base_task_element_supervised_learning_converter_8cs_source.html#l00052">BaseTaskElementSupervisedLearningConverter.cs:53</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter_html_a3f76e53e0dcca2ce3a2a394ac1ea90f2"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a3f76e53e0dcca2ce3a2a394ac1ea90f2">ViewModel.Implementations.ModelLearning.Converters.ExecutionChanceTaskElementLearningConverter.ExtractPrimaryFeatures</a></div><div class="ttdeci">override List&lt; double?&gt; ExtractPrimaryFeatures(ITaskElement dataItem)</div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter_html_a4de551fec6b4714cea706d30acd88a41"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#a4de551fec6b4714cea706d30acd88a41">ViewModel.Implementations.ModelLearning.Converters.ExecutionChanceTaskElementLearningConverter.ExecutionChanceTaskElementLearningConverter</a></div><div class="ttdeci">ExecutionChanceTaskElementLearningConverter(IPrimaryPointDataProcessor primaryPointDataProcessor, IEnumerable&lt; IPointDataProcessor &gt; pointDataProcessors, IFactory&lt; IScaler &gt; scalerFactory, IDataTransformer&lt; TaskMetadata, int?&gt; metadataCategoriesTransformer, IDataTransformer&lt; TaskMetadata, IEnumerable&lt; int &gt; &gt; metadataTagsITransformer)</div><div class="ttdoc">Создаёт экземпляр класса ExecutionChanceTaskElementLearningConverter.</div><div class="ttdef"><b>Определения</b> <a href="#l00035">ExecutionChanceTaskElementLearningConverter.cs:36</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter_html_ac27a1158174c3a26c094e63a28e43d58"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#ac27a1158174c3a26c094e63a28e43d58">ViewModel.Implementations.ModelLearning.Converters.ExecutionChanceTaskElementLearningConverter.ProcessTarget</a></div><div class="ttdeci">override double ProcessTarget(ITaskElement item)</div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter_html_acaba342c30131b85580e794071e41f9a"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html#acaba342c30131b85580e794071e41f9a">ViewModel.Implementations.ModelLearning.Converters.ExecutionChanceTaskElementLearningConverter.ConvertPredicted</a></div><div class="ttdeci">override double ConvertPredicted(double predicted)</div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_task_metadata_html"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_task_metadata.html">ViewModel.Technicals.TaskMetadata</a></div><div class="ttdoc">Класс метаданных задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_metadata_8cs_source.html#l00012">TaskMetadata.cs:13</a></div></div>
+<div class="ttc" id="ainterface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor_html"><div class="ttname"><a href="interface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor.html">MachineLearning.Interfaces.IPrimaryPointDataProcessor</a></div><div class="ttdoc">Интерфейс первичного обработчика точечных данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_primary_point_data_processor_8cs_source.html#l00012">IPrimaryPointDataProcessor.cs:13</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_element_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_element.html">Model.Interfaces.ITaskElement</a></div><div class="ttdoc">Интерфейс элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_element_8cs_source.html#l00009">ITaskElement.cs:10</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_element_html_a5f3b1b15bdeaf8e8edf2a8f506e1e154"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_element.html#a5f3b1b15bdeaf8e8edf2a8f506e1e154">Model.Interfaces.ITaskElement.Deadline</a></div><div class="ttdeci">new? DateTime Deadline</div><div class="ttdoc">Возвращает и задаёт срок.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_element_8cs_source.html#l00029">ITaskElement.cs:29</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_element_html_aecc6e1902a0ddac375213bf83cb3b872"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_element.html#aecc6e1902a0ddac375213bf83cb3b872">Model.Interfaces.ITaskElement.PlannedTime</a></div><div class="ttdeci">new TimeSpan PlannedTime</div><div class="ttdoc">Возвращает и задаёт запланированное время.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_element_8cs_source.html#l00039">ITaskElement.cs:39</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_interfaces_html"><div class="ttname"><a href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_processor_8cs_source.html#l00001">IDataProcessor.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_html"><div class="ttname"><a href="namespace_model.html">Model</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">ViewModel.Implementations.ModelLearning.Converters</a></div><div class="ttdef"><b>Определения</b> <a href="_base_task_element_supervised_learning_converter_8cs_source.html#l00011">BaseTaskElementSupervisedLearningConverter.cs:12</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a></div><div class="ttdef"><b>Определения</b> <a href="_i_editor_proxy_8cs_source.html#l00001">IEditorProxy.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_model_learning_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_model_learning.html">ViewModel.Interfaces.ModelLearning</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_transformer_8cs_source.html#l00001">IDataTransformer.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_technicals_html"><div class="ttname"><a href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a></div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00005">AppConfiguration.cs:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: TaskManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">TaskManager </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__main_page"></a></p>
+<p><b>TaskManager</b> — это приложение для управления задачами.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Функционал</h1>
+<p>Приложение предоставляет следующий функционал:</p>
+<ul>
+<li><b>Управление задачами</b>: хранение данных (приоритет, сложность, статус, прогресс, статус, сроки, время, реальные показатели, метаданные), создание, редактирование, удаление, управление иерархией, планирование в календаре.</li>
+<li><b>Статистика</b>: анализ задач по категориям, тегам, сложности, приоритету, времени и срокам.</li>
+<li><b>Анализ</b>: ранжирование задач, выявление отстающих.</li>
+<li><b>Прогнозирование</b>: оценка времени, реального показателя, срока, вероятности выполнения в срок.</li>
+<li><b>Уведомления</b>: напоминания о запланированном времени выполнения.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Набор технологий</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Основной набор технологий</h2>
+<p>Основным набором технологий для проекта является:</p>
+<ul>
+<li>Платформа разработки <a href="https://dotnet.microsoft.com/">.NET</a> и язык программирования <a href="https://learn.microsoft.com/dotnet/csharp/">C#</a></li>
+<li>Фреймворк для построения реактивных пользовательских интерфейсов <a href="https://www.reactiveui.net/">ReactiveUI</a></li>
+<li>Фреймфорк <a href="https://avaloniaui.net/">Avalonia</a> для создания кроссплатформенного пользовательского интерфейса</li>
+<li>База данных <a href="https://www.sqlite.org/">SQLite</a> для локального хранения данных</li>
+<li>ORM-фреймворк <a href="https://learn.microsoft.com/ef/core/">Entity Framework Core</a> для работы с базами данных</li>
+<li>Платформа машинного обучения <a href="http://accord-framework.net/">Accord.NET</a></li>
+<li>Библиотека для модульного тестирования <a href="https://nunit.org/">NUnit</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Дополнительный набор технологий</h2>
+<p>Дополнительно были выбраны следующие технологии:</p>
+<ul>
+<li>Дополнение <a href="https://www.nuget.org/packages/Splat.Autofac/">Autofac</a> для библиотеки <a href="https://github.com/reactiveui/splat">Splat</a>, предоставляющее интеграцию с IoC-контейнером</li>
+<li>Библиотека для работы с JSON <a href="https://www.newtonsoft.com/json">Newtonsoft.Json</a></li>
+<li>Библиотека для построения интерактивных графиков и диаграмм <a href="https://livecharts.dev/">LiveCharts</a></li>
+<li>Пользовательская реализация элемента управления Avalonia для работы с календарём <a href="https://github.com/satial-interfaces/CalendarControl">CalendarControl.Avalonia</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Контакты</h1>
+<ul>
+<li><a href="https://github.com/FolderMaster/TaskManagerApp">Репозиторий</a></li>
+<li><a href="https://github.com/FolderMaster">GitHub</a> </li>
+</ul>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

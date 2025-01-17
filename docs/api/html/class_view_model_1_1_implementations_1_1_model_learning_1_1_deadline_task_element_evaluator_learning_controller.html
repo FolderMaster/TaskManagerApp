@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Класс ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations.html">Implementations</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_model_learning.html">ModelLearning</a></li><li class="navelem"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_deadline_task_element_evaluator_learning_controller.html">DeadlineTaskElementEvaluatorLearningController</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_deadline_task_element_evaluator_learning_controller-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс контроллера обучения модели обучения с учителем для предсказания срока элементарной задачи.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_view_model_1_1_implementations_1_1_model_learning_1_1_deadline_task_element_evaluator_learning_controller.png" usemap="#ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController_map" alt=""/>
+  <map id="ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController_map" name="ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController_map">
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html" title="Абстрактный класс базового контроллера обучения модели обучения с учителем." alt="ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;" shape="rect" coords="0,112,629,136"/>
+<area href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_learning_controller-3-g.html" title="Интерфейс контроллера обучения модели обучения." alt="ViewModel.Interfaces.ModelLearning.ILearningController&lt; D, DT, DR &gt;" shape="rect" coords="0,56,629,80"/>
+<area href="interface_view_model_1_1_interfaces_1_1_model_learning_1_1_i_model_teacher-1-g.html" title="Интерфейс для обучения модели на основе данных." alt="ViewModel.Interfaces.ModelLearning.IModelTeacher&lt; D &gt;" shape="rect" coords="0,0,629,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a38e41a20980ce9591892c06e6ecdf53a" id="r_a38e41a20980ce9591892c06e6ecdf53a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38e41a20980ce9591892c06e6ecdf53a">DeadlineTaskElementEvaluatorLearningController</a> (<a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_deadline_task_element_learning_converter.html">DeadlineTaskElementLearningConverter</a> converter, <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_i_regression_model.html">IRegressionModel</a> model, <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_i_regression_evaluator.html">IRegressionEvaluator</a> evaluator)</td></tr>
+<tr class="memdesc:a38e41a20980ce9591892c06e6ecdf53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр классса <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_deadline_task_element_evaluator_learning_controller.html" title="Класс контроллера обучения модели обучения с учителем для предсказания срока элементарной задачи.">DeadlineTaskElementEvaluatorLearningController</a>.  <br /></td></tr>
+<tr class="separator:a38e41a20980ce9591892c06e6ecdf53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;</a></td></tr>
+<tr class="memitem:a72ce6f88e37d15f80dc4dfe7c0570e9e inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g" id="r_a72ce6f88e37d15f80dc4dfe7c0570e9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a72ce6f88e37d15f80dc4dfe7c0570e9e">BaseSupervisedEvaluatorLearningController</a> (ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt; converter, ISupervisedLearningModel&lt; T, R &gt; model, ISupervisedLearningEvaluator&lt; T, R &gt; evaluator)</td></tr>
+<tr class="memdesc:a72ce6f88e37d15f80dc4dfe7c0570e9e inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр классса <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html" title="Абстрактный класс базового контроллера обучения модели обучения с учителем.">BaseSupervisedEvaluatorLearningController&lt;T, R, D, DT, DR&gt;</a>.  <br /></td></tr>
+<tr class="separator:a72ce6f88e37d15f80dc4dfe7c0570e9e inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fcf0e74502bee12c2f315da0f3eafca inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g" id="r_a5fcf0e74502bee12c2f315da0f3eafca"><td class="memItemLeft" align="right" valign="top">async Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a5fcf0e74502bee12c2f315da0f3eafca">Train</a> (IEnumerable&lt; D &gt; data)</td></tr>
+<tr class="memdesc:a5fcf0e74502bee12c2f315da0f3eafca inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет обучение модели на основе данных.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает задачу процесса обучения с результатом <code>true</code>, если обучение прошло успешно, иначе <code>false</code>. </dd></dl>
+  <br /></td></tr>
+<tr class="separator:a5fcf0e74502bee12c2f315da0f3eafca inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a4f0fc5024b436661c51328aa15ed4 inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g" id="r_a75a4f0fc5024b436661c51328aa15ed4"><td class="memItemLeft" align="right" valign="top">DR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a75a4f0fc5024b436661c51328aa15ed4">Predict</a> (DT data)</td></tr>
+<tr class="memdesc:a75a4f0fc5024b436661c51328aa15ed4 inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет предсказание на основе данных.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает предсказанное значение.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:a75a4f0fc5024b436661c51328aa15ed4 inherit pub_methods_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController&lt; T, R, D, DT, DR &gt;</a></td></tr>
+<tr class="memitem:a05620b1cedeee2681d4279935d010751 inherit properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g" id="r_a05620b1cedeee2681d4279935d010751"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a05620b1cedeee2681d4279935d010751">MinScoreCategory</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a05620b1cedeee2681d4279935d010751 inherit properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт минимальную категорию метрики оценки.  <br /></td></tr>
+<tr class="separator:a05620b1cedeee2681d4279935d010751 inherit properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36dcdbddf19a681714d3f90c66c54cd inherit properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g" id="r_aa36dcdbddf19a681714d3f90c66c54cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">IsValidModel</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:aa36dcdbddf19a681714d3f90c66c54cd inherit properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает логическое значение, указывающее на достоверность модели обучения.  <br /></td></tr>
+<tr class="separator:aa36dcdbddf19a681714d3f90c66c54cd inherit properties_class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс контроллера обучения модели обучения с учителем для предсказания срока элементарной задачи. </p>
+<p>Наследует <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html" title="Абстрактный класс базового контроллера обучения модели обучения с учителем.">BaseSupervisedEvaluatorLearningController
+&lt;IEnumerable&lt;double&gt;, double, ITaskElement, ITaskElement, DateTime?&gt;</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_deadline_task_element_evaluator_learning_controller_8cs_source.html">DeadlineTaskElementEvaluatorLearningController.cs</a> строка <a class="el" href="_deadline_task_element_evaluator_learning_controller_8cs_source.html#l00017">17</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a38e41a20980ce9591892c06e6ecdf53a" name="a38e41a20980ce9591892c06e6ecdf53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38e41a20980ce9591892c06e6ecdf53a">&#9670;&#160;</a></span>DeadlineTaskElementEvaluatorLearningController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewModel.Implementations.ModelLearning.DeadlineTaskElementEvaluatorLearningController.DeadlineTaskElementEvaluatorLearningController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_deadline_task_element_learning_converter.html">DeadlineTaskElementLearningConverter</a></td>          <td class="paramname"><span class="paramname"><em>converter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_machine_learning_1_1_interfaces_1_1_i_regression_model.html">IRegressionModel</a></td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_machine_learning_1_1_interfaces_1_1_i_regression_evaluator.html">IRegressionEvaluator</a></td>          <td class="paramname"><span class="paramname"><em>evaluator</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт экземпляр классса <a class="el" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_deadline_task_element_evaluator_learning_controller.html" title="Класс контроллера обучения модели обучения с учителем для предсказания срока элементарной задачи.">DeadlineTaskElementEvaluatorLearningController</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>Конвертор данных в данные для предсказания с учителем и наоборот. </td></tr>
+    <tr><td class="paramname">model</td><td>Модель обучения c учителем.</td></tr>
+    <tr><td class="paramname">evaluator</td><td>Оценка модели обучения с учителем.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_deadline_task_element_evaluator_learning_controller_8cs_source.html">DeadlineTaskElementEvaluatorLearningController.cs</a> строка <a class="el" href="_deadline_task_element_evaluator_learning_controller_8cs_source.html#l00029">29</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

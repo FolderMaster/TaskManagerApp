@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/View/Controls/DateTimePicker.axaml.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_473d81db49f08dbf6f06a3c4df758b95.html">View</a></li><li class="navelem"><a class="el" href="dir_0ec9084b5feb67cd0f95224712d4ba13.html">Controls</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">DateTimePicker.axaml.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Avalonia;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Avalonia.Controls;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>Avalonia.Data;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespace_view_1_1_controls.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_1_1_controls.html">View.Controls</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_view_1_1_controls_1_1_date_time_picker.html">   14</a></span><span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_function" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">DateTimePicker</a> : UserControl</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_view_1_1_controls_1_1_date_time_picker.html#a03e52462872fbec3197b4edddecef263">   19</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> readonly StyledProperty&lt;DateTime?&gt; <a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a03e52462872fbec3197b4edddecef263">DateTimeProperty</a> =</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        AvaloniaProperty.Register&lt;<a class="code hl_function" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">DateTimePicker</a>, <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>?&gt;(nameof(<a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>),</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            defaultBindingMode: BindingMode.TwoWay);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_view_1_1_controls_1_1_date_time_picker.html#a6b5d16bb012daa57c953ffa4d58a753d">   26</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> readonly StyledProperty&lt;TimeSpan?&gt; <a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a6b5d16bb012daa57c953ffa4d58a753d">TimeSpanProperty</a> =</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        AvaloniaProperty.Register&lt;<a class="code hl_function" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">DateTimePicker</a>, <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a>?&gt;(nameof(<a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a>),</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            defaultBindingMode: BindingMode.TwoWay);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">   33</a></span>    <span class="keyword">public</span> <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>? <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">get</span> =&gt; GetValue(<a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a03e52462872fbec3197b4edddecef263">DateTimeProperty</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">set</span> =&gt; SetValue(<a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a03e52462872fbec3197b4edddecef263">DateTimeProperty</a>, value);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">   42</a></span>    <span class="keyword">public</span> <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a>? <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">get</span> =&gt; GetValue(<a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a6b5d16bb012daa57c953ffa4d58a753d">TimeSpanProperty</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">set</span> =&gt; SetValue(<a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a6b5d16bb012daa57c953ffa4d58a753d">TimeSpanProperty</a>, value);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">   51</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">DateTimePicker</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        InitializeComponent();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a03e52462872fbec3197b4edddecef263">DateTimeProperty</a>.Changed.AddClassHandler&lt;<a class="code hl_function" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">DateTimePicker</a>, <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>?&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            ((o, e) =&gt; o.OnDateTimeChanged(e));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_variable" href="class_view_1_1_controls_1_1_date_time_picker.html#a6b5d16bb012daa57c953ffa4d58a753d">TimeSpanProperty</a>.Changed.AddClassHandler&lt;<a class="code hl_function" href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">DateTimePicker</a>, <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a>?&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            ((o, e) =&gt; o.OnTimeSpanChanged(e));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnDateTimeChanged(AvaloniaPropertyChangedEventArgs&lt;DateTime?&gt; args)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a> = <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>?.TimeOfDay;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> OnTimeSpanChanged(AvaloniaPropertyChangedEventArgs&lt;TimeSpan?&gt; args)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a> != <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a> != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a> = <span class="keyword">new</span> <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>(DateOnly.FromDateTime(<a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a>.Value),</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                TimeOnly.FromTimeSpan(<a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">TimeSpan</a>.Value));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <a class="code hl_property" href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">DateTime</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+</div>
+</div>
+<div class="ttc" id="aclass_view_1_1_controls_1_1_date_time_picker_html_a03e52462872fbec3197b4edddecef263"><div class="ttname"><a href="class_view_1_1_controls_1_1_date_time_picker.html#a03e52462872fbec3197b4edddecef263">View.Controls.DateTimePicker.DateTimeProperty</a></div><div class="ttdeci">static readonly StyledProperty&lt; DateTime?&gt; DateTimeProperty</div><div class="ttdoc">Свойство стиля DateTime.</div><div class="ttdef"><b>Определения</b> <a href="#l00019">DateTimePicker.axaml.cs:19</a></div></div>
+<div class="ttc" id="aclass_view_1_1_controls_1_1_date_time_picker_html_a1c3e6c009077b93f3e8083164f80569c"><div class="ttname"><a href="class_view_1_1_controls_1_1_date_time_picker.html#a1c3e6c009077b93f3e8083164f80569c">View.Controls.DateTimePicker.DateTime</a></div><div class="ttdeci">DateTime? DateTime</div><div class="ttdoc">Возвращает и задаёт дату.</div><div class="ttdef"><b>Определения</b> <a href="#l00033">DateTimePicker.axaml.cs:34</a></div></div>
+<div class="ttc" id="aclass_view_1_1_controls_1_1_date_time_picker_html_a6b5d16bb012daa57c953ffa4d58a753d"><div class="ttname"><a href="class_view_1_1_controls_1_1_date_time_picker.html#a6b5d16bb012daa57c953ffa4d58a753d">View.Controls.DateTimePicker.TimeSpanProperty</a></div><div class="ttdeci">static readonly StyledProperty&lt; TimeSpan?&gt; TimeSpanProperty</div><div class="ttdoc">Свойство стиля TimeSpan.</div><div class="ttdef"><b>Определения</b> <a href="#l00026">DateTimePicker.axaml.cs:26</a></div></div>
+<div class="ttc" id="aclass_view_1_1_controls_1_1_date_time_picker_html_a995a5900363cd46088885d3273ad7ffd"><div class="ttname"><a href="class_view_1_1_controls_1_1_date_time_picker.html#a995a5900363cd46088885d3273ad7ffd">View.Controls.DateTimePicker.TimeSpan</a></div><div class="ttdeci">TimeSpan? TimeSpan</div><div class="ttdoc">Возвращает и задаёт время.</div><div class="ttdef"><b>Определения</b> <a href="#l00042">DateTimePicker.axaml.cs:43</a></div></div>
+<div class="ttc" id="aclass_view_1_1_controls_1_1_date_time_picker_html_ace5ba5d39825bfb9d2b33389054cb3f0"><div class="ttname"><a href="class_view_1_1_controls_1_1_date_time_picker.html#ace5ba5d39825bfb9d2b33389054cb3f0">View.Controls.DateTimePicker.DateTimePicker</a></div><div class="ttdeci">DateTimePicker()</div><div class="ttdoc">Создаёт экземпляр класса DateTimePicker по умолчанию.</div><div class="ttdef"><b>Определения</b> <a href="#l00051">DateTimePicker.axaml.cs:51</a></div></div>
+<div class="ttc" id="anamespace_view_1_1_controls_html"><div class="ttname"><a href="namespace_view_1_1_controls.html">View.Controls</a></div><div class="ttdef"><b>Определения</b> <a href="#l00006">DateTimePicker.axaml.cs:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

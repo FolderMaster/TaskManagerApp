@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/DataManagers/Editors/TimeIntervalElementsEditorProxy.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_c5624d9da0f93a722dcf8a4fd09dd043.html">DataManagers</a></li><li class="navelem"><a class="el" href="dir_de0e9ee341e09f342d85920a61b9a51c.html">Editors</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TimeIntervalElementsEditorProxy.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Runtime.CompilerServices;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_trackable_features.html">TrackableFeatures</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_data_managers.html">ViewModel.Interfaces.DataManagers</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_data_managers_1_1_editors.html">ViewModel.Implementations.DataManagers.Editors</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html">   18</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html">TimeIntervalElementsEditorProxy</a> :</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_class" href="class_trackable_features_1_1_trackable_object.html">TrackableObject</a>, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy.html">ITimeIntervalElementsEditorProxy</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adb038c96645732c32ed9b215965d5988">   24</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a> <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adb038c96645732c32ed9b215965d5988">_target</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> DateTime _start;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> DateTime _end;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a67b21520291d52083c4786f202957ccb">   37</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">ITimeIntervalElement</a> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a67b21520291d52083c4786f202957ccb">Target</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adb038c96645732c32ed9b215965d5988">_target</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">set</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <a class="code hl_variable" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adb038c96645732c32ed9b215965d5988">_target</a> = value;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                UpdateProperties();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">   48</a></span>        <span class="keyword">public</span> DateTime <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keyword">get</span> =&gt; _start;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _start, value, (s, e) =&gt; OnPropertyChanged(nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a>)));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="};">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">   55</a></span>        <span class="keyword">public</span> DateTime <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">get</span> =&gt; _end;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _end, value, (s, e) =&gt; OnPropertyChanged(nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a>)));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adf4462a907247f2dea0f31e2ce6eed2b">   62</a></span>        <span class="keyword">public</span> TimeSpan <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adf4462a907247f2dea0f31e2ce6eed2b">Duration</a> =&gt; <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a> - <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#aa554a320a0fd5513ac2575a44bb9ef92">   65</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#aa554a320a0fd5513ac2575a44bb9ef92">ApplyChanges</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            Target.Start = <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            Target.End = <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> UpdateProperties()</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a> = <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a67b21520291d52083c4786f202957ccb">Target</a>.<a class="code hl_property" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html#a88b142c7f49a4b93848f382dc6614c99">Start</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a> = <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a67b21520291d52083c4786f202957ccb">Target</a>.<a class="code hl_property" href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html#a5307fe78d581b8c9395a61961708fb56">End</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> OnPropertyChanged([CallerMemberName] <span class="keywordtype">string</span> propertyName = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <a class="code hl_function" href="class_trackable_features_1_1_trackable_object.html#a0f4a7a448354eb2db05abe90f095e045">ClearAllErrors</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a> &gt; <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <span class="keywordflow">if</span> (propertyName == nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a>))</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    <a class="code hl_function" href="class_trackable_features_1_1_trackable_object.html#ae24c222089d5cbc08d23c2414de172c5">AddError</a>($<span class="stringliteral">&quot;{nameof(Start)} находится после {nameof(End)}&quot;</span>, nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">Start</a>));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (propertyName == nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a>))</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                    <a class="code hl_function" href="class_trackable_features_1_1_trackable_object.html#ae24c222089d5cbc08d23c2414de172c5">AddError</a>($<span class="stringliteral">&quot;{nameof(End)} находится до {nameof(Start)}&quot;</span>, nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">End</a>));</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            base.OnPropertyChanged(nameof(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adf4462a907247f2dea0f31e2ce6eed2b">Duration</a>));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></div><div class="ttdoc">Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00013">TrackableObject.cs:14</a></div></div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html_a0f4a7a448354eb2db05abe90f095e045"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html#a0f4a7a448354eb2db05abe90f095e045">TrackableFeatures.TrackableObject.ClearAllErrors</a></div><div class="ttdeci">void ClearAllErrors()</div><div class="ttdoc">Очищает все ошибки для всех свойств.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00132">TrackableObject.cs:132</a></div></div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html_ae24c222089d5cbc08d23c2414de172c5"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html#ae24c222089d5cbc08d23c2414de172c5">TrackableFeatures.TrackableObject.AddError</a></div><div class="ttdeci">void AddError(object error, [CallerMemberName] string propertyName=&quot;&quot;)</div><div class="ttdoc">Добавляет ошибку для свойства.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00095">TrackableObject.cs:95</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy</a></div><div class="ttdoc">Класс заместитель элементарного временного интервала для редактирования.</div><div class="ttdef"><b>Определения</b> <a href="#l00018">TimeIntervalElementsEditorProxy.cs:20</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html_a4f7d58b4f8c434ee6d093934fb2dbc69"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a4f7d58b4f8c434ee6d093934fb2dbc69">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy.End</a></div><div class="ttdeci">DateTime End</div><div class="ttdoc">Возвращает и задаёт конец.</div><div class="ttdef"><b>Определения</b> <a href="#l00055">TimeIntervalElementsEditorProxy.cs:56</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html_a55c09257d42999c2c81d566ef55179e0"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a55c09257d42999c2c81d566ef55179e0">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy.Start</a></div><div class="ttdeci">DateTime Start</div><div class="ttdoc">Возвращает и задаёт начало.</div><div class="ttdef"><b>Определения</b> <a href="#l00048">TimeIntervalElementsEditorProxy.cs:49</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html_a67b21520291d52083c4786f202957ccb"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#a67b21520291d52083c4786f202957ccb">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy.Target</a></div><div class="ttdeci">ITimeIntervalElement Target</div><div class="ttdoc">Возвращает и задаёт заменяемого объекта.</div><div class="ttdef"><b>Определения</b> <a href="#l00037">TimeIntervalElementsEditorProxy.cs:38</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html_aa554a320a0fd5513ac2575a44bb9ef92"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#aa554a320a0fd5513ac2575a44bb9ef92">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy.ApplyChanges</a></div><div class="ttdeci">void ApplyChanges()</div><div class="ttdoc">Применения изменений.</div><div class="ttdef"><b>Определения</b> <a href="#l00065">TimeIntervalElementsEditorProxy.cs:65</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html_adb038c96645732c32ed9b215965d5988"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adb038c96645732c32ed9b215965d5988">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy._target</a></div><div class="ttdeci">ITimeIntervalElement _target</div><div class="ttdoc">Заменяемый объект.</div><div class="ttdef"><b>Определения</b> <a href="#l00024">TimeIntervalElementsEditorProxy.cs:24</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy_html_adf4462a907247f2dea0f31e2ce6eed2b"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html#adf4462a907247f2dea0f31e2ce6eed2b">ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy.Duration</a></div><div class="ttdeci">TimeSpan Duration</div><div class="ttdoc">Возвращает длительность.</div><div class="ttdef"><b>Определения</b> <a href="#l00062">TimeIntervalElementsEditorProxy.cs:62</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_time_interval_element_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html">Model.Interfaces.ITimeIntervalElement</a></div><div class="ttdoc">Интерфейс элементарного временного интервала.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_interval_element_8cs_source.html#l00009">ITimeIntervalElement.cs:10</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_time_interval_element_html_a5307fe78d581b8c9395a61961708fb56"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html#a5307fe78d581b8c9395a61961708fb56">Model.Interfaces.ITimeIntervalElement.End</a></div><div class="ttdeci">DateTime End</div><div class="ttdoc">Возвращает и задаёт конец.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_interval_element_8cs_source.html#l00019">ITimeIntervalElement.cs:19</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_time_interval_element_html_a88b142c7f49a4b93848f382dc6614c99"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_time_interval_element.html#a88b142c7f49a4b93848f382dc6614c99">Model.Interfaces.ITimeIntervalElement.Start</a></div><div class="ttdeci">DateTime Start</div><div class="ttdoc">Возвращает и задаёт начало.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_interval_element_8cs_source.html#l00014">ITimeIntervalElement.cs:14</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy.html">ViewModel.Interfaces.DataManagers.ITimeIntervalElementsEditorProxy</a></div><div class="ttdoc">Интерфейс заместителя элементарного временного интервала для редактирования.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_interval_elements_editor_proxy_8cs_source.html#l00014">ITimeIntervalElementsEditorProxy.cs:15</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_trackable_features_html"><div class="ttname"><a href="namespace_trackable_features.html">TrackableFeatures</a></div><div class="ttdef"><b>Определения</b> <a href="_trackable_collection_8cs_source.html#l00004">TrackableCollection.cs:5</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_data_managers_1_1_editors_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_data_managers_1_1_editors.html">ViewModel.Implementations.DataManagers.Editors</a></div><div class="ttdef"><b>Определения</b> <a href="_task_elements_editor_proxy_8cs_source.html#l00007">TaskElementsEditorProxy.cs:8</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_data_managers_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_data_managers.html">ViewModel.Interfaces.DataManagers</a></div><div class="ttdef"><b>Определения</b> <a href="_i_editor_proxy_8cs_source.html#l00001">IEditorProxy.cs:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/AppStates/Sessions/Database/Mappers/TaskElementMapper.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_0cf4ad06004833fc07db0371329ef61b.html">AppStates</a></li><li class="navelem"><a class="el" href="dir_ce97c7a29c1bdd64923f45a72e596fc7.html">Sessions</a></li><li class="navelem"><a class="el" href="dir_285ae796e7bc117c678697254acdb3f8.html">Database</a></li><li class="navelem"><a class="el" href="dir_746877717391cf161fdb8e42ed4e0d05.html">Mappers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TaskElementMapper.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers.html">ViewModel.Implementations.AppStates.Sessions.Database.Mappers</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html">   14</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a8e5e526593fb377e7a355ec1a514b070">TaskElementMapper</a> : IMapper&lt;TaskElementEntity, ITaskElement&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">private</span> readonly IMapper&lt;MetadataEntity, object&gt; _metadataMapper;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">private</span> readonly IMapper&lt;TimeIntervalEntity, ITimeIntervalElement&gt; _timeIntervalMapper;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a8e5e526593fb377e7a355ec1a514b070">   37</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a8e5e526593fb377e7a355ec1a514b070">TaskElementMapper</a>(IMapper&lt;MetadataEntity, object&gt; metadataMapper,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            IMapper&lt;TimeIntervalEntity, ITimeIntervalElement&gt; timeIntervalMapper)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            _metadataMapper = metadataMapper;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            _timeIntervalMapper = timeIntervalMapper;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a653cda427833c5a71fa4b42b75f574ed">   45</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a653cda427833c5a71fa4b42b75f574ed">Map</a>(<a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html">TaskElementEntity</a> value)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            var result = <span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">TaskElementDomain</a>()</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                Entity = value,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                Difficult = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ae50367406b99e323421f75ed4c94e681">Difficult</a>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                Priority = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#a92b3aeced74a8aba0146f0960c2a67cb">Priority</a>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                Status = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#adfe33287991be237742efaf754885941">Status</a>,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                Progress = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#a2bcfdde8bf1f5aa522d4e4eb80583508">Progress</a>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                Deadline = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ac4a1080a5f8d5fc56baa11e8d25cfd8d">Deadline</a>,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                PlannedTime = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#acdeef3b68ad9260fa865ad1d2c7cb26a">PlannedTime</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                SpentTime = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#a4f343e2fa85f66963add4627b141bd6d">SpentTime</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                ExecutedReal = value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ae8ee3529059ee8c339a43a4fb179e96d">ExecutedReal</a>,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                PlannedReal = value.PlannedReal</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            result.Metadata = _metadataMapper.Map(value.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#aaff85a9800cc570beba62558eb9056f1">Task</a>.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_entity.html#a9411d5e6b513c49ba7e38aa5b793bdfc">Metadata</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">foreach</span> (var timeInterval <span class="keywordflow">in</span> value.TimeIntervals)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                var interval = _timeIntervalMapper.Map(timeInterval);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                result.TimeIntervals.Add(interval);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a49aff39e9c4d016454b18eb388d208b3">   70</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html">TaskElementEntity</a> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a49aff39e9c4d016454b18eb388d208b3">MapBack</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a> value)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">if</span> (value is not <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">TaskElementDomain</a> domain)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(nameof(value));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (domain.Metadata == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(nameof(value));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            var result = domain.Entity;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            result.Difficult = domain.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ae50367406b99e323421f75ed4c94e681">Difficult</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            result.Priority = domain.Priority;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            result.Status = domain.Status;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            result.Progress = domain.Progress;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            result.Deadline = domain.Deadline;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            result.PlannedTime = domain.PlannedTime;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            result.SpentTime = domain.SpentTime;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            result.ExecutedReal = domain.ExecutedReal;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            result.PlannedReal = domain.PlannedReal;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            var parentTask = domain.ParentTask as <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html">TaskCompositeDomain</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            result.Task.ParentTask = parentTask?.<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#ad99cf12d44b8acc86d41ab9d287eecff">Entity</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            result.Task.Metadata = _metadataMapper.MapBack(domain.Metadata);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            result.TimeIntervals = domain.TimeIntervals.</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                Select(_timeIntervalMapper.MapBack).ToList();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain</a></div><div class="ttdoc">Класс домменной модели составной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_composite_domain_8cs_source.html#l00015">TaskCompositeDomain.cs:16</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html_ad99cf12d44b8acc86d41ab9d287eecff"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#ad99cf12d44b8acc86d41ab9d287eecff">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.Entity</a></div><div class="ttdeci">TaskCompositeEntity Entity</div><div class="ttdoc">Возвращает и задаёт связанную сущность.</div><div class="ttdef"><b>Определения</b> <a href="_task_composite_domain_8cs_source.html#l00020">TaskCompositeDomain.cs:20</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskElementDomain</a></div><div class="ttdoc">Класс домменной модели элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_domain_8cs_source.html#l00014">TaskElementDomain.cs:15</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity</a></div><div class="ttdoc">Класс сущности элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00013">TaskElementEntity.cs:14</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_a2bcfdde8bf1f5aa522d4e4eb80583508"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#a2bcfdde8bf1f5aa522d4e4eb80583508">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.Progress</a></div><div class="ttdeci">double Progress</div><div class="ttdoc">Возвращает и задаёт прогресс.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00043">TaskElementEntity.cs:43</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_a4f343e2fa85f66963add4627b141bd6d"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#a4f343e2fa85f66963add4627b141bd6d">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.SpentTime</a></div><div class="ttdeci">TimeSpan SpentTime</div><div class="ttdoc">Возвращает и задаёт проведённое времени.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00053">TaskElementEntity.cs:53</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_a92b3aeced74a8aba0146f0960c2a67cb"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#a92b3aeced74a8aba0146f0960c2a67cb">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.Priority</a></div><div class="ttdeci">int Priority</div><div class="ttdoc">Возвращает и задаёт приоритет.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00028">TaskElementEntity.cs:28</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_aaff85a9800cc570beba62558eb9056f1"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#aaff85a9800cc570beba62558eb9056f1">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.Task</a></div><div class="ttdeci">virtual TaskEntity Task</div><div class="ttdoc">Возвращает и задаёт задачу.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00069">TaskElementEntity.cs:69</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_ac4a1080a5f8d5fc56baa11e8d25cfd8d"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ac4a1080a5f8d5fc56baa11e8d25cfd8d">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.Deadline</a></div><div class="ttdeci">DateTime? Deadline</div><div class="ttdoc">Возвращает и задаёт срока.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00033">TaskElementEntity.cs:33</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_acdeef3b68ad9260fa865ad1d2c7cb26a"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#acdeef3b68ad9260fa865ad1d2c7cb26a">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.PlannedTime</a></div><div class="ttdeci">TimeSpan PlannedTime</div><div class="ttdoc">Возвращает и задаёт запланированное времени.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00048">TaskElementEntity.cs:48</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_adfe33287991be237742efaf754885941"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#adfe33287991be237742efaf754885941">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.Status</a></div><div class="ttdeci">TaskStatus Status</div><div class="ttdoc">Возвращает и задаёт статус.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00038">TaskElementEntity.cs:38</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_ae50367406b99e323421f75ed4c94e681"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ae50367406b99e323421f75ed4c94e681">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.Difficult</a></div><div class="ttdeci">int Difficult</div><div class="ttdoc">Возвращает и задаёт сложность.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00023">TaskElementEntity.cs:23</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html_ae8ee3529059ee8c339a43a4fb179e96d"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html#ae8ee3529059ee8c339a43a4fb179e96d">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity.ExecutedReal</a></div><div class="ttdeci">double ExecutedReal</div><div class="ttdoc">Возвращает и задаёт выполненный реальный показатель.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00063">TaskElementEntity.cs:63</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_entity_html_a9411d5e6b513c49ba7e38aa5b793bdfc"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_entity.html#a9411d5e6b513c49ba7e38aa5b793bdfc">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskEntity.Metadata</a></div><div class="ttdeci">virtual MetadataEntity Metadata</div><div class="ttdoc">Возвращает и задаёт метаданные.</div><div class="ttdef"><b>Определения</b> <a href="_task_entity_8cs_source.html#l00042">TaskEntity.cs:42</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper_html_a49aff39e9c4d016454b18eb388d208b3"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a49aff39e9c4d016454b18eb388d208b3">ViewModel.Implementations.AppStates.Sessions.Database.Mappers.TaskElementMapper.MapBack</a></div><div class="ttdeci">TaskElementEntity MapBack(ITaskElement value)</div><div class="ttdef"><b>Определения</b> <a href="#l00070">TaskElementMapper.cs:70</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper_html_a653cda427833c5a71fa4b42b75f574ed"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a653cda427833c5a71fa4b42b75f574ed">ViewModel.Implementations.AppStates.Sessions.Database.Mappers.TaskElementMapper.Map</a></div><div class="ttdeci">ITaskElement Map(TaskElementEntity value)</div><div class="ttdef"><b>Определения</b> <a href="#l00045">TaskElementMapper.cs:45</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper_html_a8e5e526593fb377e7a355ec1a514b070"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_task_element_mapper.html#a8e5e526593fb377e7a355ec1a514b070">ViewModel.Implementations.AppStates.Sessions.Database.Mappers.TaskElementMapper.TaskElementMapper</a></div><div class="ttdeci">TaskElementMapper(IMapper&lt; MetadataEntity, object &gt; metadataMapper, IMapper&lt; TimeIntervalEntity, ITimeIntervalElement &gt; timeIntervalMapper)</div><div class="ttdoc">Создаёт экземпляр класса TaskElementMapper.</div><div class="ttdef"><b>Определения</b> <a href="#l00037">TaskElementMapper.cs:37</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_element_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_element.html">Model.Interfaces.ITaskElement</a></div><div class="ttdoc">Интерфейс элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_element_8cs_source.html#l00009">ITaskElement.cs:10</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains</a></div><div class="ttdef"><b>Определения</b> <a href="_i_domain_8cs_source.html#l00001">IDomain.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities</a></div><div class="ttdef"><b>Определения</b> <a href="_metadata_entity_8cs_source.html#l00006">MetadataEntity.cs:7</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers.html">ViewModel.Implementations.AppStates.Sessions.Database.Mappers</a></div><div class="ttdef"><b>Определения</b> <a href="_i_mapper_8cs_source.html#l00001">IMapper.cs:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

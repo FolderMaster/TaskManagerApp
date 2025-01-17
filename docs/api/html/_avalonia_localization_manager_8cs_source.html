@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/View/Implementations/AvaloniaLocalizationManager.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_473d81db49f08dbf6f06a3c4df758b95.html">View</a></li><li class="navelem"><a class="el" href="dir_fc6a2576e4d48746955590a8fde8b14d.html">Implementations</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">AvaloniaLocalizationManager.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Avalonia;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Avalonia.Controls;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>Avalonia.Markup.Xaml;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>System.Collections.Generic;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span>System.Globalization;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span>System.Linq;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_trackable_features.html">TrackableFeatures</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_settings.html">ViewModel.Interfaces.AppStates.Settings</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_view_1_1_implementations.html">   13</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_1_1_implementations.html">View.Implementations</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html">   22</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a64c97962c274f4d9d3f4ee35f95dac01">AvaloniaLocalizationManager</a> : <a class="code hl_class" href="class_trackable_features_1_1_trackable_object.html">TrackableObject</a>, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager.html">ILocalizationManager</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> <span class="keyword">static</span> readonly Dictionary&lt;CultureInfo, Uri&gt; _localizations = <span class="keyword">new</span>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            [<span class="keyword">new</span> CultureInfo(<span class="stringliteral">&quot;en&quot;</span>)] = <span class="keyword">new</span> Uri(<span class="stringliteral">&quot;avares://View/Assets/Localizations/English.axaml&quot;</span>),</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            [<span class="keyword">new</span> CultureInfo(<span class="stringliteral">&quot;ru&quot;</span>)] = <span class="keyword">new</span> Uri(<span class="stringliteral">&quot;avares://View/Assets/Localizations/Russian.axaml&quot;</span>)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        };</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">private</span> CultureInfo _localization;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">private</span> <span class="keyword">static</span> ResourceDictionary? _currentResources;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a355866948bd12485fd2977abf8014ab0">   44</a></span>        <span class="keyword">public</span> IEnumerable&lt;CultureInfo&gt; <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a355866948bd12485fd2977abf8014ab0">Localizations</a> =&gt; _localizations.Keys;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a7c3e5962ab94beb090be4a58150783a0">   47</a></span>        <span class="keyword">public</span> CultureInfo <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a7c3e5962ab94beb090be4a58150783a0">ActualLocalization</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keyword">get</span> =&gt; _localization;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _localization, value, SetLocalization);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a64c97962c274f4d9d3f4ee35f95dac01">   56</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a64c97962c274f4d9d3f4ee35f95dac01">AvaloniaLocalizationManager</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            var currentCulture = CultureInfo.CurrentCulture;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a7c3e5962ab94beb090be4a58150783a0">ActualLocalization</a> =</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a355866948bd12485fd2977abf8014ab0">Localizations</a>.FirstOrDefault(c =&gt; c.Name == currentCulture.Name) ??</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a355866948bd12485fd2977abf8014ab0">Localizations</a>.FirstOrDefault(c =&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    c.TwoLetterISOLanguageName == currentCulture.TwoLetterISOLanguageName) ??</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a355866948bd12485fd2977abf8014ab0">Localizations</a>.First();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> SetLocalization(CultureInfo oldValue, CultureInfo newValue)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            CultureInfo.CurrentCulture = <a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a7c3e5962ab94beb090be4a58150783a0">ActualLocalization</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            var app = Application.Current;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            var newDictionary = (ResourceDictionary)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                AvaloniaXamlLoader.Load(_localizations[<a class="code hl_property" href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a7c3e5962ab94beb090be4a58150783a0">ActualLocalization</a>]);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> (_currentResources != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                app.Resources.MergedDictionaries.Remove(_currentResources);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            _currentResources = newDictionary;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            app.Resources.MergedDictionaries.Add(newDictionary);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+</div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></div><div class="ttdoc">Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00013">TrackableObject.cs:14</a></div></div>
+<div class="ttc" id="aclass_view_1_1_implementations_1_1_avalonia_localization_manager_html_a355866948bd12485fd2977abf8014ab0"><div class="ttname"><a href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a355866948bd12485fd2977abf8014ab0">View.Implementations.AvaloniaLocalizationManager.Localizations</a></div><div class="ttdeci">IEnumerable&lt; CultureInfo &gt; Localizations</div><div class="ttdoc">Возвращает локализации.</div><div class="ttdef"><b>Определения</b> <a href="#l00044">AvaloniaLocalizationManager.cs:44</a></div></div>
+<div class="ttc" id="aclass_view_1_1_implementations_1_1_avalonia_localization_manager_html_a64c97962c274f4d9d3f4ee35f95dac01"><div class="ttname"><a href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a64c97962c274f4d9d3f4ee35f95dac01">View.Implementations.AvaloniaLocalizationManager.AvaloniaLocalizationManager</a></div><div class="ttdeci">AvaloniaLocalizationManager()</div><div class="ttdoc">Создаёт экземпляр класса AvaloniaLocalizationManager по умолчанию.</div><div class="ttdef"><b>Определения</b> <a href="#l00056">AvaloniaLocalizationManager.cs:56</a></div></div>
+<div class="ttc" id="aclass_view_1_1_implementations_1_1_avalonia_localization_manager_html_a7c3e5962ab94beb090be4a58150783a0"><div class="ttname"><a href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html#a7c3e5962ab94beb090be4a58150783a0">View.Implementations.AvaloniaLocalizationManager.ActualLocalization</a></div><div class="ttdeci">CultureInfo ActualLocalization</div><div class="ttdoc">Возвращает и задаёт актуальную локализацию.</div><div class="ttdef"><b>Определения</b> <a href="#l00047">AvaloniaLocalizationManager.cs:48</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager.html">ViewModel.Interfaces.AppStates.Settings.ILocalizationManager</a></div><div class="ttdoc">Интерфейс менеджера локализаций.</div><div class="ttdef"><b>Определения</b> <a href="_i_localization_manager_8cs_source.html#l00008">ILocalizationManager.cs:9</a></div></div>
+<div class="ttc" id="anamespace_trackable_features_html"><div class="ttname"><a href="namespace_trackable_features.html">TrackableFeatures</a></div><div class="ttdef"><b>Определения</b> <a href="_trackable_collection_8cs_source.html#l00004">TrackableCollection.cs:5</a></div></div>
+<div class="ttc" id="anamespace_view_1_1_implementations_html"><div class="ttname"><a href="namespace_view_1_1_implementations.html">View.Implementations</a></div><div class="ttdef"><b>Определения</b> <a href="#l00013">AvaloniaLocalizationManager.cs:14</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_app_states_1_1_settings_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_settings.html">ViewModel.Interfaces.AppStates.Settings</a></div><div class="ttdef"><b>Определения</b> <a href="_i_localization_manager_8cs_source.html#l00003">ILocalizationManager.cs:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

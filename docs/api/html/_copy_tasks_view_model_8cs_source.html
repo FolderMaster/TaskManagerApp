@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/ViewModels/Modals/CopyTasksViewModel.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_78fbab1a687ba045d6948e8d6955bb34.html">ViewModels</a></li><li class="navelem"><a class="el" href="dir_3b535eb831ede02139b939109bbd5a08.html">Modals</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">CopyTasksViewModel.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>ReactiveUI;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>ReactiveUI.SourceGenerators;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_view_models_1_1_modals.html">ViewModel.ViewModels.Modals</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model.html">   14</a></span>    <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_class" href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model.html">CopyTasksViewModel</a> :</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_function" href="class_view_model_1_1_view_models_1_1_modals_1_1_tasks_view_model-2-g.html#a501d68ad2e6c48c0e433eee8287bdd75">TasksViewModel</a>&lt;ItemsTasksViewModelArgs, CopyTasksViewModelResult?&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        [Reactive]</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> _count = 1;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        [Reactive]</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> IEnumerable&lt;ITask&gt; _items;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model.html#a75866e6d5665c91f5b0398a3b838616e">   30</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model.html#a75866e6d5665c91f5b0398a3b838616e">GetArgs</a>(<a class="code hl_class" href="class_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args.html">ItemsTasksViewModelArgs</a> args)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            base.GetArgs(args);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            Items = args.<a class="code hl_property" href="class_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args.html#a733f73eb6b7460960f39f7dc045afd4b">Items</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        [ReactiveCommand]</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> Ok() =&gt; <a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g.html#a35ea24f31d166821a5863ba4394f383e">_taskSource</a>?.SetResult(<span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model_result.html">CopyTasksViewModelResult</a>(List, Count));</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        [ReactiveCommand]</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> Cancel() =&gt; <a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g.html#a35ea24f31d166821a5863ba4394f383e">_taskSource</a>?.SetResult(<span class="keyword">null</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g_html_a35ea24f31d166821a5863ba4394f383e"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g.html#a35ea24f31d166821a5863ba4394f383e">ViewModel.ViewModels.BaseDialogViewModel-2-g._taskSource</a></div><div class="ttdeci">TaskCompletionSource&lt; R &gt;? _taskSource</div><div class="ttdoc">Источник для завершения задачи, который используется для возврата результата диалога.</div><div class="ttdef"><b>Определения</b> <a href="_base_dialog_view_model_8cs_source.html#l00014">BaseDialogViewModel.cs:14</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model_html"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model.html">ViewModel.ViewModels.Modals.CopyTasksViewModel</a></div><div class="ttdoc">Класс диалога копирования задач.</div><div class="ttdef"><b>Определения</b> <a href="#l00014">CopyTasksViewModel.cs:16</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model_html_a75866e6d5665c91f5b0398a3b838616e"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model.html#a75866e6d5665c91f5b0398a3b838616e">ViewModel.ViewModels.Modals.CopyTasksViewModel.GetArgs</a></div><div class="ttdeci">override void GetArgs(ItemsTasksViewModelArgs args)</div><div class="ttdef"><b>Определения</b> <a href="#l00030">CopyTasksViewModel.cs:30</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model_result_html"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_modals_1_1_copy_tasks_view_model_result.html">ViewModel.ViewModels.Modals.CopyTasksViewModelResult</a></div><div class="ttdoc">Класс результата диалога CopyTasksViewModel.</div><div class="ttdef"><b>Определения</b> <a href="_copy_tasks_view_model_result_8cs_source.html#l00008">CopyTasksViewModelResult.cs:9</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args_html"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args.html">ViewModel.ViewModels.Modals.ItemsTasksViewModelArgs</a></div><div class="ttdoc">Класс аргументов диалога элементов списка.</div><div class="ttdef"><b>Определения</b> <a href="_items_tasks_view_model_args_8cs_source.html#l00011">ItemsTasksViewModelArgs.cs:12</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args_html_a733f73eb6b7460960f39f7dc045afd4b"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args.html#a733f73eb6b7460960f39f7dc045afd4b">ViewModel.ViewModels.Modals.ItemsTasksViewModelArgs.Items</a></div><div class="ttdeci">IList&lt; ITask &gt; Items</div><div class="ttdoc">Возвращает элементы.</div><div class="ttdef"><b>Определения</b> <a href="_items_tasks_view_model_args_8cs_source.html#l00016">ItemsTasksViewModelArgs.cs:16</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_modals_1_1_tasks_view_model-2-g_html_a501d68ad2e6c48c0e433eee8287bdd75"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_modals_1_1_tasks_view_model-2-g.html#a501d68ad2e6c48c0e433eee8287bdd75">ViewModel.ViewModels.Modals.TasksViewModel-2-g.TasksViewModel</a></div><div class="ttdeci">TasksViewModel()</div><div class="ttdoc">Создаёт экземпляр класса TasksViewModel&lt;A, R&gt; по умолчанию.</div><div class="ttdef"><b>Определения</b> <a href="_tasks_view_model_8cs_source.html#l00054">TasksViewModel.cs:54</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_view_models_1_1_modals_html"><div class="ttname"><a href="namespace_view_model_1_1_view_models_1_1_modals.html">ViewModel.ViewModels.Modals</a></div><div class="ttdef"><b>Определения</b> <a href="_add_task_view_model_8cs_source.html#l00008">AddTaskViewModel.cs:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

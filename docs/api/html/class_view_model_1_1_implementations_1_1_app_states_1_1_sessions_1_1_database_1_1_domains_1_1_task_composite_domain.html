@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Класс ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations.html">Implementations</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states.html">AppStates</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions.html">Sessions</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database.html">Database</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">Domains</a></li><li class="navelem"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html">TaskCompositeDomain</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс домменной модели составной задачи.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.png" usemap="#ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain_map" alt=""/>
+  <map id="ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain_map" name="ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain_map">
+<area href="class_model_1_1_tasks_1_1_task_composite.html" title="Класс составной задачи." alt="Model.Tasks.TaskComposite" shape="rect" coords="2920,168,3441,192"/>
+<area href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html" title="Индерфейс доменной модели." alt="ViewModel.Implementations.AppStates.Sessions.Database.Domains.IDomain" shape="rect" coords="3451,168,3972,192"/>
+<area href="class_trackable_features_1_1_trackable_collection-1-g.html" title="Базовый класс коллекции, предоставляющий поддержку отслеживания изменений в коллекции." alt="TrackableFeatures.TrackableCollection&lt; T &gt;" shape="rect" coords="1062,112,1583,136"/>
+<area href="interface_model_1_1_interfaces_1_1_i_task_composite.html" title="Интерфейс составной задачи." alt="Model.Interfaces.ITaskComposite" shape="rect" coords="2920,112,3441,136"/>
+<area href="class_trackable_features_1_1_trackable_object.html" title="Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок." alt="TrackableFeatures.TrackableObject" shape="rect" coords="265,56,786,80"/>
+<area href="interface_model_1_1_interfaces_1_1_i_task.html" title="Интерфейс задачи." alt="Model.Interfaces.ITask" shape="rect" coords="3451,56,3972,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a045413c957964235f0493319c44ac009" id="r_a045413c957964235f0493319c44ac009"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a045413c957964235f0493319c44ac009">TaskCompositeDomain</a> (IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;? subtasks=null)</td></tr>
+<tr class="memdesc:a045413c957964235f0493319c44ac009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html" title="Класс домменной модели составной задачи.">TaskCompositeDomain</a>.  <br /></td></tr>
+<tr class="separator:a045413c957964235f0493319c44ac009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ac563536bdaf66e1258db8dce502d6" id="r_a42ac563536bdaf66e1258db8dce502d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42ac563536bdaf66e1258db8dce502d6">TaskCompositeDomain</a> ()</td></tr>
+<tr class="memdesc:a42ac563536bdaf66e1258db8dce502d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html" title="Класс домменной модели составной задачи.">TaskCompositeDomain</a> по умолчанию.  <br /></td></tr>
+<tr class="separator:a42ac563536bdaf66e1258db8dce502d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa450f4f7b7fcc72f337906e5eb95bfcd" id="r_aa450f4f7b7fcc72f337906e5eb95bfcd"><td class="memItemLeft" align="right" valign="top">override object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa450f4f7b7fcc72f337906e5eb95bfcd">Clone</a> ()</td></tr>
+<tr class="separator:aa450f4f7b7fcc72f337906e5eb95bfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_model_1_1_tasks_1_1_task_composite"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_model_1_1_tasks_1_1_task_composite')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html">Model.Tasks.TaskComposite</a></td></tr>
+<tr class="memitem:a415fe997d47b3a85c61371c9a825db27 inherit pub_methods_class_model_1_1_tasks_1_1_task_composite" id="r_a415fe997d47b3a85c61371c9a825db27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">TaskComposite</a> (IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;? subtasks=null)</td></tr>
+<tr class="memdesc:a415fe997d47b3a85c61371c9a825db27 inherit pub_methods_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html" title="Класс составной задачи.">TaskComposite</a>.  <br /></td></tr>
+<tr class="separator:a415fe997d47b3a85c61371c9a825db27 inherit pub_methods_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71be73034647b5698ff2bd00df797d1c inherit pub_methods_class_model_1_1_tasks_1_1_task_composite" id="r_a71be73034647b5698ff2bd00df797d1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a71be73034647b5698ff2bd00df797d1c">TaskComposite</a> ()</td></tr>
+<tr class="memdesc:a71be73034647b5698ff2bd00df797d1c inherit pub_methods_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html" title="Класс составной задачи.">TaskComposite</a> по умолчанию.  <br /></td></tr>
+<tr class="separator:a71be73034647b5698ff2bd00df797d1c inherit pub_methods_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_trackable_features_1_1_trackable_collection-1-g')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html">TrackableFeatures.TrackableCollection&lt; T &gt;</a></td></tr>
+<tr class="memitem:a5683ad28f27319dbe86fbbeeae93bc51 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a5683ad28f27319dbe86fbbeeae93bc51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a5683ad28f27319dbe86fbbeeae93bc51">TrackableCollection</a> (IEnumerable&lt; T &gt;? items=null)</td></tr>
+<tr class="separator:a5683ad28f27319dbe86fbbeeae93bc51 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f6874cfd18586af773325b850b7203 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_af0f6874cfd18586af773325b850b7203"><td class="memItemLeft" align="right" valign="top">
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Contains</b> (T item)</td></tr>
+<tr class="separator:af0f6874cfd18586af773325b850b7203 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac252614ab86105eb108e72d2304c8e8a inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_ac252614ab86105eb108e72d2304c8e8a"><td class="memItemLeft" align="right" valign="top">
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Contains</b> (object? value)</td></tr>
+<tr class="separator:ac252614ab86105eb108e72d2304c8e8a inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9c24985db15fb817dc0c54112a9465 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_aeb9c24985db15fb817dc0c54112a9465"><td class="memItemLeft" align="right" valign="top">
+int&#160;</td><td class="memItemRight" valign="bottom"><b>IndexOf</b> (T item)</td></tr>
+<tr class="separator:aeb9c24985db15fb817dc0c54112a9465 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d45938c77af24bdd7fac70292bcbc5 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_ad4d45938c77af24bdd7fac70292bcbc5"><td class="memItemLeft" align="right" valign="top">
+int&#160;</td><td class="memItemRight" valign="bottom"><b>IndexOf</b> (object? value)</td></tr>
+<tr class="separator:ad4d45938c77af24bdd7fac70292bcbc5 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b67c9c9a449d249124773eac36afcff inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a4b67c9c9a449d249124773eac36afcff"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyTo</b> (T[] array, int arrayIndex)</td></tr>
+<tr class="separator:a4b67c9c9a449d249124773eac36afcff inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c0a020eecbdb41c0915d3e03d32f5a inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a89c0a020eecbdb41c0915d3e03d32f5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a89c0a020eecbdb41c0915d3e03d32f5a">CopyTo</a> (Array array, int index)</td></tr>
+<tr class="separator:a89c0a020eecbdb41c0915d3e03d32f5a inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e74001dfb7efd06f94baaba5883e29 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_ad7e74001dfb7efd06f94baaba5883e29"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (T item)</td></tr>
+<tr class="separator:ad7e74001dfb7efd06f94baaba5883e29 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a6866ea94b82dd32a8ce4de63ca402 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a79a6866ea94b82dd32a8ce4de63ca402"><td class="memItemLeft" align="right" valign="top">
+int&#160;</td><td class="memItemRight" valign="bottom"><b>Add</b> (object? value)</td></tr>
+<tr class="separator:a79a6866ea94b82dd32a8ce4de63ca402 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a658897049283380f73f7fab3e3aa7db6 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a658897049283380f73f7fab3e3aa7db6"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Insert</b> (int index, T item)</td></tr>
+<tr class="separator:a658897049283380f73f7fab3e3aa7db6 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa445260290490661b784b1ec30ee7fe0 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_aa445260290490661b784b1ec30ee7fe0"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Insert</b> (int index, object? value)</td></tr>
+<tr class="separator:aa445260290490661b784b1ec30ee7fe0 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eac44c093241e0c3db534dec040c55b inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a1eac44c093241e0c3db534dec040c55b"><td class="memItemLeft" align="right" valign="top">
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Remove</b> (T item)</td></tr>
+<tr class="separator:a1eac44c093241e0c3db534dec040c55b inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfa07329b3b5feb6c87bb915e42b5c9 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_aedfa07329b3b5feb6c87bb915e42b5c9"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Remove</b> (object? value)</td></tr>
+<tr class="separator:aedfa07329b3b5feb6c87bb915e42b5c9 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853fa7d557745c56839f35580144b1f5 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a853fa7d557745c56839f35580144b1f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a853fa7d557745c56839f35580144b1f5">RemoveAt</a> (int index)</td></tr>
+<tr class="separator:a853fa7d557745c56839f35580144b1f5 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef76b55f5b5565964bb877f673ec5d95 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_aef76b55f5b5565964bb877f673ec5d95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#aef76b55f5b5565964bb877f673ec5d95">Replace</a> (int index, T item)</td></tr>
+<tr class="memdesc:aef76b55f5b5565964bb877f673ec5d95 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заменяет элемент по указанному индексу на новый.  <br /></td></tr>
+<tr class="separator:aef76b55f5b5565964bb877f673ec5d95 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470058f4265e6bddcb2b0138926a1e34 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a470058f4265e6bddcb2b0138926a1e34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a470058f4265e6bddcb2b0138926a1e34">Move</a> (int oldIndex, int newIndex)</td></tr>
+<tr class="memdesc:a470058f4265e6bddcb2b0138926a1e34 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перемещает элемент из одного индекса в другой.  <br /></td></tr>
+<tr class="separator:a470058f4265e6bddcb2b0138926a1e34 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf7db012389a3c2fd7f5957dc5e46690 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_adf7db012389a3c2fd7f5957dc5e46690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#adf7db012389a3c2fd7f5957dc5e46690">Clear</a> ()</td></tr>
+<tr class="separator:adf7db012389a3c2fd7f5957dc5e46690 inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5571eb51e1d4143133f57f4e6d680b5a inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a5571eb51e1d4143133f57f4e6d680b5a"><td class="memItemLeft" align="right" valign="top">
+IEnumerator&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetEnumerator</b> ()</td></tr>
+<tr class="separator:a5571eb51e1d4143133f57f4e6d680b5a inherit pub_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:a831e8df091b1a713a68063d3186c5ccc inherit pub_methods_class_trackable_features_1_1_trackable_object" id="r_a831e8df091b1a713a68063d3186c5ccc"><td class="memItemLeft" align="right" valign="top">IEnumerable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a831e8df091b1a713a68063d3186c5ccc">GetErrors</a> (string? propertyName)</td></tr>
+<tr class="separator:a831e8df091b1a713a68063d3186c5ccc inherit pub_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:ad99cf12d44b8acc86d41ab9d287eecff" id="r_ad99cf12d44b8acc86d41ab9d287eecff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_composite_entity.html">TaskCompositeEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad99cf12d44b8acc86d41ab9d287eecff">Entity</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad99cf12d44b8acc86d41ab9d287eecff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт связанную сущность.  <br /></td></tr>
+<tr class="separator:ad99cf12d44b8acc86d41ab9d287eecff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48042ce42c0d415cf96fde1f05b3ff66" id="r_a48042ce42c0d415cf96fde1f05b3ff66"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48042ce42c0d415cf96fde1f05b3ff66">EntityId</a><code> [get]</code></td></tr>
+<tr class="memdesc:a48042ce42c0d415cf96fde1f05b3ff66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает индетификатор связанной сущности.  <br /></td></tr>
+<tr class="separator:a48042ce42c0d415cf96fde1f05b3ff66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_model_1_1_tasks_1_1_task_composite"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_model_1_1_tasks_1_1_task_composite')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html">Model.Tasks.TaskComposite</a></td></tr>
+<tr class="memitem:a66b5b13651ad361c70756d60d1cfce59 inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a66b5b13651ad361c70756d60d1cfce59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a66b5b13651ad361c70756d60d1cfce59">ParentTask</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a66b5b13651ad361c70756d60d1cfce59 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает и задаёт родительскую задачу.  <br /></td></tr>
+<tr class="separator:a66b5b13651ad361c70756d60d1cfce59 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c49fd80277764cbb8e3d8619097f604 inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a3c49fd80277764cbb8e3d8619097f604"><td class="memItemLeft" align="right" valign="top">object?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Metadata</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3c49fd80277764cbb8e3d8619097f604 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает и задаёт метаданные.  <br /></td></tr>
+<tr class="separator:a3c49fd80277764cbb8e3d8619097f604 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac44cac245392657cc863cafd11ff500a inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_ac44cac245392657cc863cafd11ff500a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#ac44cac245392657cc863cafd11ff500a">Difficult</a><code> [get]</code></td></tr>
+<tr class="memdesc:ac44cac245392657cc863cafd11ff500a inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает сложность.  <br /></td></tr>
+<tr class="separator:ac44cac245392657cc863cafd11ff500a inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f8d3464839f3f62795eb356c86dcb7 inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_ae7f8d3464839f3f62795eb356c86dcb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#ae7f8d3464839f3f62795eb356c86dcb7">Priority</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae7f8d3464839f3f62795eb356c86dcb7 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает приоритет.  <br /></td></tr>
+<tr class="separator:ae7f8d3464839f3f62795eb356c86dcb7 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bcb15e9eaf40453ca93faee96e4853d inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a3bcb15e9eaf40453ca93faee96e4853d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a3bcb15e9eaf40453ca93faee96e4853d">Status</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3bcb15e9eaf40453ca93faee96e4853d inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает статус.  <br /></td></tr>
+<tr class="separator:a3bcb15e9eaf40453ca93faee96e4853d inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06611b8426e3644493d6d76a78636168 inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a06611b8426e3644493d6d76a78636168"><td class="memItemLeft" align="right" valign="top">DateTime?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a06611b8426e3644493d6d76a78636168">Deadline</a><code> [get]</code></td></tr>
+<tr class="memdesc:a06611b8426e3644493d6d76a78636168 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает срок.  <br /></td></tr>
+<tr class="separator:a06611b8426e3644493d6d76a78636168 inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269a8c84bb8de6922a346f4a7110c8cf inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a269a8c84bb8de6922a346f4a7110c8cf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a269a8c84bb8de6922a346f4a7110c8cf">Progress</a><code> [get]</code></td></tr>
+<tr class="memdesc:a269a8c84bb8de6922a346f4a7110c8cf inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает прогресс.  <br /></td></tr>
+<tr class="separator:a269a8c84bb8de6922a346f4a7110c8cf inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1f7118b82473664f772c9d6f45ccda inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a8d1f7118b82473664f772c9d6f45ccda"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a8d1f7118b82473664f772c9d6f45ccda">PlannedTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:a8d1f7118b82473664f772c9d6f45ccda inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает запланированное время.  <br /></td></tr>
+<tr class="separator:a8d1f7118b82473664f772c9d6f45ccda inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208bfe8892e629151c2b09e60b1c3d8e inherit properties_class_model_1_1_tasks_1_1_task_composite" id="r_a208bfe8892e629151c2b09e60b1c3d8e"><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a208bfe8892e629151c2b09e60b1c3d8e">SpentTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:a208bfe8892e629151c2b09e60b1c3d8e inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возращает потраченное время.  <br /></td></tr>
+<tr class="separator:a208bfe8892e629151c2b09e60b1c3d8e inherit properties_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_trackable_features_1_1_trackable_collection-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_trackable_features_1_1_trackable_collection-1-g')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html">TrackableFeatures.TrackableCollection&lt; T &gt;</a></td></tr>
+<tr class="memitem:a1fd25be7bbdbf11c93b5deb1a775bbb0 inherit properties_class_trackable_features_1_1_trackable_collection-1-g" id="r_a1fd25be7bbdbf11c93b5deb1a775bbb0"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a1fd25be7bbdbf11c93b5deb1a775bbb0">this[int index]</a><code> [get, set]</code></td></tr>
+<tr class="separator:a1fd25be7bbdbf11c93b5deb1a775bbb0 inherit properties_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9614a30d159a4ae8bdfd6836d131b21 inherit properties_class_trackable_features_1_1_trackable_collection-1-g" id="r_aa9614a30d159a4ae8bdfd6836d131b21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">Count</a><code> [get]</code></td></tr>
+<tr class="separator:aa9614a30d159a4ae8bdfd6836d131b21 inherit properties_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f22a3a2cc071a7fd6d581572d94ca1 inherit properties_class_trackable_features_1_1_trackable_collection-1-g" id="r_ac7f22a3a2cc071a7fd6d581572d94ca1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#ac7f22a3a2cc071a7fd6d581572d94ca1">IsReadOnly</a><code> [get]</code></td></tr>
+<tr class="separator:ac7f22a3a2cc071a7fd6d581572d94ca1 inherit properties_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ffd09eb7d8dcc7d8c38d7df8c5a2fbb inherit properties_class_trackable_features_1_1_trackable_collection-1-g" id="r_a7ffd09eb7d8dcc7d8c38d7df8c5a2fbb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a7ffd09eb7d8dcc7d8c38d7df8c5a2fbb">IsFixedSize</a><code> [get]</code></td></tr>
+<tr class="separator:a7ffd09eb7d8dcc7d8c38d7df8c5a2fbb inherit properties_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33577a258be5f8548f35bd90f2da67f inherit properties_class_trackable_features_1_1_trackable_collection-1-g" id="r_ad33577a258be5f8548f35bd90f2da67f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#ad33577a258be5f8548f35bd90f2da67f">IsSynchronized</a><code> [get]</code></td></tr>
+<tr class="separator:ad33577a258be5f8548f35bd90f2da67f inherit properties_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae230e0851e408fd43a91c67ba5bcb6bf inherit properties_class_trackable_features_1_1_trackable_collection-1-g" id="r_ae230e0851e408fd43a91c67ba5bcb6bf"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#ae230e0851e408fd43a91c67ba5bcb6bf">SyncRoot</a><code> [get]</code></td></tr>
+<tr class="separator:ae230e0851e408fd43a91c67ba5bcb6bf inherit properties_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:ad234adf03242c9bc994b74127841a8f3 inherit properties_class_trackable_features_1_1_trackable_object" id="r_ad234adf03242c9bc994b74127841a8f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#ad234adf03242c9bc994b74127841a8f3">HasErrors</a><code> [get]</code></td></tr>
+<tr class="separator:ad234adf03242c9bc994b74127841a8f3 inherit properties_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_methods_class_model_1_1_tasks_1_1_task_composite"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_model_1_1_tasks_1_1_task_composite')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html">Model.Tasks.TaskComposite</a></td></tr>
+<tr class="memitem:a6c3a9d0eac4aab1d554bcb9343225f58 inherit pro_methods_class_model_1_1_tasks_1_1_task_composite" id="r_a6c3a9d0eac4aab1d554bcb9343225f58"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a6c3a9d0eac4aab1d554bcb9343225f58">OnAddedItem</a> (<a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> task, bool arePropertiesUpdate=true)</td></tr>
+<tr class="separator:a6c3a9d0eac4aab1d554bcb9343225f58 inherit pro_methods_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b8df5511dcf571e13a73c6a4c8ef256 inherit pro_methods_class_model_1_1_tasks_1_1_task_composite" id="r_a6b8df5511dcf571e13a73c6a4c8ef256"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a6b8df5511dcf571e13a73c6a4c8ef256">OnRemovedItem</a> (<a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> task)</td></tr>
+<tr class="separator:a6b8df5511dcf571e13a73c6a4c8ef256 inherit pro_methods_class_model_1_1_tasks_1_1_task_composite"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_trackable_features_1_1_trackable_collection-1-g')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html">TrackableFeatures.TrackableCollection&lt; T &gt;</a></td></tr>
+<tr class="memitem:a30a67b902fc0ca91999aa397f4e7d947 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a30a67b902fc0ca91999aa397f4e7d947"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a30a67b902fc0ca91999aa397f4e7d947">AddItem</a> (T item)</td></tr>
+<tr class="memdesc:a30a67b902fc0ca91999aa397f4e7d947 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет элемент в коллекцию.  <br /></td></tr>
+<tr class="separator:a30a67b902fc0ca91999aa397f4e7d947 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6111cf126eca73b0027c0b4778e1b17 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_aa6111cf126eca73b0027c0b4778e1b17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa6111cf126eca73b0027c0b4778e1b17">InsertItem</a> (int index, T item)</td></tr>
+<tr class="memdesc:aa6111cf126eca73b0027c0b4778e1b17 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставляет элемент в указанную позицию коллекции.  <br /></td></tr>
+<tr class="separator:aa6111cf126eca73b0027c0b4778e1b17 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2355149c2da916ad0e9ad94df740ef24 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a2355149c2da916ad0e9ad94df740ef24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a2355149c2da916ad0e9ad94df740ef24">RemoveItem</a> (T item)</td></tr>
+<tr class="memdesc:a2355149c2da916ad0e9ad94df740ef24 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет элемент из коллекции.  <br /></td></tr>
+<tr class="separator:a2355149c2da916ad0e9ad94df740ef24 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b9deadd7edef8ca0eccb7ab38e3c15 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a29b9deadd7edef8ca0eccb7ab38e3c15"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a29b9deadd7edef8ca0eccb7ab38e3c15">OnAddedItem</a> (T item, bool arePropertiesUpdate=true)</td></tr>
+<tr class="memdesc:a29b9deadd7edef8ca0eccb7ab38e3c15 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при добавлении элемента.  <br /></td></tr>
+<tr class="separator:a29b9deadd7edef8ca0eccb7ab38e3c15 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eeba63d89dd7ddbb53b9aaa041298b6 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a6eeba63d89dd7ddbb53b9aaa041298b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a6eeba63d89dd7ddbb53b9aaa041298b6">OnRemovedItem</a> (T item)</td></tr>
+<tr class="memdesc:a6eeba63d89dd7ddbb53b9aaa041298b6 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при удалении элемента.  <br /></td></tr>
+<tr class="separator:a6eeba63d89dd7ddbb53b9aaa041298b6 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce2eec9603a9b84e3e09b2446e01255 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a4ce2eec9603a9b84e3e09b2446e01255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a4ce2eec9603a9b84e3e09b2446e01255">OnCollectionChanged</a> (NotifyCollectionChangedAction action, object? oldItem, object? newItem, int index)</td></tr>
+<tr class="memdesc:a4ce2eec9603a9b84e3e09b2446e01255 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a8fb52c61241857a33f2d0d048e1b8842">CollectionChanged</a> для индекса, в котором изменился элемент.  <br /></td></tr>
+<tr class="separator:a4ce2eec9603a9b84e3e09b2446e01255 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793593a31b6ae09f01dee9b8ca56d0f8 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a793593a31b6ae09f01dee9b8ca56d0f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a793593a31b6ae09f01dee9b8ca56d0f8">OnCollectionChanged</a> (NotifyCollectionChangedAction action, object? item, int index)</td></tr>
+<tr class="memdesc:a793593a31b6ae09f01dee9b8ca56d0f8 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a8fb52c61241857a33f2d0d048e1b8842">CollectionChanged</a> для элемента, над которым совершили действие.  <br /></td></tr>
+<tr class="separator:a793593a31b6ae09f01dee9b8ca56d0f8 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a600bb7aa9e1e9b800589a2ff02bf4 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a54a600bb7aa9e1e9b800589a2ff02bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a54a600bb7aa9e1e9b800589a2ff02bf4">OnCollectionChanged</a> (NotifyCollectionChangedAction action, object? item, int newIndex, int oldIndex)</td></tr>
+<tr class="memdesc:a54a600bb7aa9e1e9b800589a2ff02bf4 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a8fb52c61241857a33f2d0d048e1b8842">CollectionChanged</a> для элемента, который изменил индекс.  <br /></td></tr>
+<tr class="separator:a54a600bb7aa9e1e9b800589a2ff02bf4 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa064f4716fc231cd173efee08ba42a8d inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_aa064f4716fc231cd173efee08ba42a8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa064f4716fc231cd173efee08ba42a8d">OnCollectionChanged</a> (NotifyCollectionChangedAction action)</td></tr>
+<tr class="memdesc:aa064f4716fc231cd173efee08ba42a8d inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a8fb52c61241857a33f2d0d048e1b8842">CollectionChanged</a> для действия.  <br /></td></tr>
+<tr class="separator:aa064f4716fc231cd173efee08ba42a8d inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ba0e396941c2e574528534e7735bd4 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g" id="r_a91ba0e396941c2e574528534e7735bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a91ba0e396941c2e574528534e7735bd4">OnCollectionChanged</a> (NotifyCollectionChangedEventArgs args)</td></tr>
+<tr class="memdesc:a91ba0e396941c2e574528534e7735bd4 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a8fb52c61241857a33f2d0d048e1b8842">CollectionChanged</a> с аргументами.  <br /></td></tr>
+<tr class="separator:a91ba0e396941c2e574528534e7735bd4 inherit pro_methods_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:a45f2595df7fda231e30851f424a74caa inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a45f2595df7fda231e30851f424a74caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a45f2595df7fda231e30851f424a74caa">UpdateProperty&lt; T &gt;</a> (ref T field, T newValue, Action&lt; T, T &gt;? action=null, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a45f2595df7fda231e30851f424a74caa inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.  <br /></td></tr>
+<tr class="separator:a45f2595df7fda231e30851f424a74caa inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72237b1c20e0283971bb013a2ff74c79 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a72237b1c20e0283971bb013a2ff74c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a72237b1c20e0283971bb013a2ff74c79">UpdateProperty&lt; T &gt;</a> (Func&lt; T &gt; getProperty, Action&lt; T &gt; setProperty, T newValue, Action&lt; T, T &gt;? action=null, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a72237b1c20e0283971bb013a2ff74c79 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.  <br /></td></tr>
+<tr class="separator:a72237b1c20e0283971bb013a2ff74c79 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24c222089d5cbc08d23c2414de172c5 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_ae24c222089d5cbc08d23c2414de172c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#ae24c222089d5cbc08d23c2414de172c5">AddError</a> (object error, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:ae24c222089d5cbc08d23c2414de172c5 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет ошибку для свойства.  <br /></td></tr>
+<tr class="separator:ae24c222089d5cbc08d23c2414de172c5 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81efddef33f1da259ece07ef0c6f55e4 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a81efddef33f1da259ece07ef0c6f55e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a81efddef33f1da259ece07ef0c6f55e4">ClearErrors</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a81efddef33f1da259ece07ef0c6f55e4 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все ошибки для свойства.  <br /></td></tr>
+<tr class="separator:a81efddef33f1da259ece07ef0c6f55e4 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4a7a448354eb2db05abe90f095e045 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a0f4a7a448354eb2db05abe90f095e045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a0f4a7a448354eb2db05abe90f095e045">ClearAllErrors</a> ()</td></tr>
+<tr class="memdesc:a0f4a7a448354eb2db05abe90f095e045 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все ошибки для всех свойств.  <br /></td></tr>
+<tr class="separator:a0f4a7a448354eb2db05abe90f095e045 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2607800497f6c7b3f13ef5dfd8527b14 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a2607800497f6c7b3f13ef5dfd8527b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a2607800497f6c7b3f13ef5dfd8527b14 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_object.html#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a> для свойства.  <br /></td></tr>
+<tr class="separator:a2607800497f6c7b3f13ef5dfd8527b14 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273ad86ca53cef022e7b5e891b6e342d inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a273ad86ca53cef022e7b5e891b6e342d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a273ad86ca53cef022e7b5e891b6e342d">OnErrorsChanged</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a273ad86ca53cef022e7b5e891b6e342d inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_object.html#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a> для свойства.  <br /></td></tr>
+<tr class="separator:a273ad86ca53cef022e7b5e891b6e342d inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header events_class_trackable_features_1_1_trackable_collection-1-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('events_class_trackable_features_1_1_trackable_collection-1-g')"><img src="closed.png" alt="-"/>&#160;События унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html">TrackableFeatures.TrackableCollection&lt; T &gt;</a></td></tr>
+<tr class="memitem:a8fb52c61241857a33f2d0d048e1b8842 inherit events_class_trackable_features_1_1_trackable_collection-1-g" id="r_a8fb52c61241857a33f2d0d048e1b8842"><td class="memItemLeft" align="right" valign="top">NotifyCollectionChangedEventHandler?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_collection-1-g.html#a8fb52c61241857a33f2d0d048e1b8842">CollectionChanged</a></td></tr>
+<tr class="separator:a8fb52c61241857a33f2d0d048e1b8842 inherit events_class_trackable_features_1_1_trackable_collection-1-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header events_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('events_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;События унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:ad91648414a964db4793c494bd6a76bfd inherit events_class_trackable_features_1_1_trackable_object" id="r_ad91648414a964db4793c494bd6a76bfd"><td class="memItemLeft" align="right" valign="top">PropertyChangedEventHandler?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a></td></tr>
+<tr class="separator:ad91648414a964db4793c494bd6a76bfd inherit events_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf07c5466d11d36945b9cab57acb96e9 inherit events_class_trackable_features_1_1_trackable_object" id="r_adf07c5466d11d36945b9cab57acb96e9"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; DataErrorsChangedEventArgs &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a></td></tr>
+<tr class="separator:adf07c5466d11d36945b9cab57acb96e9 inherit events_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс домменной модели составной задачи. </p>
+<p>Наследует <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27" title="Создаёт экземпляр класса TaskComposite.">TaskComposite</a>. Реализует <a class="el" href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html" title="Индерфейс доменной модели.">IDomain</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_composite_domain_8cs_source.html">TaskCompositeDomain.cs</a> строка <a class="el" href="_task_composite_domain_8cs_source.html#l00015">15</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a045413c957964235f0493319c44ac009" name="a045413c957964235f0493319c44ac009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a045413c957964235f0493319c44ac009">&#9670;&#160;</a></span>TaskCompositeDomain() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.TaskCompositeDomain </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; <a class="el" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> &gt;?</td>          <td class="paramname"><span class="paramname"><em>subtasks</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html" title="Класс домменной модели составной задачи.">TaskCompositeDomain</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subtasks</td><td>Подзадачи.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_composite_domain_8cs_source.html">TaskCompositeDomain.cs</a> строка <a class="el" href="_task_composite_domain_8cs_source.html#l00029">29</a></p>
+
+</div>
+</div>
+<a id="a42ac563536bdaf66e1258db8dce502d6" name="a42ac563536bdaf66e1258db8dce502d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ac563536bdaf66e1258db8dce502d6">&#9670;&#160;</a></span>TaskCompositeDomain() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.TaskCompositeDomain </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html" title="Класс домменной модели составной задачи.">TaskCompositeDomain</a> по умолчанию. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_composite_domain_8cs_source.html">TaskCompositeDomain.cs</a> строка <a class="el" href="_task_composite_domain_8cs_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aa450f4f7b7fcc72f337906e5eb95bfcd" name="aa450f4f7b7fcc72f337906e5eb95bfcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa450f4f7b7fcc72f337906e5eb95bfcd">&#9670;&#160;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override object ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.Clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p>Переопределяет метод предка <a class="el" href="class_model_1_1_tasks_1_1_task_composite.html#acc4a5923516ba466ac1599793cc2ce52">Model.Tasks.TaskComposite</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_composite_domain_8cs_source.html">TaskCompositeDomain.cs</a> строка <a class="el" href="_task_composite_domain_8cs_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="ad99cf12d44b8acc86d41ab9d287eecff" name="ad99cf12d44b8acc86d41ab9d287eecff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad99cf12d44b8acc86d41ab9d287eecff">&#9670;&#160;</a></span>Entity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_composite_entity.html">TaskCompositeEntity</a> ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.Entity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт связанную сущность. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_composite_domain_8cs_source.html">TaskCompositeDomain.cs</a> строка <a class="el" href="_task_composite_domain_8cs_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a id="a48042ce42c0d415cf96fde1f05b3ff66" name="a48042ce42c0d415cf96fde1f05b3ff66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48042ce42c0d415cf96fde1f05b3ff66">&#9670;&#160;</a></span>EntityId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">object ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.EntityId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает индетификатор связанной сущности. </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html#a8df4cd5367d1b7f91a1ce4937d880019">ViewModel.Implementations.AppStates.Sessions.Database.Domains.IDomain</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_task_composite_domain_8cs_source.html">TaskCompositeDomain.cs</a> строка <a class="el" href="_task_composite_domain_8cs_source.html#l00023">23</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

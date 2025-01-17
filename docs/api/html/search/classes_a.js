@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['macosnotificationmanager_0',['MacOsNotificationManager',['../class_view_1_1_desktop_1_1mac_o_s_1_1_mac_os_notification_manager.html',1,'View::Desktop::macOS']]],
+  ['mainactivity_1',['MainActivity',['../class_view_1_1_android_1_1_main_activity.html',1,'View::Android']]],
+  ['mainview_2',['MainView',['../class_view_1_1_views_1_1_main_view.html',1,'View::Views']]],
+  ['mainviewmodel_3',['MainViewModel',['../class_view_model_1_1_view_models_1_1_main_view_model.html',1,'ViewModel::ViewModels']]],
+  ['mainwindow_4',['MainWindow',['../class_view_1_1_views_1_1_main_window.html',1,'View::Views']]],
+  ['metadatacategoriestransformer_5',['MetadataCategoriesTransformer',['../class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_metadata_categories_transformer.html',1,'ViewModel::Implementations::ModelLearning::Converters']]],
+  ['metadataentity_6',['MetadataEntity',['../class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_metadata_entity.html',1,'ViewModel::Implementations::AppStates::Sessions::Database::Entities']]],
+  ['metadatamapper_7',['MetadataMapper',['../class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_mappers_1_1_metadata_mapper.html',1,'ViewModel::Implementations::AppStates::Sessions::Database::Mappers']]],
+  ['metadatatagstransformer_8',['MetadataTagsTransformer',['../class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_metadata_tags_transformer.html',1,'ViewModel::Implementations::ModelLearning::Converters']]],
+  ['metricadapter_9',['MetricAdapter',['../class_machine_learning_1_1_learning_models_1_1_metric_adapter.html',1,'MachineLearning::LearningModels']]],
+  ['minmaxscaler_10',['MinMaxScaler',['../class_machine_learning_1_1_scalers_1_1_min_max_scaler.html',1,'MachineLearning::Scalers']]],
+  ['mockapplifestate_11',['MockAppLifeState',['../class_view_model_1_1_implementations_1_1_mocks_1_1_mock_app_life_state.html',1,'ViewModel::Implementations::Mocks']]],
+  ['mocklocalizationmanager_12',['MockLocalizationManager',['../class_view_model_1_1_implementations_1_1_mocks_1_1_mock_localization_manager.html',1,'ViewModel::Implementations::Mocks']]],
+  ['mocknotificationmanager_13',['MockNotificationManager',['../class_view_model_1_1_implementations_1_1_mocks_1_1_mock_notification_manager.html',1,'ViewModel::Implementations::Mocks']]],
+  ['mockresourceservice_14',['MockResourceService',['../class_view_model_1_1_implementations_1_1_mocks_1_1_mock_resource_service.html',1,'ViewModel::Implementations::Mocks']]],
+  ['mockthememanager_15',['MockThemeManager',['../class_view_model_1_1_implementations_1_1_mocks_1_1_mock_theme_manager.html',1,'ViewModel::Implementations::Mocks']]],
+  ['movetasksview_16',['MoveTasksView',['../class_view_1_1_views_1_1_modals_1_1_move_tasks_view.html',1,'View::Views::Modals']]],
+  ['movetasksviewmodel_17',['MoveTasksViewModel',['../class_view_model_1_1_view_models_1_1_modals_1_1_move_tasks_view_model.html',1,'ViewModel::ViewModels::Modals']]],
+  ['multiplelinearregressionmodel_18',['MultipleLinearRegressionModel',['../class_machine_learning_1_1_learning_models_1_1_multiple_linear_regression_model.html',1,'MachineLearning::LearningModels']]]
+];

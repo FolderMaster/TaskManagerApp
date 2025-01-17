@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['indexof_0',['IndexOf',['../class_trackable_features_1_1_trackable_collection-1-g.html#aeb9c24985db15fb817dc0c54112a9465',1,'TrackableFeatures.TrackableCollection-1-g.IndexOf(T item)'],['../class_trackable_features_1_1_trackable_collection-1-g.html#ad4d45938c77af24bdd7fac70292bcbc5',1,'TrackableFeatures.TrackableCollection-1-g.IndexOf(object? value)']]],
+  ['initialize_1',['Initialize',['../class_view_1_1_app.html#ae5372f5e8311448410699a2b137759c7',1,'View::App']]],
+  ['initializeconfiguration_2',['InitializeConfiguration',['../class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#aedcf1745472c389c52e8417804b11cfd',1,'ViewModel::Implementations::AppStates::Settings::AppSettings']]],
+  ['insert_3',['Insert',['../class_trackable_features_1_1_trackable_collection-1-g.html#a658897049283380f73f7fab3e3aa7db6',1,'TrackableFeatures.TrackableCollection-1-g.Insert(int index, T item)'],['../class_trackable_features_1_1_trackable_collection-1-g.html#aa445260290490661b784b1ec30ee7fe0',1,'TrackableFeatures.TrackableCollection-1-g.Insert(int index, object? value)']]],
+  ['insertitem_4',['InsertItem',['../class_trackable_features_1_1_trackable_collection-1-g.html#aa6111cf126eca73b0027c0b4778e1b17',1,'TrackableFeatures::TrackableCollection-1-g']]],
+  ['invoke_5',['Invoke',['../class_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g.html#a849643778c972a2299bb0e26594903a8',1,'ViewModel::ViewModels::BaseDialogViewModel-2-g']]],
+  ['isinvalidvalue_6',['IsInvalidValue',['../class_machine_learning_1_1_data_processors_1_1_invalid_values_column_processor.html#a895c0b9aa2faba6967b4b0def0ca5f40',1,'MachineLearning::DataProcessors::InvalidValuesColumnProcessor']]],
+  ['ispathexists_7',['IsPathExists',['../class_view_model_1_1_implementations_1_1_app_states_1_1_file_service.html#a77cd455b88d44d0347b0791f47758056',1,'ViewModel.Implementations.AppStates.FileService.IsPathExists()'],['../interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#aabf709bfc1e97f5a712c5d9657dbe184',1,'ViewModel.Interfaces.AppStates.IFileService.IsPathExists()']]],
+  ['itemsselector_8',['ItemsSelector',['../class_view_1_1_data_templates_1_1_task_data_template.html#aa7480d272a18f2453888fd7c96a039e4',1,'View::DataTemplates::TaskDataTemplate']]],
+  ['itemstasksviewmodelargs_9',['ItemsTasksViewModelArgs',['../class_view_model_1_1_view_models_1_1_modals_1_1_items_tasks_view_model_args.html#aaec7d5c41166a4b8aab797e30a9f03ef',1,'ViewModel::ViewModels::Modals::ItemsTasksViewModelArgs']]],
+  ['itemsupdatedeventargs_10',['ItemsUpdatedEventArgs',['../class_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_items_updated_event_args.html#ad3904825c7b9f6ab80e039f014f17b49',1,'ViewModel::Interfaces::AppStates::Sessions::ItemsUpdatedEventArgs']]]
+];

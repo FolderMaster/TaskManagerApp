@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Класс ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations.html">Implementations</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states.html">AppStates</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions.html">Sessions</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database.html">Database</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts.html">DbContexts</a></li><li class="navelem"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_sqlite_db_context.html">SqliteDbContext</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_sqlite_db_context-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс контекста базы данных SQLite.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_sqlite_db_context.png" usemap="#ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext_map" alt=""/>
+  <map id="ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext_map" name="ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext_map">
+<area href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html" title="Базовый класс контекста базы данных." alt="ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.BaseDbContext" shape="rect" coords="0,56,499,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aa3ad323a454232cc575f4b2221473d61" id="r_aa3ad323a454232cc575f4b2221473d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3ad323a454232cc575f4b2221473d61">SqliteDbContext</a> (string connectionString)</td></tr>
+<tr class="memdesc:aa3ad323a454232cc575f4b2221473d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_sqlite_db_context.html" title="Класс контекста базы данных SQLite.">SqliteDbContext</a>.  <br /></td></tr>
+<tr class="separator:aa3ad323a454232cc575f4b2221473d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html">ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.BaseDbContext</a></td></tr>
+<tr class="memitem:a5727c3192d688d0df9db948aca549119 inherit pub_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_a5727c3192d688d0df9db948aca549119"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#a5727c3192d688d0df9db948aca549119">BaseDbContext</a> (string connectionString)</td></tr>
+<tr class="memdesc:a5727c3192d688d0df9db948aca549119 inherit pub_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html" title="Базовый класс контекста базы данных.">BaseDbContext</a>.  <br /></td></tr>
+<tr class="separator:a5727c3192d688d0df9db948aca549119 inherit pub_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a8e648418d90aafc6fd0f46df974f4109" id="r_a8e648418d90aafc6fd0f46df974f4109"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e648418d90aafc6fd0f46df974f4109">OnConfiguring</a> (DbContextOptionsBuilder optionsBuilder)</td></tr>
+<tr class="separator:a8e648418d90aafc6fd0f46df974f4109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html">ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.BaseDbContext</a></td></tr>
+<tr class="memitem:a8ee8bc10361dd5d88c3c35a4a0b94d6f inherit pro_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_a8ee8bc10361dd5d88c3c35a4a0b94d6f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#a8ee8bc10361dd5d88c3c35a4a0b94d6f">OnModelCreating</a> (ModelBuilder modelBuilder)</td></tr>
+<tr class="separator:a8ee8bc10361dd5d88c3c35a4a0b94d6f inherit pro_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01a3b9a1675109742b7986198c3d73c4 inherit pro_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_a01a3b9a1675109742b7986198c3d73c4"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#a01a3b9a1675109742b7986198c3d73c4">OnConfiguring</a> (DbContextOptionsBuilder optionsBuilder)</td></tr>
+<tr class="separator:a01a3b9a1675109742b7986198c3d73c4 inherit pro_methods_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context')"><img src="closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html">ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.BaseDbContext</a></td></tr>
+<tr class="memitem:a386de06baad9dcadfe692cd47b498161 inherit pro_attribs_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_a386de06baad9dcadfe692cd47b498161"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#a386de06baad9dcadfe692cd47b498161">_connectionString</a></td></tr>
+<tr class="memdesc:a386de06baad9dcadfe692cd47b498161 inherit pro_attribs_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Строка подключения.  <br /></td></tr>
+<tr class="separator:a386de06baad9dcadfe692cd47b498161 inherit pro_attribs_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html">ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.BaseDbContext</a></td></tr>
+<tr class="memitem:aca59a285e13412606388a3592d137560 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_aca59a285e13412606388a3592d137560"><td class="memItemLeft" align="right" valign="top">DbSet&lt; <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_entity.html">TaskEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#aca59a285e13412606388a3592d137560">Tasks</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aca59a285e13412606388a3592d137560 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт сущности задачи.  <br /></td></tr>
+<tr class="separator:aca59a285e13412606388a3592d137560 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d6575102d3e23462704c3f61d845b09 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_a5d6575102d3e23462704c3f61d845b09"><td class="memItemLeft" align="right" valign="top">DbSet&lt; <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_metadata_entity.html">MetadataEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#a5d6575102d3e23462704c3f61d845b09">Metadata</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5d6575102d3e23462704c3f61d845b09 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт сущности метаданных.  <br /></td></tr>
+<tr class="separator:a5d6575102d3e23462704c3f61d845b09 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b5964b6d3efb82317400c625b03fb7 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_aa9b5964b6d3efb82317400c625b03fb7"><td class="memItemLeft" align="right" valign="top">DbSet&lt; <a class="el" href="class_view_model_1_1_implementations_1_1_sessions_1_1_database_1_1_entities_1_1_tag_entity.html">TagEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#aa9b5964b6d3efb82317400c625b03fb7">Tags</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa9b5964b6d3efb82317400c625b03fb7 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт сущности тега.  <br /></td></tr>
+<tr class="separator:aa9b5964b6d3efb82317400c625b03fb7 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad196a597ed49b1522ff64cfb2356b6a5 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_ad196a597ed49b1522ff64cfb2356b6a5"><td class="memItemLeft" align="right" valign="top">DbSet&lt; <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_composite_entity.html">TaskCompositeEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#ad196a597ed49b1522ff64cfb2356b6a5">TaskComposites</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad196a597ed49b1522ff64cfb2356b6a5 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт сущности составной задачи.  <br /></td></tr>
+<tr class="separator:ad196a597ed49b1522ff64cfb2356b6a5 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17820a8843592573b4db4648011cca2 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_ad17820a8843592573b4db4648011cca2"><td class="memItemLeft" align="right" valign="top">DbSet&lt; <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html">TaskElementEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#ad17820a8843592573b4db4648011cca2">TaskElements</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ad17820a8843592573b4db4648011cca2 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт сущности элементарной задачи.  <br /></td></tr>
+<tr class="separator:ad17820a8843592573b4db4648011cca2 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf000df34bc22c059b0835a3a64049e9 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context" id="r_acf000df34bc22c059b0835a3a64049e9"><td class="memItemLeft" align="right" valign="top">DbSet&lt; <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_time_interval_entity.html">TimeIntervalEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html#acf000df34bc22c059b0835a3a64049e9">TimeIntervals</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:acf000df34bc22c059b0835a3a64049e9 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт сущности временного интерала.  <br /></td></tr>
+<tr class="separator:acf000df34bc22c059b0835a3a64049e9 inherit properties_class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс контекста базы данных SQLite. </p>
+<p>Наследует <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_base_db_context.html" title="Базовый класс контекста базы данных.">BaseDbContext</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_sqlite_db_context_8cs_source.html">SqliteDbContext.cs</a> строка <a class="el" href="_sqlite_db_context_8cs_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aa3ad323a454232cc575f4b2221473d61" name="aa3ad323a454232cc575f4b2221473d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ad323a454232cc575f4b2221473d61">&#9670;&#160;</a></span>SqliteDbContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext.SqliteDbContext </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>connectionString</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт экземпляр класса <a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_db_contexts_1_1_sqlite_db_context.html" title="Класс контекста базы данных SQLite.">SqliteDbContext</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>Строка подключения.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_sqlite_db_context_8cs_source.html">SqliteDbContext.cs</a> строка <a class="el" href="_sqlite_db_context_8cs_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a8e648418d90aafc6fd0f46df974f4109" name="a8e648418d90aafc6fd0f46df974f4109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e648418d90aafc6fd0f46df974f4109">&#9670;&#160;</a></span>OnConfiguring()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void ViewModel.Implementations.AppStates.Sessions.Database.DbContexts.SqliteDbContext.OnConfiguring </td>
+          <td>(</td>
+          <td class="paramtype">DbContextOptionsBuilder</td>          <td class="paramname"><span class="paramname"><em>optionsBuilder</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">См. определение в файле <a class="el" href="_sqlite_db_context_8cs_source.html">SqliteDbContext.cs</a> строка <a class="el" href="_sqlite_db_context_8cs_source.html#l00020">20</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

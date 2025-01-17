@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/ViewModels/BaseViewModel.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_78fbab1a687ba045d6948e8d6955bb34.html">ViewModels</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">BaseViewModel.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.Collections.ObjectModel;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Reactive.Linq;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>ReactiveUI;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_view_models.html">ViewModel.ViewModels</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html">   14</a></span><span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_function" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a69231d42278c8c78344619920176f297">BaseViewModel</a> : ReactiveObject, IActivatableViewModel</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">   22</a></span>    <span class="keyword">protected</span> readonly IObservable&lt;bool&gt; <a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">_modalsObservable</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">private</span> ObservableCollection&lt;BaseViewModel&gt; _dialogs = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span> ObservableCollection&lt;BaseViewModel&gt; _modals = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a8c420b3613497c8ee3f85f17a3bc0e92">   37</a></span>    <span class="keyword">public</span> ObservableCollection&lt;BaseViewModel&gt; <a class="code hl_property" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a8c420b3613497c8ee3f85f17a3bc0e92">Dialogs</a> =&gt; _dialogs;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a056ed542cc46b759c996f7dfbb158951">   42</a></span>    <span class="keyword">public</span> ObservableCollection&lt;BaseViewModel&gt; <a class="code hl_property" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a056ed542cc46b759c996f7dfbb158951">Modals</a> =&gt; _modals;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a7a321c821982441936102421af28f04b">   47</a></span>    <span class="keyword">public</span> ViewModelActivator <a class="code hl_property" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a7a321c821982441936102421af28f04b">Activator</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; } = <span class="keyword">new</span> ViewModelActivator();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a69231d42278c8c78344619920176f297">   52</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_view_models_1_1_base_view_model.html#a69231d42278c8c78344619920176f297">BaseViewModel</a>()</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">_modalsObservable</a> = this.WhenAnyValue(x =&gt; x._modals).Select(x =&gt; x.Count == 0);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#abf4dcfaeaf3bd1c6dacd67b97aa5894c">   65</a></span>    <span class="keyword">public</span> async Task&lt;R&gt; <a class="code hl_function" href="class_view_model_1_1_view_models_1_1_base_view_model.html#abf4dcfaeaf3bd1c6dacd67b97aa5894c">AddDialog&lt;A, R&gt;</a>(BaseDialogViewModel&lt;A, R&gt; dialog, A args)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _dialogs.Add(dialog);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        var result = await dialog.<a class="code hl_function" href="class_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g.html#a849643778c972a2299bb0e26594903a8">Invoke</a>(<span class="keyword">this</span>, args);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        _dialogs.Remove(dialog);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_base_view_model.html#ad69b0cef290d967b245d5c464eb3a77b">   81</a></span>    <span class="keyword">public</span> async Task&lt;R&gt; <a class="code hl_function" href="class_view_model_1_1_view_models_1_1_base_view_model.html#ad69b0cef290d967b245d5c464eb3a77b">AddModal&lt;A, R&gt;</a>(BaseDialogViewModel&lt;A, R&gt; modal, A args)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        _modals.Add(modal);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        var result = await AddDialog(modal, args);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        _modals.Remove(modal);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+</div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g_html_a849643778c972a2299bb0e26594903a8"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_dialog_view_model-2-g.html#a849643778c972a2299bb0e26594903a8">ViewModel.ViewModels.BaseDialogViewModel-2-g.Invoke</a></div><div class="ttdeci">async Task&lt; R &gt; Invoke(BaseViewModel parent, A args)</div><div class="ttdoc">Вызывает диалог.</div><div class="ttdef"><b>Определения</b> <a href="_base_dialog_view_model_8cs_source.html#l00041">BaseDialogViewModel.cs:41</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_a056ed542cc46b759c996f7dfbb158951"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#a056ed542cc46b759c996f7dfbb158951">ViewModel.ViewModels.BaseViewModel.Modals</a></div><div class="ttdeci">ObservableCollection&lt; BaseViewModel &gt; Modals</div><div class="ttdoc">Возвращает модальные диалоги.</div><div class="ttdef"><b>Определения</b> <a href="#l00042">BaseViewModel.cs:42</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_a69231d42278c8c78344619920176f297"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#a69231d42278c8c78344619920176f297">ViewModel.ViewModels.BaseViewModel.BaseViewModel</a></div><div class="ttdeci">BaseViewModel()</div><div class="ttdoc">Создаёт экемпляр класса BaseViewModel по умолчанию.</div><div class="ttdef"><b>Определения</b> <a href="#l00052">BaseViewModel.cs:52</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_a7a321c821982441936102421af28f04b"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#a7a321c821982441936102421af28f04b">ViewModel.ViewModels.BaseViewModel.Activator</a></div><div class="ttdeci">ViewModelActivator Activator</div><div class="ttdoc">Возвращает активатор.</div><div class="ttdef"><b>Определения</b> <a href="#l00047">BaseViewModel.cs:47</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_a8c420b3613497c8ee3f85f17a3bc0e92"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#a8c420b3613497c8ee3f85f17a3bc0e92">ViewModel.ViewModels.BaseViewModel.Dialogs</a></div><div class="ttdeci">ObservableCollection&lt; BaseViewModel &gt; Dialogs</div><div class="ttdoc">Возвращает диалоги.</div><div class="ttdef"><b>Определения</b> <a href="#l00037">BaseViewModel.cs:37</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_abf4dcfaeaf3bd1c6dacd67b97aa5894c"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#abf4dcfaeaf3bd1c6dacd67b97aa5894c">ViewModel.ViewModels.BaseViewModel.AddDialog&lt; A, R &gt;</a></div><div class="ttdeci">async Task&lt; R &gt; AddDialog&lt; A, R &gt;(BaseDialogViewModel&lt; A, R &gt; dialog, A args)</div><div class="ttdoc">Добавляет и вызывает диалог.</div><div class="ttdef"><b>Определения</b> <a href="#l00065">BaseViewModel.cs:65</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_ad69b0cef290d967b245d5c464eb3a77b"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#ad69b0cef290d967b245d5c464eb3a77b">ViewModel.ViewModels.BaseViewModel.AddModal&lt; A, R &gt;</a></div><div class="ttdeci">async Task&lt; R &gt; AddModal&lt; A, R &gt;(BaseDialogViewModel&lt; A, R &gt; modal, A args)</div><div class="ttdoc">Добавляет и вызывает модальный диалог.</div><div class="ttdef"><b>Определения</b> <a href="#l00081">BaseViewModel.cs:81</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_afb3137b9e1d90cb27fda5c41919e54dc"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">ViewModel.ViewModels.BaseViewModel._modalsObservable</a></div><div class="ttdeci">readonly IObservable&lt; bool &gt; _modalsObservable</div><div class="ttdoc">Наблюдатель, который отслеживает модальные диалоги.</div><div class="ttdef"><b>Определения</b> <a href="#l00022">BaseViewModel.cs:22</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_view_models_html"><div class="ttname"><a href="namespace_view_model_1_1_view_models.html">ViewModel.ViewModels</a></div><div class="ttdef"><b>Определения</b> <a href="_base_dialog_view_model_8cs_source.html#l00001">BaseDialogViewModel.cs:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

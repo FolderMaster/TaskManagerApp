@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/AppStates/Sessions/Database/Domains/TaskElementDomain.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_0cf4ad06004833fc07db0371329ef61b.html">AppStates</a></li><li class="navelem"><a class="el" href="dir_ce97c7a29c1bdd64923f45a72e596fc7.html">Sessions</a></li><li class="navelem"><a class="el" href="dir_285ae796e7bc117c678697254acdb3f8.html">Database</a></li><li class="navelem"><a class="el" href="dir_5ca1e38935badd940dcc5f644f6ad55e.html">Domains</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TaskElementDomain.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_tasks.html">Model.Tasks</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">   14</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">TaskElementDomain</a> : <a class="code hl_class" href="class_model_1_1_tasks_1_1_task_element.html">TaskElement</a>, <a class="code hl_interface" href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html">IDomain</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a37632d92dae0dcec43592a33c1998361">   19</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html">TaskElementEntity</a> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a37632d92dae0dcec43592a33c1998361">Entity</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a2189152f11fbca582c39b9e40c40c266">   22</a></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a2189152f11fbca582c39b9e40c40c266">EntityId</a> =&gt; <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a37632d92dae0dcec43592a33c1998361">Entity</a>.Task;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#acd2c53d912bb5845fe5309a08e844504">   25</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">object</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#acd2c53d912bb5845fe5309a08e844504">Clone</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            var result = <span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">TaskElementDomain</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Difficult</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Difficult</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Priority</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Priority</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Deadline</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Deadline</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Status</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Status</a>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Progress</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Progress</a>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">PlannedTime</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">PlannedTime</a>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">SpentTime</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">SpentTime</a>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">PlannedReal</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">PlannedReal</a>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">ExecutedReal</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">ExecutedReal</a>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a37632d92dae0dcec43592a33c1998361">Entity</a> = <span class="keyword">new</span>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                    Task = <span class="keyword">new</span>()</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            };</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">Metadata</a> is ICloneable cloneable)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                result.Metadata = cloneable.Clone();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            result.Entity.Task.TaskElement = result.Entity;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html">Model.Tasks.TaskElement</a></div><div class="ttdoc">Класс элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00015">TaskElement.cs:16</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a0ad8f409ec1c1e796982233e14514594"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">Model.Tasks.TaskElement.PlannedReal</a></div><div class="ttdeci">double PlannedReal</div><div class="ttdoc">Возвращает и задаёт запланированный реальный показатель.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00144">TaskElement.cs:145</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a0f6eabd2155301241f3ab184c5b33659"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Model.Tasks.TaskElement.Status</a></div><div class="ttdeci">TaskStatus Status</div><div class="ttdoc">Возвращает и задаёт статус.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00113">TaskElement.cs:114</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a2809bec528459bccfb28c36e60254f2e"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">Model.Tasks.TaskElement.Metadata</a></div><div class="ttdeci">object? Metadata</div><div class="ttdoc">Возращает и задаёт метаданные.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00085">TaskElement.cs:86</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a3f3284496c628b05b5aa6fc65317647f"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Model.Tasks.TaskElement.Deadline</a></div><div class="ttdeci">DateTime? Deadline</div><div class="ttdoc">Возвращает и задаёт срок.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00106">TaskElement.cs:107</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a5e266a1913e5612feee84fc2cb75240b"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Model.Tasks.TaskElement.Progress</a></div><div class="ttdeci">double Progress</div><div class="ttdoc">Возвращает и задаёт прогресс.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00123">TaskElement.cs:124</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a70b1bd0176e513c4da55c779eb0f1000"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">Model.Tasks.TaskElement.ExecutedReal</a></div><div class="ttdeci">double ExecutedReal</div><div class="ttdoc">Возвращает и задаёт выполненный реальный показатель.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00151">TaskElement.cs:152</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a785018ca1666e068e399ea6807d08a45"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Model.Tasks.TaskElement.Difficult</a></div><div class="ttdeci">int Difficult</div><div class="ttdoc">Возвращает и задаёт сложность.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00092">TaskElement.cs:93</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_abfdbd73015e257177af1fcbf42783344"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">Model.Tasks.TaskElement.PlannedTime</a></div><div class="ttdeci">TimeSpan PlannedTime</div><div class="ttdoc">Возвращает и задаёт запланированное время.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00130">TaskElement.cs:131</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_ad8f7736c30adc97f8613951ec7f7cb9c"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">Model.Tasks.TaskElement.SpentTime</a></div><div class="ttdeci">TimeSpan SpentTime</div><div class="ttdoc">Возвращает и задаёт потраченное время.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00137">TaskElement.cs:138</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_af5fe40ccfe60c5867d5d51e5b2fbfdc9"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Model.Tasks.TaskElement.Priority</a></div><div class="ttdeci">int Priority</div><div class="ttdoc">Возвращает и задаёт приоритет.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_8cs_source.html#l00099">TaskElement.cs:100</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskElementDomain</a></div><div class="ttdoc">Класс домменной модели элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="#l00014">TaskElementDomain.cs:15</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain_html_a2189152f11fbca582c39b9e40c40c266"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a2189152f11fbca582c39b9e40c40c266">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskElementDomain.EntityId</a></div><div class="ttdeci">object EntityId</div><div class="ttdoc">Возвращает индетификатор связанной сущности.</div><div class="ttdef"><b>Определения</b> <a href="#l00022">TaskElementDomain.cs:22</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain_html_a37632d92dae0dcec43592a33c1998361"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#a37632d92dae0dcec43592a33c1998361">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskElementDomain.Entity</a></div><div class="ttdeci">TaskElementEntity Entity</div><div class="ttdoc">Возвращает и задаёт связанную сущность.</div><div class="ttdef"><b>Определения</b> <a href="#l00019">TaskElementDomain.cs:19</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain_html_acd2c53d912bb5845fe5309a08e844504"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_element_domain.html#acd2c53d912bb5845fe5309a08e844504">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskElementDomain.Clone</a></div><div class="ttdeci">override object Clone()</div><div class="ttdef"><b>Определения</b> <a href="#l00025">TaskElementDomain.cs:25</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_element_entity.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskElementEntity</a></div><div class="ttdoc">Класс сущности элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_element_entity_8cs_source.html#l00013">TaskElementEntity.cs:14</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain_html"><div class="ttname"><a href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains.IDomain</a></div><div class="ttdoc">Индерфейс доменной модели.</div><div class="ttdef"><b>Определения</b> <a href="_i_domain_8cs_source.html#l00006">IDomain.cs:7</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_tasks_html"><div class="ttname"><a href="namespace_model_1_1_tasks.html">Model.Tasks</a></div><div class="ttdef"><b>Определения</b> <a href="_task_composite_8cs_source.html#l00007">TaskComposite.cs:8</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains</a></div><div class="ttdef"><b>Определения</b> <a href="_i_domain_8cs_source.html#l00001">IDomain.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities</a></div><div class="ttdef"><b>Определения</b> <a href="_metadata_entity_8cs_source.html#l00006">MetadataEntity.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

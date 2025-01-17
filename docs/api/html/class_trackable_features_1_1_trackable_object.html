@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Класс TrackableFeatures.TrackableObject</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_trackable_features.html">TrackableFeatures</a></li><li class="navelem"><a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableObject</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="#events">События</a> &#124;
+<a href="class_trackable_features_1_1_trackable_object-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс TrackableFeatures.TrackableObject</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:TrackableFeatures.TrackableObject:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_trackable_features_1_1_trackable_object.png" usemap="#TrackableFeatures.TrackableObject_map" alt=""/>
+  <map id="TrackableFeatures.TrackableObject_map" name="TrackableFeatures.TrackableObject_map">
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html" title="Абстрактный класс базовой оценки модели обучения методом кросс-валидации." alt="MachineLearning.LearningEvaluators.BaseCrossValidationLearningEvaluator" shape="rect" coords="742,112,1227,136"/>
+<area href="class_machine_learning_1_1_learning_models_1_1_k_mean_learning_model.html" title="Класс модель обучения кластеризации с алгоритмом K-средних." alt="MachineLearning.LearningModels.KMeanLearningModel" shape="rect" coords="742,168,1227,192"/>
+<area href="class_machine_learning_1_1_learning_models_1_1_k_nearest_neighbors_model.html" title="Класс модель обучения классификации с алгоритмом K-ближащих соседей." alt="MachineLearning.LearningModels.KNearestNeighborsModel" shape="rect" coords="742,224,1227,248"/>
+<area href="class_model_1_1_tasks_1_1_task_element.html" title="Класс элементарной задачи." alt="Model.Tasks.TaskElement" shape="rect" coords="742,280,1227,304"/>
+<area href="class_model_1_1_times_1_1_time_interval_element.html" title="Класс элементарного временного интервала." alt="Model.Times.TimeIntervalElement" shape="rect" coords="742,336,1227,360"/>
+<area href="class_trackable_features_1_1_trackable_collection-1-g.html" title="Базовый класс коллекции, предоставляющий поддержку отслеживания изменений в коллекции." alt="TrackableFeatures.TrackableCollection&lt; T &gt;" shape="rect" coords="742,392,1227,416"/>
+<area href="class_view_1_1_implementations_1_1_avalonia_localization_manager.html" title="Класс менеджера локализации Avalonia." alt="View.Implementations.AvaloniaLocalizationManager" shape="rect" coords="742,448,1227,472"/>
+<area href="class_view_1_1_implementations_1_1_avalonia_theme_manager.html" title="Класс менеджер тем Avalonia." alt="View.Implementations.AvaloniaThemeManager" shape="rect" coords="742,504,1227,528"/>
+<area href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_db_session.html" title="Класс сессии базы данных." alt="ViewModel.Implementations.AppStates.Sessions.DbSession" shape="rect" coords="742,560,1227,584"/>
+<area href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html" title="Класс настроек приложения." alt="ViewModel.Implementations.AppStates.Settings.AppSettings" shape="rect" coords="742,616,1227,640"/>
+<area href="class_view_model_1_1_implementations_1_1_data_managers_1_1_editors_1_1_time_interval_elements_editor_proxy.html" title="Класс заместитель элементарного временного интервала для редактирования." alt="ViewModel.Implementations.DataManagers.Editors.TimeIntervalElementsEditorProxy" shape="rect" coords="742,672,1227,696"/>
+<area href="class_view_model_1_1_implementations_1_1_data_managers_1_1_task_element_creator_proxy.html" alt="ViewModel.Implementations.DataManagers.TaskElementCreatorProxy" shape="rect" coords="742,728,1227,752"/>
+<area href="class_view_model_1_1_technicals_1_1_app_configuration.html" title="Класс конфигурации приложения." alt="ViewModel.Technicals.AppConfiguration" shape="rect" coords="742,784,1227,808"/>
+<area href="class_view_model_1_1_technicals_1_1_task_metadata.html" title="Класс метаданных задачи." alt="ViewModel.Technicals.TaskMetadata" shape="rect" coords="742,840,1227,864"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a831e8df091b1a713a68063d3186c5ccc" id="r_a831e8df091b1a713a68063d3186c5ccc"><td class="memItemLeft" align="right" valign="top">IEnumerable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a831e8df091b1a713a68063d3186c5ccc">GetErrors</a> (string? propertyName)</td></tr>
+<tr class="separator:a831e8df091b1a713a68063d3186c5ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a45f2595df7fda231e30851f424a74caa" id="r_a45f2595df7fda231e30851f424a74caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f2595df7fda231e30851f424a74caa">UpdateProperty&lt; T &gt;</a> (ref T field, T newValue, Action&lt; T, T &gt;? action=null, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a45f2595df7fda231e30851f424a74caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.  <br /></td></tr>
+<tr class="separator:a45f2595df7fda231e30851f424a74caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72237b1c20e0283971bb013a2ff74c79" id="r_a72237b1c20e0283971bb013a2ff74c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72237b1c20e0283971bb013a2ff74c79">UpdateProperty&lt; T &gt;</a> (Func&lt; T &gt; getProperty, Action&lt; T &gt; setProperty, T newValue, Action&lt; T, T &gt;? action=null, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a72237b1c20e0283971bb013a2ff74c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.  <br /></td></tr>
+<tr class="separator:a72237b1c20e0283971bb013a2ff74c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24c222089d5cbc08d23c2414de172c5" id="r_ae24c222089d5cbc08d23c2414de172c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae24c222089d5cbc08d23c2414de172c5">AddError</a> (object error, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:ae24c222089d5cbc08d23c2414de172c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет ошибку для свойства.  <br /></td></tr>
+<tr class="separator:ae24c222089d5cbc08d23c2414de172c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81efddef33f1da259ece07ef0c6f55e4" id="r_a81efddef33f1da259ece07ef0c6f55e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81efddef33f1da259ece07ef0c6f55e4">ClearErrors</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a81efddef33f1da259ece07ef0c6f55e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все ошибки для свойства.  <br /></td></tr>
+<tr class="separator:a81efddef33f1da259ece07ef0c6f55e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4a7a448354eb2db05abe90f095e045" id="r_a0f4a7a448354eb2db05abe90f095e045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f4a7a448354eb2db05abe90f095e045">ClearAllErrors</a> ()</td></tr>
+<tr class="memdesc:a0f4a7a448354eb2db05abe90f095e045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все ошибки для всех свойств.  <br /></td></tr>
+<tr class="separator:a0f4a7a448354eb2db05abe90f095e045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2607800497f6c7b3f13ef5dfd8527b14" id="r_a2607800497f6c7b3f13ef5dfd8527b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a2607800497f6c7b3f13ef5dfd8527b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a> для свойства.  <br /></td></tr>
+<tr class="separator:a2607800497f6c7b3f13ef5dfd8527b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273ad86ca53cef022e7b5e891b6e342d" id="r_a273ad86ca53cef022e7b5e891b6e342d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a273ad86ca53cef022e7b5e891b6e342d">OnErrorsChanged</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a273ad86ca53cef022e7b5e891b6e342d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a> для свойства.  <br /></td></tr>
+<tr class="separator:a273ad86ca53cef022e7b5e891b6e342d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:ad234adf03242c9bc994b74127841a8f3" id="r_ad234adf03242c9bc994b74127841a8f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad234adf03242c9bc994b74127841a8f3">HasErrors</a><code> [get]</code></td></tr>
+<tr class="separator:ad234adf03242c9bc994b74127841a8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
+События</h2></td></tr>
+<tr class="memitem:ad91648414a964db4793c494bd6a76bfd" id="r_ad91648414a964db4793c494bd6a76bfd"><td class="memItemLeft" align="right" valign="top">PropertyChangedEventHandler?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a></td></tr>
+<tr class="separator:ad91648414a964db4793c494bd6a76bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf07c5466d11d36945b9cab57acb96e9" id="r_adf07c5466d11d36945b9cab57acb96e9"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; DataErrorsChangedEventArgs &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a></td></tr>
+<tr class="separator:adf07c5466d11d36945b9cab57acb96e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок. </p>
+<p>Реализует INotifyPropertyChanged и INotifyDataErrorInfo. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00013">13</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="ae24c222089d5cbc08d23c2414de172c5" name="ae24c222089d5cbc08d23c2414de172c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae24c222089d5cbc08d23c2414de172c5">&#9670;&#160;</a></span>AddError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.AddError </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>error</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerMemberName] string</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавляет ошибку для свойства. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>Ошибка.</td></tr>
+    <tr><td class="paramname">propertyName</td><td>Название свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00095">95</a></p>
+
+</div>
+</div>
+<a id="a0f4a7a448354eb2db05abe90f095e045" name="a0f4a7a448354eb2db05abe90f095e045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4a7a448354eb2db05abe90f095e045">&#9670;&#160;</a></span>ClearAllErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.ClearAllErrors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очищает все ошибки для всех свойств. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00132">132</a></p>
+
+</div>
+</div>
+<a id="a81efddef33f1da259ece07ef0c6f55e4" name="a81efddef33f1da259ece07ef0c6f55e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81efddef33f1da259ece07ef0c6f55e4">&#9670;&#160;</a></span>ClearErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.ClearErrors </td>
+          <td>(</td>
+          <td class="paramtype">[CallerMemberName] string</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очищает все ошибки для свойства. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>Название свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00117">117</a></p>
+
+</div>
+</div>
+<a id="a831e8df091b1a713a68063d3186c5ccc" name="a831e8df091b1a713a68063d3186c5ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831e8df091b1a713a68063d3186c5ccc">&#9670;&#160;</a></span>GetErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable TrackableFeatures.TrackableObject.GetErrors </td>
+          <td>(</td>
+          <td class="paramtype">string?</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a id="a273ad86ca53cef022e7b5e891b6e342d" name="a273ad86ca53cef022e7b5e891b6e342d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273ad86ca53cef022e7b5e891b6e342d">&#9670;&#160;</a></span>OnErrorsChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.OnErrorsChanged </td>
+          <td>(</td>
+          <td class="paramtype">[CallerMemberName] string</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывает событие <a class="el" href="#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a> для свойства. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>Название свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00159">159</a></p>
+
+</div>
+</div>
+<a id="a2607800497f6c7b3f13ef5dfd8527b14" name="a2607800497f6c7b3f13ef5dfd8527b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2607800497f6c7b3f13ef5dfd8527b14">&#9670;&#160;</a></span>OnPropertyChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.OnPropertyChanged </td>
+          <td>(</td>
+          <td class="paramtype">[CallerMemberName] string</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывает событие <a class="el" href="#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a> для свойства. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>Название свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00150">150</a></p>
+
+</div>
+</div>
+<a id="a72237b1c20e0283971bb013a2ff74c79" name="a72237b1c20e0283971bb013a2ff74c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72237b1c20e0283971bb013a2ff74c79">&#9670;&#160;</a></span>UpdateProperty&lt; T &gt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.UpdateProperty&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">Func&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>getProperty</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>setProperty</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>newValue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&lt; T, T &gt;?</td>          <td class="paramname"><span class="paramname"><em>action</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerMemberName] string</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">getProperty</td><td>Функция для получения значения свойства.</td></tr>
+    <tr><td class="paramname">setProperty</td><td>Действие для установки значения свойства.</td></tr>
+    <tr><td class="paramname">newValue</td><td>Новое значение свойства.</td></tr>
+    <tr><td class="paramname">action</td><td>Дополнительное действие, выполняемое при изменении свойства. </td></tr>
+    <tr><td class="paramname">propertyName</td><td>Название свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00077">77</a></p>
+
+</div>
+</div>
+<a id="a45f2595df7fda231e30851f424a74caa" name="a45f2595df7fda231e30851f424a74caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f2595df7fda231e30851f424a74caa">&#9670;&#160;</a></span>UpdateProperty&lt; T &gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrackableFeatures.TrackableObject.UpdateProperty&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">ref T</td>          <td class="paramname"><span class="paramname"><em>field</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>newValue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Action&lt; T, T &gt;?</td>          <td class="paramname"><span class="paramname"><em>action</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerMemberName] string</td>          <td class="paramname"><span class="paramname"><em>propertyName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>Ссылка на поле свойства.</td></tr>
+    <tr><td class="paramname">newValue</td><td>Новое значение свойства.</td></tr>
+    <tr><td class="paramname">action</td><td>Дополнительное действие, выполняемое при изменении свойства. </td></tr>
+    <tr><td class="paramname">propertyName</td><td>Название свойства.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00053">53</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="ad234adf03242c9bc994b74127841a8f3" name="ad234adf03242c9bc994b74127841a8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad234adf03242c9bc994b74127841a8f3">&#9670;&#160;</a></span>HasErrors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TrackableFeatures.TrackableObject.HasErrors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Cобытия</h2>
+<a id="adf07c5466d11d36945b9cab57acb96e9" name="adf07c5466d11d36945b9cab57acb96e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf07c5466d11d36945b9cab57acb96e9">&#9670;&#160;</a></span>ErrorsChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;DataErrorsChangedEventArgs&gt;? TrackableFeatures.TrackableObject.ErrorsChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="ad91648414a964db4793c494bd6a76bfd" name="ad91648414a964db4793c494bd6a76bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad91648414a964db4793c494bd6a76bfd">&#9670;&#160;</a></span>PropertyChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PropertyChangedEventHandler? TrackableFeatures.TrackableObject.PropertyChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+
+<p class="definition">См. определение в файле <a class="el" href="_trackable_object_8cs_source.html">TrackableObject.cs</a> строка <a class="el" href="_trackable_object_8cs_source.html#l00024">24</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/Model/Tasks/TaskComposite.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_a7ee497c14b2f6306ae424de4e268f3f.html">Model</a></li><li class="navelem"><a class="el" href="dir_e5eea9b41bf1d0573d9a6cddbc4468c4.html">Tasks</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TaskComposite.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.ComponentModel;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_trackable_features.html">TrackableFeatures</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespace_model_1_1_tasks.html">    7</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_model_1_1_tasks.html">Model.Tasks</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html">   16</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">TaskComposite</a> : TrackableCollection&lt;ITask&gt;, <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>, ICloneable</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span> <span class="keyword">static</span> readonly IEnumerable&lt;string&gt; _changedPropertyNames = [ nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#ac44cac245392657cc863cafd11ff500a">Difficult</a>),</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#ae7f8d3464839f3f62795eb356c86dcb7">Priority</a>), nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a3bcb15e9eaf40453ca93faee96e4853d">Status</a>), nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a06611b8426e3644493d6d76a78636168">Deadline</a>), nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a269a8c84bb8de6922a346f4a7110c8cf">Progress</a>),</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a8d1f7118b82473664f772c9d6f45ccda">PlannedTime</a>), nameof(<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a208bfe8892e629151c2b09e60b1c3d8e">SpentTime</a>) ];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? _parentTask;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">private</span> <span class="keywordtype">object</span>? _metadata;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a66b5b13651ad361c70756d60d1cfce59">   36</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a66b5b13651ad361c70756d60d1cfce59">ParentTask</a></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keyword">get</span> =&gt; _parentTask;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _parentTask, value);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">   43</a></span>        <span class="keyword">public</span> <span class="keywordtype">object</span>? <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Metadata</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keyword">get</span> =&gt; _metadata;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _metadata, value);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#ac44cac245392657cc863cafd11ff500a">   50</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#ac44cac245392657cc863cafd11ff500a">Difficult</a> =&gt; <a class="code hl_property" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">Count</a> &gt; 0 ? this.Max(x =&gt; x.Difficult) : 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#ae7f8d3464839f3f62795eb356c86dcb7">   53</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#ae7f8d3464839f3f62795eb356c86dcb7">Priority</a> =&gt; <a class="code hl_property" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">Count</a> &gt; 0 ? this.Max(y =&gt; y.Priority) : 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a3bcb15e9eaf40453ca93faee96e4853d">   56</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a3bcb15e9eaf40453ca93faee96e4853d">Status</a> =&gt; <a class="code hl_property" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">Count</a> &gt; 0 ? this.Min(x =&gt; x.Status) : <a class="code hl_enumeration" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a>.<a class="code hl_enumvalue" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0a4dc96e9e1d76b2a716920fa41c1630fa">Planned</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a06611b8426e3644493d6d76a78636168">   59</a></span>        <span class="keyword">public</span> DateTime? <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a06611b8426e3644493d6d76a78636168">Deadline</a> =&gt; <a class="code hl_property" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">Count</a> &gt; 0 ? this.Max(x =&gt; x.Deadline) : null;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a269a8c84bb8de6922a346f4a7110c8cf">   62</a></span>        <span class="keyword">public</span> <span class="keywordtype">double</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a269a8c84bb8de6922a346f4a7110c8cf">Progress</a> =&gt; <a class="code hl_property" href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">Count</a> &gt; 0 ? this.Sum(i =&gt; i.Progress) / this.Count : 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a8d1f7118b82473664f772c9d6f45ccda">   65</a></span>        <span class="keyword">public</span> TimeSpan <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a8d1f7118b82473664f772c9d6f45ccda">PlannedTime</a> =&gt; this.Aggregate(TimeSpan.Zero,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            (sum, interval) =&gt; sum + interval.PlannedTime);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a208bfe8892e629151c2b09e60b1c3d8e">   69</a></span>        <span class="keyword">public</span> TimeSpan <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a208bfe8892e629151c2b09e60b1c3d8e">SpentTime</a> =&gt; this.Aggregate(TimeSpan.Zero,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            (sum, interval) =&gt; sum + interval.SpentTime);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">   76</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">TaskComposite</a>(IEnumerable&lt;ITask&gt;? subtasks = <span class="keyword">null</span>) : base(subtasks) { }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a71be73034647b5698ff2bd00df797d1c">   81</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a71be73034647b5698ff2bd00df797d1c">TaskComposite</a>() : this(null) { }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#acc4a5923516ba466ac1599793cc2ce52">   84</a></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">object</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#acc4a5923516ba466ac1599793cc2ce52">Clone</a>()</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            var copyList = <span class="keyword">new</span> List&lt;ITask&gt;();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">foreach</span> (var task <span class="keywordflow">in</span> <span class="keyword">this</span>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <span class="keywordflow">if</span> (task is ICloneable taskCloneable)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    copyList.Add((<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a>)taskCloneable.Clone());</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            var result = <span class="keyword">new</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a71be73034647b5698ff2bd00df797d1c">TaskComposite</a>(copyList);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Metadata</a> is ICloneable metadataCloneable)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                result.Metadata = metadataCloneable.Clone();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a6c3a9d0eac4aab1d554bcb9343225f58">  103</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a6c3a9d0eac4aab1d554bcb9343225f58">OnAddedItem</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> task, <span class="keywordtype">bool</span> arePropertiesUpdate = <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            task.ParentTask = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">if</span> (task is INotifyPropertyChanged notify)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                notify.PropertyChanged += Notify_PropertyChanged;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">if</span> (arePropertiesUpdate)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">foreach</span> (var propertyName <span class="keywordflow">in</span> _changedPropertyNames)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                    <a class="code hl_function" href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a>(propertyName);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_composite.html#a6b8df5511dcf571e13a73c6a4c8ef256">  120</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a6b8df5511dcf571e13a73c6a4c8ef256">OnRemovedItem</a>(<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a> task)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            task.ParentTask = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keywordflow">if</span> (task is INotifyPropertyChanged notify)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                notify.PropertyChanged -= Notify_PropertyChanged;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">foreach</span> (var propertyName <span class="keywordflow">in</span> _changedPropertyNames)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <a class="code hl_function" href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a>(propertyName);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> Notify_PropertyChanged(<span class="keywordtype">object</span>? sender, PropertyChangedEventArgs e)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">if</span> (_changedPropertyNames.Contains(e.PropertyName))</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <a class="code hl_function" href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a>(e.PropertyName);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+</div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a06611b8426e3644493d6d76a78636168"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a06611b8426e3644493d6d76a78636168">Model.Tasks.TaskComposite.Deadline</a></div><div class="ttdeci">DateTime? Deadline</div><div class="ttdoc">Возращает срок.</div><div class="ttdef"><b>Определения</b> <a href="#l00059">TaskComposite.cs:59</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a208bfe8892e629151c2b09e60b1c3d8e"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a208bfe8892e629151c2b09e60b1c3d8e">Model.Tasks.TaskComposite.SpentTime</a></div><div class="ttdeci">TimeSpan SpentTime</div><div class="ttdoc">Возращает потраченное время.</div><div class="ttdef"><b>Определения</b> <a href="#l00069">TaskComposite.cs:69</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a269a8c84bb8de6922a346f4a7110c8cf"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a269a8c84bb8de6922a346f4a7110c8cf">Model.Tasks.TaskComposite.Progress</a></div><div class="ttdeci">double Progress</div><div class="ttdoc">Возращает прогресс.</div><div class="ttdef"><b>Определения</b> <a href="#l00062">TaskComposite.cs:62</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a3bcb15e9eaf40453ca93faee96e4853d"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a3bcb15e9eaf40453ca93faee96e4853d">Model.Tasks.TaskComposite.Status</a></div><div class="ttdeci">TaskStatus Status</div><div class="ttdoc">Возращает статус.</div><div class="ttdef"><b>Определения</b> <a href="#l00056">TaskComposite.cs:56</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a3c49fd80277764cbb8e3d8619097f604"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Model.Tasks.TaskComposite.Metadata</a></div><div class="ttdeci">object? Metadata</div><div class="ttdoc">Возращает и задаёт метаданные.</div><div class="ttdef"><b>Определения</b> <a href="#l00043">TaskComposite.cs:44</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a415fe997d47b3a85c61371c9a825db27"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">Model.Tasks.TaskComposite.TaskComposite</a></div><div class="ttdeci">TaskComposite(IEnumerable&lt; ITask &gt;? subtasks=null)</div><div class="ttdoc">Создаёт экземпляр класса TaskComposite.</div><div class="ttdef"><b>Определения</b> <a href="#l00076">TaskComposite.cs:76</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a66b5b13651ad361c70756d60d1cfce59"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a66b5b13651ad361c70756d60d1cfce59">Model.Tasks.TaskComposite.ParentTask</a></div><div class="ttdeci">ITaskComposite? ParentTask</div><div class="ttdoc">Возращает и задаёт родительскую задачу.</div><div class="ttdef"><b>Определения</b> <a href="#l00036">TaskComposite.cs:37</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a6b8df5511dcf571e13a73c6a4c8ef256"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a6b8df5511dcf571e13a73c6a4c8ef256">Model.Tasks.TaskComposite.OnRemovedItem</a></div><div class="ttdeci">override void OnRemovedItem(ITask task)</div><div class="ttdef"><b>Определения</b> <a href="#l00120">TaskComposite.cs:120</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a6c3a9d0eac4aab1d554bcb9343225f58"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a6c3a9d0eac4aab1d554bcb9343225f58">Model.Tasks.TaskComposite.OnAddedItem</a></div><div class="ttdeci">override void OnAddedItem(ITask task, bool arePropertiesUpdate=true)</div><div class="ttdef"><b>Определения</b> <a href="#l00103">TaskComposite.cs:103</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a71be73034647b5698ff2bd00df797d1c"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a71be73034647b5698ff2bd00df797d1c">Model.Tasks.TaskComposite.TaskComposite</a></div><div class="ttdeci">TaskComposite()</div><div class="ttdoc">Создаёт экземпляр класса TaskComposite по умолчанию.</div><div class="ttdef"><b>Определения</b> <a href="#l00081">TaskComposite.cs:81</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a8d1f7118b82473664f772c9d6f45ccda"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a8d1f7118b82473664f772c9d6f45ccda">Model.Tasks.TaskComposite.PlannedTime</a></div><div class="ttdeci">TimeSpan PlannedTime</div><div class="ttdoc">Возращает запланированное время.</div><div class="ttdef"><b>Определения</b> <a href="#l00065">TaskComposite.cs:65</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_ac44cac245392657cc863cafd11ff500a"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#ac44cac245392657cc863cafd11ff500a">Model.Tasks.TaskComposite.Difficult</a></div><div class="ttdeci">int Difficult</div><div class="ttdoc">Возращает сложность.</div><div class="ttdef"><b>Определения</b> <a href="#l00050">TaskComposite.cs:50</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_acc4a5923516ba466ac1599793cc2ce52"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#acc4a5923516ba466ac1599793cc2ce52">Model.Tasks.TaskComposite.Clone</a></div><div class="ttdeci">virtual object Clone()</div><div class="ttdef"><b>Определения</b> <a href="#l00084">TaskComposite.cs:84</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_ae7f8d3464839f3f62795eb356c86dcb7"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#ae7f8d3464839f3f62795eb356c86dcb7">Model.Tasks.TaskComposite.Priority</a></div><div class="ttdeci">int Priority</div><div class="ttdoc">Возращает приоритет.</div><div class="ttdef"><b>Определения</b> <a href="#l00053">TaskComposite.cs:53</a></div></div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_collection-1-g_html_aa9614a30d159a4ae8bdfd6836d131b21"><div class="ttname"><a href="class_trackable_features_1_1_trackable_collection-1-g.html#aa9614a30d159a4ae8bdfd6836d131b21">TrackableFeatures.TrackableCollection-1-g.Count</a></div><div class="ttdeci">int Count</div><div class="ttdef"><b>Определения</b> <a href="_trackable_collection_8cs_source.html#l00040">TrackableCollection.cs:40</a></div></div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html_a2607800497f6c7b3f13ef5dfd8527b14"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">TrackableFeatures.TrackableObject.OnPropertyChanged</a></div><div class="ttdeci">void OnPropertyChanged([CallerMemberName] string propertyName=&quot;&quot;)</div><div class="ttdoc">Вызывает событие PropertyChanged для свойства.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00150">TrackableObject.cs:150</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_composite_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_composite.html">Model.Interfaces.ITaskComposite</a></div><div class="ttdoc">Интерфейс составной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_composite_8cs_source.html#l00011">ITaskComposite.cs:11</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task.html">Model.Interfaces.ITask</a></div><div class="ttdoc">Интерфейс задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00006">ITask.cs:7</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_tasks_html"><div class="ttname"><a href="namespace_model_1_1_tasks.html">Model.Tasks</a></div><div class="ttdef"><b>Определения</b> <a href="#l00007">TaskComposite.cs:8</a></div></div>
+<div class="ttc" id="anamespace_model_html_a88addc5c316b0c6198a1a5f9238f20a0"><div class="ttname"><a href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">Model.TaskStatus</a></div><div class="ttdeci">TaskStatus</div><div class="ttdoc">Перечисление статусов задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_status_8cs_source.html#l00006">TaskStatus.cs:7</a></div></div>
+<div class="ttc" id="anamespace_model_html_a88addc5c316b0c6198a1a5f9238f20a0a4dc96e9e1d76b2a716920fa41c1630fa"><div class="ttname"><a href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0a4dc96e9e1d76b2a716920fa41c1630fa">Model.TaskStatus.Planned</a></div><div class="ttdeci">@ Planned</div><div class="ttdoc">Запланирована.</div><div class="ttdef"><b>Определения</b> <a href="_task_status_8cs_source.html#l00031">TaskStatus.cs:31</a></div></div>
+<div class="ttc" id="anamespace_trackable_features_html"><div class="ttname"><a href="namespace_trackable_features.html">TrackableFeatures</a></div><div class="ttdef"><b>Определения</b> <a href="_trackable_collection_8cs_source.html#l00004">TrackableCollection.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

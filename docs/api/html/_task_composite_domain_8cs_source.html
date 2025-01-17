@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/AppStates/Sessions/Database/Domains/TaskCompositeDomain.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_0cf4ad06004833fc07db0371329ef61b.html">AppStates</a></li><li class="navelem"><a class="el" href="dir_ce97c7a29c1bdd64923f45a72e596fc7.html">Sessions</a></li><li class="navelem"><a class="el" href="dir_285ae796e7bc117c678697254acdb3f8.html">Database</a></li><li class="navelem"><a class="el" href="dir_5ca1e38935badd940dcc5f644f6ad55e.html">Domains</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TaskCompositeDomain.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_tasks.html">Model.Tasks</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html">   15</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a045413c957964235f0493319c44ac009">TaskCompositeDomain</a> : <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">TaskComposite</a>, <a class="code hl_interface" href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html">IDomain</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#ad99cf12d44b8acc86d41ab9d287eecff">   20</a></span>        <span class="keyword">public</span> <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_composite_entity.html">TaskCompositeEntity</a> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#ad99cf12d44b8acc86d41ab9d287eecff">Entity</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a48042ce42c0d415cf96fde1f05b3ff66">   23</a></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a48042ce42c0d415cf96fde1f05b3ff66">EntityId</a> =&gt; <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#ad99cf12d44b8acc86d41ab9d287eecff">Entity</a>.Task;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a045413c957964235f0493319c44ac009">   29</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a045413c957964235f0493319c44ac009">TaskCompositeDomain</a>(IEnumerable&lt;ITask&gt;? subtasks = <span class="keyword">null</span>) : base(subtasks) { }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a42ac563536bdaf66e1258db8dce502d6">   34</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a42ac563536bdaf66e1258db8dce502d6">TaskCompositeDomain</a>() : base() { }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#aa450f4f7b7fcc72f337906e5eb95bfcd">   37</a></span>        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">object</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#aa450f4f7b7fcc72f337906e5eb95bfcd">Clone</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            var copyList = <span class="keyword">new</span> List&lt;ITask&gt;();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">foreach</span> (var task <span class="keywordflow">in</span> <span class="keyword">this</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">if</span> (task is ICloneable taskCloneable)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    copyList.Add((<a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task.html">ITask</a>)taskCloneable.Clone());</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            var result = <span class="keyword">new</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a42ac563536bdaf66e1258db8dce502d6">TaskCompositeDomain</a>(copyList);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Metadata</a> is ICloneable metadataCloneable)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                result.Metadata = metadataCloneable.Clone();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            result.Entity = <span class="keyword">new</span>()</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                Task = <span class="keyword">new</span>()</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            result.Entity.Task.TaskComposite = result.Entity;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a3c49fd80277764cbb8e3d8619097f604"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a3c49fd80277764cbb8e3d8619097f604">Model.Tasks.TaskComposite.Metadata</a></div><div class="ttdeci">object? Metadata</div><div class="ttdoc">Возращает и задаёт метаданные.</div><div class="ttdef"><b>Определения</b> <a href="_task_composite_8cs_source.html#l00043">TaskComposite.cs:44</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_composite_html_a415fe997d47b3a85c61371c9a825db27"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_composite.html#a415fe997d47b3a85c61371c9a825db27">Model.Tasks.TaskComposite.TaskComposite</a></div><div class="ttdeci">TaskComposite(IEnumerable&lt; ITask &gt;? subtasks=null)</div><div class="ttdoc">Создаёт экземпляр класса TaskComposite.</div><div class="ttdef"><b>Определения</b> <a href="_task_composite_8cs_source.html#l00076">TaskComposite.cs:76</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html_a045413c957964235f0493319c44ac009"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a045413c957964235f0493319c44ac009">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.TaskCompositeDomain</a></div><div class="ttdeci">TaskCompositeDomain(IEnumerable&lt; ITask &gt;? subtasks=null)</div><div class="ttdoc">Создаёт экземпляр класса TaskCompositeDomain.</div><div class="ttdef"><b>Определения</b> <a href="#l00029">TaskCompositeDomain.cs:29</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html_a42ac563536bdaf66e1258db8dce502d6"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a42ac563536bdaf66e1258db8dce502d6">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.TaskCompositeDomain</a></div><div class="ttdeci">TaskCompositeDomain()</div><div class="ttdoc">Создаёт экземпляр класса TaskCompositeDomain по умолчанию.</div><div class="ttdef"><b>Определения</b> <a href="#l00034">TaskCompositeDomain.cs:34</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html_a48042ce42c0d415cf96fde1f05b3ff66"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#a48042ce42c0d415cf96fde1f05b3ff66">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.EntityId</a></div><div class="ttdeci">object EntityId</div><div class="ttdoc">Возвращает индетификатор связанной сущности.</div><div class="ttdef"><b>Определения</b> <a href="#l00023">TaskCompositeDomain.cs:23</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html_aa450f4f7b7fcc72f337906e5eb95bfcd"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#aa450f4f7b7fcc72f337906e5eb95bfcd">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.Clone</a></div><div class="ttdeci">override object Clone()</div><div class="ttdef"><b>Определения</b> <a href="#l00037">TaskCompositeDomain.cs:37</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain_html_ad99cf12d44b8acc86d41ab9d287eecff"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_task_composite_domain.html#ad99cf12d44b8acc86d41ab9d287eecff">ViewModel.Implementations.AppStates.Sessions.Database.Domains.TaskCompositeDomain.Entity</a></div><div class="ttdeci">TaskCompositeEntity Entity</div><div class="ttdoc">Возвращает и задаёт связанную сущность.</div><div class="ttdef"><b>Определения</b> <a href="#l00020">TaskCompositeDomain.cs:20</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_composite_entity_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_1_1_task_composite_entity.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities.TaskCompositeEntity</a></div><div class="ttdoc">Класс сущности составной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_composite_entity_8cs_source.html#l00011">TaskCompositeEntity.cs:12</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task.html">Model.Interfaces.ITask</a></div><div class="ttdoc">Интерфейс задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00006">ITask.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain_html"><div class="ttname"><a href="interface_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_1_1_i_domain.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains.IDomain</a></div><div class="ttdoc">Индерфейс доменной модели.</div><div class="ttdef"><b>Определения</b> <a href="_i_domain_8cs_source.html#l00006">IDomain.cs:7</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_tasks_html"><div class="ttname"><a href="namespace_model_1_1_tasks.html">Model.Tasks</a></div><div class="ttdef"><b>Определения</b> <a href="_task_composite_8cs_source.html#l00007">TaskComposite.cs:8</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_domains.html">ViewModel.Implementations.AppStates.Sessions.Database.Domains</a></div><div class="ttdef"><b>Определения</b> <a href="_i_domain_8cs_source.html#l00001">IDomain.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_sessions_1_1_database_1_1_entities.html">ViewModel.Implementations.AppStates.Sessions.Database.Entities</a></div><div class="ttdef"><b>Определения</b> <a href="_metadata_entity_8cs_source.html#l00006">MetadataEntity.cs:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

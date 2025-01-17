@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/Model/Tasks/TaskElement.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_a7ee497c14b2f6306ae424de4e268f3f.html">Model</a></li><li class="navelem"><a class="el" href="dir_e5eea9b41bf1d0573d9a6cddbc4468c4.html">Tasks</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TaskElement.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_trackable_features.html">TrackableFeatures</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_times.html">Model.Times</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_model_1_1_tasks.html">Model.Tasks</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html">   15</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_model_1_1_tasks_1_1_task_element.html">TaskElement</a> : <a class="code hl_class" href="class_trackable_features_1_1_trackable_object.html">TrackableObject</a>, <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_element.html">ITaskElement</a>, ICloneable</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? _parentTask;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">private</span> <span class="keywordtype">object</span>? _metadata;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> _difficult;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">private</span> <span class="keywordtype">int</span> _priority;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">private</span> DateTime? _deadline;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">private</span> <a class="code hl_enumeration" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a> _status = <a class="code hl_enumeration" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a>.Planned;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">private</span> <span class="keywordtype">double</span> _progress;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">private</span> TimeSpan _plannedTime;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">private</span> TimeSpan _spentTime;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">private</span> <span class="keywordtype">double</span> _plannedReal;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">private</span> <span class="keywordtype">double</span> _executedReal;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">private</span> readonly <a class="code hl_class" href="class_model_1_1_times_1_1_time_interval_list.html">TimeIntervalList</a> _timeIntervals = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="};">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a266a2c21e16e3e970c10cbbc96bfdee6">   78</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_task_composite.html">ITaskComposite</a>? <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a266a2c21e16e3e970c10cbbc96bfdee6">ParentTask</a></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keyword">get</span> =&gt; _parentTask;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _parentTask, value);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">   85</a></span>        <span class="keyword">public</span> <span class="keywordtype">object</span>? <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">Metadata</a></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keyword">get</span> =&gt; _metadata;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _metadata, value);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="};">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">   92</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Difficult</a></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">get</span> =&gt; _difficult;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _difficult, value);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="};">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">   99</a></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Priority</a></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keyword">get</span> =&gt; _priority;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _priority, value);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="};">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">  106</a></span>        <span class="keyword">public</span> DateTime? <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Deadline</a></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keyword">get</span> =&gt; _deadline;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _deadline, value);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="};">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">  113</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">TaskStatus</a> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Status</a></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keyword">get</span> =&gt; _status;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _status, value);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a083e137a5f2efb129e71b3a1536af0a1">  120</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_model_1_1_interfaces_1_1_i_time_interval_list.html">ITimeIntervalList</a> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a083e137a5f2efb129e71b3a1536af0a1">TimeIntervals</a> =&gt; _timeIntervals;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">  123</a></span>        <span class="keyword">public</span> <span class="keywordtype">double</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Progress</a></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keyword">get</span> =&gt; _progress;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _progress, value);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="};">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">  130</a></span>        <span class="keyword">public</span> TimeSpan <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">PlannedTime</a></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keyword">get</span> =&gt; _plannedTime;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _plannedTime, value);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="};">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">  137</a></span>        <span class="keyword">public</span> TimeSpan <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">SpentTime</a></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keyword">get</span> =&gt; _spentTime;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _spentTime, value);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        }</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="};">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">  144</a></span>        <span class="keyword">public</span> <span class="keywordtype">double</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">PlannedReal</a></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keyword">get</span> =&gt; _plannedReal;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _plannedReal, value);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="};">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">  151</a></span>        <span class="keyword">public</span> <span class="keywordtype">double</span> <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">ExecutedReal</a></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keyword">get</span> =&gt; _executedReal;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keyword">set</span> =&gt; UpdateProperty(ref _executedReal, value);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="class_model_1_1_tasks_1_1_task_element.html#aff91cab0d9095e6dbba341a0a1d314a8">  158</a></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">object</span> <a class="code hl_function" href="class_model_1_1_tasks_1_1_task_element.html#aff91cab0d9095e6dbba341a0a1d314a8">Clone</a>()</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            var result = <span class="keyword">new</span> <a class="code hl_class" href="class_model_1_1_tasks_1_1_task_element.html">TaskElement</a>()</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Difficult</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Difficult</a>,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Priority</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Priority</a>,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Deadline</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Deadline</a>,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Status</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Status</a>,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Progress</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Progress</a>,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">PlannedTime</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">PlannedTime</a>,</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">SpentTime</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">SpentTime</a>,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">PlannedReal</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">PlannedReal</a>,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">ExecutedReal</a> = <a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">ExecutedReal</a></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            };</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="keywordflow">if</span> (<a class="code hl_property" href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">Metadata</a> is ICloneable cloneable)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                result.Metadata = cloneable.Clone();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html">Model.Tasks.TaskElement</a></div><div class="ttdoc">Класс элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="#l00015">TaskElement.cs:16</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a083e137a5f2efb129e71b3a1536af0a1"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a083e137a5f2efb129e71b3a1536af0a1">Model.Tasks.TaskElement.TimeIntervals</a></div><div class="ttdeci">ITimeIntervalList TimeIntervals</div><div class="ttdoc">Возвращает список временных интервалов.</div><div class="ttdef"><b>Определения</b> <a href="#l00120">TaskElement.cs:120</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a0ad8f409ec1c1e796982233e14514594"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a0ad8f409ec1c1e796982233e14514594">Model.Tasks.TaskElement.PlannedReal</a></div><div class="ttdeci">double PlannedReal</div><div class="ttdoc">Возвращает и задаёт запланированный реальный показатель.</div><div class="ttdef"><b>Определения</b> <a href="#l00144">TaskElement.cs:145</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a0f6eabd2155301241f3ab184c5b33659"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a0f6eabd2155301241f3ab184c5b33659">Model.Tasks.TaskElement.Status</a></div><div class="ttdeci">TaskStatus Status</div><div class="ttdoc">Возвращает и задаёт статус.</div><div class="ttdef"><b>Определения</b> <a href="#l00113">TaskElement.cs:114</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a266a2c21e16e3e970c10cbbc96bfdee6"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a266a2c21e16e3e970c10cbbc96bfdee6">Model.Tasks.TaskElement.ParentTask</a></div><div class="ttdeci">ITaskComposite? ParentTask</div><div class="ttdoc">Возращает и задаёт родительскую задачу.</div><div class="ttdef"><b>Определения</b> <a href="#l00078">TaskElement.cs:79</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a2809bec528459bccfb28c36e60254f2e"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a2809bec528459bccfb28c36e60254f2e">Model.Tasks.TaskElement.Metadata</a></div><div class="ttdeci">object? Metadata</div><div class="ttdoc">Возращает и задаёт метаданные.</div><div class="ttdef"><b>Определения</b> <a href="#l00085">TaskElement.cs:86</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a3f3284496c628b05b5aa6fc65317647f"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a3f3284496c628b05b5aa6fc65317647f">Model.Tasks.TaskElement.Deadline</a></div><div class="ttdeci">DateTime? Deadline</div><div class="ttdoc">Возвращает и задаёт срок.</div><div class="ttdef"><b>Определения</b> <a href="#l00106">TaskElement.cs:107</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a5e266a1913e5612feee84fc2cb75240b"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a5e266a1913e5612feee84fc2cb75240b">Model.Tasks.TaskElement.Progress</a></div><div class="ttdeci">double Progress</div><div class="ttdoc">Возвращает и задаёт прогресс.</div><div class="ttdef"><b>Определения</b> <a href="#l00123">TaskElement.cs:124</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a70b1bd0176e513c4da55c779eb0f1000"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a70b1bd0176e513c4da55c779eb0f1000">Model.Tasks.TaskElement.ExecutedReal</a></div><div class="ttdeci">double ExecutedReal</div><div class="ttdoc">Возвращает и задаёт выполненный реальный показатель.</div><div class="ttdef"><b>Определения</b> <a href="#l00151">TaskElement.cs:152</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_a785018ca1666e068e399ea6807d08a45"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#a785018ca1666e068e399ea6807d08a45">Model.Tasks.TaskElement.Difficult</a></div><div class="ttdeci">int Difficult</div><div class="ttdoc">Возвращает и задаёт сложность.</div><div class="ttdef"><b>Определения</b> <a href="#l00092">TaskElement.cs:93</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_abfdbd73015e257177af1fcbf42783344"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#abfdbd73015e257177af1fcbf42783344">Model.Tasks.TaskElement.PlannedTime</a></div><div class="ttdeci">TimeSpan PlannedTime</div><div class="ttdoc">Возвращает и задаёт запланированное время.</div><div class="ttdef"><b>Определения</b> <a href="#l00130">TaskElement.cs:131</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_ad8f7736c30adc97f8613951ec7f7cb9c"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#ad8f7736c30adc97f8613951ec7f7cb9c">Model.Tasks.TaskElement.SpentTime</a></div><div class="ttdeci">TimeSpan SpentTime</div><div class="ttdoc">Возвращает и задаёт потраченное время.</div><div class="ttdef"><b>Определения</b> <a href="#l00137">TaskElement.cs:138</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_af5fe40ccfe60c5867d5d51e5b2fbfdc9"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#af5fe40ccfe60c5867d5d51e5b2fbfdc9">Model.Tasks.TaskElement.Priority</a></div><div class="ttdeci">int Priority</div><div class="ttdoc">Возвращает и задаёт приоритет.</div><div class="ttdef"><b>Определения</b> <a href="#l00099">TaskElement.cs:100</a></div></div>
+<div class="ttc" id="aclass_model_1_1_tasks_1_1_task_element_html_aff91cab0d9095e6dbba341a0a1d314a8"><div class="ttname"><a href="class_model_1_1_tasks_1_1_task_element.html#aff91cab0d9095e6dbba341a0a1d314a8">Model.Tasks.TaskElement.Clone</a></div><div class="ttdeci">virtual object Clone()</div><div class="ttdef"><b>Определения</b> <a href="#l00158">TaskElement.cs:158</a></div></div>
+<div class="ttc" id="aclass_model_1_1_times_1_1_time_interval_list_html"><div class="ttname"><a href="class_model_1_1_times_1_1_time_interval_list.html">Model.Times.TimeIntervalList</a></div><div class="ttdoc">Класс списка временных интервалов.</div><div class="ttdef"><b>Определения</b> <a href="_time_interval_list_8cs_source.html#l00016">TimeIntervalList.cs:17</a></div></div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></div><div class="ttdoc">Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00013">TrackableObject.cs:14</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_composite_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_composite.html">Model.Interfaces.ITaskComposite</a></div><div class="ttdoc">Интерфейс составной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_composite_8cs_source.html#l00011">ITaskComposite.cs:11</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_task_element_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_task_element.html">Model.Interfaces.ITaskElement</a></div><div class="ttdoc">Интерфейс элементарной задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_task_element_8cs_source.html#l00009">ITaskElement.cs:10</a></div></div>
+<div class="ttc" id="ainterface_model_1_1_interfaces_1_1_i_time_interval_list_html"><div class="ttname"><a href="interface_model_1_1_interfaces_1_1_i_time_interval_list.html">Model.Interfaces.ITimeIntervalList</a></div><div class="ttdoc">Интерфейс списка временных интервалов.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_interval_list_8cs_source.html#l00012">ITimeIntervalList.cs:12</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_tasks_html"><div class="ttname"><a href="namespace_model_1_1_tasks.html">Model.Tasks</a></div><div class="ttdef"><b>Определения</b> <a href="_task_composite_8cs_source.html#l00007">TaskComposite.cs:8</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_times_html"><div class="ttname"><a href="namespace_model_1_1_times.html">Model.Times</a></div><div class="ttdef"><b>Определения</b> <a href="_time_interval_element_8cs_source.html#l00007">TimeIntervalElement.cs:8</a></div></div>
+<div class="ttc" id="anamespace_model_html_a88addc5c316b0c6198a1a5f9238f20a0"><div class="ttname"><a href="namespace_model.html#a88addc5c316b0c6198a1a5f9238f20a0">Model.TaskStatus</a></div><div class="ttdeci">TaskStatus</div><div class="ttdoc">Перечисление статусов задачи.</div><div class="ttdef"><b>Определения</b> <a href="_task_status_8cs_source.html#l00006">TaskStatus.cs:7</a></div></div>
+<div class="ttc" id="anamespace_trackable_features_html"><div class="ttname"><a href="namespace_trackable_features.html">TrackableFeatures</a></div><div class="ttdef"><b>Определения</b> <a href="_trackable_collection_8cs_source.html#l00004">TrackableCollection.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

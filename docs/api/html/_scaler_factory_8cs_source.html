@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/ModelLearning/Converters/ScalerFactory.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_28229d5b5ece2a2daa8a5d1821d2aecd.html">ModelLearning</a></li><li class="navelem"><a class="el" href="dir_49a50694d3224e70e19cae26bc4705e8.html">Converters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">ScalerFactory.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_scalers.html">MachineLearning.Scalers</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">ViewModel.Implementations.ModelLearning.Converters</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory.html">   14</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory.html">ScalerFactory</a> : IFactory&lt;IScaler&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory.html#aa53b966d1f230d4d9dd6f9b58636977e">   17</a></span>        <span class="keyword">public</span> <a class="code hl_interface" href="interface_machine_learning_1_1_interfaces_1_1_i_scaler.html">IScaler</a> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory.html#aa53b966d1f230d4d9dd6f9b58636977e">Create</a>() =&gt; <span class="keyword">new</span> <a class="code hl_class" href="class_machine_learning_1_1_scalers_1_1_min_max_scaler.html">MinMaxScaler</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="ttc" id="aclass_machine_learning_1_1_scalers_1_1_min_max_scaler_html"><div class="ttname"><a href="class_machine_learning_1_1_scalers_1_1_min_max_scaler.html">MachineLearning.Scalers.MinMaxScaler</a></div><div class="ttdoc">Класс масштабрирования данных с помощью минимума и максимума.</div><div class="ttdef"><b>Определения</b> <a href="_min_max_scaler_8cs_source.html#l00011">MinMaxScaler.cs:12</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory.html">ViewModel.Implementations.ModelLearning.Converters.ScalerFactory</a></div><div class="ttdoc">Класс фабрики, создающая масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00014">ScalerFactory.cs:15</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory_html_aa53b966d1f230d4d9dd6f9b58636977e"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_scaler_factory.html#aa53b966d1f230d4d9dd6f9b58636977e">ViewModel.Implementations.ModelLearning.Converters.ScalerFactory.Create</a></div><div class="ttdeci">IScaler Create()</div><div class="ttdoc">Создает новый экземпляр объекта.Возвращает новый экземпляр объекта.</div></div>
+<div class="ttc" id="ainterface_machine_learning_1_1_interfaces_1_1_i_scaler_html"><div class="ttname"><a href="interface_machine_learning_1_1_interfaces_1_1_i_scaler.html">MachineLearning.Interfaces.IScaler</a></div><div class="ttdoc">Интерфейс масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_scaler_8cs_source.html#l00006">IScaler.cs:7</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_interfaces_html"><div class="ttname"><a href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_processor_8cs_source.html#l00001">IDataProcessor.cs:2</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_scalers_html"><div class="ttname"><a href="namespace_machine_learning_1_1_scalers.html">MachineLearning.Scalers</a></div><div class="ttdef"><b>Определения</b> <a href="_min_max_scaler_8cs_source.html#l00003">MinMaxScaler.cs:4</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_model_learning_1_1_converters.html">ViewModel.Implementations.ModelLearning.Converters</a></div><div class="ttdef"><b>Определения</b> <a href="_base_task_element_supervised_learning_converter_8cs_source.html#l00011">BaseTaskElementSupervisedLearningConverter.cs:12</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a></div><div class="ttdef"><b>Определения</b> <a href="_i_editor_proxy_8cs_source.html#l00001">IEditorProxy.cs:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

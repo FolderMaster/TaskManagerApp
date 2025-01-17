@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Шаблон интерфейса MachineLearning.Interfaces.Generals.ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_machine_learning.html">MachineLearning</a></li><li class="navelem"><a class="el" href="namespace_machine_learning_1_1_interfaces.html">Interfaces</a></li><li class="navelem"><a class="el" href="namespace_machine_learning_1_1_interfaces_1_1_generals.html">Generals</a></li><li class="navelem"><a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_supervised_learning_converter-5-g.html">ISupervisedLearningConverter-5-g</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_supervised_learning_converter-5-g-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон интерфейса MachineLearning.Interfaces.Generals.ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс конвертора данных в данные для предсказания с учителем и наоборот.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:MachineLearning.Interfaces.Generals.ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_supervised_learning_converter-5-g.png" usemap="#MachineLearning.Interfaces.Generals.ISupervisedLearningConverter_3C_20T_2C_20R_2C_20D_2C_20DT_2C_20DR_20_3E_map" alt=""/>
+  <map id="MachineLearning.Interfaces.Generals.ISupervisedLearningConverter_3C_20T_2C_20R_2C_20D_2C_20DT_2C_20DR_20_3E_map" name="MachineLearning.Interfaces.Generals.ISupervisedLearningConverter_3C_20T_2C_20R_2C_20D_2C_20DT_2C_20DR_20_3E_map">
+<area href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g.html" title="Интерфейс конвертора данных в данные для предсказания и наоборот." alt="MachineLearning.Interfaces.Generals.ILearningConverter&lt; T, R, DT, DR &gt;" shape="rect" coords="996,0,1650,24"/>
+<area href="class_machine_learning_1_1_converters_1_1_base_supervised_learning_converter-4-g.html" title="Абстрактный класс базового конвертора данных в данные для предсказания с учителем и наоборот." alt="MachineLearning.Converters.BaseSupervisedLearningConverter&lt; R, D, DT, DR &gt;" shape="rect" coords="996,112,1650,136"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_base_task_element_supervised_learning_converter-2-g.html" title="Абстрактный класс базового конвертора элементраных задач в данные для предсказания с учителем и наобо..." alt="ViewModel.Implementations.ModelLearning.Converters.BaseTaskElementSupervisedLearningConverter&lt; R, DR &gt;" shape="rect" coords="996,168,1650,192"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_deadline_task_element_learning_converter.html" title="Класс конвертора элементраных задач в данные для предсказания срока с учителем и наоборот." alt="ViewModel.Implementations.ModelLearning.Converters.DeadlineTaskElementLearningConverter" shape="rect" coords="0,224,654,248"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_execution_chance_task_element_learning_converter.html" title="Класс конвертора элементраных задач в данные для предсказания шанс выполнения с учителем и наоборот." alt="ViewModel.Implementations.ModelLearning.Converters.ExecutionChanceTaskElementLearningConverter" shape="rect" coords="664,224,1318,248"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_planned_real_task_element_learning_converter.html" title="Класс конвертора элементраных задач в данные для предсказания запланированного реального показателя с..." alt="ViewModel.Implementations.ModelLearning.Converters.PlannedRealTaskElementLearningConverter" shape="rect" coords="1328,224,1982,248"/>
+<area href="class_view_model_1_1_implementations_1_1_model_learning_1_1_converters_1_1_planned_time_task_element_learning_converter.html" title="Класс конвертора элементраных задач в данные для предсказания запланированного времени с учителем и н..." alt="ViewModel.Implementations.ModelLearning.Converters.PlannedTimeTaskElementLearningConverter" shape="rect" coords="1992,224,2646,248"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aec9c26b6071c42ce3a4e83e2ad18ca2d" id="r_aec9c26b6071c42ce3a4e83e2ad18ca2d"><td class="memItemLeft" align="right" valign="top">LearningModelData&lt; T, R &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec9c26b6071c42ce3a4e83e2ad18ca2d">FitConvertData</a> (IEnumerable&lt; D &gt; data)</td></tr>
+<tr class="memdesc:aec9c26b6071c42ce3a4e83e2ad18ca2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Адаптирует конвертацию данных под данные для предсказания.  <br /></td></tr>
+<tr class="separator:aec9c26b6071c42ce3a4e83e2ad18ca2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g.html">MachineLearning.Interfaces.Generals.ILearningConverter&lt; T, R, DT, DR &gt;</a></td></tr>
+<tr class="memitem:a726d5945aaa9f2532cb5a519deb6ace5 inherit pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g" id="r_a726d5945aaa9f2532cb5a519deb6ace5"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g.html#a726d5945aaa9f2532cb5a519deb6ace5">ConvertData</a> (DT data)</td></tr>
+<tr class="memdesc:a726d5945aaa9f2532cb5a519deb6ace5 inherit pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конвертирует входные данные под входные данные для предсказания.  <br /></td></tr>
+<tr class="separator:a726d5945aaa9f2532cb5a519deb6ace5 inherit pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac6d276bed2f49cbca2678bf798c76f inherit pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g" id="r_a3ac6d276bed2f49cbca2678bf798c76f"><td class="memItemLeft" align="right" valign="top">DR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g.html#a3ac6d276bed2f49cbca2678bf798c76f">ConvertPredicted</a> (R predicted)</td></tr>
+<tr class="memdesc:a3ac6d276bed2f49cbca2678bf798c76f inherit pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конвертирует предсказанное значение в выходное значение.  <br /></td></tr>
+<tr class="separator:a3ac6d276bed2f49cbca2678bf798c76f inherit pub_methods_interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс конвертора данных в данные для предсказания с учителем и наоборот. </p>
+<p>Наследует <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_converter-4-g.html" title="Интерфейс конвертора данных в данные для предсказания и наоборот.">ILearningConverter&lt;T, R, DT, DR&gt;</a>. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип входных данных для предсказания.</td></tr>
+    <tr><td class="paramname">R</td><td>Тип выходных данных для предсказания.</td></tr>
+    <tr><td class="paramname">D</td><td>Тип данных.</td></tr>
+    <tr><td class="paramname">DT</td><td>Тип входных данных.</td></tr>
+    <tr><td class="paramname">DR</td><td>Тип выходных данных.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_supervised_learning_converter_8cs_source.html">ISupervisedLearningConverter.cs</a> строка <a class="el" href="_i_supervised_learning_converter_8cs_source.html#l00014">14</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="aec9c26b6071c42ce3a4e83e2ad18ca2d" name="aec9c26b6071c42ce3a4e83e2ad18ca2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9c26b6071c42ce3a4e83e2ad18ca2d">&#9670;&#160;</a></span>FitConvertData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LearningModelData&lt; T, R &gt; MachineLearning.Interfaces.Generals.ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt;.FitConvertData </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; D &gt;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Адаптирует конвертацию данных под данные для предсказания. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает конвертированные данные для предсказания.</dd></dl>
+
+<p>Замещается в <a class="el" href="class_machine_learning_1_1_converters_1_1_base_supervised_learning_converter-4-g.html#a6b6005ef7c770158a8b96b82def1370f">MachineLearning.Converters.BaseSupervisedLearningConverter&lt; R, D, DT, DR &gt;</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Шаблон класса MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_machine_learning.html">MachineLearning</a></li><li class="navelem"><a class="el" href="namespace_machine_learning_1_1_learning_evaluators.html">LearningEvaluators</a></li><li class="navelem"><a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_unsupervised_cross_validation_evaluator-2-g.html">BaseUnsupervisedCrossValidationEvaluator-2-g</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="class_machine_learning_1_1_learning_evaluators_1_1_base_unsupervised_cross_validation_evaluator-2-g-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон класса MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Абстрактный класс базовой оценки модели обучения без учителя методом кросс-валидации.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_machine_learning_1_1_learning_evaluators_1_1_base_unsupervised_cross_validation_evaluator-2-g.png" usemap="#MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator_3C_20T_2C_20R_20_3E_map" alt=""/>
+  <map id="MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator_3C_20T_2C_20R_20_3E_map" name="MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator_3C_20T_2C_20R_20_3E_map">
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html" title="Абстрактный класс базовой оценки модели обучения методом кросс-валидации." alt="MachineLearning.LearningEvaluators.BaseCrossValidationLearningEvaluator" shape="rect" coords="535,112,1060,136"/>
+<area href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_unsupervised_learning_evaluator-2-g.html" title="Интерфейс оценки модели обучения без учителя." alt="MachineLearning.Interfaces.Generals.IUnsupervisedLearningEvaluator&lt; T, R &gt;" shape="rect" coords="1337,112,1862,136"/>
+<area href="class_trackable_features_1_1_trackable_object.html" title="Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок." alt="TrackableFeatures.TrackableObject" shape="rect" coords="267,56,792,80"/>
+<area href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_evaluator.html" title="Интерфейс оценки модели обучения." alt="MachineLearning.Interfaces.Generals.ILearningEvaluator" shape="rect" coords="802,56,1327,80"/>
+<area href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_evaluator.html" title="Интерфейс оценки модели обучения." alt="MachineLearning.Interfaces.Generals.ILearningEvaluator" shape="rect" coords="1337,56,1862,80"/>
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_clustering_cross_validation_evaluator.html" title="Класс оценки модели обучения кластеризации методом кросс-валидации." alt="MachineLearning.LearningEvaluators.ClusteringCrossValidationEvaluator" shape="rect" coords="936,224,1461,248"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aebcaf12f5895fee9add662fb667d0192" id="r_aebcaf12f5895fee9add662fb667d0192"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebcaf12f5895fee9add662fb667d0192">Evaluate</a> (IEnumerable&lt; T &gt; data)</td></tr>
+<tr class="memdesc:aebcaf12f5895fee9add662fb667d0192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оценивает модель обучения.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает категорию модели обучения.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:aebcaf12f5895fee9add662fb667d0192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html">MachineLearning.LearningEvaluators.BaseCrossValidationLearningEvaluator</a></td></tr>
+<tr class="memitem:aae9dc03ff8232855f6fd855a51b4e99e inherit pub_methods_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator" id="r_aae9dc03ff8232855f6fd855a51b4e99e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html#aae9dc03ff8232855f6fd855a51b4e99e">BaseCrossValidationLearningEvaluator</a> ()</td></tr>
+<tr class="memdesc:aae9dc03ff8232855f6fd855a51b4e99e inherit pub_methods_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html" title="Абстрактный класс базовой оценки модели обучения методом кросс-валидации.">BaseCrossValidationLearningEvaluator</a> по умолчанию.  <br /></td></tr>
+<tr class="separator:aae9dc03ff8232855f6fd855a51b4e99e inherit pub_methods_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:a831e8df091b1a713a68063d3186c5ccc inherit pub_methods_class_trackable_features_1_1_trackable_object" id="r_a831e8df091b1a713a68063d3186c5ccc"><td class="memItemLeft" align="right" valign="top">IEnumerable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a831e8df091b1a713a68063d3186c5ccc">GetErrors</a> (string? propertyName)</td></tr>
+<tr class="separator:a831e8df091b1a713a68063d3186c5ccc inherit pub_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a758e6ed979ed6e8c11aa407b45b68def" id="r_a758e6ed979ed6e8c11aa407b45b68def"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="struct_machine_learning_1_1_learning_evaluators_1_1_validation_fold.html">ValidationFold</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a758e6ed979ed6e8c11aa407b45b68def">GetValidationFolds</a> (IEnumerable&lt; T &gt; data)</td></tr>
+<tr class="memdesc:a758e6ed979ed6e8c11aa407b45b68def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает сегменты валидации.  <br /></td></tr>
+<tr class="separator:a758e6ed979ed6e8c11aa407b45b68def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcc08f8080aaeca7d0871066cff0c0b" id="r_a8dcc08f8080aaeca7d0871066cff0c0b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dcc08f8080aaeca7d0871066cff0c0b">GetScoresCategory</a> (IEnumerable&lt; double &gt; scores)</td></tr>
+<tr class="memdesc:a8dcc08f8080aaeca7d0871066cff0c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет категорию оценок.  <br /></td></tr>
+<tr class="separator:a8dcc08f8080aaeca7d0871066cff0c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be0bb221155356f1c7bfa1810b4cd61" id="r_a1be0bb221155356f1c7bfa1810b4cd61"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be0bb221155356f1c7bfa1810b4cd61">OnPropertyChanged&lt; T &gt;</a> (T oldValue, T newValue)</td></tr>
+<tr class="memdesc:a1be0bb221155356f1c7bfa1810b4cd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при изменении свойства.<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип данных.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldValue</td><td>Старое значение.</td></tr>
+    <tr><td class="paramname">newValue</td><td>Новое значение.</td></tr>
+  </table>
+  </dd>
+</dl>
+  <br /></td></tr>
+<tr class="separator:a1be0bb221155356f1c7bfa1810b4cd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:a45f2595df7fda231e30851f424a74caa inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a45f2595df7fda231e30851f424a74caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a45f2595df7fda231e30851f424a74caa">UpdateProperty&lt; T &gt;</a> (ref T field, T newValue, Action&lt; T, T &gt;? action=null, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a45f2595df7fda231e30851f424a74caa inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.  <br /></td></tr>
+<tr class="separator:a45f2595df7fda231e30851f424a74caa inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72237b1c20e0283971bb013a2ff74c79 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a72237b1c20e0283971bb013a2ff74c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a72237b1c20e0283971bb013a2ff74c79">UpdateProperty&lt; T &gt;</a> (Func&lt; T &gt; getProperty, Action&lt; T &gt; setProperty, T newValue, Action&lt; T, T &gt;? action=null, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a72237b1c20e0283971bb013a2ff74c79 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет значение свойства, вызывает действие и уведомляет об изменении свойства.  <br /></td></tr>
+<tr class="separator:a72237b1c20e0283971bb013a2ff74c79 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24c222089d5cbc08d23c2414de172c5 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_ae24c222089d5cbc08d23c2414de172c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#ae24c222089d5cbc08d23c2414de172c5">AddError</a> (object error, [CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:ae24c222089d5cbc08d23c2414de172c5 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет ошибку для свойства.  <br /></td></tr>
+<tr class="separator:ae24c222089d5cbc08d23c2414de172c5 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81efddef33f1da259ece07ef0c6f55e4 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a81efddef33f1da259ece07ef0c6f55e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a81efddef33f1da259ece07ef0c6f55e4">ClearErrors</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a81efddef33f1da259ece07ef0c6f55e4 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все ошибки для свойства.  <br /></td></tr>
+<tr class="separator:a81efddef33f1da259ece07ef0c6f55e4 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4a7a448354eb2db05abe90f095e045 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a0f4a7a448354eb2db05abe90f095e045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a0f4a7a448354eb2db05abe90f095e045">ClearAllErrors</a> ()</td></tr>
+<tr class="memdesc:a0f4a7a448354eb2db05abe90f095e045 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает все ошибки для всех свойств.  <br /></td></tr>
+<tr class="separator:a0f4a7a448354eb2db05abe90f095e045 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2607800497f6c7b3f13ef5dfd8527b14 inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a2607800497f6c7b3f13ef5dfd8527b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a2607800497f6c7b3f13ef5dfd8527b14 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_object.html#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a> для свойства.  <br /></td></tr>
+<tr class="separator:a2607800497f6c7b3f13ef5dfd8527b14 inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273ad86ca53cef022e7b5e891b6e342d inherit pro_methods_class_trackable_features_1_1_trackable_object" id="r_a273ad86ca53cef022e7b5e891b6e342d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#a273ad86ca53cef022e7b5e891b6e342d">OnErrorsChanged</a> ([CallerMemberName] string propertyName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a273ad86ca53cef022e7b5e891b6e342d inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает событие <a class="el" href="class_trackable_features_1_1_trackable_object.html#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a> для свойства.  <br /></td></tr>
+<tr class="separator:a273ad86ca53cef022e7b5e891b6e342d inherit pro_methods_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:a91190b27aee76d22fdf2e821baefa4cf" id="r_a91190b27aee76d22fdf2e821baefa4cf"><td class="memItemLeft" align="right" valign="top">IUnsupervisedLearningModel&lt; T, R &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91190b27aee76d22fdf2e821baefa4cf">Model</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a91190b27aee76d22fdf2e821baefa4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт модель обучения без учителя.  <br /></td></tr>
+<tr class="separator:a91190b27aee76d22fdf2e821baefa4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc2376f83ee98dc8754c9beb7d86192" id="r_acbc2376f83ee98dc8754c9beb7d86192"><td class="memItemLeft" align="right" valign="top">IUnsupervisedScoreMetric&lt; R, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbc2376f83ee98dc8754c9beb7d86192">ScoreMetric</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:acbc2376f83ee98dc8754c9beb7d86192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт модель обучения без учителя.  <br /></td></tr>
+<tr class="separator:acbc2376f83ee98dc8754c9beb7d86192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html">MachineLearning.LearningEvaluators.BaseCrossValidationLearningEvaluator</a></td></tr>
+<tr class="memitem:a267602dbf15f38a5c41116d95fd0cffd inherit properties_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator" id="r_a267602dbf15f38a5c41116d95fd0cffd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html#a267602dbf15f38a5c41116d95fd0cffd">NumberOfFolds</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a267602dbf15f38a5c41116d95fd0cffd inherit properties_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт количество сегментов.  <br /></td></tr>
+<tr class="separator:a267602dbf15f38a5c41116d95fd0cffd inherit properties_class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;Свойства унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:ad234adf03242c9bc994b74127841a8f3 inherit properties_class_trackable_features_1_1_trackable_object" id="r_ad234adf03242c9bc994b74127841a8f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#ad234adf03242c9bc994b74127841a8f3">HasErrors</a><code> [get]</code></td></tr>
+<tr class="separator:ad234adf03242c9bc994b74127841a8f3 inherit properties_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header events_class_trackable_features_1_1_trackable_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('events_class_trackable_features_1_1_trackable_object')"><img src="closed.png" alt="-"/>&#160;События унаследованные от <a class="el" href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></td></tr>
+<tr class="memitem:ad91648414a964db4793c494bd6a76bfd inherit events_class_trackable_features_1_1_trackable_object" id="r_ad91648414a964db4793c494bd6a76bfd"><td class="memItemLeft" align="right" valign="top">PropertyChangedEventHandler?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#ad91648414a964db4793c494bd6a76bfd">PropertyChanged</a></td></tr>
+<tr class="separator:ad91648414a964db4793c494bd6a76bfd inherit events_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf07c5466d11d36945b9cab57acb96e9 inherit events_class_trackable_features_1_1_trackable_object" id="r_adf07c5466d11d36945b9cab57acb96e9"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; DataErrorsChangedEventArgs &gt;?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_trackable_features_1_1_trackable_object.html#adf07c5466d11d36945b9cab57acb96e9">ErrorsChanged</a></td></tr>
+<tr class="separator:adf07c5466d11d36945b9cab57acb96e9 inherit events_class_trackable_features_1_1_trackable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Абстрактный класс базовой оценки модели обучения без учителя методом кросс-валидации. </p>
+<p>Наследует <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html" title="Абстрактный класс базовой оценки модели обучения методом кросс-валидации.">BaseCrossValidationLearningEvaluator</a>. Реализует <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_unsupervised_learning_evaluator-2-g.html" title="Интерфейс оценки модели обучения без учителя.">IUnsupervisedLearningEvaluator&lt;T, R&gt;</a>. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип входных данных для предсказания.</td></tr>
+    <tr><td class="paramname">R</td><td>Тип выходных данных для предсказания.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html">BaseUnsupervisedCrossValidationEvaluator.cs</a> строка <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html#l00014">14</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="aebcaf12f5895fee9add662fb667d0192" name="aebcaf12f5895fee9add662fb667d0192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebcaf12f5895fee9add662fb667d0192">&#9670;&#160;</a></span>Evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; <a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> &gt; MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;.Evaluate </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оценивает модель обучения.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает категорию модели обучения.</dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_unsupervised_learning_evaluator-2-g.html#a435aed6505db669e736116925904a2b6">MachineLearning.Interfaces.Generals.IUnsupervisedLearningEvaluator&lt; T, R &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html">BaseUnsupervisedCrossValidationEvaluator.cs</a> строка <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a id="a8dcc08f8080aaeca7d0871066cff0c0b" name="a8dcc08f8080aaeca7d0871066cff0c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dcc08f8080aaeca7d0871066cff0c0b">&#9670;&#160;</a></span>GetScoresCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;.GetScoresCategory </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; double &gt;</td>          <td class="paramname"><span class="paramname"><em>scores</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Определяет категорию оценок. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scores</td><td>Оценки.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает категорию оценок.</dd></dl>
+
+</div>
+</div>
+<a id="a758e6ed979ed6e8c11aa407b45b68def" name="a758e6ed979ed6e8c11aa407b45b68def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a758e6ed979ed6e8c11aa407b45b68def">&#9670;&#160;</a></span>GetValidationFolds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt; <a class="el" href="struct_machine_learning_1_1_learning_evaluators_1_1_validation_fold.html">ValidationFold</a> &gt; MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;.GetValidationFolds </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel abstract">abstract</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает сегменты валидации. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает сегменты валидации.</dd></dl>
+
+</div>
+</div>
+<a id="a1be0bb221155356f1c7bfa1810b4cd61" name="a1be0bb221155356f1c7bfa1810b4cd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be0bb221155356f1c7bfa1810b4cd61">&#9670;&#160;</a></span>OnPropertyChanged&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;.<a class="el" href="class_trackable_features_1_1_trackable_object.html#a2607800497f6c7b3f13ef5dfd8527b14">OnPropertyChanged</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>oldValue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>newValue</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при изменении свойства.<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип данных.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldValue</td><td>Старое значение.</td></tr>
+    <tr><td class="paramname">newValue</td><td>Новое значение.</td></tr>
+  </table>
+  </dd>
+</dl>
+ </p>
+
+<p>Переопределяет метод предка <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_cross_validation_learning_evaluator.html#a57aa495f2e82832334094d3c0b18ef2d">MachineLearning.LearningEvaluators.BaseCrossValidationLearningEvaluator</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html">BaseUnsupervisedCrossValidationEvaluator.cs</a> строка <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html#l00080">80</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="a91190b27aee76d22fdf2e821baefa4cf" name="a91190b27aee76d22fdf2e821baefa4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91190b27aee76d22fdf2e821baefa4cf">&#9670;&#160;</a></span>Model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IUnsupervisedLearningModel&lt;T, R&gt; MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;.Model</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт модель обучения без учителя. </p>
+
+<p>Замещает <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_unsupervised_learning_evaluator-2-g.html#a20a177e6096eb845d404fe06b4fa203d">MachineLearning.Interfaces.Generals.IUnsupervisedLearningEvaluator&lt; T, R &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html">BaseUnsupervisedCrossValidationEvaluator.cs</a> строка <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a id="acbc2376f83ee98dc8754c9beb7d86192" name="acbc2376f83ee98dc8754c9beb7d86192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc2376f83ee98dc8754c9beb7d86192">&#9670;&#160;</a></span>ScoreMetric</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IUnsupervisedScoreMetric&lt;R, T&gt; MachineLearning.LearningEvaluators.BaseUnsupervisedCrossValidationEvaluator&lt; T, R &gt;.ScoreMetric</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт модель обучения без учителя. </p>
+
+<p>Замещает <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_unsupervised_learning_evaluator-2-g.html#a06247ede946b47241f155165220da344">MachineLearning.Interfaces.Generals.IUnsupervisedLearningEvaluator&lt; T, R &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html">BaseUnsupervisedCrossValidationEvaluator.cs</a> строка <a class="el" href="_base_unsupervised_cross_validation_evaluator_8cs_source.html#l00039">39</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

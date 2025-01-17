@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Класс ViewModel.Implementations.AppStates.FileService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_view_model.html">ViewModel</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations.html">Implementations</a></li><li class="navelem"><a class="el" href="namespace_view_model_1_1_implementations_1_1_app_states.html">AppStates</a></li><li class="navelem"><a class="el" href="class_view_model_1_1_implementations_1_1_app_states_1_1_file_service.html">FileService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="class_view_model_1_1_implementations_1_1_app_states_1_1_file_service-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ViewModel.Implementations.AppStates.FileService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс файлового сервиса.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:ViewModel.Implementations.AppStates.FileService:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_view_model_1_1_implementations_1_1_app_states_1_1_file_service.png" usemap="#ViewModel.Implementations.AppStates.FileService_map" alt=""/>
+  <map id="ViewModel.Implementations.AppStates.FileService_map" name="ViewModel.Implementations.AppStates.FileService_map">
+<area href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html" title="Интерфейс сервиса файлов." alt="ViewModel.Interfaces.AppStates.IFileService" shape="rect" coords="0,0,297,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a87f3fda1c83b1d54ff1d547b2d33bd6f" id="r_a87f3fda1c83b1d54ff1d547b2d33bd6f"><td class="memItemLeft" align="right" valign="top">Task&lt; byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87f3fda1c83b1d54ff1d547b2d33bd6f">Load</a> (string path)</td></tr>
+<tr class="memdesc:a87f3fda1c83b1d54ff1d547b2d33bd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает данные из файла по пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает данные.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:a87f3fda1c83b1d54ff1d547b2d33bd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84296d035bf64cc9817d57c41b0e975b" id="r_a84296d035bf64cc9817d57c41b0e975b"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84296d035bf64cc9817d57c41b0e975b">Save</a> (string path, byte[] data)</td></tr>
+<tr class="memdesc:a84296d035bf64cc9817d57c41b0e975b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает данные из файла по пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+  <br /></td></tr>
+<tr class="separator:a84296d035bf64cc9817d57c41b0e975b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3bd4fafe66bd189f981899dc6d0012" id="r_afc3bd4fafe66bd189f981899dc6d0012"><td class="memItemLeft" align="right" valign="top">Stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc3bd4fafe66bd189f981899dc6d0012">CreateStream</a> (string path, FileMode mode, FileAccess access, FileShare share)</td></tr>
+<tr class="memdesc:afc3bd4fafe66bd189f981899dc6d0012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт поток.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+    <tr><td class="paramname">mode</td><td>Режим.</td></tr>
+    <tr><td class="paramname">access</td><td>Доступ к использованию этого потока.</td></tr>
+    <tr><td class="paramname">share</td><td>Доступ к использованию другим потокам.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает поток.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:afc3bd4fafe66bd189f981899dc6d0012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aab53afab52b8a83454521d1d6341c1" id="r_a6aab53afab52b8a83454521d1d6341c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aab53afab52b8a83454521d1d6341c1">CreateDirectory</a> (string path)</td></tr>
+<tr class="memdesc:a6aab53afab52b8a83454521d1d6341c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт директорию по пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+  <br /></td></tr>
+<tr class="separator:a6aab53afab52b8a83454521d1d6341c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ffa38a333dd18d64260b4684dd35f6" id="r_a90ffa38a333dd18d64260b4684dd35f6"><td class="memItemLeft" align="right" valign="top">string?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90ffa38a333dd18d64260b4684dd35f6">GetDirectoryPath</a> (string path)</td></tr>
+<tr class="memdesc:a90ffa38a333dd18d64260b4684dd35f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает путь к директории.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+  <br /></td></tr>
+<tr class="separator:a90ffa38a333dd18d64260b4684dd35f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b50ebbe2fb6e4cb27962d19ea14a747" id="r_a5b50ebbe2fb6e4cb27962d19ea14a747"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b50ebbe2fb6e4cb27962d19ea14a747">CombinePath</a> (string path1, string path2)</td></tr>
+<tr class="memdesc:a5b50ebbe2fb6e4cb27962d19ea14a747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объединяет пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path1</td><td>Первый путь.</td></tr>
+    <tr><td class="paramname">path2</td><td>Второй путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает объединённый путь.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:a5b50ebbe2fb6e4cb27962d19ea14a747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77cd455b88d44d0347b0791f47758056" id="r_a77cd455b88d44d0347b0791f47758056"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77cd455b88d44d0347b0791f47758056">IsPathExists</a> (string path)</td></tr>
+<tr class="memdesc:a77cd455b88d44d0347b0791f47758056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, существует ли заданный путь.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает <code>true</code>, если путь существует, иначе <code>false</code>.</dd></dl>
+  <br /></td></tr>
+<tr class="separator:a77cd455b88d44d0347b0791f47758056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:afb995a797e3c992be6e41216b7d67fe8" id="r_afb995a797e3c992be6e41216b7d67fe8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb995a797e3c992be6e41216b7d67fe8">PersonalDirectoryPath</a><code> [get]</code></td></tr>
+<tr class="memdesc:afb995a797e3c992be6e41216b7d67fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает путь к персональной директории.  <br /></td></tr>
+<tr class="separator:afb995a797e3c992be6e41216b7d67fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс файлового сервиса. </p>
+<p>Реализует <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html" title="Интерфейс сервиса файлов.">IFileService</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_file_service_8cs_source.html">FileService.cs</a> строка <a class="el" href="_file_service_8cs_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a5b50ebbe2fb6e4cb27962d19ea14a747" name="a5b50ebbe2fb6e4cb27962d19ea14a747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b50ebbe2fb6e4cb27962d19ea14a747">&#9670;&#160;</a></span>CombinePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ViewModel.Implementations.AppStates.FileService.CombinePath </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Объединяет пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path1</td><td>Первый путь.</td></tr>
+    <tr><td class="paramname">path2</td><td>Второй путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает объединённый путь.</dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#ad37fbe41854359cb2d6e5906af56150a">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<a id="a6aab53afab52b8a83454521d1d6341c1" name="a6aab53afab52b8a83454521d1d6341c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aab53afab52b8a83454521d1d6341c1">&#9670;&#160;</a></span>CreateDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewModel.Implementations.AppStates.FileService.CreateDirectory </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт директорию по пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#a3280aba30e8ff0c8660058256a1a411c">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<a id="afc3bd4fafe66bd189f981899dc6d0012" name="afc3bd4fafe66bd189f981899dc6d0012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3bd4fafe66bd189f981899dc6d0012">&#9670;&#160;</a></span>CreateStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stream ViewModel.Implementations.AppStates.FileService.CreateStream </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FileMode</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FileAccess</td>          <td class="paramname"><span class="paramname"><em>access</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FileShare</td>          <td class="paramname"><span class="paramname"><em>share</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт поток.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+    <tr><td class="paramname">mode</td><td>Режим.</td></tr>
+    <tr><td class="paramname">access</td><td>Доступ к использованию этого потока.</td></tr>
+    <tr><td class="paramname">share</td><td>Доступ к использованию другим потокам.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает поток.</dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#a441388c35d2311ad2297638f3ce735bd">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<a id="a90ffa38a333dd18d64260b4684dd35f6" name="a90ffa38a333dd18d64260b4684dd35f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ffa38a333dd18d64260b4684dd35f6">&#9670;&#160;</a></span>GetDirectoryPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string? ViewModel.Implementations.AppStates.FileService.GetDirectoryPath </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Получает путь к директории.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#acb8a2eb0c4d03d79956e4b7ae1355a3a">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<a id="a77cd455b88d44d0347b0791f47758056" name="a77cd455b88d44d0347b0791f47758056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77cd455b88d44d0347b0791f47758056">&#9670;&#160;</a></span>IsPathExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ViewModel.Implementations.AppStates.FileService.IsPathExists </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, существует ли заданный путь.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает <code>true</code>, если путь существует, иначе <code>false</code>.</dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#aabf709bfc1e97f5a712c5d9657dbe184">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<a id="a87f3fda1c83b1d54ff1d547b2d33bd6f" name="a87f3fda1c83b1d54ff1d547b2d33bd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f3fda1c83b1d54ff1d547b2d33bd6f">&#9670;&#160;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; byte[]&gt; ViewModel.Implementations.AppStates.FileService.Load </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает данные из файла по пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает данные.</dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#a31495e453ded160416ce94b48046bdae">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<a id="a84296d035bf64cc9817d57c41b0e975b" name="a84296d035bf64cc9817d57c41b0e975b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84296d035bf64cc9817d57c41b0e975b">&#9670;&#160;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task ViewModel.Implementations.AppStates.FileService.Save </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte[]</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает данные из файла по пути.<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь.</td></tr>
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+ </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#a0b4d34e7479bb1d031b0cf54a2371797">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="afb995a797e3c992be6e41216b7d67fe8" name="afb995a797e3c992be6e41216b7d67fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb995a797e3c992be6e41216b7d67fe8">&#9670;&#160;</a></span>PersonalDirectoryPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ViewModel.Implementations.AppStates.FileService.PersonalDirectoryPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает путь к персональной директории. </p>
+
+<p>Замещает <a class="el" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html#a04ee04a012830503adcdd8dff59cc8d9">ViewModel.Interfaces.AppStates.IFileService</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_file_service_8cs_source.html">FileService.cs</a> строка <a class="el" href="_file_service_8cs_source.html#l00021">21</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

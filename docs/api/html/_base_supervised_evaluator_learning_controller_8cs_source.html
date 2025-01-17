@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/ModelLearning/BaseSupervisedEvaluatorLearningController.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_28229d5b5ece2a2daa8a5d1821d2aecd.html">ModelLearning</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">BaseSupervisedEvaluatorLearningController.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning.html">MachineLearning</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_interfaces_1_1_generals.html">MachineLearning.Interfaces.Generals</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_model_learning.html">ViewModel.Interfaces.ModelLearning</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespace_view_model_1_1_implementations_1_1_model_learning.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_model_learning.html">ViewModel.Implementations.ModelLearning</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html">   19</a></span>    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a72ce6f88e37d15f80dc4dfe7c0570e9e">BaseSupervisedEvaluatorLearningController</a>&lt;T, R, D, DT, DR&gt; :</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        ILearningController&lt;D, DT, DR&gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">private</span> ISupervisedLearningConverter&lt;T, R, D, DT, DR&gt; _converter;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">private</span> ISupervisedLearningModel&lt;T, R&gt; _model;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">private</span> ISupervisedLearningEvaluator&lt;T, R&gt; _evaluator;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a05620b1cedeee2681d4279935d010751">   40</a></span>        <span class="keyword">public</span> <a class="code hl_enumeration" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a05620b1cedeee2681d4279935d010751">MinScoreCategory</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">   43</a></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">IsValidModel</a> { <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a72ce6f88e37d15f80dc4dfe7c0570e9e">   54</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a72ce6f88e37d15f80dc4dfe7c0570e9e">BaseSupervisedEvaluatorLearningController</a></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            (ISupervisedLearningConverter&lt;T, R, D, DT, DR&gt; converter,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            ISupervisedLearningModel&lt;T, R&gt; model,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            ISupervisedLearningEvaluator&lt;T, R&gt; evaluator)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            _converter = converter;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            _model = model;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            _evaluator = evaluator;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a5fcf0e74502bee12c2f315da0f3eafca">   65</a></span>        <span class="keyword">public</span> async Task&lt;bool&gt; <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a5fcf0e74502bee12c2f315da0f3eafca">Train</a>(IEnumerable&lt;D&gt; data)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">if</span> (data == <span class="keyword">null</span> || !data.Any())</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">IsValidModel</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            var convertedLearningData = _converter.FitConvertData(data);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            _evaluator.Model = _model;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            var scoreCategory = await _evaluator.Evaluate</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                (convertedLearningData.Data, convertedLearningData.Targets);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (scoreCategory &gt;= <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a05620b1cedeee2681d4279935d010751">MinScoreCategory</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                await _model.Train</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                    (convertedLearningData.Data, convertedLearningData.Targets);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">IsValidModel</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">IsValidModel</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a75a4f0fc5024b436661c51328aa15ed4">   88</a></span>        <span class="keyword">public</span> DR <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a75a4f0fc5024b436661c51328aa15ed4">Predict</a>(DT data)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            var convertedData = _converter.ConvertData(data);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            var predicted = _model.Predict(convertedData);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            var result = _converter.ConvertPredicted(predicted);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g_html_a05620b1cedeee2681d4279935d010751"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a05620b1cedeee2681d4279935d010751">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController-5-g.MinScoreCategory</a></div><div class="ttdeci">ScoreMetricCategory MinScoreCategory</div><div class="ttdoc">Возвращает и задаёт минимальную категорию метрики оценки.</div><div class="ttdef"><b>Определения</b> <a href="#l00040">BaseSupervisedEvaluatorLearningController.cs:40</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g_html_a5fcf0e74502bee12c2f315da0f3eafca"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a5fcf0e74502bee12c2f315da0f3eafca">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController-5-g.Train</a></div><div class="ttdeci">async Task&lt; bool &gt; Train(IEnumerable&lt; D &gt; data)</div><div class="ttdoc">Выполняет обучение модели на основе данных.Возвращает задачу процесса обучения с результатом true,...</div><div class="ttdef"><b>Определения</b> <a href="#l00065">BaseSupervisedEvaluatorLearningController.cs:65</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g_html_a72ce6f88e37d15f80dc4dfe7c0570e9e"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a72ce6f88e37d15f80dc4dfe7c0570e9e">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController-5-g.BaseSupervisedEvaluatorLearningController</a></div><div class="ttdeci">BaseSupervisedEvaluatorLearningController(ISupervisedLearningConverter&lt; T, R, D, DT, DR &gt; converter, ISupervisedLearningModel&lt; T, R &gt; model, ISupervisedLearningEvaluator&lt; T, R &gt; evaluator)</div><div class="ttdoc">Создаёт экземпляр классса BaseSupervisedEvaluatorLearningController&lt;T, R, D, DT, DR&gt;.</div><div class="ttdef"><b>Определения</b> <a href="#l00054">BaseSupervisedEvaluatorLearningController.cs:55</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g_html_a75a4f0fc5024b436661c51328aa15ed4"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#a75a4f0fc5024b436661c51328aa15ed4">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController-5-g.Predict</a></div><div class="ttdeci">DR Predict(DT data)</div><div class="ttdoc">Выполняет предсказание на основе данных.Возвращает предсказанное значение.</div><div class="ttdef"><b>Определения</b> <a href="#l00088">BaseSupervisedEvaluatorLearningController.cs:88</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g_html_aa36dcdbddf19a681714d3f90c66c54cd"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_model_learning_1_1_base_supervised_evaluator_learning_controller-5-g.html#aa36dcdbddf19a681714d3f90c66c54cd">ViewModel.Implementations.ModelLearning.BaseSupervisedEvaluatorLearningController-5-g.IsValidModel</a></div><div class="ttdeci">bool IsValidModel</div><div class="ttdoc">Возвращает логическое значение, указывающее на достоверность модели обучения.</div><div class="ttdef"><b>Определения</b> <a href="#l00043">BaseSupervisedEvaluatorLearningController.cs:43</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_interfaces_1_1_generals_html"><div class="ttname"><a href="namespace_machine_learning_1_1_interfaces_1_1_generals.html">MachineLearning.Interfaces.Generals</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_processor_8cs_source.html#l00001">IDataProcessor.cs:2</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_html"><div class="ttname"><a href="namespace_machine_learning.html">MachineLearning</a></div><div class="ttdef"><b>Определения</b> <a href="_array_helper_8cs_source.html#l00001">ArrayHelper.cs:2</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_html_a0b556644115bb14e87c5bf8840c8f601"><div class="ttname"><a href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">MachineLearning.ScoreMetricCategory</a></div><div class="ttdeci">ScoreMetricCategory</div><div class="ttdoc">Перечисление категорий метрики оценки.</div><div class="ttdef"><b>Определения</b> <a href="_score_metric_category_8cs_source.html#l00006">ScoreMetricCategory.cs:7</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_model_learning_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_model_learning.html">ViewModel.Implementations.ModelLearning</a></div><div class="ttdef"><b>Определения</b> <a href="#l00006">BaseSupervisedEvaluatorLearningController.cs:7</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_model_learning_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_model_learning.html">ViewModel.Interfaces.ModelLearning</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_transformer_8cs_source.html#l00001">IDataTransformer.cs:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

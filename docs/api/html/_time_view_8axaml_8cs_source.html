@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/View/Views/Pages/TimeView.axaml.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_473d81db49f08dbf6f06a3c4df758b95.html">View</a></li><li class="navelem"><a class="el" href="dir_17280385f8b9236ff7efcb2c01a4d917.html">Views</a></li><li class="navelem"><a class="el" href="dir_a71da068985a6419541658bcbccfb601.html">Pages</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TimeView.axaml.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Avalonia.Controls;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>Avalonia.Layout;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>Avalonia.ReactiveUI;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>SatialInterfaces.Controls.Calendar;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_view_models_1_1_pages.html">ViewModel.ViewModels.Pages</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_1_1_views_1_1_pages.html">View.Views.Pages</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_view_1_1_views_1_1_pages_1_1_time_view.html">   18</a></span><span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_function" href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a985739e76007e6a1cb3ddda67d70bc5f">TimeView</a> : ReactiveUserControl&lt;TimeViewModel&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a985739e76007e6a1cb3ddda67d70bc5f">   23</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a985739e76007e6a1cb3ddda67d70bc5f">TimeView</a>()</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        InitializeComponent();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a7fb4528c1b834a16d858ed6f82b2aa3a">   29</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a7fb4528c1b834a16d858ed6f82b2aa3a">OnSizeChanged</a>(SizeChangedEventArgs e)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        base.OnSizeChanged(e);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        var leftElementRight = leftTopElement.Bounds.Width + leftTopElement.Margin.Right;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        var rightElementLeft = Bounds.Width - (rightTopElement.Bounds.Width +</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            rightTopElement.Margin.Right);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (leftElementRight &gt; rightElementLeft)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            Grid.SetRow(rightTopElement, 1);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            rightTopElement.HorizontalAlignment = HorizontalAlignment.Left;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            Grid.SetRow(rightTopElement, 0);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            rightTopElement.HorizontalAlignment = HorizontalAlignment.Right;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> CalendarControl_SelectionChanged(<span class="keywordtype">object</span>? sender,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        CalendarSelectionChangedEventArgs e)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        var dataContext = (<a class="code hl_class" href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html">TimeViewModel</a>)DataContext;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        dataContext.SelectedCalendarInterval = (<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_calendar_interval.html">CalendarInterval</a>?)e.SelectedItem;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="ttc" id="aclass_view_1_1_views_1_1_pages_1_1_time_view_html_a7fb4528c1b834a16d858ed6f82b2aa3a"><div class="ttname"><a href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a7fb4528c1b834a16d858ed6f82b2aa3a">View.Views.Pages.TimeView.OnSizeChanged</a></div><div class="ttdeci">override void OnSizeChanged(SizeChangedEventArgs e)</div><div class="ttdef"><b>Определения</b> <a href="#l00029">TimeView.axaml.cs:29</a></div></div>
+<div class="ttc" id="aclass_view_1_1_views_1_1_pages_1_1_time_view_html_a985739e76007e6a1cb3ddda67d70bc5f"><div class="ttname"><a href="class_view_1_1_views_1_1_pages_1_1_time_view.html#a985739e76007e6a1cb3ddda67d70bc5f">View.Views.Pages.TimeView.TimeView</a></div><div class="ttdeci">TimeView()</div><div class="ttdoc">������ ��������� ������ TimeView �� ���������.</div><div class="ttdef"><b>Определения</b> <a href="#l00023">TimeView.axaml.cs:23</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_calendar_interval_html"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_calendar_interval.html">ViewModel.Technicals.CalendarInterval</a></div><div class="ttdoc">Класс интервала календаря.</div><div class="ttdef"><b>Определения</b> <a href="_calendar_interval_8cs_source.html#l00008">CalendarInterval.cs:9</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_pages_1_1_time_view_model_html"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html">ViewModel.ViewModels.Pages.TimeViewModel</a></div><div class="ttdoc">Класс контроллера страницы календаря.</div><div class="ttdef"><b>Определения</b> <a href="_time_view_model_8cs_source.html#l00026">TimeViewModel.cs:27</a></div></div>
+<div class="ttc" id="anamespace_view_1_1_views_1_1_pages_html"><div class="ttname"><a href="namespace_view_1_1_views_1_1_pages.html">View.Views.Pages</a></div><div class="ttdef"><b>Определения</b> <a href="_editor_view_8axaml_8cs_source.html#l00005">EditorView.axaml.cs:5</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_technicals_html"><div class="ttname"><a href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a></div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00005">AppConfiguration.cs:6</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_view_models_1_1_pages_html"><div class="ttname"><a href="namespace_view_model_1_1_view_models_1_1_pages.html">ViewModel.ViewModels.Pages</a></div><div class="ttdef"><b>Определения</b> <a href="_editor_view_model_8cs_source.html#l00015">EditorViewModel.cs:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

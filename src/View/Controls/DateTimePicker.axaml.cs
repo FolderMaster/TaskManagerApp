@@ -1,4 +1,4 @@
-using Avalonia;
+п»їusing Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
 using System;
@@ -6,29 +6,29 @@ using System;
 namespace View.Controls;
 
 /// <summary>
-/// Класс пользовательского элемента для выбора даты и времени.
+/// РљР»Р°СЃСЃ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РґР»СЏ РІС‹Р±РѕСЂР° РґР°С‚С‹ Рё РІСЂРµРјРµРЅРё.
 /// </summary>
 /// <remarks>
-/// Наследует <see cref="UserControl"/>.
+/// РќР°СЃР»РµРґСѓРµС‚ <see cref="UserControl"/>.
 /// </remarks>
 public partial class DateTimePicker : UserControl
 {
     /// <summary>
-    /// Свойство стиля <see cref="DateTime"/>.
+    /// РЎРІРѕР№СЃС‚РІРѕ СЃС‚РёР»СЏ <see cref="DateTime"/>.
     /// </summary>
     public static readonly StyledProperty<DateTime?> DateTimeProperty =
         AvaloniaProperty.Register<DateTimePicker, DateTime?>(nameof(DateTime),
             defaultBindingMode: BindingMode.TwoWay);
 
     /// <summary>
-    /// Свойство стиля <see cref="TimeSpan"/>.
+    /// РЎРІРѕР№СЃС‚РІРѕ СЃС‚РёР»СЏ <see cref="TimeSpan"/>.
     /// </summary>
     public static readonly StyledProperty<TimeSpan?> TimeSpanProperty =
         AvaloniaProperty.Register<DateTimePicker, TimeSpan?>(nameof(TimeSpan),
             defaultBindingMode: BindingMode.TwoWay);
 
     /// <summary>
-    /// Возвращает и задаёт дату.
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ Рё Р·Р°РґР°С‘С‚ РґР°С‚Сѓ.
     /// </summary>
     public DateTime? DateTime
     {
@@ -37,7 +37,7 @@ public partial class DateTimePicker : UserControl
     }
 
     /// <summary>
-    /// Возвращает и задаёт время.
+    /// Р’РѕР·РІСЂР°С‰Р°РµС‚ Рё Р·Р°РґР°С‘С‚ РІСЂРµРјСЏ.
     /// </summary>
     public TimeSpan? TimeSpan
     {
@@ -46,7 +46,7 @@ public partial class DateTimePicker : UserControl
     }
 
     /// <summary>
-    /// Создаёт экземпляр класса <see cref="DateTimePicker"/> по умолчанию.
+    /// РЎРѕР·РґР°С‘С‚ СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° <see cref="DateTimePicker"/> РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ.
     /// </summary>
     public DateTimePicker()
     {

@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/Implementations/AppStates/Settings/AppSettings.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_deaeb9303eafac22136ac39c493cb383.html">Implementations</a></li><li class="navelem"><a class="el" href="dir_0cf4ad06004833fc07db0371329ef61b.html">AppStates</a></li><li class="navelem"><a class="el" href="dir_ad62e4c7009fdcb003d3b4d480c4d8a4.html">Settings</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">AppSettings.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>System.ComponentModel;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_trackable_features.html">TrackableFeatures</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_app_states.html">ViewModel.Interfaces.AppStates</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions.html">ViewModel.Interfaces.AppStates.Sessions</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_settings.html">ViewModel.Interfaces.AppStates.Settings</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_settings.html">ViewModel.Implementations.AppStates.Settings</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html">   19</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#afe61a2308e5667ca3fe694252aa22a94">AppSettings</a> : <a class="code hl_class" href="class_trackable_features_1_1_trackable_object.html">TrackableObject</a>, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_settings.html">ISettings</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">private</span> <span class="keyword">static</span> readonly <span class="keywordtype">string</span> _partFilePath = <span class="stringliteral">&quot;settings.json&quot;</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html">IFileService</a> _fileService;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_serializer.html">ISerializer</a> _serializer;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_theme_manager.html">IThemeManager</a> _themeManager;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager.html">ILocalizationManager</a> _localizationManager;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ISession</a> _session;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_logger.html">ILogger</a> _logger;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">private</span> <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a> _configuration = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">   64</a></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">FilePath</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a63cd1d2d316a06daa7a2afe4cbe8a9ee">   67</a></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a63cd1d2d316a06daa7a2afe4cbe8a9ee">Configuration</a></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">get</span> =&gt; _configuration;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keyword">private</span> <span class="keyword">set</span> =&gt; UpdateProperty(ref _configuration, (<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a>)value,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9ce4919ac999519d3bc4e9b9e8f0eb32">OnConfigurationUpdated</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#afe61a2308e5667ca3fe694252aa22a94">   83</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#afe61a2308e5667ca3fe694252aa22a94">AppSettings</a>(<a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_theme_manager.html">IThemeManager</a> themeManager, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager.html">ILocalizationManager</a> localizationManager,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ISession</a> session, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html">IFileService</a> fileService, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_serializer.html">ISerializer</a> serializer, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_logger.html">ILogger</a> logger)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            _themeManager = themeManager;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            _localizationManager = localizationManager;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            _session = session;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            _fileService = fileService;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            _serializer = serializer;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            _logger = logger;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">FilePath</a> = _fileService.CombinePath</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                (_fileService.PersonalDirectoryPath, _partFilePath);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#aedcf1745472c389c52e8417804b11cfd">InitializeConfiguration</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9a9538f7944bc2db86297aa0109ed573">  100</a></span>        <span class="keyword">public</span> async Task <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9a9538f7944bc2db86297aa0109ed573">Save</a>()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                var directoryPath = _fileService.GetDirectoryPath(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">FilePath</a>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keywordflow">if</span> (!_fileService.IsPathExists(directoryPath))</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                    _fileService.CreateDirectory(directoryPath);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                var format = <span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_configuration_format.html">AppConfigurationFormat</a>()</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    Theme = _configuration.ActualTheme.ToString(),</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    Localization = _configuration.ActualLocalization,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    SavePath = _configuration.SavePath</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                };</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                var data = _serializer.Serialize(format);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                await _fileService.Save(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">FilePath</a>, data);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                _logger.Log(ex.Message);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a150c3177a9e84c1274a18b3201a0e019">  125</a></span>        <span class="keyword">public</span> async Task <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a150c3177a9e84c1274a18b3201a0e019">Load</a>()</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">if</span> (!_fileService.IsPathExists(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">FilePath</a>))</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                var bytes = await _fileService.Load(<a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">FilePath</a>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                var format = _serializer.Deserialize&lt;<a class="code hl_class" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_configuration_format.html">AppConfigurationFormat</a>&gt;(bytes);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                <span class="keywordflow">if</span> (format != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                    <a class="code hl_property" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a63cd1d2d316a06daa7a2afe4cbe8a9ee">Configuration</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a>()</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        Localizations = _localizationManager.<a class="code hl_property" href="class_view_model_1_1_technicals_1_1_app_configuration.html#aeb3ae4e1f17f2e2ba2322d970a750727">Localizations</a>,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                        Themes = _themeManager.Themes,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                        ActualLocalization = format.Localization ??</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                            _configuration.ActualLocalization,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                        ActualTheme = _themeManager.Themes.FirstOrDefault</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                            (t =&gt; t.ToString() == format.Theme) ?? _configuration.ActualTheme,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                        SavePath = format.SavePath ?? _configuration.SavePath</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                    };</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                _logger.Log(ex.Message);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#aedcf1745472c389c52e8417804b11cfd">  158</a></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#aedcf1745472c389c52e8417804b11cfd">InitializeConfiguration</a>()</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            _configuration = <span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                SavePath = _session.SavePath,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                Localizations = _localizationManager.Localizations,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                ActualLocalization = _localizationManager.ActualLocalization,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                Themes = _themeManager.Themes,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                ActualTheme = _themeManager.ActualTheme</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            };</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            _configuration.PropertyChanged += Configuration_PropertyChanged;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9ce4919ac999519d3bc4e9b9e8f0eb32">  177</a></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9ce4919ac999519d3bc4e9b9e8f0eb32">OnConfigurationUpdated</a>(<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a> oldConfiguration,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a> newConfiguration)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            oldConfiguration.PropertyChanged -= Configuration_PropertyChanged;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            _themeManager.ActualTheme = _configuration.ActualTheme;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            _localizationManager.ActualLocalization = _configuration.ActualLocalization;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            _session.SavePath = _configuration.SavePath;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            newConfiguration.PropertyChanged += Configuration_PropertyChanged;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keyword">private</span> <span class="keywordtype">void</span> Configuration_PropertyChanged(<span class="keywordtype">object</span>? sender, PropertyChangedEventArgs e)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            <span class="keywordflow">switch</span> (e.PropertyName)</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                <span class="keywordflow">case</span> nameof(<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a>.<a class="code hl_property" href="class_view_model_1_1_technicals_1_1_app_configuration.html#ab65504fe724dff566b5f5d34ed87225c">ActualTheme</a>):</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                    _themeManager.ActualTheme = _configuration.ActualTheme;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <span class="keywordflow">case</span> nameof(<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a>.<a class="code hl_property" href="class_view_model_1_1_technicals_1_1_app_configuration.html#ae403fa3b5ac9d3c0185f4f2e133d8079">ActualLocalization</a>):</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                    _localizationManager.ActualLocalization = _configuration.ActualLocalization;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                <span class="keywordflow">case</span> nameof(<a class="code hl_class" href="class_view_model_1_1_technicals_1_1_app_configuration.html">AppConfiguration</a>.<a class="code hl_property" href="class_view_model_1_1_technicals_1_1_app_configuration.html#ab5e072044f0e3d28b4cce5f987cdbf6d">SavePath</a>):</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                    _session.SavePath = _configuration.SavePath;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
+<div class="ttc" id="aclass_trackable_features_1_1_trackable_object_html"><div class="ttname"><a href="class_trackable_features_1_1_trackable_object.html">TrackableFeatures.TrackableObject</a></div><div class="ttdoc">Базовый класс объекта, предоставляющий поддержку отслеживания изменений свойств и ошибок.</div><div class="ttdef"><b>Определения</b> <a href="_trackable_object_8cs_source.html#l00013">TrackableObject.cs:14</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_configuration_format_html"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_configuration_format.html">ViewModel.Implementations.AppStates.Settings.AppConfigurationFormat</a></div><div class="ttdoc">Класс формата конфигурации приложении.</div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_format_8cs_source.html#l00008">AppConfigurationFormat.cs:9</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_a150c3177a9e84c1274a18b3201a0e019"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a150c3177a9e84c1274a18b3201a0e019">ViewModel.Implementations.AppStates.Settings.AppSettings.Load</a></div><div class="ttdeci">async Task Load()</div><div class="ttdoc">Загружает данные из хранилища.Возвращает задачц процесса загрузки данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00125">AppSettings.cs:125</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_a63cd1d2d316a06daa7a2afe4cbe8a9ee"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a63cd1d2d316a06daa7a2afe4cbe8a9ee">ViewModel.Implementations.AppStates.Settings.AppSettings.Configuration</a></div><div class="ttdeci">object Configuration</div><div class="ttdoc">Возвращает конфигурацию.</div><div class="ttdef"><b>Определения</b> <a href="#l00067">AppSettings.cs:68</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_a9a9538f7944bc2db86297aa0109ed573"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9a9538f7944bc2db86297aa0109ed573">ViewModel.Implementations.AppStates.Settings.AppSettings.Save</a></div><div class="ttdeci">async Task Save()</div><div class="ttdoc">Сохраняет данные в хранилище.Возвращает задачц процесса сохранения данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00100">AppSettings.cs:100</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_a9ce4919ac999519d3bc4e9b9e8f0eb32"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#a9ce4919ac999519d3bc4e9b9e8f0eb32">ViewModel.Implementations.AppStates.Settings.AppSettings.OnConfigurationUpdated</a></div><div class="ttdeci">void OnConfigurationUpdated(AppConfiguration oldConfiguration, AppConfiguration newConfiguration)</div><div class="ttdoc">Вызывается при обновлении конфигурации.</div><div class="ttdef"><b>Определения</b> <a href="#l00177">AppSettings.cs:177</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_acd946dc0357591b71476c4655a1fced9"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#acd946dc0357591b71476c4655a1fced9">ViewModel.Implementations.AppStates.Settings.AppSettings.FilePath</a></div><div class="ttdeci">string FilePath</div><div class="ttdoc">Возвращает и задаёт путь к файлу.</div><div class="ttdef"><b>Определения</b> <a href="#l00064">AppSettings.cs:64</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_aedcf1745472c389c52e8417804b11cfd"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#aedcf1745472c389c52e8417804b11cfd">ViewModel.Implementations.AppStates.Settings.AppSettings.InitializeConfiguration</a></div><div class="ttdeci">void InitializeConfiguration()</div><div class="ttdoc">Инициализирует конфигурацию.</div><div class="ttdef"><b>Определения</b> <a href="#l00158">AppSettings.cs:158</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings_html_afe61a2308e5667ca3fe694252aa22a94"><div class="ttname"><a href="class_view_model_1_1_implementations_1_1_app_states_1_1_settings_1_1_app_settings.html#afe61a2308e5667ca3fe694252aa22a94">ViewModel.Implementations.AppStates.Settings.AppSettings.AppSettings</a></div><div class="ttdeci">AppSettings(IThemeManager themeManager, ILocalizationManager localizationManager, ISession session, IFileService fileService, ISerializer serializer, ILogger logger)</div><div class="ttdoc">Создаёт экземпляр класса AppSettings.</div><div class="ttdef"><b>Определения</b> <a href="#l00083">AppSettings.cs:83</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_app_configuration_html"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_app_configuration.html">ViewModel.Technicals.AppConfiguration</a></div><div class="ttdoc">Класс конфигурации приложения.</div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00013">AppConfiguration.cs:14</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_app_configuration_html_ab5e072044f0e3d28b4cce5f987cdbf6d"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_app_configuration.html#ab5e072044f0e3d28b4cce5f987cdbf6d">ViewModel.Technicals.AppConfiguration.SavePath</a></div><div class="ttdeci">string SavePath</div><div class="ttdoc">Возвращает и задаёт путь сохранения.</div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00062">AppConfiguration.cs:63</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_app_configuration_html_ab65504fe724dff566b5f5d34ed87225c"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_app_configuration.html#ab65504fe724dff566b5f5d34ed87225c">ViewModel.Technicals.AppConfiguration.ActualTheme</a></div><div class="ttdeci">object ActualTheme</div><div class="ttdoc">Возвращает и задаёт актуальную тему.</div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00048">AppConfiguration.cs:49</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_app_configuration_html_ae403fa3b5ac9d3c0185f4f2e133d8079"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_app_configuration.html#ae403fa3b5ac9d3c0185f4f2e133d8079">ViewModel.Technicals.AppConfiguration.ActualLocalization</a></div><div class="ttdeci">CultureInfo ActualLocalization</div><div class="ttdoc">Возвращает и задаёт актуальную локализацию.</div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00033">AppConfiguration.cs:34</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_app_configuration_html_aeb3ae4e1f17f2e2ba2322d970a750727"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_app_configuration.html#aeb3ae4e1f17f2e2ba2322d970a750727">ViewModel.Technicals.AppConfiguration.Localizations</a></div><div class="ttdeci">IEnumerable&lt; CultureInfo &gt; Localizations</div><div class="ttdoc">Возвращает и задаёт локализации.</div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00042">AppConfiguration.cs:42</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_file_service.html">ViewModel.Interfaces.AppStates.IFileService</a></div><div class="ttdoc">Интерфейс сервиса файлов.</div><div class="ttdef"><b>Определения</b> <a href="_i_file_service_8cs_source.html#l00006">IFileService.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_i_logger_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_logger.html">ViewModel.Interfaces.AppStates.ILogger</a></div><div class="ttdoc">Интерфейс сервиса логирования сообщений.</div><div class="ttdef"><b>Определения</b> <a href="_i_logger_8cs_source.html#l00006">ILogger.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_i_serializer_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_serializer.html">ViewModel.Interfaces.AppStates.ISerializer</a></div><div class="ttdoc">Интерфейс сериализатора.</div><div class="ttdef"><b>Определения</b> <a href="_i_serializer_8cs_source.html#l00006">ISerializer.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ViewModel.Interfaces.AppStates.Sessions.ISession</a></div><div class="ttdoc">Интерфейс сессии для хранения и изменения данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_session_8cs_source.html#l00011">ISession.cs:12</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_localization_manager.html">ViewModel.Interfaces.AppStates.Settings.ILocalizationManager</a></div><div class="ttdoc">Интерфейс менеджера локализаций.</div><div class="ttdef"><b>Определения</b> <a href="_i_localization_manager_8cs_source.html#l00008">ILocalizationManager.cs:9</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_settings_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_settings.html">ViewModel.Interfaces.AppStates.Settings.ISettings</a></div><div class="ttdoc">Интерфейс настроек.</div><div class="ttdef"><b>Определения</b> <a href="_i_settings_8cs_source.html#l00009">ISettings.cs:10</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_theme_manager_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_settings_1_1_i_theme_manager.html">ViewModel.Interfaces.AppStates.Settings.IThemeManager</a></div><div class="ttdoc">Интерфейс менеджера тем.</div><div class="ttdef"><b>Определения</b> <a href="_i_theme_manager_8cs_source.html#l00006">IThemeManager.cs:7</a></div></div>
+<div class="ttc" id="anamespace_trackable_features_html"><div class="ttname"><a href="namespace_trackable_features.html">TrackableFeatures</a></div><div class="ttdef"><b>Определения</b> <a href="_trackable_collection_8cs_source.html#l00004">TrackableCollection.cs:5</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_implementations_1_1_app_states_1_1_settings_html"><div class="ttname"><a href="namespace_view_model_1_1_implementations_1_1_app_states_1_1_settings.html">ViewModel.Implementations.AppStates.Settings</a></div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_format_8cs_source.html#l00003">AppConfigurationFormat.cs:4</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions.html">ViewModel.Interfaces.AppStates.Sessions</a></div><div class="ttdef"><b>Определения</b> <a href="_i_session_8cs_source.html#l00003">ISession.cs:4</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_app_states_1_1_settings_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_settings.html">ViewModel.Interfaces.AppStates.Settings</a></div><div class="ttdef"><b>Определения</b> <a href="_i_localization_manager_8cs_source.html#l00003">ILocalizationManager.cs:4</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_app_states_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_app_states.html">ViewModel.Interfaces.AppStates</a></div><div class="ttdef"><b>Определения</b> <a href="_i_app_life_state_8cs_source.html#l00001">IAppLifeState.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_technicals_html"><div class="ttname"><a href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a></div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00005">AppConfiguration.cs:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

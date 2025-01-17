@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Шаблон структуры MachineLearning.DataProcessorResult&lt; T &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_machine_learning.html">MachineLearning</a></li><li class="navelem"><a class="el" href="struct_machine_learning_1_1_data_processor_result-1-g.html">DataProcessorResult-1-g</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="struct_machine_learning_1_1_data_processor_result-1-g-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон структуры MachineLearning.DataProcessorResult&lt; T &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Структура хранения данных результата преобразования.  
+ <a href="#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a5384fadd9004e7540d35b0580df7b9db" id="r_a5384fadd9004e7540d35b0580df7b9db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5384fadd9004e7540d35b0580df7b9db">DataProcessorResult</a> (IEnumerable&lt; T &gt; result, IEnumerable&lt; int &gt;? removedColumnsIndices=null, IEnumerable&lt; int &gt;? removedRowsIndices=null)</td></tr>
+<tr class="memdesc:a5384fadd9004e7540d35b0580df7b9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт экземпляр класса <a class="el" href="struct_machine_learning_1_1_data_processor_result-1-g.html" title="Структура хранения данных результата преобразования.">DataProcessorResult&lt;T&gt;</a>.  <br /></td></tr>
+<tr class="separator:a5384fadd9004e7540d35b0580df7b9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:a22970f60d905503dca076190d24f9b02" id="r_a22970f60d905503dca076190d24f9b02"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22970f60d905503dca076190d24f9b02">Result</a><code> [get]</code></td></tr>
+<tr class="memdesc:a22970f60d905503dca076190d24f9b02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт результат преобразования.  <br /></td></tr>
+<tr class="separator:a22970f60d905503dca076190d24f9b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16486b47fc40c7ddb7e6d53bf633b0b1" id="r_a16486b47fc40c7ddb7e6d53bf633b0b1"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16486b47fc40c7ddb7e6d53bf633b0b1">RemovedColumnsIndices</a><code> [get]</code></td></tr>
+<tr class="memdesc:a16486b47fc40c7ddb7e6d53bf633b0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт индексы удалённых столбцов.  <br /></td></tr>
+<tr class="separator:a16486b47fc40c7ddb7e6d53bf633b0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf3da23e4b817d7ed3c7a175fde208c" id="r_adcf3da23e4b817d7ed3c7a175fde208c"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcf3da23e4b817d7ed3c7a175fde208c">RemovedRowsIndices</a><code> [get]</code></td></tr>
+<tr class="memdesc:adcf3da23e4b817d7ed3c7a175fde208c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт индексы удалённых строк.  <br /></td></tr>
+<tr class="separator:adcf3da23e4b817d7ed3c7a175fde208c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Структура хранения данных результата преобразования. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип данных.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_data_processor_result_8cs_source.html">DataProcessorResult.cs</a> строка <a class="el" href="_data_processor_result_8cs_source.html#l00007">7</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a5384fadd9004e7540d35b0580df7b9db" name="a5384fadd9004e7540d35b0580df7b9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5384fadd9004e7540d35b0580df7b9db">&#9670;&#160;</a></span>DataProcessorResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MachineLearning.DataProcessorResult&lt; T &gt;.DataProcessorResult </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IEnumerable&lt; int &gt;?</td>          <td class="paramname"><span class="paramname"><em>removedColumnsIndices</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IEnumerable&lt; int &gt;?</td>          <td class="paramname"><span class="paramname"><em>removedRowsIndices</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт экземпляр класса <a class="el" href="struct_machine_learning_1_1_data_processor_result-1-g.html" title="Структура хранения данных результата преобразования.">DataProcessorResult&lt;T&gt;</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>Результат преобразования.</td></tr>
+    <tr><td class="paramname">removedColumnsIndices</td><td>Индексы удалённых столбцов.</td></tr>
+    <tr><td class="paramname">removedRowsIndices</td><td>Индексы удалённых строк.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_data_processor_result_8cs_source.html">DataProcessorResult.cs</a> строка <a class="el" href="_data_processor_result_8cs_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="a16486b47fc40c7ddb7e6d53bf633b0b1" name="a16486b47fc40c7ddb7e6d53bf633b0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16486b47fc40c7ddb7e6d53bf633b0b1">&#9670;&#160;</a></span>RemovedColumnsIndices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;int&gt; MachineLearning.DataProcessorResult&lt; T &gt;.RemovedColumnsIndices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт индексы удалённых столбцов. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_data_processor_result_8cs_source.html">DataProcessorResult.cs</a> строка <a class="el" href="_data_processor_result_8cs_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a id="adcf3da23e4b817d7ed3c7a175fde208c" name="adcf3da23e4b817d7ed3c7a175fde208c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcf3da23e4b817d7ed3c7a175fde208c">&#9670;&#160;</a></span>RemovedRowsIndices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;int&gt; MachineLearning.DataProcessorResult&lt; T &gt;.RemovedRowsIndices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт индексы удалённых строк. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_data_processor_result_8cs_source.html">DataProcessorResult.cs</a> строка <a class="el" href="_data_processor_result_8cs_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a id="a22970f60d905503dca076190d24f9b02" name="a22970f60d905503dca076190d24f9b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22970f60d905503dca076190d24f9b02">&#9670;&#160;</a></span>Result</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerable&lt;T&gt; MachineLearning.DataProcessorResult&lt; T &gt;.Result</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт результат преобразования. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="_data_processor_result_8cs_source.html">DataProcessorResult.cs</a> строка <a class="el" href="_data_processor_result_8cs_source.html#l00012">12</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

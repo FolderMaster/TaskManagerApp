@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/MachineLearning/Converters/BaseUnsupervisedLearningConverter.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_f61afb9337c5bcb2f9f267b0a6f32410.html">MachineLearning</a></li><li class="navelem"><a class="el" href="dir_dbeeb548232297530e98a258996b637f.html">Converters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">BaseUnsupervisedLearningConverter.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Accord.Math;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_interfaces_1_1_generals.html">MachineLearning.Interfaces.Generals</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_machine_learning_1_1_converters.html">MachineLearning.Converters</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html">   19</a></span>    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#aba4811ca7584eac3d5610f2b026d2a9c">BaseUnsupervisedLearningConverter</a>&lt;R, D, DT, DR&gt; :</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#a2913f1bbdec9c665d652d1d8cf235854">BaseLearningConverter</a>&lt;R, D, DT, DR&gt;,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        IUnsupervisedLearningConverter&lt;IEnumerable&lt;double&gt;, R, D, DT, DR&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#affd86d878d6476fa626969c65b875277">   26</a></span>        <span class="keyword">protected</span> readonly IEnumerable&lt;IPointDataProcessor&gt; <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#affd86d878d6476fa626969c65b875277">_pointDataProcessors</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#aba4811ca7584eac3d5610f2b026d2a9c">   33</a></span>        <span class="keyword">protected</span> <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#aba4811ca7584eac3d5610f2b026d2a9c">BaseUnsupervisedLearningConverter</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            (<a class="code hl_interface" href="interface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor.html">IPrimaryPointDataProcessor</a> primaryPointDataProcessor,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            IEnumerable&lt;IPointDataProcessor&gt; pointDataProcessors) : base(primaryPointDataProcessor)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#affd86d878d6476fa626969c65b875277">_pointDataProcessors</a> = pointDataProcessors;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#ab83f3f3154ebd17499cb57f0a9e591b2">   41</a></span>        <span class="keyword">public</span> IEnumerable&lt;IEnumerable&lt;double&gt;&gt; <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#ab83f3f3154ebd17499cb57f0a9e591b2">FitConvertData</a>(IEnumerable&lt;D&gt; data)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            var dataArray = data.ToArray();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            var featuresResult = <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#af077a974158578bbdcf9fc67c5a73901">ProcessFeaturesData</a>(dataArray);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#aaacfb0378fd851d1a342bba207cd646a">_removedColumnsIndices</a> = featuresResult.RemovedColumnsIndices;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            var featuresArray = featuresResult.Result.To2dArray();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a997a72055f3db77a102b5ba913c968f1">CreateScalers</a>(featuresArray);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> featuresArray;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a097ec2f4f97b7f2669b9eab1658e9203">   58</a></span>        <span class="keyword">protected</span> <span class="keyword">abstract</span> IEnumerable&lt;IEnumerable&lt;double?&gt;&gt; <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a097ec2f4f97b7f2669b9eab1658e9203">ProcessFeatures</a>(IEnumerable&lt;D&gt; data);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a42e0707a9280269e8cb9594099e68eb9">   66</a></span>        <span class="keyword">protected</span> <span class="keyword">abstract</span> <a class="code hl_interface" href="interface_machine_learning_1_1_interfaces_1_1_i_scaler.html">IScaler</a> <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a42e0707a9280269e8cb9594099e68eb9">CreateScaler</a>(<span class="keywordtype">int</span> index, IEnumerable&lt;int&gt; removedColumnsIndices);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#af077a974158578bbdcf9fc67c5a73901">   73</a></span>        <span class="keyword">protected</span> DataProcessorResult&lt;IEnumerable&lt;double&gt;&gt; <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#af077a974158578bbdcf9fc67c5a73901">ProcessFeaturesData</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            (IEnumerable&lt;D&gt; data)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            var featuresArray = <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a097ec2f4f97b7f2669b9eab1658e9203">ProcessFeatures</a>(data).To2dArray();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            var removedColumnsIndicesGroups = <span class="keyword">new</span> List&lt;IEnumerable&lt;int&gt;&gt;();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            var removedRowsIndicesGroups = <span class="keyword">new</span> List&lt;IEnumerable&lt;int&gt;&gt;();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            var primaryProcessorResult = <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#a337b12d9910e63e2146ed118330bd663">_primaryPointDataProcessor</a>.Process(featuresArray);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            removedColumnsIndicesGroups.Add(primaryProcessorResult.RemovedColumnsIndices);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            removedRowsIndicesGroups.Add(primaryProcessorResult.RemovedRowsIndices);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            var newFeaturesArray = primaryProcessorResult.Result;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">foreach</span> (var pointDataProcessor <span class="keywordflow">in</span> <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#affd86d878d6476fa626969c65b875277">_pointDataProcessors</a>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                var processorResult = pointDataProcessor.Process(newFeaturesArray);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                removedColumnsIndicesGroups.Add(processorResult.RemovedColumnsIndices);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                removedRowsIndicesGroups.Add(processorResult.RemovedRowsIndices);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                newFeaturesArray = processorResult.Result;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            var removedColumnsIndices = <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a6b7e7aecd90ee02bec2b7e8ef76ed01f">NormalizeRemovedIndices</a>(removedColumnsIndicesGroups);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            var removedRowIndices = <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a6b7e7aecd90ee02bec2b7e8ef76ed01f">NormalizeRemovedIndices</a>(removedRowsIndicesGroups);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> DataProcessorResult&lt;IEnumerable&lt;double&gt;&gt;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                (newFeaturesArray, removedColumnsIndices, removedRowIndices);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a997a72055f3db77a102b5ba913c968f1">  103</a></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a997a72055f3db77a102b5ba913c968f1">CreateScalers</a>(<span class="keywordtype">double</span>[][] featuresArray)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            var columnCount = featuresArray.First().Length;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            var scalers = <span class="keyword">new</span> List&lt;IScaler&gt;();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">for</span> (var i = 0; i &lt; columnCount; ++i)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                var scaler = <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a42e0707a9280269e8cb9594099e68eb9">CreateScaler</a>(i, <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#aaacfb0378fd851d1a342bba207cd646a">_removedColumnsIndices</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                var column = featuresArray.GetColumn(i);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                var newColumn = scaler.FitTransform(column).ToArray();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                featuresArray.SetColumn(i, newColumn);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                scalers.Add(scaler);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_variable" href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#a5eff4faca5ffbb2383834bbfb7222710">_scalers</a> = scalers;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a6b7e7aecd90ee02bec2b7e8ef76ed01f">  123</a></span>        <span class="keyword">protected</span> IEnumerable&lt;int&gt; <a class="code hl_function" href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a6b7e7aecd90ee02bec2b7e8ef76ed01f">NormalizeRemovedIndices</a></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            (IEnumerable&lt;IEnumerable&lt;int&gt;&gt; removedIndicesGroups)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            var result = <span class="keyword">new</span> List&lt;int&gt;();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">foreach</span> (var removedIndices <span class="keywordflow">in</span> removedIndicesGroups)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                var newNormalizedIndices = <span class="keyword">new</span> List&lt;int&gt;();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <span class="keywordflow">foreach</span> (var index <span class="keywordflow">in</span> removedIndices.Order())</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                    var normalizedIndex = index;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    <span class="keywordflow">foreach</span> (var removedIndex <span class="keywordflow">in</span> result)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                    {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                        <span class="keywordflow">if</span> (normalizedIndex &lt; removedIndex)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                        {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                        }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        ++normalizedIndex;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                    }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                    newNormalizedIndices.Add(normalizedIndex);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                result.AddRange(newNormalizedIndices);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                result = result.Order().ToList();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_learning_converter-4-g_html_a2913f1bbdec9c665d652d1d8cf235854"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#a2913f1bbdec9c665d652d1d8cf235854">MachineLearning.Converters.BaseLearningConverter-4-g.BaseLearningConverter</a></div><div class="ttdeci">BaseLearningConverter(IPrimaryPointDataProcessor primaryPointDataProcessor)</div><div class="ttdoc">Создаёт экземпляр класса BaseLearningConverter&lt;R, D, DT, DR&gt;.</div><div class="ttdef"><b>Определения</b> <a href="_base_learning_converter_8cs_source.html#l00038">BaseLearningConverter.cs:38</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_learning_converter-4-g_html_a337b12d9910e63e2146ed118330bd663"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#a337b12d9910e63e2146ed118330bd663">MachineLearning.Converters.BaseLearningConverter-4-g._primaryPointDataProcessor</a></div><div class="ttdeci">readonly IPrimaryPointDataProcessor _primaryPointDataProcessor</div><div class="ttdoc">Первичный обработчик точечных данных.</div><div class="ttdef"><b>Определения</b> <a href="_base_learning_converter_8cs_source.html#l00022">BaseLearningConverter.cs:22</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_learning_converter-4-g_html_a5eff4faca5ffbb2383834bbfb7222710"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#a5eff4faca5ffbb2383834bbfb7222710">MachineLearning.Converters.BaseLearningConverter-4-g._scalers</a></div><div class="ttdeci">IEnumerable&lt; IScaler &gt;? _scalers</div><div class="ttdoc">Коллекция масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="_base_learning_converter_8cs_source.html#l00032">BaseLearningConverter.cs:32</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_learning_converter-4-g_html_aaacfb0378fd851d1a342bba207cd646a"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_learning_converter-4-g.html#aaacfb0378fd851d1a342bba207cd646a">MachineLearning.Converters.BaseLearningConverter-4-g._removedColumnsIndices</a></div><div class="ttdeci">IEnumerable&lt; int &gt;? _removedColumnsIndices</div><div class="ttdoc">Индексы удалённых столбцов.</div><div class="ttdef"><b>Определения</b> <a href="_base_learning_converter_8cs_source.html#l00027">BaseLearningConverter.cs:27</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_a097ec2f4f97b7f2669b9eab1658e9203"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a097ec2f4f97b7f2669b9eab1658e9203">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.ProcessFeatures</a></div><div class="ttdeci">IEnumerable&lt; IEnumerable&lt; double?&gt; &gt; ProcessFeatures(IEnumerable&lt; D &gt; data)</div><div class="ttdoc">Обрабатывает признаков данных.</div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_a42e0707a9280269e8cb9594099e68eb9"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a42e0707a9280269e8cb9594099e68eb9">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.CreateScaler</a></div><div class="ttdeci">IScaler CreateScaler(int index, IEnumerable&lt; int &gt; removedColumnsIndices)</div><div class="ttdoc">Создаёт масштабирование данных.</div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_a6b7e7aecd90ee02bec2b7e8ef76ed01f"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a6b7e7aecd90ee02bec2b7e8ef76ed01f">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.NormalizeRemovedIndices</a></div><div class="ttdeci">IEnumerable&lt; int &gt; NormalizeRemovedIndices(IEnumerable&lt; IEnumerable&lt; int &gt; &gt; removedIndicesGroups)</div><div class="ttdoc">Нормализует индексы удалённых индексов.</div><div class="ttdef"><b>Определения</b> <a href="#l00123">BaseUnsupervisedLearningConverter.cs:124</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_a997a72055f3db77a102b5ba913c968f1"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#a997a72055f3db77a102b5ba913c968f1">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.CreateScalers</a></div><div class="ttdeci">void CreateScalers(double[][] featuresArray)</div><div class="ttdoc">Создаёт коллекцию масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00103">BaseUnsupervisedLearningConverter.cs:103</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_ab83f3f3154ebd17499cb57f0a9e591b2"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#ab83f3f3154ebd17499cb57f0a9e591b2">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.FitConvertData</a></div><div class="ttdeci">IEnumerable&lt; IEnumerable&lt; double &gt; &gt; FitConvertData(IEnumerable&lt; D &gt; data)</div><div class="ttdoc">Адаптирует конвертацию данных под данные для предсказания.Возвращает конвертированные входных данных ...</div><div class="ttdef"><b>Определения</b> <a href="#l00041">BaseUnsupervisedLearningConverter.cs:41</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_aba4811ca7584eac3d5610f2b026d2a9c"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#aba4811ca7584eac3d5610f2b026d2a9c">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.BaseUnsupervisedLearningConverter</a></div><div class="ttdeci">BaseUnsupervisedLearningConverter(IPrimaryPointDataProcessor primaryPointDataProcessor, IEnumerable&lt; IPointDataProcessor &gt; pointDataProcessors)</div><div class="ttdoc">Создаёт экземпляр класса BaseUnsupervisedLearningConverter&lt;R, D, DT, DR&gt;.</div><div class="ttdef"><b>Определения</b> <a href="#l00033">BaseUnsupervisedLearningConverter.cs:34</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_af077a974158578bbdcf9fc67c5a73901"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#af077a974158578bbdcf9fc67c5a73901">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g.ProcessFeaturesData</a></div><div class="ttdeci">DataProcessorResult&lt; IEnumerable&lt; double &gt; &gt; ProcessFeaturesData(IEnumerable&lt; D &gt; data)</div><div class="ttdoc">Обрабатывает признаков данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00073">BaseUnsupervisedLearningConverter.cs:74</a></div></div>
+<div class="ttc" id="aclass_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g_html_affd86d878d6476fa626969c65b875277"><div class="ttname"><a href="class_machine_learning_1_1_converters_1_1_base_unsupervised_learning_converter-4-g.html#affd86d878d6476fa626969c65b875277">MachineLearning.Converters.BaseUnsupervisedLearningConverter-4-g._pointDataProcessors</a></div><div class="ttdeci">readonly IEnumerable&lt; IPointDataProcessor &gt; _pointDataProcessors</div><div class="ttdoc">Обработчики точечных данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00026">BaseUnsupervisedLearningConverter.cs:26</a></div></div>
+<div class="ttc" id="ainterface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor_html"><div class="ttname"><a href="interface_machine_learning_1_1_interfaces_1_1_i_primary_point_data_processor.html">MachineLearning.Interfaces.IPrimaryPointDataProcessor</a></div><div class="ttdoc">Интерфейс первичного обработчика точечных данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_primary_point_data_processor_8cs_source.html#l00012">IPrimaryPointDataProcessor.cs:13</a></div></div>
+<div class="ttc" id="ainterface_machine_learning_1_1_interfaces_1_1_i_scaler_html"><div class="ttname"><a href="interface_machine_learning_1_1_interfaces_1_1_i_scaler.html">MachineLearning.Interfaces.IScaler</a></div><div class="ttdoc">Интерфейс масштабирования данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_scaler_8cs_source.html#l00006">IScaler.cs:7</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_converters_html"><div class="ttname"><a href="namespace_machine_learning_1_1_converters.html">MachineLearning.Converters</a></div><div class="ttdef"><b>Определения</b> <a href="_base_learning_converter_8cs_source.html#l00004">BaseLearningConverter.cs:5</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_interfaces_1_1_generals_html"><div class="ttname"><a href="namespace_machine_learning_1_1_interfaces_1_1_generals.html">MachineLearning.Interfaces.Generals</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_processor_8cs_source.html#l00001">IDataProcessor.cs:2</a></div></div>
+<div class="ttc" id="anamespace_machine_learning_1_1_interfaces_html"><div class="ttname"><a href="namespace_machine_learning_1_1_interfaces.html">MachineLearning.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_data_processor_8cs_source.html#l00001">IDataProcessor.cs:2</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

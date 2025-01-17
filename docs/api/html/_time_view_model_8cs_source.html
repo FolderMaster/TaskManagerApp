@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Исходный файл C:/Users/Darkonge/source/repos/TaskManagerApp/src/ViewModel/ViewModels/Pages/TimeViewModel.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_c9ca71e7f49e0ad1db6c0d36e7e39127.html">TaskManagerApp</a></li><li class="navelem"><a class="el" href="dir_d7e5ea160b973777b6898aed4958b025.html">src</a></li><li class="navelem"><a class="el" href="dir_1d71250ba56aaaf12ac1f1162d419ca1.html">ViewModel</a></li><li class="navelem"><a class="el" href="dir_78fbab1a687ba045d6948e8d6955bb34.html">ViewModels</a></li><li class="navelem"><a class="el" href="dir_67bddb94e1d726380e43c0a3c1e4dc4b.html">Pages</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">TimeViewModel.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>ReactiveUI.SourceGenerators;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>ReactiveUI;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Reactive.Linq;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System.Collections.ObjectModel;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>DynamicData;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model.html">Model</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_model_1_1_interfaces.html">Model.Interfaces</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_view_models_1_1_modals.html">ViewModel.ViewModels.Modals</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces.html">ViewModel.Interfaces</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions.html">ViewModel.Interfaces.AppStates.Sessions</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_app_states.html">ViewModel.Interfaces.AppStates</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_view_model_1_1_interfaces_1_1_data_managers.html">ViewModel.Interfaces.DataManagers</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_view_model_1_1_view_models_1_1_pages.html">ViewModel.ViewModels.Pages</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html">   26</a></span><span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_function" href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html#a1de6706b378b538e65c4bfd238874971">TimeViewModel</a> : <a class="code hl_class" href="class_view_model_1_1_view_models_1_1_base_page_view_model.html">BasePageViewModel</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">private</span> readonly IObservable&lt;bool&gt; _canExecuteRemove;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">private</span> readonly IObservable&lt;bool&gt; _canExecuteEdit;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ISession</a> _session;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service.html">IResourceService</a> _resourceService;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_i_time_scheduler.html">ITimeScheduler</a> _timeScheduler;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_notification_manager.html">INotificationManager</a> _notificationManager;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">private</span> BaseDialogViewModel&lt;TimeIntervalViewModelArgs, TimeIntervalViewModelResult&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        _addTimeIntervalDialog;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">private</span> BaseDialogViewModel&lt;ITimeIntervalElement, bool&gt; _editTimeIntervalDialog;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">private</span> IFactory&lt;ITimeIntervalElement&gt; _timeIntervalElementFactory;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">private</span> <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy.html">ITimeIntervalElementsEditorProxy</a> _timeIntervalElementsEditorProxy;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">private</span> Dictionary&lt;DateTime, IEnumerable&lt;ITaskElement&gt;&gt; _tasksSchedulerDictionary;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    [Reactive]</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">private</span> IList&lt;CalendarInterval&gt; _calendarIntervals =</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keyword">new</span> ObservableCollection&lt;CalendarInterval&gt;();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    [Reactive]</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_calendar_interval.html">CalendarInterval</a>? _selectedCalendarInterval;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    [Reactive]</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">private</span> DateTime _currentWeek = DateTime.Now;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html#a1de6706b378b538e65c4bfd238874971">  118</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html#a1de6706b378b538e65c4bfd238874971">TimeViewModel</a>(<a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ISession</a> session, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service.html">IResourceService</a> resourceService,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_i_time_scheduler.html">ITimeScheduler</a> timeScheduler, <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_notification_manager.html">INotificationManager</a> notificationManager,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        BaseDialogViewModel&lt;TimeIntervalViewModelArgs, TimeIntervalViewModelResult&gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            addTimeIntervalDialog,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        BaseDialogViewModel&lt;ITimeIntervalElement, bool&gt; editTimeIntervalDialog,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        IFactory&lt;ITimeIntervalElement&gt; timeIntervalElementFactory,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <a class="code hl_interface" href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy.html">ITimeIntervalElementsEditorProxy</a> timeIntervalElementsEditorProxy)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        _session = session;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        _resourceService = resourceService;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        _timeScheduler = timeScheduler;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        _notificationManager = notificationManager;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        _addTimeIntervalDialog = addTimeIntervalDialog;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        _editTimeIntervalDialog = editTimeIntervalDialog;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        _timeIntervalElementFactory = timeIntervalElementFactory;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        _timeIntervalElementsEditorProxy = timeIntervalElementsEditorProxy;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        _canExecuteRemove = this.WhenAnyValue(c =&gt; c.SelectedCalendarInterval).</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            Select(c =&gt; c != <span class="keyword">null</span>).CombineLatest(<a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">_modalsObservable</a>, (r1, r2) =&gt; r1 &amp;&amp; r2);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        _canExecuteEdit = this.WhenAnyValue(c =&gt; c.SelectedCalendarInterval).</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            Select(c =&gt; c != <span class="keyword">null</span>).CombineLatest(<a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">_modalsObservable</a>, (r1, r2) =&gt; r1 &amp;&amp; r2);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <a class="code hl_property" href="class_view_model_1_1_view_models_1_1_base_page_view_model.html#a749397df37ea6fdfaf5f84d1f57d7929">Metadata</a> = resourceService.<a class="code hl_function" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service.html#a2c476795522b17f3036a8a40a0a4d8bd">GetResource</a>(<span class="stringliteral">&quot;TimePageMetadata&quot;</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        _session.ItemsUpdated += Session_ItemsUpdated;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        _timeScheduler.TimepointReached += TimeScheduler_TimepointReached;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
+</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    [ReactiveCommand]</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> Update()</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">if</span> (_session.<a class="code hl_property" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html#aa2bc5b828ec0f9c1c33b21eabf36f248">Tasks</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        CalendarIntervals.Clear();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        var tasks = TaskHelper.GetTaskElements(_session.<a class="code hl_property" href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html#aa2bc5b828ec0f9c1c33b21eabf36f248">Tasks</a>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">foreach</span> (var task <span class="keywordflow">in</span> tasks)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">foreach</span>(var timeInterval <span class="keywordflow">in</span> task.TimeIntervals)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                CalendarIntervals.Add(<span class="keyword">new</span> <a class="code hl_class" href="class_view_model_1_1_technicals_1_1_calendar_interval.html">CalendarInterval</a>(timeInterval, task));</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        _tasksSchedulerDictionary = tasks.SelectMany(t =&gt; t.TimeIntervals).GroupBy(i =&gt; i.Start).</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            Where(g =&gt; g.Key &gt; DateTime.Now).ToDictionary(g =&gt; g.Key,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            g =&gt; tasks.Where(task =&gt; task.TimeIntervals.Any(i =&gt; i.Start == g.Key)));</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        _timeScheduler.<a class="code hl_property" href="interface_view_model_1_1_interfaces_1_1_i_time_scheduler.html#acf0f39b0ef2b35c9689e0d0a56b5db70">Timepoints</a>.Clear();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        _timeScheduler.<a class="code hl_property" href="interface_view_model_1_1_interfaces_1_1_i_time_scheduler.html#acf0f39b0ef2b35c9689e0d0a56b5db70">Timepoints</a>.AddRange(_tasksSchedulerDictionary.Keys);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    [ReactiveCommand]</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> GoToNext() =&gt; CurrentWeek = CurrentWeek.AddDays(7);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    [ReactiveCommand]</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> GoToNow() =&gt; CurrentWeek = DateTime.Now;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    [ReactiveCommand]</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> GoToPrevious() =&gt; CurrentWeek = CurrentWeek.AddDays(-7);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    [ReactiveCommand(CanExecute = nameof(<a class="code hl_variable" href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">_modalsObservable</a>))]</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keyword">private</span> async Task Add()</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        var timeIntervalElement = _timeIntervalElementFactory.Create();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        var result = await AddModal(_addTimeIntervalDialog,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="keyword">new</span> TimeIntervalViewModelArgs(_session.Tasks, _session.Tasks, timeIntervalElement));</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">if</span> (result != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            _session.AddTimeInterval(result.TimeIntervalElement, result.TaskElement);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    [ReactiveCommand(CanExecute = nameof(_canExecuteRemove))]</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> Remove()</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        _session.RemoveTimeInterval(SelectedCalendarInterval.TimeInterval,</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            SelectedCalendarInterval.TaskElement);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    [ReactiveCommand(CanExecute = nameof(_canExecuteEdit))]</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">private</span> async Task Edit()</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        var timeInterval = SelectedCalendarInterval.TimeInterval;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        var editorService = _timeIntervalElementsEditorProxy;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        editorService.Target = timeInterval;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        var result = await AddModal(_editTimeIntervalDialog, editorService);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordflow">if</span> (result)</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            editorService.ApplyChanges();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            _session.EditTimeInterval(timeInterval);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> Session_ItemsUpdated(<span class="keywordtype">object</span>? sender, ItemsUpdatedEventArgs e) =&gt; Update();</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> TimeScheduler_TimepointReached(<span class="keywordtype">object</span>? sender, DateTime e)</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        var titleResource = _resourceService.GetResource(<span class="stringliteral">&quot;TimeSchedulerNotificationTitle&quot;</span>);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        var contentResource = _resourceService.GetResource(<span class="stringliteral">&quot;TimeSchedulerNotificationContent&quot;</span>);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        var content = $<span class="stringliteral">&quot;{contentResource}\n&quot;</span>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">foreach</span> (var task <span class="keywordflow">in</span> _tasksSchedulerDictionary[e])</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            content += $<span class="stringliteral">&quot;- {task.Metadata}\n&quot;</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        _notificationManager.SendNotification(content, $<span class="stringliteral">&quot;{titleResource}&quot;</span>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>}</div>
+</div>
+<div class="ttc" id="aclass_view_model_1_1_technicals_1_1_calendar_interval_html"><div class="ttname"><a href="class_view_model_1_1_technicals_1_1_calendar_interval.html">ViewModel.Technicals.CalendarInterval</a></div><div class="ttdoc">Класс интервала календаря.</div><div class="ttdef"><b>Определения</b> <a href="_calendar_interval_8cs_source.html#l00008">CalendarInterval.cs:9</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_page_view_model_html"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_page_view_model.html">ViewModel.ViewModels.BasePageViewModel</a></div><div class="ttdoc">Базовый класс контроллера страницы.</div><div class="ttdef"><b>Определения</b> <a href="_base_page_view_model_8cs_source.html#l00009">BasePageViewModel.cs:10</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_page_view_model_html_a749397df37ea6fdfaf5f84d1f57d7929"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_page_view_model.html#a749397df37ea6fdfaf5f84d1f57d7929">ViewModel.ViewModels.BasePageViewModel.Metadata</a></div><div class="ttdeci">object Metadata</div><div class="ttdoc">Возращает метаданные.</div><div class="ttdef"><b>Определения</b> <a href="_base_page_view_model_8cs_source.html#l00014">BasePageViewModel.cs:14</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_base_view_model_html_afb3137b9e1d90cb27fda5c41919e54dc"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_base_view_model.html#afb3137b9e1d90cb27fda5c41919e54dc">ViewModel.ViewModels.BaseViewModel._modalsObservable</a></div><div class="ttdeci">readonly IObservable&lt; bool &gt; _modalsObservable</div><div class="ttdoc">Наблюдатель, который отслеживает модальные диалоги.</div><div class="ttdef"><b>Определения</b> <a href="_base_view_model_8cs_source.html#l00022">BaseViewModel.cs:22</a></div></div>
+<div class="ttc" id="aclass_view_model_1_1_view_models_1_1_pages_1_1_time_view_model_html_a1de6706b378b538e65c4bfd238874971"><div class="ttname"><a href="class_view_model_1_1_view_models_1_1_pages_1_1_time_view_model.html#a1de6706b378b538e65c4bfd238874971">ViewModel.ViewModels.Pages.TimeViewModel.TimeViewModel</a></div><div class="ttdeci">TimeViewModel(ISession session, IResourceService resourceService, ITimeScheduler timeScheduler, INotificationManager notificationManager, BaseDialogViewModel&lt; TimeIntervalViewModelArgs, TimeIntervalViewModelResult &gt; addTimeIntervalDialog, BaseDialogViewModel&lt; ITimeIntervalElement, bool &gt; editTimeIntervalDialog, IFactory&lt; ITimeIntervalElement &gt; timeIntervalElementFactory, ITimeIntervalElementsEditorProxy timeIntervalElementsEditorProxy)</div><div class="ttdoc">Создаёт экземпляр класса TimeViewModel.</div><div class="ttdef"><b>Определения</b> <a href="#l00118">TimeViewModel.cs:118</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_i_notification_manager_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_notification_manager.html">ViewModel.Interfaces.AppStates.INotificationManager</a></div><div class="ttdoc">Интерфейс менеджера уведомлений.</div><div class="ttdef"><b>Определения</b> <a href="_i_notification_manager_8cs_source.html#l00006">INotificationManager.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service.html">ViewModel.Interfaces.AppStates.IResourceService</a></div><div class="ttdoc">Интерфейс сервиса ресурсов.</div><div class="ttdef"><b>Определения</b> <a href="_i_resource_service_8cs_source.html#l00006">IResourceService.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service_html_a2c476795522b17f3036a8a40a0a4d8bd"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_i_resource_service.html#a2c476795522b17f3036a8a40a0a4d8bd">ViewModel.Interfaces.AppStates.IResourceService.GetResource</a></div><div class="ttdeci">object? GetResource(object key)</div><div class="ttdoc">Возвращает ресурс по ключу.</div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html">ViewModel.Interfaces.AppStates.Sessions.ISession</a></div><div class="ttdoc">Интерфейс сессии для хранения и изменения данных.</div><div class="ttdef"><b>Определения</b> <a href="_i_session_8cs_source.html#l00011">ISession.cs:12</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session_html_aa2bc5b828ec0f9c1c33b21eabf36f248"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_1_1_i_session.html#aa2bc5b828ec0f9c1c33b21eabf36f248">ViewModel.Interfaces.AppStates.Sessions.ISession.Tasks</a></div><div class="ttdeci">IEnumerable&lt; ITask &gt; Tasks</div><div class="ttdoc">Возвращает задачи.</div><div class="ttdef"><b>Определения</b> <a href="_i_session_8cs_source.html#l00021">ISession.cs:21</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_data_managers_1_1_i_time_interval_elements_editor_proxy.html">ViewModel.Interfaces.DataManagers.ITimeIntervalElementsEditorProxy</a></div><div class="ttdoc">Интерфейс заместителя элементарного временного интервала для редактирования.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_interval_elements_editor_proxy_8cs_source.html#l00014">ITimeIntervalElementsEditorProxy.cs:15</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_i_time_scheduler_html"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_i_time_scheduler.html">ViewModel.Interfaces.ITimeScheduler</a></div><div class="ttdoc">Интерфейс планировщика времени, который отслеживает достижение временных меток.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_scheduler_8cs_source.html#l00006">ITimeScheduler.cs:7</a></div></div>
+<div class="ttc" id="ainterface_view_model_1_1_interfaces_1_1_i_time_scheduler_html_acf0f39b0ef2b35c9689e0d0a56b5db70"><div class="ttname"><a href="interface_view_model_1_1_interfaces_1_1_i_time_scheduler.html#acf0f39b0ef2b35c9689e0d0a56b5db70">ViewModel.Interfaces.ITimeScheduler.Timepoints</a></div><div class="ttdeci">IList&lt; DateTime &gt; Timepoints</div><div class="ttdoc">Возращает список временных меток.</div><div class="ttdef"><b>Определения</b> <a href="_i_time_scheduler_8cs_source.html#l00011">ITimeScheduler.cs:11</a></div></div>
+<div class="ttc" id="anamespace_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_model_1_1_interfaces.html">Model.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_model_html"><div class="ttname"><a href="namespace_model.html">Model</a></div><div class="ttdef"><b>Определения</b> <a href="_i_task_8cs_source.html#l00001">ITask.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_app_states_1_1_sessions.html">ViewModel.Interfaces.AppStates.Sessions</a></div><div class="ttdef"><b>Определения</b> <a href="_i_session_8cs_source.html#l00003">ISession.cs:4</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_app_states_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_app_states.html">ViewModel.Interfaces.AppStates</a></div><div class="ttdef"><b>Определения</b> <a href="_i_app_life_state_8cs_source.html#l00001">IAppLifeState.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_data_managers_1_1_generals.html">ViewModel.Interfaces.DataManagers.Generals</a></div><div class="ttdef"><b>Определения</b> <a href="_i_editor_proxy_8cs_source.html#l00001">IEditorProxy.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_1_1_data_managers_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces_1_1_data_managers.html">ViewModel.Interfaces.DataManagers</a></div><div class="ttdef"><b>Определения</b> <a href="_i_editor_proxy_8cs_source.html#l00001">IEditorProxy.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_interfaces_html"><div class="ttname"><a href="namespace_view_model_1_1_interfaces.html">ViewModel.Interfaces</a></div><div class="ttdef"><b>Определения</b> <a href="_i_app_life_state_8cs_source.html#l00001">IAppLifeState.cs:2</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_technicals_html"><div class="ttname"><a href="namespace_view_model_1_1_technicals.html">ViewModel.Technicals</a></div><div class="ttdef"><b>Определения</b> <a href="_app_configuration_8cs_source.html#l00005">AppConfiguration.cs:6</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_view_models_1_1_modals_html"><div class="ttname"><a href="namespace_view_model_1_1_view_models_1_1_modals.html">ViewModel.ViewModels.Modals</a></div><div class="ttdef"><b>Определения</b> <a href="_add_task_view_model_8cs_source.html#l00008">AddTaskViewModel.cs:9</a></div></div>
+<div class="ttc" id="anamespace_view_model_1_1_view_models_1_1_pages_html"><div class="ttname"><a href="namespace_view_model_1_1_view_models_1_1_pages.html">ViewModel.ViewModels.Pages</a></div><div class="ttdef"><b>Определения</b> <a href="_editor_view_model_8cs_source.html#l00015">EditorViewModel.cs:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

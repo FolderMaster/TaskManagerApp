@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaskManager: Шаблон интерфейса MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator&lt; T, R &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaskManager
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_machine_learning.html">MachineLearning</a></li><li class="navelem"><a class="el" href="namespace_machine_learning_1_1_interfaces.html">Interfaces</a></li><li class="navelem"><a class="el" href="namespace_machine_learning_1_1_interfaces_1_1_generals.html">Generals</a></li><li class="navelem"><a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_supervised_learning_evaluator-2-g.html">ISupervisedLearningEvaluator-2-g</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#properties">Свойства</a> &#124;
+<a href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_supervised_learning_evaluator-2-g-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Шаблон интерфейса MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator&lt; T, R &gt;</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс оценки модели обучения с учителем.  
+ <a href="#details">Подробнее...</a></p>
+<div class="dynheader">
+Граф наследования:MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator&lt; T, R &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_supervised_learning_evaluator-2-g.png" usemap="#MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator_3C_20T_2C_20R_20_3E_map" alt=""/>
+  <map id="MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator_3C_20T_2C_20R_20_3E_map" name="MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator_3C_20T_2C_20R_20_3E_map">
+<area href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_evaluator.html" title="Интерфейс оценки модели обучения." alt="MachineLearning.Interfaces.Generals.ILearningEvaluator" shape="rect" coords="522,0,1034,24"/>
+<area href="interface_machine_learning_1_1_interfaces_1_1_i_classification_evaluator.html" title="Интерфейс оценки модели обучения классификации." alt="MachineLearning.Interfaces.IClassificationEvaluator" shape="rect" coords="0,112,512,136"/>
+<area href="interface_machine_learning_1_1_interfaces_1_1_i_regression_evaluator.html" title="Интерфейс оценки модели обучения классификации." alt="MachineLearning.Interfaces.IRegressionEvaluator" shape="rect" coords="522,112,1034,136"/>
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_base_supervised_cross_validation_evaluator-2-g.html" title="Абстрактный класс базовой оценки модели обучения с учителем методом кросс-валидации." alt="MachineLearning.LearningEvaluators.BaseSupervisedCrossValidationEvaluator&lt; T, R &gt;" shape="rect" coords="1305,112,1817,136"/>
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_classification_cross_validation_evaluator.html" title="Класс оценки модели обучения классификации методом кросс-валидации." alt="MachineLearning.LearningEvaluators.ClassificationCrossValidationEvaluator" shape="rect" coords="0,168,512,192"/>
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_regression_cross_validation_evaluator.html" title="Класс оценки модели обучения регрессии методом кросс-валидации." alt="MachineLearning.LearningEvaluators.RegressionCrossValidationEvaluator" shape="rect" coords="522,168,1034,192"/>
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_classification_cross_validation_evaluator.html" title="Класс оценки модели обучения классификации методом кросс-валидации." alt="MachineLearning.LearningEvaluators.ClassificationCrossValidationEvaluator" shape="rect" coords="1044,168,1556,192"/>
+<area href="class_machine_learning_1_1_learning_evaluators_1_1_regression_cross_validation_evaluator.html" title="Класс оценки модели обучения регрессии методом кросс-валидации." alt="MachineLearning.LearningEvaluators.RegressionCrossValidationEvaluator" shape="rect" coords="1566,168,2078,192"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a5924de13576b161b642997be9e1ea218" id="r_a5924de13576b161b642997be9e1ea218"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5924de13576b161b642997be9e1ea218">Evaluate</a> (IEnumerable&lt; T &gt; data, IEnumerable&lt; R &gt; targets)</td></tr>
+<tr class="memdesc:a5924de13576b161b642997be9e1ea218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оценивает модель обучения.  <br /></td></tr>
+<tr class="separator:a5924de13576b161b642997be9e1ea218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Свойства</h2></td></tr>
+<tr class="memitem:abcf1d823c9afc4efb3438423c845394b" id="r_abcf1d823c9afc4efb3438423c845394b"><td class="memItemLeft" align="right" valign="top">ISupervisedLearningModel&lt; T, R &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcf1d823c9afc4efb3438423c845394b">Model</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abcf1d823c9afc4efb3438423c845394b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт модель обучения с учителем.  <br /></td></tr>
+<tr class="separator:abcf1d823c9afc4efb3438423c845394b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2c8f40f7e5cbfdbfbc381529443b5c" id="r_a3a2c8f40f7e5cbfdbfbc381529443b5c"><td class="memItemLeft" align="right" valign="top">ISupervisedScoreMetric&lt; R &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2c8f40f7e5cbfdbfbc381529443b5c">ScoreMetric</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3a2c8f40f7e5cbfdbfbc381529443b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает и задаёт метрику оценки обучения с учителем.  <br /></td></tr>
+<tr class="separator:a3a2c8f40f7e5cbfdbfbc381529443b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс оценки модели обучения с учителем. </p>
+<p>Наследует <a class="el" href="interface_machine_learning_1_1_interfaces_1_1_generals_1_1_i_learning_evaluator.html" title="Интерфейс оценки модели обучения.">ILearningEvaluator</a>. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип входных данных для предсказания.</td></tr>
+    <tr><td class="paramname">R</td><td>Тип выходных данных для предсказания.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_supervised_learning_evaluator_8cs_source.html">ISupervisedLearningEvaluator.cs</a> строка <a class="el" href="_i_supervised_learning_evaluator_8cs_source.html#l00011">11</a></p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a5924de13576b161b642997be9e1ea218" name="a5924de13576b161b642997be9e1ea218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5924de13576b161b642997be9e1ea218">&#9670;&#160;</a></span>Evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="namespace_machine_learning.html#a0b556644115bb14e87c5bf8840c8f601">ScoreMetricCategory</a> &gt; MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator&lt; T, R &gt;.Evaluate </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IEnumerable&lt; R &gt;</td>          <td class="paramname"><span class="paramname"><em>targets</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оценивает модель обучения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Данные.</td></tr>
+    <tr><td class="paramname">targets</td><td>Целевые значения.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает категорию модели обучения.</dd></dl>
+
+<p>Замещается в <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_supervised_cross_validation_evaluator-2-g.html#a6e31ef47940bac543fe8732227c3d9bc">MachineLearning.LearningEvaluators.BaseSupervisedCrossValidationEvaluator&lt; T, R &gt;</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Полный список свойств</h2>
+<a id="abcf1d823c9afc4efb3438423c845394b" name="abcf1d823c9afc4efb3438423c845394b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf1d823c9afc4efb3438423c845394b">&#9670;&#160;</a></span>Model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISupervisedLearningModel&lt;T, R&gt; MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator&lt; T, R &gt;.Model</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт модель обучения с учителем. </p>
+
+<p>Замещается в <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_supervised_cross_validation_evaluator-2-g.html#ac1dae41813aa6e1843e18678e9668760">MachineLearning.LearningEvaluators.BaseSupervisedCrossValidationEvaluator&lt; T, R &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_supervised_learning_evaluator_8cs_source.html">ISupervisedLearningEvaluator.cs</a> строка <a class="el" href="_i_supervised_learning_evaluator_8cs_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a id="a3a2c8f40f7e5cbfdbfbc381529443b5c" name="a3a2c8f40f7e5cbfdbfbc381529443b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2c8f40f7e5cbfdbfbc381529443b5c">&#9670;&#160;</a></span>ScoreMetric</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISupervisedScoreMetric&lt;R&gt; MachineLearning.Interfaces.Generals.ISupervisedLearningEvaluator&lt; T, R &gt;.ScoreMetric</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает и задаёт метрику оценки обучения с учителем. </p>
+
+<p>Замещается в <a class="el" href="class_machine_learning_1_1_learning_evaluators_1_1_base_supervised_cross_validation_evaluator-2-g.html#a55d28583688661d1cc84c8758681c6e8">MachineLearning.LearningEvaluators.BaseSupervisedCrossValidationEvaluator&lt; T, R &gt;</a>.</p>
+
+<p class="definition">См. определение в файле <a class="el" href="_i_supervised_learning_evaluator_8cs_source.html">ISupervisedLearningEvaluator.cs</a> строка <a class="el" href="_i_supervised_learning_evaluator_8cs_source.html#l00021">21</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
