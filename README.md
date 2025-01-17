@@ -14,7 +14,7 @@
   - [Пример работы](#пример-работы)
   - [Запуск](#запуск)
 - [Поддержка кода](#поддержка-кода)
-  - [Разработка](#разработка)
+  - [Разработка](#разработка
   - [Тестирование](#тестирование)
 - [Контакты](#контакты)
 
@@ -23,8 +23,8 @@
 Структура репозитория такая:
 
 - [docs](docs/) - документация
-  - [api](docs/api/) - документация API
-    - [diagrams](docs/api/diagrams/) - диаграммы
+  - [diagrams](docs/diagrams/) - диаграммы
+  - [code-reference](docs/code-reference/) - справочник по коду
   - [screenshots](docs/screenshots/) - скриншоты
   - [reports](docs/reports/) - отчёты
 - [src](src/) - исходный код
@@ -83,15 +83,24 @@
 Пример работы приложения:
 
 - Страница редактирования задач:
-  ![Страница редактирования задач](docs/screenshots/EditorPage.png)
+
+![Страница редактирования задач](docs/screenshots/EditorPage.png)
+
 - Страница календаря:
-  ![Страница календаря](docs/screenshots/TimePage.png)
+
+![Страница календаря](docs/screenshots/TimePage.png)
+
 - Страница статистики:
-  ![Страница статистики](docs/screenshots/StatisticPage_CountTab.png)
+
+![Страница статистики](docs/screenshots/StatisticPage_CountTab.png)
+
 - Страница списка задач для выполнения:
-  ![Страница списка задач для выполнения](docs/screenshots/ToDoListPage.png)
+
+![Страница списка задач для выполнения](docs/screenshots/ToDoListPage.png)
+
 - Страница настройки:
-  ![Страница настройки](docs/screenshots/SettingsPage.png)
+
+![Страница настройки](docs/screenshots/SettingsPage.png)
 
 Другие примеры расположены в папке [docs/screenshots](docs/screenshots/).
 
@@ -119,20 +128,31 @@ dotnet run {path to project}
 
 Исходный код располагается в папке [src](src/).
 
-Документация API находится в папке [docs/api](docs/api/). Так же были созданы UML-диаграммы (и не только), которые находятся в [docs/api/diagrams](docs/api/diagrams/).
+Документация по коду находится в папке [docs/code-reference](docs/code-reference/).
+Для удобства есть [документация в PDF](docs/code-reference/internal.pdf).
 
+Так же были созданы UML-диаграммы (и не только), которые находятся в [docs/diagrams](docs/diagrams/).
 Основные диаграммы:
 
 - Диаграмма пакетов:
-  ![Диаграмма пакетов](docs/api/diagrams/PackageDiagram.svg)
+
+![Диаграмма пакетов](docs/diagrams/PackageDiagram.svg)
+
 - Диаграмма сценариев использования:
-  ![Диаграмма сценариев использования](docs/api/diagrams/UseCaseDiagram.svg)
+
+![Диаграмма сценариев использования](docs/diagrams/UseCaseDiagram.svg)
+
 - Диаграмма классов предметной области:
-  ![Диаграмма классов предметной области](docs/api/diagrams/ClassDiagram_Model.svg)
+
+![Диаграмма классов предметной области](docs/diagrams/ClassDiagram_Model.svg)
+
 - Диаграмма связи сущностей базы данных:
-  ![Диаграмма связи сущностей базы данных](docs/api/diagrams/ERDDiagram.svg)
+
+![Диаграмма связи сущностей базы данных](docs/diagrams/ERDDiagram.svg)
+
 - Диаграмма классов машинного обучения:
-  ![Диаграмма классов машинного обучения](docs/api/diagrams/ClassDiagram_MachineLearning_Interfaces.svg)
+
+![Диаграмма классов машинного обучения](docs/diagrams/ClassDiagram_MachineLearning_Interfaces.svg)
 
 ### Тестирование
 
