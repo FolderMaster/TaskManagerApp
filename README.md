@@ -83,15 +83,15 @@
 Пример работы приложения:
 
 - Страница редактирования задач:
-  ![Страница редактирования задач](docs\screenshots\EditorPage.png)
+  ![Страница редактирования задач](docs/screenshots/EditorPage.png)
 - Страница календаря:
-  ![Страница календаря](docs\screenshots\TimePage.png)
+  ![Страница календаря](docs/screenshots/TimePage.png)
 - Страница статистики:
-  ![Страница статистики](docs\screenshots\StatisticPage_CountTab.png)
+  ![Страница статистики](docs/screenshots/StatisticPage_CountTab.png)
 - Страница списка задач для выполнения:
-  ![Страница списка задач для выполнения](docs\screenshots\ToDoListPage.png)
+  ![Страница списка задач для выполнения](docs/screenshots/ToDoListPage.png)
 - Страница настройки:
-  ![Страница настройки](docs\screenshots\SettingsPage.png)
+  ![Страница настройки](docs/screenshots/SettingsPage.png)
 
 Другие примеры расположены в папке [docs/screenshots](docs/screenshots/).
 
