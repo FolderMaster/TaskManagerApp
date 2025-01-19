@@ -6,7 +6,7 @@
     public enum ScoreMetricCategory
     {
         /// <summary>
-        /// Первосходно.
+        /// Превосходно.
         /// </summary>
         Excellent,
         /// <summary>
