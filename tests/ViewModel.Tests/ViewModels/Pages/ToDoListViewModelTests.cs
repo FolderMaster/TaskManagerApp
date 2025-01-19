@@ -14,7 +14,7 @@ using TaskStatus = Model.TaskStatus;
 namespace ViewModel.Tests.ViewModels.Pages
 {
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(ToDoListViewModel), Category = "Integration",
+    [TestFixture(TestOf = typeof(ToDoListViewModel), Category = "Integration, Functional",
         Description = $"Тестирование класса {nameof(ToDoListViewModel)}.")]
     public class ToDoListViewModelTests
     {

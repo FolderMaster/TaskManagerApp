@@ -15,7 +15,7 @@ using TaskStatus = Model.TaskStatus;
 namespace ViewModel.Tests.ViewModels.Pages
 {
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(StatisticViewModel), Category = "Integration",
+    [TestFixture(TestOf = typeof(StatisticViewModel), Category = "Integration, Functional",
         Description = $"Тестирование класса {nameof(StatisticViewModel)}.")]
     public class StatisticViewModelTests
     {

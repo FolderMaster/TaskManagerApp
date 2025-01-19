@@ -11,7 +11,7 @@ using ViewModel.ViewModels;
 namespace ViewModel.Tests.ViewModels
 {
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(MainViewModel), Category = "Integration",
+    [TestFixture(TestOf = typeof(MainViewModel), Category = "Integration, Functional",
         Description = $"Тестирование класса {nameof(MainViewModel)}.")]
     public class MainViewModelTests
     {

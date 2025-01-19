@@ -16,7 +16,7 @@ using ViewModel.ViewModels;
 namespace ViewModel.Tests.ViewModels.Pages
 {
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(EditorViewModel), Category = "Integration",
+    [TestFixture(TestOf = typeof(EditorViewModel), Category = "Integration, Functional",
         Description = $"Тестирование класса {nameof(EditorViewModel)}.")]
     public class EditorViewModelTests
     {

@@ -12,7 +12,7 @@ using ViewModel.ViewModels.Pages;
 namespace ViewModel.Tests.ViewModels.Pages
 {
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(SettingsViewModel), Category = "Integration",
+    [TestFixture(TestOf = typeof(SettingsViewModel), Category = "Integration, Functional",
         Description = $"Тестирование класса {nameof(SettingsViewModel)}.")]
     public class SettingsViewModelTests
     {

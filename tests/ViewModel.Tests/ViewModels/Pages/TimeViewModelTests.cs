@@ -15,7 +15,7 @@ using ViewModel.ViewModels.Pages;
 namespace ViewModel.Tests.ViewModels.Pages
 {
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(TimeViewModel), Category = "Integration",
+    [TestFixture(TestOf = typeof(TimeViewModel), Category = "Integration, Functional",
         Description = $"Тестирование класса {nameof(TimeViewModel)}.")]
     public class TimeViewModelTests
     {
