@@ -953,7 +953,7 @@
            text-decoration="none"
            x="446"
            y="274"
-           id="text136">Deadline</text>
+           id="text136">Progress</text>
       </g>
     </g>
     <g
@@ -975,7 +975,7 @@
            text-decoration="none"
            x="541.26171875"
            y="274"
-           id="text138">TEXT</text>
+           id="text138">REAL</text>
       </g>
     </g>
     <g
@@ -1041,7 +1041,7 @@
            text-decoration="none"
            x="446"
            y="289"
-           id="text144">Progress</text>
+           id="text144">PlannedReal</text>
       </g>
     </g>
     <g
@@ -1129,7 +1129,7 @@
            text-decoration="none"
            x="446"
            y="304"
-           id="text152">PlannedTime</text>
+           id="text152">ExecutedReal</text>
       </g>
     </g>
     <g
@@ -1151,7 +1151,7 @@
            text-decoration="none"
            x="541.26171875"
            y="304"
-           id="text154">TEXT</text>
+           id="text154">REAL</text>
       </g>
     </g>
     <g
@@ -1217,7 +1217,7 @@
            text-decoration="none"
            x="446"
            y="319"
-           id="text160">SpentTime</text>
+           id="text160">PlannedTime</text>
       </g>
     </g>
     <g
@@ -1305,7 +1305,7 @@
            text-decoration="none"
            x="446"
            y="334"
-           id="text168">PlannedReal</text>
+           id="text168">SpentTime</text>
       </g>
     </g>
     <g
@@ -1327,7 +1327,7 @@
            text-decoration="none"
            x="541.26171875"
            y="334"
-           id="text170">REAL</text>
+           id="text170">TEXT</text>
       </g>
     </g>
     <g
@@ -1370,8 +1370,8 @@
            font-weight="normal"
            text-decoration="none"
            x="397"
-           y="339"
-           id="text174" />
+           y="349"
+           id="text174">N</text>
       </g>
     </g>
     <g
@@ -1393,7 +1393,7 @@
            text-decoration="none"
            x="446"
            y="349"
-           id="text176">ExecutedReal</text>
+           id="text176">Deadline</text>
       </g>
     </g>
     <g
@@ -1415,7 +1415,7 @@
            text-decoration="none"
            x="541.26171875"
            y="349"
-           id="text178">REAL</text>
+           id="text178">TEXT</text>
       </g>
     </g>
     <g
@@ -1721,8 +1721,8 @@
            font-weight="normal"
            text-decoration="none"
            x="397"
-           y="122"
-           id="text206" />
+           y="132"
+           id="text206">N</text>
       </g>
     </g>
     <g
@@ -1809,8 +1809,8 @@
            font-weight="normal"
            text-decoration="none"
            x="397"
-           y="137"
-           id="text214" />
+           y="147"
+           id="text214">N</text>
       </g>
     </g>
     <g
