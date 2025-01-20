@@ -137,7 +137,7 @@ dotnet run {path to project}
 Исходный код располагается в папке [src](src/).
 
 Документация по коду находится в папке [docs/code-reference](docs/code-reference/).
-Для удобства есть [документация в PDF](docs/code-reference/internal.pdf).
+Для удобства есть [документация в PDF](docs/code-reference/code-reference.pdf).
 
 Так же были созданы UML-диаграммы (и не только), которые находятся в [docs/diagrams](docs/diagrams/).
 Основные диаграммы:
