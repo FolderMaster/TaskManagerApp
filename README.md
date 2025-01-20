@@ -66,11 +66,11 @@
 
 Для разработки приложения были выбраны следующие инструменты разработки:
 
-- Основное средство разработки – [Visual Studio](https://visualstudio.microsoft.com/). Так же были установлены [расширение для поддержки Avalonia](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS) и расширение [Fine Code Coverage](https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage) для создания и отображения статистики по покрытию кода;
-- Инструмент для генерации документации кода [Doxygen](https://www.doxygen.nl/);
-- Система контроля версий [Git](https://git-scm.com/);
-- Приложение [StarUML](https://staruml.io/) для создания диаграмм;
-- Инструмент [TRXER](https://github.com/NivNavick/trxer) для создания отчёта по тестированию.
+- Основное средство разработки – [Visual Studio](https://visualstudio.microsoft.com/). Так же были установлены [расширение для поддержки Avalonia](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS) и расширение [Fine Code Coverage](https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage) для создания и отображения статистики по покрытию кода
+- Инструмент для генерации документации кода [Doxygen](https://www.doxygen.nl/)
+- Система контроля версий [Git](https://git-scm.com/)
+- Приложение [StarUML](https://staruml.io/) для создания диаграмм
+- Инструмент [TRXER](https://github.com/NivNavick/trxer) для создания отчёта по тестированию
 
 ## Установка и запуск
 

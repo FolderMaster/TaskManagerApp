@@ -3,18 +3,18 @@
    version="1.1"
    width="1254.56689453125"
    height="724"
-   id="svg437"
+   id="svg444"
    sodipodi:docname="ClassDiagram_MachineLearning_LearningModelsAndDistanceMetrics.svg"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    inkscape:export-filename="ClassDiagram_MachineLearning_LearningModelsAndDistanceMetrics.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview437"
+     id="namedview444"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -30,11 +30,11 @@
      inkscape:window-x="1072"
      inkscape:window-y="472"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg437" />
+     inkscape:current-layer="svg444" />
   <defs
      id="defs1" />
   <g
-     id="g437">
+     id="g444">
     <g
        transform="translate(-21,-6) scale(1,1)"
        id="g175">
@@ -1940,7 +1940,7 @@
          fill="#C0C0C0"
          stroke="none"
          x="543"
-         y="263"
+         y="247"
          width="400"
          height="37"
          opacity="0.2"
@@ -1953,7 +1953,7 @@
          fill="#ffffff"
          stroke="none"
          x="536"
-         y="256"
+         y="240"
          width="400"
          height="37"
          id="rect347" />
@@ -1964,7 +1964,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 536 256 L 936 256 L 936 293 L 536 293 L 536 256 Z Z"
+         d="M 536 240 L 936 240 L 936 277 L 536 277 L 536 240 Z Z"
          stroke-miterlimit="10"
          id="path348" />
     </g>
@@ -1986,7 +1986,7 @@
            font-weight="normal"
            text-decoration="none"
            x="703.839599609375"
-           y="272"
+           y="256"
            id="text349">«interface»</text>
       </g>
     </g>
@@ -2008,7 +2008,7 @@
            font-weight="bold"
            text-decoration="none"
            x="671.707763671875"
-           y="287"
+           y="271"
            id="text351">IPointDistanceMetric</text>
       </g>
     </g>
@@ -2018,7 +2018,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 776 256 L 776 199"
+         d="M 776 240 L 776 199"
          stroke-miterlimit="10"
          id="path353" />
     </g>
@@ -2059,7 +2059,7 @@
            font-weight="normal"
            text-decoration="none"
            x="795.2958984375"
-           y="234"
+           y="226"
            id="text356">T-&gt;Enumerable&lt;double&gt;</text>
       </g>
     </g>
@@ -2081,7 +2081,7 @@
            font-weight="normal"
            text-decoration="none"
            x="719.5"
-           y="235"
+           y="227"
            id="text358">«bind»</text>
       </g>
     </g>
@@ -2091,7 +2091,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 632 196 L 632 256"
+         d="M 632 196 L 632 240"
          stroke-miterlimit="10"
          stroke-dasharray="3"
          id="path360" />
@@ -2102,7 +2102,7 @@
       <path
          fill="#FFFFFF"
          stroke="none"
-         d="M 623.580964487968 235.6746502847517 L 632 256 L 640.419035512032 235.6746502847517"
+         d="M 623.580964487968 219.6746502847517 L 632 240 L 640.419035512032 219.6746502847517"
          id="path361" />
     </g>
     <g
@@ -2111,7 +2111,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 623.580964487968 235.6746502847517 L 632 256 L 640.419035512032 235.6746502847517 L 623.580964487968 235.6746502847517"
+         d="M 623.580964487968 219.6746502847517 L 632 240 L 640.419035512032 219.6746502847517 L 623.580964487968 219.6746502847517"
          stroke-miterlimit="10"
          id="path362" />
     </g>
@@ -2212,7 +2212,7 @@
          fill="#C0C0C0"
          stroke="none"
          x="615"
-         y="327"
+         y="335"
          width="286.06884765625"
          height="85"
          opacity="0.2"
@@ -2225,7 +2225,7 @@
          fill="#ffffff"
          stroke="none"
          x="608"
-         y="320"
+         y="328"
          width="286.06884765625"
          height="85"
          id="rect373" />
@@ -2236,7 +2236,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 608 320 L 894.06884765625 320 L 894.06884765625 405 L 608 405 L 608 320 Z Z"
+         d="M 608 328 L 894.06884765625 328 L 894.06884765625 413 L 608 413 L 608 328 Z Z"
          stroke-miterlimit="10"
          id="path374" />
     </g>
@@ -2246,7 +2246,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 608 345 L 894.06884765625 345"
+         d="M 608 353 L 894.06884765625 353"
          stroke-miterlimit="10"
          id="path375" />
     </g>
@@ -2256,7 +2256,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 608 368 L 894.06884765625 368"
+         d="M 608 376 L 894.06884765625 376"
          stroke-miterlimit="10"
          id="path376" />
     </g>
@@ -2278,7 +2278,7 @@
            font-weight="bold"
            text-decoration="none"
            x="707.330810546875"
-           y="338"
+           y="346"
            id="text377">MetricAdapter</text>
       </g>
     </g>
@@ -2300,7 +2300,7 @@
            font-weight="normal"
            text-decoration="none"
            x="613"
-           y="361"
+           y="369"
            id="text379">-distanceMetric: DistanceMetric</text>
       </g>
     </g>
@@ -2322,7 +2322,7 @@
            font-weight="normal"
            text-decoration="none"
            x="613"
-           y="384"
+           y="392"
            id="text381">+getDistanceMetric(): IPointDistanceMetric</text>
       </g>
     </g>
@@ -2344,7 +2344,7 @@
            font-weight="normal"
            text-decoration="none"
            x="613"
-           y="399"
+           y="407"
            id="text383">+setDistanceMetric(value: IPointDistanceMetric)</text>
       </g>
     </g>
@@ -2533,7 +2533,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 768 405 L 768 448"
+         d="M 744 413 L 744 448"
          stroke-miterlimit="10"
          stroke-dasharray="3"
          id="path401" />
@@ -2544,7 +2544,7 @@
       <path
          fill="#FFFFFF"
          stroke="none"
-         d="M 759.580964487968 427.6746502847517 L 768 448 L 776.419035512032 427.6746502847517"
+         d="M 735.580964487968 427.6746502847517 L 744 448 L 752.419035512032 427.6746502847517"
          id="path402" />
     </g>
     <g
@@ -2553,7 +2553,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 759.580964487968 427.6746502847517 L 768 448 L 776.419035512032 427.6746502847517 L 759.580964487968 427.6746502847517"
+         d="M 735.580964487968 427.6746502847517 L 744 448 L 752.419035512032 427.6746502847517 L 735.580964487968 427.6746502847517"
          stroke-miterlimit="10"
          id="path403" />
     </g>
@@ -2574,8 +2574,8 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="785.2958984375"
-           y="433"
+           x="761.2958984375"
+           y="437"
            id="text404">T-&gt;double[]</text>
       </g>
     </g>
@@ -2596,8 +2596,8 @@
            font-style="normal"
            font-weight="normal"
            text-decoration="none"
-           x="702.5"
-           y="434"
+           x="678.5"
+           y="438"
            id="text406">«bind»</text>
       </g>
     </g>
@@ -2607,7 +2607,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 552 293 L 552 560"
+         d="M 552 277 L 552 560"
          stroke-miterlimit="10"
          id="path408" />
     </g>
@@ -2648,7 +2648,7 @@
            font-weight="normal"
            text-decoration="none"
            x="535.5"
-           y="319"
+           y="303"
            id="text411">1</text>
       </g>
     </g>
@@ -2680,7 +2680,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 920 293 L 920 560"
+         d="M 920 277 L 920 560"
          stroke-miterlimit="10"
          id="path415" />
     </g>
@@ -2721,7 +2721,7 @@
            font-weight="normal"
            text-decoration="none"
            x="903.5"
-           y="319"
+           y="303"
            id="text418">1</text>
       </g>
     </g>
@@ -2753,7 +2753,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 880 405 L 880 560"
+         d="M 880 413 L 880 560"
          stroke-miterlimit="10"
          id="path422" />
     </g>
@@ -2794,7 +2794,7 @@
            font-weight="normal"
            text-decoration="none"
            x="863.5"
-           y="431"
+           y="439"
            id="text425">1</text>
       </g>
     </g>
@@ -2826,7 +2826,7 @@
       <path
          fill="none"
          stroke="#000000"
-         d="M 632 405 L 632 560"
+         d="M 632 413 L 632 560"
          stroke-miterlimit="10"
          id="path429" />
     </g>
@@ -2867,7 +2867,7 @@
            font-weight="normal"
            text-decoration="none"
            x="615.5"
-           y="431"
+           y="439"
            id="text432">1</text>
       </g>
     </g>
@@ -2891,6 +2891,79 @@
            x="615.5"
            y="543"
            id="text434">1</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-21,-6) scale(1,1)"
+       id="g437">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 739 277 L 739 328"
+         stroke-miterlimit="10"
+         id="path436" />
+    </g>
+    <g
+       transform="translate(-21,-6) scale(1,1)"
+       id="g438">
+      <path
+         fill="#FFFFFF"
+         stroke="none"
+         d="M 734.790482243984 317.83732514237585 L 739 328 L 743.209517756016 317.83732514237585 L 739 306"
+         id="path437" />
+    </g>
+    <g
+       transform="translate(-21,-6) scale(1,1)"
+       id="g439">
+      <path
+         fill="none"
+         stroke="#000000"
+         d="M 734.790482243984 317.83732514237585 L 739 328 L 743.209517756016 317.83732514237585 L 739 306 L 734.790482243984 317.83732514237585"
+         stroke-miterlimit="10"
+         id="path438" />
+    </g>
+    <g
+       transform="translate(-21,-6) scale(1,1)"
+       id="g441">
+      <g
+         id="g440">
+        <path
+           fill="none"
+           stroke="none"
+           id="path439" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="751.5"
+           y="298"
+           id="text439">1</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-21,-6) scale(1,1)"
+       id="g443">
+      <g
+         id="g442">
+        <path
+           fill="none"
+           stroke="none"
+           id="path441" />
+        <text
+           fill="#000000"
+           stroke="none"
+           font-family="Arial"
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="719.5"
+           y="313"
+           id="text441">*</text>
       </g>
     </g>
   </g>
