@@ -27,6 +27,7 @@
   - [code-reference](docs/code-reference/) - справочник по коду
   - [screenshots](docs/screenshots/) - скриншоты
   - [reports](docs/reports/) - отчёты
+  - [user-guide](docs/user-guide/) - руководство пользователя
 - [src](src/) - исходный код
 - [tests](tests/) - тесты
 - [build](build/) - сборки
@@ -129,6 +130,8 @@ dotnet build --source {path to source}
 ```
 dotnet run {path to project}
 ```
+
+Руководство пользователя находится в папке [docs/user-guide](docs/user-guide/) и можно прочесть [PDF](docs/user-guide/user-guide.pdf).
 
 ## Поддержка кода
 

@@ -71,7 +71,7 @@ namespace ViewModel.Tests.ViewModels.Pages
         }
 
         [Test(Description = "Тестирование команды " +
-            $"{nameof(EditorViewModel.AddTaskCompositeCommand)}.")]
+            $"{nameof(EditorViewModel.AddTaskElementCommand)}.")]
         public async Task AddTaskElementCommand_TaskElementAdded()
         {
             await _session.Load();
@@ -198,7 +198,8 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно удалены задачи!");
         }
 
-        [Test(Description = $"Тестирование команды {nameof(EditorViewModel.EditCommand)}.")]
+        [Test(Description = $"Тестирование команды {nameof(EditorViewModel.EditCommand)} " +
+            "при выборе составной задачи.")]
         public async Task EditCommand_SelectTaskComposite_TaskCompositeEdited()
         {
             var task1 = _taskCompositeFactory.Create();
@@ -225,7 +226,8 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно изменена задача!");
         }
 
-        [Test(Description = $"Тестирование команды {nameof(EditorViewModel.EditCommand)}.")]
+        [Test(Description = $"Тестирование команды {nameof(EditorViewModel.EditCommand)} " +
+            "при выборе элементарной задачи.")]
         public async Task EditCommand_SelectTaskElement_TaskElementEdited()
         {
             var task1 = _taskElementFactory.Create();
@@ -252,7 +254,7 @@ namespace ViewModel.Tests.ViewModels.Pages
         }
 
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.GoCommand)} " +
-            "выборе составной задачи.")]
+            "при выборе составной задачи.")]
         public async Task GoCommand_SelectTaskComposite_TaskListViewIsSelectedTaskComposite()
         {
             var task1 = _taskCompositeFactory.Create();

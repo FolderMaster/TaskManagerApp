@@ -41,7 +41,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             File.Delete(_dbPath);
         }
 
-        [Test(Description = $"Тестирование метода {nameof(DbSession.AddTasks)}.")]
+        [Test(Description = $"Тестирование метода {nameof(DbSession.Load)}.")]
         public async Task Load_ReturnEmptyAndInvokeEventHandler()
         {
             var tasks = new ITask[] { };

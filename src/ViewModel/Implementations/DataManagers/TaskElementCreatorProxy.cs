@@ -9,6 +9,13 @@ using TaskStatus = Model.TaskStatus;
 
 namespace ViewModel.Implementations.DataManagers
 {
+    /// <summary>
+    /// Класс заместитель элементарных задач для создания.
+    /// </summary>
+    /// <remarks>
+    /// Наследует <see cref="TrackableObject"/>.
+    /// Реализует <see cref="IFactory{ITaskElementProxy}"/>.
+    /// </remarks>
     public class TaskElementCreatorProxy : TrackableObject, ITaskElementProxy
     {
         /// <summary>

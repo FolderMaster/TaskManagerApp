@@ -54,8 +54,8 @@ namespace ViewModel.Tests.AppStates
         [TestCase([100, 10])]
         [TestCase([10, 1])]
         [TestCase([1, 0])]
-        [Test(Description = $"Тестирование события {nameof(TimeScheduler.Timepoints)}" +
-            "при добавлении временной точки из прошлого и ожидании времени.")]
+        [Test(Description = $"Тестирование события {nameof(TimeScheduler.TimepointReached)}" +
+            "при добавлении временной точки из будущего и ожидании времени.")]
         public async Task EventTimepointReached_AddFutureTimepointWithWait_InvokeEventHandler
             (int time, int toleranceTime)
         {
@@ -77,7 +77,7 @@ namespace ViewModel.Tests.AppStates
         [TestCase([100, 10])]
         [TestCase([10, 1])]
         [TestCase([1, 0])]
-        [Test(Description = $"Тестирование события {nameof(TimeScheduler.Timepoints)}" +
+        [Test(Description = $"Тестирование события {nameof(TimeScheduler.TimepointReached)}" +
             "при добавлении временной точки и удалении её, ожидании времени.")]
         public async Task EventTimepointReached_AddFutureTimepointWithRemoveAndWait_NoInvokeEventHandler
             (int time, int toleranceTime)
@@ -101,7 +101,7 @@ namespace ViewModel.Tests.AppStates
         [TestCase([100, 200, 10])]
         [TestCase([10, 20, 1])]
         [TestCase([1, 2, 0])]
-        [Test(Description = $"Тестирование события {nameof(TimeScheduler.Timepoints)}" +
+        [Test(Description = $"Тестирование события {nameof(TimeScheduler.TimepointReached)}" +
             "при добавлении временных точек по порядку и ожидании времени.")]
         public async Task EventTimepointReached_AddFuture2TimepointInOrderWithWait_2InvokeEventHandlerInOrder
             (int firstTime, int secondTime, int toleranceTime)
@@ -138,7 +138,7 @@ namespace ViewModel.Tests.AppStates
         [TestCase([200, 100, 10])]
         [TestCase([20, 10, 1])]
         [TestCase([2, 1, 0])]
-        [Test(Description = $"Тестирование события {nameof(TimeScheduler.Timepoints)}" +
+        [Test(Description = $"Тестирование события {nameof(TimeScheduler.TimepointReached)}" +
             "при добавлении временных точек не по порядку и ожидании времени.")]
         public async Task EventTimepointReached_AddFuture2TimepointNotInOrderWithWait_2InvokeEventHandlerInOrder
             (int firstTime, int secondTime, int toleranceTime)
