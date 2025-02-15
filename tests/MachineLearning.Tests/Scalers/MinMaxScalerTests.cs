@@ -17,7 +17,7 @@ namespace MachineLearning.Tests.Scalers
         [Test(Description = $"Тестирование метода {nameof(MinMaxScaler.FitTransform)}.")]
         public void FitTransform_ReturnCorrectArray()
         {
-            var array = new double[] { -10, 0, 10};
+            var array = new double[] { -10, 0, 10 };
             var expected = new double[] { 0, 0.5, 1 };
 
             var result = _scaler.FitTransform(array);

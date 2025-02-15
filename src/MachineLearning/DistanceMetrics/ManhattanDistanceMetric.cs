@@ -3,12 +3,12 @@
 namespace MachineLearning.DistanceMetrics
 {
     /// <summary>
-    /// Класс метрики Евклидового расстояния.
+    /// Класс метрики расстояние Манхэттена.
     /// </summary>
     /// <remarks>
     /// Реализует <see cref="IPointDistanceMetric"/>.
     /// </remarks>
-    public class EuclideanDistanceMetric : IPointDistanceMetric
+    public class ManhattanDistanceMetric : IPointDistanceMetric
     {
         /// <inheritdoc />
         public double CalculateDistance(IEnumerable<double> object1, IEnumerable<double> object2)
@@ -18,9 +18,9 @@ namespace MachineLearning.DistanceMetrics
 
             for (var i = 0; i < count; ++i)
             {
-                sum += Math.Pow(object1.ElementAt(i) - object2.ElementAt(i), 2);
+                sum += Math.Abs(object1.ElementAt(i) - object2.ElementAt(i));
             }
-            return Math.Sqrt(sum);
+            return sum;
         }
     }
 }

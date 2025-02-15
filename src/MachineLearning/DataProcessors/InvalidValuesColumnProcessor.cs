@@ -1,5 +1,6 @@
 ﻿using Accord.Math;
 
+using MachineLearning.Aggregators;
 using MachineLearning.Interfaces;
 
 namespace MachineLearning.DataProcessors
@@ -16,6 +17,11 @@ namespace MachineLearning.DataProcessors
         /// Значение для замены некорректных значений.
         /// </summary>
         protected double _replacementInvalidValue = -1;
+
+        /// <summary>
+        /// Возвращает и задаёт агрегатор.
+        /// </summary>
+        public IAggregator Aggregator { get; set; } = new MeanAggregator();
 
         /// <inheritdoc />
         public DataProcessorResult<double> Process(IEnumerable<double?> data)
@@ -36,14 +42,15 @@ namespace MachineLearning.DataProcessors
             for (var n = 0; n < columnCount; ++n)
             {
                 var column = array.GetColumn(n);
-                if (column.All(IsInvalidValue))
+                var invalidValuesCount = column.Count(IsInvalidValue);
+                if (invalidValuesCount == rowCount)
                 {
                     removingColumns.Add(n);
                 }
-                else if (column.Any(IsInvalidValue))
+                else if (invalidValuesCount != 0)
                 {
-                    var replacementValue = CalculateReplacementValue
-                        (column.Where(v => !IsInvalidValue(v)).Cast<double>());
+                    var validValues = column.Where(v => !IsInvalidValue(v)).Cast<double>();
+                    var replacementValue = Aggregator.AggregateToValue(validValues);
                     for (var i = 0; i < rowCount; ++i)
                     {
                         if (IsInvalidValue(column[i]))
@@ -71,13 +78,5 @@ namespace MachineLearning.DataProcessors
         /// </returns>
         protected virtual bool IsInvalidValue(double? value) =>
             value == null || double.IsNaN((double)value);
-
-        /// <summary>
-        /// Рассчитывает значение для замещения на основе столбца.
-        /// </summary>
-        /// <param name="column">Столбец.</param>
-        /// <returns>Возвращает значение для замещения.</returns>
-        protected virtual double CalculateReplacementValue(IEnumerable<double> column) =>
-            column.Average();
     }
 }
