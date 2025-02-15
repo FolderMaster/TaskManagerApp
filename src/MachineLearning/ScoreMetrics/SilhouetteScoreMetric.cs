@@ -1,5 +1,6 @@
 ﻿using MachineLearning.Interfaces;
 using MachineLearning.DistanceMetrics;
+using MachineLearning.Aggregators;
 
 namespace MachineLearning.ScoreMetrics
 {
@@ -17,6 +18,11 @@ namespace MachineLearning.ScoreMetrics
         public IPointDistanceMetric PointDistanceMetric { get; set; } =
             new EuclideanDistanceMetric();
 
+        /// <summary>
+        /// Возвращает и задаёт агрегатор.
+        /// </summary>
+        public IAggregator Aggregator { get; set; } = new MeanAggregator();
+
         /// <inheritdoc />
         public double CalculateScore(IEnumerable<int> actual,
             IEnumerable<IEnumerable<double>> data)
@@ -25,7 +31,7 @@ namespace MachineLearning.ScoreMetrics
             var clustersPointDictionary = data.Select((p, i) =>
                 new { Point = p, Cluster = actual.ElementAt(i) }).GroupBy(x => x.Cluster).
                 ToDictionary(g => g.Key, g => g.Select(x => x.Point));
-            var totalSilhouetteScore = 0d;
+            var silhouetteScores = new List<double>();
 
             for (var n = 0; n < count; ++n)
             {
@@ -37,10 +43,10 @@ namespace MachineLearning.ScoreMetrics
                     (clustersPointDictionary, point, cluster);
 
                 var silhouetteScore = (b - a) / Math.Max(a, b);
-                totalSilhouetteScore += silhouetteScore;
+                silhouetteScores.Add(silhouetteScore);
             }
 
-            return totalSilhouetteScore / count;
+            return Aggregator.AggregateToValue(silhouetteScores);
         }
 
         /// <inheritdoc />

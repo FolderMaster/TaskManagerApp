@@ -1,4 +1,6 @@
-﻿using MachineLearning.Interfaces.Generals;
+﻿using MachineLearning.Aggregators;
+using MachineLearning.Interfaces;
+using MachineLearning.Interfaces.Generals;
 
 using TrackableFeatures;
 
@@ -19,12 +21,26 @@ namespace MachineLearning.LearningEvaluators
         private int _numberOfFolds = 2;
 
         /// <summary>
+        /// Агрегатор.
+        /// </summary>
+        private IAggregator _aggregator = new MeanAggregator();
+
+        /// <summary>
         /// Возвращает и задаёт количество сегментов.
         /// </summary>
         public int NumberOfFolds
         {
             get => _numberOfFolds;
             set => UpdateProperty(ref _numberOfFolds, value, OnPropertyChanged);
+        }
+
+        /// <summary>
+        /// Возвращает агрегатор.
+        /// </summary>
+        public IAggregator Aggregator
+        {
+            get => _aggregator;
+            set => UpdateProperty(ref _aggregator, value, OnPropertyChanged);
         }
 
         /// <summary>
@@ -48,6 +64,10 @@ namespace MachineLearning.LearningEvaluators
             if (NumberOfFolds <= 1)
             {
                 AddError($"{nameof(NumberOfFolds)} должно быть больше 1!");
+            }
+            if (Aggregator == null)
+            {
+                AddError($"{nameof(Aggregator)} должно быть назначено!");
             }
         }
     }

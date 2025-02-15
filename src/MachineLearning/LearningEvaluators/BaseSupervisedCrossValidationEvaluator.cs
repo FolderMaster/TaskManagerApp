@@ -65,7 +65,7 @@ namespace MachineLearning.LearningEvaluators
                 var score = ScoreMetric.CalculateScore(testTargets, predicted);
                 scores.Add(score);
             }
-            var scoreCategory = GetScoresCategory(scores);
+            var scoreCategory = ScoreMetric.GetScoreCategory(Aggregator.AggregateToValue(scores));
             return scoreCategory;
         }
 
@@ -77,14 +77,6 @@ namespace MachineLearning.LearningEvaluators
         /// <returns>Возвращает сегменты валидации.</returns>
         protected abstract IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<T> data, IEnumerable<R> targets);
-
-        /// <summary>
-        /// Определяет категорию оценок.
-        /// </summary>
-        /// <param name="scores">Оценки.</param>
-        /// <returns>Возвращает категорию оценок.</returns>
-        protected virtual ScoreMetricCategory GetScoresCategory(IEnumerable<double> scores) =>
-            ScoreMetric.GetScoreCategory(scores.Average());
 
         /// <inheritdoc />
         protected override void OnPropertyChanged<T>(T oldValue, T newValue)

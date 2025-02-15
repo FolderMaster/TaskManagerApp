@@ -24,11 +24,13 @@ namespace MachineLearning.Scalers
         public IEnumerable<double> FitTransform(IEnumerable<double> data)
         {
             var array = data.ToArray();
+            var count = data.Count();
 
             Min = array.Min();
             Max = array.Max();
-            var result = new double[data.Count()];
-            for (var i = 0; i < data.Count(); ++i)
+            
+            var result = new double[count];
+            for (var i = 0; i < count; ++i)
             {
                 result[i] = Transform(array[i]);
             }
