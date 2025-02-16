@@ -5,12 +5,12 @@ using MachineLearning.Aggregators;
 namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
-    /// Класс метрики оценки Силуэта для модели обучения кластеризации.
+    /// Класс метрики оценки Силуэта для модели обучения кластеризации на данных.
     /// </summary>
     /// <remarks>
-    /// Реализует <see cref="IClusteringScoreMetric"/>.
+    /// Реализует <see cref="IDataClusteringScoreMetric"/>.
     /// </remarks>
-    public class SilhouetteScoreMetric : IClusteringScoreMetric
+    public class SilhouetteScoreMetric : IDataClusteringScoreMetric
     {
         /// <summary>
         /// Возвращает и задаёт метрику дистанцию.
@@ -24,18 +24,18 @@ namespace MachineLearning.ScoreMetrics
         public IAggregator Aggregator { get; set; } = new MeanAggregator();
 
         /// <inheritdoc />
-        public double CalculateScore(IEnumerable<int> actual,
+        public double CalculateScore(IEnumerable<int> predicted,
             IEnumerable<IEnumerable<double>> data)
         {
-            var count = actual.Count();
+            var count = predicted.Count();
             var clustersPointDictionary = data.Select((p, i) =>
-                new { Point = p, Cluster = actual.ElementAt(i) }).GroupBy(x => x.Cluster).
+                new { Point = p, Cluster = predicted.ElementAt(i) }).GroupBy(x => x.Cluster).
                 ToDictionary(g => g.Key, g => g.Select(x => x.Point));
             var silhouetteScores = new List<double>();
 
             for (var n = 0; n < count; ++n)
             {
-                var cluster = actual.ElementAt(n);
+                var cluster = predicted.ElementAt(n);
                 var point = data.ElementAt(n);
                 var a = CalculateAverageIntraClusterDistance
                     (clustersPointDictionary, point, cluster);

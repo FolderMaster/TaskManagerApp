@@ -4,11 +4,12 @@ using MachineLearning.ScoreMetrics;
 
 namespace MachineLearning.Tests.LearningEvaluators
 {
-    [TestFixture(TestOf = typeof(ClusteringCrossValidationEvaluator),
-        Description = $"Тестирование класса {nameof(ClusteringCrossValidationEvaluator)}.")]
-    public class ClusteringCrossValidationEvaluatorTests
+    [TestFixture(TestOf = typeof(PredictedClusteringCrossValidationEvaluator),
+        Description = "Тестирование класса " +
+        $"{nameof(PredictedClusteringCrossValidationEvaluator)}.")]
+    public class PredictedClusteringCrossValidationEvaluatorTests
     {
-        private ClusteringCrossValidationEvaluatorPrototype _learningEvaluator;
+        private PredictedClusteringCrossValidationEvaluatorPrototype _learningEvaluator;
 
         [SetUp]
         public void Setup()
@@ -17,7 +18,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         }
 
         [TestCase(Category = "Unit", Description = "Тестирование метода " +
-            $"{nameof(ClusteringCrossValidationEvaluatorPrototype.GetValidationFoldsSet)}.")]
+            $"{nameof(PredictedClusteringCrossValidationEvaluatorPrototype.GetValidationFoldsSet)}.")]
         public void GetValidationFoldsSet_ReturnCorrectValues()
         {
             var numberOfFolds = 3;
@@ -44,8 +45,28 @@ namespace MachineLearning.Tests.LearningEvaluators
                 "Неправильно построены сегменты валидации!");
         }
 
+        [TestCase(Category = "Unit", Description = "Тестирование метода " +
+            $"{nameof(PredictedClusteringCrossValidationEvaluatorPrototype.GetSecondaryTrainIndicesSet)}.")]
+        public void GetSecondaryTrainIndicesSet_ReturnCorrectValues()
+        {
+            var numberOfFolds = 3;
+            var indices = new int[] { 0, 1, 2, 3 };
+            var expected = new int[][]
+            {
+                [ 1, 2, 3 ],
+                [ 0, 2, 3 ],
+                [ 0, 1, 3 ],
+            };
+
+            _learningEvaluator.NumberOfFolds = numberOfFolds;
+            var result = _learningEvaluator.GetSecondaryTrainIndicesSet(indices);
+
+            Assert.That(result, Is.EqualTo(expected).Using(new ValidationFoldComparer()),
+                "Неправильно построены вторичные индексы тренировки!");
+        }
+
         [TestCase(Category = "Integration", Description = "Тестирование метода " +
-            $"{nameof(ClusteringCrossValidationEvaluator.Evaluate)} " +
+            $"{nameof(PredictedClusteringCrossValidationEvaluator.Evaluate)} " +
             "с корректными данными и классами.")]
         public async Task Evaluate_CorrectDataAndClasses_ReturnCorrectScoreCategory()
         {
@@ -54,7 +75,7 @@ namespace MachineLearning.Tests.LearningEvaluators
             {
                 NumberOfClusters = 2
             };
-            var scoreMetric = new SilhouetteScoreMetric();
+            var scoreMetric = new AdjustedRandIndexScoreMetric();
             var data = new double[][]
             {
                 [1, 3],
@@ -75,7 +96,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         }
 
         [TestCase(Category = "Integration", Description = "Тестирование метода " +
-            $"{nameof(ClusteringCrossValidationEvaluator.Evaluate)} " +
+            $"{nameof(PredictedClusteringCrossValidationEvaluator.Evaluate)} " +
             "с некорректными данными и классами.")]
         public async Task Evaluate_IncorrectDataAndClasses_ReturnCorrectScoreCategory()
         {
@@ -84,7 +105,7 @@ namespace MachineLearning.Tests.LearningEvaluators
             {
                 NumberOfClusters = 2
             };
-            var scoreMetric = new SilhouetteScoreMetric();
+            var scoreMetric = new AdjustedRandIndexScoreMetric();
             var data = new double[][]
             {
                 [0, 0],

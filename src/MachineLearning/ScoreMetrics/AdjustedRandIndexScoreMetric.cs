@@ -5,27 +5,28 @@ using MachineLearning.Interfaces;
 namespace MachineLearning.ScoreMetrics
 {
     /// <summary>
-    /// Класс метрики оценки скорректированного индекса Рэнда для модели обучения классификации.
+    /// Класс метрики оценки скорректированного индекса Рэнда для модели обучения классификации
+    /// на предсказанных данных.
     /// </summary>
     /// <remarks>
-    /// Реализует <see cref="IClassificationScoreMetric"/>.
+    /// Реализует <see cref="IPredictedClusteringScoreMetric"/>.
     /// </remarks>
-    public class AdjustedRandIndexScoreMetric : IClassificationScoreMetric
+    public class AdjustedRandIndexScoreMetric : IPredictedClusteringScoreMetric
     {
         /// <inheritdoc />
-        public double CalculateScore(IEnumerable<int> actual, IEnumerable<int> predicted)
+        public double CalculateScore(IEnumerable<int> predicted1, IEnumerable<int> predicted2)
         {
-            var count = actual.Count();
+            var count = predicted1.Count();
 
-            var actualUniqueValues = actual.Distinct().ToArray();
+            var actualUniqueValues = predicted1.Distinct().ToArray();
             var actualUniqueValuesCount = actualUniqueValues.Count();
-            var predictedUniqueValues = predicted.Distinct().ToArray();
+            var predictedUniqueValues = predicted2.Distinct().ToArray();
             var predictedUniqueValuesCount = predictedUniqueValues.Count();
             var matrix = new int[actualUniqueValuesCount, predictedUniqueValuesCount];
             for (var i = 0; i < count; ++i)
             {
-                var actualIndex = actualUniqueValues.IndexOf(actual.ElementAt(i));
-                var predictedValue = predictedUniqueValues.IndexOf(predicted.ElementAt(i));
+                var actualIndex = actualUniqueValues.IndexOf(predicted1.ElementAt(i));
+                var predictedValue = predictedUniqueValues.IndexOf(predicted2.ElementAt(i));
 
                 ++matrix[actualIndex, predictedValue];
             }

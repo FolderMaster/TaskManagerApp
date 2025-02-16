@@ -2,8 +2,8 @@
 
 namespace MachineLearning.Tests.LearningEvaluators
 {
-    public class ClusteringCrossValidationEvaluatorPrototype :
-        ClusteringCrossValidationEvaluator
+    public class DataClusteringCrossValidationEvaluatorPrototype :
+        DataClusteringCrossValidationEvaluator
     {
         public IEnumerable<ValidationFold> GetValidationFoldsSet
             (IEnumerable<IEnumerable<double>> data) => GetValidationFolds(data);

@@ -100,14 +100,14 @@ namespace ViewModel.Technicals
             result.RegisterType<SmapeScoreMetric>().
                 As<IRegressionScoreMetric>().SingleInstance();
             result.RegisterType<SilhouetteScoreMetric>().
-                As<IClusteringScoreMetric>().SingleInstance();
+                As<IDataClusteringScoreMetric>().SingleInstance();
 
             result.RegisterType<ClassificationCrossValidationEvaluator>().
                 As<IClassificationEvaluator>();
             result.RegisterType<RegressionCrossValidationEvaluator>().
                 As<IRegressionEvaluator>();
-            result.RegisterType<ClusteringCrossValidationEvaluator>().
-                As<IClusteringEvaluator>();
+            result.RegisterType<DataClusteringCrossValidationEvaluator>().
+                As<IDataClusteringEvaluator>();
 
             result.RegisterType<DeadlineTaskElementLearningConverter>().SingleInstance();
             result.RegisterType<PlannedRealTaskElementLearningConverter>().SingleInstance();

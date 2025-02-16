@@ -16,11 +16,6 @@
         public IUnsupervisedLearningModel<T, R> Model { get; set; }
 
         /// <summary>
-        /// Возвращает и задаёт метрику оценки обучения с учителем.
-        /// </summary>
-        public IUnsupervisedScoreMetric<R, T> ScoreMetric { get; set; }
-
-        /// <summary>
         /// Оценивает модель обучения.
         /// </summary>
         /// <param name="data">Данные.</param>

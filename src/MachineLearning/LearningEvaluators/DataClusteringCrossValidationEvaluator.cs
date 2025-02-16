@@ -4,27 +4,29 @@ using MachineLearning.ScoreMetrics;
 namespace MachineLearning.LearningEvaluators
 {
     /// <summary>
-    /// Класс оценки модели обучения регрессии методом кросс-валидации.
+    /// Класс оценки модели обучения кластеризации методом кросс-валидации на данных.
     /// </summary>
     /// <remarks>
     /// Наследует
-    /// <see cref="BaseSupervisedCrossValidationEvaluator{IEnumerable{double}, double}"/>.
-    /// Реализует <see cref="IRegressionEvaluator"/>.
+    /// <see cref="BaseDataUnsupervisedCrossValidationEvaluator{IEnumerable{double}, int}"/>.
+    /// Реализует <see cref="IDataClusteringEvaluator"/>.
     /// </remarks>
-    public class RegressionCrossValidationEvaluator :
-        BaseSupervisedCrossValidationEvaluator<IEnumerable<double>, double>, IRegressionEvaluator
+    public class DataClusteringCrossValidationEvaluator :
+        BaseDataUnsupervisedCrossValidationEvaluator<IEnumerable<double>, int>,
+        IDataClusteringEvaluator
     {
         /// <summary>
-        /// Создаёт экземпляр класса <see cref="RegressionCrossValidationEvaluator"/> по умолчанию.
+        /// Создаёт экземпляр класса <see cref="DataClusteringCrossValidationEvaluator"/>
+        /// по умолчанию.
         /// </summary>
-        public RegressionCrossValidationEvaluator()
+        public DataClusteringCrossValidationEvaluator()
         {
-            ScoreMetric = new SmapeScoreMetric();
+            ScoreMetric = new SilhouetteScoreMetric();
         }
 
         /// <inheritdoc />
         protected override IEnumerable<ValidationFold> GetValidationFolds
-            (IEnumerable<IEnumerable<double>> data, IEnumerable<double> targets)
+            (IEnumerable<IEnumerable<double>> data)
         {
             var count = data.Count();
             var indices = Enumerable.Range(0, count);

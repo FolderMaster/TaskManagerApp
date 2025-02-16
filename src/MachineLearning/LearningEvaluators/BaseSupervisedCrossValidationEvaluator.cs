@@ -24,18 +24,14 @@ namespace MachineLearning.LearningEvaluators
         /// </summary>
         private ISupervisedScoreMetric<R> _scoreMetric;
 
-        /// <summary>
-        /// Возвращает и задаёт модель обучения с учителем.
-        /// </summary>
+        /// <inheritdoc/>
         public ISupervisedLearningModel<T, R> Model
         {
             get => _model;
             set => UpdateProperty(ref _model, value, OnPropertyChanged);
         }
 
-        /// <summary>
-        /// Возвращает и задаёт модель обучения с учителем.
-        /// </summary>
+        /// <inheritdoc/>
         public ISupervisedScoreMetric<R> ScoreMetric
         {
             get => _scoreMetric;
@@ -70,7 +66,7 @@ namespace MachineLearning.LearningEvaluators
         }
 
         /// <summary>
-        /// Возвращает сегменты валидации.
+        /// Создаёт сегменты валидации.
         /// </summary>
         /// <param name="data">Данные.</param>
         /// <param name="targets">Целевые значения.</param>

@@ -12,8 +12,7 @@ namespace MachineLearning.LearningEvaluators
     /// <remarks>
     /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="ILearningEvaluator"/>.
     /// </remarks>
-    public abstract class BaseCrossValidationLearningEvaluator :
-        TrackableObject, ILearningEvaluator
+    public class BaseCrossValidationLearningEvaluator : TrackableObject, ILearningEvaluator
     {
         /// <summary>
         /// Количество сегментов.
@@ -47,7 +46,7 @@ namespace MachineLearning.LearningEvaluators
         /// Создаёт экземпляр класса <see cref="BaseCrossValidationLearningEvaluator"/>
         /// по умолчанию.
         /// </summary>
-        public BaseCrossValidationLearningEvaluator()
+        protected BaseCrossValidationLearningEvaluator()
         {
             OnPropertyChanged();
         }
