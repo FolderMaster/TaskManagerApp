@@ -18,38 +18,38 @@ namespace MachineLearning.ScoreMetrics
         {
             var count = predicted1.Count();
 
-            var actualUniqueValues = predicted1.Distinct().ToArray();
-            var actualUniqueValuesCount = actualUniqueValues.Count();
-            var predictedUniqueValues = predicted2.Distinct().ToArray();
-            var predictedUniqueValuesCount = predictedUniqueValues.Count();
-            var matrix = new int[actualUniqueValuesCount, predictedUniqueValuesCount];
+            var predicted1UniqueValues = predicted1.Distinct().ToArray();
+            var predicted1UniqueValuesCount = predicted1UniqueValues.Count();
+            var predicted2UniqueValues = predicted2.Distinct().ToArray();
+            var predicted2UniqueValuesCount = predicted2UniqueValues.Count();
+            var matrix = new int[predicted1UniqueValuesCount, predicted2UniqueValuesCount];
             for (var i = 0; i < count; ++i)
             {
-                var actualIndex = actualUniqueValues.IndexOf(predicted1.ElementAt(i));
-                var predictedValue = predictedUniqueValues.IndexOf(predicted2.ElementAt(i));
+                var actualIndex = predicted1UniqueValues.IndexOf(predicted1.ElementAt(i));
+                var predictedValue = predicted2UniqueValues.IndexOf(predicted2.ElementAt(i));
 
                 ++matrix[actualIndex, predictedValue];
             }
 
             var index = 0;
-            for (var i = 0; i < actualUniqueValuesCount; ++i)
+            for (var i = 0; i < predicted1UniqueValuesCount; ++i)
             {
-                for (var n = 0; n < predictedUniqueValuesCount; ++n)
+                for (var n = 0; n < predicted2UniqueValuesCount; ++n)
                 {
                     index += CalculateCombinationsCount(matrix[i, n], 2);
                 }
             }
             var columnCombinationsCount = 0;
-            for (var i = 0; i < actualUniqueValuesCount; ++i)
+            for (var i = 0; i < predicted1UniqueValuesCount; ++i)
             {
                 columnCombinationsCount +=
-                    CalculateCombinationsCount(matrix.GetColumn(i).Sum(), 2);
+                    CalculateCombinationsCount(matrix.GetRow(i).Sum(), 2);
             }
             var rowCombinationsCount = 0;
-            for (var n = 0; n < predictedUniqueValuesCount; ++n)
+            for (var n = 0; n < predicted2UniqueValuesCount; ++n)
             {
                 rowCombinationsCount +=
-                    CalculateCombinationsCount(matrix.GetRow(n).Sum(), 2);
+                    CalculateCombinationsCount(matrix.GetColumn(n).Sum(), 2);
             }
             var totalCombinationsCount = CalculateCombinationsCount(count, 2);
             var expectedIndex = rowCombinationsCount *
