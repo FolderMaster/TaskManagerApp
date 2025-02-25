@@ -11,11 +11,18 @@ using ViewModel.Interfaces.DataManagers.Generals;
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels.Pages;
+using Common.Tests;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace ViewModel.Tests.ViewModels.Pages
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(TimeViewModel), Category = "Integration, Functional",
+    [TestFixture(TestOf = typeof(TimeViewModel),
         Description = $"Тестирование класса {nameof(TimeViewModel)}.")]
     public class TimeViewModelTests
     {
@@ -53,6 +60,8 @@ namespace ViewModel.Tests.ViewModels.Pages
             File.Delete(_dbPath);
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Fast)]
         [Test(Description = "Тестирование свойства " +
             $"{nameof(TimeViewModel.CalendarIntervals)} " +
             $"при выполнении команды {nameof(TimeViewModel.UpdateCommand)}.")]
@@ -95,6 +104,8 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно получен календарь!");
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Medium)]
         [Test(Description = $"Тестирование команды {nameof(TimeViewModel.AddCommand)}.")]
         public async Task AddCommand_TimeIntervalElementAdded()
         {
@@ -129,6 +140,8 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно добавлен временной интервал!");
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(TimeViewModel.RemoveCommand)}.")]
         public async Task RemoveCommand_TimeIntervalElementRemoved()
         {
@@ -155,6 +168,8 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно удалён временной интервал!");
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(TimeViewModel.EditCommand)}.")]
         public async Task EditCommand_TimeIntervalElementEdited()
         {
@@ -189,6 +204,8 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно изменён временной интервал!");
         }
 
+        [Reproducibility(ReproducibilityType.Flaky)]
+        [Time(TestTime.Slow)]
         [Repeat(5)]
         [TestCase([1000, 100])]
         [TestCase([100, 10])]

@@ -1,8 +1,17 @@
-﻿using MachineLearning.LearningModels;
+﻿using Common.Tests;
+using MachineLearning.LearningModels;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.LearningModels
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(MultipleLinearRegressionModel),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(MultipleLinearRegressionModel),
         Description = $"Тестирование класса {nameof(MultipleLinearRegressionModel)}.")]
     public class MultipleLinearRegressionModelTests
     {

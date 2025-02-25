@@ -7,11 +7,20 @@ using ViewModel.Implementations.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Technicals;
 using ViewModel.ViewModels;
+using Common.Tests;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace ViewModel.Tests.ViewModels
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Medium)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(MainViewModel), Category = "Integration, Functional",
+    [TestFixture(TestOf = typeof(MainViewModel),
         Description = $"Тестирование класса {nameof(MainViewModel)}.")]
     public class MainViewModelTests
     {

@@ -1,8 +1,17 @@
+using Common.Tests;
 using MachineLearning.Scalers;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.Scalers
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(MinMaxScaler),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(MinMaxScaler),
         Description = $"Тестирование класса {nameof(MinMaxScaler)}.")]
     public class MinMaxScalerTests
     {

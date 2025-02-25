@@ -1,10 +1,17 @@
-﻿using MachineLearning.Converters;
+﻿using Common.Tests;
+using MachineLearning.Converters;
 using MachineLearning.DataProcessors;
 using MachineLearning.Interfaces;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace MachineLearning.Tests.Converters
 {
-    [TestFixture(Category = "Integration", TestOf = typeof(BaseUnsupervisedLearningConverter
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [TestFixture(TestOf = typeof(BaseUnsupervisedLearningConverter
         <double, IEnumerable<double?>, IEnumerable<double?>, double>),
         Description = $"Тестирование класса {nameof(BaseUnsupervisedLearningConverter
             <double, IEnumerable<double?>, IEnumerable<double?>, double>)}.")]
@@ -26,6 +33,8 @@ namespace MachineLearning.Tests.Converters
             _dataProcessor = new(primaryProcessor, processors);
         }
 
+        [Level(TestLevel.Unit)]
+        [Time(TestTime.Instant)]
         [Test(Description = "Тестирование метода " +
             $"{nameof(SupervisedLearningConverterPrototype.NormalizeRemovedIndices)}.")]
         public void NormalizeRemovedIndices_ReturnCorrectData()
@@ -41,6 +50,8 @@ namespace MachineLearning.Tests.Converters
             Assert.That(result, Is.EqualTo(expected), "Неправильно нормализованы индексы!");
         }
 
+        [Level(TestLevel.Integration)]
+        [Time(TestTime.Fast)]
         [Test(Description = "Тестирование метода " +
             $"{nameof(SupervisedLearningConverterPrototype.FitConvertData)}.")]
         public void FitConvertData_ReturnCorrectData()

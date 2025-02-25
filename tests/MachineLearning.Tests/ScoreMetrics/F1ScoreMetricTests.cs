@@ -1,8 +1,17 @@
-﻿using MachineLearning.ScoreMetrics;
+﻿using Common.Tests;
+using MachineLearning.ScoreMetrics;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.ScoreMetrics
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(F1ScoreMetric),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(F1ScoreMetric),
         Description = $"Тестирование класса {nameof(F1ScoreMetric)}.")]
     public class F1ScoreMetricTests
     {

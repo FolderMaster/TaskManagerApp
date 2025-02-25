@@ -1,5 +1,5 @@
 ﻿using Autofac;
-
+using Common.Tests;
 using Model.Interfaces;
 
 using ViewModel.Implementations.AppStates.Sessions;
@@ -9,12 +9,19 @@ using ViewModel.Technicals;
 using ViewModel.ViewModels;
 using ViewModel.ViewModels.Pages;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 using TaskStatus = Model.TaskStatus;
 
 namespace ViewModel.Tests.ViewModels.Pages
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Medium)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(ToDoListViewModel), Category = "Integration, Functional",
+    [TestFixture(TestOf = typeof(ToDoListViewModel),
         Description = $"Тестирование класса {nameof(ToDoListViewModel)}.")]
     public class ToDoListViewModelTests
     {

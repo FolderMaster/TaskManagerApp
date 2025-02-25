@@ -1,9 +1,16 @@
-﻿using MachineLearning.LearningEvaluators;
+﻿using Common.Tests;
+using MachineLearning.LearningEvaluators;
 using MachineLearning.LearningModels;
 using MachineLearning.ScoreMetrics;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace MachineLearning.Tests.LearningEvaluators
 {
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
     [TestFixture(TestOf = typeof(PredictedClusteringCrossValidationEvaluator),
         Description = "Тестирование класса " +
         $"{nameof(PredictedClusteringCrossValidationEvaluator)}.")]
@@ -17,7 +24,9 @@ namespace MachineLearning.Tests.LearningEvaluators
             _learningEvaluator = new();
         }
 
-        [TestCase(Category = "Unit", Description = "Тестирование метода " +
+        [Level(TestLevel.Unit)]
+        [Time(TestTime.Instant)]
+        [TestCase(Description = "Тестирование метода " +
             $"{nameof(PredictedClusteringCrossValidationEvaluatorPrototype.GetValidationFoldsSet)}.")]
         public void GetValidationFoldsSet_ReturnCorrectValues()
         {
@@ -45,7 +54,9 @@ namespace MachineLearning.Tests.LearningEvaluators
                 "Неправильно построены сегменты валидации!");
         }
 
-        [TestCase(Category = "Unit", Description = "Тестирование метода " +
+        [Level(TestLevel.Unit)]
+        [Time(TestTime.Instant)]
+        [TestCase(Description = "Тестирование метода " +
             $"{nameof(PredictedClusteringCrossValidationEvaluatorPrototype.GetSecondaryTrainIndicesSet)}.")]
         public void GetSecondaryTrainIndicesSet_ReturnCorrectValues()
         {
@@ -65,7 +76,9 @@ namespace MachineLearning.Tests.LearningEvaluators
                 "Неправильно построены вторичные индексы тренировки!");
         }
 
-        [TestCase(Category = "Integration", Description = "Тестирование метода " +
+        [Level(TestLevel.Integration)]
+        [Time(TestTime.Fast)]
+        [TestCase(Description = "Тестирование метода " +
             $"{nameof(PredictedClusteringCrossValidationEvaluator.Evaluate)} " +
             "с корректными данными и классами.")]
         public async Task Evaluate_CorrectDataAndClasses_ReturnCorrectScoreCategory()
@@ -95,7 +108,9 @@ namespace MachineLearning.Tests.LearningEvaluators
             Assert.That(result, Is.EqualTo(expected), "Неправильно поставлена категория оценки!");
         }
 
-        [TestCase(Category = "Integration", Description = "Тестирование метода " +
+        [Level(TestLevel.Integration)]
+        [Time(TestTime.Fast)]
+        [TestCase(Description = "Тестирование метода " +
             $"{nameof(PredictedClusteringCrossValidationEvaluator.Evaluate)} " +
             "с некорректными данными и классами.")]
         public async Task Evaluate_IncorrectDataAndClasses_ReturnCorrectScoreCategory()

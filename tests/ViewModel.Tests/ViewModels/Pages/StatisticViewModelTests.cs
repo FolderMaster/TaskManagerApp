@@ -1,5 +1,5 @@
 ﻿using Autofac;
-
+using Common.Tests;
 using Model.Interfaces;
 
 using ViewModel.Implementations.AppStates.Sessions;
@@ -10,12 +10,18 @@ using ViewModel.Interfaces.DataManagers.Generals;
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Pages;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 using TaskStatus = Model.TaskStatus;
 
 namespace ViewModel.Tests.ViewModels.Pages
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(StatisticViewModel), Category = "Integration, Functional",
+    [TestFixture(TestOf = typeof(StatisticViewModel),
         Description = $"Тестирование класса {nameof(StatisticViewModel)}.")]
     public class StatisticViewModelTests
     {
@@ -49,6 +55,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             File.Delete(_dbPath);
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = "Тестирование свойств " +
             $"{nameof(StatisticViewModel.UncompletedTasksCountByDifficultStatistic)}, " +
             $"{nameof(StatisticViewModel.UncompletedTasksCountByPriorityStatistic)}, " +
@@ -130,6 +137,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             });
         }
 
+        [Time(TestTime.Medium)]
         [Test(Description = "Тестирование свойства " +
             $"{nameof(StatisticViewModel.ExpiredTasksStatistic)} " +
             $"при выполнении команды {nameof(StatisticViewModel.UpdateCommand)}.")]
@@ -181,6 +189,7 @@ namespace ViewModel.Tests.ViewModels.Pages
                 "Неправильно рассчитана статистика!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = "Тестирование свойства " +
             $"{nameof(StatisticViewModel.TasksTimeStatistic)} " +
             $"при выполнении команды {nameof(StatisticViewModel.UpdateCommand)}.")]

@@ -1,8 +1,17 @@
+using Common.Tests;
 using Model.Tasks;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace Model.Tests.Tasks
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(TaskComposite),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Minor)]
+    [Priority(PriorityLevel.Low)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(TaskComposite),
         Description = $"Тестирование класса {nameof(TaskComposite)}.")]
     public class TaskCompositeTests
     {

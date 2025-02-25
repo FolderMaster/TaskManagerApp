@@ -1,8 +1,17 @@
-﻿using MachineLearning.Aggregators;
+﻿using Common.Tests;
+using MachineLearning.Aggregators;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.Aggregators
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(MeanAggregator),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Fast)]
+    [TestFixture(TestOf = typeof(MeanAggregator),
         Description = $"Тестирование класса {nameof(MeanAggregator)}.")]
     public class MeanAggregatorTests
     {

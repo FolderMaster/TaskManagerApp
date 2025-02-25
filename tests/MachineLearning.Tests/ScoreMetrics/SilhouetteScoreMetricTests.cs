@@ -1,8 +1,16 @@
-﻿using MachineLearning.ScoreMetrics;
+﻿using Common.Tests;
+using MachineLearning.ScoreMetrics;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.ScoreMetrics
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(SilhouetteScoreMetric),
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(SilhouetteScoreMetric),
         Description = $"Тестирование класса {nameof(SilhouetteScoreMetric)}.")]
     public class SilhouetteScoreMetricTests
     {
@@ -14,6 +22,7 @@ namespace MachineLearning.Tests.ScoreMetrics
             _scoreMetric = new();
         }
 
+        [Level(TestLevel.Integration)]
         [Test(Description =
             $"Тестирование метода {nameof(SilhouetteScoreMetric.CalculateScore)}.")]
         public void CalculateScore_ReturnCorrectValue()
@@ -35,6 +44,7 @@ namespace MachineLearning.Tests.ScoreMetrics
                 "Неправильно расчитана оценка!");
         }
 
+        [Level(TestLevel.Unit)]
         [Test(Description = "Тестирование метода " +
             $"{nameof(AccuracyScoreMetric.GetScoreCategory)}.")]
         public void GetScoreCategory_ReturnCorrectValue()

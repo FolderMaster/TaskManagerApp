@@ -1,8 +1,17 @@
-﻿using Model.Times;
+﻿using Common.Tests;
+using Model.Times;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace Model.Tests.Times
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(TimeIntervalList),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(TimeIntervalList),
         Description = $"Тестирование класса {nameof(TimeIntervalList)}.")]
     public class TimeIntervalListTests
     {

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Common.Tests;
 using System.Globalization;
 
 using ViewModel.Implementations.AppStates.Sessions;
@@ -9,10 +10,18 @@ using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Pages;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace ViewModel.Tests.ViewModels.Pages
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Fast)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(SettingsViewModel), Category = "Integration, Functional",
+    [TestFixture(TestOf = typeof(SettingsViewModel),
         Description = $"Тестирование класса {nameof(SettingsViewModel)}.")]
     public class SettingsViewModelTests
     {

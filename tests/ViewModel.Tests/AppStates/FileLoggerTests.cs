@@ -1,10 +1,19 @@
-﻿using System.Text;
+﻿using Common.Tests;
+using System.Text;
 
 using ViewModel.Implementations.AppStates;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace ViewModel.Tests.AppStates
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(FileLogger),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Minor)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Fast)]
+    [TestFixture(TestOf = typeof(FileLogger),
         Description = $"Тестирование класса {nameof(FileLogger)}.")]
     public class FileLoggerTests
     {

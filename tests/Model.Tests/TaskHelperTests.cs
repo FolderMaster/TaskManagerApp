@@ -1,9 +1,16 @@
-﻿using Model.Interfaces;
+﻿using Common.Tests;
+using Model.Interfaces;
 using Model.Tasks;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace Model.Tests
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(TaskHelper),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(TaskHelper),
         Description = $"Тестирование класса {nameof(TaskHelper)}.")]
     public class TaskHelperTests
     {
@@ -12,6 +19,8 @@ namespace Model.Tests
         {
         }
 
+        [Severity(SeverityLevel.Major)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.IsTaskCompleted)}")]
         public void IsTaskCompleted_ReturnCorrectValues()
         {
@@ -39,6 +48,8 @@ namespace Model.Tests
                 "Неправильно определена завершенность задач!");
         }
 
+        [Severity(SeverityLevel.Major)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.IsTaskCompleted)} " +
             "при задаче без срока.")]
         public void HasTaskExpired_TaskWithoutDeadline_ReturnFalse()
@@ -52,6 +63,8 @@ namespace Model.Tests
                 "Неправильно определено истекание срока задачи!");
         }
 
+        [Severity(SeverityLevel.Major)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.IsTaskCompleted)}" +
             "при задаче со сроком, которое превосходит дополнительное время.")]
         public void HasTaskExpired_TaskWithDeadlineMoreWarningTime_ReturnFalse()
@@ -66,6 +79,8 @@ namespace Model.Tests
                 "Неправильно определено истекание срока задачи!");
         }
 
+        [Severity(SeverityLevel.Major)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.IsTaskCompleted)}" +
             "при задаче со сроком, которое превосходит дополнительное время.")]
         public void HasTaskExpired_TaskWithDeadlineMoreWarningTime_ReturnTrue()
@@ -80,6 +95,8 @@ namespace Model.Tests
                 "Неправильно определено истекание срока задачи!");
         }
 
+        [Severity(SeverityLevel.Critical)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.GetTasks)}.")]
         public void GetTasks_ReturnCorrectData()
         {
@@ -108,6 +125,8 @@ namespace Model.Tests
                 "Неправильно определено истекание срока задачи!");
         }
 
+        [Severity(SeverityLevel.Critical)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.GetTaskElements)}.")]
         public void GetTaskElements_ReturnCorrectData()
         {
@@ -134,6 +153,8 @@ namespace Model.Tests
                 "Неправильно определено истекание срока задачи!");
         }
 
+        [Severity(SeverityLevel.Critical)]
+        [Priority(PriorityLevel.High)]
         [Test(Description = $"Тестирование метода {nameof(TaskHelper.GetTaskComposites)}.")]
         public void GetTaskComposites_ReturnCorrectData()
         {

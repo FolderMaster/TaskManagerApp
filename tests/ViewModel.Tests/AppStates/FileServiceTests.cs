@@ -1,10 +1,18 @@
-﻿using System.Text;
+﻿using Common.Tests;
+using System.Text;
 
 using ViewModel.Implementations.AppStates;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace ViewModel.Tests.AppStates
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(FileService),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [TestFixture(TestOf = typeof(FileService),
         Description = $"Тестирование класса {nameof(FileService)}.")]
     public class FileServiceTests
     {
@@ -29,6 +37,7 @@ namespace ViewModel.Tests.AppStates
             }
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(FileService.Save)}.")]
         public async Task Save_SaveDataInFile()
         {
@@ -42,6 +51,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.EqualTo(expected), "Неправильно сохранены данные!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(FileService.Load)}.")]
         public async Task Load_LoadDataFromFile()
         {
@@ -55,6 +65,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.EqualTo(expected), "Неправильно загружены данные!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(FileService.CreateDirectory)}.")]
         public void CreateDirectory_CreateDirectory()
         {
@@ -66,6 +77,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, "Директория не создана!");
         }
 
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование свойства {nameof(FileService.PersonalDirectoryPath)}.")]
         public void GetPersonalDirectoryPath_ReturnPersonalDirectoryPath()
         {
@@ -77,6 +89,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.EqualTo(expected), "Неправильный путь!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(FileService.CreateStream)}.")]
         public async Task CreateStream_ReturnStream()
         {
@@ -96,6 +109,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.EqualTo(expected), "Неправильное прочтение данных!");
         }
 
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование метода {nameof(FileService.GetDirectoryPath)}.")]
         public void GetDirectoryPath_ReturnDirectoryPaht()
         {
@@ -107,6 +121,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.EqualTo(expected), "Неправильный путь к директории!");
         }
 
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование метода {nameof(FileService.IsPathExists)}.")]
         public void IsPathExists_ReturnTrue()
         {
@@ -115,6 +130,7 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, "Существующий путь не найден!");
         }
 
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование метода {nameof(FileService.CombinePath)}.")]
         public void CombinePath_ReturnCombinedPath()
         {

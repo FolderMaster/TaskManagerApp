@@ -1,8 +1,15 @@
-﻿using ViewModel.Implementations.AppStates;
+﻿using Common.Tests;
+using ViewModel.Implementations.AppStates;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace ViewModel.Tests.AppStates
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(TimeScheduler),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.High)]
+    [TestFixture(TestOf = typeof(TimeScheduler),
         Description = $"Тестирование класса {nameof(TimeScheduler)}.")]
     public class TimeSchedulerTests
     {
@@ -14,6 +21,8 @@ namespace ViewModel.Tests.AppStates
             _timeScheduler = new();
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование свойства {nameof(TimeScheduler.Timepoints)}" +
             "при инициализации.")]
         public void GetTimepoints_InitialState_TimepointsEmpty()
@@ -23,6 +32,8 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.Empty, "Список временных точек должен быть пустым!");
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование свойства {nameof(TimeScheduler.Timepoints)}" +
             "при добавлении временной точки из прошлого.")]
         public void GetTimepoints_AddPastTimepoint_TimepointsEmpty()
@@ -35,6 +46,8 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.Empty, "Список временных точек должен быть пустым!");
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Instant)]
         [Test(Description = $"Тестирование свойства {nameof(TimeScheduler.Timepoints)}" +
             "при добавлении временной точки из будущего.")]
         public void GetTimepoints_AddFutureTimepoint_TimepointsEmpty()
@@ -49,6 +62,8 @@ namespace ViewModel.Tests.AppStates
                 "Список временных точек должен состоять из одной добавленной точки!");
         }
 
+        [Reproducibility(ReproducibilityType.Flaky)]
+        [Time(TestTime.Slow)]
         [Repeat(5)]
         [TestCase([1000, 100])]
         [TestCase([100, 10])]
@@ -72,6 +87,8 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, "Должно отработать событие!");
         }
 
+        [Reproducibility(ReproducibilityType.Stable)]
+        [Time(TestTime.Slow)]
         [Repeat(5)]
         [TestCase([1000, 100])]
         [TestCase([100, 10])]
@@ -96,6 +113,8 @@ namespace ViewModel.Tests.AppStates
             Assert.That(result, Is.False, "Не должно отработать событие!");
         }
 
+        [Reproducibility(ReproducibilityType.Flaky)]
+        [Time(TestTime.Slow)]
         [Repeat(5)]
         [TestCase([1000, 2000, 100])]
         [TestCase([100, 200, 10])]
@@ -133,6 +152,8 @@ namespace ViewModel.Tests.AppStates
             });
         }
 
+        [Reproducibility(ReproducibilityType.Flaky)]
+        [Time(TestTime.Slow)]
         [Repeat(5)]
         [TestCase([2000, 1000, 100])]
         [TestCase([200, 100, 10])]

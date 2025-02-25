@@ -1,8 +1,17 @@
-﻿using MachineLearning.Scalers;
+﻿using Common.Tests;
+using MachineLearning.Scalers;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.Scalers
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(StandardScaler),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(StandardScaler),
         Description = $"Тестирование класса {nameof(StandardScaler)}.")]
     public class StandardScalerTests
     {

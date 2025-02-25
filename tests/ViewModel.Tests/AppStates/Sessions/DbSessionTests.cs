@@ -1,5 +1,7 @@
 ﻿using Autofac;
 
+using Common.Tests;
+
 using Model.Interfaces;
 
 using ViewModel.Implementations.AppStates.Sessions;
@@ -7,10 +9,17 @@ using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.DataManagers.Generals;
 using ViewModel.Technicals;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace ViewModel.Tests.AppStates.Sessions
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(DbSession), Category = "Integration",
+    [TestFixture(TestOf = typeof(DbSession),
         Description = $"Тестирование класса {nameof(DbSession)}.")]
     public class DbSessionTests
     {
@@ -41,6 +50,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             File.Delete(_dbPath);
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.Load)}.")]
         public async Task Load_ReturnEmptyAndInvokeEventHandler()
         {
@@ -65,6 +75,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             });
         }
 
+        [Time(TestTime.Medium)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.AddTasks)}.")]
         public async Task AddTasks_SaveAndLoad_ReturnAddedTasksAndInvokeEventHandler()
         {
@@ -103,6 +114,7 @@ namespace ViewModel.Tests.AppStates.Sessions
                 UsingPropertiesComparer(), "Неправильно сохранены объект!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.RemoveTasks)}.")]
         public async Task RemoveTasks_SaveAndLoad_ReturnUnremovedTasksAndInvokeEventHandler()
         {
@@ -144,6 +156,7 @@ namespace ViewModel.Tests.AppStates.Sessions
                 UsingPropertiesComparer(), "Неправильно сохранены объекты!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.EditTask)}.")]
         public async Task EditTask_SaveAndLoad_ReturnEditedTasksAndInvokeEventHandler()
         {
@@ -187,6 +200,7 @@ namespace ViewModel.Tests.AppStates.Sessions
                 UsingPropertiesComparer(), "Неправильно сохранены объекты!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.MoveTasks)}.")]
         public async Task MoveTasks_SaveAndLoad_ReturnMovedTasksAndInvokeEventHandler()
         {
@@ -244,6 +258,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             });
         }
 
+        [Time(TestTime.Medium)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.AddTimeInterval)}.")]
         public async Task
             AddTimeInterval_SaveAndLoad_ReturnAddedTimeIntervalAndInvokeEventHandler()
@@ -295,6 +310,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             });
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.RemoveTimeInterval)}.")]
         public async Task
             RemoveTimeInterval_SaveAndLoad_ReturnUnremovedTimeIntervalAndInvokeEventHandler()
@@ -349,6 +365,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             });
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование метода {nameof(DbSession.EditTimeInterval)}.")]
         public async Task
             EditTimeInterval_SaveAndLoad_ReturnEditedTimeIntervalAndInvokeEventHandler()

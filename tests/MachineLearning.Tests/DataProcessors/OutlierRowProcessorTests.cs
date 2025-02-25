@@ -1,8 +1,17 @@
-﻿using MachineLearning.DataProcessors;
+﻿using Common.Tests;
+using MachineLearning.DataProcessors;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.DataProcessors
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(OutlierRowProcessor),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(OutlierRowProcessor),
         Description = $"Тестирование класса {nameof(OutlierRowProcessor)}.")]
     public class OutlierRowProcessorTests
     {

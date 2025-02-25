@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Desktop.macOS", "src\V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Tests", "tests\View.Tests\View.Tests.csproj", "{4642E538-EB65-4AA7-BB48-920D56CD2A0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Tests", "tests\Common.Tests\Common.Tests.csproj", "{4E5D1F0B-9B95-43A2-9367-3947A576FDC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{4642E538-EB65-4AA7-BB48-920D56CD2A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4642E538-EB65-4AA7-BB48-920D56CD2A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4642E538-EB65-4AA7-BB48-920D56CD2A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5D1F0B-9B95-43A2-9367-3947A576FDC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5D1F0B-9B95-43A2-9367-3947A576FDC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5D1F0B-9B95-43A2-9367-3947A576FDC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5D1F0B-9B95-43A2-9367-3947A576FDC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{6A4F4074-D47A-4A1C-BB28-0950A7F9866C} = {E722A83F-9412-4759-8057-07BE3E56569E}
 		{41204D58-B9A6-44A6-A132-3EFC97A0A90E} = {E722A83F-9412-4759-8057-07BE3E56569E}
 		{4642E538-EB65-4AA7-BB48-920D56CD2A0B} = {8C929736-0292-416F-9E3D-BACCEACEC54B}
+		{4E5D1F0B-9B95-43A2-9367-3947A576FDC8} = {8C929736-0292-416F-9E3D-BACCEACEC54B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6F48335-2363-480B-8074-5FEEBEF6BA34}

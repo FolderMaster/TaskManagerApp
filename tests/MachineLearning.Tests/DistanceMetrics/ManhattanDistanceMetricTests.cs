@@ -1,8 +1,17 @@
-﻿using MachineLearning.DistanceMetrics;
+﻿using Common.Tests;
+using MachineLearning.DistanceMetrics;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.DistanceMetrics
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(ManhattanDistanceMetric),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Major)]
+    [Priority(PriorityLevel.Medium)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(ManhattanDistanceMetric),
         Description = $"Тестирование класса {nameof(ManhattanDistanceMetric)}.")]
     class ManhattanDistanceMetricTests
     {

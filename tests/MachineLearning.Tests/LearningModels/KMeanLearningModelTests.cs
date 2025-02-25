@@ -1,9 +1,18 @@
-﻿using MachineLearning.LearningModels;
+﻿using Common.Tests;
+using MachineLearning.LearningModels;
 using MachineLearning.ScoreMetrics;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.LearningModels
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(KMeanLearningModel),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(KMeanLearningModel),
         Description = $"Тестирование класса {nameof(KMeanLearningModel)}.")]
     public class KMeanLearningModelTests
     {

@@ -1,12 +1,21 @@
-﻿using MachineLearning.Converters;
+﻿using Common.Tests;
+using MachineLearning.Converters;
 using MachineLearning.DataProcessors;
 using MachineLearning.Interfaces;
 using MachineLearning.Scalers;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
 namespace MachineLearning.Tests.Converters
 {
-    [TestFixture(Category = "Integration", TestOf = typeof(BaseLearningConverter
-        <double, IEnumerable<double?>, IEnumerable<double?>, double>),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Fast)]
+    [TestFixture(TestOf = typeof(BaseLearningConverter<double, IEnumerable<double?>,
+        IEnumerable<double?>, double>),
         Description = $"Тестирование класса {nameof(BaseLearningConverter
             <double, IEnumerable<double?>, IEnumerable<double?>, double>)}.")]
     public class BaseLearningConverterTests

@@ -12,11 +12,19 @@ using ViewModel.ViewModels.Pages;
 using ViewModel.Interfaces.DataManagers.Generals;
 using ViewModel.Interfaces.DataManagers;
 using ViewModel.ViewModels;
+using Common.Tests;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace ViewModel.Tests.ViewModels.Pages
 {
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
     [Parallelizable(scope: ParallelScope.Fixtures)]
-    [TestFixture(TestOf = typeof(EditorViewModel), Category = "Integration, Functional",
+    [TestFixture(TestOf = typeof(EditorViewModel),
         Description = $"Тестирование класса {nameof(EditorViewModel)}.")]
     public class EditorViewModelTests
     {
@@ -50,6 +58,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             File.Delete(_dbPath);
         }
 
+        [Time(TestTime.Medium)]
         [Test(Description = "Тестирование команды " +
             $"{nameof(EditorViewModel.AddTaskCompositeCommand)}.")]
         public async Task AddTaskCompositeCommand_TaskCompositeAdded()
@@ -70,6 +79,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно добавлена задача!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = "Тестирование команды " +
             $"{nameof(EditorViewModel.AddTaskElementCommand)}.")]
         public async Task AddTaskElementCommand_TaskElementAdded()
@@ -90,6 +100,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно добавлена задача!");
         }
 
+        [Time(TestTime.Medium)]
         [Test(Description = "Тестирование команды " +
             $"{nameof(EditorViewModel.AddTaskCompositeCommand)} " +
             "при обучении моделей для прогнозирования.")]
@@ -172,6 +183,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             });
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.RemoveCommand)} " +
             "при выборе составной задачи с задачами.")]
         public async Task RemoveCommand_SelectTaskCompositeWithTasks_TasksRemoved()
@@ -198,6 +210,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно удалены задачи!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.EditCommand)} " +
             "при выборе составной задачи.")]
         public async Task EditCommand_SelectTaskComposite_TaskCompositeEdited()
@@ -226,6 +239,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно изменена задача!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.EditCommand)} " +
             "при выборе элементарной задачи.")]
         public async Task EditCommand_SelectTaskElement_TaskElementEdited()
@@ -253,6 +267,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно изменена задача!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.GoCommand)} " +
             "при выборе составной задачи.")]
         public async Task GoCommand_SelectTaskComposite_TaskListViewIsSelectedTaskComposite()
@@ -274,6 +289,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно переходит в составную задачу!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = "Тестирование команды " +
             $"{nameof(EditorViewModel.GoToPreviousCommand)} " +
             "при переходе на составную задачу в корне.")]
@@ -297,6 +313,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             Assert.That(result, Is.EqualTo(expected), "Неправильно переходит в корень!");
         }
 
+        [Time(TestTime.Fast)]
         [Test(Description = $"Тестирование команды {nameof(EditorViewModel.MoveCommand)} " +
             "при перемещении составной задачи в составную задачу.")]
         public async Task MoveCommand_MoveCompositeTaskToCompositeTask_TasksMoved()

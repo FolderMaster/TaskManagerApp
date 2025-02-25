@@ -1,8 +1,17 @@
+using Common.Tests;
 using System.Collections.Specialized;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace TrackableFeatures.Tests
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(TrackableCollection<>),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Minor)]
+    [Priority(PriorityLevel.Low)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(TrackableCollection<>),
         Description = $"Тестирование класса {nameof(TrackableCollection<object>)}.")]
     public class TrackableCollectionTests
     {

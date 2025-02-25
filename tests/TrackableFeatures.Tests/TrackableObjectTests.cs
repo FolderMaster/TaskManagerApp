@@ -1,6 +1,16 @@
-﻿namespace TrackableFeatures.Tests
+﻿using Common.Tests;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
+
+namespace TrackableFeatures.Tests
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(TrackableObject),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Minor)]
+    [Priority(PriorityLevel.Low)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(TrackableObject),
         Description = $"Тестирование класса {nameof(TrackableObject)}.")]
     public class TrackableObjectTests
     {

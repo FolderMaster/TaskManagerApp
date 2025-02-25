@@ -1,8 +1,17 @@
-﻿using MachineLearning.LearningModels;
+﻿using Common.Tests;
+using MachineLearning.LearningModels;
+
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 
 namespace MachineLearning.Tests.LearningModels
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(KNearestNeighborsModel),
+    [Level(TestLevel.Integration)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Instant)]
+    [TestFixture(TestOf = typeof(KNearestNeighborsModel),
         Description = $"Тестирование класса {nameof(KNearestNeighborsModel)}.")]
     public class KNearestNeighborsModelTests
     {

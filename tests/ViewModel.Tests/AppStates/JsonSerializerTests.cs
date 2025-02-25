@@ -1,11 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using Common.Tests;
+using Newtonsoft.Json;
 using System.Text;
 
+using CategoryAttribute = Common.Tests.CategoryAttribute;
 using JsonSerializer = ViewModel.Implementations.AppStates.JsonSerializer;
 
 namespace ViewModel.Tests.AppStates
 {
-    [TestFixture(Category = "Unit", TestOf = typeof(JsonSerializer),
+    [Level(TestLevel.Unit)]
+    [Category(TestCategory.Functional)]
+    [Severity(SeverityLevel.Critical)]
+    [Priority(PriorityLevel.High)]
+    [Reproducibility(ReproducibilityType.Stable)]
+    [Time(TestTime.Fast)]
+    [TestFixture(TestOf = typeof(JsonSerializer),
         Description = $"Тестирование класса {nameof(JsonSerializer)}.")]
     public class JsonSerializerTests
     {
