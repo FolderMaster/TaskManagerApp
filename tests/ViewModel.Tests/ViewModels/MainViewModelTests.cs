@@ -35,7 +35,7 @@ namespace ViewModel.Tests.ViewModels
         {
             var mockContainer = ViewModelContainerHelper.GetMockContainer();
             _session = (DbSession)mockContainer.Resolve<ISession>();
-            _session.SavePath = $"Data Source={_dbPath};Pooling=false";
+            _session.ConnectionString = $"Data Source={_dbPath};Pooling=false";
             _viewModel = mockContainer.Resolve<MainViewModel>();
         }
 

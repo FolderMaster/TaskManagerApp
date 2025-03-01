@@ -37,6 +37,12 @@ namespace ViewModel.Tests.ViewModels.Pages
             new CultureInfo("ru")
         ];
 
+        private object _themeKey;
+
+        private object _localizationKey;
+
+        private object _sessionKey;
+
         private SettingsViewModel _viewModel;
 
         private DbSession _session;
@@ -52,11 +58,14 @@ namespace ViewModel.Tests.ViewModels.Pages
             _viewModel = mockContainer.Resolve<SettingsViewModel>();
             _themeManager = (MockThemeManager)mockContainer.Resolve<IThemeManager>();
             _themeManager.Themes = _themes;
+            _themeKey = _themeManager.SettingsKey;
             _localizationManager =
                 (MockLocalizationManager)mockContainer.Resolve<ILocalizationManager>();
             _localizationManager.Localizations = _localizations;
+            _localizationKey = _localizationManager.SettingsKey;
             _session = (DbSession)mockContainer.Resolve<ISession>();
-            _session.SavePath = _connectionString;
+            _session.ConnectionString = _connectionString;
+            _sessionKey = _session.SettingsKey;
             var settings = (AppSettings)mockContainer.Resolve<ISettings>();
             settings.FilePath = _settingsPath;
         }
@@ -75,10 +84,10 @@ namespace ViewModel.Tests.ViewModels.Pages
             var expectedLocalization = _localizations[1];
             var expectedConnectionString = "Test";
 
-            var configuration = (AppConfiguration)_viewModel.Configuration;
+            var configuration = _viewModel.Configuration;
             configuration.ActualLocalization = expectedLocalization;
             configuration.ActualTheme = expectedTheme;
-            configuration.SavePath = expectedConnectionString;
+            configuration.ConnectionString = expectedConnectionString;
 
             Assert.Multiple(() =>
             {
@@ -86,7 +95,7 @@ namespace ViewModel.Tests.ViewModels.Pages
                     "Неправильно изменён сервис!");
                 Assert.That(_localizationManager.ActualLocalization,
                     Is.EqualTo(expectedLocalization), "Неправильно изменён сервис!");
-                Assert.That(_session.SavePath, Is.EqualTo(expectedConnectionString),
+                Assert.That(_session.ConnectionString, Is.EqualTo(expectedConnectionString),
                     "Неправильно изменён сервис!");
             });
         }

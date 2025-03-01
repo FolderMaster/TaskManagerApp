@@ -36,6 +36,12 @@ namespace ViewModel.Tests.AppStates.Settings
             new CultureInfo("ru")
         ];
 
+        private object _themeKey;
+
+        private object _localizationKey;
+
+        private object _sessionKey;
+
         private AppSettings _settings;
 
         private DbSession _session;
@@ -50,13 +56,16 @@ namespace ViewModel.Tests.AppStates.Settings
             var mockContainer = ViewModelContainerHelper.GetMockContainer();
             _themeManager = (MockThemeManager)mockContainer.Resolve<IThemeManager>();
             _themeManager.Themes = _themes;
+            _themeKey = _themeManager.SettingsKey;
             _localizationManager =
                 (MockLocalizationManager)mockContainer.Resolve<ILocalizationManager>();
             _localizationManager.Localizations = _localizations;
+            _localizationKey = _localizationManager.SettingsKey;
             _session = (DbSession)mockContainer.Resolve<ISession>();
-            _session.SavePath = _connectionString;
+            _session.ConnectionString = _connectionString;
             _settings = (AppSettings)mockContainer.Resolve<ISettings>();
             _settings.FilePath = _settingsPath;
+            _sessionKey = _session.SettingsKey;
         }
 
         [TearDown]
@@ -69,13 +78,11 @@ namespace ViewModel.Tests.AppStates.Settings
             "при инициализации.")]
         public void GetConfiguration_InitializeConfiguration_ReturnDefaultValues()
         {
-            var expected = new AppConfiguration()
+            var expected = new Dictionary<object, object>()
             {
-                Themes = _themes,
-                ActualTheme = _themes[0],
-                Localizations = _localizations,
-                ActualLocalization = _localizations[0],
-                SavePath = _connectionString
+                [_themeKey] = _themes[0],
+                [_localizationKey] = _localizations[0],
+                [_sessionKey] = _connectionString
             };
 
             var result = _settings.Configuration;
@@ -88,18 +95,16 @@ namespace ViewModel.Tests.AppStates.Settings
             "при загрузке и сохранении.")]
         public async Task GetConfiguration_SaveAndLoad_ReturnSavedValues()
         {
-            var expected = new AppConfiguration()
+            var expected = new Dictionary<object, object>()
             {
-                Themes = _themes,
-                ActualTheme = _themes[1],
-                Localizations = _localizations,
-                ActualLocalization = _localizations[1],
-                SavePath = _connectionString
+                [_themeKey] = _themes[1],
+                [_localizationKey] = _localizations[1],
+                [_sessionKey] = _connectionString
             };
 
-            var configuration = (AppConfiguration)_settings.Configuration;
-            configuration.ActualLocalization = _localizations[1];
-            configuration.ActualTheme = _themes[1];
+            var configuration = _settings.Configuration;
+            configuration[_localizationKey] = _localizations[1];
+            configuration[_themeKey] = _themes[1];
             await _settings.Save();
             await _settings.Load();
             var result = _settings.Configuration;
@@ -112,13 +117,11 @@ namespace ViewModel.Tests.AppStates.Settings
             "при загрузке без файла.")]
         public async Task GetConfiguration_LoadWithoutFile_ReturnDefaultValues()
         {
-            var expected = new AppConfiguration()
+            var expected = new Dictionary<object, object>()
             {
-                Themes = _themeManager.Themes,
-                ActualTheme = _themeManager.ActualTheme,
-                Localizations = _localizationManager.Localizations,
-                ActualLocalization = _localizationManager.ActualLocalization,
-                SavePath = _session.SavePath
+                [_themeKey] = _themeManager.ActualTheme,
+                [_localizationKey] = _localizationManager.ActualLocalization,
+                [_sessionKey] = _session.ConnectionString
             };
 
             await _settings.Load();
@@ -136,10 +139,10 @@ namespace ViewModel.Tests.AppStates.Settings
             var expectedLocalization = _localizations[1];
             var expectedConnectionString = "Test";
 
-            var configuration = (AppConfiguration)_settings.Configuration;
-            configuration.ActualLocalization = expectedLocalization;
-            configuration.ActualTheme = expectedTheme;
-            configuration.SavePath = expectedConnectionString;
+            var configuration = _settings.Configuration;
+            configuration[_localizationKey] = expectedLocalization;
+            configuration[_themeKey] = expectedTheme;
+            configuration[_sessionKey] = expectedConnectionString;
 
             Assert.Multiple(() =>
             {
@@ -147,7 +150,7 @@ namespace ViewModel.Tests.AppStates.Settings
                     "Неправильно изменён сервис!");
                 Assert.That(_localizationManager.ActualLocalization,
                     Is.EqualTo(expectedLocalization), "Неправильно изменён сервис!");
-                Assert.That(_session.SavePath, Is.EqualTo(expectedConnectionString),
+                Assert.That(_session.ConnectionString, Is.EqualTo(expectedConnectionString),
                     "Неправильно изменён сервис!");
             });
         }

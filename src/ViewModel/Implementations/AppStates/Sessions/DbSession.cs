@@ -6,10 +6,12 @@ using Model.Interfaces;
 
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Sessions;
+using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Implementations.AppStates.Sessions.Database.DbContexts;
 using ViewModel.Implementations.AppStates.Sessions.Database.Domains;
 using ViewModel.Implementations.AppStates.Sessions.Database.Entities;
 using ViewModel.Implementations.AppStates.Sessions.Database.Mappers;
+using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.AppStates.Sessions
 {
@@ -18,9 +20,9 @@ namespace ViewModel.Implementations.AppStates.Sessions
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="TrackableObject"/>.
-    /// Реализует <see cref="ISession"/>.
+    /// Реализует <see cref="ISession"/> и <see cref="IConfigurable"/>.
     /// </remarks>
-    public class DbSession : TrackableObject, ISession
+    public class DbSession : TrackableObject, ISession, IConfigurable
     {
         /// <summary>
         /// Путь к файлу.
@@ -46,7 +48,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
         /// <summary>
         /// Путь к сохранению.
         /// </summary>
-        private string _savePath;
+        private string _connectionString;
 
         /// <summary>
         /// Контекст базы данных.
@@ -58,11 +60,13 @@ namespace ViewModel.Implementations.AppStates.Sessions
         /// </summary>
         private ObservableCollection<ITask> _tasks = new();
 
-        /// <inheritdoc/>
-        public string SavePath
+        /// <summary>
+        /// Возвращает и задаёт строку подключения.
+        /// </summary>
+        public string ConnectionString
         {
-            get => _savePath;
-            set => UpdateProperty(ref _savePath, value);
+            get => _connectionString;
+            set => UpdateProperty(ref _connectionString, value);
         }
 
         /// <inheritdoc/>
@@ -70,6 +74,19 @@ namespace ViewModel.Implementations.AppStates.Sessions
         {
             get => _tasks;
             private set => UpdateProperty(ref _tasks, (ObservableCollection<ITask>)value);
+        }
+
+        /// <inheritdoc/>
+        public object SettingsKey => ConfigurableKey.DataBase;
+
+        /// <inheritdoc/>
+        public Type SettingsType => typeof(string);
+
+        /// <inheritdoc/>
+        public object Settings
+        {
+            get => ConnectionString;
+            set => ConnectionString = (string)value;
         }
 
         /// <inheritdoc/>
@@ -92,7 +109,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
             IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalMapper,
             IFileService fileService)
         {
-            _savePath = $"Data Source={fileService.CombinePath
+            _connectionString = $"Data Source={fileService.CombinePath
                 (fileService.PersonalDirectoryPath, _filePath)}";
             _dbContextFactory = contextFactory;
             _taskMapper = taskMapper;
@@ -102,7 +119,7 @@ namespace ViewModel.Implementations.AppStates.Sessions
         /// <inheritdoc/>
         public async Task Load()
         {
-            _dbContextFactory.ConnectionString = SavePath;
+            _dbContextFactory.ConnectionString = ConnectionString;
             _dbContext = _dbContextFactory.Create();
             await _dbContext.Database.EnsureCreatedAsync();
             var taskEntities = _dbContext.Tasks.Where(t => t.ParentTaskId == null);

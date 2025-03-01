@@ -7,20 +7,18 @@ namespace TrackableFeatures
     /// Базовый класс коллекции, предоставляющий поддержку отслеживания изменений в коллекции.
     /// </summary>
     /// <remarks>
-    /// Наследует <see cref="TrackableObject"/>. Реализует <see cref="INotifyCollectionChanged"/>,
-    /// <see cref="IList"/> и <see cref="IList{T}"/>.
+    /// Наследует <see cref="TrackableObject"/>.
+    /// Реализует <see cref="INotifyCollectionChanged"/>, <see cref="IList"/>,
+    /// <see cref="IList{T}"/> и <see cref="IReadOnlyList{T}"/>.
     /// </remarks>
     /// <typeparam name="T">Тип элементов коллекции.</typeparam>
     public class TrackableCollection<T> : TrackableObject,
-        IList<T>, IList, INotifyCollectionChanged
+        IList, IList<T>, IReadOnlyList<T>, INotifyCollectionChanged
     {
         /// <summary>
         /// Список элементов.
         /// </summary>
         private readonly List<T> _items = new();
-
-        /// <inheritdoc/>
-        public event NotifyCollectionChangedEventHandler? CollectionChanged;
 
         /// <inheritdoc/>
         public T this[int index]
@@ -51,14 +49,21 @@ namespace TrackableFeatures
         /// <inheritdoc/>
         public object SyncRoot => this;
 
+        /// <inheritdoc/>
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
+
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="TrackableCollection{T}"/>.
+        /// </summary>
+        /// <param name="items">Элементы коллекции.</param>
         public TrackableCollection(IEnumerable<T>? items = null)
         {
             if (items?.Any() == true)
             {
                 _items = items.ToList();
-                foreach (var task in _items)
+                foreach (var item in _items)
                 {
-                    OnAddedItem(task, false);
+                    OnAddedItem(item, false);
                 }
             }
         }
@@ -148,9 +153,9 @@ namespace TrackableFeatures
         /// <inheritdoc/>
         public void Clear()
         {
-            foreach (var task in _items)
+            foreach (var item in _items)
             {
-                OnRemovedItem(task);
+                OnRemovedItem(item);
             }
             _items.Clear();
             OnPropertyChanged(nameof(Count));

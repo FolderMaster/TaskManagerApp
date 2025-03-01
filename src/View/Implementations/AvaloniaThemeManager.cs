@@ -1,11 +1,12 @@
 ﻿using Avalonia;
 using Avalonia.Styling;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 using TrackableFeatures;
-
 using ViewModel.Interfaces.AppStates.Settings;
+using ViewModel.Technicals;
 
 namespace View.Implementations
 {
@@ -14,9 +15,9 @@ namespace View.Implementations
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="TrackableObject"/>.
-    /// Реализует <see cref="IThemeManager"/>.
+    /// Реализует <see cref="IThemeManager"/> и <see cref="IConfigurable"/>.
     /// </remarks>
-    public class AvaloniaThemeManager : TrackableObject, IThemeManager
+    public class AvaloniaThemeManager : TrackableObject, IThemeManager, IConfigurable
     {
         /// <summary>
         /// Тема.
@@ -31,6 +32,19 @@ namespace View.Implementations
         {
             get => _theme;
             set => UpdateProperty(ref _theme, value, SetTheme);
+        }
+
+        /// <inheritdoc/>
+        public object SettingsKey => ConfigurableKey.Theme;
+
+        /// <inheritdoc/>
+        public Type SettingsType => typeof(object);
+
+        /// <inheritdoc/>
+        public object Settings
+        {
+            get => ActualTheme;
+            set => ActualTheme = value;
         }
 
         /// <summary>

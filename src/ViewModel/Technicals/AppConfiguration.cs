@@ -1,68 +1,67 @@
-﻿using System.Globalization;
-
-using TrackableFeatures;
+﻿using System.Collections;
+using System.Globalization;
 
 namespace ViewModel.Technicals
 {
     /// <summary>
     /// Класс конфигурации приложения.
     /// </summary>
-    /// <remarks>
-    /// Наследует <see cref="TrackableObject"/>.
-    /// </remarks>
-    public class AppConfiguration : TrackableObject
+    public class AppConfiguration
     {
         /// <summary>
-        /// Актуальная локализация.
+        /// Возвращает настройки.
         /// </summary>
-        private CultureInfo _actualLocalization;
+        private readonly IDictionary _settings;
 
         /// <summary>
-        /// Актуальная тема.
+        /// Возвращает локализации.
         /// </summary>
-        private object _actualTheme;
-
-        /// <summary>
-        /// Путь сохранения.
-        /// </summary>
-        private string _savePath;
+        public IEnumerable<CultureInfo> Localizations { get; private set; }
 
         /// <summary>
         /// Возвращает и задаёт актуальную локализацию.
         /// </summary>
         public CultureInfo ActualLocalization
         {
-            get => _actualLocalization;
-            set => UpdateProperty(ref _actualLocalization, value);
+            get => (CultureInfo)_settings[ConfigurableKey.Localization];
+            set => _settings[ConfigurableKey.Localization] = value;
         }
 
         /// <summary>
-        /// Возвращает и задаёт локализации.
+        /// Возвращает темы.
         /// </summary>
-        public IEnumerable<CultureInfo> Localizations { get; set; } =
-            Enumerable.Empty<CultureInfo>();
+        public IEnumerable<object> Themes { get; private set; }
 
         /// <summary>
         /// Возвращает и задаёт актуальную тему.
         /// </summary>
         public object ActualTheme
         {
-            get => _actualTheme;
-            set => UpdateProperty(ref _actualTheme, value);
+            get => _settings[ConfigurableKey.Theme];
+            set => _settings[ConfigurableKey.Theme] = value;
         }
 
         /// <summary>
-        /// Возвращает и задаёт темы.
+        /// Возвращает и задаёт строку подключения.
         /// </summary>
-        public IEnumerable<object> Themes { get; set; } = Enumerable.Empty<object>();
+        public string ConnectionString
+        {
+            get => (string)_settings[ConfigurableKey.DataBase];
+            set => _settings[ConfigurableKey.DataBase] = value;
+        }
 
         /// <summary>
-        /// Возвращает и задаёт путь сохранения.
+        /// Создаёт экземпляр класса <see cref="AppConfiguration"/>.
         /// </summary>
-        public string SavePath
+        /// <param name="settings">Настройки.</param>
+        /// <param name="localizations">Локализации.</param>
+        /// <param name="themes">Темы.</param>
+        public AppConfiguration(IDictionary settings, IEnumerable<CultureInfo> localizations,
+            IEnumerable<object> themes)
         {
-            get => _savePath;
-            set => UpdateProperty(ref _savePath, value);
+            _settings = settings;
+            Localizations = localizations;
+            Themes = themes;
         }
     }
 }

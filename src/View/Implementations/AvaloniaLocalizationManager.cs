@@ -7,8 +7,8 @@ using System.Globalization;
 using System.Linq;
 
 using TrackableFeatures;
-
 using ViewModel.Interfaces.AppStates.Settings;
+using ViewModel.Technicals;
 
 namespace View.Implementations
 {
@@ -17,9 +17,9 @@ namespace View.Implementations
     /// </summary>
     /// <remarks>
     /// Наследует <see cref="TrackableObject"/>.
-    /// Реализует <see cref="ILocalizationManager"/>.
+    /// Реализует <see cref="ILocalizationManager"/> и <see cref="IConfigurable"/>.
     /// </remarks>
-    public class AvaloniaLocalizationManager : TrackableObject, ILocalizationManager
+    public class AvaloniaLocalizationManager : TrackableObject, ILocalizationManager, IConfigurable
     {
         /// <summary>
         /// Локализации.
@@ -48,6 +48,19 @@ namespace View.Implementations
         {
             get => _localization;
             set => UpdateProperty(ref _localization, value, SetLocalization);
+        }
+
+        /// <inheritdoc/>
+        public object SettingsKey => ConfigurableKey.Localization;
+
+        /// <inheritdoc/>
+        public Type SettingsType => typeof(CultureInfo);
+
+        /// <inheritdoc/>
+        public object Settings
+        {
+            get => ActualLocalization;
+            set => ActualLocalization = (CultureInfo)value;
         }
 
         /// <summary>

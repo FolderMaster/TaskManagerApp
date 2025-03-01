@@ -41,7 +41,7 @@ namespace ViewModel.Tests.AppStates.Sessions
             _taskCompositeFactory = mockContainer.Resolve<IFactory<ITaskComposite>>();
             _timeIntervalElementFactory = mockContainer.Resolve<IFactory<ITimeIntervalElement>>();
             _session = (DbSession)mockContainer.Resolve<ISession>();
-            _session.SavePath = $"Data Source={_dbPath};Pooling=false";
+            _session.ConnectionString = $"Data Source={_dbPath};Pooling=false";
         }
 
         [TearDown]

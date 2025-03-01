@@ -47,14 +47,12 @@ namespace View.Technilcals
         {
             var builder = ViewModelContainerHelper.GetContainerBuilder();
 
-            builder.RegisterType<AvaloniaResourceService>().
-                As<IResourceService>().SingleInstance();
-            builder.RegisterType<AvaloniaThemeManager>().As<IThemeManager>().SingleInstance();
+            builder.RegisterType<AvaloniaResourceService>().As<IResourceService>().
+                SingleInstance();
+            builder.RegisterType<AvaloniaThemeManager>().As<IThemeManager>().
+                As<IConfigurable>().SingleInstance();
             builder.RegisterType<AvaloniaLocalizationManager>().
-                As<ILocalizationManager>().SingleInstance();
-
-            builder.RegisterType<MainView>().SingleInstance();
-            builder.RegisterType<MainWindow>().SingleInstance();
+                As<ILocalizationManager>().As<IConfigurable>().SingleInstance();
 
             builder.RegisterType<EditorView>().As<IViewFor<EditorViewModel>>();
             builder.RegisterType<TimeView>().As<IViewFor<TimeViewModel>>();
@@ -69,6 +67,9 @@ namespace View.Technilcals
             builder.RegisterType<MoveTasksView>().As<IViewFor<MoveTasksViewModel>>();
             builder.RegisterType<RemoveTasksView>().As<IViewFor<RemoveTasksViewModel>>();
             builder.RegisterType<SettingsView>().As<IViewFor<SettingsViewModel>>();
+
+            builder.RegisterType<MainView>().SingleInstance();
+            builder.RegisterType<MainWindow>().SingleInstance();
 
             var resolver = builder.UseAutofacDependencyResolver();
             builder.RegisterInstance(resolver);

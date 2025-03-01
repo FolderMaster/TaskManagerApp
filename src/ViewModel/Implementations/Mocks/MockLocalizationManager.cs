@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-
 using ViewModel.Interfaces.AppStates.Settings;
+using ViewModel.Technicals;
 
 namespace ViewModel.Implementations.Mocks
 {
@@ -8,9 +8,9 @@ namespace ViewModel.Implementations.Mocks
     /// Класс-заглушка менеджера локализаций.
     /// </summary>
     /// <remarks>
-    /// Реализует <see cref="ILocalizationManager"/>.
+    /// Реализует <see cref="ILocalizationManager"/> и <see cref="IConfigurable"/>.
     /// </remarks>
-    public class MockLocalizationManager : ILocalizationManager
+    public class MockLocalizationManager : ILocalizationManager, IConfigurable
     {
         /// <summary>
         /// Локализации.
@@ -30,5 +30,18 @@ namespace ViewModel.Implementations.Mocks
 
         /// <inheritdoc/>
         public CultureInfo ActualLocalization { get; set; }
+
+        /// <inheritdoc/>
+        public object SettingsKey => ConfigurableKey.Localization;
+
+        /// <inheritdoc/>
+        public Type SettingsType => typeof(CultureInfo);
+
+        /// <inheritdoc/>
+        public object Settings
+        {
+            get => ActualLocalization;
+            set => ActualLocalization = (CultureInfo)value;
+        }
     }
 }

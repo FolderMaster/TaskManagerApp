@@ -40,7 +40,7 @@ namespace ViewModel.Tests.ViewModels.Pages
         {
             var mockContainer = ViewModelContainerHelper.GetMockContainer();
             _session = (DbSession)mockContainer.Resolve<ISession>();
-            _session.SavePath = $"Data Source={_dbPath};Pooling=false";
+            _session.ConnectionString = $"Data Source={_dbPath};Pooling=false";
             _taskElementFactory = mockContainer.Resolve<IFactory<ITaskElement>>();
             _mainViewModel = mockContainer.Resolve<MainViewModel>();
             _viewModel = mockContainer.Resolve<ToDoListViewModel>();

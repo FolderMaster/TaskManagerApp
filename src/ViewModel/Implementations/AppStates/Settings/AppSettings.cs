@@ -1,9 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.Collections.Specialized;
 
 using TrackableFeatures;
 
 using ViewModel.Interfaces.AppStates;
-using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Technicals;
 
@@ -24,39 +24,29 @@ namespace ViewModel.Implementations.AppStates.Settings
         private static readonly string _partFilePath = "settings.json";
 
         /// <summary>
+        /// Настраиваемые объекты.
+        /// </summary>
+        private readonly IEnumerable<IConfigurable> _configurables;
+
+        /// <summary>
         /// Файловый сервис.
         /// </summary>
-        private IFileService _fileService;
+        private readonly IFileService _fileService;
 
         /// <summary>
         /// Сериализатор.
         /// </summary>
-        private ISerializer _serializer;
-
-        /// <summary>
-        /// Менеджер тем.
-        /// </summary>
-        private IThemeManager _themeManager;
-
-        /// <summary>
-        /// Менеджер локализаций.
-        /// </summary>
-        private ILocalizationManager _localizationManager;
-
-        /// <summary>
-        /// Сессия.
-        /// </summary>
-        private ISession _session;
+        private readonly ISerializer _serializer;
 
         /// <summary>
         /// Логгирование.
         /// </summary>
-        private ILogger _logger;
+        private readonly ILogger _logger;
 
         /// <summary>
         /// Конфигурация.
         /// </summary>
-        private AppConfiguration _configuration = new();
+        private TrackableDictionary<ConfigurableKey, object> _configuration = new();
 
         /// <summary>
         /// Возвращает и задаёт путь к файлу.
@@ -64,28 +54,24 @@ namespace ViewModel.Implementations.AppStates.Settings
         public string FilePath { get; set; }
 
         /// <inheritdoc/>
-        public object Configuration
+        public IDictionary Configuration
         {
             get => _configuration;
-            private set => UpdateProperty(ref _configuration, (AppConfiguration)value,
-                OnConfigurationUpdated);
+            private set => UpdateProperty(ref _configuration,
+                (TrackableDictionary<ConfigurableKey, object>)value, OnConfigurationUpdated);
         }
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="AppSettings"/>.
         /// </summary>
-        /// <param name="themeManager">Менеджер тем.</param>
-        /// <param name="localizationManager">Менеджер локализаций.</param>
-        /// <param name="session">Сессия.</param>
+        /// <param name="configurables">Настраиваемые объекты.</param>
         /// <param name="fileService">Файловый сервис.</param>
         /// <param name="serializer">Сериализатор.</param>
         /// <param name="logger">Логгирование.</param>
-        public AppSettings(IThemeManager themeManager, ILocalizationManager localizationManager,
-            ISession session, IFileService fileService, ISerializer serializer, ILogger logger)
+        public AppSettings(IEnumerable<IConfigurable> configurables,
+            IFileService fileService, ISerializer serializer, ILogger logger)
         {
-            _themeManager = themeManager;
-            _localizationManager = localizationManager;
-            _session = session;
+            _configurables = configurables;
             _fileService = fileService;
             _serializer = serializer;
             _logger = logger;
@@ -106,13 +92,7 @@ namespace ViewModel.Implementations.AppStates.Settings
                 {
                     _fileService.CreateDirectory(directoryPath);
                 }
-                var format = new AppConfigurationFormat()
-                {
-                    Theme = _configuration.ActualTheme.ToString(),
-                    Localization = _configuration.ActualLocalization,
-                    SavePath = _configuration.SavePath
-                };
-                var data = _serializer.Serialize(format);
+                var data = _serializer.Serialize(_configuration);
                 await _fileService.Save(FilePath, data);
             }
             catch (Exception ex)
@@ -131,19 +111,17 @@ namespace ViewModel.Implementations.AppStates.Settings
             try
             {
                 var bytes = await _fileService.Load(FilePath);
-                var format = _serializer.Deserialize<AppConfigurationFormat>(bytes);
+                var format = _serializer.Deserialize<Dictionary<ConfigurableKey, object>>(bytes);
                 if (format != null)
                 {
-                    Configuration = new AppConfiguration()
+                    foreach (var configuration in format)
                     {
-                        Localizations = _localizationManager.Localizations,
-                        Themes = _themeManager.Themes,
-                        ActualLocalization = format.Localization ??
-                            _configuration.ActualLocalization,
-                        ActualTheme = _themeManager.Themes.FirstOrDefault
-                            (t => t.ToString() == format.Theme) ?? _configuration.ActualTheme,
-                        SavePath = format.SavePath ?? _configuration.SavePath
-                    };
+                        var key = configuration.Key;
+                        if (_configuration.ContainsKey(key))
+                        {
+                            _configuration[key] = configuration.Value;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -157,16 +135,13 @@ namespace ViewModel.Implementations.AppStates.Settings
         /// </summary>
         protected void InitializeConfiguration()
         {
-            _configuration = new AppConfiguration
+            var dictionary = new TrackableDictionary<ConfigurableKey, object>();
+            foreach (var configurable in _configurables)
             {
-                SavePath = _session.SavePath,
-                Localizations = _localizationManager.Localizations,
-                ActualLocalization = _localizationManager.ActualLocalization,
-                Themes = _themeManager.Themes,
-                ActualTheme = _themeManager.ActualTheme
-            };
-
-            _configuration.PropertyChanged += Configuration_PropertyChanged;
+                dictionary.Add((ConfigurableKey)configurable.SettingsKey, configurable.Settings);
+            }
+            _configuration = dictionary;
+            _configuration.CollectionChanged += Configuration_CollectionChanged;
         }
 
         /// <summary>
@@ -174,28 +149,28 @@ namespace ViewModel.Implementations.AppStates.Settings
         /// </summary>
         /// <param name="oldConfiguration">Старая конфигурация.</param>
         /// <param name="newConfiguration">Новая конфигурация.</param>
-        protected void OnConfigurationUpdated(AppConfiguration oldConfiguration,
-            AppConfiguration newConfiguration)
+        protected void OnConfigurationUpdated
+            (TrackableDictionary<ConfigurableKey, object> oldConfiguration,
+            TrackableDictionary<ConfigurableKey, object> newConfiguration)
         {
-            oldConfiguration.PropertyChanged -= Configuration_PropertyChanged;
-            _themeManager.ActualTheme = _configuration.ActualTheme;
-            _localizationManager.ActualLocalization = _configuration.ActualLocalization;
-            _session.SavePath = _configuration.SavePath;
-            newConfiguration.PropertyChanged += Configuration_PropertyChanged;
+            oldConfiguration.CollectionChanged -= Configuration_CollectionChanged;
+            newConfiguration.CollectionChanged += Configuration_CollectionChanged;
         }
 
-        private void Configuration_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        private void Configuration_CollectionChanged(object? sender,
+            NotifyCollectionChangedEventArgs e)
         {
-            switch (e.PropertyName)
+            switch (e.Action)
             {
-                case nameof(AppConfiguration.ActualTheme):
-                    _themeManager.ActualTheme = _configuration.ActualTheme;
-                    break;
-                case nameof(AppConfiguration.ActualLocalization):
-                    _localizationManager.ActualLocalization = _configuration.ActualLocalization;
-                    break;
-                case nameof(AppConfiguration.SavePath):
-                    _session.SavePath = _configuration.SavePath;
+                case NotifyCollectionChangedAction.Add:
+                case NotifyCollectionChangedAction.Remove:
+                case NotifyCollectionChangedAction.Reset:
+                    throw new NotImplementedException();
+                case NotifyCollectionChangedAction.Replace:
+                    var keyValuePair = (KeyValuePair<ConfigurableKey, object>)e.NewItems[0];
+                    var configurable = _configurables.First
+                        (v => (ConfigurableKey)v.SettingsKey == keyValuePair.Key);
+                    configurable.Settings = keyValuePair.Value;
                     break;
             }
         }

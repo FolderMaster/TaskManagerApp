@@ -52,9 +52,10 @@ namespace ViewModel.Technicals
             builder.RegisterType<MockAppLifeState>().As<IAppLifeState>().SingleInstance();
             builder.RegisterType<MockResourceService>().
                 As<IResourceService>().SingleInstance();
-            builder.RegisterType<MockThemeManager>().As<IThemeManager>().SingleInstance();
-            builder.RegisterType<MockLocalizationManager>().
-                As<ILocalizationManager>().SingleInstance();
+            builder.RegisterType<MockThemeManager>().As<IThemeManager>().
+                As<IConfigurable>().SingleInstance();
+            builder.RegisterType<MockLocalizationManager>().As<ILocalizationManager>().
+                As<IConfigurable>().SingleInstance();
 
             return builder.Build();
         }
@@ -181,7 +182,7 @@ namespace ViewModel.Technicals
                 As<IMapper<TaskCompositeEntity, ITaskComposite>>().SingleInstance();
             result.RegisterType<TaskMapper>().As<IMapper<TaskEntity, ITask>>().SingleInstance();
 
-            result.RegisterType<DbSession>().As<ISession>().SingleInstance();
+            result.RegisterType<DbSession>().As<ISession>().As<IConfigurable>().SingleInstance();
             result.RegisterType<AppSettings>().As<ISettings>().SingleInstance();
 
             result.RegisterType<EditorViewModel>().As<EditorViewModel>().

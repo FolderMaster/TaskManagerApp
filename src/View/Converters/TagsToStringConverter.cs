@@ -15,6 +15,9 @@ namespace View.Converters
     /// </remarks>
     public class TagsToStringConverter : IValueConverter
     {
+        /// <summary>
+        /// Регулярное выражение тегов.
+        /// </summary>
         private static Regex _tagsRegex = new Regex(@"\b\w+\b");
 
         /// <inheritdoc/>

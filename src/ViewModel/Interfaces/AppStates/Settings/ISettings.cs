@@ -1,4 +1,6 @@
-﻿namespace ViewModel.Interfaces.AppStates.Settings
+﻿using System.Collections;
+
+namespace ViewModel.Interfaces.AppStates.Settings
 {
     /// <summary>
     /// Интерфейс настроек.
@@ -11,6 +13,6 @@
         /// <summary>
         /// Возвращает конфигурацию.
         /// </summary>
-        public object Configuration { get; }
+        public IDictionary Configuration { get; }
     }
 }

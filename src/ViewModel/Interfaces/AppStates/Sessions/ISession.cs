@@ -11,11 +11,6 @@ namespace ViewModel.Interfaces.AppStates.Sessions
     public interface ISession : IStorageService
     {
         /// <summary>
-        /// Возвращает и задаёт путь сохранения.
-        /// </summary>
-        public string SavePath { get; set; }
-
-        /// <summary>
         /// Возвращает задачи.
         /// </summary>
         public IEnumerable<ITask> Tasks { get; }
