@@ -15,7 +15,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         Description = $"Тестирование класса {nameof(ClassificationCrossValidationEvaluator)}.")]
     public class ClassificationCrossValidationEvaluatorTests
     {
-        private ClassificationCrossValidationEvaluatorPrototype _learningEvaluator;
+        private ClassificationCrossValidationEvaluator _learningEvaluator;
 
         [SetUp]
         public void Setup()
@@ -26,7 +26,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         [Level(TestLevel.Unit)]
         [Time(TestTime.Instant)]
         [TestCase(Description = "Тестирование метода " +
-            $"{nameof(ClassificationCrossValidationEvaluatorPrototype.GetValidationFoldsSet)}.")]
+            $"{nameof(ClassificationCrossValidationEvaluator.GetValidationFolds)}.")]
         public void GetValidationFoldsSet_ReturnCorrectValues()
         {
             var numberOfFolds = 2;
@@ -45,7 +45,7 @@ namespace MachineLearning.Tests.LearningEvaluators
             };
 
             _learningEvaluator.NumberOfFolds = numberOfFolds;
-            var result = _learningEvaluator.GetValidationFoldsSet(data, classes);
+            var result = _learningEvaluator.GetValidationFolds(data, classes);
 
             Assert.That(result, Is.EqualTo(expected).Using(new ValidationFoldComparer()),
                 "Неправильно построены сегменты валидации!");

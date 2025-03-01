@@ -2,7 +2,7 @@
 using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Technicals;
 
-namespace ViewModel.Implementations.Mocks
+namespace ViewModel.Implementations.Tests
 {
     /// <summary>
     /// Класс-заглушка менеджера локализаций.
@@ -10,7 +10,7 @@ namespace ViewModel.Implementations.Mocks
     /// <remarks>
     /// Реализует <see cref="ILocalizationManager"/> и <see cref="IConfigurable"/>.
     /// </remarks>
-    public class MockLocalizationManager : ILocalizationManager, IConfigurable
+    public class StubLocalizationManager : ILocalizationManager, IConfigurable
     {
         /// <summary>
         /// Локализации.

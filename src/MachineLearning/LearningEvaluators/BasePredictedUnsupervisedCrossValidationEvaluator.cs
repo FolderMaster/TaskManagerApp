@@ -61,7 +61,7 @@ namespace MachineLearning.LearningEvaluators
         /// </summary>
         /// <param name="data">Данные.</param>
         /// <returns>Возвращает сегменты валидации.</returns>
-        protected abstract IEnumerable<ValidationFold> GetValidationFolds
+        protected internal abstract IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<T> data);
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace MachineLearning.LearningEvaluators
         /// </summary>
         /// <param name="trainIndices">Индексы тренировочных данных.</param>
         /// <returns>Возвращает вторичные индексы тренировочных данных.</returns>
-        protected abstract IEnumerable<IEnumerable<int>> GetSecondaryTrainIndices
+        protected internal abstract IEnumerable<IEnumerable<int>> GetSecondaryTrainIndices
             (IEnumerable<int> trainIndices);
 
         /// <inheritdoc />

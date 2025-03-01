@@ -19,7 +19,7 @@ using ViewModel.Interfaces.ModelLearning;
 using ViewModel.ViewModels.Modals;
 using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels;
-using ViewModel.Implementations.Mocks;
+using ViewModel.Implementations.Tests;
 using ViewModel.Implementations.AppStates;
 using ViewModel.Implementations.DataManagers.Factories;
 using ViewModel.Implementations.DataManagers.Editors;
@@ -50,11 +50,11 @@ namespace ViewModel.Technicals
             builder.RegisterType<MockNotificationManager>().As<INotificationManager>().
                 SingleInstance();
             builder.RegisterType<MockAppLifeState>().As<IAppLifeState>().SingleInstance();
-            builder.RegisterType<MockResourceService>().
+            builder.RegisterType<StubResourceService>().
                 As<IResourceService>().SingleInstance();
-            builder.RegisterType<MockThemeManager>().As<IThemeManager>().
+            builder.RegisterType<StubThemeManager>().As<IThemeManager>().
                 As<IConfigurable>().SingleInstance();
-            builder.RegisterType<MockLocalizationManager>().As<ILocalizationManager>().
+            builder.RegisterType<StubLocalizationManager>().As<ILocalizationManager>().
                 As<IConfigurable>().SingleInstance();
 
             return builder.Build();

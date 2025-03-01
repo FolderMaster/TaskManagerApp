@@ -1,7 +1,7 @@
 ﻿using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Technicals;
 
-namespace ViewModel.Implementations.Mocks
+namespace ViewModel.Implementations.Tests
 {
     /// <summary>
     /// Класс-заглушка менеджера тем.
@@ -9,7 +9,7 @@ namespace ViewModel.Implementations.Mocks
     /// <remarks>
     /// Реализует <see cref="IThemeManager"/> и <see cref="IConfigurable"/>.
     /// </remarks>
-    public class MockThemeManager : IThemeManager, IConfigurable
+    public class StubThemeManager : IThemeManager, IConfigurable
     {
         /// <summary>
         /// Темы.

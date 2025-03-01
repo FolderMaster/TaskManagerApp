@@ -16,7 +16,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         $"{nameof(PredictedClusteringCrossValidationEvaluator)}.")]
     public class PredictedClusteringCrossValidationEvaluatorTests
     {
-        private PredictedClusteringCrossValidationEvaluatorPrototype _learningEvaluator;
+        private PredictedClusteringCrossValidationEvaluator _learningEvaluator;
 
         [SetUp]
         public void Setup()
@@ -27,7 +27,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         [Level(TestLevel.Unit)]
         [Time(TestTime.Instant)]
         [TestCase(Description = "Тестирование метода " +
-            $"{nameof(PredictedClusteringCrossValidationEvaluatorPrototype.GetValidationFoldsSet)}.")]
+            $"{nameof(PredictedClusteringCrossValidationEvaluator.GetValidationFolds)}.")]
         public void GetValidationFoldsSet_ReturnCorrectValues()
         {
             var numberOfFolds = 3;
@@ -48,7 +48,7 @@ namespace MachineLearning.Tests.LearningEvaluators
             };
 
             _learningEvaluator.NumberOfFolds = numberOfFolds;
-            var result = _learningEvaluator.GetValidationFoldsSet(data);
+            var result = _learningEvaluator.GetValidationFolds(data);
 
             Assert.That(result, Is.EqualTo(expected).Using(new ValidationFoldComparer()),
                 "Неправильно построены сегменты валидации!");
@@ -57,7 +57,7 @@ namespace MachineLearning.Tests.LearningEvaluators
         [Level(TestLevel.Unit)]
         [Time(TestTime.Instant)]
         [TestCase(Description = "Тестирование метода " +
-            $"{nameof(PredictedClusteringCrossValidationEvaluatorPrototype.GetSecondaryTrainIndicesSet)}.")]
+            $"{nameof(PredictedClusteringCrossValidationEvaluator.GetSecondaryTrainIndices)}.")]
         public void GetSecondaryTrainIndicesSet_ReturnCorrectValues()
         {
             var numberOfFolds = 3;
@@ -70,7 +70,7 @@ namespace MachineLearning.Tests.LearningEvaluators
             };
 
             _learningEvaluator.NumberOfFolds = numberOfFolds;
-            var result = _learningEvaluator.GetSecondaryTrainIndicesSet(indices);
+            var result = _learningEvaluator.GetSecondaryTrainIndices(indices);
 
             Assert.That(result, Is.EqualTo(expected).Using(new ValidationFoldComparer()),
                 "Неправильно построены вторичные индексы тренировки!");

@@ -4,7 +4,7 @@ using System.Globalization;
 
 using ViewModel.Implementations.AppStates.Sessions;
 using ViewModel.Implementations.AppStates.Settings;
-using ViewModel.Implementations.Mocks;
+using ViewModel.Implementations.Tests;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Technicals;
@@ -46,19 +46,19 @@ namespace ViewModel.Tests.AppStates.Settings
 
         private DbSession _session;
 
-        private MockThemeManager _themeManager;
+        private StubThemeManager _themeManager;
 
-        private MockLocalizationManager _localizationManager;
+        private StubLocalizationManager _localizationManager;
 
         [SetUp]
         public void Setup()
         {
             var mockContainer = ViewModelContainerHelper.GetMockContainer();
-            _themeManager = (MockThemeManager)mockContainer.Resolve<IThemeManager>();
+            _themeManager = (StubThemeManager)mockContainer.Resolve<IThemeManager>();
             _themeManager.Themes = _themes;
             _themeKey = _themeManager.SettingsKey;
             _localizationManager =
-                (MockLocalizationManager)mockContainer.Resolve<ILocalizationManager>();
+                (StubLocalizationManager)mockContainer.Resolve<ILocalizationManager>();
             _localizationManager.Localizations = _localizations;
             _localizationKey = _localizationManager.SettingsKey;
             _session = (DbSession)mockContainer.Resolve<ISession>();

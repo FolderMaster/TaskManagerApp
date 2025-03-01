@@ -7,7 +7,7 @@ using Splat;
 using ViewModel.Technicals;
 using ViewModel.ViewModels.Pages;
 using ViewModel.ViewModels.Modals;
-using ViewModel.Implementations.Mocks;
+using ViewModel.Implementations.Tests;
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Settings;
 

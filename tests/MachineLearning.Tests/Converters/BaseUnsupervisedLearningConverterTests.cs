@@ -17,7 +17,7 @@ namespace MachineLearning.Tests.Converters
             <double, IEnumerable<double?>, IEnumerable<double?>, double>)}.")]
     public class BaseUnsupervisedLearningConverterTests
     {
-        private UnsupervisedLearningConverterPrototype _dataProcessor;
+        private FakeUnsupervisedLearningConverter _dataProcessor;
 
         [SetUp]
         public void Setup()
@@ -36,7 +36,7 @@ namespace MachineLearning.Tests.Converters
         [Level(TestLevel.Unit)]
         [Time(TestTime.Instant)]
         [Test(Description = "Тестирование метода " +
-            $"{nameof(SupervisedLearningConverterPrototype.NormalizeRemovedIndices)}.")]
+            $"{nameof(FakeSupervisedLearningConverter.NormalizeRemovedIndices)}.")]
         public void NormalizeRemovedIndices_ReturnCorrectData()
         {
             var removedIndicesGroups = new int[][] {
@@ -53,7 +53,7 @@ namespace MachineLearning.Tests.Converters
         [Level(TestLevel.Integration)]
         [Time(TestTime.Fast)]
         [Test(Description = "Тестирование метода " +
-            $"{nameof(SupervisedLearningConverterPrototype.FitConvertData)}.")]
+            $"{nameof(FakeSupervisedLearningConverter.FitConvertData)}.")]
         public void FitConvertData_ReturnCorrectData()
         {
             var data = new double?[][] {

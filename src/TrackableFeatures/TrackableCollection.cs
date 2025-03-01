@@ -223,13 +223,13 @@ namespace TrackableFeatures
         /// </summary>
         /// <param name="item">Элемент.</param>
         /// <param name="arePropertiesUpdate">Флаг обновления свойств.</param>
-        protected virtual void OnAddedItem(T item, bool arePropertiesUpdate = true) { }
+        protected internal virtual void OnAddedItem(T item, bool arePropertiesUpdate = true) { }
 
         /// <summary>
         /// Вызывается при удалении элемента.
         /// </summary>
         /// <param name="item">Удалённый элемент.</param>
-        protected virtual void OnRemovedItem(T item) { }
+        protected internal virtual void OnRemovedItem(T item) { }
 
         /// <summary>
         /// Вызывает событие <see cref="CollectionChanged"/> для индекса,

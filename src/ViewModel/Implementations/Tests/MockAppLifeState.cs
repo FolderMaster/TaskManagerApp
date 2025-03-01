@@ -1,6 +1,6 @@
 ﻿using ViewModel.Interfaces.AppStates;
 
-namespace ViewModel.Implementations.Mocks
+namespace ViewModel.Implementations.Tests
 {
     /// <summary>
     /// Класс-заглушка управления состоянием жизненного цикла приложения.

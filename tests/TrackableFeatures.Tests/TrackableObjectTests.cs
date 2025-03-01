@@ -14,7 +14,7 @@ namespace TrackableFeatures.Tests
         Description = $"Тестирование класса {nameof(TrackableObject)}.")]
     public class TrackableObjectTests
     {
-        private TrackableObjectPrototype _trackableObject;
+        private FakeTrackableObject _trackableObject;
 
         [SetUp]
         public void Setup()
@@ -33,7 +33,7 @@ namespace TrackableFeatures.Tests
             _trackableObject.Property = firstPropertyValue;
             _trackableObject.PropertyChanged += (sender, e) =>
             {
-                if (e.PropertyName == nameof(TrackableObjectPrototype.Property))
+                if (e.PropertyName == nameof(FakeTrackableObject.Property))
                 {
                     result = true;
                 }
@@ -54,7 +54,7 @@ namespace TrackableFeatures.Tests
             _trackableObject.Property = firstPropertyValue;
             _trackableObject.PropertyChanged += (sender, e) =>
             {
-                if (e.PropertyName == nameof(TrackableObjectPrototype.Property))
+                if (e.PropertyName == nameof(FakeTrackableObject.Property))
                 {
                     result = true;
                 }
@@ -75,7 +75,7 @@ namespace TrackableFeatures.Tests
             _trackableObject.Property = firstPropertyValue;
             _trackableObject.ErrorsChanged += (sender, e) =>
             {
-                if (e.PropertyName == nameof(TrackableObjectPrototype.Property))
+                if (e.PropertyName == nameof(FakeTrackableObject.Property))
                 {
                     result = true;
                 }
@@ -96,7 +96,7 @@ namespace TrackableFeatures.Tests
             _trackableObject.Property = firstPropertyValue;
             _trackableObject.ErrorsChanged += (sender, e) =>
             {
-                if (e.PropertyName == nameof(TrackableObjectPrototype.Property))
+                if (e.PropertyName == nameof(FakeTrackableObject.Property))
                 {
                     result = true;
                 }
@@ -111,10 +111,10 @@ namespace TrackableFeatures.Tests
         public void GetErrors_ChangePropertyWithError_ReturnError()
         {
             var propertyValue = "";
-            var expected = new object[] { TrackableObjectPrototype.NullOrEmptyPropertyError };
+            var expected = new object[] { FakeTrackableObject.NullOrEmptyPropertyError };
 
             _trackableObject.Property = propertyValue;
-            var result = _trackableObject.GetErrors(nameof(TrackableObjectPrototype.Property));
+            var result = _trackableObject.GetErrors(nameof(FakeTrackableObject.Property));
 
             Assert.That(result, Is.EqualTo(expected), "Должно быть 1 ошибка!");
         }
@@ -124,11 +124,11 @@ namespace TrackableFeatures.Tests
         public void GetErrors_ChangePropertyWith2Errors_Return2Errors()
         {
             var propertyValue = "TaskManager";
-            var expected = new object[] { TrackableObjectPrototype.PropertyStartsWithTaskError,
-                TrackableObjectPrototype.PropertyEndsWithManagerError };
+            var expected = new object[] { FakeTrackableObject.PropertyStartsWithTaskError,
+                FakeTrackableObject.PropertyEndsWithManagerError };
 
             _trackableObject.Property = propertyValue;
-            var result = _trackableObject.GetErrors(nameof(TrackableObjectPrototype.Property));
+            var result = _trackableObject.GetErrors(nameof(FakeTrackableObject.Property));
 
             Assert.That(result, Is.EqualTo(expected), "Должно быть 2 ошибки!");
         }
@@ -143,7 +143,7 @@ namespace TrackableFeatures.Tests
 
             _trackableObject.Property = firstPropertyValue;
             _trackableObject.Property = lastPropertyValue;
-            var result = _trackableObject.GetErrors(nameof(TrackableObjectPrototype.Property));
+            var result = _trackableObject.GetErrors(nameof(FakeTrackableObject.Property));
 
             Assert.That(result, Is.EqualTo(expected), "Не должно быть никаких ошибок!");
         }

@@ -131,7 +131,7 @@ namespace MachineLearning.Converters
         /// </summary>
         /// <param name="removedIndicesGroups">Группы индексов удалённых индексов.</param>
         /// <returns>Возвращает нормализованные удалённые индексы.</returns>
-        protected IEnumerable<int> NormalizeRemovedIndices
+        protected internal IEnumerable<int> NormalizeRemovedIndices
             (IEnumerable<IEnumerable<int>> removedIndicesGroups)
         {
             var result = new List<int>();

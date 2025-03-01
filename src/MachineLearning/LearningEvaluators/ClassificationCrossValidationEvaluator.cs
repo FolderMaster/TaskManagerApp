@@ -23,7 +23,7 @@ namespace MachineLearning.LearningEvaluators
         }
 
         /// <inheritdoc />
-        protected override IEnumerable<ValidationFold> GetValidationFolds
+        protected internal override IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<IEnumerable<double>> data, IEnumerable<int> targets)
         {
             var groupedIndices = targets.Select((t, i) => (Target: t, Index: i)).

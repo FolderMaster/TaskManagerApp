@@ -71,7 +71,7 @@ namespace MachineLearning.LearningEvaluators
         /// <param name="data">Данные.</param>
         /// <param name="targets">Целевые значения.</param>
         /// <returns>Возвращает сегменты валидации.</returns>
-        protected abstract IEnumerable<ValidationFold> GetValidationFolds
+        protected internal abstract IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<T> data, IEnumerable<R> targets);
 
         /// <inheritdoc />

@@ -1,6 +1,6 @@
 ﻿namespace TrackableFeatures.Tests
 {
-    public class TrackableCollectionPrototype : TrackableCollection<object>
+    public class FakeTrackableDictionary : TrackableDictionary<object, object>
     {
         private object? _lastEditedItem;
 
@@ -10,9 +10,11 @@
             set => UpdateProperty(ref _lastEditedItem, value);
         }
 
-        public TrackableCollectionPrototype(IEnumerable<object>? items = null) : base(items) { }
+        public FakeTrackableDictionary(IDictionary<object, object>? dictionary = null) :
+            base(dictionary) { }
 
-        protected override void OnAddedItem(object item, bool arePropertiesUpdate = true)
+        protected internal override void OnAddedItem(KeyValuePair<object, object> item,
+            bool arePropertiesUpdate = true)
         {
             if (arePropertiesUpdate)
             {
@@ -20,7 +22,7 @@
             }
         }
 
-        protected override void OnRemovedItem(object item)
+        protected internal override void OnRemovedItem(KeyValuePair<object, object> item)
         {
             LastEditedItem = item;
         }

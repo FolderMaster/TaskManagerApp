@@ -3,7 +3,7 @@ using Common.Tests;
 using Model.Interfaces;
 
 using ViewModel.Implementations.AppStates.Sessions;
-using ViewModel.Implementations.Mocks;
+using ViewModel.Implementations.Tests;
 using ViewModel.Interfaces.AppStates;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.DataManagers.Generals;
@@ -31,7 +31,7 @@ namespace ViewModel.Tests.ViewModels.Pages
 
         private DbSession _session;
 
-        private MockResourceService _resourceService;
+        private StubResourceService _resourceService;
 
         private IFactory<ITaskElement> _taskElementFactory;
 
@@ -43,7 +43,7 @@ namespace ViewModel.Tests.ViewModels.Pages
             var mockContainer = ViewModelContainerHelper.GetMockContainer();
             _session = (DbSession)mockContainer.Resolve<ISession>();
             _session.ConnectionString = $"Data Source={_dbPath};Pooling=false";
-            _resourceService = (MockResourceService)mockContainer.Resolve<IResourceService>();
+            _resourceService = (StubResourceService)mockContainer.Resolve<IResourceService>();
             _taskElementFactory = mockContainer.Resolve<IFactory<ITaskElement>>();
             _timeIntervalElementFactory = mockContainer.Resolve<IFactory<ITimeIntervalElement>>();
             _viewModel = mockContainer.Resolve<StatisticViewModel>();

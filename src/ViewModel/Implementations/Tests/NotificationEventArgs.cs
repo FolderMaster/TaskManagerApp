@@ -1,4 +1,4 @@
-﻿namespace ViewModel.Implementations.Mocks
+﻿namespace ViewModel.Implementations.Tests
 {
     /// <summary>
     /// Класс аргументов события уведомления.

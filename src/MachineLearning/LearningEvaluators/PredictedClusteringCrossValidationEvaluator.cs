@@ -25,7 +25,7 @@ namespace MachineLearning.LearningEvaluators
         }
 
         /// <inheritdoc />
-        protected override IEnumerable<ValidationFold> GetValidationFolds
+        protected internal override IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<IEnumerable<double>> data)
         {
             var count = data.Count();
@@ -43,7 +43,7 @@ namespace MachineLearning.LearningEvaluators
         }
 
         /// <inheritdoc />
-        protected override IEnumerable<IEnumerable<int>> GetSecondaryTrainIndices
+        protected internal override IEnumerable<IEnumerable<int>> GetSecondaryTrainIndices
             (IEnumerable<int> trainIndices)
         {
             var count = trainIndices.Count();

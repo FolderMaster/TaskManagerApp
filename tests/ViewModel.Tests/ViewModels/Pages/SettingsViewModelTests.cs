@@ -4,7 +4,7 @@ using System.Globalization;
 
 using ViewModel.Implementations.AppStates.Sessions;
 using ViewModel.Implementations.AppStates.Settings;
-using ViewModel.Implementations.Mocks;
+using ViewModel.Implementations.Tests;
 using ViewModel.Interfaces.AppStates.Sessions;
 using ViewModel.Interfaces.AppStates.Settings;
 using ViewModel.Technicals;
@@ -37,35 +37,26 @@ namespace ViewModel.Tests.ViewModels.Pages
             new CultureInfo("ru")
         ];
 
-        private object _themeKey;
-
-        private object _localizationKey;
-
-        private object _sessionKey;
-
         private SettingsViewModel _viewModel;
 
         private DbSession _session;
 
-        private MockThemeManager _themeManager;
+        private StubThemeManager _themeManager;
 
-        private MockLocalizationManager _localizationManager;
+        private StubLocalizationManager _localizationManager;
 
         [SetUp]
         public void Setup()
         {
             var mockContainer = ViewModelContainerHelper.GetMockContainer();
             _viewModel = mockContainer.Resolve<SettingsViewModel>();
-            _themeManager = (MockThemeManager)mockContainer.Resolve<IThemeManager>();
+            _themeManager = (StubThemeManager)mockContainer.Resolve<IThemeManager>();
             _themeManager.Themes = _themes;
-            _themeKey = _themeManager.SettingsKey;
             _localizationManager =
-                (MockLocalizationManager)mockContainer.Resolve<ILocalizationManager>();
+                (StubLocalizationManager)mockContainer.Resolve<ILocalizationManager>();
             _localizationManager.Localizations = _localizations;
-            _localizationKey = _localizationManager.SettingsKey;
             _session = (DbSession)mockContainer.Resolve<ISession>();
             _session.ConnectionString = _connectionString;
-            _sessionKey = _session.SettingsKey;
             var settings = (AppSettings)mockContainer.Resolve<ISettings>();
             settings.FilePath = _settingsPath;
         }

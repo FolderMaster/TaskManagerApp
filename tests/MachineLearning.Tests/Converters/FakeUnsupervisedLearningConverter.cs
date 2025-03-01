@@ -4,10 +4,10 @@ using MachineLearning.Scalers;
 
 namespace MachineLearning.Tests.Converters
 {
-    public class UnsupervisedLearningConverterPrototype :
+    public class FakeUnsupervisedLearningConverter :
         BaseUnsupervisedLearningConverter<double, IEnumerable<double?>, IEnumerable<double?>, double>
     {
-        public UnsupervisedLearningConverterPrototype
+        public FakeUnsupervisedLearningConverter
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors) :
             base(primaryPointDataProcessor, pointDataProcessors)
@@ -29,9 +29,5 @@ namespace MachineLearning.Tests.Converters
                 yield return ExtractFeatures(row);
             }
         }
-
-        public IEnumerable<int> NormalizeRemovedIndices
-            (IEnumerable<IEnumerable<int>> removedIndicesGroups) =>
-            base.NormalizeRemovedIndices(removedIndicesGroups);
     }
 }

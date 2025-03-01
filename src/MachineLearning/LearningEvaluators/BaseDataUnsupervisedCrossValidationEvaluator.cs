@@ -51,7 +51,8 @@ namespace MachineLearning.LearningEvaluators
         /// </summary>
         /// <param name="data">Данные.</param>
         /// <returns>Возвращает сегменты валидации.</returns>
-        protected abstract IEnumerable<ValidationFold> GetValidationFolds(IEnumerable<T> data);
+        protected internal abstract IEnumerable<ValidationFold> GetValidationFolds
+            (IEnumerable<T> data);
 
         /// <inheritdoc />
         protected override void OnPropertyChanged<T>(T oldValue, T newValue)

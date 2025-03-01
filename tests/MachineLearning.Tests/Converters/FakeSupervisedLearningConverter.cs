@@ -4,10 +4,10 @@ using MachineLearning.Scalers;
 
 namespace MachineLearning.Tests.Converters
 {
-    public class SupervisedLearningConverterPrototype :
+    public class FakeSupervisedLearningConverter :
         BaseSupervisedLearningConverter<double, IEnumerable<double?>, IEnumerable<double?>, double>
     {
-        public SupervisedLearningConverterPrototype
+        public FakeSupervisedLearningConverter
             (IPrimaryPointDataProcessor primaryPointDataProcessor,
             IEnumerable<IPointDataProcessor> pointDataProcessors) :
             base(primaryPointDataProcessor, pointDataProcessors)
@@ -31,9 +31,5 @@ namespace MachineLearning.Tests.Converters
         }
 
         protected override double ProcessTarget(IEnumerable<double?> item) => (double)item.Last() - 1;
-
-        public IEnumerable<int> NormalizeRemovedIndices
-            (IEnumerable<IEnumerable<int>> removedIndicesGroups) =>
-            base.NormalizeRemovedIndices(removedIndicesGroups);
     }
 }

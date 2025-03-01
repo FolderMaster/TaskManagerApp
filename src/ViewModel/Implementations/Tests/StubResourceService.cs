@@ -1,6 +1,6 @@
 ﻿using ViewModel.Interfaces.AppStates;
 
-namespace ViewModel.Implementations.Mocks
+namespace ViewModel.Implementations.Tests
 {
     /// <summary>
     /// Класс-заглушка сервиса ресурсов.
@@ -8,7 +8,7 @@ namespace ViewModel.Implementations.Mocks
     /// <remarks>
     /// Реализует <see cref="IResourceService"/>.
     /// </remarks>
-    public class MockResourceService : IResourceService
+    public class StubResourceService : IResourceService
     {
         /// <summary>
         /// Возвращает и задаёт ресурсы.

@@ -1,6 +1,6 @@
 ﻿namespace TrackableFeatures.Tests
 {
-    public class TrackableObjectPrototype : TrackableObject
+    public class FakeTrackableObject : TrackableObject
     {
         public static string NullOrEmptyPropertyError => $"{nameof(Property)} пусто!";
 

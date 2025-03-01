@@ -15,7 +15,7 @@ namespace TrackableFeatures.Tests
         Description = $"Тестирование класса {nameof(TrackableCollection<object>)}.")]
     public class TrackableCollectionTests
     {
-        private TrackableCollectionPrototype _trackableCollection;
+        private FakeTrackableCollection _trackableCollection;
 
         [SetUp]
         public void Setup()
@@ -188,7 +188,8 @@ namespace TrackableFeatures.Tests
             Assert.That(result, "Должно отработать событие!");
         }
 
-        [Test(Description = "Тестирование метода OnAddedItem при добавлении элементов.")]
+        [Test(Description = $"Тестирование метода " +
+            $"{nameof(TrackableCollection<object>.OnAddedItem)} при добавлении элементов.")]
         public void OnAddedItem_Add_Invoke()
         {
             var value = 1;
@@ -200,7 +201,8 @@ namespace TrackableFeatures.Tests
             Assert.That(result, Is.EqualTo(expected), "Должен отработать метод!");
         }
 
-        [Test(Description = "Тестирование метода OnRemovedItem при удалении элементов.")]
+        [Test(Description = "Тестирование метода " +
+            $"{nameof(TrackableCollection<object>.OnRemovedItem)} при добавлении элементов.")]
         public void OnRemovedItem_Remove_Invoke()
         {
             var firstValue = 1;
@@ -215,8 +217,9 @@ namespace TrackableFeatures.Tests
             Assert.That(result, Is.EqualTo(expected), "Должен отработать метод!");
         }
 
-        [Test(Description = "Тестирование метода OnAddedItem при добавлении элементов " +
-            "в конструкторе.")]
+        [Test(Description = "Тестирование метода " +
+            $"{nameof(TrackableCollection<object>.OnAddedItem)} " +
+            "при добавлении элементов в конструкторе.")]
         public void OnAddedItem_AddWithConstructor_NoInvoke()
         {
             _trackableCollection = new([1]);

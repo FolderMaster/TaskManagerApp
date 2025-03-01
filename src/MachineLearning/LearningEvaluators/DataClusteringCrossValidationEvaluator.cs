@@ -25,7 +25,7 @@ namespace MachineLearning.LearningEvaluators
         }
 
         /// <inheritdoc />
-        protected override IEnumerable<ValidationFold> GetValidationFolds
+        protected internal override IEnumerable<ValidationFold> GetValidationFolds
             (IEnumerable<IEnumerable<double>> data)
         {
             var count = data.Count();
