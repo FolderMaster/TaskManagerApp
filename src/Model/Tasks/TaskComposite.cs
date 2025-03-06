@@ -59,15 +59,15 @@ namespace Model.Tasks
         public DateTime? Deadline => Count > 0 ? this.Max(x => x.Deadline) : null;
 
         /// <inheritdoc/>
-        public double Progress => Count > 0 ? this.Sum(i => i.Progress) / this.Count : 0;
+        public double Progress => Count > 0 ? this.Sum(i => i.Progress) / Count : 0;
 
         /// <inheritdoc/>
         public TimeSpan PlannedTime => this.Aggregate(TimeSpan.Zero,
-            (sum, interval) => sum + interval.PlannedTime);
+            (sum, task) => sum + task.PlannedTime);
 
         /// <inheritdoc/>
         public TimeSpan SpentTime => this.Aggregate(TimeSpan.Zero,
-            (sum, interval) => sum + interval.SpentTime);
+            (sum, task) => sum + task.SpentTime);
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="TaskComposite"/>.
@@ -81,7 +81,7 @@ namespace Model.Tasks
         public TaskComposite() : this(null) { }
 
         /// <inheritdoc/>
-        public virtual object Clone()
+        public object Clone()
         {
             var copyList = new List<ITask>();
             foreach (var task in this)
@@ -105,7 +105,7 @@ namespace Model.Tasks
             task.ParentTask = this;
             if (task is INotifyPropertyChanged notify)
             {
-                notify.PropertyChanged += Notify_PropertyChanged;
+                notify.PropertyChanged += Task_PropertyChanged;
             }
             if (arePropertiesUpdate)
             {
@@ -122,7 +122,7 @@ namespace Model.Tasks
             task.ParentTask = null;
             if (task is INotifyPropertyChanged notify)
             {
-                notify.PropertyChanged -= Notify_PropertyChanged;
+                notify.PropertyChanged -= Task_PropertyChanged;
             }
             foreach (var propertyName in _changedPropertyNames)
             {
@@ -130,7 +130,7 @@ namespace Model.Tasks
             }
         }
 
-        private void Notify_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        private void Task_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if (_changedPropertyNames.Contains(e.PropertyName))
             {

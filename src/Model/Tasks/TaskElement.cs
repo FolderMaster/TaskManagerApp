@@ -1,7 +1,6 @@
-﻿using TrackableFeatures;
+﻿using System.ComponentModel;
 
 using Model.Interfaces;
-using Model.Times;
 
 namespace Model.Tasks
 {
@@ -9,171 +8,84 @@ namespace Model.Tasks
     /// Класс элементарной задачи.
     /// </summary>
     /// <remarks>
-    /// Наследует <see cref="TrackableObject"/>.
-    /// Реализует <see cref="ITaskElement"/> и <see cref="ICloneable"/>.
+    /// Наследует <see cref="BaseTaskElement"/>.
+    /// Реализует <see cref="ICloneable"/>.
     /// </remarks>
-    public class TaskElement : TrackableObject, ITaskElement, ICloneable
+    public class TaskElement : BaseTaskElement, ICloneable
     {
         /// <summary>
-        /// Родительская задача.
+        /// Названия изменящихся свойств.
         /// </summary>
-        private ITaskComposite? _parentTask;
+        private static readonly IEnumerable<string> _changedPropertyNames =
+            [ nameof(Status), nameof(Progress), nameof(SpentTime), nameof(ExecutedReal) ];
 
         /// <summary>
-        /// Метаданные.
+        /// Выполнение элементарной задачи.
         /// </summary>
-        private object? _metadata;
+        protected readonly ITaskElementExecution _execution;
+
+        /// <inheritdoc/>
+        public override TaskStatus Status => _execution.Status;
+
+        /// <inheritdoc/>
+        public override double Progress => _execution.Progress;
+
+        /// <inheritdoc/>
+        public override TimeSpan SpentTime => _execution.SpentTime;
+
+        /// <inheritdoc/>
+        public override double ExecutedReal => _execution.ExecutedReal;
+
+        /// <inheritdoc/>
+        public override IEnumerable<ITaskElementExecution> Executions => [ _execution ];
 
         /// <summary>
-        /// Сложность.
+        /// Создаёт экземпляр класса <see cref="TaskElement"/>.
         /// </summary>
-        private int _difficult;
+        /// <param name="execution">Выполнение элементарной задачи.</param>
+        public TaskElement(ITaskElementExecution? execution = null)
+        {
+            _execution = execution ?? new TaskElementExecution();
+            if (execution is INotifyPropertyChanged notify)
+            {
+                notify.PropertyChanged += Execution_PropertyChanged;
+            }
+        }
 
         /// <summary>
-        /// Приоритет.
+        /// Создаёт экземпляр класса <see cref="TaskElement"/> по умолчанию.
         /// </summary>
-        private int _priority;
-
-        /// <summary>
-        /// Срок.
-        /// </summary>
-        private DateTime? _deadline;
-
-        /// <summary>
-        /// Статус.
-        /// </summary>
-        private TaskStatus _status = TaskStatus.Planned;
-
-        /// <summary>
-        /// Прогресс.
-        /// </summary>
-        private double _progress;
-
-        /// <summary>
-        /// Запланированное время.
-        /// </summary>
-        private TimeSpan _plannedTime;
-
-        /// <summary>
-        /// Потраченное время.
-        /// </summary>
-        private TimeSpan _spentTime;
-
-        /// <summary>
-        /// Запланированный реальный показатель.
-        /// </summary>
-        private double _plannedReal;
-
-        /// <summary>
-        /// Выполненный реальный показатель.
-        /// </summary>
-        private double _executedReal;
-
-        /// <summary>
-        /// Список временных интервалов.
-        /// </summary>
-        private readonly TimeIntervalList _timeIntervals = new();
+        public TaskElement() : this(null) { }
 
         /// <inheritdoc/>
-        public ITaskComposite? ParentTask
+        public object Clone()
         {
-            get => _parentTask;
-            set => UpdateProperty(ref _parentTask, value);
-        }
-
-        /// <inheritdoc/>
-        public object? Metadata
-        {
-            get => _metadata;
-            set => UpdateProperty(ref _metadata, value);
-        }
-
-        /// <inheritdoc/>
-        public int Difficult
-        {
-            get => _difficult;
-            set => UpdateProperty(ref _difficult, value);
-        }
-
-        /// <inheritdoc/>
-        public int Priority
-        {
-            get => _priority;
-            set => UpdateProperty(ref _priority, value);
-        }
-
-        /// <inheritdoc/>
-        public DateTime? Deadline
-        {
-            get => _deadline;
-            set => UpdateProperty(ref _deadline, value);
-        }
-
-        /// <inheritdoc/>
-        public TaskStatus Status
-        {
-            get => _status;
-            set => UpdateProperty(ref _status, value);
-        }
-
-        /// <inheritdoc/>
-        public ITimeIntervalList TimeIntervals => _timeIntervals;
-
-        /// <inheritdoc/>
-        public double Progress
-        {
-            get => _progress;
-            set => UpdateProperty(ref _progress, value);
-        }
-
-        /// <inheritdoc/>
-        public TimeSpan PlannedTime
-        {
-            get => _plannedTime;
-            set => UpdateProperty(ref _plannedTime, value);
-        }
-
-        /// <inheritdoc/>
-        public TimeSpan SpentTime
-        {
-            get => _spentTime;
-            set => UpdateProperty(ref _spentTime, value);
-        }
-
-        /// <inheritdoc/>
-        public double PlannedReal
-        {
-            get => _plannedReal;
-            set => UpdateProperty(ref _plannedReal, value);
-        }
-
-        /// <inheritdoc/>
-        public double ExecutedReal
-        {
-            get => _executedReal;
-            set => UpdateProperty(ref _executedReal, value);
-        }
-
-        /// <inheritdoc/>
-        public virtual object Clone()
-        {
-            var result = new TaskElement()
+            var execution = (ITaskElementExecution?)null;
+            if (_execution is ICloneable executionCloneable)
+            {
+                execution = (ITaskElementExecution)executionCloneable.Clone();
+            }
+            var result = new TaskElement(execution)
             {
                 Difficult = Difficult,
                 Priority = Priority,
                 Deadline = Deadline,
-                Status = Status,
-                Progress = Progress,
                 PlannedTime = PlannedTime,
-                SpentTime = SpentTime,
-                PlannedReal = PlannedReal,
-                ExecutedReal = ExecutedReal
+                PlannedReal = PlannedReal
             };
-            if (Metadata is ICloneable cloneable)
+            if (Metadata is ICloneable metadataCloneable)
             {
-                result.Metadata = cloneable.Clone();
+                result.Metadata = metadataCloneable.Clone();
             }
             return result;
+        }
+
+        protected void Execution_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (_changedPropertyNames.Contains(e.PropertyName))
+            {
+                OnPropertyChanged(e.PropertyName);
+            }
         }
     }
 }
