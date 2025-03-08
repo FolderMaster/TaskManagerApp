@@ -59,7 +59,7 @@
         /// <param name="minute">Минута.</param>
         /// <returns>Возвращает <c>true</c>, если попадает минута в цикл,
         /// иначе <c>false</c>.</returns>
-        public bool MatchesMinute(int minute) => (Minutes & (1UL << minute)) == 0;
+        public bool MatchesMinute(int minute) => (Minutes & (1UL << minute)) != 0;
 
         /// <summary>
         /// Проверяет, что попадает ли час в цикл.
@@ -83,7 +83,7 @@
         /// <param name="monthDay">День месяца.</param>
         /// <returns>Возвращает логическое значение,
         /// указывающее попадает ли день месяца в цикл.</returns>
-        public bool MatchesMonthDay(int monthDay) => (MonthDays & (1U << (monthDay))) != 0;
+        public bool MatchesMonthDay(int monthDay) => (MonthDays & (1U << monthDay)) != 0;
 
         /// <summary>
         /// Проверяет, что попадает ли месяц в цикл.
@@ -91,7 +91,7 @@
         /// <param name="month">Месяц.</param>
         /// <returns>Возвращает <c>true</c>, если попадает месяц в цикл,
         /// иначе <c>false</c>.</returns>
-        public bool MatchesMonth(int month) => (Months & (Month)(1 << (month))) != 0;
+        public bool MatchesMonth(int month) => (Months & (Month)(1 << month)) != 0;
 
         /// <summary>
         /// Проверяет, что попадает ли дата в цикл.
@@ -99,29 +99,8 @@
         /// <param name="dateTime">Дата и время.</param>
         /// <returns>Возвращает <c>true</c>, если попадает дата в цикл,
         /// иначе <c>false</c>.</returns>
-        public bool MatchesDate(DateTime dateTime)
-        {
-            if (!MatchesMonth(dateTime.Month - 1))
-            {
-                return false;
-            }
-            if (!MatchesWeekDay((int)dateTime.DayOfWeek))
-            {
-                return false;
-            }
-            if (!MatchesMonthDay(dateTime.Day - 1))
-            {
-                return false;
-            }
-            if (!MatchesHour(dateTime.Hour))
-            {
-                return false;
-            }
-            if (!MatchesMinute(dateTime.Minute))
-            {
-                return false;
-            }
-            return true;
-        }
+        public bool MatchesDate(DateTime dateTime) => MatchesMonth(dateTime.Month - 1) &&
+            MatchesWeekDay((int)dateTime.DayOfWeek) && MatchesMonthDay(dateTime.Day - 1) &&
+            MatchesHour(dateTime.Hour) && MatchesMinute(dateTime.Minute);
     }
 }

@@ -40,6 +40,11 @@ namespace Model.Tasks
         public override IEnumerable<ITaskElementExecution> Executions => [ _execution ];
 
         /// <summary>
+        /// Возвращает выполнение элементарной задачи.
+        /// </summary>
+        public ITaskElementExecution Execution => _execution;
+
+        /// <summary>
         /// Создаёт экземпляр класса <see cref="TaskElement"/>.
         /// </summary>
         /// <param name="execution">Выполнение элементарной задачи.</param>

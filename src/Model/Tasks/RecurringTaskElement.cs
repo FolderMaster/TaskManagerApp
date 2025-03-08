@@ -29,12 +29,12 @@ namespace Model.Tasks
         /// <summary>
         /// Последняя дата обновления выполнений.
         /// </summary>
-        private DateTime _lastUpdatedExecutionsDate;
+        internal DateTime _lastUpdatedExecutionsDate;
 
         /// <summary>
         /// Выполнения элементарной задачи.
         /// </summary>
-        protected readonly ObservableCollection<ITaskElementExecution> _executions = new();
+        internal readonly ObservableCollection<ITaskElementExecution> _executions = new();
 
         /// <inheritdoc/>
         public RecurringSettings RecurringSettings => _recurringSettings;
@@ -55,8 +55,8 @@ namespace Model.Tasks
             (sum, execution) => sum + execution.SpentTime);
 
         /// <inheritdoc/>
-        public override double ExecutedReal => _executions.Aggregate(0d,
-            (sum, execution) => sum + execution.ExecutedReal);
+        public override double ExecutedReal => _executions.Count > 0 ?
+            _executions.Sum(i => i.ExecutedReal) / _executions.Count : 0;
 
         /// <inheritdoc/>
         public override IEnumerable<ITaskElementExecution> Executions => _executions;
@@ -70,7 +70,6 @@ namespace Model.Tasks
             DateTime? lastUpdatedExecutionsDate = null) 
         {
             _executions = executions != null ? new(executions) : new();
-            RecurringSettings.StartDate = DateTime.Now;
             _lastUpdatedExecutionsDate = lastUpdatedExecutionsDate ?? DateTime.Now;
             foreach (var execution in _executions)
             {
@@ -79,7 +78,6 @@ namespace Model.Tasks
                     notify.PropertyChanged += Execution_PropertyChanged;
                 }
             }
-            UpdateExecutions();
         }
 
         /// <summary>
@@ -91,7 +89,8 @@ namespace Model.Tasks
         public void UpdateExecutions()
         {
             var now = DateTime.Now;
-            var occurrences = RecurringSettings.CalculateOccurrences(_lastUpdatedExecutionsDate, now);
+            var occurrences = RecurringSettings.
+                CalculateOccurrences(_lastUpdatedExecutionsDate, now);
             foreach (var occurrence in occurrences)
             {
                 _executions.Add(new TaskElementExecution(occurrence));

@@ -41,7 +41,7 @@ namespace Model.Tests
             var result = new List<bool>();
             foreach (var status in statuses)
             {
-                task.Status = status;
+                task.Execution.Status = status;
                 result.Add(TaskHelper.IsTaskCompleted(task));
             }
 

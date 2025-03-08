@@ -58,8 +58,10 @@ namespace Model.Tests.Tasks
             "при добавлении задач.")]
         public void GetProgress_AddTaskElements_ReturnAverageProgress()
         {
-            var taskElement1 = new TaskElement() { Progress = 1 };
-            var taskElement2 = new TaskElement() { Progress = 0 };
+            var taskElement1 = new TaskElement();
+            taskElement1.Execution.Progress = 1;
+            var taskElement2 = new TaskElement();
+            taskElement2.Execution.Progress = 0;
             var expected = 0.5;
 
             _taskComposite.Add(taskElement1);
@@ -73,8 +75,10 @@ namespace Model.Tests.Tasks
             "при добавлении задач.")]
         public void GetStatus_AddTaskElements_ReturnMinStatus()
         {
-            var taskElement1 = new TaskElement() { Status = TaskStatus.InProgress };
-            var taskElement2 = new TaskElement() { Status = TaskStatus.Planned };
+            var taskElement1 = new TaskElement();
+            taskElement1.Execution.Status = TaskStatus.InProgress;
+            var taskElement2 = new TaskElement();
+            taskElement2.Execution.Status = TaskStatus.Planned;
             var expected = TaskStatus.InProgress;
 
             _taskComposite.Add(taskElement1);
@@ -119,8 +123,10 @@ namespace Model.Tests.Tasks
             "при добавлении задач.")]
         public void GetSpentTime_AddTaskElements_ReturnSumSpentTime()
         {
-            var taskElement1 = new TaskElement() { SpentTime = new TimeSpan(2, 20, 0) };
-            var taskElement2 = new TaskElement() { SpentTime = new TimeSpan(1, 40, 0) };
+            var taskElement1 = new TaskElement();
+            taskElement1.Execution.SpentTime = new TimeSpan(2, 20, 0);
+            var taskElement2 = new TaskElement();
+            taskElement2.Execution.SpentTime = new TimeSpan(1, 40, 0);
             var expected = new TimeSpan(4, 0, 0);
 
             _taskComposite.Add(taskElement1);

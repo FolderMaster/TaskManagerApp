@@ -1,4 +1,6 @@
-﻿namespace Model
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Model
 {
     /// <summary>
     /// Класс настройки повторения.
@@ -45,7 +47,7 @@
             var cycleStartDate = ApplyCycle(startDate);
             var result = new List<DateTime>();
             endDate = EndDate != null && EndDate < endDate ? EndDate.Value : endDate;
-            while (cycleStartDate > endDate)
+            while (cycleStartDate < endDate)
             {
                 var cycleEndDate = cycleStartDate + Frequency;
                 if (cycleEndDate > endDate)
@@ -53,26 +55,11 @@
                     cycleEndDate = endDate;
                 }
 
-                var date = AdjustDate(cycleStartDate, cycleEndDate);
-                if (date == null)
+                if (AdjustDate(cycleStartDate, cycleEndDate, out var date))
                 {
-                    break;
+                    result.Add(date);
                 }
-                cycleStartDate = date.Value;
-                date = AdjustHour(cycleStartDate, cycleEndDate);
-                if (date == null)
-                {
-                    break;
-                }
-                cycleStartDate = date.Value;
-                date = AdjustMinute(cycleStartDate, cycleEndDate);
-                if (date == null)
-                {
-                    break;
-                }
-                cycleStartDate = date.Value;
 
-                result.Add(cycleStartDate);
                 cycleStartDate = cycleEndDate;
             }
             return result;
@@ -95,8 +82,8 @@
             }
             var dateDifference = startDate - StartDate.Value;
             var count = dateDifference / Frequency;
-            var floorCount = Math.Floor(count);
-            var countDifference = floorCount - count;
+            var сeilingCount = Math.Ceiling(count);
+            var countDifference = сeilingCount - count;
             var adjustedTime = countDifference * Frequency;
             var result = startDate + adjustedTime;
             return result;
@@ -107,30 +94,36 @@
         /// </summary>
         /// <param name="cycleStartDate">Дата начала цикла.</param>
         /// <param name="cycleEndDate">Дата конца цикла.</param>
-        /// <returns>Возвращает дату, соответствующую критериям, инача <c>null</c>.</returns>
-        internal DateTime? AdjustMinute(DateTime cycleStartDate, DateTime cycleEndDate)
+        /// <param name="result">Результат, дата, соответствующая критериям.</param>
+        /// <returns>Возвращает <c>true</c>, если была найдена дата, соответствующая критериям,
+        /// иначе <c>false</c>.</returns>
+        internal bool AdjustMinute(DateTime cycleStartDate,
+            DateTime cycleEndDate, out DateTime result)
         {
+            result = DateTime.MinValue;
             if (Cycle.Minutes == RecurringCycle.ALL_MINUTES ||
                 Cycle.MatchesMinute(cycleStartDate.Minute))
             {
-                return cycleStartDate;
+                result = cycleStartDate;
+                return true;
             }
             var date = cycleStartDate;
             var minute = date.Minute;
             for (var i = 1; i < 60; ++i)
             {
                 var newMinute = (minute + i) % 60;
+                date = date.AddMinutes(1);
+                if (date >= cycleEndDate)
+                {
+                    return false;
+                }
                 if (Cycle.MatchesMinute(newMinute))
                 {
-                    date = date.AddMinutes(1);
-                    if (date >= cycleEndDate)
-                    {
-                        return null;
-                    }
-                    return date;
+                    result = date;
+                    return true;
                 }
             }
-            return null;
+            return false;
         }
 
         /// <summary>
@@ -138,30 +131,60 @@
         /// </summary>
         /// <param name="cycleStartDate">Дата начала цикла.</param>
         /// <param name="cycleEndDate">Дата конца цикла.</param>
-        /// <returns>Возвращает дату, соответствующая критериям, инача <c>null</c>.</returns>
-        internal DateTime? AdjustHour(DateTime cycleStartDate, DateTime cycleEndDate)
+        /// <param name="result">Результат, дата, соответствующая критериям.</param>
+        /// <returns>Возвращает <c>true</c>, если была найдена дата, соответствующая критериям,
+        /// иначе <c>false</c>.</returns>
+        internal bool AdjustHour(DateTime cycleStartDate,
+            DateTime cycleEndDate, out DateTime result)
         {
+            result = DateTime.MinValue;
             if (Cycle.Hours == RecurringCycle.ALL_HOURS ||
                 Cycle.MatchesHour(cycleStartDate.Hour))
             {
-                return cycleStartDate;
+                result = cycleStartDate;
+                return true;
             }
             var date = cycleStartDate;
             var hour = date.Hour;
             for (var i = 1; i < 24; ++i)
             {
                 var newHour = (hour + i) % 24;
+                date = date.AddHours(1);
+                if (date >= cycleEndDate)
+                {
+                    return false;
+                }
                 if (Cycle.MatchesHour(newHour))
                 {
-                    date = date.AddHours(1);
-                    if (date >= cycleEndDate)
-                    {
-                        return null;
-                    }
-                    return date;
+                    result = date;
+                    return true;
                 }
             }
-            return null;
+            return false;
+        }
+
+        /// <summary>
+        /// Подбирает ближайшие минуту и час, соответствующие правилам цикла.
+        /// </summary>
+        /// <param name="cycleStartDate">Дата начала цикла.</param>
+        /// <param name="cycleEndDate">Дата конца цикла.</param>
+        /// <param name="result">Результат, дата, соответствующая критериям.</param>
+        /// <returns>Возвращает <c>true</c>, если была найдена дата, соответствующая критериям,
+        /// иначе <c>false</c>.</returns>
+        internal bool AdjustMinuteAndHour(DateTime cycleStartDate,
+            DateTime cycleEndDate, out DateTime result)
+        {
+            result = DateTime.MinValue;
+            if (!AdjustMinute(cycleStartDate, cycleEndDate, out var date))
+            {
+                return false;
+            }
+            if (!AdjustHour(date, cycleEndDate, out date))
+            {
+                return false;
+            }
+            result = date;
+            return true;
         }
 
         /// <summary>
@@ -169,27 +192,46 @@
         /// </summary>
         /// <param name="cycleStartDate">Дата начала цикла.</param>
         /// <param name="cycleEndDate">Дата конца цикла.</param>
-        /// <returns>Возвращает дату, соответствующая критериям, инача <c>null</c>.</returns>
-        internal DateTime? AdjustDate(DateTime cycleStartDate, DateTime cycleEndDate)
+        /// <param name="result">Результат, дата, соответствующая критериям.</param>
+        /// <returns>Возвращает <c>true</c>, если была найдена дата, соответствующая критериям,
+        /// иначе <c>false</c>.</returns>
+        internal bool AdjustDate(DateTime cycleStartDate,
+            DateTime cycleEndDate, out DateTime result)
         {
+            result = DateTime.MinValue;
+            if (!AdjustMinuteAndHour(cycleStartDate, cycleEndDate, out var date))
+            {
+                return false;
+            }
             if ((Cycle.WeekDays == WeekDay.All && Cycle.Months == Month.All &&
                 Cycle.MonthDays == RecurringCycle.ALL_MONTH_DAYS) ||
-                (Cycle.MatchesWeekDay((int)cycleStartDate.DayOfWeek) &&
-                Cycle.MatchesMonth(cycleStartDate.Month - 1) &&
-                Cycle.MatchesMonthDay(cycleStartDate.Day - 1)))
+                (Cycle.MatchesWeekDay((int)date.DayOfWeek) &&
+                Cycle.MatchesMonth(date.Month - 1) &&
+                Cycle.MatchesMonthDay(date.Day - 1)))
             {
-                return cycleStartDate;
+                result = date;
+                return true;
             }
-            var date = cycleStartDate;
-            while (date < cycleEndDate)
+            var isDateChanged = false;
+            while (true)
             {
                 while (!Cycle.MatchesMonth(date.Month - 1))
                 {
-                    date = new DateTime(date.Year, date.Month, 1, date.Hour, date.Minute,
-                        date.Second, date.Millisecond, date.Microsecond).AddMonths(1);
+                    date = new DateTime(date.Year, date.Month, 1,
+                        isDateChanged ? date.Hour : 0, isDateChanged ? date.Minute : 0,
+                        date.Second, date.Millisecond, date.Microsecond);
+                    if (!isDateChanged)
+                    {
+                        if (!AdjustMinuteAndHour(date, cycleEndDate, out date))
+                        {
+                            return false;
+                        }
+                        isDateChanged = true;
+                    }
+                    date = date.AddMonths(1);
                     if (date >= cycleEndDate)
                     {
-                        break;
+                        return false;
                     }
                 }
 
@@ -197,23 +239,42 @@
                 var newDay = date.Day;
                 while (newDay <= maxDay)
                 {
-                    date = new DateTime(date.Year, date.Month, newDay, date.Hour,
-                        date.Minute, date.Second, date.Millisecond, date.Microsecond);
                     if (date >= cycleEndDate)
                     {
-                        return null;
+                        return false;
                     }
-                    if (Cycle.MatchesMonthDay(date.Day - 1) && Cycle.MatchesWeekDay((int)date.DayOfWeek))
+                    if (Cycle.MatchesMonthDay(date.Day - 1) &&
+                        Cycle.MatchesWeekDay((int)date.DayOfWeek))
                     {
-                        return date;
+                        result = date;
+                        return true;
                     }
+                    if (!isDateChanged)
+                    {
+                        date = new DateTime(date.Year, date.Month, date.Day, 0, 0,
+                            date.Second, date.Millisecond, date.Microsecond);
+                        if (!AdjustMinuteAndHour(date, cycleEndDate, out date))
+                        {
+                            return false;
+                        }
+                        isDateChanged = true;
+                    }
+                    date = date.AddDays(1);
                     ++newDay;
                 }
-                date = new DateTime(date.Year, date.Month, 1, date.Hour, date.Minute,
-                        date.Second, date.Millisecond, date.Microsecond).AddMonths(1);
-
+                date = new DateTime(date.Year, date.Month, 1,
+                    isDateChanged ? date.Hour : 0, isDateChanged ? date.Minute : 0,
+                    date.Second, date.Millisecond, date.Microsecond);
+                if (!isDateChanged)
+                {
+                    if (!AdjustMinuteAndHour(date, cycleEndDate, out date))
+                    {
+                        return false;
+                    }
+                    isDateChanged = true;
+                }
+                date = date.AddMonths(1);
             }
-            return null;
         }
     }
 }

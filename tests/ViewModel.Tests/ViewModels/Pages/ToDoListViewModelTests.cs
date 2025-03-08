@@ -165,11 +165,10 @@ namespace ViewModel.Tests.ViewModels.Pages
             $"{nameof(ToDoListViewModel.IsDifficultSort)}," +
             $"{nameof(ToDoListViewModel.IsPrioritySort)}.")]
         public async Task GetToDoList_SetFiltersAndSorts_ReturnCorrectResult
-            ([Values(true, false)] bool isExpiredFilter,
-            [Values(true, false)] bool isLaggingFilter, 
-            [Values(true, false)] bool isTimeSort, [Values(true, false)] bool isRealSort,
-            [Values(true, false)] bool isExecutionChanceSort,
-            [Values(true, false)] bool isDifficultSort, [Values(true, false)] bool isPrioritySort)
+            ([Values] bool isExpiredFilter, [Values] bool isLaggingFilter, 
+            [Values] bool isTimeSort, [Values] bool isRealSort,
+            [Values] bool isExecutionChanceSort,
+            [Values] bool isDifficultSort, [Values] bool isPrioritySort)
         {
             var sorts = new (bool, Func<ToDoListElement, object?>)[]
             {
