@@ -76,12 +76,7 @@ namespace ViewModel.Implementations.DataManagers
         }
 
         /// <inheritdoc />
-        public TaskStatus Status
-        {
-            get => _taskElement.Status;
-            set => UpdateProperty(() => _taskElement.Status,
-                (value) => _taskElement.Status = value, value);
-        }
+        public TaskStatus Status => _taskElement.Status;
 
         /// <inheritdoc />
         public DateTime? Deadline
@@ -92,12 +87,7 @@ namespace ViewModel.Implementations.DataManagers
         }
 
         /// <inheritdoc />
-        public double Progress
-        {
-            get => _taskElement.Progress;
-            set => UpdateProperty(() => _taskElement.Progress,
-                (value) => _taskElement.Progress = value, value);
-        }
+        public double Progress => _taskElement.Progress;
 
         /// <inheritdoc />
         public TimeSpan PlannedTime
@@ -108,12 +98,7 @@ namespace ViewModel.Implementations.DataManagers
         }
 
         /// <inheritdoc />
-        public TimeSpan SpentTime
-        {
-            get => _taskElement.SpentTime;
-            set => UpdateProperty(() => _taskElement.SpentTime,
-                (value) => _taskElement.SpentTime = value, value);
-        }
+        public TimeSpan SpentTime => _taskElement.SpentTime;
 
         /// <inheritdoc />
         public double PlannedReal
@@ -124,12 +109,7 @@ namespace ViewModel.Implementations.DataManagers
         }
 
         /// <inheritdoc />
-        public double ExecutedReal
-        {
-            get => _taskElement.ExecutedReal;
-            set => UpdateProperty(() => _taskElement.ExecutedReal,
-                (value) => _taskElement.ExecutedReal = value, value);
-        }
+        public double ExecutedReal => _taskElement.ExecutedReal;
 
         /// <inheritdoc />
         public object? Metadata
@@ -140,15 +120,15 @@ namespace ViewModel.Implementations.DataManagers
         }
 
         /// <inheritdoc />
-        public ITimeIntervalList TimeIntervals => _taskElement.TimeIntervals;
-
-        /// <inheritdoc />
         public ITaskComposite? ParentTask
         {
             get => _taskElement.ParentTask;
             set => UpdateProperty(() => _taskElement.ParentTask,
                 (value) => _taskElement.ParentTask = value, value);
         }
+
+        /// <inheritdoc />
+        public IEnumerable<ITaskElementExecution> Executions => _taskElement.Executions;
 
         /// <inheritdoc />
         public ITaskElement Target => _taskElement;

@@ -50,7 +50,7 @@ namespace Model.Tasks
         /// <param name="execution">Выполнение элементарной задачи.</param>
         public TaskElement(ITaskElementExecution? execution = null)
         {
-            _execution = execution ?? new TaskElementExecution();
+            _execution = execution ?? new TaskElementExecution(this);
             if (execution is INotifyPropertyChanged notify)
             {
                 notify.PropertyChanged += Execution_PropertyChanged;
@@ -63,14 +63,15 @@ namespace Model.Tasks
         public TaskElement() : this(null) { }
 
         /// <inheritdoc/>
-        public object Clone()
+        public virtual object Clone()
         {
-            var execution = (ITaskElementExecution?)null;
+            var clonedExecution = (ITaskElementExecution?)null;
             if (_execution is ICloneable executionCloneable)
             {
-                execution = (ITaskElementExecution)executionCloneable.Clone();
+                clonedExecution = (ITaskElementExecution)executionCloneable.Clone();
+                clonedExecution.TaskElement = this;
             }
-            var result = new TaskElement(execution)
+            var result = new TaskElement(clonedExecution)
             {
                 Difficult = Difficult,
                 Priority = Priority,

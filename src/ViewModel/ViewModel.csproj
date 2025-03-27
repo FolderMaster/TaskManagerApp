@@ -13,15 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Implementations\AppStates\Sessions\Database\Entities\TagEntity.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="ReactiveUI" Version="20.1.63" />
-    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.1.8">
+    <PackageReference Include="ReactiveUI" Version="20.2.45" />
+    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.1.27">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

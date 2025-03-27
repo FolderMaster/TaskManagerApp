@@ -50,9 +50,9 @@ namespace ViewModel.Interfaces.AppStates.Sessions
         /// Добавляет временной интервал.
         /// </summary>
         /// <param name="timeIntervalElement">Элементарный временной интервал.</param>
-        /// <param name="taskElement">Элементарная задача.</param>
+        /// <param name="taskElementExecution">Выполнение элементарной задачи.</param>
         public void AddTimeInterval(ITimeIntervalElement timeIntervalElement,
-            ITaskElement taskElement);
+            ITaskElementExecution taskElementExecution);
 
         /// <summary>
         /// Изменяет временной интервал.
@@ -64,8 +64,8 @@ namespace ViewModel.Interfaces.AppStates.Sessions
         /// Удаляет временной интервал.
         /// </summary>
         /// <param name="timeIntervalElement">Элементарный временной интервал.</param>
-        /// <param name="taskElement">Элементарная задача.</param>
+        /// <param name="taskElementExecution">Выполнение элементарной задачи.</param>
         public void RemoveTimeInterval(ITimeIntervalElement timeIntervalElement,
-            ITaskElement taskElement);
+            ITaskElementExecution taskElementExecution);
     }
 }

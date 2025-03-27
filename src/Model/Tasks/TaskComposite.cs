@@ -81,7 +81,7 @@ namespace Model.Tasks
         public TaskComposite() : this(null) { }
 
         /// <inheritdoc/>
-        public object Clone()
+        public virtual object Clone()
         {
             var copyList = new List<ITask>();
             foreach (var task in this)

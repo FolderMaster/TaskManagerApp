@@ -51,8 +51,8 @@ public partial class App : Application
     /// <returns>Возвращает контейнер зависимостей.</returns>
     private IContainer BuildContainer()
     {
-        var (builder, resolver) = ViewContainerHelper.GetContainerElements();
+        var (builder, resolver) = ContainerHelper.GetContainerElements();
         ContainerBuilderCreated?.Invoke(this, builder);
-        return ViewContainerHelper.CreateContainer(builder, resolver,  true);
+        return ContainerHelper.CreateContainer(builder, resolver,  true);
     }
 }

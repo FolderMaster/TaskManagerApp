@@ -34,6 +34,11 @@
         public double PlannedReal { get; set; }
 
         /// <summary>
+        /// Возвращает выполненный реальный показатель.
+        /// </summary>
+        public double ExecutedReal { get; }
+
+        /// <summary>
         /// Возвращает выполнения элементарной задачи.
         /// </summary>
         public IEnumerable<ITaskElementExecution> Executions { get; }

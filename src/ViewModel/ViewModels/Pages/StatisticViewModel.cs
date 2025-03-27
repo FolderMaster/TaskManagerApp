@@ -181,7 +181,8 @@ namespace ViewModel.ViewModels.Pages
             var uncompletedTasks = tasks.Where(t => !TaskHelper.IsTaskCompleted(t));
 
             var plannedTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
-                (sum, task) => sum + task.TimeIntervals.Duration).Hours;
+                (sum, task) => sum + task.Executions.Aggregate(TimeSpan.Zero,
+                (s, e) => s + e.TimeIntervals.Duration)).Hours;
             var unplannedTime = uncompletedTasks.Aggregate(TimeSpan.Zero,
                 (sum, task) => sum + task.PlannedTime).Hours - plannedTime;
 

@@ -6,6 +6,11 @@
     public interface ITaskElementExecution
     {
         /// <summary>
+        /// Возвращает и задаёт элементарную задачу.
+        /// </summary>
+        public ITaskElement? TaskElement { get; set; }
+
+        /// <summary>
         /// Возвращает и задаёт прогресс.
         /// </summary>
         public double Progress { get; set; }

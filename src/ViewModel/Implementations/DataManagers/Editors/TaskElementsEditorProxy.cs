@@ -1,5 +1,4 @@
 ﻿using Model.Interfaces;
-
 using ViewModel.Interfaces.DataManagers;
 
 using TaskStatus = Model.TaskStatus;
@@ -62,6 +61,10 @@ namespace ViewModel.Implementations.DataManagers.Editors
             throw new NotImplementedException();
 
         /// <inheritdoc/>
+        public IEnumerable<ITaskElementExecution> Executions =>
+            throw new NotImplementedException();
+
+        /// <inheritdoc/>
         public ITaskComposite? ParentTask { get; set; }
 
         /// <inheritdoc/>
@@ -72,16 +75,9 @@ namespace ViewModel.Implementations.DataManagers.Editors
         {
             Target.Difficult = Difficult;
             Target.Priority = Priority;
-            Target.Status = Status;
             Target.Deadline = Deadline;
-            Target.Progress = Progress;
             Target.PlannedTime = PlannedTime;
-            Target.SpentTime = SpentTime;
-            Target.ExecutedReal = ExecutedReal;
-            Target.SpentTime = SpentTime;
             Target.PlannedReal = PlannedReal;
-            Target.ExecutedReal = ExecutedReal;
-            Target.ExecutedReal = ExecutedReal;
             Target.ParentTask = ParentTask;
             Target.Metadata = Metadata;
         }
@@ -99,7 +95,6 @@ namespace ViewModel.Implementations.DataManagers.Editors
             PlannedTime = Target.PlannedTime;
             SpentTime = Target.SpentTime;
             PlannedReal = Target.PlannedReal;
-            ExecutedReal = Target.ExecutedReal;
             ParentTask = Target.ParentTask;
             if (Target.Metadata is ICloneable cloneable)
             {

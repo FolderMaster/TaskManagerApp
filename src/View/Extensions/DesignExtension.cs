@@ -25,7 +25,7 @@ namespace View.Extensions
         /// <summary>
         /// Контейнер зависимости.
         /// </summary>
-        private static readonly IContainer _container = ViewContainerHelper.GetMockContainer();
+        private static readonly IContainer _container = ContainerHelper.GetMockContainer();
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="EnumsExtension"/>.

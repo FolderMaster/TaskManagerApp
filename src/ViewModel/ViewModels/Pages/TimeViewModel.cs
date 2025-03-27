@@ -79,7 +79,7 @@ public partial class TimeViewModel : BasePageViewModel
     /// <summary>
     /// Словарь планировщика задач.
     /// </summary>
-    private Dictionary<DateTime, IEnumerable<ITaskElement>> _tasksSchedulerDictionary;
+    private Dictionary<DateTime, IEnumerable<ITaskElementExecution>> _tasksSchedulerDictionary;
 
     /// <summary>
     /// Список интервалов календаря.
@@ -154,16 +154,17 @@ public partial class TimeViewModel : BasePageViewModel
         }
         CalendarIntervals.Clear();
         var tasks = TaskHelper.GetTaskElements(_session.Tasks);
-        foreach (var task in tasks)
+        var executions = tasks.SelectMany(t => t.Executions);
+        foreach (var execution in executions)
         {
-            foreach(var timeInterval in task.TimeIntervals)
+            foreach (var timeInterval in execution.TimeIntervals)
             {
-                CalendarIntervals.Add(new CalendarInterval(timeInterval, task));
+                CalendarIntervals.Add(new CalendarInterval(timeInterval, execution));
             }
         }
-        _tasksSchedulerDictionary = tasks.SelectMany(t => t.TimeIntervals).GroupBy(i => i.Start).
+        _tasksSchedulerDictionary = executions.SelectMany(e => e.TimeIntervals).GroupBy(i => i.Start).
             Where(g => g.Key > DateTime.Now).ToDictionary(g => g.Key,
-            g => tasks.Where(task => task.TimeIntervals.Any(i => i.Start == g.Key)));
+            g => executions.Where(e => e.TimeIntervals.Any(i => i.Start == g.Key)));
         _timeScheduler.Timepoints.Clear();
         _timeScheduler.Timepoints.AddRange(_tasksSchedulerDictionary.Keys);
     }
@@ -198,7 +199,7 @@ public partial class TimeViewModel : BasePageViewModel
             new TimeIntervalViewModelArgs(_session.Tasks, _session.Tasks, timeIntervalElement));
         if (result != null)
         {
-            _session.AddTimeInterval(result.TimeIntervalElement, result.TaskElement);
+            _session.AddTimeInterval(result.TimeIntervalElement, result.TaskElementExecution);
         }
     }
 
@@ -209,7 +210,7 @@ public partial class TimeViewModel : BasePageViewModel
     private void Remove()
     {
         _session.RemoveTimeInterval(SelectedCalendarInterval.TimeInterval,
-            SelectedCalendarInterval.TaskElement);
+            SelectedCalendarInterval.TaskElementExecution);
     }
 
     /// <summary>
@@ -238,9 +239,9 @@ public partial class TimeViewModel : BasePageViewModel
         var contentResource = _resourceService.GetResource("TimeSchedulerNotificationContent");
         
         var content = $"{contentResource}\n";
-        foreach (var task in _tasksSchedulerDictionary[e])
+        foreach (var taskElementExecution in _tasksSchedulerDictionary[e])
         {
-            content += $"- {task.Metadata}\n";
+            content += $"- {taskElementExecution.TaskElement?.Metadata}\n";
         }
         _notificationManager.SendNotification(content, $"{titleResource}");
     }

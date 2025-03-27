@@ -25,6 +25,11 @@ namespace Model.Tasks
         private readonly DateTime _createdDate;
 
         /// <summary>
+        /// Элементарная задача.
+        /// </summary>
+        private ITaskElement? _taskElement;
+
+        /// <summary>
         /// Прогресс.
         /// </summary>
         private double _progress;
@@ -43,6 +48,13 @@ namespace Model.Tasks
         /// Выполненный реальный показатель.
         /// </summary>
         private double _executedReal;
+
+        /// <inheritdoc/>
+        public ITaskElement? TaskElement
+        {
+            get => _taskElement;
+            set => UpdateProperty(ref _taskElement, value);
+        }
 
         /// <inheritdoc/>
         public double Progress
@@ -81,10 +93,12 @@ namespace Model.Tasks
         /// <summary>
         /// Создаёт экземпляр класса <see cref="TaskElementExecution"/>.
         /// </summary>
+        /// <param name="taskElement">Элементарная задача.</param>
         /// <param name="createdDate">Дата создания.</param>
-        public TaskElementExecution(DateTime? createdDate = null)
+        public TaskElementExecution(ITaskElement? taskElement = null, DateTime? createdDate = null)
         {
             _createdDate = createdDate ?? DateTime.Now;
+            _taskElement = taskElement;
         }
 
         /// <summary>

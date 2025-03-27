@@ -26,7 +26,7 @@ namespace ViewModel.ViewModels.Modals
         /// Выбранная элементарная задача.
         /// </summary>
         [Reactive]
-        private ITaskElement? _selectedTaskElement;
+        private ITaskElementExecution? _selectedTaskElementExecution;
 
         /// <summary>
         /// Элементарный временной интервал.
@@ -49,7 +49,7 @@ namespace ViewModel.ViewModels.Modals
                 }
                 return Observable.Return(false);
             }).Switch();
-            _canExecuteOk = this.WhenAnyValue(x => x.SelectedTaskElement).Select(t => t != null).
+            _canExecuteOk = this.WhenAnyValue(x => x.SelectedTaskElementExecution).Select(t => t != null).
                 CombineLatest(hasErrors, (t, e) => t && !e);
         }
 
@@ -65,7 +65,7 @@ namespace ViewModel.ViewModels.Modals
         /// </summary>
         [ReactiveCommand(CanExecute = nameof(_canExecuteOk))]
         private void Ok() => _taskSource?.SetResult
-            (new TimeIntervalViewModelResult(SelectedTaskElement, TimeIntervalElement));
+            (new TimeIntervalViewModelResult(SelectedTaskElementExecution, TimeIntervalElement));
 
         /// <summary>
         /// Отменяет действие.

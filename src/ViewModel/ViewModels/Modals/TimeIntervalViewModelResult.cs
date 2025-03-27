@@ -15,17 +15,17 @@ namespace ViewModel.ViewModels.Modals
         /// <summary>
         /// Возвращает элементарную задачу.
         /// </summary>
-        public ITaskElement TaskElement { get; private set; }
+        public ITaskElementExecution TaskElementExecution { get; private set; }
 
         /// <summary>
         /// Создаёт экземпляр класса <see cref="TimeIntervalViewModelResult"/>.
         /// </summary>
-        /// <param name="taskElement">Элементарная задача.</param>
+        /// <param name="taskElementExecution">Выполнение элементарной задачи.</param>
         /// <param name="timeIntervalElement">Элементарный временной интервал.</param>
-        public TimeIntervalViewModelResult(ITaskElement taskElement,
+        public TimeIntervalViewModelResult(ITaskElementExecution taskElementExecution,
             ITimeIntervalElement timeIntervalElement)
         {
-            TaskElement = taskElement;
+            TaskElementExecution = taskElementExecution;
             TimeIntervalElement = timeIntervalElement;
         }
     }

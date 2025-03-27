@@ -93,7 +93,7 @@ namespace Model.Tasks
                 CalculateOccurrences(_lastUpdatedExecutionsDate, now);
             foreach (var occurrence in occurrences)
             {
-                _executions.Add(new TaskElementExecution(occurrence));
+                _executions.Add(new TaskElementExecution(this, occurrence));
             }
             _lastUpdatedExecutionsDate = now;
         }
@@ -106,7 +106,9 @@ namespace Model.Tasks
             {
                 if (execution is ICloneable executionCloneable)
                 {
-                    executions.Add((ITaskElementExecution)executionCloneable.Clone());
+                    var clonedExecution = (ITaskElementExecution)executionCloneable.Clone();
+                    clonedExecution.TaskElement = this;
+                    executions.Add(clonedExecution);
                 }
             }
             var result = new RecurringTaskElement(executions)
