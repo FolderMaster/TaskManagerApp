@@ -1,4 +1,6 @@
-﻿namespace Database.DbContexts
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Database.DbContexts
 {
     /// <summary>
     /// Класс фабрики, создающая контексты базы данных.
@@ -12,6 +14,11 @@
         public string ConnectionString { get; set; }
 
         /// <inheritdoc/>
-        public BaseDbContext Create() => new SqliteDbContext(ConnectionString);
+        public BaseDbContext Create()
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<BaseDbContext>();
+            optionsBuilder.UseSqlite(ConnectionString);
+            return new BaseDbContext(optionsBuilder.Options);
+        } 
     }
 }

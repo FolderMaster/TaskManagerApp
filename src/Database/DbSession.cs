@@ -228,7 +228,7 @@ namespace DataBase
             }
             taskElementExecution.TimeIntervals.Add(timeIntervalElement);
             var timeIntervalElementEntity = _timeIntervalMapper.MapBack(timeIntervalElement);
-            timeIntervalElementEntity.TaskElement = taskElementDomain.Entity;
+            //timeIntervalElementEntity.TaskElement = taskElementDomain.Entity;
             _dbContext.Add(timeIntervalElementEntity);
             ItemsUpdated?.Invoke(this, new ItemsUpdatedEventArgs
                 (UpdateItemsState.Add, [timeIntervalElement], timeIntervalElement.GetType()));

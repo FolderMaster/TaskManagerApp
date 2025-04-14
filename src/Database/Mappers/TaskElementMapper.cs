@@ -49,20 +49,11 @@ namespace Database.Mappers
                 Entity = value,
                 Difficult = value.Difficult,
                 Priority = value.Priority,
-                //Status = value.Status,
-                //Progress = value.Progress,
                 Deadline = value.Deadline,
                 PlannedTime = value.PlannedTime,
-                //SpentTime = value.SpentTime,
-                //ExecutedReal = value.ExecutedReal,
                 PlannedReal = value.PlannedReal
             };
             result.Metadata = _metadataMapper.Map(value.Task.Metadata);
-            foreach (var timeInterval in value.TimeIntervals)
-            {
-                var interval = _timeIntervalMapper.Map(timeInterval);
-                //result.TimeIntervals.Add(interval);
-            }
             return result;
         }
 
@@ -80,18 +71,12 @@ namespace Database.Mappers
             var result = domain.Entity;
             result.Difficult = domain.Difficult;
             result.Priority = domain.Priority;
-            result.Status = domain.Status;
-            result.Progress = domain.Progress;
             result.Deadline = domain.Deadline;
             result.PlannedTime = domain.PlannedTime;
-            result.SpentTime = domain.SpentTime;
-            result.ExecutedReal = domain.ExecutedReal;
             result.PlannedReal = domain.PlannedReal;
             var parentTask = domain.ParentTask as TaskCompositeDomain;
             result.Task.ParentTask = parentTask?.Entity;
             result.Task.Metadata = _metadataMapper.MapBack(domain.Metadata);
-            /**result.TimeIntervals = domain.TimeIntervals.
-                Select(_timeIntervalMapper.MapBack).ToList();**/
             return result;
         }
     }

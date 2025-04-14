@@ -13,11 +13,6 @@ namespace Database.DbContexts
     public class BaseDbContext : DbContext
     {
         /// <summary>
-        /// Строка подключения.
-        /// </summary>
-        protected string _connectionString;
-
-        /// <summary>
         /// Возвращает и задаёт сущности задачи.
         /// </summary>
         public DbSet<TaskEntity> Tasks { get; set; }
@@ -43,18 +38,25 @@ namespace Database.DbContexts
         public DbSet<TaskElementEntity> TaskElements { get; set; }
 
         /// <summary>
+        /// Возвращает и задаёт сущности выполнения элементарной задачи.
+        /// </summary>
+        public DbSet<TaskElementExecutionEntity> TaskElementExecutions { get; set; }
+
+        /// <summary>
         /// Возвращает и задаёт сущности временного интерала.
         /// </summary>
         public DbSet<TimeIntervalEntity> TimeIntervals { get; set; }
 
         /// <summary>
+        /// Возвращает и задаёт сущности повторяющейся элементарной задачи.
+        /// </summary>
+        public DbSet<RecurringTaskElementEntity> RecurringTaskElements { get; set; }
+
+        /// <summary>
         /// Создаёт экземпляр класса <see cref="BaseDbContext"/>.
         /// </summary>
-        /// <param name="connectionString">Строка подключения.</param>
-        public BaseDbContext(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
+        /// <param name="options">Настройки.</param>
+        public BaseDbContext(DbContextOptions<BaseDbContext> options) : base(options) { }
 
         /// <inheritdoc/>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -62,12 +64,6 @@ namespace Database.DbContexts
             modelBuilder.Entity<TaskEntity>().HasOne(t => t.ParentTask).
                 WithMany(tc => tc.Subtasks).HasForeignKey(t => t.ParentTaskId).
                 OnDelete(DeleteBehavior.Cascade);
-        }
-
-        /// <inheritdoc/>
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseLazyLoadingProxies();
         }
     }
 }

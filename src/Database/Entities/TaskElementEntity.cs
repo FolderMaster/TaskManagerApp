@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-using TaskStatus = Model.TaskStatus;
-
 namespace Database.Entities
 {
     /// <summary>
@@ -33,34 +31,14 @@ namespace Database.Entities
         public DateTime? Deadline { get; set; }
 
         /// <summary>
-        /// Возвращает и задаёт статус.
-        /// </summary>
-        public TaskStatus Status { get; set; }
-
-        /// <summary>
-        /// Возвращает и задаёт прогресс.
-        /// </summary>
-        public double Progress { get; set; }
-
-        /// <summary>
         /// Возвращает и задаёт запланированное времени.
         /// </summary>
         public TimeSpan PlannedTime { get; set; }
 
         /// <summary>
-        /// Возвращает и задаёт проведённое времени.
-        /// </summary>
-        public TimeSpan SpentTime { get; set; }
-
-        /// <summary>
         /// Возвращает и задаёт запланированный реальный показатель.
         /// </summary>
         public double PlannedReal { get; set; }
-
-        /// <summary>
-        /// Возвращает и задаёт выполненный реальный показатель.
-        /// </summary>
-        public double ExecutedReal { get; set; }
 
         /// <summary>
         /// Возвращает и задаёт задачу.
@@ -69,8 +47,8 @@ namespace Database.Entities
         public virtual TaskEntity Task { get; set; }
 
         /// <summary>
-        /// Возвращает и задаёт временные интервалы.
+        /// Возвращает и задаёт выполнения элементарной задачи.
         /// </summary>
-        public virtual ICollection<TimeIntervalEntity> TimeIntervals { get; set; }
+        public virtual ICollection<TaskElementExecutionEntity> TaskElementExecutions { get; set; }
     }
 }

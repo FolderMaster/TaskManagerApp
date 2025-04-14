@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Model
+﻿namespace Model
 {
     /// <summary>
     /// Класс настройки повторения.

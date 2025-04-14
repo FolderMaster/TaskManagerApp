@@ -26,14 +26,14 @@ namespace Database.Entities
         public DateTime End { get; set; }
 
         /// <summary>
-        /// Возвращает и задаёт индентификатор элементарной задачи.
+        /// Возвращает и задаёт индентификатор выполнения элементарной задачи.
         /// </summary>
-        public int TaskElementId { get; set; }
+        public int TaskElementExecutionId { get; set; }
 
         /// <summary>
-        /// Возвращает и задаёт элементарную задачу.
+        /// Возвращает и задаёт выполнение элементарной задачи.
         /// </summary>
-        [ForeignKey(nameof(TaskElementId))]
-        public virtual TaskElementEntity TaskElement { get; set; }
+        [ForeignKey(nameof(TaskElementExecutionId))]
+        public virtual TaskElementExecutionEntity TaskElementExecution { get; set; }
     }
 }
