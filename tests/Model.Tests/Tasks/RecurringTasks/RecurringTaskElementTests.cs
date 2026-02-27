@@ -1,10 +1,9 @@
 ﻿using Common.Tests;
-
 using Model.Tasks;
-
+using Model.Tasks.RecurringTasks;
 using CategoryAttribute = Common.Tests.CategoryAttribute;
 
-namespace Model.Tests.Tasks
+namespace Model.Tests.Tasks.RecurringTasks
 {
     [Level(TestLevel.Integration)]
     [Category(TestCategory.Functional)]
@@ -35,8 +34,11 @@ namespace Model.Tests.Tasks
             var expected = 3;
 
             _recurringTaskElement._lastUpdatedExecutionsDate = lastUpdatedExecutionsDate;
-            _recurringTaskElement.RecurringSettings.StartDate = startDate;
-            _recurringTaskElement.RecurringSettings.Frequency = frequency;
+
+            var recurringSettings = _recurringTaskElement.RecurringSettings as RecurringSettings;
+            recurringSettings.StartDate = startDate;
+            recurringSettings.Frequency = frequency;
+
             _recurringTaskElement.UpdateExecutions();
             var result = _recurringTaskElement.Executions.Count();
 

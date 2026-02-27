@@ -16,7 +16,7 @@
 					Command="{Binding GoCommand}"/>
 		</WrapPanel>
 		<TreeView Grid.Row="1" SelectionMode="Single, Toggle"
-				  ItemsSource="{Binding List}" SelectedItem="{Binding SelectedTaskElement}"
+				  ItemsSource="{Binding List}" SelectedItem="{Binding SelectedTaskElementExecution}"
 				  ItemTemplate="{StaticResource TaskTreeTemplate}"/>
 		<StackPanel Grid.Row="2">
 			<ContentControl Content="{Binding TimeIntervalElement}"

@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="ReactiveUI" Version="20.2.45" />
-    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.1.27">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="ReactiveUI" Version="22.3.1" />
+    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Splat.Autofac" Version="15.3.1" />
+    <PackageReference Include="Splat.Autofac" Version="18.1.1" />
   </ItemGroup>
 
   <ItemGroup>

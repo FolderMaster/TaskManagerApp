@@ -1,5 +1,6 @@
-﻿using Database.Entities;
-using ViewModel.Technicals;
+﻿using ViewModel.Technicals;
+
+using Database.Entities;
 
 namespace Database.Mappers
 {

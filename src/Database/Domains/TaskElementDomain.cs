@@ -29,12 +29,8 @@ namespace Database.Domains
                 Difficult = Difficult,
                 Priority = Priority,
                 Deadline = Deadline,
-                //Status = Status,
-                //Progress = Progress,
                 PlannedTime = PlannedTime,
-                //SpentTime = SpentTime,
                 PlannedReal = PlannedReal,
-                //ExecutedReal = ExecutedReal,
                 Entity = new()
                 {
                     Task = new()

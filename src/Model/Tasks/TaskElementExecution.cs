@@ -107,7 +107,7 @@ namespace Model.Tasks
         public TaskElementExecution() : this(null) { }
 
         /// <inheritdoc/>
-        public object Clone()
+        public virtual object Clone()
         {
             var result = new TaskElementExecution()
             {

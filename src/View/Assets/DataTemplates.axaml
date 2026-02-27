@@ -359,7 +359,7 @@
 		<Grid>
 			<si:AppointmentControl Begin="{Binding TimeInterval.Start}"
 								   End="{Binding TimeInterval.End}"
-								   Text="{Binding TaskElement.Metadata}"/>
+								   Text="{Binding TaskElementExecution.TaskElement.Metadata}"/>
 		</Grid>
 	</DataTemplate>
 </ResourceDictionary>

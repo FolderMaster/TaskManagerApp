@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 using Model.Interfaces;
 
-namespace Model.Tasks
+namespace Model.Tasks.RecurringTasks
 {
     /// <summary>
     /// Класс повторяющейся элементарной задачи.
@@ -37,7 +37,7 @@ namespace Model.Tasks
         internal readonly ObservableCollection<ITaskElementExecution> _executions = new();
 
         /// <inheritdoc/>
-        public RecurringSettings RecurringSettings => _recurringSettings;
+        public IRecurringSettings RecurringSettings => _recurringSettings;
 
         /// <inheritdoc/>
         public DateTime LastUpdatedExecutionsDate => _lastUpdatedExecutionsDate;
@@ -99,7 +99,7 @@ namespace Model.Tasks
         }
 
         /// <inheritdoc/>
-        public object Clone()
+        public virtual object Clone()
         {
             var executions = new List<ITaskElementExecution>();
             foreach (var execution in _executions)
@@ -125,6 +125,14 @@ namespace Model.Tasks
             }
             return result;
         }
+
+        /// <summary>
+        /// Создаёт выполнение элементарной задачи.
+        /// </summary>
+        /// <param name="createdDate">Дата создания.</param>
+        /// <returns>Возвращает выполнение элементарной задачи.</returns>
+        protected virtual ITaskElementExecution CreateTaskElementExecution(DateTime createdDate) =>
+            new TaskElementExecution(this, createdDate);
 
         private void Execution_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {

@@ -8,6 +8,6 @@
         /// <summary>
         /// Возвращает индетификатор связанной сущности.
         /// </summary>
-        public object EntityId { get; }
+        public object? EntityId { get; }
     }
 }

@@ -19,26 +19,14 @@ namespace Database.Mappers
         private readonly IMapper<MetadataEntity, object> _metadataMapper;
 
         /// <summary>
-        /// Преобразование значений между сущностью временных интервалов и
-        /// элементарными временными интервалами.
-        /// </summary>
-        private readonly IMapper<TimeIntervalEntity, ITimeIntervalElement> _timeIntervalMapper;
-
-        /// <summary>
         /// Создаёт экземпляр класса <see cref="TaskElementMapper"/>.
         /// </summary>
         /// <param name="metadataMapper">
         /// Преобразование значений между сущностью метаданных и метаданными.
         /// </param>
-        /// <param name="timeIntervalMapper">
-        /// Преобразование значений между сущностью временных интервалов и
-        /// элементарными временными интервалами.
-        /// </param>
-        public TaskElementMapper(IMapper<MetadataEntity, object> metadataMapper,
-            IMapper<TimeIntervalEntity, ITimeIntervalElement> timeIntervalMapper)
+        public TaskElementMapper(IMapper<MetadataEntity, object> metadataMapper)
         {
             _metadataMapper = metadataMapper;
-            _timeIntervalMapper = timeIntervalMapper;
         }
 
         /// <inheritdoc/>

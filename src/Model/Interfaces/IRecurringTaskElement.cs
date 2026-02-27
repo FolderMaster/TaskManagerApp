@@ -11,7 +11,7 @@
         /// <summary>
         /// Возвращает настройку повторения.
         /// </summary>
-        public RecurringSettings RecurringSettings { get; }
+        public IRecurringSettings RecurringSettings { get; }
 
         /// <summary>
         /// Возвращает последняя дата обновления выполнений.

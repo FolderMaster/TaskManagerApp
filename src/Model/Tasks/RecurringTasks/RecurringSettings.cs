@@ -1,9 +1,14 @@
-﻿namespace Model
+﻿using Model.Interfaces;
+
+namespace Model.Tasks.RecurringTasks
 {
     /// <summary>
     /// Класс настройки повторения.
     /// </summary>
-    public class RecurringSettings
+    /// <remarks>
+    /// Реализует <see cref="IRecurringSettings"/>.
+    /// </remarks>
+    public class RecurringSettings : IRecurringSettings
     {
         /// <summary>
         /// Возвращает и задаёт частоту повторения.
@@ -25,13 +30,7 @@
         /// </summary>
         public DateTime? EndDate { get; set; } = null;
 
-        /// <summary>
-        /// Рассчитыввает повторения в периоде.
-        /// </summary>
-        /// <param name="startDate">Дата начала периода.</param>
-        /// <param name="endDate">Дата конца периода.</param>
-        /// <returns>Возвращает временные метки повторений в периоде.</returns>
-        /// <exception cref="ArgumentException"></exception>
+        /// <inheritdoc/>
         public IEnumerable<DateTime> CalculateOccurrences(DateTime startDate, DateTime endDate)
         {
             if (startDate > endDate)
@@ -201,11 +200,11 @@
             {
                 return false;
             }
-            if ((Cycle.WeekDays == WeekDay.All && Cycle.Months == Month.All &&
-                Cycle.MonthDays == RecurringCycle.ALL_MONTH_DAYS) ||
-                (Cycle.MatchesWeekDay((int)date.DayOfWeek) &&
+            if (Cycle.WeekDays == WeekDay.All && Cycle.Months == Month.All &&
+                Cycle.MonthDays == RecurringCycle.ALL_MONTH_DAYS ||
+                Cycle.MatchesWeekDay((int)date.DayOfWeek) &&
                 Cycle.MatchesMonth(date.Month - 1) &&
-                Cycle.MatchesMonthDay(date.Day - 1)))
+                Cycle.MatchesMonthDay(date.Day - 1))
             {
                 result = date;
                 return true;

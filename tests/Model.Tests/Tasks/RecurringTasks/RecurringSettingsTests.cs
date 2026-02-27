@@ -1,8 +1,8 @@
 ﻿using Common.Tests;
-
+using Model.Tasks.RecurringTasks;
 using CategoryAttribute = Common.Tests.CategoryAttribute;
 
-namespace Model.Tests
+namespace Model.Tests.Tasks.RecurringTasks
 {
     [Category(TestCategory.Functional)]
     [Severity(SeverityLevel.Major)]

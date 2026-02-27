@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Model.Tasks.RecurringTasks
 {
     /// <summary>
     /// Класс цикла повторения.
@@ -59,7 +59,7 @@
         /// <param name="minute">Минута.</param>
         /// <returns>Возвращает <c>true</c>, если попадает минута в цикл,
         /// иначе <c>false</c>.</returns>
-        public bool MatchesMinute(int minute) => (Minutes & (1UL << minute)) != 0;
+        public bool MatchesMinute(int minute) => (Minutes & 1UL << minute) != 0;
 
         /// <summary>
         /// Проверяет, что попадает ли час в цикл.
@@ -67,7 +67,7 @@
         /// <param name="hour">Час.</param>
         /// <returns>Возвращает <c>true</c>, если попадает час в цикл,
         /// иначе <c>false</c>.</returns>
-        public bool MatchesHour(int hour) => (Hours & (1U << hour)) != 0;
+        public bool MatchesHour(int hour) => (Hours & 1U << hour) != 0;
 
         /// <summary>
         /// Проверяет, что попадает ли день недели в цикл.
@@ -83,7 +83,7 @@
         /// <param name="monthDay">День месяца.</param>
         /// <returns>Возвращает логическое значение,
         /// указывающее попадает ли день месяца в цикл.</returns>
-        public bool MatchesMonthDay(int monthDay) => (MonthDays & (1U << monthDay)) != 0;
+        public bool MatchesMonthDay(int monthDay) => (MonthDays & 1U << monthDay) != 0;
 
         /// <summary>
         /// Проверяет, что попадает ли месяц в цикл.

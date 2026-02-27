@@ -86,7 +86,7 @@ namespace Model.Tasks
             return result;
         }
 
-        protected void Execution_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        private void Execution_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if (_changedPropertyNames.Contains(e.PropertyName))
             {
